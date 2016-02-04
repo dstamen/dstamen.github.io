@@ -9,13 +9,13 @@ We have multiple clusters within our vCenters that are defined as a rack. Each r
 
 I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script. I am hoping when that is available, I will update this post.
 
-####***Pre-Requsites***
+#### ***Pre-Requsites***
 - [VMware PowerCLI](https://www.vmware.com/support/developer/PowerCLI/)
 
-####***Link to Script***
+#### ***Link to Script***
 - [CloneTemplateToClusters.ps1](https://github.com/dstamen/PowerCLI/blob/master/CloneTemplateToClusters.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 *This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.*
@@ -59,5 +59,5 @@ foreach ($template in $templates){
 Disconnect-VIServer $vCenter -Force -Confirm:$false
 {%endhighlight%}
 
-####***Execute the Script***
+#### ***Execute the Script***
 - Run .\CloneTemplateToClusters.ps1
