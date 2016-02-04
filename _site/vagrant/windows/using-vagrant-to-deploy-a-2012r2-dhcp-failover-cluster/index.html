@@ -1,0 +1,386 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster &#8211; davidstamen.com</title>
+<meta name="description" content="So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
+
+">
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster">
+<meta name="twitter:description" content="So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster">
+<meta property="og:description" content="So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
+
+">
+<meta property="og:url" content="/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/" rel="bookmark" title="Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster">Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.</p>
+
+<p>I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.</p>
+
+<p><a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp">Here</a> is a link to the <strong>GitHub</strong> repository containing all the code.</p>
+
+<p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy’s the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.</p>
+
+<h1 id="files-to-modify-to-customize-your-installation">Files to modify to customize your installation</h1>
+<ul>
+  <li><strong><em>dhcpservers.csv</em></strong> - IP’s of your two DHCP servers</li>
+  <li><strong><em>createscopes.csv</em></strong> - Contains your Scope Name, StartRange, EndRange, Mask and Server to deploy to</li>
+  <li><strong><em>scopeoptions.csv</em></strong> - Contains your server specific options. You can add more columns and adjust the code to add alternate options</li>
+  <li><strong><em>scopeoptions.csv</em></strong> - Contains your scope specific options. You can add more columns and adjust the code to add alternate options</li>
+  <li><strong><em>scopefailover.csv</em></strong> - Used to create Failover Scopes, Specify the ScopeID, PartnerServer, LoadBalancePercent, MaxClientLeadTime, AutoStateTransition, StateSwitchInterval and Server to deploy against</li>
+  <li><strong><em>scopepolicy.csv</em></strong> - Used to create Scope Policies. In this example it creates a MAC Allow list, so only Mac Addresses listed will be allowed to pull leases.</li>
+  <li><strong><em>scopereservations.csv</em></strong> - Used to create Scope Reservations. Input your ScopeID, MAC Address and Reservation Name. It automatically pulls an available IP and reserves it.</li>
+</ul>
+
+<p>Execute the Vagrant package by downloading it and running.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vagrant up</code></pre></div>
+
+<p>Execute the powershell script by downloading the scripts folder and running.</p>
+
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">.\install_ha_dhcp.ps1</code></pre></div>
+
+<h1 id="here-is-a-copy-of-the-raw-code">Here is a copy of the raw code.</h1>
+
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># Powershell Script for Vagrant to install and configure DHCP
+# @davidstamen
+# http://davidstamen.com
+
+cd c:\vagrant\scripts
+
+$username = &quot;vagrant&quot;
+$password = &quot;vagrant&quot;
+$secstr = New-Object -TypeName System.Security.SecureString
+$password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
+
+# Install the DHCP Role
+Write-Host &quot;Installing DHCP Server Role&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\dhcpservers.csv
+foreach ($server in $csv) {
+  Install-WindowsFeature DHCP -IncludeAllSubFeature -IncludeManagementTools -Computer $server.IP -Credential $cred -Verbose
+}
+
+# Authorize the DHCP server in Active Directory
+#Write-Host &quot;Adding DHCP Server to AD&quot; -ForegroundColor &quot;Red&quot;
+#$csv = Import-CSV .\dhcpservers.csv
+#foreach ($server in $csv) {
+#Add-DhcpServerInDC -DnsName $server.Name -IPAddress $server.IP
+#}
+
+# Create an IPv4 DHCP scope
+Write-Host &quot;Adding DHCP Scopes&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\createscopes.csv
+foreach ($scope in $csv) {
+    Add-DhcpServerv4Scope -ComputerName $scope.Server -Name $scope.Name -StartRange $scope.Start -EndRange $scope.End -SubnetMask $scope.mask -Verbose
+}
+
+# Set DHCP Server Options
+Write-Host &quot;Setting DHCP Server Options&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\serveroptions.csv
+foreach ($scope in $csv) {
+  Set-DhcpServerv4OptionValue -ComputerName $scope.Server -DnsDomain $scope.DNSDomain -DNSServer $scope.DNSServer -Verbose
+}
+
+# Set DHCP Scope Options
+Write-Host &quot;Setting DHCP Scope Options&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\scopeoptions.csv
+foreach ($scope in $csv) {
+  Set-DhcpServerv4OptionValue -ComputerName $scope.Server -ScopeId $scope.scopeID -Router $scope.Router -Verbose
+  Set-DhcpServerv4Scope -ComputerName $scope.Server -ScopeId $scope.scopeID -LeaseDuration $scope.Lease -Verbose
+}
+
+# Configure Failover
+Write-Host &quot;Configuring DHCP Failover&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\scopefailover.csv
+foreach ($scope in $csv) {
+  Add-DhcpServerv4Failover -ComputerName $scope.Server -Name $scope.scopeID -PartnerServer $scope.PartnerServer -ScopeId $scope.scopeID -LoadBalancePercent $scope.LoadBalancePercent -MaxClientLeadTime $scope.MaxClientLeadTime -AutoStateTransition ([System.Convert]::ToBoolean($scope.AutoStateTransition)) -StateSwitchInterval $scope.StateSwitchInterval -Verbose
+}
+
+#Create MAC Allow List DHCP policy
+Write-Host &quot;Creating MAC Allow List Policy&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\scopepolicy.csv
+foreach ($scope in $csv) {
+  $maclist = @()
+  $operator = $scope.Operator
+  $maclist+=$operator
+  $maclist+=$Scope.MAC1
+  $maclist+=$Scope.MAC2
+  Add-DhcpServerv4Policy -ComputerName $scope.Server -Name $scope.Name -Description $scope.Description -ScopeId $scope.ScopeID -Condition $scope.Condition -MacAddress $maclist -Verbose
+  Add-DhcpServerv4PolicyIPRange -ComputerName $scope.Server -Name $scope.Name -ScopeId $scope.ScopeID -StartRange (Get-DHCPServerv4Scope $scope.ScopeID).StartRange -EndRange (Get-DHCPServerv4Scope $scope.ScopeID).EndRange -Verbose
+}
+
+#Reserve IP&#39;s
+Write-Host &quot;Reserving DHCP IPs&quot; -ForegroundColor &quot;Red&quot;
+$csv = Import-CSV .\scopereservations.csv
+foreach ($scope in $csv) {
+  Add-DhcpServerv4Reservation -ComputerName $scope.Server -ScopeId $scope.ScopeID -IPAddress (Get-DhcpServerv4FreeIPAddress -ComputerName $scope.Server -ScopeId $scope.ScopeID) -ClientId $Scope.MAC -Name $scope.Name -Verbose
+}
+
+#Replicate Settings
+Write-Host &quot;Forcing Replication&quot; -ForegroundColor &quot;Red&quot;
+Get-DhcpServerv4Failover -ComputerName $scope.Server|Invoke-DhcpServerv4FailoverReplication -ComputerName $scope.Server -Force
+#Convert Leases to Reservation
+#Get-DhcpServerv4Lease -ComputerName $server1 -ScopeID 10.10.10.0 | Add-DhcpServerv4Reservation -ComputerName $server1</code></pre></div>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/&text=Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/vagrant/windows/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/&title=Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</strong> was published on <time datetime="2015-10-01T00:00:00-04:00">October 01, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
+    
+      <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
+    
+      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>

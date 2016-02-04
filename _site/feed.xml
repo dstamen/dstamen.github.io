@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">davidstamen.com</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2016-02-04T17:20:19-05:00</updated>
+<id>/</id>
+<author>
+  <name>David Stamen</name>
+  <uri>/</uri>
+  <email>dstamen@gmail.com</email>
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using Ansible to Run Powershell Scripts]]></title>
+  <link rel="alternate" type="text/html" href="/ansible/using-ansible-to-run-powershell-scripts/" />
+  <id>/ansible/using-ansible-to-run-powershell-scripts</id>
+  <published>2016-02-04T00:00:00-05:00</published>
+  <updated>2016-02-04T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro_installation.html&quot;&gt;ansible&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm&quot;&gt;ansible-winrm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-git-project&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Git Project&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/Ansible/tree/master/ansible_powershell&quot;&gt;ansible_powershell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;ansible_ssh_user: admin
+ansible_ssh_pass: password
+ansible_ssh_port: 5985
+ansible_connection: winrm
+ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;- name: Run Powershell Scripts
+  hosts: test
+  tasks:
+    - name: run a powershell script
+      script: scripts/hello.ps1
+      register: out
+    - debug: var=out&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run ansible-playbook powershell.yml -i hosts&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/ansible/using-ansible-to-run-powershell-scripts/&quot;&gt;Using Ansible to Run Powershell Scripts&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 04, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using Ansible to Create Cisco ACI Filters]]></title>
+  <link rel="alternate" type="text/html" href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" />
+  <id>/ansible/cisco/using-ansible-to-create-cisco-aci-filters</id>
+  <published>2016-02-03T00:00:00-05:00</published>
+  <updated>2016-02-03T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries. The below example are the required ports for Horizon View.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jedelman8/aci-ansible.git&quot;&gt;aci-ansible&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro_installation.html&quot;&gt;ansible&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/ACI-Ansible/blob/master/horizonviewports.yml&quot;&gt;horizonviewports.yml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;---
+
+- name: playbook to create HorizonViewPorts-FIL
+  hosts: apic
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+    - name: verify filter is present and create if absent
+      aci_filter: name= tenant=common host= username= password=
+      with_items:
+        - HorizonViewPorts
+
+    - name: verify filter entry for HighEndPorts-tcp is present and create if absent
+      aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
+
+    - name: verify filter entry for HighEndPorts-udp is present and create if absent
+      aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
+
+    - name: verify filter entry HTML-Access for is present and create if absent
+      aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=
+
+    - name: verify filter entry for http is present and create if absent
+      aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=
+
+    - name: verify filter entry for https is present and create if absent
+      aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=
+
+    - name: verify filter entry for JMS is present and create if absent
+      aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=
+
+    - name: verify filter entry for MMR is present and create if absent
+      aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=
+
+    - name: verify filter entry for PCoIP is present and create if absent
+      aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
+
+    - name: verify filter entry for PCoIP-udp is present and create if absent
+      aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
+
+    - name: verify filter entry for USB is present and create if absent
+      aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run ansible-playbook horizonviewports.yml -i hosts&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/ansible/cisco/using-ansible-to-create-cisco-aci-filters/&quot;&gt;Using Ansible to Create Cisco ACI Filters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Cisco Champion 2016]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/cisco-champion-2016/" />
+  <id>/cisco/cisco-champion-2016</id>
+  <published>2016-01-31T00:00:00-05:00</published>
+  <updated>2016-01-31T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I am honored to have been accepted once again as a Cisco Champion for 2016!&lt;/p&gt;
+
+&lt;p&gt;I had a bit of a gap in blog posts this past year due to a job change. However, look forward to more posts on Cisco UCS and maybe even some Cisco ACI.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://communities.cisco.com/servlet/JiveServlet/previewBody/64861-102-1-116340/logo.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am a member of the Cisco Champions Program. Cisco Champions are passionate about Cisco and enjoy sharing our knowledge, expertise, and thoughts across the social web and with Cisco. I am not a representative of Cisco. My views as a Cisco Champion are my own.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cisco.com/web/about/facts_info/champions.html&quot;&gt;Learn more information about the Cisco Champions program and related benefits.&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/cisco-champion-2016/&quot;&gt;Cisco Champion 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using PowerCLI to Install Software in a Guest VM]]></title>
+  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-install-software-in-a-guest-vm/" />
+  <id>/powercli/using-powercli-to-install-software-in-a-guest-vm</id>
+  <published>2016-01-29T00:00:00-05:00</published>
+  <updated>2016-01-29T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/InstallVMSoftware.ps1&quot;&gt;InstallVMSoftware.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+Write-Host &amp;quot;Prompt For Guest Credentials&amp;quot; -ForegroundColor Yellow
+$Cred = Get-Credential
+$VMs = &amp;quot;VM1&amp;quot;,&amp;quot;VM2&amp;quot;
+#$VMs = Get-VM VM* | Sort Name
+
+Foreach ($VMName in $VMs) {
+  $VM = Get-VM $VMName
+
+#Define file information. Include File Name, Parameters, Source and Destination
+  $File = &amp;quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&amp;quot;
+  $Param = &amp;quot;/s /v/qn REBOOT=Reallysuppress&amp;quot;
+  $SrcPath = &amp;quot;c:\&amp;quot;
+  $DstPath = &amp;quot;c:\temp\&amp;quot;
+  $Fullpath = $SrcPath + $File
+
+  Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
+  Copy-VMGuestFile -VM $VM -Source $Fullpath -Destination $DstPath -LocalToGuest -GuestCredential $Cred -Force
+
+  #Define Install File Command
+  $Command = $DstPath + $File + $Param
+  #Define Delete File Command
+  $Command2 = &amp;quot;del &amp;quot; + $DstPath + $File
+
+  Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
+  $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
+  $ExitCode = $Result.ExitCode
+  if ($ExitCode = &amp;quot;0&amp;quot;) {
+    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
+  }
+  Else {
+    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Red
+  }
+  Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
+  $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
+  $ExitCode2 = $Result2.ExitCode
+  if ($ExitCode2 = &amp;quot;0&amp;quot;) {
+    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
+  }
+  Else {
+    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Red
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\InstallVMSoftware.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-software-in-a-guest-vm/&quot;&gt;Using PowerCLI to Install Software in a Guest VM&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 29, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using PowerCLI to Replicate Templates to Multiple Clusters]]></title>
+  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/" />
+  <id>/powercli/using-powercli-to-replicate-templates-to-multiple-clusters</id>
+  <published>2016-01-26T00:00:00-05:00</published>
+  <updated>2016-01-26T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.&lt;/p&gt;
+
+&lt;p&gt;I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script. I am hoping when that is available, I will update this post.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/CloneTemplateToClusters.ps1&quot;&gt;CloneTemplateToClusters.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Import PowerCLI Module
+Add-PSSnapin VMware.VimAutomation.Core
+
+#Define Variables
+$Credential = Get-Credential
+$vCenter = &amp;quot;vcenter.lab.local&amp;quot;
+$clusters = &amp;quot;Cluster01&amp;quot;,&amp;quot;Cluster02&amp;quot;
+$location = &amp;quot;Templates&amp;quot;
+$templates = &amp;quot;Template1&amp;quot;,&amp;quot;Template2&amp;quot;
+
+#Connect to vCenter
+Connect-VIServer $vCenter -Credential $Credential
+
+foreach ($template in $templates){
+  foreach ($cluster in $clusters){
+    #Check if Template exists
+    Try{Get-Template $template-$cluster -ErrorAction Stop;$TemplateExists = $true}Catch {$TemplateExists = $false}
+    #Create VM
+    If($TemplateExists -eq $true){
+        #Remove Old Template
+        Get-Template -Name $template-$cluster |Remove-Template -DeletePermanently -Confirm:$false
+        #Clone the Template
+        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
+        #Convert to Template
+        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
+    }
+    ElseIf($TemplateExists -eq $false){
+        #Clone the Template
+        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
+        #Convert to Template
+        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
+    }
+  }
+}
+#Disconnect from vCenter
+Disconnect-VIServer $vCenter -Force -Confirm:$false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\CloneTemplateToClusters.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/&quot;&gt;Using PowerCLI to Replicate Templates to Multiple Clusters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 26, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Set Equipment Labels]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-set-equipment-labels/" />
+  <id>/cisco/using-ucs-powertool-to-set-equipment-labels</id>
+  <published>2016-01-15T00:00:00-05:00</published>
+  <updated>2016-01-15T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1&quot;&gt;Set-UCSEquipmentLabel.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+$cred = Get-Credential
+$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
+
+#Cycles through each UCS setting values
+Foreach ($ucs in $domains) {
+  Connect-UCS $ucs -Credential $cred
+  $servers = Get-UCSRackUnit
+  Foreach ($server in $servers) {
+    Get-UCSRackUnit -id $server.id | Set-UCSRackunit -UsrLbl $server.assignedtodn.substring(12) -Name $server.assignedtodn.substring(12) -force
+  }
+  Disconnect-UCS
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-UCSEquipmentLabel.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-equipment-labels/&quot;&gt;Using UCS PowerTool To Set Equipment Labels&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 15, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Generate Tech Supports]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-generate-tech-supports/" />
+  <id>/cisco/using-ucs-powertool-to-generate-tech-supports</id>
+  <published>2016-01-14T00:00:00-05:00</published>
+  <updated>2016-01-14T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1&quot;&gt;Create-UCSTechSupport.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+$cred = Get-Credential
+$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
+$fileloc = &amp;quot;C:\Users\david\desktop\logs\&amp;quot;
+
+#Cycles through each UCS creating a tech support for each chassis.
+Foreach ($ucs in $domains) {
+Connect-UCS $ucs -Credential $cred
+$Chassis = Get-UCSChassis
+  Foreach ($chassis in $chassis) {
+    $id = $chassis.id
+    $filename = &amp;quot;$fileloc$ucs-techsupp-chassis-$id.tar&amp;quot;
+    Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC &amp;#39;all&amp;#39;
+  }
+Disconnect-UCS
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Create-UCSTechSupport.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-generate-tech-supports/&quot;&gt;Using UCS PowerTool To Generate Tech Supports&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 14, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Unable to Boot EFI VM on ESXi FC Storage]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/" />
+  <id>/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage</id>
+  <published>2016-01-13T00:00:00-05:00</published>
+  <updated>2016-01-13T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).&lt;/p&gt;
+
+&lt;p&gt;Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine. I opened a case with VMware and our Storage vendor and no one had any idea what was causing it.&lt;/p&gt;
+
+&lt;p&gt;Strangely enough my coworker found the following article today that explains and provides a workaround. &lt;a href=&quot;http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2137402&quot;&gt;KB2137402&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, our storage vendor Pure Storage also had an article explaining the issue. [Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion]http://community.purestorage.com/t5/Pure-Customer-Knowledge-Base/Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion/ta-p/4109]&lt;/p&gt;
+
+&lt;p&gt;So today I went and modified a host to have the DiskMaxIOSize to be 4096 instead of the default 32767, and the VM booted up fine! All my stress and troubleshooting could finally be resolved. Strange enough this issue has been around since 5.5 and there is still no actual resolution. I am not even sure if this is an array or VMware issue as this seems to affect 3Par and XtremIO as well.&lt;/p&gt;
+
+&lt;p&gt;However, since I had to replicate this change to a bunch of hosts I created a script to make this change.&lt;/p&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/Set-MaxDiskIO.ps1&quot;&gt;Set-MaxDiskIO.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# PowerCLI Script for setting Disk Max IO Size
+# @davidstamen
+# http://davidstamen.com
+
+#Define Variables
+$cred = Get-Credential
+$VC = &amp;quot;vc.lab.local&amp;quot;
+$Cluster = &amp;quot;Production&amp;quot;
+
+#Connect to vCenter
+Connect-VIServer $VC -Credential $cred
+
+#Get all Hosts
+$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &amp;quot;PoweredOn&amp;quot; -and $_.ConnectionState -eq &amp;quot;Connected&amp;quot; } | Sort Name
+
+#For each host set DiskMaxIOsize to 4MB
+foreach ($esx in $esxHosts) {
+  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-MaxDiskIO.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/&quot;&gt;Unable to Boot EFI VM on ESXi FC Storage&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 13, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/" />
+  <id>/vmware/upgrading-vcsa-from-60-u1a-to-60u1b</id>
+  <published>2016-01-12T00:00:00-05:00</published>
+  <updated>2016-01-12T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.&lt;/p&gt;
+
+&lt;p&gt;This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SSH to your Primary PSC.&lt;/li&gt;
+  &lt;li&gt;If you are currently in the bash shell, type appliancesh to switch shells to run the update.&lt;/li&gt;
+  &lt;li&gt;Run &lt;strong&gt;software-packages install –url –acceptEulas&lt;/strong&gt; to download and install the packages from the VMware Repo.
+    &lt;ul&gt;
+      &lt;li&gt;You can use the –ISO switch or supply a custom url as well if needed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sit back and wait. Once it is finished you will be prompted to reboot.
+    &lt;ul&gt;
+      &lt;li&gt;Reboot by typing shutdown reboot /r reason&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pscupgrade1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When VM boots you will now be at the latest version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pscupgrade2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Repeat if you have additional PSC’s in your environment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now that our Platform Service Controllers are upgraded we can proceed on with our vCenter Appliance.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SSH to your vCenter Appliance.&lt;/li&gt;
+  &lt;li&gt;If you are currently in the bash shell, type appliancesh to switch shells to run the update.&lt;/li&gt;
+  &lt;li&gt;Run &lt;strong&gt;software-packages install –url –acceptEulas&lt;/strong&gt; to download and install the packages from the VMware Repo.
+    &lt;ul&gt;
+      &lt;li&gt;You can use the –ISO switch or supply a custom url as well if needed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sit back and wait. Once it is finished you will be prompted to reboot.
+    &lt;ul&gt;
+      &lt;li&gt;Reboot by typing shutdown reboot /r reason&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vcupgrade1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When VM boots you will now be at the latest version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vcupgrade2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/&quot;&gt;Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 12, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Upload UCS Firmware]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-upload-ucs-firmware/" />
+  <id>/cisco/using-ucs-powertool-to-upload-ucs-firmware</id>
+  <published>2016-01-11T00:00:00-05:00</published>
+  <updated>2016-01-11T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1&quot;&gt;UploadUCSFirmware.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+$cred = Get-Credential
+$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
+$fileName = &amp;quot;C:\Users\david\Downloads\ucs-k9-bundle-infra.2.2.6e.A.bin&amp;quot;
+
+#Cycles through each UCS uploading the UCS Firmware
+Foreach ($ucs in $domains) {
+  Connect-UCS $ucs -Credential $cred
+  Send-UcsFirmware -LiteralPath $fileName | Watch-Ucs -Property TransferState -SuccessValue downloaded -PollSec 30 -TimeoutSec 600
+  Disconnect-UCS
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\UploadUCSFirmware.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-upload-ucs-firmware/&quot;&gt;Using UCS PowerTool To Upload UCS Firmware&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 11, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[VCAP6-Design Beta Study Guide]]></title>
+  <link rel="alternate" type="text/html" href="/certification/vcap6-design-beta-study-guide/" />
+  <id>/certification/vcap6-design-beta-study-guide</id>
+  <published>2015-12-17T00:00:00-05:00</published>
+  <updated>2015-12-17T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1--create-a-vsphere-conceptual-design&quot;&gt;Section 1 – Create a vSphere Conceptual Design&lt;/h3&gt;
+
+&lt;h5 id=&quot;objective-11--gather-and-analyze-business-requirements&quot;&gt;Objective 1.1 – Gather and analyze business requirements&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Associate a stakeholder with the information that needs to be collected.&lt;/li&gt;
+  &lt;li&gt;Utilize inventory and assessment data from a current environment to define a baseline state.&lt;/li&gt;
+  &lt;li&gt;Analyze customer interview data to explicitly define customer ####Objectives for a conceptual design.&lt;/li&gt;
+  &lt;li&gt;Determine customer priorities for defined ####Objectives.&lt;/li&gt;
+  &lt;li&gt;Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.&lt;/li&gt;
+  &lt;li&gt;Given results of the requirements gathering process, identify requirements for a conceptual design.&lt;/li&gt;
+  &lt;li&gt;Categorize requirements by infrastructure qualities to prepare for logical design requirements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VMware Virtualization Case Studies&lt;/li&gt;
+  &lt;li&gt;The Benefits of Virtualization for Small and Medium Businesses&lt;/li&gt;
+  &lt;li&gt;Functional vs. Non-Functional Requirements&lt;/li&gt;
+  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
+  &lt;li&gt;Virtualize Business Critical Applications (blog)&lt;/li&gt;
+  &lt;li&gt;Virtualizing Business Critical Applications on vSphere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-12--gather-and-analyze-application-requirements&quot;&gt;Objective 1.2 – Gather and analyze application requirements&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gather and analyze application requirements for a given scenario.&lt;/li&gt;
+  &lt;li&gt;Determine the requirements for a set of applications that will be included in the design.&lt;/li&gt;
+  &lt;li&gt;Collect information needed in order to identify application dependencies.&lt;/li&gt;
+  &lt;li&gt;Given one or more application requirements, determine the impact of the requirements on the design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VMware TCO Calculator&lt;/li&gt;
+  &lt;li&gt;VMware Cost-Per-Application Calculator Methodology&lt;/li&gt;
+  &lt;li&gt;Virtualizing Oracle with VMware&lt;/li&gt;
+  &lt;li&gt;Virtualizing Exchange with VMware&lt;/li&gt;
+  &lt;li&gt;Virtualize SharePoint with VMware vSphere&lt;/li&gt;
+  &lt;li&gt;Virtualizing Microsoft SQL on VMware vSphere&lt;/li&gt;
+  &lt;li&gt;SAP and VMware Virtualization&lt;/li&gt;
+  &lt;li&gt;Business and Financial Benefits of Virtualization: Customer Benchmarking Study&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-13--determine-risks-requirements-constraints-and-assumptions&quot;&gt;Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Differentiate between the concepts of risks, requirements, constraints, and assumptions.&lt;/li&gt;
+  &lt;li&gt;Given a statement, determine whether it is a risk, requirement, constraint, or an assumption.&lt;/li&gt;
+  &lt;li&gt;Analyze impact of VMware best practices to identified risks, constraints, and assumptions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/li&gt;
+  &lt;li&gt;Constraints, Assumptions (Risk, Requirements) &amp;amp; Dependencies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2--create-a-vsphere-6x-logical-design-from-an-existing-conceptual-design&quot;&gt;Section 2 – Create a vSphere 6.x Logical Design from an Existing Conceptual Design&lt;/h3&gt;
+
+&lt;h4 id=&quot;objective-21--map-business-requirements-to-a-vsphere-6x-logical-design&quot;&gt;Objective 2.1 – Map Business Requirements to a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze requirements for functional and non-functional elements.&lt;/li&gt;
+  &lt;li&gt;Build non-functional requirements into a specific logical design.&lt;/li&gt;
+  &lt;li&gt;Translate stated business requirements into a logical design.&lt;/li&gt;
+  &lt;li&gt;Incorporate the current state of a customer environment into a logical design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
+  &lt;li&gt;What’s New in VMware vSphere 6.0&lt;/li&gt;
+  &lt;li&gt;Functional vs. Non-Functional Requirements&lt;/li&gt;
+  &lt;li&gt;ITIL v3 Introduction and Overview&lt;/li&gt;
+  &lt;li&gt;Conceptual Architecture Action Guide&lt;/li&gt;
+  &lt;li&gt;Systems Architecture Fundamentals – Conceptual, Logical, Physical Designs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-22--map-service-dependencies&quot;&gt;Objective 2.2 – Map Service Dependencies&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate dependencies for infrastructure and application services that will be included in a vSphere design.&lt;/li&gt;
+  &lt;li&gt;Create Entity Relationship Diagrams that map service relationships and dependencies.&lt;/li&gt;
+  &lt;li&gt;Analyze interfaces to be used with new and existing business processes.&lt;/li&gt;
+  &lt;li&gt;Determine service dependencies for logical components.&lt;/li&gt;
+  &lt;li&gt;Include service dependencies in a vSphere 6.x Logical Design.&lt;/li&gt;
+  &lt;li&gt;Analyze services to identify upstream and downstream service dependencies.&lt;/li&gt;
+  &lt;li&gt;Navigate logical components and their interdependencies and make decisions based upon all service relationships.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/li&gt;
+  &lt;li&gt;VMware Application Dependencies and Entity Relationship Diagrams MK2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-23--build-availability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.3 – Build Availability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which logical availability services can be used with a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to availability.&lt;/li&gt;
+  &lt;li&gt;Describe the concept of redundancy and the risks associated with single points of failure&lt;/li&gt;
+  &lt;li&gt;Explain class of nines methodology&lt;/li&gt;
+  &lt;li&gt;Determine availability component of service level agreements (SLAs) and service level management processes&lt;/li&gt;
+  &lt;li&gt;Determine potential availability solutions for a logical design based on customer requirements.&lt;/li&gt;
+  &lt;li&gt;Create an availability plan, including maintenance processes.&lt;/li&gt;
+  &lt;li&gt;Balance availability requirements with other infrastructure qualities.&lt;/li&gt;
+  &lt;li&gt;Analyze a vSphere design and determine possible single points of failure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/li&gt;
+  &lt;li&gt;vSphere Availability Guide&lt;/li&gt;
+  &lt;li&gt;Protect Your Business with Automated Business Continuity Solutions&lt;/li&gt;
+  &lt;li&gt;VMware High Availability Deployment Best Practices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-24--build-manageability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which management services can be used with a given vSphere Solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to management.&lt;/li&gt;
+  &lt;li&gt;Differentiate available command line-based management tools (PowerCLI, vMA etc.)&lt;/li&gt;
+  &lt;li&gt;Evaluate VMware Management solutions based on customer requirements.&lt;/li&gt;
+  &lt;li&gt;Build interfaces into the logical design for existing operations practices.&lt;/li&gt;
+  &lt;li&gt;Address identified operational readiness deficiencies&lt;/li&gt;
+  &lt;li&gt;Define Event, Incident and Problem Management practices.&lt;/li&gt;
+  &lt;li&gt;Analyze Release Management practices&lt;/li&gt;
+  &lt;li&gt;Determine request fulfillment and release management processes.&lt;/li&gt;
+  &lt;li&gt;Determine requirements for Configuration Management&lt;/li&gt;
+  &lt;li&gt;Define change management processes based on business requirements.&lt;/li&gt;
+  &lt;li&gt;Based on customer requirements, identify required reporting assets and processes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Optimizing Your VMware Environment&lt;/li&gt;
+  &lt;li&gt;Four Keys to Managing Your VMware Environment&lt;/li&gt;
+  &lt;li&gt;Operational Readiness Assessment&lt;/li&gt;
+  &lt;li&gt;Operational Readiness Assessment Tool&lt;/li&gt;
+  &lt;li&gt;vCenter Server and Host Management Guide&lt;/li&gt;
+  &lt;li&gt;vSphere PowerCLI documentation Center&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-25--build-performance-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.5 – Build Performance Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate logical performance considerations for a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to performance.&lt;/li&gt;
+  &lt;li&gt;Analyze current performance, identify and address gaps when building the logical design&lt;/li&gt;
+  &lt;li&gt;Using a conceptual design, create a logical design that meets performance requirements&lt;/li&gt;
+  &lt;li&gt;Determine performance-related functional requirements based on given non-functional requirements and service dependencies.&lt;/li&gt;
+  &lt;li&gt;Define capacity management practices and create a capacity plan&lt;/li&gt;
+  &lt;li&gt;Incorporate scalability requirements into the logical design&lt;/li&gt;
+  &lt;li&gt;Determine a performance component for service level agreements and service level management processes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Proven Practice: Implementing ITIL v3 Capacity Management in a VMware environment&lt;/li&gt;
+  &lt;li&gt;vSphere Monitoring and Performance Guide&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-26--build-recoverability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.6 – Build Recoverability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which logical recoverability services are available for a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to recoverability.&lt;/li&gt;
+  &lt;li&gt;Determine Business Continuity and Disaster Recovery solution options for a given vSphere Design.&lt;/li&gt;
+  &lt;li&gt;Given recoverability requirements, analyze services that will be impacted and provide a recovery plan for impacted services.&lt;/li&gt;
+  &lt;li&gt;Plan a data retention policy based on customer requirements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VMware vCenter™ Site Recovery Manager Evaluation Guide&lt;/li&gt;
+  &lt;li&gt;A Practical Guide to Business Continuity and Disaster Recovery with VMware Infrastructure&lt;/li&gt;
+  &lt;li&gt;Mastering Disaster Recovery: Business Continuity and Virtualization Best Practices Whitepaper&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-27--build-security-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.7 – Build Security Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which security services can be used with a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to security.&lt;/li&gt;
+  &lt;li&gt;Build specific regulatory compliance requirements into the logical design.&lt;/li&gt;
+  &lt;li&gt;Analyze application and infrastructure security requirements.&lt;/li&gt;
+  &lt;li&gt;Build a role-based access model and map roles to services.&lt;/li&gt;
+  &lt;li&gt;Build a security policy based on existing security requirements and IT governance practices.&lt;/li&gt;
+  &lt;li&gt;Incorporate customer risk tolerance into the security policy.&lt;/li&gt;
+  &lt;li&gt;Assess the services that will be impacted and create an access management plan.&lt;/li&gt;
+  &lt;li&gt;Determine the proper security solution that would satisfy a regulatory requirement.&lt;/li&gt;
+  &lt;li&gt;Based on stated security requirements, analyze the current state for compliance/non-compliance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vSphere Security Guide&lt;/li&gt;
+  &lt;li&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/li&gt;
+  &lt;li&gt;Achieving Compliance in a Virtualized Environment&lt;/li&gt;
+  &lt;li&gt;Infrastructure Security: Getting to the Bottom of Compliance in the Cloud&lt;/li&gt;
+  &lt;li&gt;Securing the Cloud&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3--create-a-vsphere-6x-physical-design-from-an-existing-logical-design&quot;&gt;Section 3 – Create a vSphere 6.x Physical Design from an Existing Logical Design&lt;/h3&gt;
+
+&lt;h4 id=&quot;objective-31--transition-from-a-logical-design-to-a-vsphere-6x-physical-design&quot;&gt;Objective 3.1 – Transition from a Logical Design to a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze design decisions and options selected from the logical design&lt;/li&gt;
+  &lt;li&gt;Determine impact of VMware best practices to identified risks, constraints, and assumptions in a given vSphere design.&lt;/li&gt;
+  &lt;li&gt;Based on business requirements, determine the appropriate roles for each staff member.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
+  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
+  &lt;li&gt;vSphere Virtual Machine Administration Guide&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-32--create-a-vsphere-6x-physical-network-design-from-an-existing-logical-design&quot;&gt;Objective 3.2 – Create a vSphere 6.x Physical Network Design from an Existing Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze VLAN options with respect to virtual and physical switches.&lt;/li&gt;
+  &lt;li&gt;Given business requirements, determine the design for virtual network components:
+    &lt;ul&gt;
+      &lt;li&gt;STP&lt;/li&gt;
+      &lt;li&gt;Jumbo Frames&lt;/li&gt;
+      &lt;li&gt;Load-balancing&lt;/li&gt;
+      &lt;li&gt;Trunking and link aggregation groups&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Evaluate network redundancy considerations for a given design.&lt;/li&gt;
+  &lt;li&gt;Analyze design for inclusion of Network I/O Control capabilities.&lt;/li&gt;
+  &lt;li&gt;Determine use case for multiple TCP/IP stacks in a given design.&lt;/li&gt;
+  &lt;li&gt;Based on given functional requirements for each service:
+    &lt;ul&gt;
+      &lt;li&gt;Determine the most appropriate networking technologies for the design.&lt;/li&gt;
+      &lt;li&gt;Implement the service based on the required infrastructure qualities (AMPRS.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Analyze design for appropriate network teaming and failover solution.&lt;/li&gt;
+  &lt;li&gt;Determine network security and firewall requirements for a virtual network design&lt;/li&gt;
+  &lt;li&gt;Based on service level requirements, determine appropriate network performance characteristics.&lt;/li&gt;
+  &lt;li&gt;Given a current network configuration as well as technical requirements and constraints, determine the appropriate virtual switch solution:
+    &lt;ul&gt;
+      &lt;li&gt;vSphere Standard Switch&lt;/li&gt;
+      &lt;li&gt;vSphere Distributed Switch&lt;/li&gt;
+      &lt;li&gt;NSX&lt;/li&gt;
+      &lt;li&gt;Hybrid solutions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Based on an existing logical design, determine appropriate host networking resources.&lt;/li&gt;
+  &lt;li&gt;Properly apply converged networking considering VMware best practices.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
+  &lt;li&gt;vSphere Installation and Setup Guide - vSphere Networking Guide - Network Port Diagram for vSphere 6.x&lt;/li&gt;
+  &lt;li&gt;VMware Virtual SAN Network Design Guide&lt;/li&gt;
+  &lt;li&gt;Leveraging NIC Technology to Improve Network Performance in VMware vSphere&lt;/li&gt;
+  &lt;li&gt;Performance Evaluation of Network I/O Control in VMware vSphere 6&lt;/li&gt;
+  &lt;li&gt;vMotion Architecture, Performance and Best Practices in VMware vSphere 5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-33--create-a-vsphere-6x-physical-storage-design-from-an-existing-logical-design&quot;&gt;Objective 3.3 – Create a vSphere 6.x Physical Storage Design from an Existing Logical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate criteria, capabilities and limitations between storage types (Block, NAS, Object Based)&lt;/li&gt;
+  &lt;li&gt;In a given design, determine Storage Policy availability and performance characteristics.&lt;/li&gt;
+  &lt;li&gt;Based on the logical design and given functional requirements, for each service:
+    &lt;ul&gt;
+      &lt;li&gt;Determine the most appropriate storage technologies for the design.&lt;/li&gt;
+      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ensure storage array capabilities are supported in a vSphere 6.x design:
+    &lt;ul&gt;
+      &lt;li&gt;Active/Active, Active/Passive&lt;/li&gt;
+      &lt;li&gt;ALUA, VAAI, VASA&lt;/li&gt;
+      &lt;li&gt;PSA (including PSPs and SATPs)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Based on service level requirements include VMware technologies in the design, such as:
+    &lt;ul&gt;
+      &lt;li&gt;Storage I/O Control and Network I/O Control&lt;/li&gt;
+      &lt;li&gt;Storage Policies&lt;/li&gt;
+      &lt;li&gt;Storage vMotion&lt;/li&gt;
+      &lt;li&gt;Storage DRS&lt;/li&gt;
+      &lt;li&gt;Virtual SAN&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Given the functional requirements, size the storage for capacity, availability and performance, including:
+    &lt;ul&gt;
+      &lt;li&gt;Datastores, RDMs, Virtual Disks&lt;/li&gt;
+      &lt;li&gt;Physical Storage (LUNs, Storage Tiering)&lt;/li&gt;
+      &lt;li&gt;Based on the logical design, select and incorporate an appropriate storage network into the physical design:&lt;/li&gt;
+      &lt;li&gt;Block (FC, iSCSI, FCoE, SAS)&lt;/li&gt;
+      &lt;li&gt;NAS (NFSv3, NFSv4)&lt;/li&gt;
+      &lt;li&gt;Object Based (Virtual SAN, Virtual Volumes)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What’s New: VMware Virtual SAN 6.0&lt;/li&gt;
+  &lt;li&gt;VMware Virtual SAN 6.0 Design and Sizing Guide&lt;/li&gt;
+  &lt;li&gt;VMware Virtual SAN Diagnostics and Troubleshooting Reference Manual&lt;/li&gt;
+  &lt;li&gt;The VMware Perspective on Software-Defined Storage&lt;/li&gt;
+  &lt;li&gt;vSphere Storage&lt;/li&gt;
+  &lt;li&gt;Resource Management Guide&lt;/li&gt;
+  &lt;li&gt;Virtual SAN TCO and Sizing Calculator&lt;/li&gt;
+  &lt;li&gt;What’s New: VMware vSphere Virtual Volumes&lt;/li&gt;
+  &lt;li&gt;vSphere Installation and Setup Guide&lt;/li&gt;
+  &lt;li&gt;VMware Virtual Machine File System: Technical Overview and Best Practices&lt;/li&gt;
+  &lt;li&gt;TechNote: Bootstrapping VSAN without vCenter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-34--determine-appropriate-compute-resources-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.4 – Determine Appropriate Compute Resources for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze best practices with respect to CPU family choices.&lt;/li&gt;
+  &lt;li&gt;Evaluate NUMA and vNUMA with ESXi hosts and Virtual machines in a given design.&lt;/li&gt;
+  &lt;li&gt;Analyze the following in a vSphere design:
+    &lt;ul&gt;
+      &lt;li&gt;Enhanced vMotion compatibility&lt;/li&gt;
+      &lt;li&gt;Implications of vSMP in virtual machines&lt;/li&gt;
+      &lt;li&gt;Transparent Page Sharing (TPS) and large pages&lt;/li&gt;
+      &lt;li&gt;Resource overcommitment&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Based on the service catalog and given functional requirements:
+    &lt;ul&gt;
+      &lt;li&gt;Determine the most appropriate compute technologies for the design.&lt;/li&gt;
+      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Determine the impact of a technical design on the choice of server density:
+    &lt;ul&gt;
+      &lt;li&gt;Scale Up/Out&lt;/li&gt;
+      &lt;li&gt;Auto Deploy&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Calculate the required number of nodes in an HA cluster based upon host failures and resource guarantees.&lt;/li&gt;
+  &lt;li&gt;Evaluate the implications of using reservations, limits, and shares on the physical design.&lt;/li&gt;
+  &lt;li&gt;Specify the resource pool and vApp configuration based upon resource requirements.&lt;/li&gt;
+  &lt;li&gt;Size the following resources appropriately:
+    &lt;ul&gt;
+      &lt;li&gt;Memory&lt;/li&gt;
+      &lt;li&gt;CPU&lt;/li&gt;
+      &lt;li&gt;I/O devices&lt;/li&gt;
+      &lt;li&gt;Internal storage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Given a constraint to use existing hardware, determine suitability of the hardware for the design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
+  &lt;li&gt;What’s New in the VMware vSphere® 6.0 Platform&lt;/li&gt;
+  &lt;li&gt;vSphere Installation and Setup Guide&lt;/li&gt;
+  &lt;li&gt;vSphere Resource Management Guide&lt;/li&gt;
+  &lt;li&gt;Performance Best Practices for VMware vSphere 6.0&lt;/li&gt;
+  &lt;li&gt;VMware vCenter Server Performance and Best Practices&lt;/li&gt;
+  &lt;li&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/li&gt;
+  &lt;li&gt;Performance Characterization of Microsoft SQL Server on VMware vSphere 6&lt;/li&gt;
+  &lt;li&gt;Microsoft Exchange 2013 on VMware Best Practices Guide - vSphere Monitoring and Performance Guide&lt;/li&gt;
+  &lt;li&gt;Interpreting esxtop statistics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-35--determine-virtual-machine-configuration-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.5 – Determine Virtual Machine Configuration for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze the use of an RDM or a virtual disk for a given VM.&lt;/li&gt;
+  &lt;li&gt;Evaluate Virtual Machine memory management techniques (ballooning, compression, swapping) in a given vSphere design.&lt;/li&gt;
+  &lt;li&gt;Based on business requirements, determine the design significance of VM Swap location.&lt;/li&gt;
+  &lt;li&gt;Determine the latency sensitivity requirements of a given virtual machine workload.&lt;/li&gt;
+  &lt;li&gt;Evaluate virtual machine features based on the logical, functional and application requirements.&lt;/li&gt;
+  &lt;li&gt;Use VMware best practices to size virtual machines according to application requirements.&lt;/li&gt;
+  &lt;li&gt;Determine if reservations, shares, and limits are necessary.&lt;/li&gt;
+  &lt;li&gt;Based on an existing logical design, determine virtual hardware options.&lt;/li&gt;
+  &lt;li&gt;Build a Content Library of appropriate virtual machine offerings (e.g. templates, OVFs, ISOs.)&lt;/li&gt;
+  &lt;li&gt;Determine appropriate use cases for vApps.&lt;/li&gt;
+  &lt;li&gt;Evaluate the suitability of using VMware FT or 3rd party clustering products (e.g. Microsoft Clustering, etc.) based on application requirements.&lt;/li&gt;
+  &lt;li&gt;Determine the impact of scheduled guest activities (e.g. anti-virus, backup, etc) to the design.&lt;/li&gt;
+  &lt;li&gt;Evaluate vFlash read cache requirements in a given design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Virtual Machine Administration Guide&lt;/li&gt;
+  &lt;li&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/li&gt;
+  &lt;li&gt;Virtualizing a Windows Active Directory Domain Infrastructure&lt;/li&gt;
+  &lt;li&gt;Guest Operating System Installation Guide&lt;/li&gt;
+  &lt;li&gt;vSphere Resource Management Guide&lt;/li&gt;
+  &lt;li&gt;Understanding Memory Management in VMware vSphere 6.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-36--determine-data-center-management-options-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.6 – Determine Data Center Management Options for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Based on business requirements, determine client access options in a vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Analyze business requirements when integrating vSphere with other VMware solutions.&lt;/li&gt;
+  &lt;li&gt;Evaluate the impact of the VMware Certificate Authority and the VMware Endpoint Certificate Store to the design.&lt;/li&gt;
+  &lt;li&gt;Based on the logical design and given functional requirements:
+    &lt;ul&gt;
+      &lt;li&gt;Determine the most appropriate datacenter management options for the design.&lt;/li&gt;
+      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Analyze cluster requirements:
+    &lt;ul&gt;
+      &lt;li&gt;Availability requirements for HA and FT&lt;/li&gt;
+      &lt;li&gt;Performance requirements for DRS and vMotion&lt;/li&gt;
+      &lt;li&gt;Storage performance requirements for SDRS and Storage vMotion&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Determine appropriate vCenter Server design and sizing requirements:
+    &lt;ul&gt;
+      &lt;li&gt;vCenter Server Enhanced Linked Mode&lt;/li&gt;
+      &lt;li&gt;vCenter Server virtual appliance vs vCenter Server for Windows&lt;/li&gt;
+      &lt;li&gt;Platform Services Controller&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Evaluate access control methodologies for creating roles and assignment of users to roles.&lt;/li&gt;
+  &lt;li&gt;Determine proper structure for access control settings (i.e. folders, resource pools, etc.)&lt;/li&gt;
+  &lt;li&gt;Develop appropriate host and virtual machine deployment options.&lt;/li&gt;
+  &lt;li&gt;Include in the design appropriate technologies for:
+    &lt;ul&gt;
+      &lt;li&gt;Asset management&lt;/li&gt;
+      &lt;li&gt;Event, incident and problem management&lt;/li&gt;
+      &lt;li&gt;Logging, monitoring and reporting&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vSphere Monitoring and Performance Guide&lt;/li&gt;
+  &lt;li&gt;VMware vCenter Server 6.0 Availability Guide&lt;/li&gt;
+  &lt;li&gt;vCenter Server and Host Management Guide&lt;/li&gt;
+  &lt;li&gt;VMware vCenter Update Manager 6.0 Performance and Best Practices&lt;/li&gt;
+  &lt;li&gt;vCenter Server Deployment Guide&lt;/li&gt;
+  &lt;li&gt;VMware Interoperability Matrix&lt;/li&gt;
+  &lt;li&gt;VMware Proactive Incident Whitepaper&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/certification/vcap6-design-beta-study-guide/&quot;&gt;VCAP6-Design Beta Study Guide&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Configure UCS Policy Backup and Export]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
+  <id>/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export</id>
+  <published>2015-12-11T00:00:00-05:00</published>
+  <updated>2015-12-11T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSPolicyBackupandExport.ps1&quot;&gt;Set-UCSPolicyBackupandExport.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+$UCS = &amp;quot;FQDNofUCS&amp;quot; #FQDN of UCS To COnnect To
+$Hostname = &amp;quot;ucs.lab.local&amp;quot; #Hostname to Upload backup to.
+$Protocol = &amp;quot;scp&amp;quot; #Transfer Protocol. ftp,scp,tftp,sftp
+$User = &amp;quot;ftpuser&amp;quot; #Username
+$Password = &amp;quot;ftpuser&amp;quot; #Password
+$MgmtBackupRemoteFile = &amp;quot;Full&amp;quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$ConfigBackupRemoteFile = &amp;quot;AllConfig&amp;quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$AdminState = &amp;quot;enable&amp;quot; #enable or disable
+$Schedule = &amp;quot;1day&amp;quot; #1day, 7day, 14day for daily, weekly or biweekly backups&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-UCSPolicyBackupandExport.ps1&lt;/li&gt;
+  &lt;li&gt;Logon and UCSM, Navigate to Admin/All and Then select the Policy Backup &amp;amp; Export.
+    &lt;ul&gt;
+      &lt;li&gt;Verify Settings.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ucspolicybackup.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup--export-on-cisco-ucs&quot;&gt;&lt;strong&gt;&lt;em&gt;Hope this helps anyone else out wanted to automate policy backup &amp;amp; export on Cisco UCS.&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/&quot;&gt;Using UCS PowerTool To Configure UCS Policy Backup and Export&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Configure UCS Certificates]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-configure-ucs-certificates/" />
+  <id>/cisco/using-ucs-powertool-to-configure-ucs-certificates</id>
+  <published>2015-12-10T00:00:00-05:00</published>
+  <updated>2015-12-10T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1&quot;&gt;AddUCSCert.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
+$UCS = &amp;quot;FQDNofUCS&amp;quot; #Used to Connect to UCSM via PowerTool
+$TrustPoint = &amp;quot;TP-Name&amp;quot; #Name of TrustPoint, AKA Root CA
+$KeyRing = &amp;quot;KeyRingName&amp;quot; #name of KeyRing. Stores Certificate Information
+$Modulus = &amp;quot;mod2048&amp;quot; #2048 bit key this can be 1024,2048,4096, etc
+$CertDNS = &amp;quot;FQDNofUCS&amp;quot; #FQDN for Cert Request
+$CertLocality = &amp;quot;City&amp;quot; #City for Cert Request
+$CertState = &amp;quot;State&amp;quot; #State for Cert Request
+$CertCountry = &amp;quot;US&amp;quot; #Country for Cert Request
+$CertOrgName = &amp;quot;Org&amp;quot; #OrgName for Cert Request
+$CertEmail = &amp;quot;me@lab.com&amp;quot; #Email for Cert Request
+$CertSubjName = &amp;quot;FQDNofUCS&amp;quot; #FQDN for Cert Request
+$CertIP = &amp;quot;FI-VIP-IP&amp;quot; #FI-VIP IP for Cert Request
+$CertIpA = &amp;quot;FI-A-IP&amp;quot; #FI-A IP for Cert Request
+$CertIpB = &amp;quot;FI-B-IP&amp;quot; #FI-B IP for Cert Request
+$TPChain = &amp;quot;-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR ROOTCA
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR SUB CA
+-----END CERTIFICATE-----&amp;quot; #Delete Second part if not using a Root/Sub Scenario.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If using a Microsoft CA navigate to http://caroot/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.&lt;/li&gt;
+  &lt;li&gt;If using a Microsoft Sub CA as well, navigate to http://casub/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/downloadcacert.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If using a Non-Microsoft CA, contact your certificate provider for their root certificate and following the remaining steps.&lt;/li&gt;
+  &lt;li&gt;Open Certificate using a text editor and you should have it in a standard format, paste that info in the variable field. If not using a Sub, Delete the second part.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;executing-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Executing the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Navigate to the directory using PowerShell and run .\AddUCSCert.ps1&lt;/li&gt;
+  &lt;li&gt;If you look inside UCSM you will see the script create the TrustPoint and KeyRing for the new certificate&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ucsmcert1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you navigate to the KeyRing you will see the completed certificate Request.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ucsmcert2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You will also see a popup, asking you for the completed certificate information. From here you will either submit it to your microsoft ca at htt://ca/certsrv and request an advanced web server certificate based on the CSR info in the keyring, or submit this to your 3rd party certificate provider.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ucsmcert3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Once you paste the completed certificate in the script will finish executing, and will input the certificate information and set UCSM to use the new certificate. (You will be disconnected and have to reconnect.)&lt;/li&gt;
+  &lt;li&gt;You can verify the certificate information by logging back in and selecting the Certificate Details button on the keyring.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ucsmcert4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;hope-this-helps-anyone-else-out-wanted-to-automate-certificate-replacement-on-cisco-ucs&quot;&gt;&lt;strong&gt;&lt;em&gt;Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-ucs-certificates/&quot;&gt;Using UCS PowerTool To Configure UCS Certificates&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using CLI to Manage DVS Host Uplinks]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/using-cli-to-manage-dvs-host-uplinks/" />
+  <id>/vmware/using-cli-to-manage-dvs-host-uplinks</id>
+  <published>2015-11-30T00:00:00-05:00</published>
+  <updated>2015-11-30T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.&lt;/p&gt;
+
+&lt;p&gt;To view your current dvs configuration you can run &lt;strong&gt;esxcfg-vswitch -l&lt;/strong&gt;. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
+dvSwitch         256         3           256               1500    vmnic0,vmnic1
+
+  DVPort ID           In Use      Client
+  0                   1           vmnic0
+  1                   1           vmnic1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To &lt;strong&gt;REMOVE&lt;/strong&gt; an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To &lt;strong&gt;ADD&lt;/strong&gt; an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -P vmnic1 -V 1 dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/using-cli-to-manage-dvs-host-uplinks/&quot;&gt;Using CLI to Manage DVS Host Uplinks&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Installing Host VIB's Using PowerCLI]]></title>
+  <link rel="alternate" type="text/html" href="/powercli/installing-host-vibs-using-powercli/" />
+  <id>/powercli/installing-host-vibs-using-powercli</id>
+  <published>2015-11-30T00:00:00-05:00</published>
+  <updated>2015-11-30T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Normally when i need to install and update a host VIB I use Update Manager. However there is currently a &lt;a href=&quot;https://tools.cisco.com/bugsearch/bug/CSCuw47512/&quot;&gt;bug&lt;/a&gt; with Cisco’s latest enic/fnic drivers that wont let you install them via UM.&lt;/p&gt;
+
+&lt;p&gt;I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember &lt;a href=&quot;http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/&quot;&gt;Brian Graf’s Host Client Install Fling&lt;/a&gt; and borrowed some of the code to come up with the below script.&lt;/p&gt;
+
+&lt;p&gt;All you need to do is input your cluster and specify what VIB’s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB’s you want to install.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# Define Variables
+$Cluster = &amp;quot;Cluster&amp;quot;
+$VIBPATH1 = &amp;quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;
+$VIBPATH2 = &amp;quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;
+
+
+# Get each host in specified cluster that meets criteria
+Get-VMhost -Location $Cluster | where { $_.PowerState -eq &amp;quot;PoweredOn&amp;quot; -and $_.ConnectionState -eq &amp;quot;Connected&amp;quot; } | foreach {
+
+    Write-host &amp;quot;Preparing $($_.Name) for ESXCLI&amp;quot; -ForegroundColor Yellow
+
+    $ESXCLI = Get-EsxCli -VMHost $_
+
+    # Install VIBs
+    Write-host &amp;quot;Installing VIB on $($_.Name)&amp;quot; -ForegroundColor Yellow
+    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
+    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
+
+    # Verify VIB installed successfully
+    if ($action.Message -eq &amp;quot;Operation finished successfully.&amp;quot;){Write-host &amp;quot;Action Completed successfully on $($_.Name)&amp;quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+    if ($action2.Message -eq &amp;quot;Operation finished successfully.&amp;quot;){Write-host &amp;quot;Action Completed successfully on $($_.Name)&amp;quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Hope this helps anyone else out wanting to automate vib installation using PowerCLI.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/powercli/installing-host-vibs-using-powercli/&quot;&gt;Installing Host VIB&#39;s Using PowerCLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Configuring Multiple UCS VLAN's]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/configuring-multiple-ucs-vlans/" />
+  <id>/cisco/configuring-multiple-ucs-vlans</id>
+  <published>2015-11-23T00:00:00-05:00</published>
+  <updated>2015-11-23T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.&lt;/p&gt;
+
+&lt;p&gt;Since currently Cisco UCS does not allow selecting multiple VLAN’s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.&lt;/p&gt;
+
+&lt;p&gt;The script can be found &lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
+# @davidstamen
+# http://davidstamen.com
+
+#Define Variables
+$cred = Get-Credential
+$ucs = &amp;quot;ucs01&amp;quot;
+$startvlan = &amp;quot;100&amp;quot;
+$endvlan = &amp;quot;150&amp;quot;
+$vnictemplate = &amp;quot;vnic-template&amp;quot;
+$vlangroup = &amp;quot;vlan-group&amp;quot;
+
+#Connect to UCS
+Connect-UCS $ucs -credential $cred
+
+#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
+for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &amp;quot;$i&amp;quot;}
+
+#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
+for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &amp;quot;$i&amp;quot;}
+Disconnect-UCS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You now are done! In my case I had to add 500 VLAN’s, so this script saved me quite a bit of time.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/configuring-multiple-ucs-vlans/&quot;&gt;Configuring Multiple UCS VLAN&#39;s&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 23, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Disconnected vNIC's?]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/disconnected-vnics/" />
+  <id>/vmware/disconnected-vnics</id>
+  <published>2015-11-18T00:00:00-05:00</published>
+  <updated>2015-11-18T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Ever wonder why a VM isn’t on the network?&lt;/p&gt;
+
+&lt;p&gt;I was working on deploying some test VM’s and for some reason all the VM’s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.&lt;/p&gt;
+
+&lt;p&gt;I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Voila! You are done.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/disconnected-vnics/&quot;&gt;Disconnected vNIC&#39;s?&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 18, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Reusing Horizon View Desktop Names]]></title>
+  <link rel="alternate" type="text/html" href="/horizon%20view/reusing-horizon-view-desktop-names/" />
+  <id>/horizon%20view/reusing-horizon-view-desktop-names</id>
+  <published>2015-11-11T00:00:00-05:00</published>
+  <updated>2015-11-11T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Have you ever worked with a Horizon View pool with 10 VM’s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.&lt;/p&gt;
+
+&lt;p&gt;First you will need to connect to the ADAM database on one of your servers. Use &lt;a href=&quot;http://kb.vmware.com/kb/2012377&quot;&gt;KB2012377&lt;/a&gt; for instructions.&lt;/p&gt;
+
+&lt;p&gt;To connect to the View ADAM database:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Log in to one of the View Connection Servers as Domain Administrator.&lt;/li&gt;
+  &lt;li&gt;Click Start &amp;gt; Administrative Tools &amp;gt; ADSI Edit.&lt;/li&gt;
+  &lt;li&gt;In the console window, right-click ADSI Edit and click Connect to.&lt;/li&gt;
+  &lt;li&gt;In the Name field type:
+    &lt;ul&gt;
+      &lt;li&gt;View ADAM Database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select Select or type a Distinguished Name or Naming Context.&lt;/li&gt;
+  &lt;li&gt;In the field below Select or type a Distinguished Name or Naming Context, type:
+    &lt;ul&gt;
+      &lt;li&gt;dc=vdi,dc=vmware,dc=int&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select Select or type a domain or server.&lt;/li&gt;
+  &lt;li&gt;In the field below Select or type a domain or server, type:
+    &lt;ul&gt;
+      &lt;li&gt;localhost:389&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Click OK.&lt;/li&gt;
+  &lt;li&gt;Click View ADAM Database [localhost:389] to expand.&lt;/li&gt;
+  &lt;li&gt;Click DC=vdi,dc=vmware,dc=int to expand.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/viewadamconnectionsettings.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now perform the following steps to set the pool to reuse the VM Names&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Expand dc=vdi,dc=vmware,dc=int&lt;/li&gt;
+  &lt;li&gt;Expand OU=Server Groups&lt;/li&gt;
+  &lt;li&gt;Double Click CN=(Pool Name)&lt;/li&gt;
+  &lt;li&gt;Find the entry “pae-VmNameReuseAllowed”
+    &lt;ul&gt;
+      &lt;li&gt;Open this entry and change the value to 1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/viewreuseattribute.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The next VM should now start reusing the old VM names that were in the pool.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/horizon%20view/reusing-horizon-view-desktop-names/&quot;&gt;Reusing Horizon View Desktop Names&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Section 9: Configure and Administer vSphere Availability Solutions]]></title>
+  <link rel="alternate" type="text/html" href="/certification/section-9-configure-and-administer-vsphere-availability-solutions/" />
+  <id>/certification/section-9-configure-and-administer-vsphere-availability-solutions</id>
+  <published>2015-10-16T00:00:00-04:00</published>
+  <updated>2015-10-16T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Section 9 of the VCP6-DCV blueprint&lt;/p&gt;
+
+&lt;h4 id=&quot;objective-91-configure-advanced-vsphere-ha-features&quot;&gt;Objective 9.1: Configure Advanced vSphere HA Features&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Modify vSphere HA advanced cluster settings&lt;/li&gt;
+  &lt;li&gt;Configure a network for use with HA heartbeats&lt;/li&gt;
+  &lt;li&gt;Apply an admission control policy for HA&lt;/li&gt;
+  &lt;li&gt;Enable/disable advanced vSphere HA settings&lt;/li&gt;
+  &lt;li&gt;Configure different heartbeat datastores for an HA cluster&lt;/li&gt;
+  &lt;li&gt;Apply virtual machine monitoring for a cluster&lt;/li&gt;
+  &lt;li&gt;Configure Virtual Machine Component Protection (VMCP) settings&lt;/li&gt;
+  &lt;li&gt;Implement vSphere HA on a Virtual SAN cluster&lt;/li&gt;
+  &lt;li&gt;Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-92-configure-advanced-vsphere-drs-features&quot;&gt;Objective 9.2: Configure Advanced vSphere DRS Features&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Configure VM-Host affinity/anti-affinity rules&lt;/li&gt;
+  &lt;li&gt;Configure VM-VM affinity/anti-affinity rules&lt;/li&gt;
+  &lt;li&gt;Add/remove Host DRS Group&lt;/li&gt;
+  &lt;li&gt;Add/remove virtual machine DRS Group&lt;/li&gt;
+  &lt;li&gt;Enable/disable Distributed Resource Scheduler (DRS) affinity rules&lt;/li&gt;
+  &lt;li&gt;Configure the proper Distributed Resource Scheduler (DRS) automation level based on a set of business requirements&lt;/li&gt;
+  &lt;li&gt;Explain how DRS affinity rules effect virtual machine placement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;check-out-another-blueprint-section&quot;&gt;Check out another blueprint section&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-1-configure-and-administer-vsphere-6x-security/&quot;&gt;Section 1: Configure and Administer vSphere 6.x Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/&quot;&gt;Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/&quot;&gt;Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-4-upgrade-a-vsphere-deployment-to-6x/&quot;&gt;Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-5-administer-and-manage-vsphere-6x-resources/&quot;&gt;Section 5: Administer and Manage vSphere 6.x Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-6-backup-and-recover-a-vsphere-deployment/&quot;&gt;Section 6: Backup and Recover a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-7-troubleshoot-a-vsphere-deployment/&quot;&gt;Section 7: Troubleshoot a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-10-administer-and-manage-vsphere-virtual-machines/&quot;&gt;Section 10: Administer and Manage vSphere Virtual Machines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on October 16, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Section 8: Deploy and Consolidate vSphere Data Center]]></title>
+  <link rel="alternate" type="text/html" href="/certification/section-8-deploy-and-consolidate-vsphere-data-center/" />
+  <id>/certification/section-8-deploy-and-consolidate-vsphere-data-center</id>
+  <published>2015-10-16T00:00:00-04:00</published>
+  <updated>2015-10-16T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Section 8 of the VCP6-DCV blueprint&lt;/p&gt;
+
+&lt;h4 id=&quot;objective-81-deploy-esxi-hosts-using-autodeploy&quot;&gt;Objective 8.1: Deploy ESXi Hosts Using Autodeploy&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Describe the components and architecture of an Auto Deploy environment&lt;/li&gt;
+  &lt;li&gt;Use Auto Deploy Image Builder and PowerCLI scripts&lt;/li&gt;
+  &lt;li&gt;Implement Host Profiles with an Auto Deploy of an ESXi Host&lt;/li&gt;
+  &lt;li&gt;Install and configure Auto Deploy&lt;/li&gt;
+  &lt;li&gt;Understand PowerCLI cmdlets for Auto Deploy&lt;/li&gt;
+  &lt;li&gt;Deploy multiple ESXi Hosts using Auto Deploy&lt;/li&gt;
+  &lt;li&gt;Given a scenario, explain the Auto Deploy deployment model needed to meet a business requirement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-82-customize-host-profile-settings&quot;&gt;Objective 8.2: Customize Host Profile Settings&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Edit answer file to customize ESXi Host settings&lt;/li&gt;
+  &lt;li&gt;Modify and apply a storage path selection plugin (PSP) to a device using host profiles&lt;/li&gt;
+  &lt;li&gt;Modify and apply switch configurations across multiple hosts using a Host Profile&lt;/li&gt;
+  &lt;li&gt;Create/Edit/Remove a Host Profile from an ESXi Host&lt;/li&gt;
+  &lt;li&gt;Import/Export a Host Profile&lt;/li&gt;
+  &lt;li&gt;Attach and apply a Host Profile to ESXi Hosts in a cluster&lt;/li&gt;
+  &lt;li&gt;Perform compliance scanning and remediation of an ESXi Hosts and clusters using Host Profiles&lt;/li&gt;
+  &lt;li&gt;Enable or disable Host Profile components&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-83-consolidate-physical-workloads-using-vmware-converter&quot;&gt;Objective 8.3: Consolidate Physical Workloads using VMware Converter&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Install vCenter Converter standalone instance&lt;/li&gt;
+  &lt;li&gt;Convert physical workloads using vCenter Converter&lt;/li&gt;
+  &lt;li&gt;Modify server resources during conversion&lt;/li&gt;
+  &lt;li&gt;Interpret and correct errors during conversion&lt;/li&gt;
+  &lt;li&gt;Deploy a physical host as a virtual machine using vCenter Converter&lt;/li&gt;
+  &lt;li&gt;Collect diagnostic information during conversion operation&lt;/li&gt;
+  &lt;li&gt;Resize partitions during the conversion process&lt;/li&gt;
+  &lt;li&gt;Given a scenario, determine which virtual disk format to use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;check-out-another-blueprint-section&quot;&gt;Check out another blueprint section&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-1-configure-and-administer-vsphere-6x-security/&quot;&gt;Section 1: Configure and Administer vSphere 6.x Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/&quot;&gt;Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/&quot;&gt;Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-4-upgrade-a-vsphere-deployment-to-6x/&quot;&gt;Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-5-administer-and-manage-vsphere-6x-resources/&quot;&gt;Section 5: Administer and Manage vSphere 6.x Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-6-backup-and-recover-a-vsphere-deployment/&quot;&gt;Section 6: Backup and Recover a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-7-troubleshoot-a-vsphere-deployment/&quot;&gt;Section 7: Troubleshoot a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/certification/section-10-administer-and-manage-vsphere-virtual-machines/&quot;&gt;Section 10: Administer and Manage vSphere Virtual Machines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on October 16, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>

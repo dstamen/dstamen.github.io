@@ -1,0 +1,355 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Using UCS PowerTool To Configure UCS Certificates &#8211; davidstamen.com</title>
+<meta name="description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
+
+">
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Using UCS PowerTool To Configure UCS Certificates">
+<meta name="twitter:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using UCS PowerTool To Configure UCS Certificates">
+<meta property="og:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
+
+">
+<meta property="og:url" content="/cisco/using-ucs-powertool-to-configure-ucs-certificates/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/cisco/using-ucs-powertool-to-configure-ucs-certificates/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/cisco/using-ucs-powertool-to-configure-ucs-certificates/" rel="bookmark" title="Using UCS PowerTool To Configure UCS Certificates">Using UCS PowerTool To Configure UCS Certificates</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+<ul>
+  <li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+<ul>
+  <li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1">AddUCSCert.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
+$UCS = &quot;FQDNofUCS&quot; #Used to Connect to UCSM via PowerTool
+$TrustPoint = &quot;TP-Name&quot; #Name of TrustPoint, AKA Root CA
+$KeyRing = &quot;KeyRingName&quot; #name of KeyRing. Stores Certificate Information
+$Modulus = &quot;mod2048&quot; #2048 bit key this can be 1024,2048,4096, etc
+$CertDNS = &quot;FQDNofUCS&quot; #FQDN for Cert Request
+$CertLocality = &quot;City&quot; #City for Cert Request
+$CertState = &quot;State&quot; #State for Cert Request
+$CertCountry = &quot;US&quot; #Country for Cert Request
+$CertOrgName = &quot;Org&quot; #OrgName for Cert Request
+$CertEmail = &quot;me@lab.com&quot; #Email for Cert Request
+$CertSubjName = &quot;FQDNofUCS&quot; #FQDN for Cert Request
+$CertIP = &quot;FI-VIP-IP&quot; #FI-VIP IP for Cert Request
+$CertIpA = &quot;FI-A-IP&quot; #FI-A IP for Cert Request
+$CertIpB = &quot;FI-B-IP&quot; #FI-B IP for Cert Request
+$TPChain = &quot;-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR ROOTCA
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR SUB CA
+-----END CERTIFICATE-----&quot; #Delete Second part if not using a Root/Sub Scenario.</code></pre></div>
+
+<p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
+
+<ul>
+  <li>If using a Microsoft CA navigate to http://caroot/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
+  <li>If using a Microsoft Sub CA as well, navigate to http://casub/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
+</ul>
+
+<p><img src="/images/downloadcacert.png" alt="" /></p>
+
+<ul>
+  <li>If using a Non-Microsoft CA, contact your certificate provider for their root certificate and following the remaining steps.</li>
+  <li>Open Certificate using a text editor and you should have it in a standard format, paste that info in the variable field. If not using a Sub, Delete the second part.</li>
+</ul>
+
+<h4 id="executing-the-script"><strong><em>Executing the Script</em></strong></h4>
+<ul>
+  <li>Navigate to the directory using PowerShell and run .\AddUCSCert.ps1</li>
+  <li>If you look inside UCSM you will see the script create the TrustPoint and KeyRing for the new certificate</li>
+</ul>
+
+<p><img src="/images/ucsmcert1.png" alt="" /></p>
+
+<ul>
+  <li>If you navigate to the KeyRing you will see the completed certificate Request.</li>
+</ul>
+
+<p><img src="/images/ucsmcert2.png" alt="" /></p>
+
+<ul>
+  <li>You will also see a popup, asking you for the completed certificate information. From here you will either submit it to your microsoft ca at htt://ca/certsrv and request an advanced web server certificate based on the CSR info in the keyring, or submit this to your 3rd party certificate provider.</li>
+</ul>
+
+<p><img src="/images/ucsmcert3.png" alt="" /></p>
+
+<ul>
+  <li>Once you paste the completed certificate in the script will finish executing, and will input the certificate information and set UCSM to use the new certificate. (You will be disconnected and have to reconnect.)</li>
+  <li>You can verify the certificate information by logging back in and selecting the Certificate Details button on the keyring.</li>
+</ul>
+
+<p><img src="/images/ucsmcert4.png" alt="" /></p>
+
+<h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-certificate-replacement-on-cisco-ucs"><strong><em>Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.</em></strong></h4>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/cisco/using-ucs-powertool-to-configure-ucs-certificates/&text=Using UCS PowerTool To Configure UCS Certificates&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/cisco/using-ucs-powertool-to-configure-ucs-certificates/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/cisco/using-ucs-powertool-to-configure-ucs-certificates/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/cisco/using-ucs-powertool-to-configure-ucs-certificates/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/cisco/using-ucs-powertool-to-configure-ucs-certificates/&title=Using UCS PowerTool To Configure UCS Certificates" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>Using UCS PowerTool To Configure UCS Certificates</strong> was published on <time datetime="2015-12-10T00:00:00-05:00">December 10, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
+    
+      <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
+    
+      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>

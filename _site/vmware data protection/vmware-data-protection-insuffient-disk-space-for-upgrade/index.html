@@ -1,0 +1,304 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>vSphere Data Protection - Insufficient Disk Space for Upgrade &#8211; davidstamen.com</title>
+<meta name="description" content="As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.
+
+">
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="vSphere Data Protection - Insufficient Disk Space for Upgrade">
+<meta name="twitter:description" content="As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vSphere Data Protection - Insufficient Disk Space for Upgrade">
+<meta property="og:description" content="As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.
+
+">
+<meta property="og:url" content="/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/" rel="bookmark" title="vSphere Data Protection - Insufficient Disk Space for Upgrade">vSphere Data Protection - Insufficient Disk Space for Upgrade</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.</p>
+
+<p>“Please make sure you have at least 20GB for repo, 10GB for var, and 1GB for root partition.”</p>
+
+<p><img src="/images/vdpa-diskspace1.jpg" alt="" /></p>
+
+<p>Upon further research there seems to be an issue from 5.5.1 and 5.5.5 appliances with the /space partition filling up due to PostGres events. The issue can be resolving by installing the following VDP patch (vdp_patch-5.5.5.190.)</p>
+
+<p><a href="http://kb.vmware.com/kb/2067635">KB2067635</a></p>
+
+<h1 id="the-installation-is-pretty-straightforward">The installation is pretty straightforward.</h1>
+<ol>
+  <li>Download the patch
+    <ul>
+      <li><a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDP55_5&amp;productId=351&amp;rPId=4857">VDP</a></li>
+      <li><a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDPADV55_5&amp;productId=375&amp;rPId=4606">VDP-Advanced</a></li>
+    </ul>
+  </li>
+  <li>Copy the patch file to the VDP appliance and place it in the /root directory using filezilla/winscp</li>
+  <li>Using an SSH session or the console of the VDP appliance, log in as root and run these commands:
+    <ul>
+      <li>chmod +x vdp_patch-5.5.5.190.run</li>
+      <li>sh vdp_patch-5.5.5.190.run</li>
+    </ul>
+  </li>
+</ol>
+
+<p>After the installation is complete, verify all the services are running and you are good to go.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/&text=vSphere Data Protection - Insufficient Disk Space for Upgrade&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/vmware%20data%20protection/vmware-data-protection-insuffient-disk-space-for-upgrade/&title=vSphere Data Protection - Insufficient Disk Space for Upgrade" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>vSphere Data Protection - Insufficient Disk Space for Upgrade</strong> was published on <time datetime="2014-09-22T00:00:00-04:00">September 22, 2014</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
+    
+      <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
+    
+      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>

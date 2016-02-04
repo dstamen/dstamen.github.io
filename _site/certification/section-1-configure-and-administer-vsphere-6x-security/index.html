@@ -1,0 +1,705 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Section 1: Configure and Administer vSphere 6.x Security &#8211; davidstamen.com</title>
+<meta name="description" content="Section 1 of the VCP6-DCV blueprint
+
+">
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Section 1: Configure and Administer vSphere 6.x Security">
+<meta name="twitter:description" content="Section 1 of the VCP6-DCV blueprint
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Section 1: Configure and Administer vSphere 6.x Security">
+<meta property="og:description" content="Section 1 of the VCP6-DCV blueprint
+
+">
+<meta property="og:url" content="/certification/section-1-configure-and-administer-vsphere-6x-security/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/certification/section-1-configure-and-administer-vsphere-6x-security/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/certification/section-1-configure-and-administer-vsphere-6x-security/" rel="bookmark" title="Section 1: Configure and Administer vSphere 6.x Security">Section 1: Configure and Administer vSphere 6.x Security</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Section 1 of the VCP6-DCV blueprint</p>
+
+<h4 id="objective-11-configure-and-administer-role-based-access-control">Objective 1.1: Configure and Administer Role-based Access Control</h4>
+<ul>
+  <li>Compare and contrast propagated and explicit permission assignments
+    <ul>
+      <li>An example of a propagated permission:
+        <ul>
+          <li>Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</li>
+        </ul>
+      </li>
+      <li>An example of an explicit permission:
+        <ul>
+          <li>User1  is assigned Permission to only see and modify VM1</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>View/Sort/Export user and group lists
+    <ul>
+      <li>You can view, sort, and export lists of a host’s local users to a file that is in HTML, XML, Microsoft Excel, or CSV format.</li>
+    </ul>
+  </li>
+  <li>Add/Modify/Remove permissions for users and groups on vCenter Server inventory objects
+    <ul>
+      <li>Add a Permission to an Inventory Object
+        <ul>
+          <li>Browse to the object for which you want to assign permissions in the vSphere Web Client object navigator.</li>
+          <li>Click the Manage tab and select Permissions.</li>
+          <li>Click the Add icon, and click Add.</li>
+          <li>Identify the user or group that will have the privileges defined by the selected role.
+            <ul>
+              <li>From the Domain drop-down menu, select the domain where the user or group is located. Type a name in the Search box or select a name from the list.</li>
+              <li>Select the user or group and click Add.</li>
+              <li>Click OK.</li>
+            </ul>
+          </li>
+          <li>Select a role from the Assigned Role drop-down menu.</li>
+          <li>(Optional) To limit propagation, deselect the Propagate to Child Objects check box.</li>
+          <li>Click OK to add the permission.</li>
+        </ul>
+      </li>
+      <li>Change Permissions
+        <ul>
+          <li>Browse to the object in the vSphere Web Client object navigator.</li>
+          <li>Click the Manage tab and select Permissions.</li>
+          <li>Click the line item to select the user or group and role pair.</li>
+          <li>Click Change role on permission.</li>
+          <li>Select a role for the user or group from the Assigned Role drop-down menu.</li>
+          <li>To propagate the privileges to the children of the assigned inventory object, click the Propagate check
+box and click OK.</li>
+        </ul>
+      </li>
+      <li>Remove Permissions
+        <ul>
+          <li>Browse to the object in the vSphere Web Client object navigator.</li>
+          <li>Click the Manage tab and select Permissions.</li>
+          <li>Click the appropriate line item to select the user or group and role pair.</li>
+          <li>Click Remove permission.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Determine how permissions are applied and inherited in vCenter Server
+    <ul>
+      <li>Global permissions are applied to a global root object that spans solutions, for example, both vCenter Server and vCenter Orchestrator. Use global permissions to give a user or group privileges for all objects in all object hierarchies.</li>
+    </ul>
+  </li>
+  <li>Create/Clone/Edit vCenter Server Roles
+    <ul>
+      <li>Create a Custom Role
+        <ul>
+          <li>Log in to vCenter Server with the vSphere Web Client.</li>
+          <li>Select Home, click Administration, and click Roles.</li>
+          <li>Click the Create role action (+) button.</li>
+          <li>Type a name for the new role.</li>
+          <li>Select privileges for the role and click OK.</li>
+        </ul>
+      </li>
+      <li>Clone a Role
+        <ul>
+          <li>Log in to vCenter Server with the vSphere Web Client.</li>
+          <li>Select Home, click Administration, and click Roles.</li>
+          <li>Select a role, and click the Clone role action icon.</li>
+          <li>Type a name for the cloned role.</li>
+          <li>Select or deselect privileges for the role and click OK.</li>
+        </ul>
+      </li>
+      <li>Edit a Role
+        <ul>
+          <li>Log in to vCenter Server with the vSphere Web Client.</li>
+          <li>Select Home, click Administration, and click Roles.</li>
+          <li>Select a role and click the Edit role action button.</li>
+          <li>Select or deselect privileges for the role and click OK.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Configure VMware Directory Service
+    <ul>
+      <li>Select a host in the vSphere Client inventory, and click the Configuration tab.</li>
+      <li>Under Software, click Authentication Services.</li>
+      <li>Click Properties.</li>
+      <li>In the User Directory Services dialog box, select the directory service from the drop-down menu.</li>
+      <li>Enter a domain.</li>
+      <li>Click Join Domain.</li>
+      <li>Enter the user name and password of a directory service user who has permissions to join the host to the domain, and click OK.</li>
+      <li>Click OK to close the Directory Services Configuration dialog box.</li>
+    </ul>
+  </li>
+  <li>Apply a role to a User/Group and to an object or group of objects
+    <ul>
+      <li>Identify the user or group that will have the privileges defined by the selected role.
+        <ul>
+          <li>From the Domain drop-down menu, select the domain where the user or group is located.</li>
+          <li>Type a name in the Search box or select a name from the list.</li>
+          <li>Select the user or group and click Add.</li>
+          <li>Click OK.</li>
+        </ul>
+      </li>
+      <li>Select a role from the Assigned Role drop-down menu.</li>
+      <li>Leave the Propagate to children check box selected in most cases.</li>
+      <li>Click OK.</li>
+    </ul>
+  </li>
+  <li>Change permission validation settings
+    <ul>
+      <li>vCenter Server periodically validates its user and group lists against the users and groups in the user directory. It then removes users or groups that no longer exist in the domain. You can disable validation or change the interval between validations. If you have domains with thousands of users or groups, or if searches take a long time to complete, consider adjusting the search settings.
+        <ul>
+          <li>Browse to the vCenter Server system in the vSphere Web Client object navigator.</li>
+          <li>Select the Manage tab and click Settings.</li>
+          <li>Click General and click Edit.</li>
+          <li>Select User directory.</li>
+          <li>Change the values as needed.</li>
+          <li>Click OK.</li>
+        </ul>
+
+        <p><img src="/images/vcp6dcvpermissionvalidation.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Determine the appropriate set of privileges for common tasks in vCenter Server
+    <ul>
+      <li>Many tasks require permissions on more than one object in the inventory. You can review the privileges that are required to perform the tasks and, where applicable, the appropriate sample roles.</li>
+    </ul>
+
+    <p><img src="/images/vcp6dcvpermissioncommon1.png" alt="" />
+<img src="/images/vcp6dcvpermissioncommon2.png" alt="" /></p>
+  </li>
+  <li>Compare and contrast default system/sample roles
+    <ul>
+      <li>System roles
+        <ul>
+          <li>Cannot be modified or deleted.</li>
+        </ul>
+      </li>
+      <li>Sample roles
+        <ul>
+          <li>Apply to different user communities or restrict access for add-on tools. Several predefined user roles are included with vCenter Server and with ESXi systems. You can create new roles using these predefined user roles as a starting point.</li>
+        </ul>
+
+        <p><img src="/images/vcp6dcvsamplerole.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Determine the correct permissions needed to integrate vCenter Server with other VMware products
+    <ul>
+      <li>Global permissions are applied to a global root object that spans solutions, for example, both vCenter Server and vCenter Orchestrator. Use global permissions to give a user or group privileges for all objects in all object hierarchies.</li>
+      <li>Each solution has a root object in its own object hierarchy. The global root object acts as a parent object to each solution object. You can assign global permissions to users or groups, and decide on the role for each user or group. The role determines the set of privileges. You can assign a predefined role or create custom roles. It is important to distinguish between vCenter Server permissions and global permissions.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="objective-12-secure-esxi-vcenter-server-and-vsphere-virtual-machines">Objective 1.2: Secure ESXi, vCenter Server, and vSphere Virtual Machines</h4>
+<ul>
+  <li>Harden virtual machine access
+    <ul>
+      <li>Control VMware Tools installation
+        <ul>
+          <li>VM.disable-VMtools-autoinstall
+            <ul>
+              <li>Parameter: isolation.tools.autoInstall.disable</li>
+              <li>Value: TRUE</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Control VM data access</li>
+      <li>Configure virtual machine security policies
+        <ul>
+          <li>The guest operating system that runs in the virtual machine is subject to the same security risks as a physical system. Secure virtual machines as you would secure physical machines.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Harden a virtual machine against Denial-of-Service attacks
+    <ul>
+      <li>Control VM-VM communications</li>
+      <li>Control VM device connections</li>
+      <li>Configure network security policies
+        <ul>
+          <li>Networking security policies determine how the adapter filters inbound and outbound frames.</li>
+          <li>3 types are as follows
+            <ul>
+              <li>Promiscuous Mode
+                <ul>
+                  <li>Reject — Placing a guest adapter in promiscuous mode has no effect on which frames are received by the adapter.</li>
+                  <li>Accept — Placing a guest adapter in promiscuous mode causes it to detect all frames passed on the vSphere standard switch that are allowed under the VLAN policy for the port group that the adapter is connected to.</li>
+                </ul>
+              </li>
+              <li>Mac Address Changes
+                <ul>
+                  <li>Reject — If you set the MAC Address Changes to Reject and the guest operating system changes the MAC address of the adapter to anything other than what is in the .vmx configuration file, all inbound frames are dropped.</li>
+                  <li>Accept — Changing the MAC address from the Guest OS has the intended effect: frames to the new MAC address are received.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Forged Transmits
+            <ul>
+              <li>Reject — Any outbound frame with a source MAC address that is different from the one currently set on the adapter are dropped.</li>
+              <li>Accept — No filtering is performed and all outbound frames are passed.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Harden ESXi Hosts
+    <ul>
+      <li>Enable/Configure/Disable services in the ESXi firewall
+        <ul>
+          <li>You can configure firewall properties to allow or deny access for a service or management agent.</li>
+          <li>This can currently be set via the vSphere Web Client, vSphere client or command line.
+            <ul>
+              <li>Select a host from the inventory view and select configuration and then Security Profile.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Change default account access</li>
+      <li>Add an ESXi Host to a directory service
+        <ul>
+          <li>You can configure a host to use a directory service such as Active Directory to manage users and groups.</li>
+          <li>When you add an ESXi host to Active Directory all user and group accounts are assigned full administrative access to the host if the group ESX Admins exists.</li>
+        </ul>
+      </li>
+      <li>Apply permissions to ESXi Hosts using Host Profiles
+        <ul>
+          <li>When you join a host to an Active Directory domain, you must define roles on the host for a user or group in that domain. Otherwise, the host is not accessible to Active Directory users or groups. You can use host profiles to set a required role for a user or group and to apply the change to one or more hosts.</li>
+          <li>In the vSphere client select Management and then Host Profiles you can either use an existing or new host profile.</li>
+          <li>Expand the profile tree and select Security Configuration, Permission Rules, Add Profile, Permission and then within configuration details use require a permission rule and add the appropriate settings. You can then select propagate permission and select ok.</li>
+        </ul>
+      </li>
+      <li>Enable Lockdown Mode
+        <ul>
+          <li>Select a host from the inventory view and select configuration and then Security Profile. Click edit next to lockdown mode and select Enable.</li>
+        </ul>
+      </li>
+      <li>Control access to hosts (DCUI/Shell/SSH/MOB)
+        <ul>
+          <li>By default, the ESXi Shell and SSH services are not running and only the root user can log in to the Direct Console User Interface (DCUI). If you decide to enable ESXi or SSH access, you can set timeouts to limit the risk of unauthorized access.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Harden vCenter Server
+    <ul>
+      <li>Control datastore browser access
+        <ul>
+          <li>You can use the <strong>Datastore.Low level file operations</strong> priveledge to restrict access to the database browser.
+            <ul>
+              <li>Allows performing read, write, delete, and rename operations in the datastore browser.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Create/Manage vCenter Server Security Certificates
+        <ul>
+          <li>The vSphere Certificate Manager utility allows you to perform most certificate management tasks interactively from the command line. vSphere Certificate Manager prompts you for the task to perform, for certificate locations and other information as needed, and then stops and starts services and replaces certificates for you.</li>
+        </ul>
+      </li>
+      <li>Control MOB access
+        <ul>
+          <li>Use the Managed Object Browser only for debugging, and ensure that it is disabled in production systems.
+            <ul>
+              <li>Select the host in the vSphere Web Client and go to Advanced System Settings.</li>
+              <li>Check the value of <strong>Config.HostAgent.plugins.solo.enableMob</strong> and change it as appropriate.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Change default account access
+        <ul>
+          <li>Because many appliances do not include default user accounts, the root account may still be able to directly login via SSH. To meet the compliance standards for non- repudiation, the SSH server on all hardened appliances comes preconfigured with the <strong>AllowGroups wheel</strong> entry to restrict ssh access to the secondary group wheel.</li>
+        </ul>
+      </li>
+      <li>Restrict administrative privileges
+        <ul>
+          <li>Many tasks can be performed by the root user by default. Instead of allowing administrators to log in to the ESXi host using the root user account, you can apply different host configuration privileges to different named users from the vCenter Server permissions management interface. You can create a custom roles, assign privileges to the role, and associate the role with a named user and an ESXi host object from the vSphere Web Client.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Understand the implications of securing a vSphere environment
+    <ul>
+      <li>Security hardening for a typical Linux system potentially requires dozens of steps, such as changing file permissions, disabling services, and managing user privileges; ESXi requires none of these steps, most of which either are impossible to perform or have no effect. The primary measures required for hardening an ESXi host involve securing and properly managing the interfaces with the system that are used for configuration, management, and troubleshooting.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="objective-13-enable-sso-and-active-directory-integration">Objective 1.3: Enable SSO and Active Directory Integration</h4>
+<ul>
+  <li>Describe SSO architecture and components
+    <ul>
+      <li>vCenter Single Sign-On allows vSphere components to communicate with each other through a secure token mechanism instead of requiring users to authenticate separately with each component.</li>
+      <li>Below are some examples of the SSO architecture for human and solution users</li>
+    </ul>
+
+    <p><img src="/images/vcp6dcvssoarchitecture1.png" alt="" />
+<img src="/images/vcp6dcvssoarchitecture2.png" alt="" /></p>
+  </li>
+  <li>Differentiate available authentication methods with VMware vCenter
+    <ul>
+      <li>vCenter Single Sign-On uses a combination of STS (Security Token Service), SSL for secure traffic, and authentication of human users through Active Directory or OpenLDAP and of solution users through certificates.</li>
+    </ul>
+  </li>
+  <li>Perform a multi-site SSO installation
+    <ul>
+      <li>In this configuration each site is independent with PSC replication between sites. The vCenter Server is aware of the site topologies and use the local PSC under normal circumstances. Customers are able to seamlessly move the vCenter Servers between PSCs when necessary. This topology allows for Enhanced Linked Mode (ELM) which is facilitated by the PSC. Enhanced Linked Mode provides for a single point of management for all vCenter Servers in the same vSphere domain. In vSphere 6 the Windows-based and Virtual Appliance-based vCenter Servers have the same operational maximums and can belong to the same linked mode configuration. The configuration replicates all license, global permissions, tags and roles across all sites</li>
+    </ul>
+
+    <p><img src="/images/vcp6dcvssoinstall1.png" alt="" /></p>
+  </li>
+  <li>Configure/Manage Active Directory Authentication
+    <ul>
+      <li>Active Directory authentication is configured from the Single Sign-On administration page, here you will add an additional identify source for Active Directory.</li>
+      <li>If using Microsoft Active Directory, select Active Directory (Integrated Windows Authentication). It will auto-populate the root domain in the forest. If using Open LDAP, select and configure it.</li>
+    </ul>
+  </li>
+  <li>Configure/Manage Platform Services Controller (PSC)
+    <ul>
+      <li>The PSC includes common services used across VMware vCloud® Suite. This includes VMware vCenter Single Sign-On™, licensing, and certificate management.</li>
+      <li>This is managed and configured by using the vSphere Web Client and selecting Administration and then System configuration and choosing the appropriate node.</li>
+    </ul>
+  </li>
+  <li>Configure/Manage VMware Certificate Authority (VMCA)
+    <ul>
+      <li>VMCA is included in each Platform Services Controller and in each embedded deployment. VMCA provisions each node, each vCenter Server solution user, and each ESXi host with a certificate that is signed by VMCA as the certificate authority. vCenter Server solution users are groups of vCenter Server services. See vSphere Security for a list of solution users. You can replace the default certificates. For vCenter Server components, you can use a set of command-line tools included in your installation. You have several options.</li>
+      <li>You can either use the VMCA as a certificate authority or configure it to be an intermediate CA.</li>
+    </ul>
+  </li>
+  <li>Enable/Disable Single Sign-On (SSO) Users
+    <ul>
+      <li>You configure vCenter Single Sign-On from the vSphere Web Client. To configure vCenter Single Sign-On, you must have vCenter Single Sign-On administrator privileges. Having vCenter Single Sign-On administrator privileges is different from having the Administrator role on vCenter Server or ESXi. By default, only the user administrator-vsphere.local has administrator privileges on the vCenter Single SignOn server in a new installation Identify available authentication methods with VMware vCenter</li>
+    </ul>
+  </li>
+  <li>Upgrade a single/multi-site SSO installation</li>
+  <li>Configure SSO policies
+    <ul>
+      <li>Password Policy: You can configure the following parameters:
+        <ul>
+          <li>Description – Password policy description. Required.</li>
+          <li>Maximum lifetime – Maximum number of days that a password can exist before it has to be changed.</li>
+          <li>Restrict re-use – Number of the user’s previous passwords that cannot be set again.</li>
+          <li>Maximum length – Maximum number of characters that are allowed in the password.</li>
+          <li>Minimum length – Minimum number of characters required in the password.</li>
+          <li>Character requirements – Minimum number of different character types required in the password.</li>
+          <li>Identical adjacent characters – Maximum number of identical adjacent characters allowed in the password.</li>
+        </ul>
+      </li>
+      <li>Lockout Policy: Specifies the condition under which a vCenter SSO account is locked when the user attempts to log in with incorrect credentials. Five login attempts and three minutes between failures are set by default. This policy also specifies the time that must elapse before the account is automatically unlocked.
+        <ul>
+          <li>Description – Description of the lockout policy. Required.</li>
+          <li>Max. number of failed login attempts – Maximum number of failed login attempts that are allowed before the account is locked.</li>
+          <li>Time interval between failures (seconds) – Time period in which failed login attempts must occur to trigger a lockout.</li>
+          <li>Unlock time (seconds) – Amount of time that the account remains locked. If you enter 0, the account must be explicitly unlocked by an administrator.</li>
+        </ul>
+      </li>
+      <li>Token Policy
+        <ul>
+          <li>Maximum token renewal count</li>
+          <li>Maximum token delegation count</li>
+          <li>Maximum bearer token lifetime</li>
+          <li>Maximum holder-of-key token lifetime</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Add/Edit/Remove SSO identity sources
+    <ul>
+      <li>Open your Web browser and navigate to https://vcenter:9443, where vcenter is the FQDN of the vCenter Server.</li>
+      <li>Log in with User name administrator@vsphere.local and the Password used during installation.</li>
+      <li>Click Administration in the left-hand Navigator pane</li>
+      <li>Click Configuration under vCenter Single Sign-On</li>
+      <li>Click Identity Sources</li>
+      <li>Click the green plus icon to Add Identity Source.</li>
+      <li>If using Microsoft Active Directory, select Active Directory (Integrated Windows Authentication). It will autopopulate the root domain in the forest. If using Open LDAP, select and configure it.</li>
+      <li>Highlight the newly added identity source. Click the Set as Default Domain icon.</li>
+      <li>Click Yes in the pop-up.</li>
+    </ul>
+  </li>
+  <li>Add an ESXi Host to an AD domain
+    <ul>
+      <li>Select a host in the vSphere Client inventory, and click the Configuration tab.</li>
+      <li>Under Software, click Authentication Services.</li>
+      <li>Click Properties.</li>
+      <li>In the User Directory Services dialog box, select the directory service from the drop-down menu.</li>
+      <li>Enter a domain.</li>
+      <li>Click Join Domain.</li>
+      <li>Enter the user name and password of a directory service user who has permissions to join the host to the domain, and click OK.</li>
+      <li>Click OK to close the Directory Services Configuration dialog box.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="check-out-another-blueprint-section">Check out another blueprint section</h2>
+<ul>
+  <li><a href="/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security</a></li>
+  <li><a href="/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking</a></li>
+  <li><a href="/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage</a></li>
+  <li><a href="/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x</a></li>
+  <li><a href="/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources</a></li>
+  <li><a href="/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment</a></li>
+  <li><a href="/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment</a></li>
+  <li><a href="/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center</a></li>
+  <li><a href="/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions</a></li>
+  <li><a href="/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines</a></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/certification/section-1-configure-and-administer-vsphere-6x-security/&text=Section 1: Configure and Administer vSphere 6.x Security&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/certification/section-1-configure-and-administer-vsphere-6x-security/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/certification/section-1-configure-and-administer-vsphere-6x-security/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/certification/section-1-configure-and-administer-vsphere-6x-security/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/certification/section-1-configure-and-administer-vsphere-6x-security/&title=Section 1: Configure and Administer vSphere 6.x Security" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>Section 1: Configure and Administer vSphere 6.x Security</strong> was published on <time datetime="2015-10-16T00:00:00-04:00">October 16, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
+    
+      <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
+    
+      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>
