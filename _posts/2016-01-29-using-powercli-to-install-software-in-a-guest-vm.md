@@ -7,13 +7,13 @@ comments: true
 ---
 I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
 
-####***Pre-Requsites***
+#### ***Pre-Requsites***
 - [VMware PowerCLI](https://www.vmware.com/support/developer/PowerCLI/)
 
-####***Link to Script***
+#### ***Link to Script***
 - [InstallVMSoftware.ps1](https://github.com/dstamen/PowerCLI/blob/master/InstallVMSoftware.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 *This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer*
@@ -65,5 +65,5 @@ Foreach ($VMName in $VMs) {
 
 {%endhighlight%}
 
-####***Execute the Script***
+#### ***Execute the Script***
 - Run .\InstallVMSoftware.ps1
