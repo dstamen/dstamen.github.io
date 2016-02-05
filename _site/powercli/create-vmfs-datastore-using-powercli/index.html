@@ -176,15 +176,15 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
 
 <h2 id="how-do-i-get-the-canonicalname-for-allocated-disks">How do i get the CanonicalName for allocated disks?</h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-SCSILun</span> <span class="n">-VMhost</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">103</span> <span class="n">-LunType</span> <span class="n">Disk</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">CanonicalName</span><span class="p">,</span><span class="n">Capacity</span></code></pre></div>
 
 <h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?</h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">New-Datastore -VMHost Host -Name Datastore -Path CanonicalName -VMFS</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">New-Datastore</span> <span class="n">-VMHost</span> <span class="n">Host</span><span class="err"> </span><span class="n">-Name</span> <span class="n">Datastore</span> <span class="n">-Path</span> <span class="n">CanonicalName</span> <span class="n">-VMFS</span></code></pre></div>
 
 <h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastorebr-">How do i rescan all the hosts in the cluster to see the new datastore?<br /></h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-Cluster -name Cluster | Get-VMhost | Get-VMHostStorage -RescanAllHBA</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-Cluster</span> <span class="n">-name</span> <span class="n">Cluster</span> <span class="p">|</span> <span class="nb">Get-VMhost</span> <span class="p">|</span> <span class="nb">Get-VMHostStorage</span> <span class="n">-RescanAllHBA</span></code></pre></div>
 
 
       <hr />
@@ -225,11 +225,11 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

@@ -183,27 +183,27 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-$UCS = &quot;FQDNofUCS&quot; #Used to Connect to UCSM via PowerTool
-$TrustPoint = &quot;TP-Name&quot; #Name of TrustPoint, AKA Root CA
-$KeyRing = &quot;KeyRingName&quot; #name of KeyRing. Stores Certificate Information
-$Modulus = &quot;mod2048&quot; #2048 bit key this can be 1024,2048,4096, etc
-$CertDNS = &quot;FQDNofUCS&quot; #FQDN for Cert Request
-$CertLocality = &quot;City&quot; #City for Cert Request
-$CertState = &quot;State&quot; #State for Cert Request
-$CertCountry = &quot;US&quot; #Country for Cert Request
-$CertOrgName = &quot;Org&quot; #OrgName for Cert Request
-$CertEmail = &quot;me@lab.com&quot; #Email for Cert Request
-$CertSubjName = &quot;FQDNofUCS&quot; #FQDN for Cert Request
-$CertIP = &quot;FI-VIP-IP&quot; #FI-VIP IP for Cert Request
-$CertIpA = &quot;FI-A-IP&quot; #FI-A IP for Cert Request
-$CertIpB = &quot;FI-B-IP&quot; #FI-B IP for Cert Request
-$TPChain = &quot;-----BEGIN CERTIFICATE-----
-PASTE CERT CONTENT HERE FOR ROOTCA
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
-PASTE CERT CONTENT HERE FOR SUB CA
------END CERTIFICATE-----&quot; #Delete Second part if not using a Root/Sub Scenario.</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$UCS</span> <span class="p">=</span> <span class="s2">&quot;FQDNofUCS&quot;</span> <span class="c">#Used to Connect to UCSM via PowerTool</span>
+<span class="nv">$TrustPoint</span> <span class="p">=</span> <span class="s2">&quot;TP-Name&quot;</span> <span class="c">#Name of TrustPoint, AKA Root CA</span>
+<span class="nv">$KeyRing</span> <span class="p">=</span> <span class="s2">&quot;KeyRingName&quot;</span> <span class="c">#name of KeyRing. Stores Certificate Information</span>
+<span class="nv">$Modulus</span> <span class="p">=</span> <span class="s2">&quot;mod2048&quot;</span> <span class="c">#2048 bit key this can be 1024,2048,4096, etc</span>
+<span class="nv">$CertDNS</span> <span class="p">=</span> <span class="s2">&quot;FQDNofUCS&quot;</span> <span class="c">#FQDN for Cert Request</span>
+<span class="nv">$CertLocality</span> <span class="p">=</span> <span class="s2">&quot;City&quot;</span> <span class="c">#City for Cert Request</span>
+<span class="nv">$CertState</span> <span class="p">=</span> <span class="s2">&quot;State&quot;</span> <span class="c">#State for Cert Request</span>
+<span class="nv">$CertCountry</span> <span class="p">=</span> <span class="s2">&quot;US&quot;</span> <span class="c">#Country for Cert Request</span>
+<span class="nv">$CertOrgName</span> <span class="p">=</span> <span class="s2">&quot;Org&quot;</span> <span class="c">#OrgName for Cert Request</span>
+<span class="nv">$CertEmail</span> <span class="p">=</span> <span class="s2">&quot;me@lab.com&quot;</span> <span class="c">#Email for Cert Request</span>
+<span class="nv">$CertSubjName</span> <span class="p">=</span> <span class="s2">&quot;FQDNofUCS&quot;</span> <span class="c">#FQDN for Cert Request</span>
+<span class="nv">$CertIP</span> <span class="p">=</span> <span class="s2">&quot;FI-VIP-IP&quot;</span> <span class="c">#FI-VIP IP for Cert Request</span>
+<span class="nv">$CertIpA</span> <span class="p">=</span> <span class="s2">&quot;FI-A-IP&quot;</span> <span class="c">#FI-A IP for Cert Request</span>
+<span class="nv">$CertIpB</span> <span class="p">=</span> <span class="s2">&quot;FI-B-IP&quot;</span> <span class="c">#FI-B IP for Cert Request</span>
+<span class="nv">$TPChain</span> <span class="p">=</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----</span>
+<span class="s2">PASTE CERT CONTENT HERE FOR ROOTCA</span>
+<span class="s2">-----END CERTIFICATE-----</span>
+<span class="s2">-----BEGIN CERTIFICATE-----</span>
+<span class="s2">PASTE CERT CONTENT HERE FOR SUB CA</span>
+<span class="s2">-----END CERTIFICATE-----&quot;</span> <span class="c">#Delete Second part if not using a Root/Sub Scenario.</span></code></pre></div>
 
 <p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
 
@@ -286,11 +286,11 @@ PASTE CERT CONTENT HERE FOR SUB CA
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

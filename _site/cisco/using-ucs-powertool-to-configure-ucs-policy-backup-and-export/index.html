@@ -183,16 +183,16 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-$UCS = &quot;FQDNofUCS&quot; #FQDN of UCS To COnnect To
-$Hostname = &quot;ucs.lab.local&quot; #Hostname to Upload backup to.
-$Protocol = &quot;scp&quot; #Transfer Protocol. ftp,scp,tftp,sftp
-$User = &quot;ftpuser&quot; #Username
-$Password = &quot;ftpuser&quot; #Password
-$MgmtBackupRemoteFile = &quot;Full&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$ConfigBackupRemoteFile = &quot;AllConfig&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$AdminState = &quot;enable&quot; #enable or disable
-$Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly backups</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$UCS</span> <span class="p">=</span> <span class="s2">&quot;FQDNofUCS&quot;</span> <span class="c">#FQDN of UCS To COnnect To</span>
+<span class="nv">$Hostname</span> <span class="p">=</span> <span class="s2">&quot;ucs.lab.local&quot;</span> <span class="c">#Hostname to Upload backup to.</span>
+<span class="nv">$Protocol</span> <span class="p">=</span> <span class="s2">&quot;scp&quot;</span> <span class="c">#Transfer Protocol. ftp,scp,tftp,sftp</span>
+<span class="nv">$User</span> <span class="p">=</span> <span class="s2">&quot;ftpuser&quot;</span> <span class="c">#Username</span>
+<span class="nv">$Password</span> <span class="p">=</span> <span class="s2">&quot;ftpuser&quot;</span> <span class="c">#Password</span>
+<span class="nv">$MgmtBackupRemoteFile</span> <span class="p">=</span> <span class="s2">&quot;Full&quot;</span> <span class="c">#Location/Prefix of File. Location/Prefix will be in front of filename</span>
+<span class="nv">$ConfigBackupRemoteFile</span> <span class="p">=</span> <span class="s2">&quot;AllConfig&quot;</span> <span class="c">#Location/Prefix of File. Location/Prefix will be in front of filename</span>
+<span class="nv">$AdminState</span> <span class="p">=</span> <span class="s2">&quot;enable&quot;</span> <span class="c">#enable or disable</span>
+<span class="nv">$Schedule</span> <span class="p">=</span> <span class="s2">&quot;1day&quot;</span> <span class="c">#1day, 7day, 14day for daily, weekly or biweekly backups</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -246,11 +246,11 @@ $Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly ba
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

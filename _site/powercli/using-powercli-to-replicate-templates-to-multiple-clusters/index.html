@@ -187,42 +187,42 @@
 
 <p><em>This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.</em></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Import PowerCLI Module
-Add-PSSnapin VMware.VimAutomation.Core
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Import PowerCLI Module</span>
+<span class="nb">Add-PSSnapin</span> <span class="n">VMware</span><span class="p">.</span><span class="n">VimAutomation</span><span class="p">.</span><span class="n">Core</span>
 
-#Define Variables
-$Credential = Get-Credential
-$vCenter = &quot;vcenter.lab.local&quot;
-$clusters = &quot;Cluster01&quot;,&quot;Cluster02&quot;
-$location = &quot;Templates&quot;
-$templates = &quot;Template1&quot;,&quot;Template2&quot;
+<span class="c">#Define Variables</span>
+<span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$vCenter</span> <span class="p">=</span> <span class="s2">&quot;vcenter.lab.local&quot;</span>
+<span class="nv">$clusters</span> <span class="p">=</span> <span class="s2">&quot;Cluster01&quot;</span><span class="p">,</span><span class="s2">&quot;Cluster02&quot;</span>
+<span class="nv">$location</span> <span class="p">=</span> <span class="s2">&quot;Templates&quot;</span>
+<span class="nv">$templates</span> <span class="p">=</span> <span class="s2">&quot;Template1&quot;</span><span class="p">,</span><span class="s2">&quot;Template2&quot;</span>
 
-#Connect to vCenter
-Connect-VIServer $vCenter -Credential $Credential
+<span class="c">#Connect to vCenter</span>
+<span class="nb">Connect-VIServer</span> <span class="nv">$vCenter</span> <span class="n">-Credential</span> <span class="nv">$Credential</span>
 
-foreach ($template in $templates){
-  foreach ($cluster in $clusters){
-    #Check if Template exists
-    Try{Get-Template $template-$cluster -ErrorAction Stop;$TemplateExists = $true}Catch {$TemplateExists = $false}
-    #Create VM
-    If($TemplateExists -eq $true){
-        #Remove Old Template
-        Get-Template -Name $template-$cluster |Remove-Template -DeletePermanently -Confirm:$false
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-    ElseIf($TemplateExists -eq $false){
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-  }
-}
-#Disconnect from vCenter
-Disconnect-VIServer $vCenter -Force -Confirm:$false</code></pre></div>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$template</span> <span class="k">in</span> <span class="nv">$templates</span><span class="p">){</span>
+  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$clusters</span><span class="p">){</span>
+    <span class="c">#Check if Template exists</span>
+    <span class="k">Try</span><span class="p">{</span><span class="nb">Get-Template</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span><span class="nv">$TemplateExists</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">}</span><span class="k">Catch</span> <span class="p">{</span><span class="nv">$TemplateExists</span> <span class="p">=</span> <span class="nv">$false</span><span class="p">}</span>
+    <span class="c">#Create VM</span>
+    <span class="k">If</span><span class="p">(</span><span class="nv">$TemplateExists</span> <span class="o">-eq</span> <span class="nv">$true</span><span class="p">){</span>
+        <span class="c">#Remove Old Template</span>
+        <span class="nb">Get-Template</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="p">|</span><span class="nb">Remove-Template</span> <span class="n">-DeletePermanently</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+        <span class="c">#Clone the Template</span>
+        <span class="nb">New-VM</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-Template</span> <span class="nv">$template</span> <span class="n">-ResourcePool</span> <span class="nv">$cluster</span> <span class="n">-Datastore</span> <span class="nv">$cluster</span><span class="n">-DSC</span> <span class="n">-Location</span> <span class="nv">$location</span>
+        <span class="c">#Convert to Template</span>
+        <span class="nb">Set-VM</span> <span class="n">-VM</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ToTemplate</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+    <span class="p">}</span>
+    <span class="k">ElseIf</span><span class="p">(</span><span class="nv">$TemplateExists</span> <span class="o">-eq</span> <span class="nv">$false</span><span class="p">){</span>
+        <span class="c">#Clone the Template</span>
+        <span class="nb">New-VM</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-Template</span> <span class="nv">$template</span> <span class="n">-ResourcePool</span> <span class="nv">$cluster</span> <span class="n">-Datastore</span> <span class="nv">$cluster</span><span class="n">-DSC</span> <span class="n">-Location</span> <span class="nv">$location</span>
+        <span class="c">#Convert to Template</span>
+        <span class="nb">Set-VM</span> <span class="n">-VM</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ToTemplate</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c">#Disconnect from vCenter</span>
+<span class="nb">Disconnect-VIServer</span> <span class="nv">$vCenter</span> <span class="n">-Force</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -267,11 +267,11 @@ Disconnect-VIServer $vCenter -Force -Confirm:$false</code></pre></div>
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

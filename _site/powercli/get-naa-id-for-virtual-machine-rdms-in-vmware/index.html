@@ -170,7 +170,7 @@
     <div class="article-wrap">
       <p>This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-VM</span> <span class="n">VMNAME</span><span class="p">|</span> <span class="nb">Get-HardDisk</span> <span class="n">-DiskType</span> <span class="s2">&quot;RawPhysical&quot;</span><span class="p">,</span><span class="s2">&quot;RawVirtual&quot;</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">Parent</span><span class="p">,</span><span class="n">Name</span><span class="p">,</span><span class="n">DiskType</span><span class="p">,</span><span class="n">ScsiCanonicalName</span><span class="p">,</span><span class="n">DeviceName</span><span class="p">,</span><span class="n">CapacityGB</span> <span class="p">|</span> <span class="n">fl</span></code></pre></div>
 
 <p><img src="/images/naaid.png" alt="" /></p>
 
@@ -216,11 +216,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

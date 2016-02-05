@@ -185,29 +185,30 @@
 
 <p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.</em></p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
 
-- name: playbook to create HorizonViewPorts-FIL
-  hosts: apic
-  connection: local
-  gather_facts: no
+<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">playbook to create HorizonViewPorts-FIL</span>
+  <span class="l-Scalar-Plain">hosts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">apic</span>
+  <span class="l-Scalar-Plain">connection</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">local</span>
+  <span class="l-Scalar-Plain">gather_facts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">no</span>
 
-  tasks:
-      # ensue filters exist
-      - aci_filter: name= tenant=common host= username= password=
-        with_items:
-        - HorizonViewPorts
-
-      - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-      - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-      - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=
-      - aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=
-      - aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=
-      - aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=
-      - aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=
-      - aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-      - aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-      - aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=</code></pre></div>
+  <span class="l-Scalar-Plain">tasks</span><span class="p-Indicator">:</span>
+      <span class="c1"># ensure filters exist</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name= tenant=common host= username= password=</span>
+        <span class="l-Scalar-Plain">with_items</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">HorizonViewPorts</span>
+        
+     <span class="c1"># ensure filter entries exist</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -252,11 +253,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
-    
-      <li><a href="/powercli/using-powercli-to-install-software-in-a-guest-vm/" title="Using PowerCLI to Install Software in a Guest VM">Using PowerCLI to Install Software in a Guest VM</a></li>
     
     </ul>
     <hr />

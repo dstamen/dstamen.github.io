@@ -172,18 +172,18 @@
 
 <h1 id="check-the-esxi-dump-collector-configuration-example">Check the ESXi Dump Collector Configuration Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Foreach ($vmhost in (get-vmhost)){
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.coredump.network.get()}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">)){</span>
+<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">coredump</span><span class="p">.</span><span class="n">network</span><span class="p">.</span><span class="n">get</span><span class="p">()}</span></code></pre></div>
 
 <p><img src="/images/screenshot.361.jpg" alt="" /></p>
 
 <h1 id="setting-the-esxi-dump-collector-example">Setting the ESXi Dump Collector Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Foreach ($vmhost in (get-vmhost)) {
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″)
-$esxcli.system.coredump.network.set($true)}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">))</span> <span class="p">{</span>
+<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">coredump</span><span class="p">.</span><span class="n">network</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span> <span class="err">“</span><span class="n">vmk0</span><span class="err">″</span><span class="p">,</span> <span class="err">“</span><span class="n">IPtoDumpCollector</span><span class="err">″</span><span class="p">,</span> <span class="err">“</span><span class="n">6500</span><span class="err">″</span><span class="p">)</span>
+<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">coredump</span><span class="p">.</span><span class="n">network</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="nv">$true</span><span class="p">)}</span></code></pre></div>
 
 <p><img src="/images/screenshot.351.jpg" alt="" /></p>
 
@@ -241,11 +241,11 @@ vsish -e set /reliability/crashMe/Panic 1
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

@@ -1,6 +1,15 @@
 {
   
 
+    "vmware-vexpert-2016": {
+      "title": "vExpert 2016",
+      "url": " /vmware/vexpert-2016/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "ansible-using-ansible-to-run-powershell-scripts": {
       "title": "Using Ansible to Run Powershell Scripts",
       "url": " /ansible/using-ansible-to-run-powershell-scripts/",

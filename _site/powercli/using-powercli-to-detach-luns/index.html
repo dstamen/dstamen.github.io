@@ -185,34 +185,34 @@
 
 <p><a href="https://github.com/dstamen/PowerCLI/blob/master/Detach-SCSILun.ps1">Detach-ScsiLun.ps1</a></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># PowerCLI Script for detaching luns from a cluster
-# @davidstamen
-# http://davidstamen.com
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># PowerCLI Script for detaching luns from a cluster</span>
+<span class="c"># @davidstamen</span>
+<span class="c"># http://davidstamen.com</span>
 
-LunIDs = &quot;naa.6000000001&quot;,&quot;naa.600000002&quot;
-$Clustername = &quot;MyCluster&quot;
+<span class="n">LunIDs</span> <span class="p">=</span> <span class="s2">&quot;naa.6000000001&quot;</span><span class="p">,</span><span class="s2">&quot;naa.600000002&quot;</span>
+<span class="nv">$Clustername</span> <span class="p">=</span> <span class="s2">&quot;MyCluster&quot;</span>
 
-function Detach-Disk {
-    param(
-        [VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]$VMHost,
-        [string]$CanonicalName    )
+<span class="k">function</span> <span class="n">Detach-Disk</span> <span class="p">{</span>
+    <span class="k">param</span><span class="p">(</span>
+        <span class="no">[VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]</span><span class="nv">$VMHost</span><span class="p">,</span>
+        <span class="no">[string]</span><span class="nv">$CanonicalName</span>    <span class="p">)</span>
 
-    $storSys = Get-View $VMHost.Extensiondata.ConfigManager.StorageSystem
-    $lunUuid = (Get-ScsiLun -VmHost $VMHost | where {$_.CanonicalName -eq $CanonicalName}).ExtensionData.Uuid
+    <span class="nv">$storSys</span> <span class="p">=</span> <span class="nb">Get-View</span> <span class="nv">$VMHost</span><span class="p">.</span><span class="n">Extensiondata</span><span class="p">.</span><span class="n">ConfigManager</span><span class="p">.</span><span class="n">StorageSystem</span>
+    <span class="nv">$lunUuid</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-ScsiLun</span> <span class="n">-VmHost</span> <span class="nv">$VMHost</span> <span class="p">|</span> <span class="n">where</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">CanonicalName</span> <span class="o">-eq</span> <span class="nv">$CanonicalName</span><span class="p">}).</span><span class="n">ExtensionData</span><span class="p">.</span><span class="n">Uuid</span>
 
-    $storSys.DetachScsiLun($lunUuid)
-}
+    <span class="nv">$storSys</span><span class="p">.</span><span class="n">DetachScsiLun</span><span class="p">(</span><span class="nv">$lunUuid</span><span class="p">)</span>
+<span class="p">}</span>
 
-$ClusterHosts = Get-Cluster $Clustername | Get-VMHost
+<span class="nv">$ClusterHosts</span> <span class="p">=</span> <span class="nb">Get-Cluster</span> <span class="nv">$Clustername</span> <span class="p">|</span> <span class="nb">Get-VMHost</span>
 
-Foreach($VMHost in $ClusterHosts)
-{
-    Foreach($LUNid in $LunIDs)
-    {
-        Write-Host &quot;Detaching&quot; $LUNid &quot;from&quot; $VMHost -ForegroundColor &quot;Yellow&quot;
-        Detach-Disk -VMHost $VMHost -CanonicalName $LUNid
-    }
-}</code></pre></div>
+<span class="k">Foreach</span><span class="p">(</span><span class="nv">$VMHost</span> <span class="k">in</span> <span class="nv">$ClusterHosts</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">Foreach</span><span class="p">(</span><span class="nv">$LUNid</span> <span class="k">in</span> <span class="nv">$LunIDs</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">Write-Host</span> <span class="s2">&quot;Detaching&quot;</span> <span class="nv">$LUNid</span> <span class="s2">&quot;from&quot;</span> <span class="nv">$VMHost</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Yellow&quot;</span>
+        <span class="n">Detach-Disk</span> <span class="n">-VMHost</span> <span class="nv">$VMHost</span> <span class="n">-CanonicalName</span> <span class="nv">$LUNid</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
 
       <hr />
@@ -253,11 +253,11 @@ Foreach($VMHost in $ClusterHosts)
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

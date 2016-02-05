@@ -183,22 +183,22 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$fileloc = &quot;C:\Users\david\desktop\logs\&quot;
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$domains</span> <span class="p">=</span> <span class="s2">&quot;ucs01.lab.local&quot;</span><span class="p">,</span><span class="s2">&quot;ucs02.lab.local&quot;</span>
+<span class="nv">$fileloc</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\david\desktop\logs\&quot;</span>
 
-#Cycles through each UCS creating a tech support for each chassis.
-Foreach ($ucs in $domains) {
-Connect-UCS $ucs -Credential $cred
-$Chassis = Get-UCSChassis
-  Foreach ($chassis in $chassis) {
-    $id = $chassis.id
-    $filename = &quot;$fileloc$ucs-techsupp-chassis-$id.tar&quot;
-    Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC &#39;all&#39;
-  }
-Disconnect-UCS
-}</code></pre></div>
+<span class="c">#Cycles through each UCS creating a tech support for each chassis.</span>
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$ucs</span> <span class="k">in</span> <span class="nv">$domains</span><span class="p">)</span> <span class="p">{</span>
+<span class="nb">Connect-UCS</span> <span class="nv">$ucs</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+<span class="nv">$Chassis</span> <span class="p">=</span> <span class="nb">Get-UCSChassis</span>
+  <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$chassis</span> <span class="k">in</span> <span class="nv">$chassis</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$id</span> <span class="p">=</span> <span class="nv">$chassis</span><span class="p">.</span><span class="n">id</span>
+    <span class="nv">$filename</span> <span class="p">=</span> <span class="s2">&quot;$fileloc$ucs-techsupp-chassis-$id.tar&quot;</span>
+    <span class="nb">Get-UcsTechSupport</span> <span class="n">-PathPattern</span> <span class="nv">$filename</span> <span class="n">-RemoveFromUcs</span> <span class="n">-TimeoutSec</span> <span class="n">600</span> <span class="n">-ChassisId</span> <span class="nv">$id</span> <span class="n">-CIMC</span> <span class="s1">&#39;all&#39;</span>
+  <span class="p">}</span>
+<span class="nb">Disconnect-UCS</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -243,11 +243,11 @@ Disconnect-UCS
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

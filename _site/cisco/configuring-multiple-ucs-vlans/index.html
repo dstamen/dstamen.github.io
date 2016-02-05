@@ -174,27 +174,27 @@
 
 <p>The script can be found <a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1">here.</a></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
-# @davidstamen
-# http://davidstamen.com
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template</span>
+<span class="c"># @davidstamen</span>
+<span class="c"># http://davidstamen.com</span>
 
-#Define Variables
-$cred = Get-Credential
-$ucs = &quot;ucs01&quot;
-$startvlan = &quot;100&quot;
-$endvlan = &quot;150&quot;
-$vnictemplate = &quot;vnic-template&quot;
-$vlangroup = &quot;vlan-group&quot;
+<span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$ucs</span> <span class="p">=</span> <span class="s2">&quot;ucs01&quot;</span>
+<span class="nv">$startvlan</span> <span class="p">=</span> <span class="s2">&quot;100&quot;</span>
+<span class="nv">$endvlan</span> <span class="p">=</span> <span class="s2">&quot;150&quot;</span>
+<span class="nv">$vnictemplate</span> <span class="p">=</span> <span class="s2">&quot;vnic-template&quot;</span>
+<span class="nv">$vlangroup</span> <span class="p">=</span> <span class="s2">&quot;vlan-group&quot;</span>
 
-#Connect to UCS
-Connect-UCS $ucs -credential $cred
+<span class="c">#Connect to UCS</span>
+<span class="nb">Connect-UCS</span> <span class="nv">$ucs</span> <span class="n">-credential</span> <span class="nv">$cred</span>
 
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &quot;$i&quot;}
+<span class="c">#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="p">=</span><span class="nv">$startvlan</span><span class="p">;</span><span class="nv">$i</span> <span class="o">-le</span> <span class="nv">$endvlan</span><span class="p">;</span><span class="nv">$i</span><span class="p">++){</span><span class="nb">Get-UcsFabricNetGroup</span> <span class="n">-Name</span> <span class="nv">$vlangroup</span> <span class="p">|</span><span class="nb">Add-UcsFabricPooledVlan</span> <span class="n">-Name</span> <span class="s2">&quot;$i&quot;</span><span class="p">}</span>
 
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &quot;$i&quot;}
-Disconnect-UCS</code></pre></div>
+<span class="c">#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="p">=</span><span class="nv">$startvlan</span><span class="p">;</span><span class="nv">$i</span> <span class="o">-le</span> <span class="nv">$endvlan</span><span class="p">;</span><span class="nv">$i</span><span class="p">++){</span><span class="nb">Get-UcsVnicTemplate</span> <span class="n">-Name</span> <span class="nv">$vnictemplate</span> <span class="p">|</span> <span class="nb">Add-UcsVnicInterface</span> <span class="n">-ModifyPresent</span> <span class="n">-DefaultNet</span> <span class="n">false</span> <span class="n">-Name</span> <span class="s2">&quot;$i&quot;</span><span class="p">}</span>
+<span class="nb">Disconnect-UCS</span></code></pre></div>
 
 <p>You now are done! In my case I had to add 500 VLAN’s, so this script saved me quite a bit of time.</p>
 
@@ -236,11 +236,11 @@ Disconnect-UCS</code></pre></div>
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

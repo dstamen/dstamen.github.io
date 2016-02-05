@@ -4,13 +4,40 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-02-04T20:36:50-05:00</updated>
+<updated>2016-02-05T09:48:12-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[vExpert 2016]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/vexpert-2016/" />
+  <id>/vmware/vexpert-2016</id>
+  <published>2016-02-05T00:00:00-05:00</published>
+  <updated>2016-02-05T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2016!&lt;/p&gt;
+
+&lt;p&gt;This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count and in 2016 we are up to 1360 vExperts!&lt;/p&gt;
+
+&lt;p&gt;Can’t wait to see what this year brings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vexpert-logo-2016.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/vexpert-2016/&quot;&gt;vExpert 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 05, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -46,21 +73,21 @@
 
 &lt;p&gt;Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;ansible_ssh_user: admin
-ansible_ssh_pass: password
-ansible_ssh_port: 5985
-ansible_connection: winrm
-ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ansible_ssh_user&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;admin&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ansible_ssh_pass&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;password&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ansible_ssh_port&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;5985&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ansible_connection&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;winrm&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ansible_winrm_server_cert_validation&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;ignore&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;- name: Run Powershell Scripts
-  hosts: test
-  tasks:
-    - name: run a powershell script
-      script: scripts/hello.ps1
-      register: out
-    - debug: var=out&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Run Powershell Scripts&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;test&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;run a powershell script&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;scripts/hello.ps1&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;out&lt;/span&gt;
+    &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;var=out&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -103,29 +130,30 @@ ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
 
 &lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;---
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 
-- name: playbook to create HorizonViewPorts-FIL
-  hosts: apic
-  connection: local
-  gather_facts: no
+&lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;playbook to create HorizonViewPorts-FIL&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;apic&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;local&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gather_facts&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;no&lt;/span&gt;
 
-  tasks:
-      # ensue filters exist
-      - aci_filter: name= tenant=common host= username= password=
-        with_items:
-        - HorizonViewPorts
-
-      - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-      - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-      - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=
-      - aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=
-      - aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=
-      - aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=
-      - aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=
-      - aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-      - aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-      - aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# ensure filters exist&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name= tenant=common host= username= password=&lt;/span&gt;
+        &lt;span class=&quot;l-Scalar-Plain&quot;&gt;with_items&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;HorizonViewPorts&lt;/span&gt;
+        
+     &lt;span class=&quot;c1&quot;&gt;# ensure filter entries exist&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=&lt;/span&gt;
+      &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -197,49 +225,49 @@ ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
 
 &lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-Write-Host &amp;quot;Prompt For Guest Credentials&amp;quot; -ForegroundColor Yellow
-$Cred = Get-Credential
-$VMs = &amp;quot;VM1&amp;quot;,&amp;quot;VM2&amp;quot;
-#$VMs = Get-VM VM* | Sort Name
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Prompt For Guest Credentials&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$VMs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;VM1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;VM2&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#$VMs = Get-VM VM* | Sort Name&lt;/span&gt;
 
-Foreach ($VMName in $VMs) {
-  $VM = Get-VM $VMName
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt;
 
-#Define file information. Include File Name, Parameters, Source and Destination
-  $File = &amp;quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&amp;quot;
-  $Param = &amp;quot;/s /v/qn REBOOT=Reallysuppress&amp;quot;
-  $SrcPath = &amp;quot;c:\&amp;quot;
-  $DstPath = &amp;quot;c:\temp\&amp;quot;
-  $Fullpath = $SrcPath + $File
+&lt;span class=&quot;c&quot;&gt;#Define file information. Include File Name, Parameters, Source and Destination&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$File&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Param&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/s /v/qn REBOOT=Reallysuppress&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$SrcPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;c:\&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$DstPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;c:\temp\&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Fullpath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SrcPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$File&lt;/span&gt;
 
-  Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
-  Copy-VMGuestFile -VM $VM -Source $Fullpath -Destination $DstPath -LocalToGuest -GuestCredential $Cred -Force
+  &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Copying&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Fullpath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cyan&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Copy-VMGuestFile&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Source&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Fullpath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Destination&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DstPath&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-LocalToGuest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-GuestCredential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cred&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Force&lt;/span&gt;
 
-  #Define Install File Command
-  $Command = $DstPath + $File + $Param
-  #Define Delete File Command
-  $Command2 = &amp;quot;del &amp;quot; + $DstPath + $File
+  &lt;span class=&quot;c&quot;&gt;#Define Install File Command&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Command&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DstPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$File&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Param&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Define Delete File Command&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Command2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;del &amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DstPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$File&lt;/span&gt;
 
-  Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
-  $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
-  $ExitCode = $Result.ExitCode
-  if ($ExitCode = &amp;quot;0&amp;quot;) {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Red
-  }
-  Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
-  $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
-  $ExitCode2 = $Result2.ExitCode
-  if ($ExitCode2 = &amp;quot;0&amp;quot;) {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Red
-  }
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Executing&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Command&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;within&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;operating&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;White&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Invoke-VMScript&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;-ScriptText&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Command&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-GuestCredential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cred&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$ExitCode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExitCode&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ExitCode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ExitCode&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ExitCode&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Executing&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Command2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;within&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;operating&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;White&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Result2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Invoke-VMScript&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;-ScriptText&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Command2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-GuestCredential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cred&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$ExitCode2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Result2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExitCode&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ExitCode2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ExitCode2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VMName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ExitCode2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -284,42 +312,42 @@ Foreach ($VMName in $VMs) {
 
 &lt;p&gt;&lt;em&gt;This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Import PowerCLI Module
-Add-PSSnapin VMware.VimAutomation.Core
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Import PowerCLI Module&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Add-PSSnapin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VMware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VimAutomation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Core&lt;/span&gt;
 
-#Define Variables
-$Credential = Get-Credential
-$vCenter = &amp;quot;vcenter.lab.local&amp;quot;
-$clusters = &amp;quot;Cluster01&amp;quot;,&amp;quot;Cluster02&amp;quot;
-$location = &amp;quot;Templates&amp;quot;
-$templates = &amp;quot;Template1&amp;quot;,&amp;quot;Template2&amp;quot;
+&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Credential&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vcenter.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$clusters&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Cluster01&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Cluster02&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Templates&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$templates&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Template1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Template2&amp;quot;&lt;/span&gt;
 
-#Connect to vCenter
-Connect-VIServer $vCenter -Credential $Credential
+&lt;span class=&quot;c&quot;&gt;#Connect to vCenter&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Connect-VIServer&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Credential&lt;/span&gt;
 
-foreach ($template in $templates){
-  foreach ($cluster in $clusters){
-    #Check if Template exists
-    Try{Get-Template $template-$cluster -ErrorAction Stop;$TemplateExists = $true}Catch {$TemplateExists = $false}
-    #Create VM
-    If($TemplateExists -eq $true){
-        #Remove Old Template
-        Get-Template -Name $template-$cluster |Remove-Template -DeletePermanently -Confirm:$false
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-    ElseIf($TemplateExists -eq $false){
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-  }
-}
-#Disconnect from vCenter
-Disconnect-VIServer $vCenter -Force -Confirm:$false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$templates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#Check if Template exists&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-Template&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ErrorAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#Create VM&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;#Remove Old Template&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;Get-Template&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Remove-Template&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-DeletePermanently&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;#Clone the Template&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;New-VM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Template&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ResourcePool&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Datastore&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-DSC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;#Convert to Template&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;Set-VM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ToTemplate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;ElseIf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;#Clone the Template&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;New-VM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Template&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ResourcePool&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Datastore&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-DSC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;#Convert to Template&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;Set-VM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ToTemplate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Disconnect from vCenter&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Disconnect-VIServer&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Force&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -362,19 +390,19 @@ Disconnect-VIServer $vCenter -Force -Confirm:$false&lt;/code&gt;&lt;/pre&gt;&lt;
 
 &lt;p&gt;&lt;em&gt;This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-$cred = Get-Credential
-$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01.lab.local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs02.lab.local&amp;quot;&lt;/span&gt;
 
-#Cycles through each UCS setting values
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  $servers = Get-UCSRackUnit
-  Foreach ($server in $servers) {
-    Get-UCSRackUnit -id $server.id | Set-UCSRackunit -UsrLbl $server.assignedtodn.substring(12) -Name $server.assignedtodn.substring(12) -force
-  }
-  Disconnect-UCS
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-UCSRackUnit&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Get-UCSRackUnit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-id&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Set-UCSRackunit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-UsrLbl&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assignedtodn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assignedtodn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-force&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -415,22 +443,22 @@ Foreach ($ucs in $domains) {
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-$cred = Get-Credential
-$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
-$fileloc = &amp;quot;C:\Users\david\desktop\logs\&amp;quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01.lab.local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs02.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$fileloc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;C:\Users\david\desktop\logs\&amp;quot;&lt;/span&gt;
 
-#Cycles through each UCS creating a tech support for each chassis.
-Foreach ($ucs in $domains) {
-Connect-UCS $ucs -Credential $cred
-$Chassis = Get-UCSChassis
-  Foreach ($chassis in $chassis) {
-    $id = $chassis.id
-    $filename = &amp;quot;$fileloc$ucs-techsupp-chassis-$id.tar&amp;quot;
-    Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC &amp;#39;all&amp;#39;
-  }
-Disconnect-UCS
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS creating a tech support for each chassis.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Chassis&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-UCSChassis&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$fileloc$ucs-techsupp-chassis-$id.tar&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Get-UcsTechSupport&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-PathPattern&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-RemoveFromUcs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-TimeoutSec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;600&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ChassisId&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-CIMC&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;all&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -476,25 +504,25 @@ Disconnect-UCS
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# PowerCLI Script for setting Disk Max IO Size
-# @davidstamen
-# http://davidstamen.com
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# PowerCLI Script for setting Disk Max IO Size&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# @davidstamen&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://davidstamen.com&lt;/span&gt;
 
-#Define Variables
-$cred = Get-Credential
-$VC = &amp;quot;vc.lab.local&amp;quot;
-$Cluster = &amp;quot;Production&amp;quot;
+&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vc.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Production&amp;quot;&lt;/span&gt;
 
-#Connect to vCenter
-Connect-VIServer $VC -Credential $cred
+&lt;span class=&quot;c&quot;&gt;#Connect to vCenter&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Connect-VIServer&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
 
-#Get all Hosts
-$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &amp;quot;PoweredOn&amp;quot; -and $_.ConnectionState -eq &amp;quot;Connected&amp;quot; } | Sort Name
+&lt;span class=&quot;c&quot;&gt;#Get all Hosts&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$esxHosts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Cluster&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-VMHost&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PowerState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PoweredOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConnectionState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Connected&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sort&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
 
-#For each host set DiskMaxIOsize to 4MB
-foreach ($esx in $esxHosts) {
-  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;#For each host set DiskMaxIOsize to 4MB&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$esx&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$esxHosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Get-AdvancedSetting&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Entity&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$esx&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Disk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DiskMaxIOSize&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Set-AdvancedSetting&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Value&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;4096&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -612,17 +640,17 @@ foreach ($esx in $esxHosts) {
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-$cred = Get-Credential
-$domains = &amp;quot;ucs01.lab.local&amp;quot;,&amp;quot;ucs02.lab.local&amp;quot;
-$fileName = &amp;quot;C:\Users\david\Downloads\ucs-k9-bundle-infra.2.2.6e.A.bin&amp;quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01.lab.local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs02.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$fileName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;C:\Users\david\Downloads\ucs-k9-bundle-infra.2.2.6e.A.bin&amp;quot;&lt;/span&gt;
 
-#Cycles through each UCS uploading the UCS Firmware
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  Send-UcsFirmware -LiteralPath $fileName | Watch-Ucs -Property TransferState -SuccessValue downloaded -PollSec 30 -TimeoutSec 600
-  Disconnect-UCS
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS uploading the UCS Firmware&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Send-UcsFirmware&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-LiteralPath&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fileName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Watch-Ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Property&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TransferState&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SuccessValue&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;downloaded&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-PollSec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-TimeoutSec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;600&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -1186,16 +1214,16 @@ Foreach ($ucs in $domains) {
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-$UCS = &amp;quot;FQDNofUCS&amp;quot; #FQDN of UCS To COnnect To
-$Hostname = &amp;quot;ucs.lab.local&amp;quot; #Hostname to Upload backup to.
-$Protocol = &amp;quot;scp&amp;quot; #Transfer Protocol. ftp,scp,tftp,sftp
-$User = &amp;quot;ftpuser&amp;quot; #Username
-$Password = &amp;quot;ftpuser&amp;quot; #Password
-$MgmtBackupRemoteFile = &amp;quot;Full&amp;quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$ConfigBackupRemoteFile = &amp;quot;AllConfig&amp;quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$AdminState = &amp;quot;enable&amp;quot; #enable or disable
-$Schedule = &amp;quot;1day&amp;quot; #1day, 7day, 14day for daily, weekly or biweekly backups&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$UCS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FQDNofUCS&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FQDN of UCS To COnnect To&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Hostname&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs.lab.local&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Hostname to Upload backup to.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Protocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;scp&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Transfer Protocol. ftp,scp,tftp,sftp&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$User&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ftpuser&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Username&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Password&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ftpuser&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Password&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$MgmtBackupRemoteFile&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Full&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Location/Prefix of File. Location/Prefix will be in front of filename&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ConfigBackupRemoteFile&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;AllConfig&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Location/Prefix of File. Location/Prefix will be in front of filename&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;enable&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#enable or disable&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Schedule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1day&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1day, 7day, 14day for daily, weekly or biweekly backups&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -1245,27 +1273,27 @@ $Schedule = &amp;quot;1day&amp;quot; #1day, 7day, 14day for daily, weekly or biw
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;#Define Variables
-$UCS = &amp;quot;FQDNofUCS&amp;quot; #Used to Connect to UCSM via PowerTool
-$TrustPoint = &amp;quot;TP-Name&amp;quot; #Name of TrustPoint, AKA Root CA
-$KeyRing = &amp;quot;KeyRingName&amp;quot; #name of KeyRing. Stores Certificate Information
-$Modulus = &amp;quot;mod2048&amp;quot; #2048 bit key this can be 1024,2048,4096, etc
-$CertDNS = &amp;quot;FQDNofUCS&amp;quot; #FQDN for Cert Request
-$CertLocality = &amp;quot;City&amp;quot; #City for Cert Request
-$CertState = &amp;quot;State&amp;quot; #State for Cert Request
-$CertCountry = &amp;quot;US&amp;quot; #Country for Cert Request
-$CertOrgName = &amp;quot;Org&amp;quot; #OrgName for Cert Request
-$CertEmail = &amp;quot;me@lab.com&amp;quot; #Email for Cert Request
-$CertSubjName = &amp;quot;FQDNofUCS&amp;quot; #FQDN for Cert Request
-$CertIP = &amp;quot;FI-VIP-IP&amp;quot; #FI-VIP IP for Cert Request
-$CertIpA = &amp;quot;FI-A-IP&amp;quot; #FI-A IP for Cert Request
-$CertIpB = &amp;quot;FI-B-IP&amp;quot; #FI-B IP for Cert Request
-$TPChain = &amp;quot;-----BEGIN CERTIFICATE-----
-PASTE CERT CONTENT HERE FOR ROOTCA
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
-PASTE CERT CONTENT HERE FOR SUB CA
------END CERTIFICATE-----&amp;quot; #Delete Second part if not using a Root/Sub Scenario.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$UCS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FQDNofUCS&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Used to Connect to UCSM via PowerTool&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$TrustPoint&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;TP-Name&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Name of TrustPoint, AKA Root CA&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$KeyRing&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;KeyRingName&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#name of KeyRing. Stores Certificate Information&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Modulus&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mod2048&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2048 bit key this can be 1024,2048,4096, etc&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertDNS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FQDNofUCS&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FQDN for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertLocality&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;City&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#City for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;State&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#State for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertCountry&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;US&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Country for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertOrgName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Org&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#OrgName for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertEmail&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;me@lab.com&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Email for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertSubjName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FQDNofUCS&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FQDN for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertIP&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FI-VIP-IP&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FI-VIP IP for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertIpA&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FI-A-IP&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FI-A IP for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$CertIpB&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;FI-B-IP&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#FI-B IP for Cert Request&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$TPChain&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;-----BEGIN CERTIFICATE-----&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;PASTE CERT CONTENT HERE FOR ROOTCA&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;-----END CERTIFICATE-----&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;-----BEGIN CERTIFICATE-----&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;PASTE CERT CONTENT HERE FOR SUB CA&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;-----END CERTIFICATE-----&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Delete Second part if not using a Root/Sub Scenario.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.&lt;/p&gt;
 
@@ -1338,19 +1366,19 @@ PASTE CERT CONTENT HERE FOR SUB CA
 &lt;p&gt;To view your current dvs configuration you can run &lt;strong&gt;esxcfg-vswitch -l&lt;/strong&gt;. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-dvSwitch         256         3           256               1500    vmnic0,vmnic1
+dvSwitch         &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;         &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;           &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;               &lt;span class=&quot;m&quot;&gt;1500&lt;/span&gt;    vmnic0,vmnic1
 
   DVPort ID           In Use      Client
-  0                   1           vmnic0
-  1                   1           vmnic1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;                   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;           vmnic0
+  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;                   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;           vmnic1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To &lt;strong&gt;REMOVE&lt;/strong&gt; an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -Q vmnic1 -V &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To &lt;strong&gt;ADD&lt;/strong&gt; an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -P vmnic1 -V 1 dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -P vmnic1 -V &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
     &lt;p&gt;&lt;a href=&quot;/vmware/using-cli-to-manage-dvs-host-uplinks/&quot;&gt;Using CLI to Manage DVS Host Uplinks&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
@@ -1378,28 +1406,28 @@ dvSwitch         256         3           256               1500    vmnic0,vmnic1
 
 &lt;p&gt;All you need to do is input your cluster and specify what VIB’s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB’s you want to install.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# Define Variables
-$Cluster = &amp;quot;Cluster&amp;quot;
-$VIBPATH1 = &amp;quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;
-$VIBPATH2 = &amp;quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Cluster&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$VIBPATH1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$VIBPATH2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;&lt;/span&gt;
 
 
-# Get each host in specified cluster that meets criteria
-Get-VMhost -Location $Cluster | where { $_.PowerState -eq &amp;quot;PoweredOn&amp;quot; -and $_.ConnectionState -eq &amp;quot;Connected&amp;quot; } | foreach {
+&lt;span class=&quot;c&quot;&gt;# Get each host in specified cluster that meets criteria&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Get-VMhost&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PowerState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PoweredOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConnectionState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Connected&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-    Write-host &amp;quot;Preparing $($_.Name) for ESXCLI&amp;quot; -ForegroundColor Yellow
+    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Preparing &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; for ESXCLI&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
 
-    $ESXCLI = Get-EsxCli -VMHost $_
+    &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-EsxCli&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VMHost&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
 
-    # Install VIBs
-    Write-host &amp;quot;Installing VIB on $($_.Name)&amp;quot; -ForegroundColor Yellow
-    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
-    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
+    &lt;span class=&quot;c&quot;&gt;# Install VIBs&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Installing VIB on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VIBPATH1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$action2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VIBPATH2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    # Verify VIB installed successfully
-    if ($action.Message -eq &amp;quot;Operation finished successfully.&amp;quot;){Write-host &amp;quot;Action Completed successfully on $($_.Name)&amp;quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-    if ($action2.Message -eq &amp;quot;Operation finished successfully.&amp;quot;){Write-host &amp;quot;Action Completed successfully on $($_.Name)&amp;quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;c&quot;&gt;# Verify VIB installed successfully&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Operation finished successfully.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Operation finished successfully.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Hope this helps anyone else out wanting to automate vib installation using PowerCLI.&lt;/p&gt;
 
@@ -1428,27 +1456,27 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &amp;quot;PoweredOn&am
 
 &lt;p&gt;The script can be found &lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
-# @davidstamen
-# http://davidstamen.com
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# @davidstamen&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://davidstamen.com&lt;/span&gt;
 
-#Define Variables
-$cred = Get-Credential
-$ucs = &amp;quot;ucs01&amp;quot;
-$startvlan = &amp;quot;100&amp;quot;
-$endvlan = &amp;quot;150&amp;quot;
-$vnictemplate = &amp;quot;vnic-template&amp;quot;
-$vlangroup = &amp;quot;vlan-group&amp;quot;
+&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;150&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$vnictemplate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vnic-template&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$vlangroup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vlan-group&amp;quot;&lt;/span&gt;
 
-#Connect to UCS
-Connect-UCS $ucs -credential $cred
+&lt;span class=&quot;c&quot;&gt;#Connect to UCS&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
 
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &amp;quot;$i&amp;quot;}
+&lt;span class=&quot;c&quot;&gt;#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-le&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-UcsFabricNetGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vlangroup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Add-UcsFabricPooledVlan&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &amp;quot;$i&amp;quot;}
-Disconnect-UCS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;c&quot;&gt;#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-le&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-UcsVnicTemplate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vnictemplate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Add-UcsVnicInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ModifyPresent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-DefaultNet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You now are done! In my case I had to add 500 VLAN’s, so this script saved me quite a bit of time.&lt;/p&gt;
 
@@ -1477,7 +1505,7 @@ Disconnect-UCS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Get-VM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-NetworkAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Set-NetworkAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-StartConnected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Connected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Voila! You are done.&lt;/p&gt;
 
@@ -1611,76 +1639,6 @@ Disconnect-UCS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on October 16, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Section 8: Deploy and Consolidate vSphere Data Center]]></title>
-  <link rel="alternate" type="text/html" href="/certification/section-8-deploy-and-consolidate-vsphere-data-center/" />
-  <id>/certification/section-8-deploy-and-consolidate-vsphere-data-center</id>
-  <published>2015-10-16T00:00:00-04:00</published>
-  <updated>2015-10-16T00:00:00-04:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Section 8 of the VCP6-DCV blueprint&lt;/p&gt;
-
-&lt;h4 id=&quot;objective-81-deploy-esxi-hosts-using-autodeploy&quot;&gt;Objective 8.1: Deploy ESXi Hosts Using Autodeploy&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Describe the components and architecture of an Auto Deploy environment&lt;/li&gt;
-  &lt;li&gt;Use Auto Deploy Image Builder and PowerCLI scripts&lt;/li&gt;
-  &lt;li&gt;Implement Host Profiles with an Auto Deploy of an ESXi Host&lt;/li&gt;
-  &lt;li&gt;Install and configure Auto Deploy&lt;/li&gt;
-  &lt;li&gt;Understand PowerCLI cmdlets for Auto Deploy&lt;/li&gt;
-  &lt;li&gt;Deploy multiple ESXi Hosts using Auto Deploy&lt;/li&gt;
-  &lt;li&gt;Given a scenario, explain the Auto Deploy deployment model needed to meet a business requirement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-82-customize-host-profile-settings&quot;&gt;Objective 8.2: Customize Host Profile Settings&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Edit answer file to customize ESXi Host settings&lt;/li&gt;
-  &lt;li&gt;Modify and apply a storage path selection plugin (PSP) to a device using host profiles&lt;/li&gt;
-  &lt;li&gt;Modify and apply switch configurations across multiple hosts using a Host Profile&lt;/li&gt;
-  &lt;li&gt;Create/Edit/Remove a Host Profile from an ESXi Host&lt;/li&gt;
-  &lt;li&gt;Import/Export a Host Profile&lt;/li&gt;
-  &lt;li&gt;Attach and apply a Host Profile to ESXi Hosts in a cluster&lt;/li&gt;
-  &lt;li&gt;Perform compliance scanning and remediation of an ESXi Hosts and clusters using Host Profiles&lt;/li&gt;
-  &lt;li&gt;Enable or disable Host Profile components&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-83-consolidate-physical-workloads-using-vmware-converter&quot;&gt;Objective 8.3: Consolidate Physical Workloads using VMware Converter&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Install vCenter Converter standalone instance&lt;/li&gt;
-  &lt;li&gt;Convert physical workloads using vCenter Converter&lt;/li&gt;
-  &lt;li&gt;Modify server resources during conversion&lt;/li&gt;
-  &lt;li&gt;Interpret and correct errors during conversion&lt;/li&gt;
-  &lt;li&gt;Deploy a physical host as a virtual machine using vCenter Converter&lt;/li&gt;
-  &lt;li&gt;Collect diagnostic information during conversion operation&lt;/li&gt;
-  &lt;li&gt;Resize partitions during the conversion process&lt;/li&gt;
-  &lt;li&gt;Given a scenario, determine which virtual disk format to use&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;check-out-another-blueprint-section&quot;&gt;Check out another blueprint section&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-1-configure-and-administer-vsphere-6x-security/&quot;&gt;Section 1: Configure and Administer vSphere 6.x Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/&quot;&gt;Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/&quot;&gt;Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-4-upgrade-a-vsphere-deployment-to-6x/&quot;&gt;Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-5-administer-and-manage-vsphere-6x-resources/&quot;&gt;Section 5: Administer and Manage vSphere 6.x Resources&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-6-backup-and-recover-a-vsphere-deployment/&quot;&gt;Section 6: Backup and Recover a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-7-troubleshoot-a-vsphere-deployment/&quot;&gt;Section 7: Troubleshoot a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-10-administer-and-manage-vsphere-virtual-machines/&quot;&gt;Section 10: Administer and Manage vSphere Virtual Machines&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on October 16, 2015.&lt;/p&gt;
   </content>
 </entry>
 

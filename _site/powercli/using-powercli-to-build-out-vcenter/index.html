@@ -185,61 +185,61 @@
 
 <p><a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter">ConfigvCenter.ps1</a></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># Variables
-$vcenter = &quot;vc.lab.local&quot;
-$esxusername = &quot;root&quot;
-$esxpassword = &quot;password&quot;
-$DSC = &quot;DSC01&quot;
-$Datacenter = &quot;Lab&quot;
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># Variables</span>
+<span class="nv">$vcenter</span> <span class="p">=</span> <span class="s2">&quot;vc.lab.local&quot;</span>
+<span class="nv">$esxusername</span> <span class="p">=</span> <span class="s2">&quot;root&quot;</span>
+<span class="nv">$esxpassword</span> <span class="p">=</span> <span class="s2">&quot;password&quot;</span>
+<span class="nv">$DSC</span> <span class="p">=</span> <span class="s2">&quot;DSC01&quot;</span>
+<span class="nv">$Datacenter</span> <span class="p">=</span> <span class="s2">&quot;Lab&quot;</span>
 
-#Connect to vCenter
-#Connect-VIServer -Server $vCenter
+<span class="c">#Connect to vCenter</span>
+<span class="c">#Connect-VIServer -Server $vCenter</span>
 
-# Create Datacenters
-Write-Host &quot;Creating Datacenter&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\createdatacenter.csv
-foreach ($datacenter in $csv) {
-  New-Datacenter -Location (Get-Folder -NoRecursion) -Name $datacenter.Name
-}
+<span class="c"># Create Datacenters</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datacenter&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatacenter</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datacenter</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">New-Datacenter</span> <span class="n">-Location</span> <span class="p">(</span><span class="nb">Get-Folder</span> <span class="n">-NoRecursion</span><span class="p">)</span> <span class="n">-Name</span> <span class="nv">$datacenter</span><span class="p">.</span><span class="n">Name</span>
+<span class="p">}</span>
 
-# Create Clusters
-Write-Host &quot;Creating Clusters&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\createcluster.csv
-foreach ($cluster in $csv) {
-  New-Cluster -Name $cluster.Name -Location $cluster.Datacenter -DRSEnabled -DrsAutomationLevel FullyAutomated -HAEnabled
-}
+<span class="c"># Create Clusters</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Clusters&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createcluster</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">New-Cluster</span> <span class="n">-Name</span> <span class="nv">$cluster</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Location</span> <span class="nv">$cluster</span><span class="p">.</span><span class="n">Datacenter</span> <span class="n">-DRSEnabled</span> <span class="n">-DrsAutomationLevel</span> <span class="n">FullyAutomated</span> <span class="n">-HAEnabled</span>
+<span class="p">}</span>
 
-# Create Clusters
-Write-Host &quot;Adding Hosts&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\createhosts.csv
-foreach ($vmhost in $csv) {
-  Add-VMHost -Name $vmhost.Name -Location $vmhost.Cluster -User $esxusername -Password $esxpassword
-  Set-VMHost -VMHost $vmhost.Name -State Maintenance
-}
+<span class="c"># Create Clusters</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Adding Hosts&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createhosts</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Add-VMHost</span> <span class="n">-Name</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Location</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Cluster</span> <span class="n">-User</span> <span class="nv">$esxusername</span> <span class="n">-Password</span> <span class="nv">$esxpassword</span>
+  <span class="nb">Set-VMHost</span> <span class="n">-VMHost</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Name</span> <span class="n">-State</span> <span class="n">Maintenance</span>
+<span class="p">}</span>
 
-# Create Datastores
-Write-Host &quot;Creating Datastores&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\createdatastores.csv
-foreach ($datastore in $csv) {
-  New-Datastore -VMHost $datastore.host -Name $datastore.Name -Path $datastore.NAAID -VMFS
-}
+<span class="c"># Create Datastores</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datastores&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatastores</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">New-Datastore</span> <span class="n">-VMHost</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">host</span> <span class="n">-Name</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Path</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">NAAID</span> <span class="n">-VMFS</span>
+<span class="p">}</span>
 
-# Create Datastore Cluster and Move Datastores In
-Write-Host &quot;Creating Datastore Cluster and Adding Datastores&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\createdatastores.csv
-New-DatastoreCluster -Name $DSC -Location $Datacenter
-foreach ($datastore in $csv) {
-  Move-Datastore $datastore.Name -Destination $datastore.DatastoreCluster
-}
+<span class="c"># Create Datastore Cluster and Move Datastores In</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datastore Cluster and Adding Datastores&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatastores</span><span class="p">.</span><span class="n">csv</span>
+<span class="nb">New-DatastoreCluster</span> <span class="n">-Name</span> <span class="nv">$DSC</span> <span class="n">-Location</span> <span class="nv">$Datacenter</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Move-Datastore</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Destination</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">DatastoreCluster</span>
+<span class="p">}</span>
 
-# Apply HostProfile
-Write-Host &quot;Applying HostProfiles&quot; -ForegroundColor &quot;Green&quot;
-$csv = Import-CSV .\applyhostprofile.csv
-foreach ($hostprofile in $csv) {
-  Apply-VMHostProfile -Entity $hostprofile.Entity -Profile $hostprofile.Profile -Confirm:$false
-}
+<span class="c"># Apply HostProfile</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Applying HostProfiles&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">applyhostprofile</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$hostprofile</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Apply-VMHostProfile</span> <span class="n">-Entity</span> <span class="nv">$hostprofile</span><span class="p">.</span><span class="n">Entity</span> <span class="n">-Profile</span> <span class="nv">$hostprofile</span><span class="p">.</span><span class="n">Profile</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+<span class="p">}</span>
 
-Write-Host &quot;Complete!&quot; -ForegroundColor &quot;Green&quot;</code></pre></div>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Complete!&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span></code></pre></div>
 
 
       <hr />
@@ -280,11 +280,11 @@ Write-Host &quot;Complete!&quot; -ForegroundColor &quot;Green&quot;</code></pre>
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

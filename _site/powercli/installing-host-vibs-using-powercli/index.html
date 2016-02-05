@@ -174,28 +174,28 @@
 
 <p>All you need to do is input your cluster and specify what VIB’s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB’s you want to install.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># Define Variables
-$Cluster = &quot;Cluster&quot;
-$VIBPATH1 = &quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;
-$VIBPATH2 = &quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&quot;
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># Define Variables</span>
+<span class="nv">$Cluster</span> <span class="p">=</span> <span class="s2">&quot;Cluster&quot;</span>
+<span class="nv">$VIBPATH1</span> <span class="p">=</span> <span class="s2">&quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;</span>
+<span class="nv">$VIBPATH2</span> <span class="p">=</span> <span class="s2">&quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&quot;</span>
 
 
-# Get each host in specified cluster that meets criteria
-Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | foreach {
+<span class="c"># Get each host in specified cluster that meets criteria</span>
+<span class="nb">Get-VMhost</span> <span class="n">-Location</span> <span class="nv">$Cluster</span> <span class="p">|</span> <span class="n">where</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">PowerState</span> <span class="o">-eq</span> <span class="s2">&quot;PoweredOn&quot;</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">ConnectionState</span> <span class="o">-eq</span> <span class="s2">&quot;Connected&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="k">foreach</span> <span class="p">{</span>
 
-    Write-host &quot;Preparing $($_.Name) for ESXCLI&quot; -ForegroundColor Yellow
+    <span class="nb">Write-host</span> <span class="s2">&quot;Preparing </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2"> for ESXCLI&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
 
-    $ESXCLI = Get-EsxCli -VMHost $_
+    <span class="nv">$ESXCLI</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-VMHost</span> <span class="nv">$_</span>
 
-    # Install VIBs
-    Write-host &quot;Installing VIB on $($_.Name)&quot; -ForegroundColor Yellow
-    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
-    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
+    <span class="c"># Install VIBs</span>
+    <span class="nb">Write-host</span> <span class="s2">&quot;Installing VIB on </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+    <span class="nv">$action</span> <span class="p">=</span> <span class="nv">$ESXCLI</span><span class="p">.</span><span class="n">software</span><span class="p">.</span><span class="n">vib</span><span class="p">.</span><span class="n">install</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$true</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$VIBPATH1</span><span class="p">)</span>
+    <span class="nv">$action2</span> <span class="p">=</span> <span class="nv">$ESXCLI</span><span class="p">.</span><span class="n">software</span><span class="p">.</span><span class="n">vib</span><span class="p">.</span><span class="n">install</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$true</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$VIBPATH2</span><span class="p">)</span>
 
-    # Verify VIB installed successfully
-    if ($action.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-    if ($action2.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-}</code></pre></div>
+    <span class="c"># Verify VIB installed successfully</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$action</span><span class="p">.</span><span class="n">Message</span> <span class="o">-eq</span> <span class="s2">&quot;Operation finished successfully.&quot;</span><span class="p">){</span><span class="nb">Write-host</span> <span class="s2">&quot;Action Completed successfully on </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="nb">Write-host</span> <span class="nv">$action</span><span class="p">.</span><span class="n">Message</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span><span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$action2</span><span class="p">.</span><span class="n">Message</span> <span class="o">-eq</span> <span class="s2">&quot;Operation finished successfully.&quot;</span><span class="p">){</span><span class="nb">Write-host</span> <span class="s2">&quot;Action Completed successfully on </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="nb">Write-host</span> <span class="nv">$action</span><span class="p">.</span><span class="n">Message</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span><span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
 <p>Hope this helps anyone else out wanting to automate vib installation using PowerCLI.</p>
 
@@ -237,11 +237,11 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; 
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

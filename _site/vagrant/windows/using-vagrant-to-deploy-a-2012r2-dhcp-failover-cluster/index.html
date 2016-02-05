@@ -193,90 +193,90 @@
 
 <p>Execute the powershell script by downloading the scripts folder and running.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">.\install_ha_dhcp.ps1</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="p">.\</span><span class="n">install_ha_dhcp</span><span class="p">.</span><span class="n">ps1</span></code></pre></div>
 
 <h1 id="here-is-a-copy-of-the-raw-code">Here is a copy of the raw code.</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># Powershell Script for Vagrant to install and configure DHCP
-# @davidstamen
-# http://davidstamen.com
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># Powershell Script for Vagrant to install and configure DHCP</span>
+<span class="c"># @davidstamen</span>
+<span class="c"># http://davidstamen.com</span>
 
-cd c:\vagrant\scripts
+<span class="n">cd</span> <span class="n">c</span><span class="err">:</span><span class="p">\</span><span class="n">vagrant</span><span class="p">\</span><span class="n">scripts</span>
 
-$username = &quot;vagrant&quot;
-$password = &quot;vagrant&quot;
-$secstr = New-Object -TypeName System.Security.SecureString
-$password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
-$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
+<span class="nv">$username</span> <span class="p">=</span> <span class="s2">&quot;vagrant&quot;</span>
+<span class="nv">$password</span> <span class="p">=</span> <span class="s2">&quot;vagrant&quot;</span>
+<span class="nv">$secstr</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">SecureString</span>
+<span class="nv">$password</span><span class="p">.</span><span class="n">ToCharArray</span><span class="p">()</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$secstr</span><span class="p">.</span><span class="n">AppendChar</span><span class="p">(</span><span class="nv">$_</span><span class="p">)}</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">new-object</span> <span class="n">-typename</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span> <span class="n">-argumentlist</span> <span class="nv">$username</span><span class="p">,</span> <span class="nv">$secstr</span>
 
-# Install the DHCP Role
-Write-Host &quot;Installing DHCP Server Role&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\dhcpservers.csv
-foreach ($server in $csv) {
-  Install-WindowsFeature DHCP -IncludeAllSubFeature -IncludeManagementTools -Computer $server.IP -Credential $cred -Verbose
-}
+<span class="c"># Install the DHCP Role</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Installing DHCP Server Role&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">dhcpservers</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$server</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Install-WindowsFeature</span> <span class="n">DHCP</span> <span class="n">-IncludeAllSubFeature</span> <span class="n">-IncludeManagementTools</span> <span class="n">-Computer</span> <span class="nv">$server</span><span class="p">.</span><span class="n">IP</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-# Authorize the DHCP server in Active Directory
-#Write-Host &quot;Adding DHCP Server to AD&quot; -ForegroundColor &quot;Red&quot;
-#$csv = Import-CSV .\dhcpservers.csv
-#foreach ($server in $csv) {
-#Add-DhcpServerInDC -DnsName $server.Name -IPAddress $server.IP
-#}
+<span class="c"># Authorize the DHCP server in Active Directory</span>
+<span class="c">#Write-Host &quot;Adding DHCP Server to AD&quot; -ForegroundColor &quot;Red&quot;</span>
+<span class="c">#$csv = Import-CSV .\dhcpservers.csv</span>
+<span class="c">#foreach ($server in $csv) {</span>
+<span class="c">#Add-DhcpServerInDC -DnsName $server.Name -IPAddress $server.IP</span>
+<span class="c">#}</span>
 
-# Create an IPv4 DHCP scope
-Write-Host &quot;Adding DHCP Scopes&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\createscopes.csv
-foreach ($scope in $csv) {
-    Add-DhcpServerv4Scope -ComputerName $scope.Server -Name $scope.Name -StartRange $scope.Start -EndRange $scope.End -SubnetMask $scope.mask -Verbose
-}
+<span class="c"># Create an IPv4 DHCP scope</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Adding DHCP Scopes&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createscopes</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Add-DhcpServerv4Scope</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-Name</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Name</span> <span class="n">-StartRange</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Start</span> <span class="n">-EndRange</span> <span class="nv">$scope</span><span class="p">.</span><span class="k">End</span> <span class="n">-SubnetMask</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">mask</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-# Set DHCP Server Options
-Write-Host &quot;Setting DHCP Server Options&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\serveroptions.csv
-foreach ($scope in $csv) {
-  Set-DhcpServerv4OptionValue -ComputerName $scope.Server -DnsDomain $scope.DNSDomain -DNSServer $scope.DNSServer -Verbose
-}
+<span class="c"># Set DHCP Server Options</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Setting DHCP Server Options&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">serveroptions</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Set-DhcpServerv4OptionValue</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-DnsDomain</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">DNSDomain</span> <span class="n">-DNSServer</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">DNSServer</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-# Set DHCP Scope Options
-Write-Host &quot;Setting DHCP Scope Options&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\scopeoptions.csv
-foreach ($scope in $csv) {
-  Set-DhcpServerv4OptionValue -ComputerName $scope.Server -ScopeId $scope.scopeID -Router $scope.Router -Verbose
-  Set-DhcpServerv4Scope -ComputerName $scope.Server -ScopeId $scope.scopeID -LeaseDuration $scope.Lease -Verbose
-}
+<span class="c"># Set DHCP Scope Options</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Setting DHCP Scope Options&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">scopeoptions</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Set-DhcpServerv4OptionValue</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">scopeID</span> <span class="n">-Router</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Router</span> <span class="n">-Verbose</span>
+  <span class="nb">Set-DhcpServerv4Scope</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">scopeID</span> <span class="n">-LeaseDuration</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Lease</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-# Configure Failover
-Write-Host &quot;Configuring DHCP Failover&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\scopefailover.csv
-foreach ($scope in $csv) {
-  Add-DhcpServerv4Failover -ComputerName $scope.Server -Name $scope.scopeID -PartnerServer $scope.PartnerServer -ScopeId $scope.scopeID -LoadBalancePercent $scope.LoadBalancePercent -MaxClientLeadTime $scope.MaxClientLeadTime -AutoStateTransition ([System.Convert]::ToBoolean($scope.AutoStateTransition)) -StateSwitchInterval $scope.StateSwitchInterval -Verbose
-}
+<span class="c"># Configure Failover</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Configuring DHCP Failover&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">scopefailover</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Add-DhcpServerv4Failover</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-Name</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">scopeID</span> <span class="n">-PartnerServer</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">PartnerServer</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">scopeID</span> <span class="n">-LoadBalancePercent</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">LoadBalancePercent</span> <span class="n">-MaxClientLeadTime</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">MaxClientLeadTime</span> <span class="n">-AutoStateTransition</span> <span class="p">(</span><span class="no">[System.Convert]</span><span class="p">::</span><span class="n">ToBoolean</span><span class="p">(</span><span class="nv">$scope</span><span class="p">.</span><span class="n">AutoStateTransition</span><span class="p">))</span> <span class="n">-StateSwitchInterval</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">StateSwitchInterval</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-#Create MAC Allow List DHCP policy
-Write-Host &quot;Creating MAC Allow List Policy&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\scopepolicy.csv
-foreach ($scope in $csv) {
-  $maclist = @()
-  $operator = $scope.Operator
-  $maclist+=$operator
-  $maclist+=$Scope.MAC1
-  $maclist+=$Scope.MAC2
-  Add-DhcpServerv4Policy -ComputerName $scope.Server -Name $scope.Name -Description $scope.Description -ScopeId $scope.ScopeID -Condition $scope.Condition -MacAddress $maclist -Verbose
-  Add-DhcpServerv4PolicyIPRange -ComputerName $scope.Server -Name $scope.Name -ScopeId $scope.ScopeID -StartRange (Get-DHCPServerv4Scope $scope.ScopeID).StartRange -EndRange (Get-DHCPServerv4Scope $scope.ScopeID).EndRange -Verbose
-}
+<span class="c">#Create MAC Allow List DHCP policy</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Creating MAC Allow List Policy&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">scopepolicy</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$maclist</span> <span class="p">=</span> <span class="p">@()</span>
+  <span class="nv">$operator</span> <span class="p">=</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Operator</span>
+  <span class="nv">$maclist</span><span class="p">+=</span><span class="nv">$operator</span>
+  <span class="nv">$maclist</span><span class="p">+=</span><span class="nv">$Scope</span><span class="p">.</span><span class="n">MAC1</span>
+  <span class="nv">$maclist</span><span class="p">+=</span><span class="nv">$Scope</span><span class="p">.</span><span class="n">MAC2</span>
+  <span class="nb">Add-DhcpServerv4Policy</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-Name</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Description</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Description</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span> <span class="n">-Condition</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Condition</span> <span class="n">-MacAddress</span> <span class="nv">$maclist</span> <span class="n">-Verbose</span>
+  <span class="nb">Add-DhcpServerv4PolicyIPRange</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-Name</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Name</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span> <span class="n">-StartRange</span> <span class="p">(</span><span class="nb">Get-DHCPServerv4Scope</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span><span class="p">).</span><span class="n">StartRange</span> <span class="n">-EndRange</span> <span class="p">(</span><span class="nb">Get-DHCPServerv4Scope</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span><span class="p">).</span><span class="n">EndRange</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-#Reserve IP&#39;s
-Write-Host &quot;Reserving DHCP IPs&quot; -ForegroundColor &quot;Red&quot;
-$csv = Import-CSV .\scopereservations.csv
-foreach ($scope in $csv) {
-  Add-DhcpServerv4Reservation -ComputerName $scope.Server -ScopeId $scope.ScopeID -IPAddress (Get-DhcpServerv4FreeIPAddress -ComputerName $scope.Server -ScopeId $scope.ScopeID) -ClientId $Scope.MAC -Name $scope.Name -Verbose
-}
+<span class="c">#Reserve IP&#39;s</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Reserving DHCP IPs&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">scopereservations</span><span class="p">.</span><span class="n">csv</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$scope</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Add-DhcpServerv4Reservation</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span> <span class="n">-IPAddress</span> <span class="p">(</span><span class="nb">Get-DhcpServerv4FreeIPAddress</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-ScopeId</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">ScopeID</span><span class="p">)</span> <span class="n">-ClientId</span> <span class="nv">$Scope</span><span class="p">.</span><span class="n">MAC</span> <span class="n">-Name</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Verbose</span>
+<span class="p">}</span>
 
-#Replicate Settings
-Write-Host &quot;Forcing Replication&quot; -ForegroundColor &quot;Red&quot;
-Get-DhcpServerv4Failover -ComputerName $scope.Server|Invoke-DhcpServerv4FailoverReplication -ComputerName $scope.Server -Force
-#Convert Leases to Reservation
-#Get-DhcpServerv4Lease -ComputerName $server1 -ScopeID 10.10.10.0 | Add-DhcpServerv4Reservation -ComputerName $server1</code></pre></div>
+<span class="c">#Replicate Settings</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Forcing Replication&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Red&quot;</span>
+<span class="nb">Get-DhcpServerv4Failover</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span><span class="p">|</span><span class="nb">Invoke-DhcpServerv4FailoverReplication</span> <span class="n">-ComputerName</span> <span class="nv">$scope</span><span class="p">.</span><span class="n">Server</span> <span class="n">-Force</span>
+<span class="c">#Convert Leases to Reservation</span>
+<span class="c">#Get-DhcpServerv4Lease -ComputerName $server1 -ScopeID 10.10.10.0 | Add-DhcpServerv4Reservation -ComputerName $server1</span></code></pre></div>
 
 
       <hr />
@@ -317,11 +317,11 @@ Get-DhcpServerv4Failover -ComputerName $scope.Server|Invoke-DhcpServerv4Failover
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

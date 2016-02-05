@@ -188,25 +188,25 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"># PowerCLI Script for setting Disk Max IO Size
-# @davidstamen
-# http://davidstamen.com
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># PowerCLI Script for setting Disk Max IO Size</span>
+<span class="c"># @davidstamen</span>
+<span class="c"># http://davidstamen.com</span>
 
-#Define Variables
-$cred = Get-Credential
-$VC = &quot;vc.lab.local&quot;
-$Cluster = &quot;Production&quot;
+<span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$VC</span> <span class="p">=</span> <span class="s2">&quot;vc.lab.local&quot;</span>
+<span class="nv">$Cluster</span> <span class="p">=</span> <span class="s2">&quot;Production&quot;</span>
 
-#Connect to vCenter
-Connect-VIServer $VC -Credential $cred
+<span class="c">#Connect to vCenter</span>
+<span class="nb">Connect-VIServer</span> <span class="nv">$VC</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
 
-#Get all Hosts
-$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | Sort Name
+<span class="c">#Get all Hosts</span>
+<span class="nv">$esxHosts</span> <span class="p">=</span> <span class="nb">Get-Cluster</span> <span class="nv">$Cluster</span> <span class="p">|</span> <span class="nb">Get-VMHost</span> <span class="p">|</span> <span class="n">Where</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">PowerState</span> <span class="o">-eq</span> <span class="s2">&quot;PoweredOn&quot;</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">ConnectionState</span> <span class="o">-eq</span> <span class="s2">&quot;Connected&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="n">Sort</span> <span class="n">Name</span>
 
-#For each host set DiskMaxIOsize to 4MB
-foreach ($esx in $esxHosts) {
-  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
-}</code></pre></div>
+<span class="c">#For each host set DiskMaxIOsize to 4MB</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$esx</span> <span class="k">in</span> <span class="nv">$esxHosts</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Get-AdvancedSetting</span> <span class="n">-Entity</span> <span class="nv">$esx</span> <span class="n">-Name</span> <span class="n">Disk</span><span class="p">.</span><span class="n">DiskMaxIOSize</span> <span class="p">|</span> <span class="nb">Set-AdvancedSetting</span> <span class="n">-Value</span> <span class="n">4096</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -253,11 +253,11 @@ foreach ($esx in $esxHosts) {
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

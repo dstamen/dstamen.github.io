@@ -174,10 +174,10 @@
 
 <p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM’s that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Connect-VIServer vcenter.lab.local
-$VMs = Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | Where-Object {$_.Value -ne &quot;&quot;}
-$VMs | Select Entity, Value
-$VMs | ForEach {Get-VM $_.Entity | Get-AdvancedSetting -Name tools.deployPkg.fileName | Set-AdvancedSetting -Value &#39;&#39; -Confirm:$false}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Connect-VIServer</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">lab</span><span class="p">.</span><span class="n">local</span>
+<span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="p">|</span> <span class="nb">Get-AdvancedSetting</span> <span class="n">-Name</span> <span class="n">tools</span><span class="p">.</span><span class="n">deployPkg</span><span class="p">.</span><span class="n">fileName</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="o">-ne</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+<span class="nv">$VMs</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">Entity</span><span class="p">,</span> <span class="n">Value</span>
+<span class="nv">$VMs</span> <span class="p">|</span> <span class="k">ForEach</span> <span class="p">{</span><span class="nb">Get-VM</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Entity</span> <span class="p">|</span> <span class="nb">Get-AdvancedSetting</span> <span class="n">-Name</span> <span class="n">tools</span><span class="p">.</span><span class="n">deployPkg</span><span class="p">.</span><span class="n">fileName</span> <span class="p">|</span> <span class="nb">Set-AdvancedSetting</span> <span class="n">-Value</span> <span class="s1">&#39;&#39;</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span><span class="p">}</span></code></pre></div>
 
 
       <hr />
@@ -218,11 +218,11 @@ $VMs | ForEach {Get-VM $_.Entity | Get-AdvancedSetting -Name tools.deployPkg.fil
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

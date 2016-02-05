@@ -170,58 +170,58 @@
     <div class="article-wrap">
       <p>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Enable-MemHotAdd $ServerName
-Disable-MemHotAdd $ServerName
-Enable-vCPUHotAdd $ServerName
-Disable-vCPUHotAdd $ServerName</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Enable-MemHotAdd</span> <span class="nv">$ServerName</span>
+<span class="nb">Disable-MemHotAdd</span> <span class="nv">$ServerName</span>
+<span class="nb">Enable-vCPUHotAdd</span> <span class="nv">$ServerName</span>
+<span class="nb">Disable-vCPUHotAdd</span> <span class="nv">$ServerName</span></code></pre></div>
 
 <h1 id="enable-memory-hotadd">Enable Memory HotAdd</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Function Enable-MemHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;mem.hotadd&quot;
-$extra.Value=&quot;true&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Function</span> <span class="nb">Enable-MemHotAdd</span><span class="p">(</span><span class="nv">$vm</span><span class="p">){</span>
+<span class="nv">$vmview</span> <span class="p">=</span> <span class="nb">Get-vm</span> <span class="nv">$vm</span> <span class="p">|</span> <span class="nb">Get-View</span>
+<span class="nv">$vmConfigSpec</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">VirtualMachineConfigSpec</span>
+<span class="nv">$extra</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">optionvalue</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Key</span><span class="p">=</span><span class="s2">&quot;mem.hotadd&quot;</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;true&quot;</span>
+<span class="nv">$vmConfigSpec</span><span class="p">.</span><span class="n">extraconfig</span> <span class="p">+=</span> <span class="nv">$extra</span>
+<span class="nv">$vmview</span><span class="p">.</span><span class="n">ReconfigVM</span><span class="p">(</span><span class="nv">$vmConfigSpec</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
 <h1 id="disable-memory-hotadd">Disable Memory HotAdd</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Function Disable-MemHotAdd($vm){
-$vmview = Get-VM $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;mem.hotadd&quot;
-$extra.Value=&quot;false&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Function</span> <span class="nb">Disable-MemHotAdd</span><span class="p">(</span><span class="nv">$vm</span><span class="p">){</span>
+<span class="nv">$vmview</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="nv">$vm</span> <span class="p">|</span> <span class="nb">Get-View</span>
+<span class="nv">$vmConfigSpec</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">VirtualMachineConfigSpec</span>
+<span class="nv">$extra</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">optionvalue</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Key</span><span class="p">=</span><span class="s2">&quot;mem.hotadd&quot;</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;false&quot;</span>
+<span class="nv">$vmConfigSpec</span><span class="p">.</span><span class="n">extraconfig</span> <span class="p">+=</span> <span class="nv">$extra</span>
+<span class="nv">$vmview</span><span class="p">.</span><span class="n">ReconfigVM</span><span class="p">(</span><span class="nv">$vmConfigSpec</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
 <h1 id="enable-cpu-hotadd">Enable CPU HotAdd</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Function Enable-vCpuHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;vcpu.hotadd&quot;
-$extra.Value=&quot;true&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Function</span> <span class="nb">Enable-vCpuHotAdd</span><span class="p">(</span><span class="nv">$vm</span><span class="p">){</span>
+<span class="nv">$vmview</span> <span class="p">=</span> <span class="nb">Get-vm</span> <span class="nv">$vm</span> <span class="p">|</span> <span class="nb">Get-View</span>
+<span class="nv">$vmConfigSpec</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">VirtualMachineConfigSpec</span>
+<span class="nv">$extra</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">optionvalue</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Key</span><span class="p">=</span><span class="s2">&quot;vcpu.hotadd&quot;</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;true&quot;</span>
+<span class="nv">$vmConfigSpec</span><span class="p">.</span><span class="n">extraconfig</span> <span class="p">+=</span> <span class="nv">$extra</span>
+<span class="nv">$vmview</span><span class="p">.</span><span class="n">ReconfigVM</span><span class="p">(</span><span class="nv">$vmConfigSpec</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
 <h1 id="disable-cpu-hotadd">Disable CPU HotAdd</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Function Disable-vCpuHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;vcpu.hotadd&quot;
-$extra.Value=&quot;false&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Function</span> <span class="nb">Disable-vCpuHotAdd</span><span class="p">(</span><span class="nv">$vm</span><span class="p">){</span>
+<span class="nv">$vmview</span> <span class="p">=</span> <span class="nb">Get-vm</span> <span class="nv">$vm</span> <span class="p">|</span> <span class="nb">Get-View</span>
+<span class="nv">$vmConfigSpec</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">VirtualMachineConfigSpec</span>
+<span class="nv">$extra</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">VMware</span><span class="p">.</span><span class="n">Vim</span><span class="p">.</span><span class="n">optionvalue</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Key</span><span class="p">=</span><span class="s2">&quot;vcpu.hotadd&quot;</span>
+<span class="nv">$extra</span><span class="p">.</span><span class="n">Value</span><span class="p">=</span><span class="s2">&quot;false&quot;</span>
+<span class="nv">$vmConfigSpec</span><span class="p">.</span><span class="n">extraconfig</span> <span class="p">+=</span> <span class="nv">$extra</span>
+<span class="nv">$vmview</span><span class="p">.</span><span class="n">ReconfigVM</span><span class="p">(</span><span class="nv">$vmConfigSpec</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="notes-enabling-cpu-hotadd-disables-vnuma-so-enable-enable-this-if-its-really-neccessary-in-your-environment">Notes: Enabling CPU Hotadd disables vNUMA. So enable enable this if its really neccessary in your environment.</h4>
 <p><a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2040375">KB2040375</a></p>
@@ -264,11 +264,11 @@ $vmview.ReconfigVM($vmConfigSpec)
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

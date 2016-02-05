@@ -185,49 +185,49 @@
 
 <p><em>This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer</em></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-Write-Host &quot;Prompt For Guest Credentials&quot; -ForegroundColor Yellow
-$Cred = Get-Credential
-$VMs = &quot;VM1&quot;,&quot;VM2&quot;
-#$VMs = Get-VM VM* | Sort Name
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Prompt For Guest Credentials&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+<span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$VMs</span> <span class="p">=</span> <span class="s2">&quot;VM1&quot;</span><span class="p">,</span><span class="s2">&quot;VM2&quot;</span>
+<span class="c">#$VMs = Get-VM VM* | Sort Name</span>
 
-Foreach ($VMName in $VMs) {
-  $VM = Get-VM $VMName
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$VMName</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$VM</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="nv">$VMName</span>
 
-#Define file information. Include File Name, Parameters, Source and Destination
-  $File = &quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&quot;
-  $Param = &quot;/s /v/qn REBOOT=Reallysuppress&quot;
-  $SrcPath = &quot;c:\&quot;
-  $DstPath = &quot;c:\temp\&quot;
-  $Fullpath = $SrcPath + $File
+<span class="c">#Define file information. Include File Name, Parameters, Source and Destination</span>
+  <span class="nv">$File</span> <span class="p">=</span> <span class="s2">&quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&quot;</span>
+  <span class="nv">$Param</span> <span class="p">=</span> <span class="s2">&quot;/s /v/qn REBOOT=Reallysuppress&quot;</span>
+  <span class="nv">$SrcPath</span> <span class="p">=</span> <span class="s2">&quot;c:\&quot;</span>
+  <span class="nv">$DstPath</span> <span class="p">=</span> <span class="s2">&quot;c:\temp\&quot;</span>
+  <span class="nv">$Fullpath</span> <span class="p">=</span> <span class="nv">$SrcPath</span> <span class="p">+</span> <span class="nv">$File</span>
 
-  Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
-  Copy-VMGuestFile -VM $VM -Source $Fullpath -Destination $DstPath -LocalToGuest -GuestCredential $Cred -Force
+  <span class="nb">Write-Host</span> <span class="n">Copying</span> <span class="nv">$Fullpath</span> <span class="n">to</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+  <span class="nb">Copy-VMGuestFile</span> <span class="n">-VM</span> <span class="nv">$VM</span> <span class="n">-Source</span> <span class="nv">$Fullpath</span> <span class="n">-Destination</span> <span class="nv">$DstPath</span> <span class="n">-LocalToGuest</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span> <span class="n">-Force</span>
 
-  #Define Install File Command
-  $Command = $DstPath + $File + $Param
-  #Define Delete File Command
-  $Command2 = &quot;del &quot; + $DstPath + $File
+  <span class="c">#Define Install File Command</span>
+  <span class="nv">$Command</span> <span class="p">=</span> <span class="nv">$DstPath</span> <span class="p">+</span> <span class="nv">$File</span> <span class="p">+</span> <span class="nv">$Param</span>
+  <span class="c">#Define Delete File Command</span>
+  <span class="nv">$Command2</span> <span class="p">=</span> <span class="s2">&quot;del &quot;</span> <span class="p">+</span> <span class="nv">$DstPath</span> <span class="p">+</span> <span class="nv">$File</span>
 
-  Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
-  $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
-  $ExitCode = $Result.ExitCode
-  if ($ExitCode = &quot;0&quot;) {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Red
-  }
-  Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
-  $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
-  $ExitCode2 = $Result2.ExitCode
-  if ($ExitCode2 = &quot;0&quot;) {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Red
-  }
-}</code></pre></div>
+  <span class="nb">Write-Host</span> <span class="n">Executing</span> <span class="nv">$Command</span> <span class="n">within</span> <span class="n">guest</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">of</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">White</span>
+  <span class="nv">$Result</span> <span class="p">=</span> <span class="nb">Invoke-VMScript</span> <span class="n">-VM</span> <span class="nv">$VM</span>  <span class="n">-ScriptText</span> <span class="nv">$Command</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span>
+  <span class="nv">$ExitCode</span> <span class="p">=</span> <span class="nv">$Result</span><span class="p">.</span><span class="n">ExitCode</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$ExitCode</span> <span class="p">=</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+  <span class="p">}</span>
+  <span class="k">Else</span> <span class="p">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+  <span class="p">}</span>
+  <span class="nb">Write-Host</span> <span class="n">Executing</span> <span class="nv">$Command2</span> <span class="n">within</span> <span class="n">guest</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">of</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">White</span>
+  <span class="nv">$Result2</span> <span class="p">=</span> <span class="nb">Invoke-VMScript</span> <span class="n">-VM</span> <span class="nv">$VM</span>  <span class="n">-ScriptText</span> <span class="nv">$Command2</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span>
+  <span class="nv">$ExitCode2</span> <span class="p">=</span> <span class="nv">$Result2</span><span class="p">.</span><span class="n">ExitCode</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$ExitCode2</span> <span class="p">=</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode2</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+  <span class="p">}</span>
+  <span class="k">Else</span> <span class="p">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode2</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -272,11 +272,11 @@ Foreach ($VMName in $VMs) {
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

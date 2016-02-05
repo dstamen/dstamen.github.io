@@ -183,17 +183,17 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$fileName = &quot;C:\Users\david\Downloads\ucs-k9-bundle-infra.2.2.6e.A.bin&quot;
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$domains</span> <span class="p">=</span> <span class="s2">&quot;ucs01.lab.local&quot;</span><span class="p">,</span><span class="s2">&quot;ucs02.lab.local&quot;</span>
+<span class="nv">$fileName</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\david\Downloads\ucs-k9-bundle-infra.2.2.6e.A.bin&quot;</span>
 
-#Cycles through each UCS uploading the UCS Firmware
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  Send-UcsFirmware -LiteralPath $fileName | Watch-Ucs -Property TransferState -SuccessValue downloaded -PollSec 30 -TimeoutSec 600
-  Disconnect-UCS
-}</code></pre></div>
+<span class="c">#Cycles through each UCS uploading the UCS Firmware</span>
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$ucs</span> <span class="k">in</span> <span class="nv">$domains</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Connect-UCS</span> <span class="nv">$ucs</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+  <span class="nb">Send-UcsFirmware</span> <span class="n">-LiteralPath</span> <span class="nv">$fileName</span> <span class="p">|</span> <span class="n">Watch-Ucs</span> <span class="n">-Property</span> <span class="n">TransferState</span> <span class="n">-SuccessValue</span> <span class="n">downloaded</span> <span class="n">-PollSec</span> <span class="n">30</span> <span class="n">-TimeoutSec</span> <span class="n">600</span>
+  <span class="nb">Disconnect-UCS</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -238,11 +238,11 @@ Foreach ($ucs in $domains) {
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

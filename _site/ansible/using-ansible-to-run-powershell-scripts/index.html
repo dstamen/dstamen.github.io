@@ -187,21 +187,21 @@
 
 <p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">ansible_ssh_user: admin
-ansible_ssh_pass: password
-ansible_ssh_port: 5985
-ansible_connection: winrm
-ansible_winrm_server_cert_validation: ignore</code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">ansible_ssh_user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">admin</span>
+<span class="l-Scalar-Plain">ansible_ssh_pass</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">password</span>
+<span class="l-Scalar-Plain">ansible_ssh_port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5985</span>
+<span class="l-Scalar-Plain">ansible_connection</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">winrm</span>
+<span class="l-Scalar-Plain">ansible_winrm_server_cert_validation</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ignore</span></code></pre></div>
 
 <p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">- name: Run Powershell Scripts
-  hosts: test
-  tasks:
-    - name: run a powershell script
-      script: scripts/hello.ps1
-      register: out
-    - debug: var=out</code></pre></div>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Run Powershell Scripts</span>
+  <span class="l-Scalar-Plain">hosts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">test</span>
+  <span class="l-Scalar-Plain">tasks</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">run a powershell script</span>
+      <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">scripts/hello.ps1</span>
+      <span class="l-Scalar-Plain">register</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">out</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">debug</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">var=out</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -246,11 +246,11 @@ ansible_winrm_server_cert_validation: ignore</code></pre></div>
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
     
       <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
-    
-      <li><a href="/powercli/using-powercli-to-install-software-in-a-guest-vm/" title="Using PowerCLI to Install Software in a Guest VM">Using PowerCLI to Install Software in a Guest VM</a></li>
     
     </ul>
     <hr />

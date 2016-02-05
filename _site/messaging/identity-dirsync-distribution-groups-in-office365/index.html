@@ -172,7 +172,7 @@
 
 <p>Unfortunately i was unable to find any commands so thanks to MS Support I was able to find a way to identify these. You would think it would be under Get-DistributionGroup but it is actually under Get-MSolGroup. After connecting via remote powershell you can run the below command to see all that are not synced.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-MsolGroup -All | Select DisplayName, LastDirSyncTime | Where-Object {$_.LastDirSyncTime -eq $null}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-MsolGroup</span> <span class="n">-All</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">DisplayName</span><span class="p">,</span> <span class="n">LastDirSyncTime</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">LastDirSyncTime</span> <span class="o">-eq</span> <span class="nv">$null</span><span class="p">}</span></code></pre></div>
 
 
       <hr />
@@ -213,11 +213,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

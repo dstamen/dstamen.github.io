@@ -185,19 +185,19 @@
 
 <p><em>This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.</em></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$domains</span> <span class="p">=</span> <span class="s2">&quot;ucs01.lab.local&quot;</span><span class="p">,</span><span class="s2">&quot;ucs02.lab.local&quot;</span>
 
-#Cycles through each UCS setting values
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  $servers = Get-UCSRackUnit
-  Foreach ($server in $servers) {
-    Get-UCSRackUnit -id $server.id | Set-UCSRackunit -UsrLbl $server.assignedtodn.substring(12) -Name $server.assignedtodn.substring(12) -force
-  }
-  Disconnect-UCS
-}</code></pre></div>
+<span class="c">#Cycles through each UCS setting values</span>
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$ucs</span> <span class="k">in</span> <span class="nv">$domains</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Connect-UCS</span> <span class="nv">$ucs</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+  <span class="nv">$servers</span> <span class="p">=</span> <span class="nb">Get-UCSRackUnit</span>
+  <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$server</span> <span class="k">in</span> <span class="nv">$servers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Get-UCSRackUnit</span> <span class="n">-id</span> <span class="nv">$server</span><span class="p">.</span><span class="n">id</span> <span class="p">|</span> <span class="nb">Set-UCSRackunit</span> <span class="n">-UsrLbl</span> <span class="nv">$server</span><span class="p">.</span><span class="n">assignedtodn</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">12</span><span class="p">)</span> <span class="n">-Name</span> <span class="nv">$server</span><span class="p">.</span><span class="n">assignedtodn</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">12</span><span class="p">)</span> <span class="n">-force</span>
+  <span class="p">}</span>
+  <span class="nb">Disconnect-UCS</span>
+<span class="p">}</span></code></pre></div>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -242,11 +242,11 @@ Foreach ($ucs in $domains) {
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

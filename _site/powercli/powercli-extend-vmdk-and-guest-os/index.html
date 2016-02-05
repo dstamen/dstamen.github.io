@@ -172,16 +172,16 @@
 
 <p>I will be sharing it with you to save you the time. The script is very simple all you need to do is pass it the VM Name, VMware Hard Disk #, New Hard Disk Size in GB, and the Volume Letter.&lt;/p&gt;</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">param(
-  [string]$VM
-)
-$VM = Get-VM $VM
-$HardDisk = Read-Host &quot;Enter VMware Hard Disk (Ex. 1)&quot;
-$HardDisk = &quot;Hard Disk &quot; + $HardDisk
-$HardDiskSize = Read-Host &quot;Enter the new Hard Disk size in GB (Ex. 50)&quot;
-$VolumeLetter = Read-Host &quot;Enter the volume letter (Ex. c,d,e,f)&quot;
-Get-HardDisk -vm $VM | where {$_.Name -eq $HardDisk} | Set-HardDisk -CapacityGB $HardDiskSize -Confirm:$false
-Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\diskpart.txt &amp;&amp; echo extend &gt;&gt; c:\diskpart.txt &amp;&amp; diskpart.exe /s c:\diskpart.txt&quot; -ScriptType BAT</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">param</span><span class="p">(</span>
+  <span class="no">[string]</span><span class="nv">$VM</span>
+<span class="p">)</span>
+<span class="nv">$VM</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="nv">$VM</span>
+<span class="nv">$HardDisk</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter VMware Hard Disk (Ex. 1)&quot;</span>
+<span class="nv">$HardDisk</span> <span class="p">=</span> <span class="s2">&quot;Hard Disk &quot;</span> <span class="p">+</span> <span class="nv">$HardDisk</span>
+<span class="nv">$HardDiskSize</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter the new Hard Disk size in GB (Ex. 50)&quot;</span>
+<span class="nv">$VolumeLetter</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&quot;Enter the volume letter (Ex. c,d,e,f)&quot;</span>
+<span class="nb">Get-HardDisk</span> <span class="n">-vm</span> <span class="nv">$VM</span> <span class="p">|</span> <span class="n">where</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="o">-eq</span> <span class="nv">$HardDisk</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Set-HardDisk</span> <span class="n">-CapacityGB</span> <span class="nv">$HardDiskSize</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
+<span class="nb">Invoke-VMScript</span> <span class="n">-vm</span> <span class="nv">$VM</span> <span class="n">-ScriptText</span> <span class="s2">&quot;echo select vol $VolumeLetter &gt; c:\diskpart.txt &amp;&amp; echo extend &gt;&gt; c:\diskpart.txt &amp;&amp; diskpart.exe /s c:\diskpart.txt&quot;</span> <span class="n">-ScriptType</span> <span class="n">BAT</span></code></pre></div>
 
 <p>Once done, you can execute the script by running .\ScriptName.ps1 VMname as seen in the below screenshot.</p>
 
@@ -225,11 +225,11 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

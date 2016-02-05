@@ -177,19 +177,19 @@
 <p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-dvSwitch         256         3           256               1500    vmnic0,vmnic1
+dvSwitch         <span class="m">256</span>         <span class="m">3</span>           <span class="m">256</span>               <span class="m">1500</span>    vmnic0,vmnic1
 
   DVPort ID           In Use      Client
-  0                   1           vmnic0
-  1                   1           vmnic1</code></pre></div>
+  <span class="m">0</span>                   <span class="m">1</span>           vmnic0
+  <span class="m">1</span>                   <span class="m">1</span>           vmnic1</code></pre></div>
 
 <p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -Q vmnic1 -V <span class="m">1</span> dvSwitch</code></pre></div>
 
 <p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -P vmnic1 -V 1 dvSwitch</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -P vmnic1 -V <span class="m">1</span> dvSwitch</code></pre></div>
 
 
       <hr />
@@ -230,11 +230,11 @@ dvSwitch         256         3           256               1500    vmnic0,vmnic1
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

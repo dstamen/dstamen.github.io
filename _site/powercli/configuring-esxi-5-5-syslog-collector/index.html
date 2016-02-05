@@ -172,18 +172,18 @@
 
 <h1 id="check-the-esxi-syslog-collector-configuration-example">Check the ESXi Syslog Collector Configuration Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Foreach ($vmhost in (get-vmhost)){
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.syslog.config.get()}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">)){</span>
+<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">syslog</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">get</span><span class="p">()}</span></code></pre></div>
 
 <p><img src="/images/screenshot.371.jpg" alt="" /></p>
 
 <h1 id="setting-the-esxi-syslog-collector-example">Setting the ESXi Syslog Collector Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell">Foreach ($vmhost in (get-vmhost)){
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″)
-$esxcli.system.syslog.reload()}</code></pre></div>
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">)){</span>
+<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">syslog</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span><span class="s2">&quot;udp://IPtoSyslogServer:514″)</span>
+<span class="s2">$esxcli.system.syslog.reload()}</span></code></pre></div>
 
 <p><img src="/images/screenshot.381.jpg" alt="" /></p>
 
@@ -232,11 +232,11 @@ $esxcli.system.syslog.reload()}</code></pre></div>
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />

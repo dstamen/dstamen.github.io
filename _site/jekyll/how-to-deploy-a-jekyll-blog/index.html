@@ -170,29 +170,29 @@
     <div class="article-wrap">
       <p>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ gem install jekyll
-~ $ jekyll new myblog
-~ $ cd myblog
-~/myblog $ jekyll serve
-# =&gt; Now browse to http://localhost:4000 and you will see the blog running!</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ <span class="nv">$ </span>gem install jekyll
+~ <span class="nv">$ </span>jekyll new myblog
+~ <span class="nv">$ </span><span class="nb">cd </span>myblog
+~/myblog <span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; Now browse to http://localhost:4000 and you will see the blog running!</span></code></pre></div>
 
 <p>Easy Enough? Now how do you create a blog post?</p>
 
 <p>Create a file with the following name in the _posts directory.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"># Create a file with the following syntax
-YEAR-MONTH-DAY-title.md
-# Example: 2015-09-08-hi-to-my-new-blog.md</code></pre></div>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Create a file with the following syntax</span>
+<span class="no">YEAR</span><span class="o">-</span><span class="no">MONTH</span><span class="o">-</span><span class="no">DAY</span><span class="o">-</span><span class="n">title</span><span class="o">.</span><span class="n">md</span>
+<span class="c1"># Example: 2015-09-08-hi-to-my-new-blog.md</span></code></pre></div>
 
 <p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information <a href="https://help.github.com/articles/markdown-basics/">here</a></p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">---
-layout: post
-title: &quot;How To Deploy a Jekyll Blog&quot;
-categories:
-- Category
----
-Type your blogpost here.</code></pre></div>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">---</span>
+<span class="ss">layout</span><span class="p">:</span> <span class="n">post</span>
+<span class="ss">title</span><span class="p">:</span> <span class="s2">&quot;How To Deploy a Jekyll Blog&quot;</span>
+<span class="ss">categories</span><span class="p">:</span>
+<span class="o">-</span> <span class="no">Category</span>
+<span class="o">---</span>
+<span class="no">Type</span> <span class="n">your</span> <span class="n">blogpost</span> <span class="n">here</span><span class="o">.</span></code></pre></div>
 
 <p>Once you save your file, you can refresh your browser pointing to http://127.0.0.1:4000 and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p>
 
@@ -200,7 +200,7 @@ Type your blogpost here.</code></pre></div>
 
 <p>Run the following command and then upload the content in the _site directory.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">jekyll build</code></pre></div>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">jekyll</span> <span class="n">build</span></code></pre></div>
 
 <p>GitHub Pages
 You can also load the site into GitHub pages and have a fully functioning site at username.github.io
@@ -249,11 +249,11 @@ You can use the following link for details.
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
+    
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
     
       <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
-    
-      <li><a href="/cisco/cisco-champion-2016/" title="Cisco Champion 2016">Cisco Champion 2016</a></li>
     
     </ul>
     <hr />
