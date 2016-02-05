@@ -7,13 +7,13 @@ comments: true
 ---
 It's patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
 
-####***Pre-Requsites***
+#### ***Pre-Requsites***
 - [UCS Powertool](https://communities.cisco.com/docs/DOC-53838)
 
-####***Link to Script***
+#### ***Link to Script***
 - [UploadUCSFirmware.ps1](https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 {% highlight powershell %}
@@ -30,5 +30,5 @@ Foreach ($ucs in $domains) {
 }
 {%endhighlight%}
 
-####***Execute the Script***
+#### ***Execute the Script***
 - Run .\UploadUCSFirmware.ps1

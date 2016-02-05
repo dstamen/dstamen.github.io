@@ -11,7 +11,7 @@ So one thing I have come across with a few VCSA6 installs was the inability to u
 
 Working with VMware support we were finally able to get it working with a few tweaks and there is a current pending KB that has not been published yet. (KB2113038) I have been told this affects both an embedded deployment (VCSA and PSC together) and external deployment (VCSA and PSC seperate.)
 
-###If using an embedded VCSA+PSC make sure the VM is joined to the domain. If using an external VCSA and PSC you can easily join the PSC to the domain using the vSphere Web Client.
+### If using an embedded VCSA+PSC make sure the VM is joined to the domain. If using an external VCSA and PSC you can easily join the PSC to the domain using the vSphere Web Client.
 
 1. Log in to your vSphere Web Client.
 2. Navigate to Administration->System Configuration->Nodes
@@ -20,7 +20,7 @@ Working with VMware support we were finally able to get it working with a few tw
 
 ![](/images/Screen-Shot-2015-04-13-at-11.37.23-AM.png)
 
-###If you try to select your VCSA and look for the Active Directory tab you will notice it is missing, to join your VCSA to the domain you need to perform the domain join via the CLI.
+### If you try to select your VCSA and look for the Active Directory tab you will notice it is missing, to join your VCSA to the domain you need to perform the domain join via the CLI.
 
 1. SSH to your VCSA
 2. Query the device to see if it is joined to the domain
@@ -33,7 +33,7 @@ Working with VMware support we were finally able to get it working with a few tw
 - /opt/likewise/bin/domainjoin-cli query
 ![](/images/Screen-Shot-2015-04-13-at-11.43.45-AM.png)
 
-###At this point if you try to login with the current credentials you will still fail as there is one additional step. This will need to be completed on the VCSA virtual machine.
+### At this point if you try to login with the current credentials you will still fail as there is one additional step. This will need to be completed on the VCSA virtual machine.
 
 1. SSH to the appropriate appliance
 2. Navigate to /etc/ and using your favorite text editor modify the nsswitch.conf file. (Examples are using VI)

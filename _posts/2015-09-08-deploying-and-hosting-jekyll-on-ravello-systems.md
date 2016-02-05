@@ -12,7 +12,7 @@ Its actually quite easy and even easier with Jekyll. Jekyll is a great static co
 
 Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
 
-####**Disclaimer**: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours. So please use this at your own risk.
+#### **Disclaimer**: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours. So please use this at your own risk.
 
 Lets get started!
 

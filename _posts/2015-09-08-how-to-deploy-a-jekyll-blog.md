@@ -19,9 +19,9 @@ Easy Enough? Now how do you create a blog post?
 
 Create a file with the following name in the \_posts directory.
 {% highlight ruby%}
-#Create a file with the following syntax
+# Create a file with the following syntax
 YEAR-MONTH-DAY-title.md
-#Example: 2015-09-08-hi-to-my-new-blog.md
+# Example: 2015-09-08-hi-to-my-new-blog.md
 {% endhighlight %}
 
 Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information [here](https://help.github.com/articles/markdown-basics/)

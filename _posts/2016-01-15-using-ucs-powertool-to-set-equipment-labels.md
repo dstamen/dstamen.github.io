@@ -7,13 +7,13 @@ comments: true
 ---
 For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
 
-####***Pre-Requsites***
+#### ***Pre-Requsites***
 - [UCS Powertool](https://communities.cisco.com/docs/DOC-53838)
 
-####***Link to Script***
+#### ***Link to Script***
 - [Set-UCSEquipmentLabel.ps1](https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 *This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.*
@@ -34,5 +34,5 @@ Foreach ($ucs in $domains) {
 }
 {%endhighlight%}
 
-####***Execute the Script***
+#### ***Execute the Script***
 - Run .\Set-UCSEquipmentLabel.ps1

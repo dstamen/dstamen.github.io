@@ -14,7 +14,7 @@ Enable-vCPUHotAdd $ServerName
 Disable-vCPUHotAdd $ServerName
 {% endhighlight %}
 
-#Enable Memory HotAdd
+# Enable Memory HotAdd
 {% highlight powershell %}
 Function Enable-MemHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
@@ -27,7 +27,7 @@ $vmview.ReconfigVM($vmConfigSpec)
 }
 {% endhighlight %}
 
-#Disable Memory HotAdd
+# Disable Memory HotAdd
 {% highlight powershell %}
 Function Disable-MemHotAdd($vm){
 $vmview = Get-VM $vm | Get-View
@@ -39,7 +39,7 @@ $vmConfigSpec.extraconfig += $extra
 $vmview.ReconfigVM($vmConfigSpec)
 }
 {% endhighlight %}
-#Enable CPU HotAdd
+# Enable CPU HotAdd
 {% highlight powershell %}
 Function Enable-vCpuHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
@@ -51,7 +51,7 @@ $vmConfigSpec.extraconfig += $extra
 $vmview.ReconfigVM($vmConfigSpec)
 }
 {% endhighlight %}
-#Disable CPU HotAdd
+# Disable CPU HotAdd
 {% highlight powershell %}
 Function Disable-vCpuHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
@@ -64,5 +64,5 @@ $vmview.ReconfigVM($vmConfigSpec)
 }
 {% endhighlight %}
 
-####Notes: Enabling CPU Hotadd disables vNUMA. So enable enable this if its really neccessary in your environment.
+#### Notes: Enabling CPU Hotadd disables vNUMA. So enable enable this if its really neccessary in your environment.
 [KB2040375](http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2040375)

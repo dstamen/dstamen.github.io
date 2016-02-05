@@ -14,7 +14,7 @@ I have also rolled it into a Vagrant package so you can easily test it on your o
 
 The code is also fairly simple, it pulls in data from a few .CSV files and deploy's the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.
 
-#Files to modify to customize your installation
+# Files to modify to customize your installation
 - ***dhcpservers.csv*** - IP's of your two DHCP servers
 - ***createscopes.csv*** - Contains your Scope Name, StartRange, EndRange, Mask and Server to deploy to
 - ***scopeoptions.csv*** - Contains your server specific options. You can add more columns and adjust the code to add alternate options
@@ -33,7 +33,7 @@ Execute the powershell script by downloading the scripts folder and running.
 .\install_ha_dhcp.ps1
 {% endhighlight %}
 
-#Here is a copy of the raw code.
+# Here is a copy of the raw code.
 
 {% highlight Powershell %}
 # Powershell Script for Vagrant to install and configure DHCP

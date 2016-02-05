@@ -38,9 +38,6 @@ function Detach-Disk {
     $storSys.DetachScsiLun($lunUuid)
 }
 
-########################################################################################
-
-
 $ClusterHosts = Get-Cluster $Clustername | Get-VMHost
 
 Foreach($VMHost in $ClusterHosts)

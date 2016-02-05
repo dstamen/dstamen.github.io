@@ -7,7 +7,7 @@ comments: true
 ---
 Section 9 of the VCP6-DCV blueprint
 
-####Objective 9.1: Configure Advanced vSphere HA Features
+#### Objective 9.1: Configure Advanced vSphere HA Features
 - Modify vSphere HA advanced cluster settings
 - Configure a network for use with HA heartbeats
 - Apply an admission control policy for HA
@@ -18,7 +18,7 @@ Section 9 of the VCP6-DCV blueprint
 - Implement vSphere HA on a Virtual SAN cluster
 - Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management
 
-####Objective 9.2: Configure Advanced vSphere DRS Features
+#### Objective 9.2: Configure Advanced vSphere DRS Features
 - Configure VM-Host affinity/anti-affinity rules
 - Configure VM-VM affinity/anti-affinity rules
 - Add/remove Host DRS Group
@@ -27,7 +27,7 @@ Section 9 of the VCP6-DCV blueprint
 - Configure the proper Distributed Resource Scheduler (DRS) automation level based on a set of business requirements
 - Explain how DRS affinity rules effect virtual machine placement
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

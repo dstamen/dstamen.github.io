@@ -8,7 +8,7 @@ url:              http://davidstamen.com
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: pygment
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed

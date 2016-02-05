@@ -9,7 +9,7 @@ So I have had some time to play around with the new Linux Horizon View Agent and
 
 Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.
 
-##To disable console access perform the following steps.
+## To disable console access perform the following steps.
 
 1. Shutdown VM.
 2. Edit Settings

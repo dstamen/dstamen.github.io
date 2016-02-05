@@ -17,10 +17,10 @@ So today I went and modified a host to have the DiskMaxIOSize to be 4096 instead
 
 However, since I had to replicate this change to a bunch of hosts I created a script to make this change.
 
-####***Link to Script***
+#### ***Link to Script***
 - [Set-MaxDiskIO.ps1](https://github.com/dstamen/PowerCLI/blob/master/Set-MaxDiskIO.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 {% highlight powershell %}
@@ -46,7 +46,7 @@ foreach ($esx in $esxHosts) {
 {%endhighlight%}
 
 
-####***Execute the Script***
+#### ***Execute the Script***
 - Run .\Set-MaxDiskIO.ps1
 
 Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.

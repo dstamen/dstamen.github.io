@@ -9,7 +9,7 @@ I wanted to share this handy script i created when you have a need to build out 
 
 This script can be extremely handy as it will take care of creating the datacenter, cluster, adding hosts, creating datastores and then applying the appropriate host profile. It is all done via CSV files so it is extremely customizable.
 
-###Files to modify to customize your configuration
+### Files to modify to customize your configuration
 - ***createdatacenter.csv*** - Contains the name of the datacenter to create.
 - ***createcluster.csv*** - Contains the name of the cluster to create and the datacenter to put it in.
 - ***createhosts.csv*** - Contains the Name of the host and which cluster to place them in.

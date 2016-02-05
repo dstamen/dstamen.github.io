@@ -7,7 +7,7 @@ comments: true
 ---
 Section 5 of the VCP6-DCV blueprint
 
-####Objective 5.1: Configure Advanced/Multilevel Resource Pools
+#### Objective 5.1: Configure Advanced/Multilevel Resource Pools
 - Understand/Apply
 - Determine the effect of the Expandable Reservation parameter on resource allocation
 - Create a resource pool hierarchical structure
@@ -20,7 +20,7 @@ Section 5 of the VCP6-DCV blueprint
 - Assign vFlash resources to VMDKs
 - Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

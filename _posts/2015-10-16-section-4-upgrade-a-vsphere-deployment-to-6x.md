@@ -7,7 +7,7 @@ comments: true
 ---
 Section 4 of the VCP6-DCV blueprint
 
-####Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades
+#### Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades
 - Configure download source(s)
 - Setup UMDS to setup download repository
 - Import ESXi images
@@ -23,7 +23,7 @@ Section 4 of the VCP6-DCV blueprint
 - Stage multiple ESXi Host upgrades
 - Align appropriate baselines with target inventory objects.
 
-####Objective 4.2: Perform vCenter Server Upgrades
+#### Objective 4.2: Perform vCenter Server Upgrades
 - Compare the methods of upgrading vCenter Server
 - Backup vCenter Server database, configuration and certificate datastore
 - Perform update as prescribed for Appliance or Installable
@@ -31,7 +31,7 @@ Section 4 of the VCP6-DCV blueprint
 - Given a scenario, determine the upgrade compatibility of an environment
 - Determine correct order of steps to upgrade a vSphere implementation
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

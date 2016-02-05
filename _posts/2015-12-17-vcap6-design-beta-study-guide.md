@@ -9,14 +9,14 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 
 ###Section 1 – Create a vSphere Conceptual Design
 
-#####Objective 1.1 – Gather and analyze business requirements
+#### Objective 1.1 – Gather and analyze business requirements
 
 ***Skills and Abilities***
 
 - Associate a stakeholder with the information that needs to be collected.
 - Utilize inventory and assessment data from a current environment to define a baseline state.
-- Analyze customer interview data to explicitly define customer ####Objectives for a conceptual design.
-- Determine customer priorities for defined ####Objectives.
+- Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.
+- Determine customer priorities for defined #### Objectives.
 - Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.
 - Given results of the requirements gathering process, identify requirements for a conceptual design.
 - Categorize requirements by infrastructure qualities to prepare for logical design requirements.
@@ -30,7 +30,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Virtualize Business Critical Applications (blog)
 - Virtualizing Business Critical Applications on vSphere
 
-####Objective 1.2 – Gather and analyze application requirements
+#### Objective 1.2 – Gather and analyze application requirements
 
 ***Skills and Abilities***
 
@@ -50,7 +50,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - SAP and VMware Virtualization
 - Business and Financial Benefits of Virtualization: Customer Benchmarking Study
 
-####Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions
+#### Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions
 
 ***Skills and Abilities***
 
@@ -63,9 +63,9 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Developing Your Virtualization Strategy and Deployment Plan
 - Constraints, Assumptions (Risk, Requirements) & Dependencies
 
-###Section 2 – Create a vSphere 6.x Logical Design from an Existing Conceptual Design
+### Section 2 – Create a vSphere 6.x Logical Design from an Existing Conceptual Design
 
-####Objective 2.1 – Map Business Requirements to a vSphere 6.x Logical Design
+#### Objective 2.1 – Map Business Requirements to a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -83,7 +83,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Conceptual Architecture Action Guide
 - Systems Architecture Fundamentals – Conceptual, Logical, Physical Designs
 
-####Objective 2.2 – Map Service Dependencies
+#### Objective 2.2 – Map Service Dependencies
 
 ***Skills and Abilities***
 
@@ -100,7 +100,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Datacenter Operational Excellence Through Automated Application Discovery & Dependency Mapping
 - VMware Application Dependencies and Entity Relationship Diagrams MK2
 
-####Objective 2.3 – Build Availability Requirements into a vSphere 6.x Logical Design
+#### Objective 2.3 – Build Availability Requirements into a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -121,7 +121,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Protect Your Business with Automated Business Continuity Solutions
 - VMware High Availability Deployment Best Practices
 
-####Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design
+#### Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -147,7 +147,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - vCenter Server and Host Management Guide
 - vSphere PowerCLI documentation Center
 
-####Objective 2.5 – Build Performance Requirements into a vSphere 6.x Logical Design
+#### Objective 2.5 – Build Performance Requirements into a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -165,7 +165,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Proven Practice: Implementing ITIL v3 Capacity Management in a VMware environment
 - vSphere Monitoring and Performance Guide
 
-####Objective 2.6 – Build Recoverability Requirements into a vSphere 6.x Logical Design
+#### Objective 2.6 – Build Recoverability Requirements into a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -181,7 +181,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - A Practical Guide to Business Continuity and Disaster Recovery with VMware Infrastructure
 - Mastering Disaster Recovery: Business Continuity and Virtualization Best Practices Whitepaper
 
-####Objective 2.7 – Build Security Requirements into a vSphere 6.x Logical Design
+#### Objective 2.7 – Build Security Requirements into a vSphere 6.x Logical Design
 
 ***Skills and Abilities***
 
@@ -204,9 +204,9 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Infrastructure Security: Getting to the Bottom of Compliance in the Cloud
 - Securing the Cloud
 
-###Section 3 – Create a vSphere 6.x Physical Design from an Existing Logical Design
+### Section 3 – Create a vSphere 6.x Physical Design from an Existing Logical Design
 
-####Objective 3.1 – Transition from a Logical Design to a vSphere 6.x Physical Design
+#### Objective 3.1 – Transition from a Logical Design to a vSphere 6.x Physical Design
 
 ***Skills and Abilities***
 
@@ -220,7 +220,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - vSphere Server and Host Management Guide
 - vSphere Virtual Machine Administration Guide
 
-####Objective 3.2 – Create a vSphere 6.x Physical Network Design from an Existing Logical Design
+#### Objective 3.2 – Create a vSphere 6.x Physical Network Design from an Existing Logical Design
 
 ***Skills and Abilities***
 
@@ -256,7 +256,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Performance Evaluation of Network I/O Control in VMware vSphere 6
 - vMotion Architecture, Performance and Best Practices in VMware vSphere 5
 
-####Objective 3.3 – Create a vSphere 6.x Physical Storage Design from an Existing Logical Design
+#### Objective 3.3 – Create a vSphere 6.x Physical Storage Design from an Existing Logical Design
 
 ***Skills and Abilities***
 
@@ -297,7 +297,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - VMware Virtual Machine File System: Technical Overview and Best Practices
 - TechNote: Bootstrapping VSAN without vCenter
 
-####Objective 3.4 – Determine Appropriate Compute Resources for a vSphere 6.x Physical Design
+#### Objective 3.4 – Determine Appropriate Compute Resources for a vSphere 6.x Physical Design
 
 ***Skills and Abilities***
 
@@ -337,7 +337,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - Microsoft Exchange 2013 on VMware Best Practices Guide - vSphere Monitoring and Performance Guide
 - Interpreting esxtop statistics
 
-####Objective 3.5 – Determine Virtual Machine Configuration for a vSphere 6.x Physical Design
+#### Objective 3.5 – Determine Virtual Machine Configuration for a vSphere 6.x Physical Design
 
 ***Skills and Abilities***
 
@@ -364,7 +364,7 @@ It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully 
 - vSphere Resource Management Guide
 - Understanding Memory Management in VMware vSphere 6.0
 
-####Objective 3.6 – Determine Data Center Management Options for a vSphere 6.x Physical Design
+#### Objective 3.6 – Determine Data Center Management Options for a vSphere 6.x Physical Design
 
 ***Skills and Abilities***
 

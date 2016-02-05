@@ -7,7 +7,7 @@ comments: true
 ---
 Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
 
-#Check the ESXi Dump Collector Configuration Example:
+# Check the ESXi Dump Collector Configuration Example:
 {% highlight powershell %}
 Foreach ($vmhost in (get-vmhost)){
 $esxcli = Get-EsxCli -vmhost $vmhost
@@ -16,7 +16,7 @@ $esxcli.system.coredump.network.get()}
 
 ![](/images/screenshot.361.jpg)
 
-#Setting the ESXi Dump Collector Example:
+# Setting the ESXi Dump Collector Example:
 {% highlight powershell %}
 Foreach ($vmhost in (get-vmhost)) {
 $esxcli = Get-EsxCli -vmhost $vmhost
@@ -26,7 +26,7 @@ $esxcli.system.coredump.network.set($true)}
 
 ![](/images/screenshot.351.jpg)
 
-#Test Host by Causing PSOD
+# Test Host by Causing PSOD
 Run the following command via SSH or Direct Shell. We can see that the server is now doing a network coredump.
 
 ```

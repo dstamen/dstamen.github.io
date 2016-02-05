@@ -7,7 +7,7 @@ comments: true
 ---
 Section 8 of the VCP6-DCV blueprint
 
-####Objective 8.1: Deploy ESXi Hosts Using Autodeploy
+#### Objective 8.1: Deploy ESXi Hosts Using Autodeploy
 - Describe the components and architecture of an Auto Deploy environment
 - Use Auto Deploy Image Builder and PowerCLI scripts
 - Implement Host Profiles with an Auto Deploy of an ESXi Host
@@ -16,7 +16,7 @@ Section 8 of the VCP6-DCV blueprint
 - Deploy multiple ESXi Hosts using Auto Deploy
 - Given a scenario, explain the Auto Deploy deployment model needed to meet a business requirement
 
-####Objective 8.2: Customize Host Profile Settings
+#### Objective 8.2: Customize Host Profile Settings
 - Edit answer file to customize ESXi Host settings
 - Modify and apply a storage path selection plugin (PSP) to a device using host profiles
 - Modify and apply switch configurations across multiple hosts using a Host Profile
@@ -26,7 +26,7 @@ Section 8 of the VCP6-DCV blueprint
 - Perform compliance scanning and remediation of an ESXi Hosts and clusters using Host Profiles
 - Enable or disable Host Profile components
 
-####Objective 8.3: Consolidate Physical Workloads using VMware Converter
+#### Objective 8.3: Consolidate Physical Workloads using VMware Converter
 - Install vCenter Converter standalone instance
 - Convert physical workloads using vCenter Converter
 - Modify server resources during conversion
@@ -36,7 +36,7 @@ Section 8 of the VCP6-DCV blueprint
 - Resize partitions during the conversion process
 - Given a scenario, determine which virtual disk format to use
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

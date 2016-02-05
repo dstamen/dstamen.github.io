@@ -15,5 +15,5 @@ To fully disable UAC run the following command from an elevated command prompt a
 REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f
 ```
 
-####Note:
+#### Note:
 You can also avoid this by doing the uninstall as the builtin local administrator account

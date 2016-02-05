@@ -7,7 +7,7 @@ comments: true
 ---
 Section 1 of the VCP6-DCV blueprint
 
-####Objective 1.1: Configure and Administer Role-based Access Control
+#### Objective 1.1: Configure and Administer Role-based Access Control
 - Compare and contrast propagated and explicit permission assignments
   - An example of a propagated permission:
     - Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.
@@ -107,7 +107,7 @@ Section 1 of the VCP6-DCV blueprint
   - Global permissions are applied to a global root object that spans solutions, for example, both vCenter Server and vCenter Orchestrator. Use global permissions to give a user or group privileges for all objects in all object hierarchies.
   - Each solution has a root object in its own object hierarchy. The global root object acts as a parent object to each solution object. You can assign global permissions to users or groups, and decide on the role for each user or group. The role determines the set of privileges. You can assign a predefined role or create custom roles. It is important to distinguish between vCenter Server permissions and global permissions.
 
-####Objective 1.2: Secure ESXi, vCenter Server, and vSphere Virtual Machines
+#### Objective 1.2: Secure ESXi, vCenter Server, and vSphere Virtual Machines
 - Harden virtual machine access
   - Control VMware Tools installation
     - VM.disable-VMtools-autoinstall
@@ -165,7 +165,7 @@ Section 1 of the VCP6-DCV blueprint
 - Understand the implications of securing a vSphere environment
   - Security hardening for a typical Linux system potentially requires dozens of steps, such as changing file permissions, disabling services, and managing user privileges; ESXi requires none of these steps, most of which either are impossible to perform or have no effect. The primary measures required for hardening an ESXi host involve securing and properly managing the interfaces with the system that are used for configuration, management, and troubleshooting.
 
-####Objective 1.3: Enable SSO and Active Directory Integration
+#### Objective 1.3: Enable SSO and Active Directory Integration
 - Describe SSO architecture and components
   - vCenter Single Sign-On allows vSphere components to communicate with each other through a secure token mechanism instead of requiring users to authenticate separately with each component.
   - Below are some examples of the SSO architecture for human and solution users
@@ -231,7 +231,7 @@ Section 1 of the VCP6-DCV blueprint
   - Enter the user name and password of a directory service user who has permissions to join the host to the domain, and click OK.
   - Click OK to close the Directory Services Configuration dialog box.
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

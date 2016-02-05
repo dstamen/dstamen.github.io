@@ -7,7 +7,7 @@ comments: true
 ---
 Section 2 of the VCP6-DCV blueprint
 
-####Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation
+#### Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation
 - Create/Delete a vSphere Distributed Switch
   - In the vSphere Web Client, navigate to a data center.
   - In the navigator, right-click the data center and select Distributed Switch > New Distributed Switch.
@@ -192,7 +192,7 @@ Section 2 of the VCP6-DCV blueprint
 - Configure vDS across multiple vCenter Servers to support [Long Distance vMotion]
 - Compare and contrast vSphere Distributed Switch (vDS) capabilities
 
-####Objective 2.2: Configure Network I/O Control (NIOC)
+#### Objective 2.2: Configure Network I/O Control (NIOC)
 - Define NIOC
 - Explain NIOC capabilities
 - Configure NIOC shares/limits based on VM requirements
@@ -202,7 +202,7 @@ Section 2 of the VCP6-DCV blueprint
 - Enable/Disable Network I/O Control
 - Monitor Network I/O Control
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)

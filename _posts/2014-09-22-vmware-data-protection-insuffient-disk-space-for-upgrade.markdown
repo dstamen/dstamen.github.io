@@ -15,7 +15,7 @@ Upon further research there seems to be an issue from 5.5.1 and 5.5.5 appliances
 
 [KB2067635](http://kb.vmware.com/kb/2067635)
 
-#The installation is pretty straightforward.
+# The installation is pretty straightforward.
 1. Download the patch
 - [VDP](https://my.vmware.com/web/vmware/details?downloadGroup=VDP55_5&productId=351&rPId=4857)
 - [VDP-Advanced](https://my.vmware.com/web/vmware/details?downloadGroup=VDPADV55_5&productId=375&rPId=4606)

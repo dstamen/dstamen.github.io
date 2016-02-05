@@ -7,13 +7,13 @@ comments: true
 ---
 Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
 
-####***Pre-Requsites***
+#### ***Pre-Requsites***
 - [UCS Powertool](https://communities.cisco.com/docs/DOC-53838)
 
-####***Link to Script***
+#### ***Link to Script***
 - [AddUCSCert.ps1](https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1)
 
-####***Preparing to Execute the Script***
+#### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
 {% highlight powershell %}
@@ -50,7 +50,7 @@ To gather information for the variables above you should have most the informati
 - If using a Non-Microsoft CA, contact your certificate provider for their root certificate and following the remaining steps.
 - Open Certificate using a text editor and you should have it in a standard format, paste that info in the variable field. If not using a Sub, Delete the second part.
 
-####***Executing the Script***
+#### ***Executing the Script***
 - Navigate to the directory using PowerShell and run .\AddUCSCert.ps1
 - If you look inside UCSM you will see the script create the TrustPoint and KeyRing for the new certificate
 
@@ -69,4 +69,4 @@ To gather information for the variables above you should have most the informati
 
 ![](/images/ucsmcert4.png)
 
-####***Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.***
+#### ***Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.***

@@ -7,7 +7,7 @@ comments: true
 ---
 Section 7 of the VCP6-DCV blueprint
 
-####Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines
+#### Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines
 - Monitor status of the vCenter Server service
 - Perform basic maintenance of a vCenter Server database
 - Monitor status of ESXi management agents
@@ -25,7 +25,7 @@ Section 7 of the VCP6-DCV blueprint
   - VMware Tools installation
   - Fault Tolerant network latency
 
-####Objective 7.2: Troubleshoot vSphere Storage and Network Issues
+#### Objective 7.2: Troubleshoot vSphere Storage and Network Issues
 - Identify and isolate network and storage resource contention and latency issues
 - Monitor networking and storage resources using vROps alerts and all badges
 - Verify network and storage configuration
@@ -39,14 +39,14 @@ Section 7 of the VCP6-DCV blueprint
   - Physical network adapter configuration
   - VMFS metadata consistency
 
-####Objective 7.3: Troubleshoot vSphere Upgrades
+#### Objective 7.3: Troubleshoot vSphere Upgrades
 - Collect upgrade diagnostic information
 - Recognize common upgrade issues with vCenter Server and vCenter Server Appliance
 - Create/Locate/Analyze VMware log bundles
 - Determine alternative methods to upgrade ESXi Hosts in event of failure
 - Configure vCenter Server logging options
 
-####Objective 7.4: Troubleshoot and Monitor vSphere Performance
+#### Objective 7.4: Troubleshoot and Monitor vSphere Performance
 - Monitor CPU and memory usage (including vRealize OM badges and alerts)
 - Identify and isolate CPU and memory contention issues
 - Recognize impact of using CPU/memory limits, reservations and shares
@@ -61,7 +61,7 @@ Section 7 of the VCP6-DCV blueprint
 - Troubleshoot virtual machine performance with vRealize Operations
 - Compare and contrast Overview and Advanced Charts
 
-####Objective 7.5: Troubleshoot HA and DRS Configurations and Fault Tolerance
+#### Objective 7.5: Troubleshoot HA and DRS Configurations and Fault Tolerance
 - Troubleshoot issues with:
   - DRS workload balancing
   - HA failover/redundancy, capacity and network configuration
@@ -71,7 +71,7 @@ Section 7 of the VCP6-DCV blueprint
 - Explain the DRS Resource Distribution Graph and Target/Current Host Load Deviation
 - Explain vMotion Resource Maps
 
-##Check out another blueprint section
+## Check out another blueprint section
 - [Section 1: Configure and Administer vSphere 6.x Security](/certification/section-1-configure-and-administer-vsphere-6x-security/)
 - [Section 2: Configure and Administer Advanced vSphere 6.x Networking](/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/)
 - [Section 3: Configure and Administer Advanced vSphere 6.x Storage](/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/)
