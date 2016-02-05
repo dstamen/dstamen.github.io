@@ -28,11 +28,12 @@ In the midst of rolling out Cisco ACI, we have a need to automation creation of 
   gather_facts: no
 
   tasks:
-      # ensue filters exist
+      # ensure filters exist
       - aci_filter: name={{ item }} tenant=common host={{ inventory_hostname }} username={{ user }} password={{ pass }}
         with_items:
         - HorizonViewPorts
-
+        
+     # ensure filter entries exist
       - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
       - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
       - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
