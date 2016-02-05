@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-02-04T17:20:19-05:00</updated>
+<updated>2016-02-04T20:36:50-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
@@ -111,41 +111,21 @@ ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
   gather_facts: no
 
   tasks:
-
-    - name: verify filter is present and create if absent
-      aci_filter: name= tenant=common host= username= password=
-      with_items:
+      # ensue filters exist
+      - aci_filter: name= tenant=common host= username= password=
+        with_items:
         - HorizonViewPorts
 
-    - name: verify filter entry for HighEndPorts-tcp is present and create if absent
-      aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-
-    - name: verify filter entry for HighEndPorts-udp is present and create if absent
-      aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
-
-    - name: verify filter entry HTML-Access for is present and create if absent
-      aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=
-
-    - name: verify filter entry for http is present and create if absent
-      aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=
-
-    - name: verify filter entry for https is present and create if absent
-      aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=
-
-    - name: verify filter entry for JMS is present and create if absent
-      aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=
-
-    - name: verify filter entry for MMR is present and create if absent
-      aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=
-
-    - name: verify filter entry for PCoIP is present and create if absent
-      aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-
-    - name: verify filter entry for PCoIP-udp is present and create if absent
-      aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
-
-    - name: verify filter entry for USB is present and create if absent
-      aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
+      - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=
+      - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=
+      - aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=
+      - aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=
+      - aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=
+      - aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=
+      - aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
+      - aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=
+      - aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -175,7 +155,7 @@ ansible_winrm_server_cert_validation: ignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
 
 &lt;p&gt;I had a bit of a gap in blog posts this past year due to a job change. However, look forward to more posts on Cisco UCS and maybe even some Cisco ACI.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://communities.cisco.com/servlet/JiveServlet/previewBody/64861-102-1-116340/logo.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CiscoChampion.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am a member of the Cisco Champions Program. Cisco Champions are passionate about Cisco and enjoy sharing our knowledge, expertise, and thoughts across the social web and with Cisco. I am not a representative of Cisco. My views as a Cisco Champion are my own.&lt;/p&gt;
 
@@ -672,15 +652,15 @@ Foreach ($ucs in $domains) {
 
 &lt;h3 id=&quot;section-1--create-a-vsphere-conceptual-design&quot;&gt;Section 1 – Create a vSphere Conceptual Design&lt;/h3&gt;
 
-&lt;h5 id=&quot;objective-11--gather-and-analyze-business-requirements&quot;&gt;Objective 1.1 – Gather and analyze business requirements&lt;/h5&gt;
+&lt;h4 id=&quot;objective-11--gather-and-analyze-business-requirements&quot;&gt;Objective 1.1 – Gather and analyze business requirements&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Associate a stakeholder with the information that needs to be collected.&lt;/li&gt;
   &lt;li&gt;Utilize inventory and assessment data from a current environment to define a baseline state.&lt;/li&gt;
-  &lt;li&gt;Analyze customer interview data to explicitly define customer ####Objectives for a conceptual design.&lt;/li&gt;
-  &lt;li&gt;Determine customer priorities for defined ####Objectives.&lt;/li&gt;
+  &lt;li&gt;Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.&lt;/li&gt;
+  &lt;li&gt;Determine customer priorities for defined #### Objectives.&lt;/li&gt;
   &lt;li&gt;Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.&lt;/li&gt;
   &lt;li&gt;Given results of the requirements gathering process, identify requirements for a conceptual design.&lt;/li&gt;
   &lt;li&gt;Categorize requirements by infrastructure qualities to prepare for logical design requirements.&lt;/li&gt;
