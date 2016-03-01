@@ -2,7 +2,7 @@
 layout: resources
 title:
 ---
-####Here is a list of some great resources I have come across and thought I should share.
+#### Here is a list of some great resources I have come across and thought I should share.
 
 - [VCP6-DCV Study Guide by @vHersey](http://www.vhersey.com/study-guides/vcp6-dcv/)
 - [VCP6-DCV Study Guide by @dadowsitef](http://vwannabe.com/vmware/vcp6-dcv-study-guide/)
