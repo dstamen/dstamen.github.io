@@ -4,13 +4,71 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-02-05T09:48:12-05:00</updated>
+<updated>2016-03-01T11:59:57-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool To Set SNMP Configuration]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-set-snmp-configuration/" />
+  <id>/cisco/using-ucs-powertool-to-set-snmp-configuration</id>
+  <published>2016-03-01T00:00:00-05:00</published>
+  <updated>2016-03-01T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1&quot;&gt;Set-UcsSnmpConfiguration.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01.lab.local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs02.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;SNMP config for UCS&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;enabled&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$SysContact&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin@lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$SysLocation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;US&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Community&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;public&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-UCSRackUnit&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Set-UcsSnmp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Descr&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-AdminState&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SysContact&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$SysContact&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SysLocation&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SysLocation&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Community&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Community&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-force&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-UcsSnmpConfiguration.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-snmp-configuration/&quot;&gt;Using UCS PowerTool To Set SNMP Configuration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 01, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -1580,65 +1638,6 @@ dvSwitch         &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;         &lt;sp
 &lt;p&gt;The next VM should now start reusing the old VM names that were in the pool.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;/horizon%20view/reusing-horizon-view-desktop-names/&quot;&gt;Reusing Horizon View Desktop Names&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 11, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Section 9: Configure and Administer vSphere Availability Solutions]]></title>
-  <link rel="alternate" type="text/html" href="/certification/section-9-configure-and-administer-vsphere-availability-solutions/" />
-  <id>/certification/section-9-configure-and-administer-vsphere-availability-solutions</id>
-  <published>2015-10-16T00:00:00-04:00</published>
-  <updated>2015-10-16T00:00:00-04:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Section 9 of the VCP6-DCV blueprint&lt;/p&gt;
-
-&lt;h4 id=&quot;objective-91-configure-advanced-vsphere-ha-features&quot;&gt;Objective 9.1: Configure Advanced vSphere HA Features&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Modify vSphere HA advanced cluster settings&lt;/li&gt;
-  &lt;li&gt;Configure a network for use with HA heartbeats&lt;/li&gt;
-  &lt;li&gt;Apply an admission control policy for HA&lt;/li&gt;
-  &lt;li&gt;Enable/disable advanced vSphere HA settings&lt;/li&gt;
-  &lt;li&gt;Configure different heartbeat datastores for an HA cluster&lt;/li&gt;
-  &lt;li&gt;Apply virtual machine monitoring for a cluster&lt;/li&gt;
-  &lt;li&gt;Configure Virtual Machine Component Protection (VMCP) settings&lt;/li&gt;
-  &lt;li&gt;Implement vSphere HA on a Virtual SAN cluster&lt;/li&gt;
-  &lt;li&gt;Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-92-configure-advanced-vsphere-drs-features&quot;&gt;Objective 9.2: Configure Advanced vSphere DRS Features&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Configure VM-Host affinity/anti-affinity rules&lt;/li&gt;
-  &lt;li&gt;Configure VM-VM affinity/anti-affinity rules&lt;/li&gt;
-  &lt;li&gt;Add/remove Host DRS Group&lt;/li&gt;
-  &lt;li&gt;Add/remove virtual machine DRS Group&lt;/li&gt;
-  &lt;li&gt;Enable/disable Distributed Resource Scheduler (DRS) affinity rules&lt;/li&gt;
-  &lt;li&gt;Configure the proper Distributed Resource Scheduler (DRS) automation level based on a set of business requirements&lt;/li&gt;
-  &lt;li&gt;Explain how DRS affinity rules effect virtual machine placement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;check-out-another-blueprint-section&quot;&gt;Check out another blueprint section&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-1-configure-and-administer-vsphere-6x-security/&quot;&gt;Section 1: Configure and Administer vSphere 6.x Security&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/&quot;&gt;Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/&quot;&gt;Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-4-upgrade-a-vsphere-deployment-to-6x/&quot;&gt;Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-5-administer-and-manage-vsphere-6x-resources/&quot;&gt;Section 5: Administer and Manage vSphere 6.x Resources&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-6-backup-and-recover-a-vsphere-deployment/&quot;&gt;Section 6: Backup and Recover a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-7-troubleshoot-a-vsphere-deployment/&quot;&gt;Section 7: Troubleshoot a vSphere Deployment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-8-deploy-and-consolidate-vsphere-data-center/&quot;&gt;Section 8: Deploy and Consolidate vSphere Data Center&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/certification/section-10-administer-and-manage-vsphere-virtual-machines/&quot;&gt;Section 10: Administer and Manage vSphere Virtual Machines&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/certification/section-9-configure-and-administer-vsphere-availability-solutions/&quot;&gt;Section 9: Configure and Administer vSphere Availability Solutions&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on October 16, 2015.&lt;/p&gt;
   </content>
 </entry>
 

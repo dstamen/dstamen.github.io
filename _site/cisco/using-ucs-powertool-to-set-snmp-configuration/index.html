@@ -5,8 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>HA Error: Network Redundancy &#8211; davidstamen.com</title>
-<meta name="description" content="When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.
+<title>Using UCS PowerTool To Set SNMP Configuration &#8211; davidstamen.com</title>
+<meta name="description" content="Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
 
 ">
 <meta name="keywords" content="">
@@ -14,8 +14,8 @@
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="HA Error: Network Redundancy">
-<meta name="twitter:description" content="When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.
+<meta name="twitter:title" content="Using UCS PowerTool To Set SNMP Configuration">
+<meta name="twitter:description" content="Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
 
 ">
 <meta name="twitter:site" content="@davidstamen">
@@ -28,11 +28,11 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HA Error: Network Redundancy">
-<meta property="og:description" content="When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.
+<meta property="og:title" content="Using UCS PowerTool To Set SNMP Configuration">
+<meta property="og:description" content="Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
 
 ">
-<meta property="og:url" content="/vmware/ha-error-network-redundancy/">
+<meta property="og:url" content="/cisco/using-ucs-powertool-to-set-snmp-configuration/">
 <meta property="og:site_name" content="davidstamen.com">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="/vmware/ha-error-network-redundancy/">
+<link rel="canonical" href="/cisco/using-ucs-powertool-to-set-snmp-configuration/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -164,33 +164,48 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/vmware/ha-error-network-redundancy/" rel="bookmark" title="HA Error: Network Redundancy">HA Error: Network Redundancy</a></h1>
+        <h1><a href="/cisco/using-ucs-powertool-to-set-snmp-configuration/" rel="bookmark" title="Using UCS PowerTool To Set SNMP Configuration">Using UCS PowerTool To Set SNMP Configuration</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.</p>
+      <p>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.</p>
 
-<h2 id="to-perform-the-steps-in-the-c-client">To perform the steps in the c# client.</h2>
-<ol>
-  <li>From the VMware Infrastructure Client, right-click on the cluster and click <strong>Edit Settings</strong>.</li>
-  <li>Select <strong>vSphere HA</strong> and click <strong>Advanced Options</strong>.</li>
-  <li>In the Options column, enter <strong>das.ignoreRedundantNetWarning</strong></li>
-  <li>In the Value column, type <strong>true</strong></li>
-  <li>Click <strong>OK</strong>.</li>
-  <li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>. This reconfigures HA.</li>
-</ol>
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+<ul>
+  <li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
 
-<h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.</h2>
-<ol>
-  <li>From the vSphere Web Client, right click on the cluster.</li>
-  <li>Click on the <b style="font-style: inherit;">Manage</b> tab for the cluster, then under Settings click <b style="font-style: inherit;">vSphere HA</b>.</li>
-  <li>Click on the <b style="font-style: inherit;">Edit</b> button in the top right corner.</li>
-  <li>Expand the <b style="font-style: inherit;">Advanced Options</b> section, and click <b style="font-style: inherit;">Add</b>.</li>
-  <li>In the Options column, type <strong>das.ignoreRedundantNetWarning.</strong></li>
-  <li>In the Value column, type <strong>true</strong>.</li>
-  <li>Click <strong>OK</strong></li>
-  <li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>.</li>
-</ol>
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+<ul>
+  <li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1">Set-UcsSnmpConfiguration.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$domains</span> <span class="p">=</span> <span class="s2">&quot;ucs01.lab.local&quot;</span><span class="p">,</span><span class="s2">&quot;ucs02.lab.local&quot;</span>
+<span class="nv">$Descr</span> <span class="p">=</span> <span class="s2">&quot;SNMP config for UCS&quot;</span>
+<span class="nv">$AdminState</span> <span class="p">=</span> <span class="s2">&quot;enabled&quot;</span>
+<span class="nv">$SysContact</span> <span class="p">=</span> <span class="s2">&quot;admin@lab.local&quot;</span>
+<span class="nv">$SysLocation</span> <span class="p">=</span> <span class="s2">&quot;US&quot;</span>
+<span class="nv">$Community</span> <span class="p">=</span> <span class="s2">&quot;public&quot;</span>
+
+<span class="c">#Cycles through each UCS setting values</span>
+<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$ucs</span> <span class="k">in</span> <span class="nv">$domains</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Connect-UCS</span> <span class="nv">$ucs</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+  <span class="nv">$servers</span> <span class="p">=</span> <span class="nb">Get-UCSRackUnit</span>
+  <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$server</span> <span class="k">in</span> <span class="nv">$servers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Set-UcsSnmp</span> <span class="n">-Descr</span> <span class="nv">$Descr</span> <span class="n">-AdminState</span> <span class="nv">$AdminState</span> <span class="n">-SysContact</span>  <span class="nv">$SysContact</span> <span class="n">-SysLocation</span> <span class="nv">$SysLocation</span> <span class="n">-Community</span> <span class="nv">$Community</span> <span class="n">-force</span>
+  <span class="p">}</span>
+  <span class="nb">Disconnect-UCS</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+<ul>
+  <li>Run .\Set-UcsSnmpConfiguration.ps1</li>
+</ul>
 
       <hr />
       <footer role="contentinfo">
@@ -198,24 +213,24 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?url=/vmware/ha-error-network-redundancy/&text=HA Error: Network Redundancy&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://twitter.com/intent/tweet?url=/cisco/using-ucs-powertool-to-set-snmp-configuration/&text=Using UCS PowerTool To Set SNMP Configuration&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/vmware/ha-error-network-redundancy/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/cisco/using-ucs-powertool-to-set-snmp-configuration/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/vmware/ha-error-network-redundancy/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+      <a href="https://plus.google.com/share?url=/cisco/using-ucs-powertool-to-set-snmp-configuration/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/vmware/ha-error-network-redundancy/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/cisco/using-ucs-powertool-to-set-snmp-configuration/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.reddit.com/submit?url=/vmware/ha-error-network-redundancy/&title=HA Error: Network Redundancy" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+      <a href="http://www.reddit.com/submit?url=/cisco/using-ucs-powertool-to-set-snmp-configuration/&title=Using UCS PowerTool To Set SNMP Configuration" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
 
-        <p class="byline"><strong>HA Error: Network Redundancy</strong> was published on <time datetime="2014-05-08T00:00:00-04:00">May 08, 2014</time>.</p>
+        <p class="byline"><strong>Using UCS PowerTool To Set SNMP Configuration</strong> was published on <time datetime="2016-03-01T00:00:00-05:00">March 01, 2016</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -230,11 +245,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="/cisco/using-ucs-powertool-to-set-snmp-configuration/" title="Using UCS PowerTool To Set SNMP Configuration">Using UCS PowerTool To Set SNMP Configuration</a></li>
-    
       <li><a href="/vmware/vexpert-2016/" title="vExpert 2016">vExpert 2016</a></li>
     
       <li><a href="/ansible/using-ansible-to-run-powershell-scripts/" title="Using Ansible to Run Powershell Scripts">Using Ansible to Run Powershell Scripts</a></li>
+    
+      <li><a href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" title="Using Ansible to Create Cisco ACI Filters">Using Ansible to Create Cisco ACI Filters</a></li>
     
     </ul>
     <hr />
