@@ -24,7 +24,7 @@ The code and Github Link can be found below.
 # @davidstamen
 # http://davidstamen.com
 
-LunIDs = "naa.6000000001","naa.600000002"
+$LunIDs = "naa.6000000001","naa.600000002"
 $Clustername = "MyCluster"
 
 function Detach-Disk {
