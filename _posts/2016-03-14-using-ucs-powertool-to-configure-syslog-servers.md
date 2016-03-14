@@ -2,7 +2,7 @@
 layout: post
 title: "Using UCS PowerTool to Configure Syslog Servers"
 categories:
-- Category
+- Cisco
 comments: true
 ---
 Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.
