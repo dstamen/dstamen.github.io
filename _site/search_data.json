@@ -1,6 +1,42 @@
 {
   
 
+    "vmware-cisco-troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x": {
+      "title": "Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x",
+      "url": " /vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
+    "cisco-using-ucs-powertool-to-configure-syslog-servers": {
+      "title": "Using UCS PowerTool to Configure Syslog Servers",
+      "url": " /cisco/using-ucs-powertool-to-configure-syslog-servers/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
+    "purestorage-using-purestorage-powershell-to-configure-syslog-servers": {
+      "title": "Using PureStorage Powershell to Configure SysLog Servers",
+      "url": " /purestorage/using-purestorage-powershell-to-configure-syslog-servers/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
+    "powercli-using-powercli-to-install-host-vibs": {
+      "title": "Using PowerCLI to Install Host VIBs",
+      "url": " /powercli/using-powercli-to-install-host-vibs/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "cisco-using-ucs-powertool-to-set-snmp-configuration": {
       "title": "Using UCS PowerTool To Set SNMP Configuration",
       "url": " /cisco/using-ucs-powertool-to-set-snmp-configuration/",

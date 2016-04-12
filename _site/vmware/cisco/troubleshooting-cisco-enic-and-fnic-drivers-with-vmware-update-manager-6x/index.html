@@ -1,0 +1,314 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x &#8211; davidstamen.com</title>
+<meta name="description" content="I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
+
+">
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">
+<meta name="twitter:description" content="I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">
+<meta property="og:description" content="I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
+
+">
+<meta property="og:url" content="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" rel="bookmark" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.</p>
+
+<p>I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.</p>
+
+<p>From what I have found the issue lies in the metadata of the offline bundle. As you can see in the below screenshot. The ENIC driver is showing 6.x but the FNIC driver is showing 5.x. In this case the ENIC driver works and the FNIC driver does not.</p>
+
+<p><strong>Note: The ENIC driver for 2.3.0.7 was recently updated to fix this, but every other driver is currently broken.</strong></p>
+
+<p><img src="/images/vummetadata.png" alt="" /></p>
+
+<p>To update the metadata of the offline bundle and get VUM to work you need to perform the following steps.</p>
+
+<ul>
+  <li>
+    <p>Make sure you have 7zip and setup an editor within 7zip. I used notepad++.</p>
+
+    <p><img src="/images/7zipeditor.png" alt="" /></p>
+  </li>
+  <li>Open the offline_bundle zip file</li>
+  <li>
+    <p>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></p>
+
+    <p><img src="/images/vendorindexxml.png" alt="" /></p>
+  </li>
+  <li>Open up the metadata.zip file</li>
+  <li>
+    <p>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></p>
+
+    <p><img src="/images/vendorindexxml.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Edit the vmware.xml file and replace the <strong>5</strong> with <strong>6</strong></p>
+
+    <p><img src="/images/vmwarexml.png" alt="" /></p>
+  </li>
+</ul>
+
+<p>If you perform these steps, you can now import your customized offline bundle and it will accurately report 6.x in VUM and allow you to remediate your hosts. Please post any feedback below!</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/&text=Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/&title=Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</strong> was published on <time datetime="2016-04-08T00:00:00-04:00">April 08, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
+    
+      <li><a href="/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" title="Using PureStorage Powershell to Configure SysLog Servers">Using PureStorage Powershell to Configure SysLog Servers</a></li>
+    
+      <li><a href="/powercli/using-powercli-to-install-host-vibs/" title="Using PowerCLI to Install Host VIBs">Using PowerCLI to Install Host VIBs</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</loc>
+    <lastmod>2016-04-08T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/cisco/using-ucs-powertool-to-configure-syslog-servers/</loc>
+    <lastmod>2016-03-14T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/purestorage/using-purestorage-powershell-to-configure-syslog-servers/</loc>
+    <lastmod>2016-03-14T00:00:00-04:00</lastmod>
+  </url>
+  <url>
+    <loc>/powercli/using-powercli-to-install-host-vibs/</loc>
+    <lastmod>2016-03-03T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>/cisco/using-ucs-powertool-to-set-snmp-configuration/</loc>
     <lastmod>2016-03-01T00:00:00-05:00</lastmod>
   </url>

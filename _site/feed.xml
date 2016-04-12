@@ -4,13 +4,249 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-03-01T11:59:57-05:00</updated>
+<updated>2016-04-12T09:16:07-04:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" />
+  <id>/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x</id>
+  <published>2016-04-08T00:00:00-04:00</published>
+  <updated>2016-04-08T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.&lt;/p&gt;
+
+&lt;p&gt;I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.&lt;/p&gt;
+
+&lt;p&gt;From what I have found the issue lies in the metadata of the offline bundle. As you can see in the below screenshot. The ENIC driver is showing 6.x but the FNIC driver is showing 5.x. In this case the ENIC driver works and the FNIC driver does not.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: The ENIC driver for 2.3.0.7 was recently updated to fix this, but every other driver is currently broken.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vummetadata.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To update the metadata of the offline bundle and get VUM to work you need to perform the following steps.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure you have 7zip and setup an editor within 7zip. I used notepad++.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/7zipeditor.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open the offline_bundle zip file&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit the vendor-index.xml file and replace the &lt;strong&gt;5&lt;/strong&gt; with &lt;strong&gt;6&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/vendorindexxml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open up the metadata.zip file&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit the vendor-index.xml file and replace the &lt;strong&gt;5&lt;/strong&gt; with &lt;strong&gt;6&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/vendorindexxml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit the vmware.xml file and replace the &lt;strong&gt;5&lt;/strong&gt; with &lt;strong&gt;6&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/vmwarexml.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you perform these steps, you can now import your customized offline bundle and it will accurately report 6.x in VUM and allow you to remediate your hosts. Please post any feedback below!&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/&quot;&gt;Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 08, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using UCS PowerTool to Configure Syslog Servers]]></title>
+  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" />
+  <id>/cisco/using-ucs-powertool-to-configure-syslog-servers</id>
+  <published>2016-03-14T00:00:00-04:00</published>
+  <updated>2016-03-14T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSSyslog.ps1&quot;&gt;Set-UcsSyslog.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# UCS PowerTool Script that to set Syslog&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# @davidstamen&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://davidstamen.com&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01.lab.local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs02.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$SyslogServer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;syslog.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;primary&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Facility&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;local7&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;enabled&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Severity&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;notifications&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Get-UcsSyslogClient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Set-UcsSyslogClient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-AdminState&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForwardingFacility&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Facility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Hostname&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SyslogServer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Severity&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Severity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Force&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-UcsSyslog.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-syslog-servers/&quot;&gt;Using UCS PowerTool to Configure Syslog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using PureStorage Powershell to Configure SysLog Servers]]></title>
+  <link rel="alternate" type="text/html" href="/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" />
+  <id>/purestorage/using-purestorage-powershell-to-configure-syslog-servers</id>
+  <published>2016-03-14T00:00:00-04:00</published>
+  <updated>2016-03-14T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.purestorage.com/announcing-the-new-pure-storage-powershell-sdk/&quot;&gt;PureStorage Powershell SDK&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PureStorage/blob/master/Set-PureStorageSyslog.ps1&quot;&gt;Set-PureStorageSyslog.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Import Module&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Import-Module&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PureStoragePowershellSDK&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$arrays&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;pure.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$SysLogServers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;tcp://syslog.lab.local:514&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$arrays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Setting Syslog Information for $array&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;New-PfaArray&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-EndPoint&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credentials&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-IgnoreCertificateError&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Set-PfaSyslogServers&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SyslogServers&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SyslogServers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fl&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-PureStorageSyslog.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/purestorage/using-purestorage-powershell-to-configure-syslog-servers/&quot;&gt;Using PureStorage Powershell to Configure SysLog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using PowerCLI to Install Host VIBs]]></title>
+  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-install-host-vibs/" />
+  <id>/powercli/using-powercli-to-install-host-vibs</id>
+  <published>2016-03-03T00:00:00-05:00</published>
+  <updated>2016-03-03T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/Install-HostVIB.ps1&quot;&gt;Install-HostVIB.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and modified the variables&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Define Variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Cluster&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$VIBPATH&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic_1.6.0.24-1OEM.600.0.0.2494585.vib&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$vcenter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vcenter.lab.local&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Connect to vCenter&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Connect-VIServer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Server&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vcenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Get each host in specified cluster that meets criteria&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Get-VMhost&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PowerState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PoweredOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConnectionState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Connected&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Preparing &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; for ESXCLI&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
+
+    &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-EsxCli&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VMHost&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# Install VIBs&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Installing VIB on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VIBPATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# Verify VIB installed successfully&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Operation finished successfully.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Install-HostVIB.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-host-vibs/&quot;&gt;Using PowerCLI to Install Host VIBs&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -87,7 +323,7 @@
   <content type="html">
     &lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2016!&lt;/p&gt;
 
-&lt;p&gt;This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count and in 2016 we are up to 1360 vExperts!&lt;/p&gt;
+&lt;p&gt;This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!&lt;/p&gt;
 
 &lt;p&gt;Can’t wait to see what this year brings.&lt;/p&gt;
 
@@ -1440,204 +1676,6 @@ dvSwitch         &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;         &lt;sp
 
 
     &lt;p&gt;&lt;a href=&quot;/vmware/using-cli-to-manage-dvs-host-uplinks/&quot;&gt;Using CLI to Manage DVS Host Uplinks&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Installing Host VIB's Using PowerCLI]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/installing-host-vibs-using-powercli/" />
-  <id>/powercli/installing-host-vibs-using-powercli</id>
-  <published>2015-11-30T00:00:00-05:00</published>
-  <updated>2015-11-30T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Normally when i need to install and update a host VIB I use Update Manager. However there is currently a &lt;a href=&quot;https://tools.cisco.com/bugsearch/bug/CSCuw47512/&quot;&gt;bug&lt;/a&gt; with Cisco’s latest enic/fnic drivers that wont let you install them via UM.&lt;/p&gt;
-
-&lt;p&gt;I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember &lt;a href=&quot;http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/&quot;&gt;Brian Graf’s Host Client Install Fling&lt;/a&gt; and borrowed some of the code to come up with the below script.&lt;/p&gt;
-
-&lt;p&gt;All you need to do is input your cluster and specify what VIB’s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB’s you want to install.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Cluster&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$VIBPATH1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$VIBPATH2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&amp;quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c&quot;&gt;# Get each host in specified cluster that meets criteria&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Get-VMhost&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Location&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PowerState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PoweredOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConnectionState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Connected&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Preparing &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; for ESXCLI&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
-
-    &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-EsxCli&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-VMHost&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# Install VIBs&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Installing VIB on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Yellow&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VIBPATH1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$action2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VIBPATH2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# Verify VIB installed successfully&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Operation finished successfully.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Operation finished successfully.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ForegroundColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Hope this helps anyone else out wanting to automate vib installation using PowerCLI.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/powercli/installing-host-vibs-using-powercli/&quot;&gt;Installing Host VIB&#39;s Using PowerCLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Configuring Multiple UCS VLAN's]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/configuring-multiple-ucs-vlans/" />
-  <id>/cisco/configuring-multiple-ucs-vlans</id>
-  <published>2015-11-23T00:00:00-05:00</published>
-  <updated>2015-11-23T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.&lt;/p&gt;
-
-&lt;p&gt;Since currently Cisco UCS does not allow selecting multiple VLAN’s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.&lt;/p&gt;
-
-&lt;p&gt;The script can be found &lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# @davidstamen&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# http://davidstamen.com&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ucs01&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;150&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$vnictemplate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vnic-template&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$vlangroup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;vlan-group&amp;quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#Connect to UCS&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Connect-UCS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-credential&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-le&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-UcsFabricNetGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vlangroup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Add-UcsFabricPooledVlan&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$startvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-le&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$endvlan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-UcsVnicTemplate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$vnictemplate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Add-UcsVnicInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ModifyPresent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-DefaultNet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Disconnect-UCS&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You now are done! In my case I had to add 500 VLAN’s, so this script saved me quite a bit of time.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/cisco/configuring-multiple-ucs-vlans/&quot;&gt;Configuring Multiple UCS VLAN&#39;s&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 23, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Disconnected vNIC's?]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/disconnected-vnics/" />
-  <id>/vmware/disconnected-vnics</id>
-  <published>2015-11-18T00:00:00-05:00</published>
-  <updated>2015-11-18T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Ever wonder why a VM isn’t on the network?&lt;/p&gt;
-
-&lt;p&gt;I was working on deploying some test VM’s and for some reason all the VM’s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.&lt;/p&gt;
-
-&lt;p&gt;I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Get-VM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-NetworkAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Set-NetworkAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-StartConnected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Connected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Confirm&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Voila! You are done.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/vmware/disconnected-vnics/&quot;&gt;Disconnected vNIC&#39;s?&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 18, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Reusing Horizon View Desktop Names]]></title>
-  <link rel="alternate" type="text/html" href="/horizon%20view/reusing-horizon-view-desktop-names/" />
-  <id>/horizon%20view/reusing-horizon-view-desktop-names</id>
-  <published>2015-11-11T00:00:00-05:00</published>
-  <updated>2015-11-11T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Have you ever worked with a Horizon View pool with 10 VM’s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.&lt;/p&gt;
-
-&lt;p&gt;First you will need to connect to the ADAM database on one of your servers. Use &lt;a href=&quot;http://kb.vmware.com/kb/2012377&quot;&gt;KB2012377&lt;/a&gt; for instructions.&lt;/p&gt;
-
-&lt;p&gt;To connect to the View ADAM database:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Log in to one of the View Connection Servers as Domain Administrator.&lt;/li&gt;
-  &lt;li&gt;Click Start &amp;gt; Administrative Tools &amp;gt; ADSI Edit.&lt;/li&gt;
-  &lt;li&gt;In the console window, right-click ADSI Edit and click Connect to.&lt;/li&gt;
-  &lt;li&gt;In the Name field type:
-    &lt;ul&gt;
-      &lt;li&gt;View ADAM Database&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Select Select or type a Distinguished Name or Naming Context.&lt;/li&gt;
-  &lt;li&gt;In the field below Select or type a Distinguished Name or Naming Context, type:
-    &lt;ul&gt;
-      &lt;li&gt;dc=vdi,dc=vmware,dc=int&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Select Select or type a domain or server.&lt;/li&gt;
-  &lt;li&gt;In the field below Select or type a domain or server, type:
-    &lt;ul&gt;
-      &lt;li&gt;localhost:389&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Click OK.&lt;/li&gt;
-  &lt;li&gt;Click View ADAM Database [localhost:389] to expand.&lt;/li&gt;
-  &lt;li&gt;Click DC=vdi,dc=vmware,dc=int to expand.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/viewadamconnectionsettings.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now perform the following steps to set the pool to reuse the VM Names&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Expand dc=vdi,dc=vmware,dc=int&lt;/li&gt;
-  &lt;li&gt;Expand OU=Server Groups&lt;/li&gt;
-  &lt;li&gt;Double Click CN=(Pool Name)&lt;/li&gt;
-  &lt;li&gt;Find the entry “pae-VmNameReuseAllowed”
-    &lt;ul&gt;
-      &lt;li&gt;Open this entry and change the value to 1&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/viewreuseattribute.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The next VM should now start reusing the old VM names that were in the pool.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/horizon%20view/reusing-horizon-view-desktop-names/&quot;&gt;Reusing Horizon View Desktop Names&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 
