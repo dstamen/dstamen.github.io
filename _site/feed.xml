@@ -4,13 +4,95 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-04-12T09:16:07-04:00</updated>
+<updated>2016-04-18T19:05:41-04:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Using Veeam Powershell to Manage ReIP Rules]]></title>
+  <link rel="alternate" type="text/html" href="/veeam/using-veeam-powershell-to-manage-reip-rules/" />
+  <id>/veeam/using-veeam-powershell-to-manage-reip-rules</id>
+  <published>2016-04-18T00:00:00-04:00</published>
+  <updated>2016-04-18T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Hello! Welcome to my First Veeam PowerShell Script! I have been working on tons of migrations using Veeam Backup and Replication and need to create re-ip rules to update the static IP assignments. Obviously the first rule of scripting if you do something more than once, automate! I was bad at this one, I originally tried and gave up so I did about 20 manually which started to become a huge headache.&lt;/p&gt;
+
+&lt;p&gt;Thanks to  Marcus Puckett (@mpuckett259) he helped me on the side figure out the syntax to get the rule to append and not overwrite. See below for the script. Check out the Github for the bits!&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://helpcenter.veeam.com/backup/powershell/getting_started.html&quot;&gt;Veeam Powershell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/Veeam/blob/master/Create-VeeamReIPRule.ps1&quot;&gt;Create-VeeamReIPRule.ps1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/Veeam/blob/master/ReIPRule-Template.csv&quot;&gt;ReIPRule-Template.csv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just update the CSV file and then you execute the script.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;param&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Parameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;HelpMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Path to CSV to Import&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;[string[]]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$csvlist&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Load Veeam Plugin&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Add-PSSnapin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VeeamPSSnapIn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ErrorAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SilentlyContinue&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Check if CSV was specified, if not prompt.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$csvlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$csvlist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Read-host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Prompt&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Csv to import&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Test-Path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$csvlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Could not find CSV.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Import CSV&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$iplist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Import-csv&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$csvlist&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Cycle through each row and add in the ReIP Rule&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$iplist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Description&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Description&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$Job&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Job&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$SourceIp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SourceIp&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$SourceMask&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SourceMask&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$TargetIp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TargetIp&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$TargetMask&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TargetMask&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$TargetGateway&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TargetGateway&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$DNS1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DNS1&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$DNS2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DNS2&lt;/span&gt;
+
+  &lt;span class=&quot;nv&quot;&gt;$currentiprules&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-VBRJob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Job&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-VBRViReplicaReIpRule&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$newiprule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;New-VBRViReplicaReIpRule&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SourceIp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SourceIp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-SourceMask&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SourceMask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-TargetIp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TargetIp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-TargetMask&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TargetMask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-TargetGateway&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TargetGateway&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-DNS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DNS1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DNS2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Description&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Description&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$newrules&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$currentiprules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$newiprule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$replicajob&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-VBRJob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Job&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;Set-VBRViReplicaJob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Job&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$replicajob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-EnableReIp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ReIpRule&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$newrules&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Create-VeeamReIPRule.ps1 pathtocsv&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/veeam/using-veeam-powershell-to-manage-reip-rules/&quot;&gt;Using Veeam Powershell to Manage ReIP Rules&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 18, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -1633,49 +1715,6 @@
 &lt;h4 id=&quot;hope-this-helps-anyone-else-out-wanted-to-automate-certificate-replacement-on-cisco-ucs&quot;&gt;&lt;strong&gt;&lt;em&gt;Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 
     &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-ucs-certificates/&quot;&gt;Using UCS PowerTool To Configure UCS Certificates&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 10, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Using CLI to Manage DVS Host Uplinks]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/using-cli-to-manage-dvs-host-uplinks/" />
-  <id>/vmware/using-cli-to-manage-dvs-host-uplinks</id>
-  <published>2015-11-30T00:00:00-05:00</published>
-  <updated>2015-11-30T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.&lt;/p&gt;
-
-&lt;p&gt;To view your current dvs configuration you can run &lt;strong&gt;esxcfg-vswitch -l&lt;/strong&gt;. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-dvSwitch         &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;         &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;           &lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;               &lt;span class=&quot;m&quot;&gt;1500&lt;/span&gt;    vmnic0,vmnic1
-
-  DVPort ID           In Use      Client
-  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;                   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;           vmnic0
-  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;                   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;           vmnic1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To &lt;strong&gt;REMOVE&lt;/strong&gt; an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -Q vmnic1 -V &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To &lt;strong&gt;ADD&lt;/strong&gt; an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;esxcfg-vswitch -P vmnic1 -V &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; dvSwitch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-    &lt;p&gt;&lt;a href=&quot;/vmware/using-cli-to-manage-dvs-host-uplinks/&quot;&gt;Using CLI to Manage DVS Host Uplinks&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on November 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
