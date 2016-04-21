@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using PureStorage Powershell to Configure SysLog Servers">
 <meta name="twitter:description" content="Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -183,20 +173,20 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Import Module</span>
-<span class="nb">Import-Module</span> <span class="n">PureStoragePowershellSDK</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Import Module</span>
+Import-Module PureStoragePowershellSDK
 
-<span class="c">#Define Variables</span>
-<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<span class="nv">$arrays</span> <span class="p">=</span> <span class="s2">&quot;pure.lab.local&quot;</span>
-<span class="nv">$SysLogServers</span> <span class="p">=</span> <span class="s2">&quot;tcp://syslog.lab.local:514&quot;</span>
+<span class="c1">#Define Variables</span>
+<span class="nv">$cred</span> <span class="o">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$arrays</span> <span class="o">=</span> <span class="s2">"pure.lab.local"</span>
+<span class="nv">$SysLogServers</span> <span class="o">=</span> <span class="s2">"tcp://syslog.lab.local:514"</span>
 
-<span class="c">#Cycles through each UCS setting values</span>
-<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$array</span> <span class="k">in</span> <span class="nv">$arrays</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">Write-Host</span> <span class="s2">&quot;Setting Syslog Information for $array&quot;</span>
-  <span class="nv">$FlashArray</span> <span class="p">=</span> <span class="nb">New-PfaArray</span> <span class="n">-EndPoint</span> <span class="nv">$array</span> <span class="n">-Credentials</span> <span class="nv">$cred</span> <span class="n">-IgnoreCertificateError</span>
-  <span class="nb">Set-PfaSyslogServers</span> <span class="n">-Array</span> <span class="nv">$FlashArray</span> <span class="n">-SyslogServers</span> <span class="nv">$SyslogServers</span><span class="p">|</span><span class="n">fl</span>
-<span class="p">}</span></code></pre></div>
+<span class="c1">#Cycles through each UCS setting values</span>
+<span class="k">Foreach</span> <span class="o">(</span><span class="nv">$array</span> <span class="k">in</span> <span class="nv">$arrays</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nb">Write-Host</span> <span class="s2">"Setting Syslog Information for </span><span class="nv">$array</span><span class="s2">"</span>
+  <span class="nv">$FlashArray</span> <span class="o">=</span> New-PfaArray -EndPoint <span class="nv">$array</span> -Credentials <span class="nv">$cred</span> -IgnoreCertificateError
+  <span class="nb">Set</span>-PfaSyslogServers -Array <span class="nv">$FlashArray</span> -SyslogServers <span class="nv">$SyslogServers</span>|fl
+<span class="o">}</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -241,11 +231,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

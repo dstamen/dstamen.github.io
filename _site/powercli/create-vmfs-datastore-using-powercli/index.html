@@ -13,7 +13,6 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Create VMFS Datastore Using PowerCLI">
 <meta name="twitter:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me!
@@ -101,22 +100,14 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -130,7 +121,6 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -176,15 +166,15 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
 
 <h2 id="how-do-i-get-the-canonicalname-for-allocated-disks">How do i get the CanonicalName for allocated disks?</h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-SCSILun</span> <span class="n">-VMhost</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">103</span> <span class="n">-LunType</span> <span class="n">Disk</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">CanonicalName</span><span class="p">,</span><span class="n">Capacity</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | <span class="nb">Select </span>CanonicalName,Capacity</code></pre></figure>
 
 <h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?</h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">New-Datastore</span> <span class="n">-VMHost</span> <span class="n">Host</span><span class="err"> </span><span class="n">-Name</span> <span class="n">Datastore</span> <span class="n">-Path</span> <span class="n">CanonicalName</span> <span class="n">-VMFS</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">New-Datastore -VMHost Host -Name Datastore -Path CanonicalName -VMFS</code></pre></figure>
 
 <h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastorebr-">How do i rescan all the hosts in the cluster to see the new datastore?<br /></h2>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Get-Cluster</span> <span class="n">-name</span> <span class="n">Cluster</span> <span class="p">|</span> <span class="nb">Get-VMhost</span> <span class="p">|</span> <span class="nb">Get-VMHostStorage</span> <span class="n">-RescanAllHBA</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">Get-Cluster -name Cluster | Get-VMhost | Get-VMHostStorage -RescanAllHBA</code></pre></figure>
 
 
       <hr />
@@ -225,11 +215,11 @@ You can use the below PowerCLI commands to get the SCSI ID’s,  Create the Dat
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

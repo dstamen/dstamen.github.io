@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using PowerCLI to Install Software in a Guest VM">
 <meta name="twitter:description" content="I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -185,49 +175,49 @@
 
 <p><em>This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer</em></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Prompt For Guest Credentials&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
-<span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<span class="nv">$VMs</span> <span class="p">=</span> <span class="s2">&quot;VM1&quot;</span><span class="p">,</span><span class="s2">&quot;VM2&quot;</span>
-<span class="c">#$VMs = Get-VM VM* | Sort Name</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Define Variables</span>
+<span class="nb">Write-Host</span> <span class="s2">"Prompt For Guest Credentials"</span> -ForegroundColor Yellow
+<span class="nv">$Cred</span> <span class="o">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$VMs</span> <span class="o">=</span> <span class="s2">"VM1"</span>,<span class="s2">"VM2"</span>
+<span class="c1">#$VMs = Get-VM VM* | Sort Name</span>
 
-<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$VMName</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$VM</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="nv">$VMName</span>
+<span class="k">Foreach</span> <span class="o">(</span><span class="nv">$VMName</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nv">$VM</span> <span class="o">=</span> Get-VM <span class="nv">$VMName</span>
 
-<span class="c">#Define file information. Include File Name, Parameters, Source and Destination</span>
-  <span class="nv">$File</span> <span class="p">=</span> <span class="s2">&quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&quot;</span>
-  <span class="nv">$Param</span> <span class="p">=</span> <span class="s2">&quot;/s /v/qn REBOOT=Reallysuppress&quot;</span>
-  <span class="nv">$SrcPath</span> <span class="p">=</span> <span class="s2">&quot;c:\&quot;</span>
-  <span class="nv">$DstPath</span> <span class="p">=</span> <span class="s2">&quot;c:\temp\&quot;</span>
-  <span class="nv">$Fullpath</span> <span class="p">=</span> <span class="nv">$SrcPath</span> <span class="p">+</span> <span class="nv">$File</span>
+<span class="c1">#Define file information. Include File Name, Parameters, Source and Destination</span>
+  <span class="nv">$File</span> <span class="o">=</span> <span class="s2">"VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe"</span>
+  <span class="nv">$Param</span> <span class="o">=</span> <span class="s2">"/s /v/qn REBOOT=Reallysuppress"</span>
+  <span class="nv">$SrcPath</span> <span class="o">=</span> <span class="s2">"c:</span><span class="se">\"</span><span class="s2">
+  </span><span class="nv">$DstPath</span><span class="s2"> = "</span>c:<span class="se">\t</span>emp<span class="se">\"</span>
+  <span class="nv">$Fullpath</span> <span class="o">=</span> <span class="nv">$SrcPath</span> + <span class="nv">$File</span>
 
-  <span class="nb">Write-Host</span> <span class="n">Copying</span> <span class="nv">$Fullpath</span> <span class="n">to</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-  <span class="nb">Copy-VMGuestFile</span> <span class="n">-VM</span> <span class="nv">$VM</span> <span class="n">-Source</span> <span class="nv">$Fullpath</span> <span class="n">-Destination</span> <span class="nv">$DstPath</span> <span class="n">-LocalToGuest</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span> <span class="n">-Force</span>
+  <span class="nb">Write-Host </span>Copying <span class="nv">$Fullpath</span> to <span class="nv">$VMName</span> -ForegroundColor Cyan
+  <span class="nb">Copy</span>-VMGuestFile -VM <span class="nv">$VM</span> -Source <span class="nv">$Fullpath</span> -Destination <span class="nv">$DstPath</span> -LocalToGuest -GuestCredential <span class="nv">$Cred</span> -Force
 
-  <span class="c">#Define Install File Command</span>
-  <span class="nv">$Command</span> <span class="p">=</span> <span class="nv">$DstPath</span> <span class="p">+</span> <span class="nv">$File</span> <span class="p">+</span> <span class="nv">$Param</span>
-  <span class="c">#Define Delete File Command</span>
-  <span class="nv">$Command2</span> <span class="p">=</span> <span class="s2">&quot;del &quot;</span> <span class="p">+</span> <span class="nv">$DstPath</span> <span class="p">+</span> <span class="nv">$File</span>
+  <span class="c1">#Define Install File Command</span>
+  <span class="nv">$Command</span> <span class="o">=</span> <span class="nv">$DstPath</span> + <span class="nv">$File</span> + <span class="nv">$Param</span>
+  <span class="c1">#Define Delete File Command</span>
+  <span class="nv">$Command2</span> <span class="o">=</span> <span class="s2">"del "</span> + <span class="nv">$DstPath</span> + <span class="nv">$File</span>
 
-  <span class="nb">Write-Host</span> <span class="n">Executing</span> <span class="nv">$Command</span> <span class="n">within</span> <span class="n">guest</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">of</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">White</span>
-  <span class="nv">$Result</span> <span class="p">=</span> <span class="nb">Invoke-VMScript</span> <span class="n">-VM</span> <span class="nv">$VM</span>  <span class="n">-ScriptText</span> <span class="nv">$Command</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span>
-  <span class="nv">$ExitCode</span> <span class="p">=</span> <span class="nv">$Result</span><span class="p">.</span><span class="n">ExitCode</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nv">$ExitCode</span> <span class="p">=</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
-  <span class="p">}</span>
-  <span class="k">Else</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
-  <span class="p">}</span>
-  <span class="nb">Write-Host</span> <span class="n">Executing</span> <span class="nv">$Command2</span> <span class="n">within</span> <span class="n">guest</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">of</span> <span class="nv">$VMName</span> <span class="n">-ForegroundColor</span> <span class="n">White</span>
-  <span class="nv">$Result2</span> <span class="p">=</span> <span class="nb">Invoke-VMScript</span> <span class="n">-VM</span> <span class="nv">$VM</span>  <span class="n">-ScriptText</span> <span class="nv">$Command2</span> <span class="n">-GuestCredential</span> <span class="nv">$Cred</span>
-  <span class="nv">$ExitCode2</span> <span class="p">=</span> <span class="nv">$Result2</span><span class="p">.</span><span class="n">ExitCode</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nv">$ExitCode2</span> <span class="p">=</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode2</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
-  <span class="p">}</span>
-  <span class="k">Else</span> <span class="p">{</span>
-    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> <span class="n">returned</span> <span class="n">exit</span> <span class="n">code</span> <span class="nv">$ExitCode2</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+  <span class="nb">Write-Host </span>Executing <span class="nv">$Command</span> within guest operating system of <span class="nv">$VMName</span> -ForegroundColor White
+  <span class="nv">$Result</span> <span class="o">=</span> Invoke-VMScript -VM <span class="nv">$VM</span>  -ScriptText <span class="nv">$Command</span> -GuestCredential <span class="nv">$Cred</span>
+  <span class="nv">$ExitCode</span> <span class="o">=</span> <span class="nv">$Result</span>.ExitCode
+  <span class="k">if</span> <span class="o">(</span><span class="nv">$ExitCode</span> <span class="o">=</span> <span class="s2">"0"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> returned <span class="k">exit </span>code <span class="nv">$ExitCode</span> -ForegroundColor Green
+  <span class="o">}</span>
+  <span class="k">Else</span> <span class="o">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> returned <span class="k">exit </span>code <span class="nv">$ExitCode</span> -ForegroundColor Red
+  <span class="o">}</span>
+  <span class="nb">Write-Host </span>Executing <span class="nv">$Command2</span> within guest operating system of <span class="nv">$VMName</span> -ForegroundColor White
+  <span class="nv">$Result2</span> <span class="o">=</span> Invoke-VMScript -VM <span class="nv">$VM</span>  -ScriptText <span class="nv">$Command2</span> -GuestCredential <span class="nv">$Cred</span>
+  <span class="nv">$ExitCode2</span> <span class="o">=</span> <span class="nv">$Result2</span>.ExitCode
+  <span class="k">if</span> <span class="o">(</span><span class="nv">$ExitCode2</span> <span class="o">=</span> <span class="s2">"0"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> returned <span class="k">exit </span>code <span class="nv">$ExitCode2</span> -ForegroundColor Green
+  <span class="o">}</span>
+  <span class="k">Else</span> <span class="o">{</span>
+    <span class="nb">Write-Host</span> <span class="nv">$VMName</span> returned <span class="k">exit </span>code <span class="nv">$ExitCode2</span> -ForegroundColor Red
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -272,11 +262,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using PowerCLI to Build Out vCenter">
 <meta name="twitter:description" content="I wanted to share this handy script i created when you have a need to build out a new vCenter.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -185,61 +175,61 @@
 
 <p><a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter">ConfigvCenter.ps1</a></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># Variables</span>
-<span class="nv">$vcenter</span> <span class="p">=</span> <span class="s2">&quot;vc.lab.local&quot;</span>
-<span class="nv">$esxusername</span> <span class="p">=</span> <span class="s2">&quot;root&quot;</span>
-<span class="nv">$esxpassword</span> <span class="p">=</span> <span class="s2">&quot;password&quot;</span>
-<span class="nv">$DSC</span> <span class="p">=</span> <span class="s2">&quot;DSC01&quot;</span>
-<span class="nv">$Datacenter</span> <span class="p">=</span> <span class="s2">&quot;Lab&quot;</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1"># Variables</span>
+<span class="nv">$vcenter</span> <span class="o">=</span> <span class="s2">"vc.lab.local"</span>
+<span class="nv">$esxusername</span> <span class="o">=</span> <span class="s2">"root"</span>
+<span class="nv">$esxpassword</span> <span class="o">=</span> <span class="s2">"password"</span>
+<span class="nv">$DSC</span> <span class="o">=</span> <span class="s2">"DSC01"</span>
+<span class="nv">$Datacenter</span> <span class="o">=</span> <span class="s2">"Lab"</span>
 
-<span class="c">#Connect to vCenter</span>
-<span class="c">#Connect-VIServer -Server $vCenter</span>
+<span class="c1">#Connect to vCenter</span>
+<span class="c1">#Connect-VIServer -Server $vCenter</span>
 
-<span class="c"># Create Datacenters</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datacenter&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatacenter</span><span class="p">.</span><span class="n">csv</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datacenter</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">New-Datacenter</span> <span class="n">-Location</span> <span class="p">(</span><span class="nb">Get-Folder</span> <span class="n">-NoRecursion</span><span class="p">)</span> <span class="n">-Name</span> <span class="nv">$datacenter</span><span class="p">.</span><span class="n">Name</span>
-<span class="p">}</span>
+<span class="c1"># Create Datacenters</span>
+<span class="nb">Write-Host</span> <span class="s2">"Creating Datacenter"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\c</span>reatedatacenter.csv
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$datacenter</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  New-Datacenter -Location <span class="o">(</span>Get-Folder -NoRecursion<span class="o">)</span> -Name <span class="nv">$datacenter</span>.Name
+<span class="o">}</span>
 
-<span class="c"># Create Clusters</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Clusters&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createcluster</span><span class="p">.</span><span class="n">csv</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">New-Cluster</span> <span class="n">-Name</span> <span class="nv">$cluster</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Location</span> <span class="nv">$cluster</span><span class="p">.</span><span class="n">Datacenter</span> <span class="n">-DRSEnabled</span> <span class="n">-DrsAutomationLevel</span> <span class="n">FullyAutomated</span> <span class="n">-HAEnabled</span>
-<span class="p">}</span>
+<span class="c1"># Create Clusters</span>
+<span class="nb">Write-Host</span> <span class="s2">"Creating Clusters"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\c</span>reatecluster.csv
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  New-Cluster -Name <span class="nv">$cluster</span>.Name -Location <span class="nv">$cluster</span>.Datacenter -DRSEnabled -DrsAutomationLevel FullyAutomated -HAEnabled
+<span class="o">}</span>
 
-<span class="c"># Create Clusters</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Adding Hosts&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createhosts</span><span class="p">.</span><span class="n">csv</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">Add-VMHost</span> <span class="n">-Name</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Location</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Cluster</span> <span class="n">-User</span> <span class="nv">$esxusername</span> <span class="n">-Password</span> <span class="nv">$esxpassword</span>
-  <span class="nb">Set-VMHost</span> <span class="n">-VMHost</span> <span class="nv">$vmhost</span><span class="p">.</span><span class="n">Name</span> <span class="n">-State</span> <span class="n">Maintenance</span>
-<span class="p">}</span>
+<span class="c1"># Create Clusters</span>
+<span class="nb">Write-Host</span> <span class="s2">"Adding Hosts"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\c</span>reatehosts.csv
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  Add-VMHost -Name <span class="nv">$vmhost</span>.Name -Location <span class="nv">$vmhost</span>.Cluster -User <span class="nv">$esxusername</span> -Password <span class="nv">$esxpassword</span>
+  <span class="nb">Set</span>-VMHost -VMHost <span class="nv">$vmhost</span>.Name -State Maintenance
+<span class="o">}</span>
 
-<span class="c"># Create Datastores</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datastores&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatastores</span><span class="p">.</span><span class="n">csv</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">New-Datastore</span> <span class="n">-VMHost</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">host</span> <span class="n">-Name</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Path</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">NAAID</span> <span class="n">-VMFS</span>
-<span class="p">}</span>
+<span class="c1"># Create Datastores</span>
+<span class="nb">Write-Host</span> <span class="s2">"Creating Datastores"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\c</span>reatedatastores.csv
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  New-Datastore -VMHost <span class="nv">$datastore</span>.host -Name <span class="nv">$datastore</span>.Name -Path <span class="nv">$datastore</span>.NAAID -VMFS
+<span class="o">}</span>
 
-<span class="c"># Create Datastore Cluster and Move Datastores In</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Creating Datastore Cluster and Adding Datastores&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">createdatastores</span><span class="p">.</span><span class="n">csv</span>
-<span class="nb">New-DatastoreCluster</span> <span class="n">-Name</span> <span class="nv">$DSC</span> <span class="n">-Location</span> <span class="nv">$Datacenter</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">Move-Datastore</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Destination</span> <span class="nv">$datastore</span><span class="p">.</span><span class="n">DatastoreCluster</span>
-<span class="p">}</span>
+<span class="c1"># Create Datastore Cluster and Move Datastores In</span>
+<span class="nb">Write-Host</span> <span class="s2">"Creating Datastore Cluster and Adding Datastores"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\c</span>reatedatastores.csv
+New-DatastoreCluster -Name <span class="nv">$DSC</span> -Location <span class="nv">$Datacenter</span>
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$datastore</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nb">Move</span>-Datastore <span class="nv">$datastore</span>.Name -Destination <span class="nv">$datastore</span>.DatastoreCluster
+<span class="o">}</span>
 
-<span class="c"># Apply HostProfile</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;Applying HostProfiles&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span>
-<span class="nv">$csv</span> <span class="p">=</span> <span class="nb">Import-CSV</span> <span class="p">.\</span><span class="n">applyhostprofile</span><span class="p">.</span><span class="n">csv</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$hostprofile</span> <span class="k">in</span> <span class="nv">$csv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">Apply-VMHostProfile</span> <span class="n">-Entity</span> <span class="nv">$hostprofile</span><span class="p">.</span><span class="n">Entity</span> <span class="n">-Profile</span> <span class="nv">$hostprofile</span><span class="p">.</span><span class="n">Profile</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
-<span class="p">}</span>
+<span class="c1"># Apply HostProfile</span>
+<span class="nb">Write-Host</span> <span class="s2">"Applying HostProfiles"</span> -ForegroundColor <span class="s2">"Green"</span>
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nb">Import-CSV</span> .<span class="se">\a</span>pplyhostprofile.csv
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$hostprofile</span> <span class="k">in</span> <span class="nv">$csv</span><span class="o">)</span> <span class="o">{</span>
+  Apply-VMHostProfile -Entity <span class="nv">$hostprofile</span>.Entity -Profile <span class="nv">$hostprofile</span>.Profile -Confirm:<span class="nv">$false</span>
+<span class="o">}</span>
 
-<span class="nb">Write-Host</span> <span class="s2">&quot;Complete!&quot;</span> <span class="n">-ForegroundColor</span> <span class="s2">&quot;Green&quot;</span></code></pre></div>
+<span class="nb">Write-Host</span> <span class="s2">"Complete!"</span> -ForegroundColor <span class="s2">"Green"</span></code></pre></figure>
 
 
       <hr />
@@ -280,11 +270,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

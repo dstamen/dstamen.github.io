@@ -1,6 +1,15 @@
 {
   
 
+    "powercli-using-powercli-to-get-and-set-dvs-traffic-shaping-settings": {
+      "title": "Using PowerCLI to Get and Set DVS Traffic Shaping Settings",
+      "url": " /powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "veeam-using-veeam-powershell-to-manage-reip-rules": {
       "title": "Using Veeam Powershell to Manage ReIP Rules",
       "url": " /veeam/using-veeam-powershell-to-manage-reip-rules/",

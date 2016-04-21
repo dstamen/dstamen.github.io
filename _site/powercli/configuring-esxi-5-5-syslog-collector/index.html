@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Configuring ESXi 5.5 Syslog Collector">
 <meta name="twitter:description" content="Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -172,18 +162,18 @@
 
 <h1 id="check-the-esxi-syslog-collector-configuration-example">Check the ESXi Syslog Collector Configuration Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">)){</span>
-<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
-<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">syslog</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">get</span><span class="p">()}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="o">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="o">(</span>get-vmhost<span class="o">)){</span>
+<span class="nv">$esxcli</span> <span class="o">=</span> Get-EsxCli -vmhost <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span>.system.syslog.config.get<span class="o">()}</span></code></pre></figure>
 
 <p><img src="/images/screenshot.371.jpg" alt="" /></p>
 
 <h1 id="setting-the-esxi-syslog-collector-example">Setting the ESXi Syslog Collector Example:</h1>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="p">(</span><span class="nb">get-vmhost</span><span class="p">)){</span>
-<span class="nv">$esxcli</span> <span class="p">=</span> <span class="nb">Get-EsxCli</span> <span class="n">-vmhost</span> <span class="nv">$vmhost</span>
-<span class="nv">$esxcli</span><span class="p">.</span><span class="n">system</span><span class="p">.</span><span class="n">syslog</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span><span class="s2">&quot;udp://IPtoSyslogServer:514″)</span>
-<span class="s2">$esxcli.system.syslog.reload()}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="k">Foreach</span> <span class="o">(</span><span class="nv">$vmhost</span> <span class="k">in</span> <span class="o">(</span>get-vmhost<span class="o">)){</span>
+<span class="nv">$esxcli</span> <span class="o">=</span> Get-EsxCli -vmhost <span class="nv">$vmhost</span>
+<span class="nv">$esxcli</span>.system.syslog.config.set<span class="o">(</span><span class="nv">$null</span>, <span class="nv">$null</span>, <span class="nv">$null</span>, <span class="nv">$null</span>,<span class="s2">"udp://IPtoSyslogServer:514″)
+</span><span class="nv">$esxcli</span><span class="s2">.system.syslog.reload()}</span></code></pre></figure>
 
 <p><img src="/images/screenshot.381.jpg" alt="" /></p>
 
@@ -232,11 +222,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

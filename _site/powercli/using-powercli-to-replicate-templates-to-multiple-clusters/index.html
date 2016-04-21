@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using PowerCLI to Replicate Templates to Multiple Clusters">
 <meta name="twitter:description" content="We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -187,42 +177,42 @@
 
 <p><em>This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.</em></p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Import PowerCLI Module</span>
-<span class="nb">Add-PSSnapin</span> <span class="n">VMware</span><span class="p">.</span><span class="n">VimAutomation</span><span class="p">.</span><span class="n">Core</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Import PowerCLI Module</span>
+<span class="nb">Add-PSSnapin </span>VMware.VimAutomation.Core
 
-<span class="c">#Define Variables</span>
-<span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<span class="nv">$vCenter</span> <span class="p">=</span> <span class="s2">&quot;vcenter.lab.local&quot;</span>
-<span class="nv">$clusters</span> <span class="p">=</span> <span class="s2">&quot;Cluster01&quot;</span><span class="p">,</span><span class="s2">&quot;Cluster02&quot;</span>
-<span class="nv">$location</span> <span class="p">=</span> <span class="s2">&quot;Templates&quot;</span>
-<span class="nv">$templates</span> <span class="p">=</span> <span class="s2">&quot;Template1&quot;</span><span class="p">,</span><span class="s2">&quot;Template2&quot;</span>
+<span class="c1">#Define Variables</span>
+<span class="nv">$Credential</span> <span class="o">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$vCenter</span> <span class="o">=</span> <span class="s2">"vcenter.lab.local"</span>
+<span class="nv">$clusters</span> <span class="o">=</span> <span class="s2">"Cluster01"</span>,<span class="s2">"Cluster02"</span>
+<span class="nv">$location</span> <span class="o">=</span> <span class="s2">"Templates"</span>
+<span class="nv">$templates</span> <span class="o">=</span> <span class="s2">"Template1"</span>,<span class="s2">"Template2"</span>
 
-<span class="c">#Connect to vCenter</span>
-<span class="nb">Connect-VIServer</span> <span class="nv">$vCenter</span> <span class="n">-Credential</span> <span class="nv">$Credential</span>
+<span class="c1">#Connect to vCenter</span>
+Connect-VIServer <span class="nv">$vCenter</span> -Credential <span class="nv">$Credential</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$template</span> <span class="k">in</span> <span class="nv">$templates</span><span class="p">){</span>
-  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$clusters</span><span class="p">){</span>
-    <span class="c">#Check if Template exists</span>
-    <span class="k">Try</span><span class="p">{</span><span class="nb">Get-Template</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span><span class="nv">$TemplateExists</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">}</span><span class="k">Catch</span> <span class="p">{</span><span class="nv">$TemplateExists</span> <span class="p">=</span> <span class="nv">$false</span><span class="p">}</span>
-    <span class="c">#Create VM</span>
-    <span class="k">If</span><span class="p">(</span><span class="nv">$TemplateExists</span> <span class="o">-eq</span> <span class="nv">$true</span><span class="p">){</span>
-        <span class="c">#Remove Old Template</span>
-        <span class="nb">Get-Template</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="p">|</span><span class="nb">Remove-Template</span> <span class="n">-DeletePermanently</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
-        <span class="c">#Clone the Template</span>
-        <span class="nb">New-VM</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-Template</span> <span class="nv">$template</span> <span class="n">-ResourcePool</span> <span class="nv">$cluster</span> <span class="n">-Datastore</span> <span class="nv">$cluster</span><span class="n">-DSC</span> <span class="n">-Location</span> <span class="nv">$location</span>
-        <span class="c">#Convert to Template</span>
-        <span class="nb">Set-VM</span> <span class="n">-VM</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ToTemplate</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
-    <span class="p">}</span>
-    <span class="k">ElseIf</span><span class="p">(</span><span class="nv">$TemplateExists</span> <span class="o">-eq</span> <span class="nv">$false</span><span class="p">){</span>
-        <span class="c">#Clone the Template</span>
-        <span class="nb">New-VM</span> <span class="n">-Name</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-Template</span> <span class="nv">$template</span> <span class="n">-ResourcePool</span> <span class="nv">$cluster</span> <span class="n">-Datastore</span> <span class="nv">$cluster</span><span class="n">-DSC</span> <span class="n">-Location</span> <span class="nv">$location</span>
-        <span class="c">#Convert to Template</span>
-        <span class="nb">Set-VM</span> <span class="n">-VM</span> <span class="nv">$template</span><span class="p">-</span><span class="nv">$cluster</span> <span class="n">-ToTemplate</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="c">#Disconnect from vCenter</span>
-<span class="nb">Disconnect-VIServer</span> <span class="nv">$vCenter</span> <span class="n">-Force</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span></code></pre></div>
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$template</span> <span class="k">in</span> <span class="nv">$templates</span><span class="o">){</span>
+  <span class="k">foreach</span> <span class="o">(</span><span class="nv">$cluster</span> <span class="k">in</span> <span class="nv">$clusters</span><span class="o">){</span>
+    <span class="c1">#Check if Template exists</span>
+    <span class="k">Try</span><span class="o">{</span>Get-Template <span class="nv">$template</span>-<span class="nv">$cluster</span> -ErrorAction Stop;<span class="nv">$TemplateExists</span> <span class="o">=</span> <span class="nv">$true</span><span class="o">}</span><span class="k">Catch</span> <span class="o">{</span><span class="nv">$TemplateExists</span> <span class="o">=</span> <span class="nv">$false</span><span class="o">}</span>
+    <span class="c1">#Create VM</span>
+    <span class="k">If</span><span class="o">(</span><span class="nv">$TemplateExists</span> -eq <span class="nv">$true</span><span class="o">){</span>
+        <span class="c1">#Remove Old Template</span>
+        Get-Template -Name <span class="nv">$template</span>-<span class="nv">$cluster</span> |Remove-Template -DeletePermanently -Confirm:<span class="nv">$false</span>
+        <span class="c1">#Clone the Template</span>
+        New-VM -Name <span class="nv">$template</span>-<span class="nv">$cluster</span> -Template <span class="nv">$template</span> -ResourcePool <span class="nv">$cluster</span> -Datastore <span class="nv">$cluster</span>-DSC -Location <span class="nv">$location</span>
+        <span class="c1">#Convert to Template</span>
+        <span class="nb">Set</span>-VM -VM <span class="nv">$template</span>-<span class="nv">$cluster</span> -ToTemplate -Confirm:<span class="nv">$false</span>
+    <span class="o">}</span>
+    <span class="k">ElseIf</span><span class="o">(</span><span class="nv">$TemplateExists</span> -eq <span class="nv">$false</span><span class="o">){</span>
+        <span class="c1">#Clone the Template</span>
+        New-VM -Name <span class="nv">$template</span>-<span class="nv">$cluster</span> -Template <span class="nv">$template</span> -ResourcePool <span class="nv">$cluster</span> -Datastore <span class="nv">$cluster</span>-DSC -Location <span class="nv">$location</span>
+        <span class="c1">#Convert to Template</span>
+        <span class="nb">Set</span>-VM -VM <span class="nv">$template</span>-<span class="nv">$cluster</span> -ToTemplate -Confirm:<span class="nv">$false</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">#Disconnect from vCenter</span>
+Disconnect-VIServer <span class="nv">$vCenter</span> -Force -Confirm:<span class="nv">$false</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -267,11 +257,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using CLI to Manage DVS Host Uplinks">
 <meta name="twitter:description" content="Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -176,20 +166,20 @@
 
 <p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-dvSwitch         <span class="m">256</span>         <span class="m">3</span>           <span class="m">256</span>               <span class="m">1500</span>    vmnic0,vmnic1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
+dvSwitch         256         3           256               1500    vmnic0,vmnic1
 
   DVPort ID           In Use      Client
-  <span class="m">0</span>                   <span class="m">1</span>           vmnic0
-  <span class="m">1</span>                   <span class="m">1</span>           vmnic1</code></pre></div>
+  0                   1           vmnic0
+  1                   1           vmnic1</code></pre></figure>
 
 <p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -Q vmnic1 -V <span class="m">1</span> dvSwitch</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch</code></pre></figure>
 
 <p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -P vmnic1 -V <span class="m">1</span> dvSwitch</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">esxcfg-vswitch -P vmnic1 -V 1 dvSwitch</code></pre></figure>
 
 
       <hr />
@@ -230,11 +220,11 @@ dvSwitch         <span class="m">256</span>         <span class="m">3</span>    
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

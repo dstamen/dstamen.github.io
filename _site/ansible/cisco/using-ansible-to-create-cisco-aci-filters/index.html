@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using Ansible to Create Cisco ACI Filters">
 <meta name="twitter:description" content="In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries. The below example are the required ports for Horizon View.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -185,30 +175,30 @@
 
 <p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.</em></p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
 
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">playbook to create HorizonViewPorts-FIL</span>
-  <span class="l-Scalar-Plain">hosts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">apic</span>
-  <span class="l-Scalar-Plain">connection</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">local</span>
-  <span class="l-Scalar-Plain">gather_facts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">no</span>
+<span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">playbook to create HorizonViewPorts-FIL</span>
+  <span class="s">hosts</span><span class="pi">:</span> <span class="s">apic</span>
+  <span class="s">connection</span><span class="pi">:</span> <span class="s">local</span>
+  <span class="s">gather_facts</span><span class="pi">:</span> <span class="s">no</span>
 
-  <span class="l-Scalar-Plain">tasks</span><span class="p-Indicator">:</span>
+  <span class="s">tasks</span><span class="pi">:</span>
       <span class="c1"># ensure filters exist</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name= tenant=common host= username= password=</span>
-        <span class="l-Scalar-Plain">with_items</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">HorizonViewPorts</span>
+      <span class="pi">-</span> <span class="s">aci_filter</span><span class="pi">:</span> <span class="s">name= tenant=common host= username= password=</span>
+        <span class="s">with_items</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">HorizonViewPorts</span>
         
      <span class="c1"># ensure filter entries exist</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">aci_filter_entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=</span></code></pre></div>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=</span>
+      <span class="pi">-</span> <span class="s">aci_filter_entry</span><span class="pi">:</span> <span class="s">name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -253,11 +243,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

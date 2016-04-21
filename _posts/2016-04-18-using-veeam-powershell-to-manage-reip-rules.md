@@ -19,7 +19,7 @@ Thanks to  Marcus Puckett (@mpuckett259) he helped me on the side figure out the
 #### ***Preparing to Execute the Script***
 The script is pretty straight forward, just update the CSV file and then you execute the script.
 
-```
+{% highlight powershell %}
 #Define Variables
 param
 (
@@ -59,7 +59,7 @@ Foreach ($item in $iplist) {
   Set-VBRViReplicaJob -Job $replicajob -EnableReIp -ReIpRule $newrules
 
 }
-```
+{%endhighlight%}
 
 #### ***Execute the Script***
 - Run .\Create-VeeamReIPRule.ps1 pathto.csv

@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Using Veeam Powershell to Manage ReIP Rules">
 <meta name="twitter:description" content="Hello! Welcome to my First Veeam PowerShell Script! I have been working on tons of migrations using Veeam Backup and Replication and need to create re-ip rules to update the static IP assignments. Obviously the first rule of scripting if you do something more than once, automate! I was bad at this one, I originally tried and gave up so I did about 20 manually which started to become a huge headache.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -186,49 +176,49 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just update the CSV file and then you execute the script.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c">#Define Variables</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Define Variables</span>
 <span class="k">param</span>
-<span class="p">(</span>
-    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$False</span><span class="p">,</span>
-        <span class="k">HelpMessage</span><span class="p">=</span><span class="s1">&#39;Path to CSV to Import&#39;</span><span class="p">)]</span>
-        <span class="no">[string[]]</span><span class="nv">$csvlist</span>
-<span class="p">)</span>
+<span class="o">(</span>
+    <span class="o">[</span>Parameter<span class="o">(</span><span class="nv">Mandatory</span><span class="o">=</span><span class="nv">$False</span>,
+        <span class="nv">HelpMessage</span><span class="o">=</span><span class="s1">'Path to CSV to Import'</span><span class="o">)]</span>
+        <span class="o">[</span><span class="kt">string</span><span class="o">[]]</span><span class="nv">$csvlist</span>
+<span class="o">)</span>
 
-<span class="c">#Load Veeam Plugin</span>
-<span class="nb">Add-PSSnapin</span> <span class="n">-Name</span> <span class="n">VeeamPSSnapIn</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+<span class="c1">#Load Veeam Plugin</span>
+<span class="nb">Add-PSSnapin</span> -Name VeeamPSSnapIn -ErrorAction SilentlyContinue
 
-<span class="c">#Check if CSV was specified, if not prompt.</span>
-<span class="k">If</span><span class="p">(</span><span class="nv">$csvlist</span> <span class="o">-eq</span> <span class="nv">$NULL</span><span class="p">){</span>
-    <span class="nv">$csvlist</span> <span class="p">=</span> <span class="nb">Read-host</span> <span class="n">-Prompt</span> <span class="s2">&quot;Csv to import&quot;</span>
-<span class="p">}</span>
-<span class="k">If</span><span class="p">((</span><span class="nb">Test-Path</span> <span class="nv">$csvlist</span><span class="p">)</span> <span class="o">-eq</span> <span class="nv">$False</span><span class="p">){</span><span class="nb">Write-host</span> <span class="s2">&quot;Could not find CSV.&quot;</span><span class="p">;</span><span class="k">break</span><span class="p">}</span>
+<span class="c1">#Check if CSV was specified, if not prompt.</span>
+<span class="k">If</span><span class="o">(</span><span class="nv">$csvlist</span> -eq <span class="nv">$NULL</span><span class="o">){</span>
+    <span class="nv">$csvlist</span> <span class="o">=</span> <span class="nb">Read-host</span> -Prompt <span class="s2">"Csv to import"</span>
+<span class="o">}</span>
+<span class="k">If</span><span class="o">((</span><span class="nb">Test-Path</span> <span class="nv">$csvlist</span><span class="o">)</span> -eq <span class="nv">$False</span><span class="o">){</span><span class="nb">Write-host</span> <span class="s2">"Could not find CSV."</span>;<span class="k">break</span><span class="o">}</span>
 
-<span class="c">#Import CSV</span>
-<span class="nv">$iplist</span> <span class="p">=</span> <span class="nb">Import-csv</span> <span class="s2">&quot;$csvlist&quot;</span>
+<span class="c1">#Import CSV</span>
+<span class="nv">$iplist</span> <span class="o">=</span> <span class="nb">Import-csv</span> <span class="s2">"</span><span class="nv">$csvlist</span><span class="s2">"</span>
 
-<span class="c">#Cycle through each row and add in the ReIP Rule</span>
-<span class="k">Foreach</span> <span class="p">(</span><span class="nv">$item</span> <span class="k">in</span> <span class="nv">$iplist</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$Description</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">Description</span>
-  <span class="nv">$Job</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">Job</span>
-  <span class="nv">$SourceIp</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">SourceIp</span>
-  <span class="nv">$SourceMask</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">SourceMask</span>
-  <span class="nv">$TargetIp</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">TargetIp</span>
-  <span class="nv">$TargetMask</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">TargetMask</span>
-  <span class="nv">$TargetGateway</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">TargetGateway</span>
-  <span class="nv">$DNS1</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">DNS1</span>
-  <span class="nv">$DNS2</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">DNS2</span>
+<span class="c1">#Cycle through each row and add in the ReIP Rule</span>
+<span class="k">Foreach</span> <span class="o">(</span><span class="nv">$item</span> <span class="k">in</span> <span class="nv">$iplist</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nv">$Description</span> <span class="o">=</span> <span class="nv">$item</span>.Description
+  <span class="nv">$Job</span> <span class="o">=</span> <span class="nv">$item</span>.Job
+  <span class="nv">$SourceIp</span> <span class="o">=</span> <span class="nv">$item</span>.SourceIp
+  <span class="nv">$SourceMask</span> <span class="o">=</span> <span class="nv">$item</span>.SourceMask
+  <span class="nv">$TargetIp</span> <span class="o">=</span> <span class="nv">$item</span>.TargetIp
+  <span class="nv">$TargetMask</span> <span class="o">=</span> <span class="nv">$item</span>.TargetMask
+  <span class="nv">$TargetGateway</span> <span class="o">=</span> <span class="nv">$item</span>.TargetGateway
+  <span class="nv">$DNS1</span> <span class="o">=</span> <span class="nv">$item</span>.DNS1
+  <span class="nv">$DNS2</span> <span class="o">=</span> <span class="nv">$item</span>.DNS2
 
-  <span class="nv">$currentiprules</span> <span class="p">=</span> <span class="nb">Get-VBRJob</span> <span class="n">-Name</span> <span class="nv">$Job</span> <span class="p">|</span> <span class="nb">Get-VBRViReplicaReIpRule</span>
-  <span class="nv">$newiprule</span> <span class="p">=</span> <span class="nb">New-VBRViReplicaReIpRule</span> <span class="n">-SourceIp</span> <span class="nv">$SourceIp</span> <span class="n">-SourceMask</span> <span class="nv">$SourceMask</span> <span class="n">-TargetIp</span> <span class="nv">$TargetIp</span> <span class="n">-TargetMask</span> <span class="nv">$TargetMask</span> <span class="n">-TargetGateway</span> <span class="nv">$TargetGateway</span> <span class="n">-DNS</span> <span class="nv">$DNS1</span><span class="p">,</span><span class="nv">$DNS2</span> <span class="n">-Description</span> <span class="nv">$Description</span>
-  <span class="nv">$newrules</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$currentiprules</span><span class="p">)</span> <span class="p">+</span> <span class="p">@(</span><span class="nv">$newiprule</span><span class="p">)</span>
-  <span class="nv">$replicajob</span> <span class="p">=</span> <span class="nb">Get-VBRJob</span> <span class="n">-Name</span> <span class="nv">$Job</span>
-  <span class="nb">Set-VBRViReplicaJob</span> <span class="n">-Job</span> <span class="nv">$replicajob</span> <span class="n">-EnableReIp</span> <span class="n">-ReIpRule</span> <span class="nv">$newrules</span>
+  <span class="nv">$currentiprules</span> <span class="o">=</span> Get-VBRJob -Name <span class="nv">$Job</span> | Get-VBRViReplicaReIpRule
+  <span class="nv">$newiprule</span> <span class="o">=</span> New-VBRViReplicaReIpRule -SourceIp <span class="nv">$SourceIp</span> -SourceMask <span class="nv">$SourceMask</span> -TargetIp <span class="nv">$TargetIp</span> -TargetMask <span class="nv">$TargetMask</span> -TargetGateway <span class="nv">$TargetGateway</span> -DNS <span class="nv">$DNS1</span>,<span class="nv">$DNS2</span> -Description <span class="nv">$Description</span>
+  <span class="nv">$newrules</span> <span class="o">=</span> @<span class="o">(</span><span class="nv">$currentiprules</span><span class="o">)</span> + @<span class="o">(</span><span class="nv">$newiprule</span><span class="o">)</span>
+  <span class="nv">$replicajob</span> <span class="o">=</span> Get-VBRJob -Name <span class="nv">$Job</span>
+  <span class="nb">Set</span>-VBRViReplicaJob -Job <span class="nv">$replicajob</span> -EnableReIp -ReIpRule <span class="nv">$newrules</span>
 
-<span class="p">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
-  <li>Run .\Create-VeeamReIPRule.ps1 pathtocsv</li>
+  <li>Run .\Create-VeeamReIPRule.ps1 pathto.csv</li>
 </ul>
 
       <hr />
@@ -269,11 +259,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
     
       <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
-    
-      <li><a href="/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" title="Using PureStorage Powershell to Configure SysLog Servers">Using PureStorage Powershell to Configure SysLog Servers</a></li>
     
     </ul>
     <hr />

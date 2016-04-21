@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Sysprep runs repeatedly on virtual machines deployed to ESXi 5.1 build 1743533">
 <meta name="twitter:description" content="We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -174,10 +164,10 @@
 
 <p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM’s that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Connect-VIServer</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">lab</span><span class="p">.</span><span class="n">local</span>
-<span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-VM</span> <span class="p">|</span> <span class="nb">Get-AdvancedSetting</span> <span class="n">-Name</span> <span class="n">tools</span><span class="p">.</span><span class="n">deployPkg</span><span class="p">.</span><span class="n">fileName</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="o">-ne</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
-<span class="nv">$VMs</span> <span class="p">|</span> <span class="n">Select</span> <span class="n">Entity</span><span class="p">,</span> <span class="n">Value</span>
-<span class="nv">$VMs</span> <span class="p">|</span> <span class="k">ForEach</span> <span class="p">{</span><span class="nb">Get-VM</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Entity</span> <span class="p">|</span> <span class="nb">Get-AdvancedSetting</span> <span class="n">-Name</span> <span class="n">tools</span><span class="p">.</span><span class="n">deployPkg</span><span class="p">.</span><span class="n">fileName</span> <span class="p">|</span> <span class="nb">Set-AdvancedSetting</span> <span class="n">-Value</span> <span class="s1">&#39;&#39;</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span><span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">Connect-VIServer vcenter.lab.local
+<span class="nv">$VMs</span> <span class="o">=</span> Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | <span class="nb">Where-Object</span> <span class="o">{</span><span class="nv">$_</span>.Value -ne <span class="s2">""</span><span class="o">}</span>
+<span class="nv">$VMs</span> | <span class="nb">Select </span>Entity, Value
+<span class="nv">$VMs</span> | <span class="k">ForEach</span> <span class="o">{</span>Get-VM <span class="nv">$_</span>.Entity | Get-AdvancedSetting -Name tools.deployPkg.fileName | <span class="nb">Set</span>-AdvancedSetting -Value <span class="s1">''</span> -Confirm:<span class="nv">$false</span><span class="o">}</span></code></pre></figure>
 
 
       <hr />
@@ -218,11 +208,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />

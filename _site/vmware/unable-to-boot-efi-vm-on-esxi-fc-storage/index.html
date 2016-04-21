@@ -12,7 +12,6 @@
 <meta name="keywords" content="">
 
 
-
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Unable to Boot EFI VM on ESXi FC Storage">
 <meta name="twitter:description" content="For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
@@ -98,22 +97,14 @@
 		    <ul>
 		        
 				    
-				        
-				    
 				    <li><a href="/categories/" >Categories</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/posts/" >Posts</a></li>
 				
 				    
-				        
-				    
 				    <li><a href="/resources/" >Resources</a></li>
 				
-				    
-				        
 				    
 				    <li><a href="/search/" >Search</a></li>
 				
@@ -127,7 +118,6 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
-
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -188,25 +178,25 @@
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c"># PowerCLI Script for setting Disk Max IO Size</span>
-<span class="c"># @davidstamen</span>
-<span class="c"># http://davidstamen.com</span>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1"># PowerCLI Script for setting Disk Max IO Size</span>
+<span class="c1"># @davidstamen</span>
+<span class="c1"># http://davidstamen.com</span>
 
-<span class="c">#Define Variables</span>
-<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<span class="nv">$VC</span> <span class="p">=</span> <span class="s2">&quot;vc.lab.local&quot;</span>
-<span class="nv">$Cluster</span> <span class="p">=</span> <span class="s2">&quot;Production&quot;</span>
+<span class="c1">#Define Variables</span>
+<span class="nv">$cred</span> <span class="o">=</span> <span class="nb">Get-Credential</span>
+<span class="nv">$VC</span> <span class="o">=</span> <span class="s2">"vc.lab.local"</span>
+<span class="nv">$Cluster</span> <span class="o">=</span> <span class="s2">"Production"</span>
 
-<span class="c">#Connect to vCenter</span>
-<span class="nb">Connect-VIServer</span> <span class="nv">$VC</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+<span class="c1">#Connect to vCenter</span>
+Connect-VIServer <span class="nv">$VC</span> -Credential <span class="nv">$cred</span>
 
-<span class="c">#Get all Hosts</span>
-<span class="nv">$esxHosts</span> <span class="p">=</span> <span class="nb">Get-Cluster</span> <span class="nv">$Cluster</span> <span class="p">|</span> <span class="nb">Get-VMHost</span> <span class="p">|</span> <span class="n">Where</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">PowerState</span> <span class="o">-eq</span> <span class="s2">&quot;PoweredOn&quot;</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">ConnectionState</span> <span class="o">-eq</span> <span class="s2">&quot;Connected&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="n">Sort</span> <span class="n">Name</span>
+<span class="c1">#Get all Hosts</span>
+<span class="nv">$esxHosts</span> <span class="o">=</span> Get-Cluster <span class="nv">$Cluster</span> | Get-VMHost | <span class="nb">Where</span> <span class="o">{</span> <span class="nv">$_</span>.PowerState -eq <span class="s2">"PoweredOn"</span> -and <span class="nv">$_</span>.ConnectionState -eq <span class="s2">"Connected"</span> <span class="o">}</span> | <span class="nb">Sort </span>Name
 
-<span class="c">#For each host set DiskMaxIOsize to 4MB</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$esx</span> <span class="k">in</span> <span class="nv">$esxHosts</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">Get-AdvancedSetting</span> <span class="n">-Entity</span> <span class="nv">$esx</span> <span class="n">-Name</span> <span class="n">Disk</span><span class="p">.</span><span class="n">DiskMaxIOSize</span> <span class="p">|</span> <span class="nb">Set-AdvancedSetting</span> <span class="n">-Value</span> <span class="n">4096</span> <span class="n">-Confirm</span><span class="err">:</span><span class="nv">$false</span>
-<span class="p">}</span></code></pre></div>
+<span class="c1">#For each host set DiskMaxIOsize to 4MB</span>
+<span class="k">foreach</span> <span class="o">(</span><span class="nv">$esx</span> <span class="k">in</span> <span class="nv">$esxHosts</span><span class="o">)</span> <span class="o">{</span>
+  Get-AdvancedSetting -Entity <span class="nv">$esx</span> -Name Disk.DiskMaxIOSize | <span class="nb">Set</span>-AdvancedSetting -Value 4096 -Confirm:<span class="nv">$false</span>
+<span class="o">}</span></code></pre></figure>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
@@ -253,11 +243,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" title="Using PowerCLI to Get and Set DVS Traffic Shaping Settings">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a></li>
+    
       <li><a href="/veeam/using-veeam-powershell-to-manage-reip-rules/" title="Using Veeam Powershell to Manage ReIP Rules">Using Veeam Powershell to Manage ReIP Rules</a></li>
     
       <li><a href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" title="Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a></li>
-    
-      <li><a href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" title="Using UCS PowerTool to Configure Syslog Servers">Using UCS PowerTool to Configure Syslog Servers</a></li>
     
     </ul>
     <hr />
