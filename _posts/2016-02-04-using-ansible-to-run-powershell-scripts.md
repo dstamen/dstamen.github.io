@@ -20,17 +20,17 @@ In the midst of playing with Ansible and figured my most common use case would b
 
 Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.
 
-{% highlight yaml %}
+```yaml
 ansible_ssh_user: admin
 ansible_ssh_pass: password
 ansible_ssh_port: 5985
 ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
-{% endhighlight %}
+```
 
 Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.
 
-{% highlight yaml %}
+```yaml
 - name: Run Powershell Scripts
   hosts: test
   tasks:
@@ -38,7 +38,7 @@ Here is the yaml code responsible for launching the script. Copy the script into
       script: scripts/hello.ps1
       register: out
     - debug: var=out
-{% endhighlight %}
+```
 
 #### ***Execute the Script***
 - Run ansible-playbook powershell.yml -i hosts

@@ -18,7 +18,7 @@ The script is pretty straight forward, just need to define a few variables seen 
 
 *This script assumes you have already launched PowerCLI and modified the variables*
 
-{% highlight powershell %}
+```powershell
 # Define Variables
 $Cluster = "Cluster"
 $VIBPATH = "/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic_1.6.0.24-1OEM.600.0.0.2494585.vib"
@@ -42,8 +42,7 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq "PoweredOn" -and $_.Co
     # Verify VIB installed successfully
     if ($action.Message -eq "Operation finished successfully."){Write-host "Action Completed successfully on $($_.Name)" -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
 }
-
-{%endhighlight%}
+```
 
 #### ***Execute the Script***
 - Run .\Install-HostVIB.ps1

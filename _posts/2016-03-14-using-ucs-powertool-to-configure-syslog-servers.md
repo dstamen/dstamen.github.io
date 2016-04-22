@@ -16,7 +16,7 @@ Time for more UCS Scripting! This time to configure Syslog. The script is pretty
 #### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
-{% highlight powershell %}
+```powershell
 # UCS PowerTool Script that to set Syslog
 # @davidstamen
 # http://davidstamen.com
@@ -36,7 +36,7 @@ Foreach ($ucs in $domains) {
   Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
   Disconnect-UCS
 }
-{%endhighlight%}
+```
 
 #### ***Execute the Script***
 - Run .\Set-UcsSyslog.ps1

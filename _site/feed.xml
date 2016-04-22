@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">davidstamen.com</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2016-04-21T15:25:53-04:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://davidstamen.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://davidstamen.com" />
+<updated>2016-04-22T08:41:36-04:00</updated>
+<id>http://davidstamen.com/</id>
 <author>
   <name>David Stamen</name>
-  <uri>/</uri>
+  <uri>http://davidstamen.com/</uri>
   <email>dstamen@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Using PowerCLI to Get and Set DVS Traffic Shaping Settings]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" />
-  <id>/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" />
+  <id>http://davidstamen.com/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings</id>
   <published>2016-04-21T00:00:00-04:00</published>
   <updated>2016-04-21T00:00:00-04:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -44,24 +44,27 @@
 &lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and modified the variables&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;get-traffic-shaping-settings&quot;&gt;&lt;strong&gt;&lt;em&gt;Get Traffic Shaping Settings&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualSwitch -Distributed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualSwitch -Distributed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualPortGroup -VirtualSwitch &lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;|Where &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name -notlike &lt;span class=&quot;s2&quot;&gt;&quot;*DVUplinks*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nb&quot;&gt;Write&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; on &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
       &lt;span class=&quot;nv&quot;&gt;$dvPg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-dvSwPg -dvSw &lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;.ExtensionData -PGName &lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt;
       Get-dvPgTrafficShaping -dvPg &lt;span class=&quot;nv&quot;&gt;$dvPg&lt;/span&gt;|ft
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;set-traffic-shaping-settings&quot;&gt;&lt;strong&gt;&lt;em&gt;Set Traffic Shaping Settings&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualSwitch -Distributed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualSwitch -Distributed&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Get-VirtualPortGroup -VirtualSwitch &lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;|Where &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name -notlike &lt;span class=&quot;s2&quot;&gt;&quot;*DVUplinks*&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nb&quot;&gt;Write&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; on &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
       &lt;span class=&quot;nv&quot;&gt;$dvPg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-dvSwPg -dvSw &lt;span class=&quot;nv&quot;&gt;$VirtualSwitch&lt;/span&gt;.ExtensionData -PGName &lt;span class=&quot;nv&quot;&gt;$VirtualPortGroup&lt;/span&gt;
       &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-dvPgTrafficShaping -dvPg &lt;span class=&quot;nv&quot;&gt;$dvPg&lt;/span&gt; -InShaping -inAverageKbps 10485760 -inBurstKB 102400 -inPeakKbps 10485760 -OutShaping -outAverageKbps 10485760 -outBurstKB 102400 -outPeakKbps 10485760
    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
@@ -72,20 +75,20 @@
 &lt;h4 id=&quot;screenshots&quot;&gt;&lt;strong&gt;&lt;em&gt;Screenshots&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/images/trafficshaping1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/&quot;&gt;Using PowerCLI to Get and Set DVS Traffic Shaping Settings&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 21, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/powercli/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/&quot;&gt;Using PowerCLI to Get and Set DVS Traffic Shaping Settings&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on April 21, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using Veeam Powershell to Manage ReIP Rules]]></title>
-  <link rel="alternate" type="text/html" href="/veeam/using-veeam-powershell-to-manage-reip-rules/" />
-  <id>/veeam/using-veeam-powershell-to-manage-reip-rules</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/veeam/using-veeam-powershell-to-manage-reip-rules/" />
+  <id>http://davidstamen.com/veeam/using-veeam-powershell-to-manage-reip-rules</id>
   <published>2016-04-18T00:00:00-04:00</published>
   <updated>2016-04-18T00:00:00-04:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -107,7 +110,7 @@
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just update the CSV file and then you execute the script.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;param&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$False&lt;/span&gt;,
@@ -145,27 +148,29 @@
   &lt;span class=&quot;nv&quot;&gt;$replicajob&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-VBRJob -Name &lt;span class=&quot;nv&quot;&gt;$Job&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-VBRViReplicaJob -Job &lt;span class=&quot;nv&quot;&gt;$replicajob&lt;/span&gt; -EnableReIp -ReIpRule &lt;span class=&quot;nv&quot;&gt;$newrules&lt;/span&gt;
 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run .\Create-VeeamReIPRule.ps1 pathto.csv&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/veeam/using-veeam-powershell-to-manage-reip-rules/&quot;&gt;Using Veeam Powershell to Manage ReIP Rules&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 18, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/veeam/using-veeam-powershell-to-manage-reip-rules/&quot;&gt;Using Veeam Powershell to Manage ReIP Rules&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on April 18, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" />
-  <id>/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" />
+  <id>http://davidstamen.com/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x</id>
   <published>2016-04-08T00:00:00-04:00</published>
   <updated>2016-04-08T00:00:00-04:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -208,20 +213,20 @@
 
 &lt;p&gt;If you perform these steps, you can now import your customized offline bundle and it will accurately report 6.x in VUM and allow you to remediate your hosts. Please post any feedback below!&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/&quot;&gt;Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 08, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/cisco/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/&quot;&gt;Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on April 08, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool to Configure Syslog Servers]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-configure-syslog-servers/" />
-  <id>/cisco/using-ucs-powertool-to-configure-syslog-servers</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-configure-syslog-servers/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-configure-syslog-servers</id>
   <published>2016-03-14T00:00:00-04:00</published>
   <updated>2016-03-14T00:00:00-04:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -240,7 +245,7 @@
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# UCS PowerTool Script that to set Syslog&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# UCS PowerTool Script that to set Syslog&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# @davidstamen&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# http://davidstamen.com&lt;/span&gt;
 
@@ -258,27 +263,29 @@
   Connect-UCS &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; -Credential &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
   Get-UcsSyslogClient -Name &lt;span class=&quot;nv&quot;&gt;$Name&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-UcsSyslogClient -AdminState &lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; -ForwardingFacility &lt;span class=&quot;nv&quot;&gt;$Facility&lt;/span&gt; -Hostname &lt;span class=&quot;nv&quot;&gt;$SyslogServer&lt;/span&gt; -Severity &lt;span class=&quot;nv&quot;&gt;$Severity&lt;/span&gt; -Force
   Disconnect-UCS
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run .\Set-UcsSyslog.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-syslog-servers/&quot;&gt;Using UCS PowerTool to Configure Syslog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-configure-syslog-servers/&quot;&gt;Using UCS PowerTool to Configure Syslog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using PureStorage Powershell to Configure SysLog Servers]]></title>
-  <link rel="alternate" type="text/html" href="/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" />
-  <id>/purestorage/using-purestorage-powershell-to-configure-syslog-servers</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" />
+  <id>http://davidstamen.com/purestorage/using-purestorage-powershell-to-configure-syslog-servers</id>
   <published>2016-03-14T00:00:00-04:00</published>
   <updated>2016-03-14T00:00:00-04:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -297,7 +304,7 @@
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Import Module&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Import Module&lt;/span&gt;
 Import-Module PureStoragePowershellSDK
 
 &lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
@@ -310,27 +317,29 @@ Import-Module PureStoragePowershellSDK
   &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Setting Syslog Information for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
   &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; New-PfaArray -EndPoint &lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt; -Credentials &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; -IgnoreCertificateError
   &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-PfaSyslogServers -Array &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; -SyslogServers &lt;span class=&quot;nv&quot;&gt;$SyslogServers&lt;/span&gt;|fl
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run .\Set-PureStorageSyslog.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/purestorage/using-purestorage-powershell-to-configure-syslog-servers/&quot;&gt;Using PureStorage Powershell to Configure SysLog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/purestorage/using-purestorage-powershell-to-configure-syslog-servers/&quot;&gt;Using PureStorage Powershell to Configure SysLog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using PowerCLI to Install Host VIBs]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-install-host-vibs/" />
-  <id>/powercli/using-powercli-to-install-host-vibs</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/powercli/using-powercli-to-install-host-vibs/" />
+  <id>http://davidstamen.com/powercli/using-powercli-to-install-host-vibs</id>
   <published>2016-03-03T00:00:00-05:00</published>
   <updated>2016-03-03T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -351,7 +360,7 @@ Import-Module PureStoragePowershellSDK
 
 &lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and modified the variables&lt;/em&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Define Variables&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Define Variables&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Cluster&quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$VIBPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic_1.6.0.24-1OEM.600.0.0.2494585.vib&quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$vcenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;vcenter.lab.local&quot;&lt;/span&gt;
@@ -373,27 +382,29 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 
     &lt;span class=&quot;c1&quot;&gt;# Verify VIB installed successfully&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;.Message -eq &lt;span class=&quot;s2&quot;&gt;&quot;Operation finished successfully.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; -ForegroundColor Green&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;.Message -ForegroundColor Red&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run .\Install-HostVIB.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-host-vibs/&quot;&gt;Using PowerCLI to Install Host VIBs&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 03, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/powercli/using-powercli-to-install-host-vibs/&quot;&gt;Using PowerCLI to Install Host VIBs&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on March 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool To Set SNMP Configuration]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-set-snmp-configuration/" />
-  <id>/cisco/using-ucs-powertool-to-set-snmp-configuration</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-set-snmp-configuration/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-set-snmp-configuration</id>
   <published>2016-03-01T00:00:00-05:00</published>
   <updated>2016-03-01T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -412,7 +423,7 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ucs01.lab.local&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;ucs02.lab.local&quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;SNMP config for UCS&quot;&lt;/span&gt;
@@ -429,27 +440,29 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
     &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-UcsSnmp -Descr &lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; -AdminState &lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; -SysContact  &lt;span class=&quot;nv&quot;&gt;$SysContact&lt;/span&gt; -SysLocation &lt;span class=&quot;nv&quot;&gt;$SysLocation&lt;/span&gt; -Community &lt;span class=&quot;nv&quot;&gt;$Community&lt;/span&gt; -force
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   Disconnect-UCS
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run .\Set-UcsSnmpConfiguration.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-snmp-configuration/&quot;&gt;Using UCS PowerTool To Set SNMP Configuration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 01, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-set-snmp-configuration/&quot;&gt;Using UCS PowerTool To Set SNMP Configuration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on March 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[vExpert 2016]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/vexpert-2016/" />
-  <id>/vmware/vexpert-2016</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/vexpert-2016/" />
+  <id>http://davidstamen.com/vmware/vexpert-2016</id>
   <published>2016-02-05T00:00:00-05:00</published>
   <updated>2016-02-05T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -461,20 +474,20 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 
 &lt;p&gt;&lt;img src=&quot;/images/vexpert-logo-2016.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/vmware/vexpert-2016/&quot;&gt;vExpert 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 05, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/vexpert-2016/&quot;&gt;vExpert 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on February 05, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using Ansible to Run Powershell Scripts]]></title>
-  <link rel="alternate" type="text/html" href="/ansible/using-ansible-to-run-powershell-scripts/" />
-  <id>/ansible/using-ansible-to-run-powershell-scripts</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/ansible/using-ansible-to-run-powershell-scripts/" />
+  <id>http://davidstamen.com/ansible/using-ansible-to-run-powershell-scripts</id>
   <published>2016-02-04T00:00:00-05:00</published>
   <updated>2016-02-04T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -497,41 +510,45 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 
 &lt;p&gt;Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;ansible_ssh_user&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;admin&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;ansible_ssh_user&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;admin&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;ansible_ssh_pass&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;password&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;ansible_ssh_port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5985&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;ansible_connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;winrm&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;ansible_winrm_server_cert_validation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ignore&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;s&quot;&gt;ansible_winrm_server_cert_validation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ignore&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run Powershell Scripts&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run Powershell Scripts&lt;/span&gt;
   &lt;span class=&quot;s&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;test&lt;/span&gt;
   &lt;span class=&quot;s&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;run a powershell script&lt;/span&gt;
       &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;scripts/hello.ps1&lt;/span&gt;
       &lt;span class=&quot;s&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;out&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;var=out&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;var=out&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Run ansible-playbook powershell.yml -i hosts&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/ansible/using-ansible-to-run-powershell-scripts/&quot;&gt;Using Ansible to Run Powershell Scripts&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 04, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/ansible/using-ansible-to-run-powershell-scripts/&quot;&gt;Using Ansible to Run Powershell Scripts&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on February 04, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using Ansible to Create Cisco ACI Filters]]></title>
-  <link rel="alternate" type="text/html" href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" />
-  <id>/ansible/cisco/using-ansible-to-create-cisco-aci-filters</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" />
+  <id>http://davidstamen.com/ansible/cisco/using-ansible-to-create-cisco-aci-filters</id>
   <published>2016-02-03T00:00:00-05:00</published>
   <updated>2016-02-03T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -582,20 +599,20 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
   &lt;li&gt;Run ansible-playbook horizonviewports.yml -i hosts&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/ansible/cisco/using-ansible-to-create-cisco-aci-filters/&quot;&gt;Using Ansible to Create Cisco ACI Filters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/ansible/cisco/using-ansible-to-create-cisco-aci-filters/&quot;&gt;Using Ansible to Create Cisco ACI Filters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Cisco Champion 2016]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/cisco-champion-2016/" />
-  <id>/cisco/cisco-champion-2016</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/cisco-champion-2016/" />
+  <id>http://davidstamen.com/cisco/cisco-champion-2016</id>
   <published>2016-01-31T00:00:00-05:00</published>
   <updated>2016-01-31T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -609,20 +626,20 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 
 &lt;p&gt;&lt;a href=&quot;http://www.cisco.com/web/about/facts_info/champions.html&quot;&gt;Learn more information about the Cisco Champions program and related benefits.&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/cisco-champion-2016/&quot;&gt;Cisco Champion 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/cisco-champion-2016/&quot;&gt;Cisco Champion 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using PowerCLI to Install Software in a Guest VM]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-install-software-in-a-guest-vm/" />
-  <id>/powercli/using-powercli-to-install-software-in-a-guest-vm</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/powercli/using-powercli-to-install-software-in-a-guest-vm/" />
+  <id>http://davidstamen.com/powercli/using-powercli-to-install-software-in-a-guest-vm</id>
   <published>2016-01-29T00:00:00-05:00</published>
   <updated>2016-01-29T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -692,20 +709,20 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
   &lt;li&gt;Run .\InstallVMSoftware.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-software-in-a-guest-vm/&quot;&gt;Using PowerCLI to Install Software in a Guest VM&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 29, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/powercli/using-powercli-to-install-software-in-a-guest-vm/&quot;&gt;Using PowerCLI to Install Software in a Guest VM&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 29, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using PowerCLI to Replicate Templates to Multiple Clusters]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/" />
-  <id>/powercli/using-powercli-to-replicate-templates-to-multiple-clusters</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/" />
+  <id>http://davidstamen.com/powercli/using-powercli-to-replicate-templates-to-multiple-clusters</id>
   <published>2016-01-26T00:00:00-05:00</published>
   <updated>2016-01-26T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -770,20 +787,20 @@ Disconnect-VIServer &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; -Forc
   &lt;li&gt;Run .\CloneTemplateToClusters.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/&quot;&gt;Using PowerCLI to Replicate Templates to Multiple Clusters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/&quot;&gt;Using PowerCLI to Replicate Templates to Multiple Clusters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool To Set Equipment Labels]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-set-equipment-labels/" />
-  <id>/cisco/using-ucs-powertool-to-set-equipment-labels</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-set-equipment-labels/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-set-equipment-labels</id>
   <published>2016-01-15T00:00:00-05:00</published>
   <updated>2016-01-15T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -823,20 +840,20 @@ Disconnect-VIServer &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; -Forc
   &lt;li&gt;Run .\Set-UCSEquipmentLabel.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-equipment-labels/&quot;&gt;Using UCS PowerTool To Set Equipment Labels&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 15, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-set-equipment-labels/&quot;&gt;Using UCS PowerTool To Set Equipment Labels&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 15, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool To Generate Tech Supports]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-generate-tech-supports/" />
-  <id>/cisco/using-ucs-powertool-to-generate-tech-supports</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-generate-tech-supports/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-generate-tech-supports</id>
   <published>2016-01-14T00:00:00-05:00</published>
   <updated>2016-01-14T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -877,20 +894,20 @@ Disconnect-UCS
   &lt;li&gt;Run .\Create-UCSTechSupport.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-generate-tech-supports/&quot;&gt;Using UCS PowerTool To Generate Tech Supports&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 14, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-generate-tech-supports/&quot;&gt;Using UCS PowerTool To Generate Tech Supports&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Unable to Boot EFI VM on ESXi FC Storage]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/" />
-  <id>/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/" />
+  <id>http://davidstamen.com/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage</id>
   <published>2016-01-13T00:00:00-05:00</published>
   <updated>2016-01-13T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -941,20 +958,20 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
 
 &lt;p&gt;Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/&quot;&gt;Unable to Boot EFI VM on ESXi FC Storage&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 13, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/&quot;&gt;Unable to Boot EFI VM on ESXi FC Storage&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 13, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/" />
-  <id>/vmware/upgrading-vcsa-from-60-u1a-to-60u1b</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/" />
+  <id>http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b</id>
   <published>2016-01-12T00:00:00-05:00</published>
   <updated>2016-01-12T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -1014,20 +1031,20 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
 
 &lt;p&gt;&lt;img src=&quot;/images/vcupgrade2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/&quot;&gt;Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 12, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/&quot;&gt;Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 12, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool To Upload UCS Firmware]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-upload-ucs-firmware/" />
-  <id>/cisco/using-ucs-powertool-to-upload-ucs-firmware</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware</id>
   <published>2016-01-11T00:00:00-05:00</published>
   <updated>2016-01-11T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -1063,20 +1080,20 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
   &lt;li&gt;Run .\UploadUCSFirmware.ps1&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-upload-ucs-firmware/&quot;&gt;Using UCS PowerTool To Upload UCS Firmware&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 11, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware/&quot;&gt;Using UCS PowerTool To Upload UCS Firmware&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 11, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[VCAP6-Design Beta Study Guide]]></title>
-  <link rel="alternate" type="text/html" href="/certification/vcap6-design-beta-study-guide/" />
-  <id>/certification/vcap6-design-beta-study-guide</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/certification/vcap6-design-beta-study-guide/" />
+  <id>http://davidstamen.com/certification/vcap6-design-beta-study-guide</id>
   <published>2015-12-17T00:00:00-05:00</published>
   <updated>2015-12-17T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -1584,20 +1601,20 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
   &lt;li&gt;VMware Proactive Incident Whitepaper&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/certification/vcap6-design-beta-study-guide/&quot;&gt;VCAP6-Design Beta Study Guide&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 17, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/certification/vcap6-design-beta-study-guide/&quot;&gt;VCAP6-Design Beta Study Guide&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on December 17, 2015.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using UCS PowerTool To Configure UCS Policy Backup and Export]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
-  <id>/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export</id>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
+  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export</id>
   <published>2015-12-11T00:00:00-05:00</published>
   <updated>2015-12-11T00:00:00-05:00</updated>
   <author>
     <name>David Stamen</name>
-    <uri></uri>
+    <uri>http://davidstamen.com</uri>
     <email>dstamen@gmail.com</email>
   </author>
   <content type="html">
@@ -1641,7 +1658,7 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
 
 &lt;h4 id=&quot;hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup--export-on-cisco-ucs&quot;&gt;&lt;strong&gt;&lt;em&gt;Hope this helps anyone else out wanted to automate policy backup &amp;amp; export on Cisco UCS.&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/&quot;&gt;Using UCS PowerTool To Configure UCS Policy Backup and Export&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 11, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/&quot;&gt;Using UCS PowerTool To Configure UCS Policy Backup and Export&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on December 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 

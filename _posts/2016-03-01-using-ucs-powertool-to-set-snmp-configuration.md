@@ -16,7 +16,7 @@ Time for more UCS Scripting! This time to enable SNMP. The script is pretty stra
 #### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
-{% highlight powershell %}
+```powershell
 #Define Variables
 $cred = Get-Credential
 $domains = "ucs01.lab.local","ucs02.lab.local"
@@ -35,7 +35,7 @@ Foreach ($ucs in $domains) {
   }
   Disconnect-UCS
 }
-{%endhighlight%}
+```
 
 #### ***Execute the Script***
 - Run .\Set-UcsSnmpConfiguration.ps1

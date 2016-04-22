@@ -16,7 +16,7 @@ Currently working on the final steps of getting our new equipment configured. Th
 #### ***Preparing to Execute the Script***
 The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
 
-{% highlight powershell %}
+```powershell
 #Import Module
 Import-Module PureStoragePowershellSDK
 
@@ -31,8 +31,7 @@ Foreach ($array in $arrays) {
   $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
   Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
 }
-
-{%endhighlight%}
+```
 
 #### ***Execute the Script***
 - Run .\Set-PureStorageSyslog.ps1

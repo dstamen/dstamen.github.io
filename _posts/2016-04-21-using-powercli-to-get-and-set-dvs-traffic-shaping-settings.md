@@ -20,8 +20,7 @@ The script is pretty straight forward, just need to define a few variables seen 
 *This script assumes you have already launched PowerCLI and modified the variables*
 
 #### ***Get Traffic Shaping Settings***
-{% highlight powershell %}
-
+```powershell
 Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
   Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike "*DVUplinks*"}) {
       Write "$VirtualPortGroup on $VirtualSwitch"
@@ -29,11 +28,10 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
       Get-dvPgTrafficShaping -dvPg $dvPg|ft
   }
 }
-{%endhighlight%}
-
+```
 
 #### ***Set Traffic Shaping Settings***
-{% highlight powershell %}
+```powershell
 
 Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
   Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike "*DVUplinks*"}) {
@@ -42,8 +40,7 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
       Set-dvPgTrafficShaping -dvPg $dvPg -InShaping -inAverageKbps 10485760 -inBurstKB 102400 -inPeakKbps 10485760 -OutShaping -outAverageKbps 10485760 -outBurstKB 102400 -outPeakKbps 10485760
    }
 }
-{%endhighlight%}
-
+```
 
 #### ***Execute the Script***
 - Run .\Get-VMwareTrafficShapingSettings.ps1
