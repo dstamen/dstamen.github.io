@@ -11,7 +11,7 @@ This process is very straight forward. We will begin with updating our Platform 
 
 - SSH to your Primary PSC.
 - If you are currently in the bash shell, type appliancesh to switch shells to run the update.
-- Run **software-packages install --url --acceptEulas** to download and install the packages from the VMware Repo.
+- Run software-packages install --url --acceptEulas to download and install the packages from the VMware Repo.
   - You can use the --ISO switch or supply a custom url as well if needed.
 - Sit back and wait. Once it is finished you will be prompted to reboot.
   - Reboot by typing shutdown reboot /r reason
@@ -29,7 +29,7 @@ Now that our Platform Service Controllers are upgraded we can proceed on with ou
 
 - SSH to your vCenter Appliance.
 - If you are currently in the bash shell, type appliancesh to switch shells to run the update.
-- Run **software-packages install --url --acceptEulas** to download and install the packages from the VMware Repo.
+- Run software-packages install --url --acceptEulas to download and install the packages from the VMware Repo.
   - You can use the --ISO switch or supply a custom url as well if needed.
 - Sit back and wait. Once it is finished you will be prompted to reboot.
   - Reboot by typing shutdown reboot /r reason
