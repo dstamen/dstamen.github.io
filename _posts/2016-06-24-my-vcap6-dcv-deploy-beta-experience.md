@@ -17,6 +17,8 @@ The new interface is now HTML5 based and is extremely quick, in my testing cente
 
 However there are a few things to make note of when taking try new exam. The following keys are disabled... Ctrl, alt and backspace. This made a few tasks difficult I knew about ctrl going into the exam, but not having backspace at my disposal made a few things harder. The delete key is still active so at least you can clear some of the text you typed incorrectly.
 
+one thing to add, there may not be a copy padte in all places but if you need to "copy" something from the manual you can highlight it and then drag it to a field in the console and it will "paste" thr content there. 
+
 As far as content, I think it was very good. I didn't feel strapped on time and it was one of the better beta exam experiences I have had. I definitely recommend taking it if you can.
 
 The exam never strayed off the blueprint, so If you are looking for something to study I would definitely make sure you cover all topics on the blueprint, it will help you in the long run.
