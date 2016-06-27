@@ -17,7 +17,7 @@ The new interface is now HTML5 based and is extremely quick, in my testing cente
 
 However there are a few things to make note of when taking try new exam. The following keys are disabled... Ctrl, alt and backspace. This made a few tasks difficult I knew about ctrl going into the exam, but not having backspace at my disposal made a few things harder. The delete key is still active so at least you can clear some of the text you typed incorrectly.
 
-one thing to add, there may not be a copy padte in all places but if you need to "copy" something from the manual you can highlight it and then drag it to a field in the console and it will "paste" thr content there. 
+one thing to add, there may not be a copy padte in all places but if you need to "copy" something from the manual you can highlight it and then drag it to a field in the console and it will "paste" thr content there.
 
 As far as content, I think it was very good. I didn't feel strapped on time and it was one of the better beta exam experiences I have had. I definitely recommend taking it if you can.
 
@@ -35,3 +35,11 @@ Some of the resources I used to study were the following.
   - [https://plus.google.com/communities/108002000588564278612](https://plus.google.com/communities/108002000588564278612)
 - Tom Greene (This was really great to focus on where to study, it covers differences between VCAP5 and VCAP6)
     - [http://www.thomgreene.com/blog/2016/6/16/vcap6-dcv-deploy-blueprint-changes-from-vcap5-dca](http://www.thomgreene.com/blog/2016/6/16/vcap6-dcv-deploy-blueprint-changes-from-vcap5-dca)
+- VMware HOL's
+  - [HOL-SDC-1627](http://labs.hol.vmware.com/HOL/catalogs/lab/2112) - VVol, Virtual SAN & Storage Policy-Based Management. I think I spent the MOST time in this lab, it is a great lab that has VDP, VR, VSAN, VVOL and pretty much anything you need. I probably enrolled in this lab over 15 times.
+
+**Update 6/27**
+Please make sure to check out Beta experience's as well!
+
+- Ariel Sanchez
+  - [https://sites.google.com/site/arielsanchezmora/home/study-guides/vcap6-dcv-deploy-beta](https://sites.google.com/site/arielsanchezmora/home/study-guides/vcap6-dcv-deploy-beta)
