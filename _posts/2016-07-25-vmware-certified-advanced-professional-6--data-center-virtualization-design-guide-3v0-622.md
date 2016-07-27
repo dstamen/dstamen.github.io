@@ -13,13 +13,18 @@ I am about to start down my path of studying for my VCAP6-DCV Design Exam. I fig
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
 - Associate a stakeholder with the information that needs to be collected.
 - Utilize inventory and assessment data from a current environment to define a baseline state.
 - Analyze customer interview data to explicitly define customer objectives for a conceptual design
-- Determine customer priorities for defined objectives.
-- Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.
 - Given results of the requirements gathering process, identify requirements for a conceptual design.
 - Categorize requirements by infrastructure qualities to prepare for logical design requirements.
+
+**New Content**
+
+- Determine customer priorities for defined objectives.
+- Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.
 
 Tools
 
@@ -34,10 +39,15 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
 - Gather and analyze application requirements for a given scenario.
-- Determine the requirements for a set of applications that will be included in the design.
 - Collect information needed in order to identify application dependencies.
 - Given one or more application requirements, determine the impact of the requirements on the design.
+
+**New Content**
+
+- Determine the requirements for a set of applications that will be included in the design.
 
 Tools
 
@@ -53,6 +63,8 @@ Tools
 #### Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions
 
 Skills and Abilities
+
+**Existing Content from VCAP5-DCD**
 
 - Differentiate between the concepts of risks, requirements, constraints, and assumptions.
 - Given a statement, determine whether it is a risk, requirement, constraint, or an assumption.
@@ -70,9 +82,14 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
 - Analyze requirements for functional and non-functional elements.
 - Build non-functional requirements into a specific logical design.
 - Translate stated business requirements into a logical design.
+
+**New Content**
+
 - Incorporate the current state of a customer environment into a logical design.
 
 Tools
@@ -88,12 +105,17 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
+- Analyze services to identify upstream and downstream service dependencies.
+
+**New Content**
+
 - Evaluate dependencies for infrastructure and application services that will be included in a vSphere design.
 - Create Entity Relationship Diagrams that map service relationships and dependencies.
 - Analyze interfaces to be used with new and existing business processes.
 - Determine service dependencies for logical components.
 - Include service dependencies in a vSphere 6.x Logical Design.
-- Analyze services to identify upstream and downstream service dependencies.
 - Navigate logical components and their interdependencies and make decisions based upon all service relationships.
 
 Tools
@@ -105,14 +127,19 @@ Tools
 
 Skills and Abilities
 
-- Evaluate which logical availability services can be used with a given vSphere solution.
-- Differentiate infrastructure qualities related to availability.
-- Describe the concept of redundancy and the risks associated with single points of failure
-- Explain class of nines methodology
+**Existing Content from VCAP5-DCD**
+
 - Determine availability component of service level agreements (SLAs) and service level management processes
 - Determine potential availability solutions for a logical design based on customer requirements.
 - Create an availability plan, including maintenance processes.
 - Balance availability requirements with other infrastructure qualities.
+
+**New Content**
+
+- Evaluate which logical availability services can be used with a given vSphere solution.
+- Differentiate infrastructure qualities related to availability.
+- Describe the concept of redundancy and the risks associated with single points of failure
+- Explain class of nines methodology
 - Analyze a vSphere design and determine possible single points of failure.
 
 Tools
@@ -125,6 +152,8 @@ Tools
 #### Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design
 
 Skills and Abilities
+
+**New Content**
 
 - Evaluate which management services can be used with a given vSphere Solution.
 - Differentiate infrastructure qualities related to management.
@@ -152,6 +181,8 @@ Tools
 
 Skills and Abilities
 
+**New Content**
+
 - Evaluate logical performance considerations for a given vSphere solution.
 - Differentiate infrastructure qualities related to performance.
 - Analyze current performance, identify and address gaps when building the logical design
@@ -170,6 +201,8 @@ Tools
 
 Skills and Abilities
 
+**New Content**
+
 - Evaluate which logical recoverability services are available for a given vSphere solution.
 - Differentiate infrastructure qualities related to recoverability.
 - Determine Business Continuity and Disaster Recovery solution options for a given vSphere Design.
@@ -186,7 +219,9 @@ Tools
 
 Skills and Abilities
 
-- Evaluate which security services can be used with a given vSphere solution. &nbsp;
+**New Content**
+
+- Evaluate which security services can be used with a given vSphere solution.
 - Differentiate infrastructure qualities related to security.
 - Build specific regulatory compliance requirements into the logical design.
 - Analyze application and infrastructure security requirements.
@@ -211,9 +246,14 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
+- Based on business requirements, determine the appropriate roles for each staff member.
+
+**New Content**
+
 - Analyze design decisions and options selected from the logical design
 - Determine impact of VMware best practices to identified risks, constraints, and assumptions in a given vSphere design.
-- Based on business requirements, determine the appropriate roles for each staff member.
 
 Tools
 
@@ -225,13 +265,18 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
 - Analyze VLAN options with respect to virtual and physical switches.
 - Given business requirements, determine the design for virtual network components:
-- STP
-- Jumbo Frames
-- Load-balancing
-- Trunking and link aggregation groups
+  - STP
+  - Jumbo Frames
+  - Load-balancing
+  - Trunking and link aggregation groups
 - Evaluate network redundancy considerations for a given design.
+
+**New Content**
+
 - Analyze design for inclusion of Network I/O Control capabilities.
 - Determine use case for multiple TCP/IP stacks in a given design.
 - Based on given functional requirements for each service:
@@ -241,10 +286,10 @@ Skills and Abilities
 - Determine network security and firewall requirements for a virtual network design
 - Based on service level requirements, determine appropriate network performance characteristics.
 - Given a current network configuration as well as technical requirements and constraints, determine the appropriate virtual switch solution:
-- vSphere Standard Switch
-- vSphere Distributed Switch
-- NSX
-- Hybrid solutions
+  - vSphere Standard Switch
+  - vSphere Distributed Switch
+  - NSX
+  - Hybrid solutions
 - Based on an existing logical design, determine appropriate host networking resources.
 - Properly apply converged networking considering VMware best practices.
 
@@ -263,28 +308,35 @@ Tools
 
 Skills and Abilities
 
+**Existing Content from VCAP5-DCD**
+
+- Based on the logical design and given functional requirements, for each service:
+  - Determine the most appropriate storage technologies for the design
+  - Implement the service based on the required infrastructure qualities
+- Based on service level requirements include VMware technologies in the design, such as:
+  - Storage I/O Control and Network I/O Control
+  - Storage Policies
+  - Storage vMotion
+  - Storage DRS
+
+
+**New Content**
+
 - Evaluate criteria, capabilities and limitations between storage types (Block, NAS, Object Based)
 - In a given design, determine Storage Policy availability and performance characteristics
-- Based on the logical design and given functional requirements, for each service:
-- Determine the most appropriate storage technologies for the design
-- Implement the service based on the required infrastructure qualities
-- Ensure storage array capabilities are supported in a vSphere 6.x design:
-- Active/Active, Active/Passive
-- ALUA, VAAI, VASA
-- PSA (including PSPs and SATPs)
 - Based on service level requirements include VMware technologies in the design, such as:
-- Storage I/O Control and Network I/O Control
-- Storage Policies
-- Storage vMotion
-- Storage DRS
-- Virtual SAN
+  - Virtual SAN
+- Ensure storage array capabilities are supported in a vSphere 6.x design:
+  - Active/Active, Active/Passive
+  - ALUA, VAAI, VASA
+  - PSA (including PSPs and SATPs)
 - Given the functional requirements, size the storage for capacity, availability and performance, including:
-- Datastores, RDMs, Virtual Disks
-- Physical Storage (LUNs, Storage Tiering)
-- Based on the logical design, select and incorporate an appropriate storage network into the physical design:
-- Block (FC, iSCSI, FCoE, SAS)
-- NAS (NFSv3, NFSv4)
-- Object Based (Virtual SAN, Virtual Volumes
+  - Datastores, RDMs, Virtual Disks
+  - Physical Storage (LUNs, Storage Tiering)
+  - Based on the logical design, select and incorporate an appropriate storage network into the physical design:
+  - Block (FC, iSCSI, FCoE, SAS)
+  - NAS (NFSv3, NFSv4)
+  - Object Based (Virtual SAN, Virtual Volumes
 
 Tools
 
