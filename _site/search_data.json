@@ -1,6 +1,15 @@
 {
   
 
+    "vmware-vsphere-65-vcha-issues": {
+      "title": "vSphere 6.5 - vCenter HA (VCHA) Issues",
+      "url": " /vmware/vsphere-65-vcha-issues/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "vmware-vsphere-65-new-license-import-from-myvmware": {
       "title": "vSphere 6.5 - New License Import from My VMware",
       "url": " /vmware/vsphere-65-new-license-import-from-myvmware/",

@@ -5,16 +5,16 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Section 5: Administer and Manage vSphere 6.x Resources &#8211; davidstamen.com</title>
-<meta name="description" content="Section 5 of the VCP6-DCV blueprint
+<title>vSphere 6.5 - vCenter HA (VCHA) Issues &#8211; davidstamen.com</title>
+<meta name="description" content="So as everyone has probably seen, vSphere 6.5 is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.
 
 ">
 <meta name="keywords" content="">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Section 5: Administer and Manage vSphere 6.x Resources">
-<meta name="twitter:description" content="Section 5 of the VCP6-DCV blueprint
+<meta name="twitter:title" content="vSphere 6.5 - vCenter HA (VCHA) Issues">
+<meta name="twitter:description" content="So as everyone has probably seen, vSphere 6.5 is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.
 
 ">
 <meta name="twitter:site" content="@davidstamen">
@@ -27,11 +27,11 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Section 5: Administer and Manage vSphere 6.x Resources">
-<meta property="og:description" content="Section 5 of the VCP6-DCV blueprint
+<meta property="og:title" content="vSphere 6.5 - vCenter HA (VCHA) Issues">
+<meta property="og:description" content="So as everyone has probably seen, vSphere 6.5 is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.
 
 ">
-<meta property="og:url" content="/certification/section-5-administer-and-manage-vsphere-6x-resources/">
+<meta property="og:url" content="/vmware/vsphere-65-vcha-issues/">
 <meta property="og:site_name" content="davidstamen.com">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="/certification/section-5-administer-and-manage-vsphere-6x-resources/">
+<link rel="canonical" href="/vmware/vsphere-65-vcha-issues/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -154,40 +154,37 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/certification/section-5-administer-and-manage-vsphere-6x-resources/" rel="bookmark" title="Section 5: Administer and Manage vSphere 6.x Resources">Section 5: Administer and Manage vSphere 6.x Resources</a></h1>
+        <h1><a href="/vmware/vsphere-65-vcha-issues/" rel="bookmark" title="vSphere 6.5 - vCenter HA (VCHA) Issues">vSphere 6.5 - vCenter HA (VCHA) Issues</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Section 5 of the VCP6-DCV blueprint</p>
+      <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.</p>
 
-<h4 id="objective-51-configure-advancedmultilevel-resource-pools">Objective 5.1: Configure Advanced/Multilevel Resource Pools</h4>
-<ul>
-  <li>Understand/Apply</li>
-  <li>Determine the effect of the Expandable Reservation parameter on resource allocation</li>
-  <li>Create a resource pool hierarchical structure</li>
-  <li>Configure custom resource pool attributes</li>
-  <li>Determine how resource pools apply to vApps</li>
-  <li>Describe vFlash architecture</li>
-  <li>Create/Remove a Resource Pool</li>
-  <li>Add/Remove virtual machines from a Resource Pool</li>
-  <li>Create/Delete vFlash Resource Pool</li>
-  <li>Assign vFlash resources to VMDKs</li>
-  <li>Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools</li>
-</ul>
+<p>Every time I would try to configure vCenter HA using the Advanced Wizard, I would get the following error.</p>
 
-<h2 id="check-out-another-blueprint-section">Check out another blueprint section</h2>
-<ul>
-  <li><a href="/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security</a></li>
-  <li><a href="/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking</a></li>
-  <li><a href="/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage</a></li>
-  <li><a href="/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x</a></li>
-  <li><a href="/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources</a></li>
-  <li><a href="/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment</a></li>
-  <li><a href="/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment</a></li>
-  <li><a href="/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center</a></li>
-  <li><a href="/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions</a></li>
-  <li><a href="/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>The operation is not allowed in the current state.
+Failed to get management network information. Verify if management interface (NIC0) is configured correctly and is reachable.
+</code></pre>
+</div>
+
+<p><img src="/images/vcha1.png" alt="" /></p>
+
+<p>Obviously, if I am accessing the vCenter the management IP has to be configured and reachable correct?</p>
+
+<p>Turns out we tried to look through the logs in <strong>/var/log/vmware/vcha</strong> and they were no help. Next the technician tried to manually prepare for VCHA by running <strong>prepare-vcha</strong>. Once we ran this we were able to see a specific error outputted.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Unable to get hostname resolved IP address for eth0
+</code></pre>
+</div>
+<p><img src="/images/vcha2.png" alt="" /></p>
+
+<p>This is more helpful! Turns out my vCenter somehow was missing it’s reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
+
+<p>Once I created the reverse DNS, the wizard finally let me through and configure vCenter HA!</p>
+
+<p>Big thank you to the vExpert community and VMware Support.</p>
+
+<p>Look forward to a formal KB and a more descriptive error in the future.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -195,24 +192,24 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?url=/certification/section-5-administer-and-manage-vsphere-6x-resources/&text=Section 5: Administer and Manage vSphere 6.x Resources&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://twitter.com/intent/tweet?url=/vmware/vsphere-65-vcha-issues/&text=vSphere 6.5 - vCenter HA (VCHA) Issues&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/certification/section-5-administer-and-manage-vsphere-6x-resources/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/vmware/vsphere-65-vcha-issues/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/certification/section-5-administer-and-manage-vsphere-6x-resources/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+      <a href="https://plus.google.com/share?url=/vmware/vsphere-65-vcha-issues/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/certification/section-5-administer-and-manage-vsphere-6x-resources/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/vmware/vsphere-65-vcha-issues/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.reddit.com/submit?url=/certification/section-5-administer-and-manage-vsphere-6x-resources/&title=Section 5: Administer and Manage vSphere 6.x Resources" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+      <a href="http://www.reddit.com/submit?url=/vmware/vsphere-65-vcha-issues/&title=vSphere 6.5 - vCenter HA (VCHA) Issues" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
 
-        <p class="byline"><strong>Section 5: Administer and Manage vSphere 6.x Resources</strong> was published on <time datetime="2015-10-16T00:00:00-04:00">October 16, 2015</time>.</p>
+        <p class="byline"><strong>vSphere 6.5 - vCenter HA (VCHA) Issues</strong> was published on <time datetime="2016-11-21T00:00:00-05:00">November 21, 2016</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -227,11 +224,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="/vmware/vsphere-65-vcha-issues/" title="vSphere 6.5 - vCenter HA (VCHA) Issues">vSphere 6.5 - vCenter HA (VCHA) Issues</a></li>
-    
       <li><a href="/vmware/vsphere-65-new-license-import-from-myvmware/" title="vSphere 6.5 - New License Import from My VMware">vSphere 6.5 - New License Import from My VMware</a></li>
     
       <li><a href="/windows/using-powershell-to-create-windows-smb-shares/" title="Using Powershell to Create Windows SMB Shares">Using Powershell to Create Windows SMB Shares</a></li>
+    
+      <li><a href="/certification/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/" title="VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)">VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</a></li>
     
     </ul>
     <hr />
