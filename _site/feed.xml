@@ -4,13 +4,797 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://davidstamen.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://davidstamen.com" />
-<updated>2016-04-22T08:41:36-04:00</updated>
+<updated>2016-11-21T17:17:41-05:00</updated>
 <id>http://davidstamen.com/</id>
 <author>
   <name>David Stamen</name>
   <uri>http://davidstamen.com/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[vSphere 6.5 - New License Import from My VMware]]></title>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/vsphere-65-new-license-import-from-myvmware/" />
+  <id>http://davidstamen.com/vmware/vsphere-65-new-license-import-from-myvmware</id>
+  <published>2016-11-16T00:00:00-05:00</published>
+  <updated>2016-11-16T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri>http://davidstamen.com</uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;So as everyone has probably seen, &lt;a href=&quot;https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html&quot;&gt;vSphere 6.5&lt;/a&gt; is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.&lt;/p&gt;
+
+&lt;p&gt;When you are adding in your VMware licenses, you now have an option to &lt;strong&gt;Import License Keys Data…&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To start you need to generate a report from &lt;a href=&quot;http://my.vmware.com&quot;&gt;my.vmware.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Log in and Navigate to &lt;strong&gt;Download Reports&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;Available Reports&lt;/strong&gt; dropdown, and select the &lt;strong&gt;Product Licenses, Details and History.&lt;/strong&gt; You will be asked which account you would like to select, and if there was a specific timeframe to select. In my case i have selected all accounts and then click Create.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The report will take about a minute to generate. You can click on &lt;strong&gt;Refresh Table.&lt;/strong&gt; Once the report shows as complete. You can download it as a CSV. You will need this to complete the next steps.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Log into your vSphere 6.5 Flash client &lt;strong&gt;(http://fqdn/vsphere-client)&lt;/strong&gt; and click on &lt;strong&gt;Home&lt;/strong&gt; and then &lt;strong&gt;Licenses.&lt;/strong&gt; In the top right corner you will see an option to &lt;strong&gt;Import License Keys Data…&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/licensekey1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now you will browse to the file you downloaded from &lt;strong&gt;my.vmware.com.&lt;/strong&gt; If you have not downloaded it yet, you can select on &lt;strong&gt;Learn how to generate this CSV file&lt;/strong&gt; to be shown the steps. Click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/licensekey2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At this point, the uploaded CSV file will be analyzed to see what licenses can be imported into your vCenter Inventory. Click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/licensekey3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The next screen will show what licenses were part of the CSV and give you an Overview. Click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/licensekey5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you have any existing keys, it will update them with the My VMware settings, if there are new keys it will add them with the notes from My VMware.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/licensekey4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This new feature is definitely a step in the right direction. Maybe in vNext you can log directly into your My VMware account from the Web Client and have it automatically pull in your licenses.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/vsphere-65-new-license-import-from-myvmware/&quot;&gt;vSphere 6.5 - New License Import from My VMware&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on November 16, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Using Powershell to Create Windows SMB Shares]]></title>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/windows/using-powershell-to-create-windows-smb-shares/" />
+  <id>http://davidstamen.com/windows/using-powershell-to-create-windows-smb-shares</id>
+  <published>2016-08-09T00:00:00-04:00</published>
+  <updated>2016-08-09T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri>http://davidstamen.com</uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gallery.technet.microsoft.com/scriptcenter/1abd77a5-9c0b-4a2b-acef-90dbb2b84e85&quot;&gt;NTFS Security Module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/Powershell/blob/master/Create-SMBShare.ps1&quot;&gt;Create-SMBShare.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Fill in the appropriate variables, and execute the script.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Import-Module NTFSSecurity
+
+&lt;span class=&quot;c1&quot;&gt;#variables&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$sharename&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;share&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cachingmode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;none&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$continuouslyavailable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$encryptdata&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$folderenumerationmode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;AccessBased&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hares&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$scopename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = &quot;&lt;/span&gt;ClusterORResourceName&lt;span class=&quot;s2&quot;&gt;&quot;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fullaccess&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = &quot;&lt;/span&gt;Everyone&lt;span class=&quot;s2&quot;&gt;&quot;
+
+
+#check if path exists
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PathCheck&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = Test-Path &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+if (&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PathCheck&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -eq &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;) {
+    Write-Host &quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt; exists.&lt;span class=&quot;s2&quot;&gt;&quot;
+}
+else {
+    Write-Host &quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt; does not exist&lt;span class=&quot;s2&quot;&gt;&quot;
+    New-Item &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -type directory
+}
+
+
+#create share
+New-SmbShare -Name &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -CachingMode &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cachingmode&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -ContinuouslyAvailable &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$continuouslyavailable&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -EncryptData &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$encryptdata&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -FolderEnumerationMode &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$folderenumerationmode&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -Path &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -ScopeName &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$scopename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -FullAccess &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fullaccess&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+
+#disable inheritance and add full access
+Disable-NTFSAccessInheritance &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -RemoveInheritedAccessRules
+Add-NTFSAccess &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -Account BUILTIN&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;dministrators -AccessRights FullControl
+Get-NTFSAccess &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sharepath&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Create-SMBShare.ps1&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/windows/using-powershell-to-create-windows-smb-shares/&quot;&gt;Using Powershell to Create Windows SMB Shares&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on August 09, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)]]></title>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/certification/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/" />
+  <id>http://davidstamen.com/certification/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622</id>
+  <published>2016-07-25T00:00:00-04:00</published>
+  <updated>2016-07-25T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri>http://davidstamen.com</uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I am about to start down my path of studying for my VCAP6-DCV Design Exam. I figured I would throw up the blueprint and fill in each section as applicable. Either way here is the blueprint laid out for anyone who may benefit. This is it as of 7/25/16.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1--create-a-vsphere-conceptual-design&quot;&gt;Section 1 – Create a vSphere Conceptual Design&lt;/h2&gt;
+
+&lt;h4 id=&quot;objective-11--gather-and-analyze-business-requirements&quot;&gt;Objective 1.1 – Gather and analyze business requirements&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Associate a stakeholder with the information that needs to be collected.&lt;/li&gt;
+  &lt;li&gt;Utilize inventory and assessment data from a current environment to define a baseline state.&lt;/li&gt;
+  &lt;li&gt;Analyze customer interview data to explicitly define customer objectives for a conceptual design&lt;/li&gt;
+  &lt;li&gt;Given results of the requirements gathering process, identify requirements for a conceptual design.&lt;/li&gt;
+  &lt;li&gt;Categorize requirements by infrastructure qualities to prepare for logical design requirements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Determine customer priorities for defined objectives.&lt;/li&gt;
+  &lt;li&gt;Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/a/customers/product/10/VMware+vSphere&quot;&gt;VMware Virtualization Case Studies&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/files/pdf/VMware-SMB-Survey.pdf&quot;&gt;The Benefits of Virtualization for Small and Medium Businesses&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17409&quot;&gt;Functional vs. Non-Functional Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17408&quot;&gt;Conceptual, Logical, Physical:  It is Simple&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.vmware.com/apps/2014/02/virtualize-business-critical-applications-vsphere-updated.html&quot;&gt;Virtualize Business Critical Applications (blog)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/files/pdf/VMW_10Q1_WP_vSPHERE_USLET_EN_R6_proof.pdf&quot;&gt;Virtualizing Business Critical Applications on vSphere&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-12--gather-and-analyze-application-requirements&quot;&gt;Objective 1.2 – Gather and analyze application requirements&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gather and analyze application requirements for a given scenario.&lt;/li&gt;
+  &lt;li&gt;Collect information needed in order to identify application dependencies.&lt;/li&gt;
+  &lt;li&gt;Given one or more application requirements, determine the impact of the requirements on the design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Determine the requirements for a set of applications that will be included in the design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/go/tcocalculator/&quot;&gt;VMware TCO Calculator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vmware-cost-per-application-calculator-methodology.pdf&quot;&gt;VMware Cost-Per-Application Calculator Methodology&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/business-critical-apps/oracle-virtualization/index.html&quot;&gt;Virtualizing Oracle with VMware&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/business-critical-apps/exchange/&quot;&gt;Virtualizing Exchange with VMware&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/business-critical-apps/sharepoint-virtualization/index.html&quot;&gt;Virtualize SharePoint with VMware vSphere&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/business-critical-apps/sql-virtualization/overview.html&quot;&gt;Virtualizing Microsoft SQL on VMware vSphere&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/business-critical-apps/sap-virtualization/index.html&quot;&gt;SAP and VMware Virtualization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://campaign.vmware.com/imgs/campaigns/business_critical_apps/phase2/assets/VMW-WP-BUS-FINANCIAL-BENEFITS-VIRT-BENCHMARK.pdf&quot;&gt;Business and Financial Benefits of Virtualization: Customer Benchmarking Study&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-13--determine-risks-requirements-constraints-and-assumptions&quot;&gt;Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Differentiate between the concepts of risks, requirements, constraints, and assumptions.&lt;/li&gt;
+  &lt;li&gt;Given a statement, determine whether it is a risk, requirement, constraint, or an assumption.&lt;/li&gt;
+  &lt;li&gt;Analyze impact of VMware best practices to identified risks, constraints, and assumptions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17431&quot;&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/servlet/JiveServlet/download/30463-1-144389/CADs- Constraints, Assumptions (Risk, Requirements) &amp;amp; Dependencies.pdf&quot;&gt;Constraints, Assumptions (Risk, Requirements) &amp;amp; Dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2--create-a-vsphere-6x-logical-design-from-an-existing-conceptual-design&quot;&gt;Section 2 – Create a vSphere 6.x Logical Design from an Existing Conceptual Design&lt;/h3&gt;
+
+&lt;h4 id=&quot;objective-21--map-business-requirements-to-a-vsphere-6x-logical-design&quot;&gt;Objective 2.1 – Map Business Requirements to a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze requirements for functional and non-functional elements.&lt;/li&gt;
+  &lt;li&gt;Build non-functional requirements into a specific logical design.&lt;/li&gt;
+  &lt;li&gt;Translate stated business requirements into a logical design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Incorporate the current state of a customer environment into a logical design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17408&quot;&gt;Conceptual, Logical, Physical:  It is Simple&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vsphere/VMware-vSphere-Platform-Whats-New.pdf&quot;&gt;What’s New in VMware vSphere 6.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17409&quot;&gt;Functional vs. Non-Functional Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17410&quot;&gt;ITIL v3 Introduction and Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bredemeyer.com/pdf_files/ActionGuides/ConceptualArchitectureActionGuide.PDF&quot;&gt;Conceptual Architecture Action Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://it.toolbox.com/blogs/bridging-gaps/systems-architecture-fundamentals-conceptual-logical-physical-designs-11352&quot;&gt;Systems Architecture Fundamentals – Conceptual, Logical, Physical Designs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-22--map-service-dependencies&quot;&gt;Objective 2.2 – Map Service Dependencies&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze services to identify upstream and downstream service dependencies.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate dependencies for infrastructure and application services that will be included in a vSphere design.&lt;/li&gt;
+  &lt;li&gt;Create Entity Relationship Diagrams that map service relationships and dependencies.&lt;/li&gt;
+  &lt;li&gt;Analyze interfaces to be used with new and existing business processes.&lt;/li&gt;
+  &lt;li&gt;Determine service dependencies for logical components.&lt;/li&gt;
+  &lt;li&gt;Include service dependencies in a vSphere 6.x Logical Design.&lt;/li&gt;
+  &lt;li&gt;Navigate logical components and their interdependencies and make decisions based upon all service relationships.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vmware-vcenter-app-discovery-mgr-datacenter-ops-WP-EN.pdf&quot;&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vbikerblog.com/2014/11/05/vmware-application-dependencies-and-entity-relationship-diagrams-mk2/&quot;&gt;VMware Application Dependencies and Entity Relationship Diagrams MK2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-23--build-availability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.3 – Build Availability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Determine availability component of service level agreements (SLAs) and service level management processes&lt;/li&gt;
+  &lt;li&gt;Determine potential availability solutions for a logical design based on customer requirements.&lt;/li&gt;
+  &lt;li&gt;Create an availability plan, including maintenance processes.&lt;/li&gt;
+  &lt;li&gt;Balance availability requirements with other infrastructure qualities.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which logical availability services can be used with a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to availability.&lt;/li&gt;
+  &lt;li&gt;Describe the concept of redundancy and the risks associated with single points of failure&lt;/li&gt;
+  &lt;li&gt;Explain class of nines methodology&lt;/li&gt;
+  &lt;li&gt;Analyze a vSphere design and determine possible single points of failure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vmware-vcenter-app-discovery-mgr-datacenter-ops-WP-EN.pdf&quot;&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-availability-guide.pdf&quot;&gt;vSphere Availability Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/smb/VMware-Protect-Your-Business-with-Automated-Business-Continuity-Solutions_Mar13.pdf&quot;&gt;Protect Your Business with Automated Business Continuity Solutions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/vmw-vsphere-high-availability.pdf&quot;&gt;VMware High Availability Deployment Best Practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-24--build-manageability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which management services can be used with a given vSphere Solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to management.&lt;/li&gt;
+  &lt;li&gt;Differentiate available command line-based management tools (PowerCLI, vMA etc.)&lt;/li&gt;
+  &lt;li&gt;Evaluate VMware Management solutions based on customer requirements.&lt;/li&gt;
+  &lt;li&gt;Build interfaces into the logical design for existing operations practices.&lt;/li&gt;
+  &lt;li&gt;Address identified operational readiness deficiencies&lt;/li&gt;
+  &lt;li&gt;Define Event, Incident and Problem Management practices.&lt;/li&gt;
+  &lt;li&gt;Analyze Release Management practices&lt;/li&gt;
+  &lt;li&gt;Determine request fulfillment and release management processes.&lt;/li&gt;
+  &lt;li&gt;Determine requirements for Configuration Management&lt;/li&gt;
+  &lt;li&gt;Define change management processes based on business requirements.&lt;/li&gt;
+  &lt;li&gt;Based on customer requirements, identify required reporting assets and processes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17396&quot;&gt;Optimizing Your VMware Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17397&quot;&gt;Four Keys to Managing Your VMware Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://communities.vmware.com/docs/DOC-11457&quot;&gt;Operational Readiness Assessment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://communities.vmware.com/servlet/JiveServlet/download/11457-1-32094/VMware_OR_Self_Assessment.xls&quot;&gt;Operational Readiness Assessment Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-host-management-guide.pdf&quot;&gt;vCenter Server and Host Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;vSphere PowerCLI documentation Center&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-25--build-performance-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.5 – Build Performance Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate logical performance considerations for a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to performance.&lt;/li&gt;
+  &lt;li&gt;Analyze current performance, identify and address gaps when building the logical design&lt;/li&gt;
+  &lt;li&gt;Using a conceptual design, create a logical design that meets performance requirements&lt;/li&gt;
+  &lt;li&gt;Determine performance-related functional requirements based on given non-functional requirements and service dependencies.&lt;/li&gt;
+  &lt;li&gt;Define capacity management practices and create a capacity plan&lt;/li&gt;
+  &lt;li&gt;Incorporate scalability requirements into the logical design&lt;/li&gt;
+  &lt;li&gt;Determine a performance component for service level agreements and service level management processes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-11484&quot;&gt;Proven Practice: Implementing ITIL v3 Capacity Management in a VMware environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-monitoring-performance-guide.pdf&quot;&gt;vSphere Monitoring and Performance Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-26--build-recoverability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.6 – Build Recoverability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which logical recoverability services are available for a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to recoverability.&lt;/li&gt;
+  &lt;li&gt;Determine Business Continuity and Disaster Recovery solution options for a given vSphere Design.&lt;/li&gt;
+  &lt;li&gt;Given recoverability requirements, analyze services that will be impacted and provide a recovery plan for impacted services.&lt;/li&gt;
+  &lt;li&gt;Plan a data retention policy based on customer requirements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/products/SRM/VMware-vCenter-Site-Recovery-Manager-Evaluation-Guide.pdf&quot;&gt;VMware vCenter™ Site Recovery Manager Evaluation Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/practical_guide_bcdr_vmb.pdf&quot;&gt;A Practical Guide to Business Continuity and Disaster Recovery with VMware Infrastructure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://download3.vmware.com/elq/img/EMEA/EMEA11122/pdf/VirtMngt_MasteringDisasterRecovery_WhitePaper_Q410_EN.pdf?cid=70180000000wCtz&quot;&gt;Mastering Disaster Recovery:  Business Continuity and Virtualization Best Practices Whitepaper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-27--build-security-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.7 – Build Security Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate which security services can be used with a given vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Differentiate infrastructure qualities related to security.&lt;/li&gt;
+  &lt;li&gt;Build specific regulatory compliance requirements into the logical design.&lt;/li&gt;
+  &lt;li&gt;Analyze application and infrastructure security requirements.&lt;/li&gt;
+  &lt;li&gt;Build a role-based access model and map roles to services.&lt;/li&gt;
+  &lt;li&gt;Build a security policy based on existing security requirements and IT governance practices.&lt;/li&gt;
+  &lt;li&gt;Incorporate customer risk tolerance into the security policy.&lt;/li&gt;
+  &lt;li&gt;Assess the services that will be impacted and create an access management plan.&lt;/li&gt;
+  &lt;li&gt;Determine the proper security solution that would satisfy a regulatory requirement.&lt;/li&gt;
+  &lt;li&gt;Based on stated security requirements, analyze the current state for compliance/non-compliance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-security-guide.pdf&quot;&gt;vSphere Security Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17431&quot;&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/technology/compliance_virtualized_environment_wp.pdf&quot;&gt;Achieving Compliance in a Virtualized Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/cloud/vmware-cloud-solution-security-in-the-cloud-wp-en.pdf&quot;&gt;Infrastructure Security:  Getting to the Bottom of Compliance in the Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/cloud/VMware-Savvis-Cloud-WP-en.pdf&quot;&gt;Securing the Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3--create-a-vsphere-6x-physical-design-from-an-existing-logical-design&quot;&gt;Section 3 – Create a vSphere 6.x Physical Design from an Existing Logical Design&lt;/h3&gt;
+
+&lt;h4 id=&quot;objective-31--transition-from-a-logical-design-to-a-vsphere-6x-physical-design&quot;&gt;Objective 3.1 – Transition from a Logical Design to a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Based on business requirements, determine the appropriate roles for each staff member.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze design decisions and options selected from the logical design&lt;/li&gt;
+  &lt;li&gt;Determine impact of VMware best practices to identified risks, constraints, and assumptions in a given vSphere design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-17408&quot;&gt;Conceptual, Logical, Physical:  It is Simple&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-host-management-guide.pdf&quot;&gt;vSphere Server and Host Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-virtual-machine-admin-guide.pdf&quot;&gt;vSphere Virtual Machine Administration Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-32--create-a-vsphere-6x-physical-network-design-from-an-existing-logical-design&quot;&gt;Objective 3.2 – Create a vSphere 6.x Physical Network Design from an Existing Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze VLAN options with respect to virtual and physical switches.&lt;/li&gt;
+  &lt;li&gt;Given business requirements, determine the design for virtual network components:
+    &lt;ul&gt;
+      &lt;li&gt;STP&lt;/li&gt;
+      &lt;li&gt;Jumbo Frames&lt;/li&gt;
+      &lt;li&gt;Load-balancing&lt;/li&gt;
+      &lt;li&gt;Trunking and link aggregation groups&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Evaluate network redundancy considerations for a given design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze design for inclusion of Network I/O Control capabilities.&lt;/li&gt;
+  &lt;li&gt;Determine use case for multiple TCP/IP stacks in a given design.&lt;/li&gt;
+  &lt;li&gt;Based on given functional requirements for each service:&lt;/li&gt;
+  &lt;li&gt;Determine the most appropriate networking technologies for the design&lt;/li&gt;
+  &lt;li&gt;Implement the service based on the required infrastructure qualities (AMPRS.)&lt;/li&gt;
+  &lt;li&gt;Analyze design for appropriate network teaming and failover solution.&lt;/li&gt;
+  &lt;li&gt;Determine network security and firewall requirements for a virtual network design&lt;/li&gt;
+  &lt;li&gt;Based on service level requirements, determine appropriate network performance characteristics.&lt;/li&gt;
+  &lt;li&gt;Given a current network configuration as well as technical requirements and constraints, determine the appropriate virtual switch solution:
+    &lt;ul&gt;
+      &lt;li&gt;vSphere Standard Switch&lt;/li&gt;
+      &lt;li&gt;vSphere Distributed Switch&lt;/li&gt;
+      &lt;li&gt;NSX&lt;/li&gt;
+      &lt;li&gt;Hybrid solutions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Based on an existing logical design, determine appropriate host networking resources.&lt;/li&gt;
+  &lt;li&gt;Properly apply converged networking considering VMware best practices.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-host-management-guide.pdf&quot;&gt;vSphere Server and Host Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-installation-setup-guide.pdf&quot;&gt;vSphere Installation and Setup Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-networking-guide.pdf&quot;&gt;vSphere Networking Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2131180&quot;&gt;Network Port Diagram for vSphere 6.x&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/products/vsan/VSAN_Design_and_Sizing_Guide.pdf&quot;&gt;VMware Virtual SAN Network Design Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/VMware-vSphere-PNICs-perf.pdf&quot;&gt;Leveraging NIC Technology to Improve Network Performance in VMware vSphere&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/Network-IOC-vSphere6-Performance-Evaluation.pdf&quot;&gt;Performance Evaluation of Network I/O Control in VMware vSphere 6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vmotion-perf-vsphere5.pdf&quot;&gt;vMotion Architecture, Performance and Best Practices in VMware vSphere 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-33--create-a-vsphere-6x-physical-storage-design-from-an-existing-logical-design&quot;&gt;Objective 3.3 – Create a vSphere 6.x Physical Storage Design from an Existing Logical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Existing Content from VCAP5-DCD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Based on the logical design and given functional requirements, for each service:
+    &lt;ul&gt;
+      &lt;li&gt;Determine the most appropriate storage technologies for the design&lt;/li&gt;
+      &lt;li&gt;Implement the service based on the required infrastructure qualities&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Based on service level requirements include VMware technologies in the design, such as:
+    &lt;ul&gt;
+      &lt;li&gt;Storage I/O Control and Network I/O Control&lt;/li&gt;
+      &lt;li&gt;Storage Policies&lt;/li&gt;
+      &lt;li&gt;Storage vMotion&lt;/li&gt;
+      &lt;li&gt;Storage DRS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;New Content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluate criteria, capabilities and limitations between storage types (Block, NAS, Object Based)&lt;/li&gt;
+  &lt;li&gt;In a given design, determine Storage Policy availability and performance characteristics&lt;/li&gt;
+  &lt;li&gt;Based on service level requirements include VMware technologies in the design, such as:
+    &lt;ul&gt;
+      &lt;li&gt;Virtual SAN&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ensure storage array capabilities are supported in a vSphere 6.x design:
+    &lt;ul&gt;
+      &lt;li&gt;Active/Active, Active/Passive&lt;/li&gt;
+      &lt;li&gt;ALUA, VAAI, VASA&lt;/li&gt;
+      &lt;li&gt;PSA (including PSPs and SATPs)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Given the functional requirements, size the storage for capacity, availability and performance, including:
+    &lt;ul&gt;
+      &lt;li&gt;Datastores, RDMs, Virtual Disks&lt;/li&gt;
+      &lt;li&gt;Physical Storage (LUNs, Storage Tiering)&lt;/li&gt;
+      &lt;li&gt;Based on the logical design, select and incorporate an appropriate storage network into the physical design:&lt;/li&gt;
+      &lt;li&gt;Block (FC, iSCSI, FCoE, SAS)&lt;/li&gt;
+      &lt;li&gt;NAS (NFSv3, NFSv4)&lt;/li&gt;
+      &lt;li&gt;Object Based (Virtual SAN, Virtual Volumes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/products/vsan/VMware_Virtual_SAN_Whats_New.pdf&quot;&gt;What’s New: VMware Virtual SAN 6.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/files/pdf/products/vsan/VSAN_Design_and_Sizing_Guide.pdf&quot;&gt;VMware Virtual SAN 6.0 Design and Sizing Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/files/pdf/products/vsan/VSAN-Troubleshooting-Reference-Manual.pdf&quot;&gt;VMware Virtual SAN Diagnostics and Troubleshooting Reference Manual&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/solutions/VMware-Perspective-on-software-defined-storage-white-paper.pdf&quot;&gt;The VMware Perspective on Software-Defined Storage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf&quot;&gt;vSphere Storage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-resource-management-guide.pdf&quot;&gt;Resource Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vsantco.vmware.com/vsan/SI/SIEV&quot;&gt;Virtual SAN TCO and Sizing Calculator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/products/virtualvolumes/VMware-Whats-New-vSphere-Virtual-Volumes.pdf&quot;&gt;What’s New: VMware vSphere Virtual Volumes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-installation-setup-guide.pdf&quot;&gt;vSphere Installation and Setup Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/pdf/vmfs-best-practices-wp.pdf&quot;&gt;VMware Virtual Machine File System: Technical Overview and Best Practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-34--determine-appropriate-compute-resources-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.4 – Determine Appropriate Compute Resources for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze best practices with respect to CPU family choices.&lt;/li&gt;
+  &lt;li&gt;Evaluate NUMA and vNUMA with ESXi hosts and Virtual machines in a given design.&lt;/li&gt;
+  &lt;li&gt;Analyze the following in a vSphere design:&lt;/li&gt;
+  &lt;li&gt;Enhanced vMotion compatibility&lt;/li&gt;
+  &lt;li&gt;Implications of vSMP in virtual machines&lt;/li&gt;
+  &lt;li&gt;Transparent Page Sharing (TPS) and large pages&lt;/li&gt;
+  &lt;li&gt;Resource overcommitment&lt;/li&gt;
+  &lt;li&gt;Based on the service catalog and given functional requirements:&lt;/li&gt;
+  &lt;li&gt;Determine the most appropriate compute technologies for the design&lt;/li&gt;
+  &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
+  &lt;li&gt;Determine the impact of a technical design on the choice of server density:&lt;/li&gt;
+  &lt;li&gt;Scale Up/Out&lt;/li&gt;
+  &lt;li&gt;Auto Deploy&lt;/li&gt;
+  &lt;li&gt;Calculate the required number of nodes in an HA cluster based upon host failures and resource guarantees&lt;/li&gt;
+  &lt;li&gt;Evaluate the implications of using reservations, limits, and shares on the physical design.&lt;/li&gt;
+  &lt;li&gt;Specify the resource pool and vApp configuration based upon resource requirements.&lt;/li&gt;
+  &lt;li&gt;Size the following resources appropriately:&lt;/li&gt;
+  &lt;li&gt;Memory&lt;/li&gt;
+  &lt;li&gt;CPU&lt;/li&gt;
+  &lt;li&gt;I/O devices&lt;/li&gt;
+  &lt;li&gt;Internal storage&lt;/li&gt;
+  &lt;li&gt;Given a constraint to use existing hardware, determine suitability of the hardware for the design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-host-management-guide.pdf&quot;&gt;vSphere Server and Host Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/vsphere/VMware-vSphere-Platform-Whats-New.pdf&quot;&gt;What’s New in the VMware vSphere® 6.0 Platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-installation-setup-guide.pdf&quot;&gt;vSphere Installation and Setup Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-resource-management-guide.pdf&quot;&gt;vSphere Resource Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/VMware-PerfBest-Practices-vSphere6-0.pdf&quot;&gt;Performance Best Practices for VMware vSphere 6.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/vmware-vCenter6-perf.pdf&quot;&gt;VMware vCenter Server Performance and Best Practices&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/VMW-Tuning-Latency-Sensitive-Workloads.pdf&quot;&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/solutions/VMware-SQL-Server-vSphere6-Performance.pdf&quot;&gt;Performance Characterization of Microsoft SQL Server on VMware vSphere 6 &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/Exchange_2013_on_VMware_Best_Practices_Guide.pdf&quot;&gt;Microsoft Exchange 2013 on VMware Best Practices Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-monitoring-performance-guide.pdf&quot;&gt;vSphere Monitoring and Performance Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://communities.vmware.com/docs/DOC-9279&quot;&gt;Interpreting esxtop statistics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-35--determine-virtual-machine-configuration-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.5 – Determine Virtual Machine Configuration for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze the use of an RDM or a virtual disk for a given VM.&lt;/li&gt;
+  &lt;li&gt;Evaluate Virtual Machine memory management techniques (ballooning, compression, swapping) in a given vSphere design.&lt;/li&gt;
+  &lt;li&gt;Based on business requirements, determine the design significance of VM Swap location.&lt;/li&gt;
+  &lt;li&gt;Determine the latency sensitivity requirements of a given virtual machine workload.&lt;/li&gt;
+  &lt;li&gt;Evaluate virtual machine features based on the logical, functional and application requirements.&lt;/li&gt;
+  &lt;li&gt;Use VMware best practices to size virtual machines according to application requirements.&lt;/li&gt;
+  &lt;li&gt;Determine if reservations, shares, and limits are necessary.&lt;/li&gt;
+  &lt;li&gt;Based on an existing logical design, determine virtual hardware options.&lt;/li&gt;
+  &lt;li&gt;Build a Content Library of appropriate virtual machine offerings (e.g. templates, OVFs, ISOs.)&lt;/li&gt;
+  &lt;li&gt;Determine appropriate use cases for vApps.&lt;/li&gt;
+  &lt;li&gt;Evaluate the suitability of using VMware FT or 3rd party clustering products (e.g. Microsoft Clustering, etc.) based on application requirements.&lt;/li&gt;
+  &lt;li&gt;Determine the impact of scheduled guest activities (e.g. anti-virus, backup, etc) to the design.&lt;/li&gt;
+  &lt;li&gt;Evaluate vFlash read cache requirements in a given design.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-virtual-machine-admin-guide.pdf&quot;&gt;Virtual Machine Administration Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/VMW-Tuning-Latency-Sensitive-Workloads.pdf&quot;&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/Virtualizing_Windows_Active_Directory.pdf&quot;&gt;Virtualizing a Windows Active Directory Domain Infrastructure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://partnerweb.vmware.com/GOSIG/home.html&quot;&gt;Guest Operating System Installation Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-resource-management-guide.pdf&quot;&gt;vSphere Resource Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/mem_mgmt_perf_vsphere5.pdf&quot;&gt;Understanding Memory Management in VMware vSphere 6.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;objective-36--determine-data-center-management-options-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.6 – Determine Data Center Management Options for a vSphere 6.x Physical Design&lt;/h4&gt;
+
+&lt;p&gt;Skills and Abilities&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Based on business requirements, determine client access options in a vSphere solution.&lt;/li&gt;
+  &lt;li&gt;Analyze business requirements when integrating vSphere with other VMware solutions.&lt;/li&gt;
+  &lt;li&gt;Evaluate the impact of the VMware Certificate Authority and the VMware Endpoint Certificate Store to the design.&lt;/li&gt;
+  &lt;li&gt;Based on the logical design and given functional requirements:&lt;/li&gt;
+  &lt;li&gt;Determine the most appropriate datacenter management options for the design.&lt;/li&gt;
+  &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
+  &lt;li&gt;Analyze cluster requirements:&lt;/li&gt;
+  &lt;li&gt;Availability requirements for HA and FT&lt;/li&gt;
+  &lt;li&gt;Performance requirements for DRS and vMotion&lt;/li&gt;
+  &lt;li&gt;Storage performance requirements for SDRS and Storage vMotion&lt;/li&gt;
+  &lt;li&gt;Determine appropriate vCenter Server design and sizing requirements:&lt;/li&gt;
+  &lt;li&gt;vCenter Server Enhanced Linked Mode&lt;/li&gt;
+  &lt;li&gt;vCenter Server virtual appliance vs vCenter Server for Windows&lt;/li&gt;
+  &lt;li&gt;Platform Services Controller&lt;/li&gt;
+  &lt;li&gt;Evaluate access control methodologies for creating roles and assignment of users to roles.&lt;/li&gt;
+  &lt;li&gt;Determine proper structure for access control settings (i.e. folders, resource pools, etc.)&lt;/li&gt;
+  &lt;li&gt;Develop appropriate host and virtual machine deployment options.&lt;/li&gt;
+  &lt;li&gt;Include in the design appropriate technologies for:&lt;/li&gt;
+  &lt;li&gt;Asset management&lt;/li&gt;
+  &lt;li&gt;Event, incident and problem management&lt;/li&gt;
+  &lt;li&gt;Logging, monitoring and reporting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tools&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-monitoring-performance-guide.pdf&quot;&gt;vSphere Monitoring and Performance Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/VMware-vCenter-Server-6-0-Availability-Guide.pdf&quot;&gt;VMware vCenter Server 6.0 Availability Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-host-management-guide.pdf&quot;&gt;vCenter Server and Host Management Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-update-manager-60-install-administration-guide.pdf&quot;&gt;VMware vCenter Update Manager 6.0 Performance and Best Practices&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/techpaper/vmware-vcenter-server6-deployment-guide.pdf&quot;&gt;vCenter Server Deployment Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/resources/compatibility/sim/interop_matrix.php&quot;&gt;VMware Interoperability Matrix&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vmware.com/files/pdf/services/VMware-Proactive-Incident-Whitepaper.pdf&quot;&gt;VMware Proactive Incident Whitepaper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/certification/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/&quot;&gt;VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on July 25, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[My VCAP6 DCV Deploy Beta Experience]]></title>
+  <link rel="alternate" type="text/html" href="http://davidstamen.com/certification/my-vcap6-dcv-deploy-beta-experience/" />
+  <id>http://davidstamen.com/certification/my-vcap6-dcv-deploy-beta-experience</id>
+  <published>2016-06-24T00:00:00-04:00</published>
+  <updated>2016-06-24T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri>http://davidstamen.com</uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Today I took my VCAP6-DCV exam. This exam was announced with a two week availability in the US priced at $100.&lt;/p&gt;
+
+&lt;p&gt;My experience with the exam was actually pretty good. The new interface for the advanced exams is that of an HOL. You are dropped onto the desktop and have a window that slides in and out to pull up the manual and other consoles.&lt;/p&gt;
+
+&lt;p&gt;I would definately read up on Josh Andrew’s &lt;a href=&quot;http://sostechblog.com/2016/06/15/vcap6-dcv-deploy-public-beta-launched/&quot;&gt;post&lt;/a&gt; about what to expect.&lt;/p&gt;
+
+&lt;p&gt;I would also recommend going over the &lt;a href=&quot;https://mylearn.vmware.com/lcms/web/portals/certification/VMware%20Certification%20Platform%20Interface.pdf&quot;&gt;interface guide&lt;/a&gt; as well as this has lots of detailed information about the console, and limitations about the control key, akt key and backspace key (I will expand on that more below). Also please make note of the sections about optimizing the console, this is also in the on screen manual, I tried to skip over it, but without following these steps alot of the screen will be cutoff, go ahead and do it. It will make it easier for you.&lt;/p&gt;
+
+&lt;p&gt;The new interface is now HTML5 based and is extremely quick, in my testing center i did not experience any of the lag I did when i took the VCAP5.&lt;/p&gt;
+
+&lt;p&gt;However there are a few things to make note of when taking try new exam. The following keys are disabled… Ctrl, alt and backspace. This made a few tasks difficult I knew about ctrl going into the exam, but not having backspace at my disposal made a few things harder. The delete key is still active so at least you can clear some of the text you typed incorrectly.&lt;/p&gt;
+
+&lt;p&gt;one thing to add, there may not be a copy padte in all places but if you need to “copy” something from the manual you can highlight it and then drag it to a field in the console and it will “paste” thr content there.&lt;/p&gt;
+
+&lt;p&gt;As far as content, I think it was very good. I didn’t feel strapped on time and it was one of the better beta exam experiences I have had. I definitely recommend taking it if you can.&lt;/p&gt;
+
+&lt;p&gt;The exam never strayed off the blueprint, so If you are looking for something to study I would definitely make sure you cover all topics on the blueprint, it will help you in the long run.&lt;/p&gt;
+
+&lt;p&gt;Some of the resources I used to study were the following.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VMware Official Blueprint
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=88753&amp;amp;ui=www_cert&quot;&gt;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=88753&amp;amp;ui=www_cert&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vJenner Blog
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.vjenner.com/vcap6-dcv-deployment-study-guide/&quot;&gt;http://www.vjenner.com/vcap6-dcv-deployment-study-guide/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vPentathlon
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vpentathlon.com/vcap-dcv-deploy-study-guide/&quot;&gt;http://vpentathlon.com/vcap-dcv-deploy-study-guide/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Google Community for VCAP6-DCV
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://plus.google.com/communities/108002000588564278612&quot;&gt;https://plus.google.com/communities/108002000588564278612&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tom Greene (This was really great to focus on where to study, it covers differences between VCAP5 and VCAP6)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.thomgreene.com/blog/2016/6/16/vcap6-dcv-deploy-blueprint-changes-from-vcap5-dca&quot;&gt;http://www.thomgreene.com/blog/2016/6/16/vcap6-dcv-deploy-blueprint-changes-from-vcap5-dca&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;VMware HOL’s
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://labs.hol.vmware.com/HOL/catalogs/lab/2112&quot;&gt;HOL-SDC-1627&lt;/a&gt; - VVol, Virtual SAN &amp;amp; Storage Policy-Based Management. I think I spent the MOST time in this lab, it is a great lab that has VDP, VR, VSAN, VVOL and pretty much anything you need. I probably enrolled in this lab over 15 times.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 6/27&lt;/strong&gt;
+Please make sure to check out Beta experience’s as well!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ariel Sanchez
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://sites.google.com/site/arielsanchezmora/home/study-guides/vcap6-dcv-deploy-beta&quot;&gt;https://sites.google.com/site/arielsanchezmora/home/study-guides/vcap6-dcv-deploy-beta&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/certification/my-vcap6-dcv-deploy-beta-experience/&quot;&gt;My VCAP6 DCV Deploy Beta Experience&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on June 24, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -959,706 +1743,6 @@ Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$VC&lt;/span&gt; -Credential &
 &lt;p&gt;Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/unable-to-boot-efi-vm-on-esxi-fc-storage/&quot;&gt;Unable to Boot EFI VM on ESXi FC Storage&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 13, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI]]></title>
-  <link rel="alternate" type="text/html" href="http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/" />
-  <id>http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b</id>
-  <published>2016-01-12T00:00:00-05:00</published>
-  <updated>2016-01-12T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri>http://davidstamen.com</uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.&lt;/p&gt;
-
-&lt;p&gt;This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SSH to your Primary PSC.&lt;/li&gt;
-  &lt;li&gt;If you are currently in the bash shell, type appliancesh to switch shells to run the update.&lt;/li&gt;
-  &lt;li&gt;Run &lt;strong&gt;software-packages install –url –acceptEulas&lt;/strong&gt; to download and install the packages from the VMware Repo.
-    &lt;ul&gt;
-      &lt;li&gt;You can use the –ISO switch or supply a custom url as well if needed.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sit back and wait. Once it is finished you will be prompted to reboot.
-    &lt;ul&gt;
-      &lt;li&gt;Reboot by typing shutdown reboot /r reason&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/pscupgrade1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When VM boots you will now be at the latest version.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/pscupgrade2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Repeat if you have additional PSC’s in your environment.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now that our Platform Service Controllers are upgraded we can proceed on with our vCenter Appliance.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SSH to your vCenter Appliance.&lt;/li&gt;
-  &lt;li&gt;If you are currently in the bash shell, type appliancesh to switch shells to run the update.&lt;/li&gt;
-  &lt;li&gt;Run &lt;strong&gt;software-packages install –url –acceptEulas&lt;/strong&gt; to download and install the packages from the VMware Repo.
-    &lt;ul&gt;
-      &lt;li&gt;You can use the –ISO switch or supply a custom url as well if needed.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sit back and wait. Once it is finished you will be prompted to reboot.
-    &lt;ul&gt;
-      &lt;li&gt;Reboot by typing shutdown reboot /r reason&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vcupgrade1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When VM boots you will now be at the latest version.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vcupgrade2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/vmware/upgrading-vcsa-from-60-u1a-to-60u1b/&quot;&gt;Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 12, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using UCS PowerTool To Upload UCS Firmware]]></title>
-  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware/" />
-  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware</id>
-  <published>2016-01-11T00:00:00-05:00</published>
-  <updated>2016-01-11T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri>http://davidstamen.com</uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1&quot;&gt;UploadUCSFirmware.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ucs01.lab.local&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;ucs02.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$fileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;avid&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ownloads&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;cs-k9-bundle-infra.2.2.6e.A.bin&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#Cycles through each UCS uploading the UCS Firmware&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  Connect-UCS &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; -Credential &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
-  Send-UcsFirmware -LiteralPath &lt;span class=&quot;nv&quot;&gt;$fileName&lt;/span&gt; | Watch-Ucs -Property TransferState -SuccessValue downloaded -PollSec 30 -TimeoutSec 600
-  Disconnect-UCS
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\UploadUCSFirmware.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-upload-ucs-firmware/&quot;&gt;Using UCS PowerTool To Upload UCS Firmware&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on January 11, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[VCAP6-Design Beta Study Guide]]></title>
-  <link rel="alternate" type="text/html" href="http://davidstamen.com/certification/vcap6-design-beta-study-guide/" />
-  <id>http://davidstamen.com/certification/vcap6-design-beta-study-guide</id>
-  <published>2015-12-17T00:00:00-05:00</published>
-  <updated>2015-12-17T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri>http://davidstamen.com</uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.&lt;/p&gt;
-
-&lt;p&gt;###Section 1 – Create a vSphere Conceptual Design&lt;/p&gt;
-
-&lt;h4 id=&quot;objective-11--gather-and-analyze-business-requirements&quot;&gt;Objective 1.1 – Gather and analyze business requirements&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Associate a stakeholder with the information that needs to be collected.&lt;/li&gt;
-  &lt;li&gt;Utilize inventory and assessment data from a current environment to define a baseline state.&lt;/li&gt;
-  &lt;li&gt;Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.&lt;/li&gt;
-  &lt;li&gt;Determine customer priorities for defined #### Objectives.&lt;/li&gt;
-  &lt;li&gt;Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.&lt;/li&gt;
-  &lt;li&gt;Given results of the requirements gathering process, identify requirements for a conceptual design.&lt;/li&gt;
-  &lt;li&gt;Categorize requirements by infrastructure qualities to prepare for logical design requirements.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;VMware Virtualization Case Studies&lt;/li&gt;
-  &lt;li&gt;The Benefits of Virtualization for Small and Medium Businesses&lt;/li&gt;
-  &lt;li&gt;Functional vs. Non-Functional Requirements&lt;/li&gt;
-  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
-  &lt;li&gt;Virtualize Business Critical Applications (blog)&lt;/li&gt;
-  &lt;li&gt;Virtualizing Business Critical Applications on vSphere&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-12--gather-and-analyze-application-requirements&quot;&gt;Objective 1.2 – Gather and analyze application requirements&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gather and analyze application requirements for a given scenario.&lt;/li&gt;
-  &lt;li&gt;Determine the requirements for a set of applications that will be included in the design.&lt;/li&gt;
-  &lt;li&gt;Collect information needed in order to identify application dependencies.&lt;/li&gt;
-  &lt;li&gt;Given one or more application requirements, determine the impact of the requirements on the design.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;VMware TCO Calculator&lt;/li&gt;
-  &lt;li&gt;VMware Cost-Per-Application Calculator Methodology&lt;/li&gt;
-  &lt;li&gt;Virtualizing Oracle with VMware&lt;/li&gt;
-  &lt;li&gt;Virtualizing Exchange with VMware&lt;/li&gt;
-  &lt;li&gt;Virtualize SharePoint with VMware vSphere&lt;/li&gt;
-  &lt;li&gt;Virtualizing Microsoft SQL on VMware vSphere&lt;/li&gt;
-  &lt;li&gt;SAP and VMware Virtualization&lt;/li&gt;
-  &lt;li&gt;Business and Financial Benefits of Virtualization: Customer Benchmarking Study&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-13--determine-risks-requirements-constraints-and-assumptions&quot;&gt;Objective 1.3 – Determine Risks, Requirements, Constraints and Assumptions&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Differentiate between the concepts of risks, requirements, constraints, and assumptions.&lt;/li&gt;
-  &lt;li&gt;Given a statement, determine whether it is a risk, requirement, constraint, or an assumption.&lt;/li&gt;
-  &lt;li&gt;Analyze impact of VMware best practices to identified risks, constraints, and assumptions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/li&gt;
-  &lt;li&gt;Constraints, Assumptions (Risk, Requirements) &amp;amp; Dependencies&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-2--create-a-vsphere-6x-logical-design-from-an-existing-conceptual-design&quot;&gt;Section 2 – Create a vSphere 6.x Logical Design from an Existing Conceptual Design&lt;/h3&gt;
-
-&lt;h4 id=&quot;objective-21--map-business-requirements-to-a-vsphere-6x-logical-design&quot;&gt;Objective 2.1 – Map Business Requirements to a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Analyze requirements for functional and non-functional elements.&lt;/li&gt;
-  &lt;li&gt;Build non-functional requirements into a specific logical design.&lt;/li&gt;
-  &lt;li&gt;Translate stated business requirements into a logical design.&lt;/li&gt;
-  &lt;li&gt;Incorporate the current state of a customer environment into a logical design.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
-  &lt;li&gt;What’s New in VMware vSphere 6.0&lt;/li&gt;
-  &lt;li&gt;Functional vs. Non-Functional Requirements&lt;/li&gt;
-  &lt;li&gt;ITIL v3 Introduction and Overview&lt;/li&gt;
-  &lt;li&gt;Conceptual Architecture Action Guide&lt;/li&gt;
-  &lt;li&gt;Systems Architecture Fundamentals – Conceptual, Logical, Physical Designs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-22--map-service-dependencies&quot;&gt;Objective 2.2 – Map Service Dependencies&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate dependencies for infrastructure and application services that will be included in a vSphere design.&lt;/li&gt;
-  &lt;li&gt;Create Entity Relationship Diagrams that map service relationships and dependencies.&lt;/li&gt;
-  &lt;li&gt;Analyze interfaces to be used with new and existing business processes.&lt;/li&gt;
-  &lt;li&gt;Determine service dependencies for logical components.&lt;/li&gt;
-  &lt;li&gt;Include service dependencies in a vSphere 6.x Logical Design.&lt;/li&gt;
-  &lt;li&gt;Analyze services to identify upstream and downstream service dependencies.&lt;/li&gt;
-  &lt;li&gt;Navigate logical components and their interdependencies and make decisions based upon all service relationships.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/li&gt;
-  &lt;li&gt;VMware Application Dependencies and Entity Relationship Diagrams MK2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-23--build-availability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.3 – Build Availability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate which logical availability services can be used with a given vSphere solution.&lt;/li&gt;
-  &lt;li&gt;Differentiate infrastructure qualities related to availability.&lt;/li&gt;
-  &lt;li&gt;Describe the concept of redundancy and the risks associated with single points of failure&lt;/li&gt;
-  &lt;li&gt;Explain class of nines methodology&lt;/li&gt;
-  &lt;li&gt;Determine availability component of service level agreements (SLAs) and service level management processes&lt;/li&gt;
-  &lt;li&gt;Determine potential availability solutions for a logical design based on customer requirements.&lt;/li&gt;
-  &lt;li&gt;Create an availability plan, including maintenance processes.&lt;/li&gt;
-  &lt;li&gt;Balance availability requirements with other infrastructure qualities.&lt;/li&gt;
-  &lt;li&gt;Analyze a vSphere design and determine possible single points of failure.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Datacenter Operational Excellence Through Automated Application Discovery &amp;amp; Dependency Mapping&lt;/li&gt;
-  &lt;li&gt;vSphere Availability Guide&lt;/li&gt;
-  &lt;li&gt;Protect Your Business with Automated Business Continuity Solutions&lt;/li&gt;
-  &lt;li&gt;VMware High Availability Deployment Best Practices&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-24--build-manageability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.4 – Build Manageability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate which management services can be used with a given vSphere Solution.&lt;/li&gt;
-  &lt;li&gt;Differentiate infrastructure qualities related to management.&lt;/li&gt;
-  &lt;li&gt;Differentiate available command line-based management tools (PowerCLI, vMA etc.)&lt;/li&gt;
-  &lt;li&gt;Evaluate VMware Management solutions based on customer requirements.&lt;/li&gt;
-  &lt;li&gt;Build interfaces into the logical design for existing operations practices.&lt;/li&gt;
-  &lt;li&gt;Address identified operational readiness deficiencies&lt;/li&gt;
-  &lt;li&gt;Define Event, Incident and Problem Management practices.&lt;/li&gt;
-  &lt;li&gt;Analyze Release Management practices&lt;/li&gt;
-  &lt;li&gt;Determine request fulfillment and release management processes.&lt;/li&gt;
-  &lt;li&gt;Determine requirements for Configuration Management&lt;/li&gt;
-  &lt;li&gt;Define change management processes based on business requirements.&lt;/li&gt;
-  &lt;li&gt;Based on customer requirements, identify required reporting assets and processes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Optimizing Your VMware Environment&lt;/li&gt;
-  &lt;li&gt;Four Keys to Managing Your VMware Environment&lt;/li&gt;
-  &lt;li&gt;Operational Readiness Assessment&lt;/li&gt;
-  &lt;li&gt;Operational Readiness Assessment Tool&lt;/li&gt;
-  &lt;li&gt;vCenter Server and Host Management Guide&lt;/li&gt;
-  &lt;li&gt;vSphere PowerCLI documentation Center&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-25--build-performance-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.5 – Build Performance Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate logical performance considerations for a given vSphere solution.&lt;/li&gt;
-  &lt;li&gt;Differentiate infrastructure qualities related to performance.&lt;/li&gt;
-  &lt;li&gt;Analyze current performance, identify and address gaps when building the logical design&lt;/li&gt;
-  &lt;li&gt;Using a conceptual design, create a logical design that meets performance requirements&lt;/li&gt;
-  &lt;li&gt;Determine performance-related functional requirements based on given non-functional requirements and service dependencies.&lt;/li&gt;
-  &lt;li&gt;Define capacity management practices and create a capacity plan&lt;/li&gt;
-  &lt;li&gt;Incorporate scalability requirements into the logical design&lt;/li&gt;
-  &lt;li&gt;Determine a performance component for service level agreements and service level management processes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Proven Practice: Implementing ITIL v3 Capacity Management in a VMware environment&lt;/li&gt;
-  &lt;li&gt;vSphere Monitoring and Performance Guide&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-26--build-recoverability-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.6 – Build Recoverability Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate which logical recoverability services are available for a given vSphere solution.&lt;/li&gt;
-  &lt;li&gt;Differentiate infrastructure qualities related to recoverability.&lt;/li&gt;
-  &lt;li&gt;Determine Business Continuity and Disaster Recovery solution options for a given vSphere Design.&lt;/li&gt;
-  &lt;li&gt;Given recoverability requirements, analyze services that will be impacted and provide a recovery plan for impacted services.&lt;/li&gt;
-  &lt;li&gt;Plan a data retention policy based on customer requirements.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;VMware vCenter™ Site Recovery Manager Evaluation Guide&lt;/li&gt;
-  &lt;li&gt;A Practical Guide to Business Continuity and Disaster Recovery with VMware Infrastructure&lt;/li&gt;
-  &lt;li&gt;Mastering Disaster Recovery: Business Continuity and Virtualization Best Practices Whitepaper&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-27--build-security-requirements-into-a-vsphere-6x-logical-design&quot;&gt;Objective 2.7 – Build Security Requirements into a vSphere 6.x Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate which security services can be used with a given vSphere solution.&lt;/li&gt;
-  &lt;li&gt;Differentiate infrastructure qualities related to security.&lt;/li&gt;
-  &lt;li&gt;Build specific regulatory compliance requirements into the logical design.&lt;/li&gt;
-  &lt;li&gt;Analyze application and infrastructure security requirements.&lt;/li&gt;
-  &lt;li&gt;Build a role-based access model and map roles to services.&lt;/li&gt;
-  &lt;li&gt;Build a security policy based on existing security requirements and IT governance practices.&lt;/li&gt;
-  &lt;li&gt;Incorporate customer risk tolerance into the security policy.&lt;/li&gt;
-  &lt;li&gt;Assess the services that will be impacted and create an access management plan.&lt;/li&gt;
-  &lt;li&gt;Determine the proper security solution that would satisfy a regulatory requirement.&lt;/li&gt;
-  &lt;li&gt;Based on stated security requirements, analyze the current state for compliance/non-compliance.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vSphere Security Guide&lt;/li&gt;
-  &lt;li&gt;Developing Your Virtualization Strategy and Deployment Plan&lt;/li&gt;
-  &lt;li&gt;Achieving Compliance in a Virtualized Environment&lt;/li&gt;
-  &lt;li&gt;Infrastructure Security: Getting to the Bottom of Compliance in the Cloud&lt;/li&gt;
-  &lt;li&gt;Securing the Cloud&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-3--create-a-vsphere-6x-physical-design-from-an-existing-logical-design&quot;&gt;Section 3 – Create a vSphere 6.x Physical Design from an Existing Logical Design&lt;/h3&gt;
-
-&lt;h4 id=&quot;objective-31--transition-from-a-logical-design-to-a-vsphere-6x-physical-design&quot;&gt;Objective 3.1 – Transition from a Logical Design to a vSphere 6.x Physical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Analyze design decisions and options selected from the logical design&lt;/li&gt;
-  &lt;li&gt;Determine impact of VMware best practices to identified risks, constraints, and assumptions in a given vSphere design.&lt;/li&gt;
-  &lt;li&gt;Based on business requirements, determine the appropriate roles for each staff member.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Conceptual, Logical, Physical: It is Simple&lt;/li&gt;
-  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
-  &lt;li&gt;vSphere Virtual Machine Administration Guide&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-32--create-a-vsphere-6x-physical-network-design-from-an-existing-logical-design&quot;&gt;Objective 3.2 – Create a vSphere 6.x Physical Network Design from an Existing Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Analyze VLAN options with respect to virtual and physical switches.&lt;/li&gt;
-  &lt;li&gt;Given business requirements, determine the design for virtual network components:
-    &lt;ul&gt;
-      &lt;li&gt;STP&lt;/li&gt;
-      &lt;li&gt;Jumbo Frames&lt;/li&gt;
-      &lt;li&gt;Load-balancing&lt;/li&gt;
-      &lt;li&gt;Trunking and link aggregation groups&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Evaluate network redundancy considerations for a given design.&lt;/li&gt;
-  &lt;li&gt;Analyze design for inclusion of Network I/O Control capabilities.&lt;/li&gt;
-  &lt;li&gt;Determine use case for multiple TCP/IP stacks in a given design.&lt;/li&gt;
-  &lt;li&gt;Based on given functional requirements for each service:
-    &lt;ul&gt;
-      &lt;li&gt;Determine the most appropriate networking technologies for the design.&lt;/li&gt;
-      &lt;li&gt;Implement the service based on the required infrastructure qualities (AMPRS.)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Analyze design for appropriate network teaming and failover solution.&lt;/li&gt;
-  &lt;li&gt;Determine network security and firewall requirements for a virtual network design&lt;/li&gt;
-  &lt;li&gt;Based on service level requirements, determine appropriate network performance characteristics.&lt;/li&gt;
-  &lt;li&gt;Given a current network configuration as well as technical requirements and constraints, determine the appropriate virtual switch solution:
-    &lt;ul&gt;
-      &lt;li&gt;vSphere Standard Switch&lt;/li&gt;
-      &lt;li&gt;vSphere Distributed Switch&lt;/li&gt;
-      &lt;li&gt;NSX&lt;/li&gt;
-      &lt;li&gt;Hybrid solutions&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Based on an existing logical design, determine appropriate host networking resources.&lt;/li&gt;
-  &lt;li&gt;Properly apply converged networking considering VMware best practices.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
-  &lt;li&gt;vSphere Installation and Setup Guide - vSphere Networking Guide - Network Port Diagram for vSphere 6.x&lt;/li&gt;
-  &lt;li&gt;VMware Virtual SAN Network Design Guide&lt;/li&gt;
-  &lt;li&gt;Leveraging NIC Technology to Improve Network Performance in VMware vSphere&lt;/li&gt;
-  &lt;li&gt;Performance Evaluation of Network I/O Control in VMware vSphere 6&lt;/li&gt;
-  &lt;li&gt;vMotion Architecture, Performance and Best Practices in VMware vSphere 5&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-33--create-a-vsphere-6x-physical-storage-design-from-an-existing-logical-design&quot;&gt;Objective 3.3 – Create a vSphere 6.x Physical Storage Design from an Existing Logical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Evaluate criteria, capabilities and limitations between storage types (Block, NAS, Object Based)&lt;/li&gt;
-  &lt;li&gt;In a given design, determine Storage Policy availability and performance characteristics.&lt;/li&gt;
-  &lt;li&gt;Based on the logical design and given functional requirements, for each service:
-    &lt;ul&gt;
-      &lt;li&gt;Determine the most appropriate storage technologies for the design.&lt;/li&gt;
-      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Ensure storage array capabilities are supported in a vSphere 6.x design:
-    &lt;ul&gt;
-      &lt;li&gt;Active/Active, Active/Passive&lt;/li&gt;
-      &lt;li&gt;ALUA, VAAI, VASA&lt;/li&gt;
-      &lt;li&gt;PSA (including PSPs and SATPs)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Based on service level requirements include VMware technologies in the design, such as:
-    &lt;ul&gt;
-      &lt;li&gt;Storage I/O Control and Network I/O Control&lt;/li&gt;
-      &lt;li&gt;Storage Policies&lt;/li&gt;
-      &lt;li&gt;Storage vMotion&lt;/li&gt;
-      &lt;li&gt;Storage DRS&lt;/li&gt;
-      &lt;li&gt;Virtual SAN&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Given the functional requirements, size the storage for capacity, availability and performance, including:
-    &lt;ul&gt;
-      &lt;li&gt;Datastores, RDMs, Virtual Disks&lt;/li&gt;
-      &lt;li&gt;Physical Storage (LUNs, Storage Tiering)&lt;/li&gt;
-      &lt;li&gt;Based on the logical design, select and incorporate an appropriate storage network into the physical design:&lt;/li&gt;
-      &lt;li&gt;Block (FC, iSCSI, FCoE, SAS)&lt;/li&gt;
-      &lt;li&gt;NAS (NFSv3, NFSv4)&lt;/li&gt;
-      &lt;li&gt;Object Based (Virtual SAN, Virtual Volumes)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;What’s New: VMware Virtual SAN 6.0&lt;/li&gt;
-  &lt;li&gt;VMware Virtual SAN 6.0 Design and Sizing Guide&lt;/li&gt;
-  &lt;li&gt;VMware Virtual SAN Diagnostics and Troubleshooting Reference Manual&lt;/li&gt;
-  &lt;li&gt;The VMware Perspective on Software-Defined Storage&lt;/li&gt;
-  &lt;li&gt;vSphere Storage&lt;/li&gt;
-  &lt;li&gt;Resource Management Guide&lt;/li&gt;
-  &lt;li&gt;Virtual SAN TCO and Sizing Calculator&lt;/li&gt;
-  &lt;li&gt;What’s New: VMware vSphere Virtual Volumes&lt;/li&gt;
-  &lt;li&gt;vSphere Installation and Setup Guide&lt;/li&gt;
-  &lt;li&gt;VMware Virtual Machine File System: Technical Overview and Best Practices&lt;/li&gt;
-  &lt;li&gt;TechNote: Bootstrapping VSAN without vCenter&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-34--determine-appropriate-compute-resources-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.4 – Determine Appropriate Compute Resources for a vSphere 6.x Physical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Analyze best practices with respect to CPU family choices.&lt;/li&gt;
-  &lt;li&gt;Evaluate NUMA and vNUMA with ESXi hosts and Virtual machines in a given design.&lt;/li&gt;
-  &lt;li&gt;Analyze the following in a vSphere design:
-    &lt;ul&gt;
-      &lt;li&gt;Enhanced vMotion compatibility&lt;/li&gt;
-      &lt;li&gt;Implications of vSMP in virtual machines&lt;/li&gt;
-      &lt;li&gt;Transparent Page Sharing (TPS) and large pages&lt;/li&gt;
-      &lt;li&gt;Resource overcommitment&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Based on the service catalog and given functional requirements:
-    &lt;ul&gt;
-      &lt;li&gt;Determine the most appropriate compute technologies for the design.&lt;/li&gt;
-      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Determine the impact of a technical design on the choice of server density:
-    &lt;ul&gt;
-      &lt;li&gt;Scale Up/Out&lt;/li&gt;
-      &lt;li&gt;Auto Deploy&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Calculate the required number of nodes in an HA cluster based upon host failures and resource guarantees.&lt;/li&gt;
-  &lt;li&gt;Evaluate the implications of using reservations, limits, and shares on the physical design.&lt;/li&gt;
-  &lt;li&gt;Specify the resource pool and vApp configuration based upon resource requirements.&lt;/li&gt;
-  &lt;li&gt;Size the following resources appropriately:
-    &lt;ul&gt;
-      &lt;li&gt;Memory&lt;/li&gt;
-      &lt;li&gt;CPU&lt;/li&gt;
-      &lt;li&gt;I/O devices&lt;/li&gt;
-      &lt;li&gt;Internal storage&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Given a constraint to use existing hardware, determine suitability of the hardware for the design.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vSphere Server and Host Management Guide&lt;/li&gt;
-  &lt;li&gt;What’s New in the VMware vSphere® 6.0 Platform&lt;/li&gt;
-  &lt;li&gt;vSphere Installation and Setup Guide&lt;/li&gt;
-  &lt;li&gt;vSphere Resource Management Guide&lt;/li&gt;
-  &lt;li&gt;Performance Best Practices for VMware vSphere 6.0&lt;/li&gt;
-  &lt;li&gt;VMware vCenter Server Performance and Best Practices&lt;/li&gt;
-  &lt;li&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/li&gt;
-  &lt;li&gt;Performance Characterization of Microsoft SQL Server on VMware vSphere 6&lt;/li&gt;
-  &lt;li&gt;Microsoft Exchange 2013 on VMware Best Practices Guide - vSphere Monitoring and Performance Guide&lt;/li&gt;
-  &lt;li&gt;Interpreting esxtop statistics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-35--determine-virtual-machine-configuration-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.5 – Determine Virtual Machine Configuration for a vSphere 6.x Physical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Analyze the use of an RDM or a virtual disk for a given VM.&lt;/li&gt;
-  &lt;li&gt;Evaluate Virtual Machine memory management techniques (ballooning, compression, swapping) in a given vSphere design.&lt;/li&gt;
-  &lt;li&gt;Based on business requirements, determine the design significance of VM Swap location.&lt;/li&gt;
-  &lt;li&gt;Determine the latency sensitivity requirements of a given virtual machine workload.&lt;/li&gt;
-  &lt;li&gt;Evaluate virtual machine features based on the logical, functional and application requirements.&lt;/li&gt;
-  &lt;li&gt;Use VMware best practices to size virtual machines according to application requirements.&lt;/li&gt;
-  &lt;li&gt;Determine if reservations, shares, and limits are necessary.&lt;/li&gt;
-  &lt;li&gt;Based on an existing logical design, determine virtual hardware options.&lt;/li&gt;
-  &lt;li&gt;Build a Content Library of appropriate virtual machine offerings (e.g. templates, OVFs, ISOs.)&lt;/li&gt;
-  &lt;li&gt;Determine appropriate use cases for vApps.&lt;/li&gt;
-  &lt;li&gt;Evaluate the suitability of using VMware FT or 3rd party clustering products (e.g. Microsoft Clustering, etc.) based on application requirements.&lt;/li&gt;
-  &lt;li&gt;Determine the impact of scheduled guest activities (e.g. anti-virus, backup, etc) to the design.&lt;/li&gt;
-  &lt;li&gt;Evaluate vFlash read cache requirements in a given design.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Virtual Machine Administration Guide&lt;/li&gt;
-  &lt;li&gt;Best Practices for Performance Tuning of Latency-Sensitive Workloads in vSphere VMs&lt;/li&gt;
-  &lt;li&gt;Virtualizing a Windows Active Directory Domain Infrastructure&lt;/li&gt;
-  &lt;li&gt;Guest Operating System Installation Guide&lt;/li&gt;
-  &lt;li&gt;vSphere Resource Management Guide&lt;/li&gt;
-  &lt;li&gt;Understanding Memory Management in VMware vSphere 6.0&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;objective-36--determine-data-center-management-options-for-a-vsphere-6x-physical-design&quot;&gt;Objective 3.6 – Determine Data Center Management Options for a vSphere 6.x Physical Design&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Skills and Abilities&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Based on business requirements, determine client access options in a vSphere solution.&lt;/li&gt;
-  &lt;li&gt;Analyze business requirements when integrating vSphere with other VMware solutions.&lt;/li&gt;
-  &lt;li&gt;Evaluate the impact of the VMware Certificate Authority and the VMware Endpoint Certificate Store to the design.&lt;/li&gt;
-  &lt;li&gt;Based on the logical design and given functional requirements:
-    &lt;ul&gt;
-      &lt;li&gt;Determine the most appropriate datacenter management options for the design.&lt;/li&gt;
-      &lt;li&gt;Implement the service based on the required infrastructure qualities.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Analyze cluster requirements:
-    &lt;ul&gt;
-      &lt;li&gt;Availability requirements for HA and FT&lt;/li&gt;
-      &lt;li&gt;Performance requirements for DRS and vMotion&lt;/li&gt;
-      &lt;li&gt;Storage performance requirements for SDRS and Storage vMotion&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Determine appropriate vCenter Server design and sizing requirements:
-    &lt;ul&gt;
-      &lt;li&gt;vCenter Server Enhanced Linked Mode&lt;/li&gt;
-      &lt;li&gt;vCenter Server virtual appliance vs vCenter Server for Windows&lt;/li&gt;
-      &lt;li&gt;Platform Services Controller&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Evaluate access control methodologies for creating roles and assignment of users to roles.&lt;/li&gt;
-  &lt;li&gt;Determine proper structure for access control settings (i.e. folders, resource pools, etc.)&lt;/li&gt;
-  &lt;li&gt;Develop appropriate host and virtual machine deployment options.&lt;/li&gt;
-  &lt;li&gt;Include in the design appropriate technologies for:
-    &lt;ul&gt;
-      &lt;li&gt;Asset management&lt;/li&gt;
-      &lt;li&gt;Event, incident and problem management&lt;/li&gt;
-      &lt;li&gt;Logging, monitoring and reporting&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tools&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vSphere Monitoring and Performance Guide&lt;/li&gt;
-  &lt;li&gt;VMware vCenter Server 6.0 Availability Guide&lt;/li&gt;
-  &lt;li&gt;vCenter Server and Host Management Guide&lt;/li&gt;
-  &lt;li&gt;VMware vCenter Update Manager 6.0 Performance and Best Practices&lt;/li&gt;
-  &lt;li&gt;vCenter Server Deployment Guide&lt;/li&gt;
-  &lt;li&gt;VMware Interoperability Matrix&lt;/li&gt;
-  &lt;li&gt;VMware Proactive Incident Whitepaper&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/certification/vcap6-design-beta-study-guide/&quot;&gt;VCAP6-Design Beta Study Guide&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on December 17, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using UCS PowerTool To Configure UCS Policy Backup and Export]]></title>
-  <link rel="alternate" type="text/html" href="http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
-  <id>http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export</id>
-  <published>2015-12-11T00:00:00-05:00</published>
-  <updated>2015-12-11T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri>http://davidstamen.com</uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSPolicyBackupandExport.ps1&quot;&gt;Set-UCSPolicyBackupandExport.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$UCS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;FQDNofUCS&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#FQDN of UCS To COnnect To&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Hostname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ucs.lab.local&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Hostname to Upload backup to.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;scp&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Transfer Protocol. ftp,scp,tftp,sftp&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$User&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ftpuser&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Username&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ftpuser&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Password&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$MgmtBackupRemoteFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Full&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Location/Prefix of File. Location/Prefix will be in front of filename&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ConfigBackupRemoteFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;AllConfig&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Location/Prefix of File. Location/Prefix will be in front of filename&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;enable&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#enable or disable&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Schedule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1day&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#1day, 7day, 14day for daily, weekly or biweekly backups&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\Set-UCSPolicyBackupandExport.ps1&lt;/li&gt;
-  &lt;li&gt;Logon and UCSM, Navigate to Admin/All and Then select the Policy Backup &amp;amp; Export.
-    &lt;ul&gt;
-      &lt;li&gt;Verify Settings.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ucspolicybackup.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup--export-on-cisco-ucs&quot;&gt;&lt;strong&gt;&lt;em&gt;Hope this helps anyone else out wanted to automate policy backup &amp;amp; export on Cisco UCS.&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://davidstamen.com/cisco/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/&quot;&gt;Using UCS PowerTool To Configure UCS Policy Backup and Export&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;http://davidstamen.com&quot;&gt;davidstamen.com&lt;/a&gt; on December 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 
