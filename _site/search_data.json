@@ -1,6 +1,15 @@
 {
   
 
+    "uniquiti-installing-ubiquiti-unifi-controller": {
+      "title": "Installing Ubiquiti Unifi Controller",
+      "url": " /uniquiti/installing-ubiquiti-unifi-controller/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "vmware-vsphere-65-vcha-issues": {
       "title": "vSphere 6.5 - vCenter HA (VCHA) Issues",
       "url": " /vmware/vsphere-65-vcha-issues/",

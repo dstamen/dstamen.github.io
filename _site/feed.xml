@@ -4,13 +4,60 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-11-21T17:33:55-05:00</updated>
+<updated>2016-12-28T13:11:01-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Installing Ubiquiti Unifi Controller]]></title>
+  <link rel="alternate" type="text/html" href="/uniquiti/installing-ubiquiti-unifi-controller/" />
+  <id>/uniquiti/installing-ubiquiti-unifi-controller</id>
+  <published>2016-12-02T00:00:00-05:00</published>
+  <updated>2016-12-02T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been using Ubiquiti equipment for awhile at home and I figured i would finally write a blog post about it. Ubiquiti equipment is “enterprise class” equipment for the consumer.&lt;/p&gt;
+
+&lt;p&gt;I figured I would create a post that goes over two ways of loading the controller. The first option will be installing it on Ubuntu on bare metal or a VM, the second option is a docker container.&lt;/p&gt;
+
+&lt;p&gt;If you are installing this on a bare metal or virtual machine, i suggest a debian based image. My preference is Ubuntu.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti&quot; &amp;gt; \
+  /etc/apt/sources.list.d/20ubiquiti.list &amp;amp;&amp;amp; \
+  echo &quot;deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen&quot; &amp;gt; \
+  /etc/apt/sources.list.d/21mongodb.list &amp;amp;&amp;amp; \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50 &amp;amp;&amp;amp; \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+
+apt-get -q update &amp;amp;&amp;amp; \
+  apt-get install -qy --force-yes --no-install-recommends unifi &amp;amp;&amp;amp; \
+  apt-get -q clean &amp;amp;&amp;amp; \
+  rm -rf /var/lib/apt/lists/*
+
+service unifi start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once that completes you can access the controller at https://iporfqdn:8443&lt;/p&gt;
+
+&lt;p&gt;A second option is to use a docker container. I built an image through some testing that is hosted on dockerhub &lt;a href=&quot;https://hub.docker.com/r/dstamen/unifi/&quot;&gt;dstamen/unifi&lt;/a&gt;. It works and there are plenty of images out there. It is based on the following &lt;a href=&quot;https://github.com/dstamen/unifi/blob/master/Dockerfile&quot;&gt;dockerfile&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A few other containers to review that are highly recommended are &lt;a href=&quot;https://hub.docker.com/r/linuxserver/unifi/&quot;&gt;linuxserver/unifi&lt;/a&gt; and &lt;a href=&quot;https://hub.docker.com/r/jacobalberty/unifi/&quot;&gt;jacobalberty/unifi&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope this helps you on our way to getting your controller online.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/uniquiti/installing-ubiquiti-unifi-controller/&quot;&gt;Installing Ubiquiti Unifi Controller&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1670,60 +1717,6 @@ Disconnect-VIServer &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; -Forc
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-equipment-labels/&quot;&gt;Using UCS PowerTool To Set Equipment Labels&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 15, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using UCS PowerTool To Generate Tech Supports]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-generate-tech-supports/" />
-  <id>/cisco/using-ucs-powertool-to-generate-tech-supports</id>
-  <published>2016-01-14T00:00:00-05:00</published>
-  <updated>2016-01-14T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1&quot;&gt;Create-UCSTechSupport.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ucs01.lab.local&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;ucs02.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$fileloc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;avid&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;esktop&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\l&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ogs&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
-
-#Cycles through each UCS creating a tech support for each chassis.
-Foreach (&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; in &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;) {
-Connect-UCS &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -Credential &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Chassis&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = Get-UCSChassis
-  Foreach (&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; in &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;) {
-    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$id&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$chassis&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.id
-    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; = &quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fileloc$ucs&lt;/span&gt;-techsupp-chassis-&lt;span class=&quot;nv&quot;&gt;$id&lt;/span&gt;.tar&lt;span class=&quot;s2&quot;&gt;&quot;
-    Get-UcsTechSupport -PathPattern &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -RemoveFromUcs -TimeoutSec 600 -ChassisId &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$id&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -CIMC &#39;all&#39;
-  }
-Disconnect-UCS
-}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\Create-UCSTechSupport.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-generate-tech-supports/&quot;&gt;Using UCS PowerTool To Generate Tech Supports&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 14, 2016.&lt;/p&gt;
   </content>
 </entry>
 
