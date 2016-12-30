@@ -7,8 +7,7 @@ comments: true
 ---
 So VMware Flings have been on a roll recently. They have released what they call "VMware Content Library Assistant." This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
 
-You can find the fling at the following URL.... 
-[VMware Content Library Assistant](https://labs.vmware.com/flings/vsphere-content-library-assistant)
+You can find the fling at the following URL....[https://labs.vmware.com/flings/vsphere-content-library-assistant)](https://labs.vmware.com/flings/vsphere-content-library-assistant)
 
 Once you download the fling, you can just run the following command.
 
