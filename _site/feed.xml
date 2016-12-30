@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-12-29T20:41:09-05:00</updated>
+<updated>2016-12-29T20:48:24-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
@@ -26,6 +26,9 @@
   </author>
   <content type="html">
     &lt;p&gt;So VMware Flings have been on a roll recently. They have released what they call “VMware Content Library Assistant.” This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.&lt;/p&gt;
+
+&lt;p&gt;You can find the fling at the following URL…. 
+&lt;a href=&quot;https://labs.vmware.com/flings/vsphere-content-library-assistant&quot;&gt;VMware Content Library Assistant&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you download the fling, you can just run the following command.&lt;/p&gt;
 
