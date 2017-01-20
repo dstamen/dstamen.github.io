@@ -4,13 +4,65 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-12-29T20:48:43-05:00</updated>
+<updated>2017-01-19T20:32:33-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Functional Branding of vSphere Web Client Logon Page]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/functional-branding-of-vsphere-web-client-logon-page/" />
+  <id>/vmware/functional-branding-of-vsphere-web-client-logon-page</id>
+  <published>2017-01-19T00:00:00-05:00</published>
+  <updated>2017-01-19T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.&lt;/p&gt;
+
+&lt;p&gt;As people have noted before &lt;a href=&quot;http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html&quot;&gt;William Lam’s - How to Customize Webclient Login UI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node. In my case I updated the text to show which node you are connected to. You can see this without even logging in!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webclientbranding.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How can I do this you ask? Easy! You just need to update one file, two if you would like to update your logo…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Logon to your PSC or VC with Embedded PSC via SSH or FTP.&lt;/li&gt;
+  &lt;li&gt;Update the following file &lt;strong&gt;/usr/lib/vmware-sso/vmware-sts/webapps/websso/WEB-INF/views/unpentry.jsp&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If you look at lines 126-131, you can see a few lines of code you will need to update.&lt;/li&gt;
+      &lt;li&gt;Line 127 - You can input your text here, my example was to post if i was connected to Primary or Secondary.&lt;/li&gt;
+      &lt;li&gt;Line 130 - I commented out to hide the “VMware vCenter Single Sign-on” logo.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Save and Upload your file and refresh your webclient UI and you will see your new branding!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is a snippet of my code.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;div id=&quot;productName&quot;&amp;gt;
+  Welcome to my Homelab!&amp;lt;/br&amp;gt;&amp;lt;h6&amp;gt;Connected to Primary Appliance (vcsa6-01.lab.local)&amp;lt;/h6&amp;gt;&amp;lt;/br&amp;gt;
+    &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
+      if (isVCLogin()) {
+        //document.write(&quot;&amp;lt;img id=\&quot;VCSSO-Title\&quot; src=\&quot;../../resources/img/VCSSO-title.png\&quot; /&amp;gt;&quot;);
+      }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Please note this is #unsupported, but extremely useful! Hope you enjoy it. Leave a comment if you have any questions.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/functional-branding-of-vsphere-web-client-logon-page/&quot;&gt;Functional Branding of vSphere Web Client Logon Page&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 19, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -27,7 +79,7 @@
   <content type="html">
     &lt;p&gt;So VMware Flings have been on a roll recently. They have released what they call “VMware Content Library Assistant.” This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.&lt;/p&gt;
 
-&lt;p&gt;You can find the fling at the following URL….&lt;a href=&quot;https://labs.vmware.com/flings/vsphere-content-library-assistant&quot;&gt;https://labs.vmware.com/flings/vsphere-content-library-assistant)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the fling at the following URL…&lt;a href=&quot;https://labs.vmware.com/flings/vsphere-content-library-assistant&quot;&gt;https://labs.vmware.com/flings/vsphere-content-library-assistant)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you download the fling, you can just run the following command.&lt;/p&gt;
 
@@ -1691,84 +1743,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-software-in-a-guest-vm/&quot;&gt;Using PowerCLI to Install Software in a Guest VM&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 29, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using PowerCLI to Replicate Templates to Multiple Clusters]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/" />
-  <id>/powercli/using-powercli-to-replicate-templates-to-multiple-clusters</id>
-  <published>2016-01-26T00:00:00-05:00</published>
-  <updated>2016-01-26T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.&lt;/p&gt;
-
-&lt;p&gt;I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script. I am hoping when that is available, I will update this post.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/CloneTemplateToClusters.ps1&quot;&gt;CloneTemplateToClusters.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Import PowerCLI Module&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Add-PSSnapin &lt;/span&gt;VMware.VimAutomation.Core
-
-&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Credential&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;vcenter.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$clusters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Cluster01&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;Cluster02&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Templates&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$templates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Template1&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;Template2&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#Connect to vCenter&lt;/span&gt;
-Connect-VIServer &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; -Credential &lt;span class=&quot;nv&quot;&gt;$Credential&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$templates&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$clusters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Check if Template exists&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Get-Template &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -ErrorAction Stop;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Create VM&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; -eq &lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;#Remove Old Template&lt;/span&gt;
-        Get-Template -Name &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; |Remove-Template -DeletePermanently -Confirm:&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;#Clone the Template&lt;/span&gt;
-        New-VM -Name &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -Template &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; -ResourcePool &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -Datastore &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt;-DSC -Location &lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;#Convert to Template&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-VM -VM &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -ToTemplate -Confirm:&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;ElseIf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TemplateExists&lt;/span&gt; -eq &lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;#Clone the Template&lt;/span&gt;
-        New-VM -Name &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -Template &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt; -ResourcePool &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -Datastore &lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt;-DSC -Location &lt;span class=&quot;nv&quot;&gt;$location&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;#Convert to Template&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-VM -VM &lt;span class=&quot;nv&quot;&gt;$template&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$cluster&lt;/span&gt; -ToTemplate -Confirm:&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#Disconnect from vCenter&lt;/span&gt;
-Disconnect-VIServer &lt;span class=&quot;nv&quot;&gt;$vCenter&lt;/span&gt; -Force -Confirm:&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\CloneTemplateToClusters.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-replicate-templates-to-multiple-clusters/&quot;&gt;Using PowerCLI to Replicate Templates to Multiple Clusters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
