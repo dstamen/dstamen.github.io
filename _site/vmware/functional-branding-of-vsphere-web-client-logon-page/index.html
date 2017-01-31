@@ -173,11 +173,17 @@
 
 <ul>
   <li>Logon to your PSC or VC with Embedded PSC via SSH or FTP.</li>
+  <li>Make sure to backup the files before making any changes!</li>
   <li>Update the following file <strong>/usr/lib/vmware-sso/vmware-sts/webapps/websso/WEB-INF/views/unpentry.jsp</strong>
     <ul>
       <li>If you look at lines 126-131, you can see a few lines of code you will need to update.</li>
       <li>Line 127 - You can input your text here, my example was to post if i was connected to Primary or Secondary.</li>
       <li>Line 130 - I commented out to hide the “VMware vCenter Single Sign-on” logo.</li>
+    </ul>
+  </li>
+  <li>To update your logo, you can overwrite the following file <strong>/usr/lib/vmware-sso/vmware-sts/webapps/websso/resources/img/vmwareLogoBigger.png</strong>
+    <ul>
+      <li>You may need to adjust your logo size for the right look</li>
     </ul>
   </li>
   <li>Save and Upload your file and refresh your webclient UI and you will see your new branding!</li>
@@ -234,11 +240,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/powerdns/exporting-powerdns-zones-to-bind-files/" title="Exporting PowerDNS Zones to Bind Files">Exporting PowerDNS Zones to Bind Files</a></li>
+    
       <li><a href="/vmware/using-the-vmware-content-libray-assistant-fling/" title="Using the VMware Content Libray Assistant Fling">Using the VMware Content Libray Assistant Fling</a></li>
     
       <li><a href="/uniquiti/installing-ubiquiti-unifi-controller/" title="Installing Ubiquiti Unifi Controller">Installing Ubiquiti Unifi Controller</a></li>
-    
-      <li><a href="/vmware/vsphere-65-vcha-issues/" title="vSphere 6.5 - vCenter HA (VCHA) Issues">vSphere 6.5 - vCenter HA (VCHA) Issues</a></li>
     
     </ul>
     <hr />

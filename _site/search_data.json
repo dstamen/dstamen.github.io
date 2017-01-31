@@ -1,6 +1,15 @@
 {
   
 
+    "powerdns-exporting-powerdns-zones-to-bind-files": {
+      "title": "Exporting PowerDNS Zones to Bind Files",
+      "url": " /powerdns/exporting-powerdns-zones-to-bind-files/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "vmware-functional-branding-of-vsphere-web-client-logon-page": {
       "title": "Functional Branding of vSphere Web Client Logon Page",
       "url": " /vmware/functional-branding-of-vsphere-web-client-logon-page/",

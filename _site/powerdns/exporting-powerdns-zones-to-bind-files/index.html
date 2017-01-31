@@ -1,0 +1,378 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Exporting PowerDNS Zones to Bind Files &#8211; davidstamen.com</title>
+<meta name="description" content="Can you easily export PowerDNS zones using a MySQL DB? The answer may not be as easy as it seems.
+
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Exporting PowerDNS Zones to Bind Files">
+<meta name="twitter:description" content="Can you easily export PowerDNS zones using a MySQL DB? The answer may not be as easy as it seems.
+
+">
+<meta name="twitter:site" content="@davidstamen">
+<meta name="twitter:creator" content="@davidstamen">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exporting PowerDNS Zones to Bind Files">
+<meta property="og:description" content="Can you easily export PowerDNS zones using a MySQL DB? The answer may not be as easy as it seems.
+
+">
+<meta property="og:url" content="/powerdns/exporting-powerdns-zones-to-bind-files/">
+<meta property="og:site_name" content="davidstamen.com">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+
+<link rel="canonical" href="/powerdns/exporting-powerdns-zones-to-bind-files/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons-->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/images//apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images//apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images//apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images//apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images//apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images//apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images//apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images//apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon-180x180.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">davidstamen.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/categories/" >Categories</a></li>
+				
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="/resources/" >Resources</a></li>
+				
+				    
+				    <li><a href="/acclaim/" >Acclaim</a></li>
+				
+				    
+				    <li><a href="/search/" >Search</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/me.jpeg" class="bio-photo" alt="David Stamen bio photo">
+
+  <h4 itemprop="name">David Stamen</h4>
+  <p>Senior Virtualization Engineer
+  <br><br>VCAP-DCA | MCSA | VMware vExpert | Cisco Champion | PernixPro
+</p>
+  <a href="mailto:dstamen@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/davidstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dstamen" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/powerdns/exporting-powerdns-zones-to-bind-files/" rel="bookmark" title="Exporting PowerDNS Zones to Bind Files">Exporting PowerDNS Zones to Bind Files</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Can you easily export PowerDNS zones using a MySQL DB? The answer may not be as easy as it seems.</p>
+
+<p>I have been working on a Migration from PowerDNS using a MySQL DB. We have a custom solution which gets updated and gets pushed to Akamai. The problem is, this custom solution requires all the zones to be in bind format. Doing some research I found out there is no easy way to get these zones into a bind zone file. You could setup a secondary server and do zone transfers, but that wouldnt meet my requirements.</p>
+
+<p>Luckily I stumbled across this post by <a href="http://jameslinden.com/code/powerdns-to-bind-zone/">James Linden</a> in which he created a PHP script that scrapes the entire database and then generates a bind file for each zone with the records.</p>
+
+<p>It is actually a pretty easy script to run, you need to fill in about 5 variables and then you are good to execute it. Here is a copy of the script in case it is no longer available. (It was created in 2013, but still works flawlessly!)</p>
+
+<p>All you need to do is update the 3 lines, to put in the MySQL DB IP, the username, password and database name. You will then enter in the nameservers and hostmaster to be used for the bind files.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#!/bin/env php
+<span class="cp">&lt;?php</span>
+
+<span class="sd">/**
+ * @copyright 2013 James Linden &lt;kodekrash@gmail.com&gt;
+ * @author James Linden &lt;kodekrash@gmail.com&gt;
+ * @url http://jameslinden.com/code/powerdns-to-bind-zone
+ * @license BSD (2 clause) &lt;http://www.opensource.org/licenses/BSD-2-Clause&gt;
+ */</span>
+
+<span class="nv">$pdns_db</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span> <span class="s1">'user'</span> <span class="o">=&gt;</span> <span class="s1">'root'</span><span class="p">,</span> <span class="s1">'pass'</span> <span class="o">=&gt;</span> <span class="s1">'powerdns'</span><span class="p">,</span> <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'powerdns'</span> <span class="p">];</span>
+<span class="nv">$zone_ns</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'ns1.lab.local'</span><span class="p">,</span> <span class="s1">'ns2.lab.local'</span> <span class="p">];</span>
+<span class="nv">$zone_adm</span> <span class="o">=</span> <span class="s1">'support.lab.local'</span><span class="p">;</span>
+
+<span class="nv">$zones</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span> <span class="nv">$pdns_db</span><span class="p">[</span><span class="s1">'host'</span><span class="p">],</span> <span class="nv">$pdns_db</span><span class="p">[</span><span class="s1">'user'</span><span class="p">],</span> <span class="nv">$pdns_db</span><span class="p">[</span><span class="s1">'pass'</span><span class="p">],</span> <span class="nv">$pdns_db</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="nv">$q</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span> <span class="s1">'SELECT * FROM domains'</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="k">while</span><span class="p">(</span> <span class="nv">$r</span> <span class="o">=</span> <span class="nv">$q</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$d</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span> <span class="nv">$q1</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span> <span class="s1">'SELECT * FROM records WHERE domain_id='</span> <span class="o">.</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+			<span class="nv">$x</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'A'</span> <span class="o">=&gt;</span> <span class="p">[],</span> <span class="s1">'CNAME'</span> <span class="o">=&gt;</span> <span class="p">[],</span> <span class="s1">'NS'</span> <span class="o">=&gt;</span> <span class="p">[],</span> <span class="s1">'MX'</span> <span class="o">=&gt;</span> <span class="p">[],</span> <span class="s1">'TXT'</span> <span class="o">=&gt;</span> <span class="p">[]</span> <span class="p">];</span>
+			<span class="k">while</span><span class="p">(</span> <span class="nv">$r1</span> <span class="o">=</span> <span class="nv">$q1</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$r1</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="p">);</span>
+				<span class="k">switch</span><span class="p">(</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+					<span class="k">case</span> <span class="s1">'A'</span><span class="o">:</span>
+						<span class="nv">$x</span><span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">][]</span> <span class="o">=</span> <span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span> <span class="p">];</span>
+					<span class="k">break</span><span class="p">;</span>
+					<span class="k">case</span> <span class="s1">'CNAME'</span><span class="o">:</span>
+						<span class="nv">$x</span><span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">][]</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">trim</span><span class="p">(</span> <span class="nb">str_replace</span><span class="p">(</span> <span class="nv">$d</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="p">),</span> <span class="s1">'.'</span> <span class="p">),</span> <span class="nb">strtolower</span><span class="p">(</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span> <span class="p">)</span> <span class="p">];</span>
+					<span class="k">break</span><span class="p">;</span>
+					<span class="k">case</span> <span class="s1">'NS'</span><span class="o">:</span>
+						<span class="nv">$x</span><span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">][]</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span> <span class="p">);</span>
+					<span class="k">break</span><span class="p">;</span>
+					<span class="k">case</span> <span class="s1">'MX'</span><span class="o">:</span>
+						<span class="nv">$x</span><span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">][]</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$r1</span><span class="p">[</span><span class="s1">'prio'</span><span class="p">],</span> <span class="nb">strtolower</span><span class="p">(</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span> <span class="p">)</span> <span class="p">];</span>
+					<span class="k">break</span><span class="p">;</span>
+					<span class="k">case</span> <span class="s1">'TXT'</span><span class="o">:</span>
+						<span class="nv">$x</span><span class="p">[</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="p">][]</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">trim</span><span class="p">(</span> <span class="nb">str_replace</span><span class="p">(</span> <span class="nv">$d</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="p">),</span> <span class="s1">'.'</span> <span class="p">),</span> <span class="nv">$r1</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span> <span class="p">];</span>
+					<span class="k">break</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="nv">$q1</span><span class="o">-&gt;</span><span class="na">free</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="nv">$zones</span><span class="p">[</span> <span class="nv">$d</span> <span class="p">]</span> <span class="o">=</span> <span class="nv">$x</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nv">$q</span><span class="o">-&gt;</span><span class="na">free</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">is_array</span><span class="p">(</span> <span class="nv">$zones</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">count</span><span class="p">(</span> <span class="nv">$zones</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$p</span> <span class="o">=</span> <span class="s1">'./tmp/'</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="nb">is_dir</span><span class="p">(</span> <span class="nv">$p</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="nb">mkdir</span><span class="p">(</span> <span class="nv">$p</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+			<span class="k">die</span><span class="p">(</span> <span class="s1">'Unable to make tmp directory'</span> <span class="o">.</span> <span class="nx">PHP_EOL</span> <span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">count</span><span class="p">(</span> <span class="nv">$zones</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+		<span class="k">foreach</span><span class="p">(</span> <span class="nv">$zones</span> <span class="k">as</span> <span class="nv">$d</span> <span class="o">=&gt;</span> <span class="nv">$r</span> <span class="p">)</span> <span class="p">{</span>
+			<span class="nv">$x</span> <span class="o">=</span> <span class="s1">'             '</span><span class="p">;</span>
+			<span class="nv">$t</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'$TTL 43200'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">'@ IN SOA '</span> <span class="o">.</span> <span class="nv">$zone_ns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'. '</span> <span class="o">.</span> <span class="nv">$zone_adm</span> <span class="o">.</span> <span class="s1">'. ('</span><span class="p">,</span> <span class="nv">$x</span> <span class="o">.</span> <span class="nb">time</span><span class="p">(),</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s1">'7200'</span><span class="p">,</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s1">'3600'</span><span class="p">,</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s1">'604800'</span><span class="p">,</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s1">'43200 )'</span><span class="p">,</span> <span class="kc">null</span> <span class="p">];</span>
+			<span class="k">foreach</span><span class="p">(</span> <span class="nv">$zone_ns</span> <span class="k">as</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'  IN NS      '</span> <span class="o">.</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s1">'.'</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+			<span class="k">foreach</span><span class="p">(</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'MX'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'  IN MX '</span> <span class="o">.</span> <span class="nb">str_pad</span><span class="p">(</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="nx">STR_PAD_RIGHT</span> <span class="p">)</span> <span class="o">.</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="p">(</span> <span class="nb">is_numeric</span><span class="p">(</span> <span class="nb">substr</span><span class="p">(</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="s1">'.'</span> <span class="p">);</span>
+			<span class="p">}</span>
+			<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+			<span class="k">foreach</span><span class="p">(</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'.'</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="nx">STR_PAD_RIGHT</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'  IN A '</span> <span class="o">.</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+			<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+			<span class="k">foreach</span><span class="p">(</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'CNAME'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="nx">STR_PAD_RIGHT</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'  IN CNAME '</span> <span class="o">.</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'.'</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+			<span class="k">foreach</span><span class="p">(</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">'TXT'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+				<span class="nv">$t</span><span class="p">[]</span> <span class="o">=</span> <span class="nb">str_pad</span><span class="p">(</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="nx">STR_PAD_RIGHT</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'  IN TXT '</span> <span class="o">.</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+			<span class="nb">file_put_contents</span><span class="p">(</span> <span class="nv">$p</span> <span class="o">.</span> <span class="nv">$d</span> <span class="o">.</span> <span class="s1">'.zone'</span><span class="p">,</span> <span class="nb">implode</span><span class="p">(</span> <span class="nx">PHP_EOL</span><span class="p">,</span> <span class="nv">$t</span> <span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span> <span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+</div>
+
+<p>Once you have populated the script, you can run it by going to a commandline that has MySQL tools and PHP installed and run</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>php scriptname.php
+</code></pre>
+</div>
+
+<p>This will create a <em>/tmp</em> folder in the same directory with an export of all your zones.</p>
+
+<p>Thats it! I just wanted to blog about this in case other people were looking for a way to accomplish this, its actually quite simple!</p>
+
+<p>Thanks for stopping by.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url=/powerdns/exporting-powerdns-zones-to-bind-files/&text=Exporting PowerDNS Zones to Bind Files&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/powerdns/exporting-powerdns-zones-to-bind-files/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/powerdns/exporting-powerdns-zones-to-bind-files/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/powerdns/exporting-powerdns-zones-to-bind-files/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+    </li>
+    <li>
+      <a href="http://www.reddit.com/submit?url=/powerdns/exporting-powerdns-zones-to-bind-files/&title=Exporting PowerDNS Zones to Bind Files" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+
+        <p class="byline"><strong>Exporting PowerDNS Zones to Bind Files</strong> was published on <time datetime="2017-01-31T00:00:00-05:00">January 31, 2017</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/vmware/functional-branding-of-vsphere-web-client-logon-page/" title="Functional Branding of vSphere Web Client Logon Page">Functional Branding of vSphere Web Client Logon Page</a></li>
+    
+      <li><a href="/vmware/using-the-vmware-content-libray-assistant-fling/" title="Using the VMware Content Libray Assistant Fling">Using the VMware Content Libray Assistant Fling</a></li>
+    
+      <li><a href="/uniquiti/installing-ubiquiti-unifi-controller/" title="Installing Ubiquiti Unifi Controller">Installing Ubiquiti Unifi Controller</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2017 David Stamen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-67336507-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidstamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</body>
+</html>
