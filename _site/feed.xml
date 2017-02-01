@@ -4,13 +4,99 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-01-31T15:19:19-05:00</updated>
+<updated>2017-02-01T10:44:19-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[vCenter HA   Health Degraded due to Password Expiration]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/vcenter-ha-health-degraded-due-to-password-expiration/" />
+  <id>/vmware/vcenter-ha---health-degraded-due-to-password-expiration</id>
+  <published>2017-02-01T00:00:00-05:00</published>
+  <updated>2017-02-01T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;One of my favorite new features of vSphere 6.5 is definately vCenter HA. I was checking out alerts when I noticed i had an alarm for vCenter HA being degraded.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vchaerror1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking through the GUI, I was unable to find anything in regards to why the Health was a warning and why the components would not sync. Then I remembered a previous case I had opened for VCHA.&lt;/p&gt;
+
+&lt;p&gt;There is a log file located in &lt;strong&gt;&lt;em&gt;/var/log/vmware/vcha&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As soon as i opened up &lt;strong&gt;&lt;em&gt;vcha.log&lt;/em&gt;&lt;/strong&gt; the issue was plain and clear.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;--&amp;gt; VMware vCenter Server Appliance 6.5.0.5100
+--&amp;gt;
+--&amp;gt; Type: vCenter Server with an embedded Platform Services Controller
+--&amp;gt;
+--&amp;gt; WARNING: Your password has expired.
+--&amp;gt; Password change required but no TTY available.
+--&amp;gt; rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+--&amp;gt; rsync error: error in rsync protocol data stream (code 12) at io.c(226) [sender=3.1.2]
+--&amp;gt; ]
+2017-01-31T08:00:22.515-05:00 warning vcha[7F80E0818700] [Originator@6876 sub=RsyncRepl-largeFrp] Rsync failed for vmw, retrying in 2 secs
+2017-01-31T08:00:24.666-05:00 error vcha[7F80E0818700] [Originator@6876 sub=VchaUtil] Error executing command /usr/bin/rsync: exit status=[12], stdout=[], stderr=[
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My Password has expired! How is this possible? Lucky for me &lt;a href=&quot;https://haveyoutriedreinstalling.com/2017/01/16/caution-vcha-user-password/&quot;&gt;Féidhlim O’Leary&lt;/a&gt; has already encountered this issue, and opened up a support case. The problem is due to the vcha user password expiring, it’s quite a simple fix.&lt;/p&gt;
+
+&lt;p&gt;If you check the password age, you can see when the last password change is. This example my password has not expired yet, you can check the expiration date but running &lt;strong&gt;&lt;em&gt;chage –list vcha&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@vc [ ~ ]# chage --list vcha
+Last password change                                    : Jan 05, 2017
+Password expires                                        : Mar 06, 2017
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 1
+Maximum number of days between password change          : 60
+Number of days of warning before password expires       : 7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;If the password is already expired, you can reset it by typing&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;passwd vcha
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: You will need to do this on all 3 nodes. You can ssh to the peer and witness through the primary if you know those IP’s&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, we can set our password to not expire.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@vc [ ~ ]# chage -m 0 -M 99999 vcha
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If we recheck the password expiration, we can now see it is set to not expire.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@vc [ ~ ]# chage --list vcha
+Last password change                                    : Jan 05, 2017
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We will need to wait a few minutes for our replication cycles to complete, and voila! VCHA is now Healthy!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vchaerror1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/vcenter-ha-health-degraded-due-to-password-expiration/&quot;&gt;vCenter HA   Health Degraded due to Password Expiration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 01, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1766,33 +1852,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/ansible/cisco/using-ansible-to-create-cisco-aci-filters/&quot;&gt;Using Ansible to Create Cisco ACI Filters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Cisco Champion 2016]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/cisco-champion-2016/" />
-  <id>/cisco/cisco-champion-2016</id>
-  <published>2016-01-31T00:00:00-05:00</published>
-  <updated>2016-01-31T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I am honored to have been accepted once again as a Cisco Champion for 2016!&lt;/p&gt;
-
-&lt;p&gt;I had a bit of a gap in blog posts this past year due to a job change. However, look forward to more posts on Cisco UCS and maybe even some Cisco ACI.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/CiscoChampion.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I am a member of the Cisco Champions Program. Cisco Champions are passionate about Cisco and enjoy sharing our knowledge, expertise, and thoughts across the social web and with Cisco. I am not a representative of Cisco. My views as a Cisco Champion are my own.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.cisco.com/web/about/facts_info/champions.html&quot;&gt;Learn more information about the Cisco Champions program and related benefits.&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/cisco/cisco-champion-2016/&quot;&gt;Cisco Champion 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on January 31, 2016.&lt;/p&gt;
   </content>
 </entry>
 

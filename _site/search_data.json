@@ -1,6 +1,15 @@
 {
   
 
+    "vmware-vcenter-ha-health-degraded-due-to-password-expiration": {
+      "title": "vCenter HA   Health Degraded due to Password Expiration",
+      "url": " /vmware/vcenter-ha-health-degraded-due-to-password-expiration/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "powerdns-exporting-powerdns-zones-to-bind-files": {
       "title": "Exporting PowerDNS Zones to Bind Files",
       "url": " /powerdns/exporting-powerdns-zones-to-bind-files/",
