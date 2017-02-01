@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "vCenter HA   Health Degraded due to Password Expiration"
+title: "vCenter HA - Health Degraded due to Password Expiration"
 categories:
 - VMware
 comments: true
