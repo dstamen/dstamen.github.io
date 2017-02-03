@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-02-01T10:44:19-05:00</updated>
+<updated>2017-02-03T08:21:19-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
@@ -14,7 +14,274 @@
 
 
 <entry>
-  <title type="html"><![CDATA[vCenter HA   Health Degraded due to Password Expiration]]></title>
+  <title type="html"><![CDATA[vSphere 6.5 - Updating Appliance configured with vCenter HA]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/" />
+  <id>/vmware/vsphere-65---updating-appliance-configured-with-vcenter-ha</id>
+  <published>2017-02-03T00:00:00-05:00</published>
+  <updated>2017-02-03T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pubs.vmware.com/Release_Notes/en/vsphere/65/vsphere-vcenter-server-650a-release-notes.html&quot;&gt;vCenter Server 6.5a Release Notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pubs.vmware.com/Release_Notes/en/vsphere/65/vsphere-esxi-650a-release-notes.html&quot;&gt;ESXi Server 6.5a Release Notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find patch information here. https://kb.vmware.com/kb/2148330&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To download patch do not go to my.vmware.com, you need to navigate to the VMware Patch Download Center(https://my.vmware.com/group/vmware/patch) and select VC from the &lt;strong&gt;Search by Product&lt;/strong&gt; drop down, and then vSphere 6.5&lt;/li&gt;
+  &lt;li&gt;You will then download the VMware-vCenter-Server-Appliance-6.5.0.5200-4944578-patch-FP.iso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/v65up3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we have all the files we need, we can proceed with the actual upgrade.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Log into the vSphere webclient and put the vCenter HA into Maintenance Mode. Maintenance mode means replication still occurs but automatic failover is disabled.
+    &lt;ul&gt;
+      &lt;li&gt;Under Settings, select vCenter HA and click Edit.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Select Maintenance Mode and click OK.&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/images/v65up2.png&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;/images/v65up1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SSH as root to the appliance shell of the Active Node using the Public IP.
+    &lt;ul&gt;
+      &lt;li&gt;Note: Make sure you are not in &lt;em&gt;shell&lt;/em&gt; but in &lt;em&gt;appliancesh&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;While in SSH of the active node, SSH to the witness node IP.
+    &lt;ul&gt;
+      &lt;li&gt;Note: Make sure you are not in &lt;em&gt;shell&lt;/em&gt; but in &lt;em&gt;appliancesh&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will now stage the patches to the witness node.
+    &lt;ul&gt;
+      &lt;li&gt;You will need to attach the patch .ISO you downloaded previously, as you cannot update straight from the URL since the witness/passive do not have internet access.&lt;/li&gt;
+      &lt;li&gt;To stage the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages stage –iso –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages stage --iso --acceptEulas
+ [2017-02-03T07:44:01.034] : ISO mounted successfully
+ [2017-02-03T07:44:01.034] : Staged 34 packages.
+ [2017-02-03T07:44:01.034] : Verifying staging area
+ [2017-02-03T07:44:01.034] : ISO unmounted successfully
+ [2017-02-03T07:44:01.034] : Staging process completed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now install the staged patches to the witness node.
+    &lt;ul&gt;
+      &lt;li&gt;To install the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages install –staged –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages install --staged --acceptEulas
+ [2017-02-03T07:46:10.034] : Validating software update payload
+ [2017-02-03T07:46:10.034] : Validation successful
+ [2017-02-03 07:46:10,986] : Copying software packages  [2017-02-03T07:46:11.034] : ISO mounted successfully
+34/34
+ [2017-02-03T07:46:21.034] : ISO unmounted successfully
+ [2017-02-03 07:46:21,745] : Running test transaction ....
+ [2017-02-03 07:46:22,757] : Running pre-install script.....
+ [2017-02-03T07:46:24.034] : All VMware services are stopped.
+ [2017-02-03 07:46:24,977] : Upgrading software packages ....
+ [2017-02-03 07:47:01,087] : Running post-install script.....
+ [2017-02-03T07:47:02.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now reboot the witness node.
+    &lt;ul&gt;
+      &lt;li&gt;To reboot the witness node, while still in appliancesh run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;shutdown reboot -r “patch reboot”&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;While in SSH of the active node, SSH to the passive node IP.
+    &lt;ul&gt;
+      &lt;li&gt;Note: Make sure you are not in &lt;em&gt;shell&lt;/em&gt; but in &lt;em&gt;appliancesh&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will now stage the patches to the passive node.
+    &lt;ul&gt;
+      &lt;li&gt;You will need to attach the patch .ISO you downloaded previously, as you cannot update straight from the URL since the witness/passive do not have internet access.&lt;/li&gt;
+      &lt;li&gt;To stage the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages stage –iso –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages stage --iso --acceptEulas
+ [2017-02-03T12:56:34.034] : ISO mounted successfully
+ [2017-02-03T12:56:34.034] : Staged 34 packages.
+ [2017-02-03T12:56:34.034] : Verifying staging area
+ [2017-02-03T12:56:35.034] : ISO unmounted successfully
+ [2017-02-03T12:56:35.034] : Staging process completed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now install the staged patches to the passive node.
+    &lt;ul&gt;
+      &lt;li&gt;To install the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages install –staged –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages install --staged --acceptEulas
+ [2017-02-03T12:56:57.034] : Validating software update payload
+ [2017-02-03T12:56:57.034] : Validation successful
+ [2017-02-03 12:56:57,376] : Copying software packages  [2017-02-03T12:56:57.034] : ISO mounted successfully
+34/34
+ [2017-02-03T12:57:07.034] : ISO unmounted successfully
+ [2017-02-03 12:57:07,957] : Running test transaction ....
+ [2017-02-03 12:57:08,966] : Running pre-install script.....
+ [2017-02-03T12:57:10.034] : All VMware services are stopped.
+ [2017-02-03 12:57:10,684] : Upgrading software packages ....
+ [2017-02-03 12:57:34,750] : Running post-install script.....
+ [2017-02-03T12:57:36.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now reboot the passive node.
+    &lt;ul&gt;
+      &lt;li&gt;To reboot the passive node, while still in appliancesh run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;shutdown reboot -r “patch reboot”&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Once the witness and passive nodes are online we will do a manual failover of the cluster.
+    &lt;ul&gt;
+      &lt;li&gt;Log in to the vSphere Web Client select the vCenter and click Configure.&lt;/li&gt;
+      &lt;li&gt;Under Settings, select vCenter HA and click Initiate Failover.&lt;/li&gt;
+      &lt;li&gt;Click Yes to start the failover.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SSH as root to the appliance shell of the active node using the public IP.
+    &lt;ul&gt;
+      &lt;li&gt;Note: Make sure you are not in &lt;em&gt;shell&lt;/em&gt; but in &lt;em&gt;appliancesh&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;While in SSH of the active node, SSH to the new passive node IP.
+    &lt;ul&gt;
+      &lt;li&gt;Note: Make sure you are not in &lt;em&gt;shell&lt;/em&gt; but in &lt;em&gt;appliancesh&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will now stage the patches to the new passive node.
+    &lt;ul&gt;
+      &lt;li&gt;You will need to attach the patch .ISO you downloaded previously, as you cannot update straight from the URL since the witness/passive do not have internet access.&lt;/li&gt;
+      &lt;li&gt;To stage the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages stage –iso –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages stage --iso --acceptEulas
+ [2017-02-03T08:10:08.034] : ISO mounted successfully
+ [2017-02-03T08:10:09.034] : Staged 34 packages.
+ [2017-02-03T08:10:09.034] : Verifying staging area
+ [2017-02-03T08:10:09.034] : ISO unmounted successfully
+ [2017-02-03T08:10:09.034] : Staging process completed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now install the staged patches to the new passive node.
+    &lt;ul&gt;
+      &lt;li&gt;To install the patches run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;software-packages install –staged –acceptEulas&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Command&amp;gt; software-packages install --staged --acceptEulas
+ [2017-02-03T08:10:27.034] : Validating software update payload
+ [2017-02-03T08:10:27.034] : Validation successful
+ [2017-02-03 08:10:27,512] : Copying software packages  [2017-02-03T08:10:27.034] : ISO mounted successfully
+34/34
+ [2017-02-03T08:10:37.034] : ISO unmounted successfully
+ [2017-02-03 08:10:37,780] : Running test transaction ....
+ [2017-02-03 08:10:38,790] : Running pre-install script.....
+ [2017-02-03T08:10:40.034] : All VMware services are stopped.
+ [2017-02-03 08:10:40,401] : Upgrading software packages ....
+ [2017-02-03 08:11:05,450] : Running post-install script.....
+ [2017-02-03T08:11:06.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We will now reboot the new passive node.
+    &lt;ul&gt;
+      &lt;li&gt;To reboot the witness node, while still in appliancesh run the following command.
+        &lt;ul&gt;
+          &lt;li&gt;shutdown reboot -r “patch reboot”&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will now wait for the passive node to come online, and then remove vCenter HA from Maintenance Mode.
+    &lt;ul&gt;
+      &lt;li&gt;Log in to the vSphere Web Client select the vCenter and click Configure.&lt;/li&gt;
+      &lt;li&gt;Under Settings, select vCenter HA and click Edit.&lt;/li&gt;
+      &lt;li&gt;Select Enable vCenter HA and click OK.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The upgrade is now done! After previously having to do VMware Heartbeat upgrades, this is definately much easier. This process is very straightforward and I had no issues.&lt;/p&gt;
+
+&lt;p&gt;All in all this process took my less than 30 minutes to fully upgrade with no major issues.&lt;/p&gt;
+
+&lt;p&gt;Leave a comment if you have any questions!&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/&quot;&gt;vSphere 6.5 - Updating Appliance configured with vCenter HA&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[vCenter HA - Health Degraded due to Password Expiration]]></title>
   <link rel="alternate" type="text/html" href="/vmware/vcenter-ha-health-degraded-due-to-password-expiration/" />
   <id>/vmware/vcenter-ha---health-degraded-due-to-password-expiration</id>
   <published>2017-02-01T00:00:00-05:00</published>
@@ -94,7 +361,7 @@ Number of days of warning before password expires       : 7
 
 &lt;p&gt;&lt;img src=&quot;/images/vchaerror1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/vmware/vcenter-ha-health-degraded-due-to-password-expiration/&quot;&gt;vCenter HA   Health Degraded due to Password Expiration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 01, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/vmware/vcenter-ha-health-degraded-due-to-password-expiration/&quot;&gt;vCenter HA - Health Degraded due to Password Expiration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 01, 2017.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1788,70 +2055,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/ansible/using-ansible-to-run-powershell-scripts/&quot;&gt;Using Ansible to Run Powershell Scripts&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 04, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using Ansible to Create Cisco ACI Filters]]></title>
-  <link rel="alternate" type="text/html" href="/ansible/cisco/using-ansible-to-create-cisco-aci-filters/" />
-  <id>/ansible/cisco/using-ansible-to-create-cisco-aci-filters</id>
-  <published>2016-02-03T00:00:00-05:00</published>
-  <updated>2016-02-03T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries. The below example are the required ports for Horizon View.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jedelman8/aci-ansible.git&quot;&gt;aci-ansible&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro_installation.html&quot;&gt;ansible&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/ACI-Ansible/blob/master/horizonviewports.yml&quot;&gt;horizonviewports.yml&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-
-&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;playbook to create HorizonViewPorts-FIL&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apic&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;local&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;gather_facts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;no&lt;/span&gt;
-
-  &lt;span class=&quot;s&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# ensure filters exist&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name= tenant=common host= username= password=&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;with_items&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;HorizonViewPorts&lt;/span&gt;
-        
-     &lt;span class=&quot;c1&quot;&gt;# ensure filter entries exist&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host= username= password=&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;aci_filter_entry&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host= username= password=&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run ansible-playbook horizonviewports.yml -i hosts&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/ansible/cisco/using-ansible-to-create-cisco-aci-filters/&quot;&gt;Using Ansible to Create Cisco ACI Filters&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 

@@ -1,8 +1,17 @@
 {
   
 
+    "vmware-vsphere-65-updating-appliance-configured-with-vcenter-ha": {
+      "title": "vSphere 6.5 - Updating Appliance configured with vCenter HA",
+      "url": " /vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "vmware-vcenter-ha-health-degraded-due-to-password-expiration": {
-      "title": "vCenter HA   Health Degraded due to Password Expiration",
+      "title": "vCenter HA - Health Degraded due to Password Expiration",
       "url": " /vmware/vcenter-ha-health-degraded-due-to-password-expiration/",
       "author": "",
       "category": ""
