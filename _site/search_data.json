@@ -11,7 +11,7 @@
   
 
     "vmware-vcenter-ha-health-degraded-due-to-password-expiration": {
-      "title": "vCenter HA - Health Degraded due to Password Expiration",
+      "title": "vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration",
       "url": " /vmware/vcenter-ha-health-degraded-due-to-password-expiration/",
       "author": "",
       "category": ""
