@@ -4,13 +4,36 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-02-03T08:22:03-05:00</updated>
+<updated>2017-02-08T13:35:32-05:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[vExpert 2017]]></title>
+  <link rel="alternate" type="text/html" href="/vmware/vexpert-2017/" />
+  <id>/vmware/vexpert-2017</id>
+  <published>2017-02-08T00:00:00-05:00</published>
+  <updated>2017-02-08T00:00:00-05:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2017!&lt;/p&gt;
+
+&lt;p&gt;This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1464 vExperts!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blogs.vmware.com/vmtn/files/2017/02/VMW-LOGO-vEXPERT-2017-k.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vmware/vexpert-2017/&quot;&gt;vExpert 2017&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 08, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1994,67 +2017,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;p&gt;&lt;img src=&quot;/images/vexpert-logo-2016.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;/vmware/vexpert-2016/&quot;&gt;vExpert 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 05, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using Ansible to Run Powershell Scripts]]></title>
-  <link rel="alternate" type="text/html" href="/ansible/using-ansible-to-run-powershell-scripts/" />
-  <id>/ansible/using-ansible-to-run-powershell-scripts</id>
-  <published>2016-02-04T00:00:00-05:00</published>
-  <updated>2016-02-04T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.ansible.com/ansible/intro_installation.html&quot;&gt;ansible&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm&quot;&gt;ansible-winrm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-git-project&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Git Project&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/Ansible/tree/master/ansible_powershell&quot;&gt;ansible_powershell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;ansible_ssh_user&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;admin&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;ansible_ssh_pass&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;password&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;ansible_ssh_port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5985&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;ansible_connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;winrm&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;ansible_winrm_server_cert_validation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ignore&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run Powershell Scripts&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;test&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;run a powershell script&lt;/span&gt;
-      &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;scripts/hello.ps1&lt;/span&gt;
-      &lt;span class=&quot;s&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;out&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;var=out&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run ansible-playbook powershell.yml -i hosts&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/ansible/using-ansible-to-run-powershell-scripts/&quot;&gt;Using Ansible to Run Powershell Scripts&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 04, 2016.&lt;/p&gt;
   </content>
 </entry>
 
