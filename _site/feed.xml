@@ -4,13 +4,94 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-02-08T13:35:32-05:00</updated>
+<updated>2017-04-17T15:12:37-04:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Using PowerCLI to Set vCenter Permissions on Datacenter]]></title>
+  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" />
+  <id>/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter</id>
+  <published>2017-04-17T00:00:00-04:00</published>
+  <updated>2017-04-17T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/Set-vCenterPermissions.ps1&quot;&gt;Set-vCenterPermissions.ps1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/permissions.csv&quot;&gt;permissions.csv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and modified the csv&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# PowerCLI Script for setting vCenter Permissions base don AD Group and Datacenter
+# @davidstamen
+# http://davidstamen.com
+
+param
+(
+    [Parameter(Mandatory=$False,
+        HelpMessage=&#39;Path to CSV to Import&#39;)]
+        [string[]]$permissionlist
+)
+
+#Import PowerCLI Module
+Get-Module -ListAvailable VMware* | Import-Module
+
+#Prompt for vCenter to Set Permissions
+$vCenter = Read-Host -Prompt &quot;Name or IP address of vcenter&quot;
+
+#Makes sure CSV was passed as parameter, if not it prompts and checks path.
+If($permissionlist -eq $NULL){
+    $permissionlist = Read-host -Prompt &quot;Csv to import&quot;
+}
+If((Test-Path $permissionlist) -eq $False){Write-host &quot;Could not find CSV.&quot;;break}
+
+#tries to connect to vcenter and breaks script if it fails.
+Try{Connect-viserver $vCenter -ErrorAction &quot;Stop&quot;|Out-Null}
+Catch {Write-Warning &quot;Unable to Logon to $vCenter. Exiting...&quot;;break}
+
+#define variables and loop through each entry setting permissions
+$permission = Import-csv &quot;$permissionlist&quot;
+foreach ($item in $permission) {
+  $datacenter=$item.datacenter
+  $role=$item.role
+  $group=$item.group
+  $domain=$item.domain
+
+  Write-host &quot;Setting $group permissions to $role on $vCenter&quot; -ForegroundColor Green
+  $Permission=New-VIPermission -Entity (Get-Datacenter $datacenter) -Principal (Get-VIAccount -Domain $domain -Group|Where-Object {$_.Name -like &quot;*$group*&quot;}) -Role (Get-VIRole $role) -Propagate:$true|Out-Null
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Run .\Set-vCenterPermissions.ps1 .\permissions.csv&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/&quot;&gt;Using PowerCLI to Set vCenter Permissions on Datacenter&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 17, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1992,31 +2073,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-snmp-configuration/&quot;&gt;Using UCS PowerTool To Set SNMP Configuration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 01, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[vExpert 2016]]></title>
-  <link rel="alternate" type="text/html" href="/vmware/vexpert-2016/" />
-  <id>/vmware/vexpert-2016</id>
-  <published>2016-02-05T00:00:00-05:00</published>
-  <updated>2016-02-05T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2016!&lt;/p&gt;
-
-&lt;p&gt;This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!&lt;/p&gt;
-
-&lt;p&gt;Can’t wait to see what this year brings.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vexpert-logo-2016.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/vmware/vexpert-2016/&quot;&gt;vExpert 2016&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on February 05, 2016.&lt;/p&gt;
   </content>
 </entry>
 

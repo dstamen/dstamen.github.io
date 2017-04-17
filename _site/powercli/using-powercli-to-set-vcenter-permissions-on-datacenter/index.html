@@ -5,16 +5,16 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Upgrading Horizon View 6.1 to 6.2 &#8211; davidstamen.com</title>
-<meta name="description" content="I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+<title>Using PowerCLI to Set vCenter Permissions on Datacenter &#8211; davidstamen.com</title>
+<meta name="description" content="I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
 
 ">
 <meta name="keywords" content="">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Upgrading Horizon View 6.1 to 6.2">
-<meta name="twitter:description" content="I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+<meta name="twitter:title" content="Using PowerCLI to Set vCenter Permissions on Datacenter">
+<meta name="twitter:description" content="I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
 
 ">
 <meta name="twitter:site" content="@davidstamen">
@@ -27,11 +27,11 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Upgrading Horizon View 6.1 to 6.2">
-<meta property="og:description" content="I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+<meta property="og:title" content="Using PowerCLI to Set vCenter Permissions on Datacenter">
+<meta property="og:description" content="I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
 
 ">
-<meta property="og:url" content="/horizon%20view/upgrading-horizon-view-61-to-62/">
+<meta property="og:url" content="/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/">
 <meta property="og:site_name" content="davidstamen.com">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="/horizon%20view/upgrading-horizon-view-61-to-62/">
+<link rel="canonical" href="/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="davidstamen.com Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -157,98 +157,73 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/horizon%20view/upgrading-horizon-view-61-to-62/" rel="bookmark" title="Upgrading Horizon View 6.1 to 6.2">Upgrading Horizon View 6.1 to 6.2</a></h1>
+        <h1><a href="/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" rel="bookmark" title="Using PowerCLI to Set vCenter Permissions on Datacenter">Using PowerCLI to Set vCenter Permissions on Datacenter</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!</p>
+      <p>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.</p>
 
-<p>First download the bits from <a href="https://my.vmware.com/group/vmware/info/slug/desktop_end_user_computing/vmware_horizon_6/6_2">here.</a></p>
-
-<p>The upgrade documentation can also be found <a href="https://pubs.vmware.com/horizon-62-view/topic/com.vmware.ICbase/PDF/view-62-upgrades.pdf">here.</a></p>
-
-<p><strong>Warning:</strong> In my environment I do not have a composer server, if you had one this would be upgraded first
-The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.</p>
-
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
 <ul>
-  <li>Log on to your connection server and launch the executable.</li>
+  <li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
 </ul>
 
-<p><img src="/images/viewcs1.png" alt="" /></p>
-
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
 <ul>
-  <li>Accept the End User License Agreement</li>
+  <li><a href="https://github.com/dstamen/PowerCLI/blob/master/Set-vCenterPermissions.ps1">Set-vCenterPermissions.ps1</a></li>
+  <li><a href="https://github.com/dstamen/PowerCLI/blob/master/permissions.csv">permissions.csv</a></li>
 </ul>
 
-<p><img src="/images/viewcs2.png" alt="" /></p>
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+<p>The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</p>
 
+<p><em>This script assumes you have already launched PowerCLI and modified the csv</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># PowerCLI Script for setting vCenter Permissions base don AD Group and Datacenter
+# @davidstamen
+# http://davidstamen.com
+
+param
+(
+    [Parameter(Mandatory=$False,
+        HelpMessage='Path to CSV to Import')]
+        [string[]]$permissionlist
+)
+
+#Import PowerCLI Module
+Get-Module -ListAvailable VMware* | Import-Module
+
+#Prompt for vCenter to Set Permissions
+$vCenter = Read-Host -Prompt "Name or IP address of vcenter"
+
+#Makes sure CSV was passed as parameter, if not it prompts and checks path.
+If($permissionlist -eq $NULL){
+    $permissionlist = Read-host -Prompt "Csv to import"
+}
+If((Test-Path $permissionlist) -eq $False){Write-host "Could not find CSV.";break}
+
+#tries to connect to vcenter and breaks script if it fails.
+Try{Connect-viserver $vCenter -ErrorAction "Stop"|Out-Null}
+Catch {Write-Warning "Unable to Logon to $vCenter. Exiting...";break}
+
+#define variables and loop through each entry setting permissions
+$permission = Import-csv "$permissionlist"
+foreach ($item in $permission) {
+  $datacenter=$item.datacenter
+  $role=$item.role
+  $group=$item.group
+  $domain=$item.domain
+
+  Write-host "Setting $group permissions to $role on $vCenter" -ForegroundColor Green
+  $Permission=New-VIPermission -Entity (Get-Datacenter $datacenter) -Principal (Get-VIAccount -Domain $domain -Group|Where-Object {$_.Name -like "*$group*"}) -Role (Get-VIRole $role) -Propagate:$true|Out-Null
+}
+</code></pre>
+</div>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 <ul>
-  <li>Click Install to Upgrade.</li>
+  <li>Run .\Set-vCenterPermissions.ps1 .\permissions.csv</li>
 </ul>
-
-<p><img src="/images/viewcs3.png" alt="" /></p>
-
-<ul>
-  <li>Click Finish. Repeat Process for the rest of your connection servers.</li>
-</ul>
-
-<p><img src="/images/viewcs4.png" alt="" /></p>
-
-<ul>
-  <li>Log on to your security server and launch the executable. If using IPSEC log on to View Administrator and “Prepare the Security Server for Upgrade or Reinstallation”</li>
-</ul>
-
-<p><img src="/images/viewss1.png" alt="" /></p>
-
-<ul>
-  <li>Accept the End User License Agreement</li>
-</ul>
-
-<p><img src="/images/viewss2.png" alt="" /></p>
-
-<ul>
-  <li>This screen should show the paired connection server. Click Next.</li>
-</ul>
-
-<p><img src="/images/viewss3.png" alt="" /></p>
-
-<ul>
-  <li>Logon to the paired connection server, and generate a server pairing password.</li>
-</ul>
-
-<p><img src="/images/viewss4.png" alt="" /></p>
-
-<ul>
-  <li>Enter in the password.</li>
-</ul>
-
-<p><img src="/images/viewss5.png" alt="" /></p>
-
-<ul>
-  <li>If you are not using IPSEC you will get the following warning. Click OK.</li>
-</ul>
-
-<p><img src="/images/viewss6.png" alt="" /></p>
-
-<ul>
-  <li>Verify the URL’s are correct, it should inherit these settings.</li>
-</ul>
-
-<p><img src="/images/viewss7.png" alt="" /></p>
-
-<ul>
-  <li>Allow the setup to automatically configure the windows firewall.</li>
-</ul>
-
-<p><img src="/images/viewss8.png" alt="" /></p>
-
-<ul>
-  <li>Hit Finish and Enjoy!</li>
-</ul>
-
-<p><img src="/images/viewss9.png" alt="" /></p>
-
-<p>Im glad VMware has continued to make this process simple. I am looking forward to the features and ease of use with the new Horizon Access Point’s as well.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -256,24 +231,24 @@ The upgrade order is as follows. Composer Server, Connection Servers and then Se
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?url=/horizon%20view/upgrading-horizon-view-61-to-62/&text=Upgrading Horizon View 6.1 to 6.2&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://twitter.com/intent/tweet?url=/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/&text=Using PowerCLI to Set vCenter Permissions on Datacenter&via=davidstamen" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/horizon%20view/upgrading-horizon-view-61-to-62/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/horizon%20view/upgrading-horizon-view-61-to-62/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+      <a href="https://plus.google.com/share?url=/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/horizon%20view/upgrading-horizon-view-61-to-62/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
     </li>
     <li>
-      <a href="http://www.reddit.com/submit?url=/horizon%20view/upgrading-horizon-view-61-to-62/&title=Upgrading Horizon View 6.1 to 6.2" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+      <a href="http://www.reddit.com/submit?url=/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/&title=Using PowerCLI to Set vCenter Permissions on Datacenter" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
 
-        <p class="byline"><strong>Upgrading Horizon View 6.1 to 6.2</strong> was published on <time datetime="2015-09-16T00:00:00-04:00">September 16, 2015</time>.</p>
+        <p class="byline"><strong>Using PowerCLI to Set vCenter Permissions on Datacenter</strong> was published on <time datetime="2017-04-17T00:00:00-04:00">April 17, 2017</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -288,11 +263,11 @@ The upgrade order is as follows. Composer Server, Connection Servers and then Se
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/" title="Using PowerCLI to Set vCenter Permissions on Datacenter">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
-    
       <li><a href="/vmware/vexpert-2017/" title="vExpert 2017">vExpert 2017</a></li>
     
       <li><a href="/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/" title="vSphere 6.5 - Updating Appliance configured with vCenter HA">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+    
+      <li><a href="/vmware/vcenter-ha-health-degraded-due-to-password-expiration/" title="vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
     
     </ul>
     <hr />
