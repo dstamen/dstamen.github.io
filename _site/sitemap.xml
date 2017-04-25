@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/</loc>
+<lastmod>2017-04-25T00:00:00-04:00</lastmod>
+</url>
+<url>
 <loc>/powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/</loc>
 <lastmod>2017-04-17T00:00:00-04:00</lastmod>
 </url>
@@ -29,7 +33,7 @@
 <lastmod>2016-12-29T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>/uniquiti/installing-ubiquiti-unifi-controller/</loc>
+<loc>/ubiquiti/installing-ubiquiti-unifi-controller/</loc>
 <lastmod>2016-12-02T00:00:00-05:00</lastmod>
 </url>
 <url>

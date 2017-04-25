@@ -1,6 +1,15 @@
 {
   
 
+    "ubiquiti-configuring-unifi-controller-and-usg-for-l2tp-vpn": {
+      "title": "Configuring Unifi Controller and USG for L2TP VPN",
+      "url": " /ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "powercli-using-powercli-to-set-vcenter-permissions-on-datacenter": {
       "title": "Using PowerCLI to Set vCenter Permissions on Datacenter",
       "url": " /powercli/using-powercli-to-set-vcenter-permissions-on-datacenter/",
@@ -64,9 +73,9 @@
     ,
   
 
-    "uniquiti-installing-ubiquiti-unifi-controller": {
+    "ubiquiti-installing-ubiquiti-unifi-controller": {
       "title": "Installing Ubiquiti Unifi Controller",
-      "url": " /uniquiti/installing-ubiquiti-unifi-controller/",
+      "url": " /ubiquiti/installing-ubiquiti-unifi-controller/",
       "author": "",
       "category": ""
     }

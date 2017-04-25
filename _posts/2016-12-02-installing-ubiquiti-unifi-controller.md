@@ -2,7 +2,7 @@
 layout: post
 title: "Installing Ubiquiti Unifi Controller"
 categories:
-- Uniquiti
+- Ubiquiti
 comments: true
 ---
 I have been using Ubiquiti equipment for awhile at home and I figured i would finally write a blog post about it. Ubiquiti equipment is "enterprise class" equipment for the consumer.

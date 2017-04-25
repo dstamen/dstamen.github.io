@@ -4,13 +4,99 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-04-17T15:12:37-04:00</updated>
+<updated>2017-04-25T13:44:12-04:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Configuring Unifi Controller and USG for L2TP VPN]]></title>
+  <link rel="alternate" type="text/html" href="/ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/" />
+  <id>/ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn</id>
+  <published>2017-04-25T00:00:00-04:00</published>
+  <updated>2017-04-25T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-11-Stable-Candidate-has-been-released/ba-p/1905832&quot;&gt;Unifi Controller 5.5.11&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Configuration is quite simple! Just follow these few easy steps and you will be up in no time.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The first step is to create your radius profile. to do this browse to &lt;em&gt;Settings&lt;/em&gt; and then &lt;em&gt;Profiles&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Here you will create a name for your radius profile, the only thing you will change here is the &lt;em&gt;IP Address&lt;/em&gt; of your USG and then set the &lt;em&gt;Password/Pre Shared Secret&lt;/em&gt;. When done hit save.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vpnradiusprofile.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Next up on the configuration is the Radius Service Configuration. Browse to &lt;em&gt;Settings&lt;/em&gt; and &lt;em&gt;Services&lt;/em&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;First up is the user, select Users and then enter in the following details.
+        &lt;ul&gt;
+          &lt;li&gt;Name: username&lt;/li&gt;
+          &lt;li&gt;Password: password to be used for client conenctivity&lt;/li&gt;
+          &lt;li&gt;VLAN: leave blank&lt;/li&gt;
+          &lt;li&gt;Tunnel Type: 3 (For L2TP)&lt;/li&gt;
+          &lt;li&gt;Tunnel Medium Type: 1 (For IPv4)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vpnradiususers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Next up on the Radius Service configuration is the &lt;em&gt;Server&lt;/em&gt; Configuration.
+    &lt;ul&gt;
+      &lt;li&gt;Click on Server under Servers/Radius and &lt;em&gt;Enable Radius Server&lt;/em&gt;.
+        &lt;ul&gt;
+          &lt;li&gt;The only thing you will do here is set the &lt;em&gt;L2TP Secret&lt;/em&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vpnradiusserver.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Next up on the configuration is to browse to &lt;em&gt;Settings&lt;/em&gt; and &lt;em&gt;Networks&lt;/em&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Here you will create a new network with the following details..
+        &lt;ul&gt;
+          &lt;li&gt;Purpose: Remote User VPN&lt;/li&gt;
+          &lt;li&gt;VPN Type: L2TP Server&lt;/li&gt;
+          &lt;li&gt;Pre Shared Key: This is the &lt;em&gt;secret&lt;/em&gt; you configured for the Radius Server.&lt;/li&gt;
+          &lt;li&gt;Gateway/Subnet: IP Information for your VPN Clients&lt;/li&gt;
+          &lt;li&gt;Other: Fill in other fields as needed.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vpnnetworks.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once everything is complete you will now have an extra bubble with VPN statistics!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/dashboardview.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nothing else is needed! Once the Unifi USG provisions it automatically adds in the needed firewall rules, you can now configure your normal L2TP client to connect.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/&quot;&gt;Configuring Unifi Controller and USG for L2TP VPN&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on April 25, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -762,8 +848,8 @@ Creating ContentLibrary &#39;NFS01_ContentLibrary_HS&#39; on &#39;NFS01&#39;    
 
 <entry>
   <title type="html"><![CDATA[Installing Ubiquiti Unifi Controller]]></title>
-  <link rel="alternate" type="text/html" href="/uniquiti/installing-ubiquiti-unifi-controller/" />
-  <id>/uniquiti/installing-ubiquiti-unifi-controller</id>
+  <link rel="alternate" type="text/html" href="/ubiquiti/installing-ubiquiti-unifi-controller/" />
+  <id>/ubiquiti/installing-ubiquiti-unifi-controller</id>
   <published>2016-12-02T00:00:00-05:00</published>
   <updated>2016-12-02T00:00:00-05:00</updated>
   <author>
@@ -802,7 +888,7 @@ service unifi start
 
 &lt;p&gt;I hope this helps you on our way to getting your controller online.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/uniquiti/installing-ubiquiti-unifi-controller/&quot;&gt;Installing Ubiquiti Unifi Controller&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/ubiquiti/installing-ubiquiti-unifi-controller/&quot;&gt;Installing Ubiquiti Unifi Controller&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -2015,64 +2101,6 @@ Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &l
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-host-vibs/&quot;&gt;Using PowerCLI to Install Host VIBs&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 03, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using UCS PowerTool To Set SNMP Configuration]]></title>
-  <link rel="alternate" type="text/html" href="/cisco/using-ucs-powertool-to-set-snmp-configuration/" />
-  <id>/cisco/using-ucs-powertool-to-set-snmp-configuration</id>
-  <published>2016-03-01T00:00:00-05:00</published>
-  <updated>2016-03-01T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://communities.cisco.com/docs/DOC-53838&quot;&gt;UCS Powertool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1&quot;&gt;Set-UcsSnmpConfiguration.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ucs01.lab.local&quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&quot;ucs02.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;SNMP config for UCS&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;enabled&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$SysContact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;admin@lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$SysLocation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;US&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Community&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;public&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$domains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  Connect-UCS &lt;span class=&quot;nv&quot;&gt;$ucs&lt;/span&gt; -Credential &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-UCSRackUnit
-  &lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$server&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$servers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-UcsSnmp -Descr &lt;span class=&quot;nv&quot;&gt;$Descr&lt;/span&gt; -AdminState &lt;span class=&quot;nv&quot;&gt;$AdminState&lt;/span&gt; -SysContact  &lt;span class=&quot;nv&quot;&gt;$SysContact&lt;/span&gt; -SysLocation &lt;span class=&quot;nv&quot;&gt;$SysLocation&lt;/span&gt; -Community &lt;span class=&quot;nv&quot;&gt;$Community&lt;/span&gt; -force
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  Disconnect-UCS
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\Set-UcsSnmpConfiguration.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-set-snmp-configuration/&quot;&gt;Using UCS PowerTool To Set SNMP Configuration&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
