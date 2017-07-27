@@ -1,6 +1,24 @@
 {
   
 
+    "vrealize-20operations-using-powercli-to-add-vrealize-operations-license-key": {
+      "title": "Using PowerCLI to Add vRealize Operations License Key",
+      "url": " /vrealize%20operations/using-powercli-to-add-vrealize-operations-license-key/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
+    "vrealize-20operations-using-postman-to-add-vrealize-operations-license-key": {
+      "title": "Using PostMan to Add vRealize Operations License Key",
+      "url": " /vrealize%20operations/using-postman-to-add-vrealize-operations-license-key/",
+      "author": "",
+      "category": ""
+    }
+    ,
+  
+
     "ubiquiti-configuring-unifi-controller-and-usg-for-l2tp-vpn": {
       "title": "Configuring Unifi Controller and USG for L2TP VPN",
       "url": " /ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/",

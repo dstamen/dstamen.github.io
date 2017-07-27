@@ -4,13 +4,99 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-04-25T13:44:12-04:00</updated>
+<updated>2017-07-27T09:36:04-04:00</updated>
 <id>/</id>
 <author>
   <name>David Stamen</name>
   <uri>/</uri>
   <email>dstamen@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Using PowerCLI to Add vRealize Operations License Key]]></title>
+  <link rel="alternate" type="text/html" href="/vrealize%20operations/using-powercli-to-add-vrealize-operations-license-key/" />
+  <id>/vrealize%20operations/using-powercli-to-add-vrealize-operations-license-key</id>
+  <published>2017-07-27T00:00:00-04:00</published>
+  <updated>2017-07-27T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;The script is pretty straight forward, you can either export the license keys from an old vRealize Operations Server (6.6+) or create a CSV with column (LicenseKey) to be imported.&lt;/p&gt;
+
+&lt;p&gt;If you are choosing to export keys from an existing server, it has to be on a version that currently has API support. (I used v6.6)&lt;/p&gt;
+
+&lt;p&gt;You can run the following script to export all keys to a csv file.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$Cred = Get-Credential
+$vrom = &quot;vromold.lab.local&quot;
+
+Connect-OMServer -Server $vrom -Credential $Cred
+
+$omServer = $global:DefaultOMServers[0].ExtensionData
+$omLicense = $OmServer.GetLicenseKeysForProduct()
+$omLicense.Solutionlicense|Export-Csv C:\temp\omkeys2.csv -NoTypeInformation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;If you exported the keys above, you should be immediately ready to import the keys to your new vRealize Operations Server, if not you can manually create the csv as listed above.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$Cred = Get-Credential
+$vrom = &quot;vromnew.lab.local&quot;
+
+Connect-OMServer -Server $vrom -Credential $Cred
+
+$keys = import-csv c:\temp\omkeys.csv
+foreach ($key in $keys) {
+    $solutionLicense = New-Object VMware.VimAutomation.VROps.Views.SolutionLicense
+    $solutionLicense.LicenseKey = $key.LicenseKey
+    $solutionLicenses = New-Object VMware.VimAutomation.VROps.Views.SolutionLicenses
+    $solutionLicenses.Solutionlicense = $solutionLicense
+    $omserver.AddLicenseKeyToProduct($solutionLicenses)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The documentation was pretty spotty on this as it stated you only needed to pass the key to AddLicenseKeyToProduct(), but after multiple tests I realized that was not true. I eventually found out i have to create SolutionLicense objects and link them till i got the proper format. This was quite fun as i learned alot about PowerShell and API documentation in this process.&lt;/p&gt;
+
+&lt;p&gt;You can find API documentation for vRealize Operations at https://fqdn/suite-api/docs/rest/index.html&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/vrom1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hope this helps you out, leave any feedback or questions below.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vrealize%20operations/using-powercli-to-add-vrealize-operations-license-key/&quot;&gt;Using PowerCLI to Add vRealize Operations License Key&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on July 27, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Using PostMan to Add vRealize Operations License Key]]></title>
+  <link rel="alternate" type="text/html" href="/vrealize%20operations/using-postman-to-add-vrealize-operations-license-key/" />
+  <id>/vrealize%20operations/using-postman-to-add-vrealize-operations-license-key</id>
+  <published>2017-07-27T00:00:00-04:00</published>
+  <updated>2017-07-27T00:00:00-04:00</updated>
+  <author>
+    <name>David Stamen</name>
+    <uri></uri>
+    <email>dstamen@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Type Stuff Here&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/vrealize%20operations/using-postman-to-add-vrealize-operations-license-key/&quot;&gt;Using PostMan to Add vRealize Operations License Key&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on July 27, 2017.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1982,125 +2068,6 @@ Please make sure to check out Beta experience’s as well!&lt;/p&gt;
 &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;/cisco/using-ucs-powertool-to-configure-syslog-servers/&quot;&gt;Using UCS PowerTool to Configure Syslog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using PureStorage Powershell to Configure SysLog Servers]]></title>
-  <link rel="alternate" type="text/html" href="/purestorage/using-purestorage-powershell-to-configure-syslog-servers/" />
-  <id>/purestorage/using-purestorage-powershell-to-configure-syslog-servers</id>
-  <published>2016-03-14T00:00:00-04:00</published>
-  <updated>2016-03-14T00:00:00-04:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.purestorage.com/announcing-the-new-pure-storage-powershell-sdk/&quot;&gt;PureStorage Powershell SDK&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PureStorage/blob/master/Set-PureStorageSyslog.ps1&quot;&gt;Set-PureStorageSyslog.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Import Module&lt;/span&gt;
-Import-Module PureStoragePowershellSDK
-
-&lt;span class=&quot;c1&quot;&gt;#Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$arrays&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;pure.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$SysLogServers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tcp://syslog.lab.local:514&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#Cycles through each UCS setting values&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Setting Syslog Information for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; New-PfaArray -EndPoint &lt;span class=&quot;nv&quot;&gt;$array&lt;/span&gt; -Credentials &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; -IgnoreCertificateError
-  &lt;span class=&quot;nb&quot;&gt;Set&lt;/span&gt;-PfaSyslogServers -Array &lt;span class=&quot;nv&quot;&gt;$FlashArray&lt;/span&gt; -SyslogServers &lt;span class=&quot;nv&quot;&gt;$SyslogServers&lt;/span&gt;|fl
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\Set-PureStorageSyslog.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/purestorage/using-purestorage-powershell-to-configure-syslog-servers/&quot;&gt;Using PureStorage Powershell to Configure SysLog Servers&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 14, 2016.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using PowerCLI to Install Host VIBs]]></title>
-  <link rel="alternate" type="text/html" href="/powercli/using-powercli-to-install-host-vibs/" />
-  <id>/powercli/using-powercli-to-install-host-vibs</id>
-  <published>2016-03-03T00:00:00-05:00</published>
-  <updated>2016-03-03T00:00:00-05:00</updated>
-  <author>
-    <name>David Stamen</name>
-    <uri></uri>
-    <email>dstamen@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-requsites&quot;&gt;&lt;strong&gt;&lt;em&gt;Pre-Requsites&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/support/developer/PowerCLI/&quot;&gt;VMware PowerCLI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;link-to-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Link to Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dstamen/PowerCLI/blob/master/Install-HostVIB.ps1&quot;&gt;Install-HostVIB.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;preparing-to-execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Preparing to Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This script assumes you have already launched PowerCLI and modified the variables&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Define Variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Cluster&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$VIBPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic_1.6.0.24-1OEM.600.0.0.2494585.vib&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$vcenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;vcenter.lab.local&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-Credential&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Connect to vCenter&lt;/span&gt;
-Connect-VIServer -Server &lt;span class=&quot;nv&quot;&gt;$vcenter&lt;/span&gt; -Credential &lt;span class=&quot;nv&quot;&gt;$cred&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Get each host in specified cluster that meets criteria&lt;/span&gt;
-Get-VMhost -Location &lt;span class=&quot;nv&quot;&gt;$Cluster&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.PowerState -eq &lt;span class=&quot;s2&quot;&gt;&quot;PoweredOn&quot;&lt;/span&gt; -and &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.ConnectionState -eq &lt;span class=&quot;s2&quot;&gt;&quot;Connected&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Preparing &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; for ESXCLI&quot;&lt;/span&gt; -ForegroundColor Yellow
-
-    &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-EsxCli -VMHost &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# Install VIBs&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Installing VIB on &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; -ForegroundColor Yellow
-    &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ESXCLI&lt;/span&gt;.software.vib.install&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$true&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$null&lt;/span&gt;,&lt;span class=&quot;nv&quot;&gt;$VIBPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# Verify VIB installed successfully&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;.Message -eq &lt;span class=&quot;s2&quot;&gt;&quot;Operation finished successfully.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Action Completed successfully on &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.Name&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; -ForegroundColor Green&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Write-host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$action&lt;/span&gt;.Message -ForegroundColor Red&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;execute-the-script&quot;&gt;&lt;strong&gt;&lt;em&gt;Execute the Script&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Run .\Install-HostVIB.ps1&lt;/li&gt;
-&lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;/powercli/using-powercli-to-install-host-vibs/&quot;&gt;Using PowerCLI to Install Host VIBs&lt;/a&gt; was originally published by David Stamen at &lt;a href=&quot;&quot;&gt;davidstamen.com&lt;/a&gt; on March 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/vrealize%2520operations/using-powercli-to-add-vrealize-operations-license-key/</loc>
+<lastmod>2017-07-27T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/vrealize%2520operations/using-postman-to-add-vrealize-operations-license-key/</loc>
+<lastmod>2017-07-27T00:00:00-04:00</lastmod>
+</url>
+<url>
 <loc>/ubiquiti/configuring-unifi-controller-and-usg-for-l2tp-vpn/</loc>
 <lastmod>2017-04-25T00:00:00-04:00</lastmod>
 </url>
