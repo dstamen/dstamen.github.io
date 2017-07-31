@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>davidstamen.com</title>
+
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="davidstamen.com" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+
+
+<meta property="og:updated_time" content="2016-01-13T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="davidstamen.com Feed" href="/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">a blog about stuff.</h2>
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+
+	<div class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/" rel="bookmark">Unable to Boot EFI VM on ESXi FC Storage</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-01-13T00:00:00">January 13, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/" rel="bookmark">Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-01-12T00:00:00">January 12, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
+This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
+ SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install &ndash;url &ndash;acceptEulas to download and install the packages from the VMware Repo.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/" rel="bookmark">Using UCS PowerTool To Upload UCS Firmware</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-01-11T00:00:00">January 11, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			It&rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/12/17/vcap6-design-beta-study-guide/" rel="bookmark">VCAP6-Design Beta Study Guide</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-12-17T00:00:00">December 17, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.
+###Section 1 – Create a vSphere Conceptual Design
+Objective 1.1 – Gather and analyze business requirements Skills and Abilities
+ Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/12/17/vcap6-design-beta-study-guide/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" rel="bookmark">Using UCS PowerTool To Configure UCS Policy Backup and Export</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-12-11T00:00:00">December 11, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
+Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/" rel="bookmark">Using UCS PowerTool To Configure UCS Certificates</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-12-10T00:00:00">December 10, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
+Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/11/30/installing-host-vibs-using-powercli/" rel="bookmark">Installing Host VIB&#39;s Using PowerCLI</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-11-30T00:00:00">November 30, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/11/30/installing-host-vibs-using-powercli/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/11/30/using-cli-to-manage-dvs-host-uplinks/" rel="bookmark">Using CLI to Manage DVS Host Uplinks</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-11-30T00:00:00">November 30, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
+As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/11/30/using-cli-to-manage-dvs-host-uplinks/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/11/23/configuring-multiple-ucs-vlans/" rel="bookmark">Configuring Multiple UCS VLAN&#39;s</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-11-23T00:00:00">November 23, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
+Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+The script can be found here.
+# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/11/23/configuring-multiple-ucs-vlans/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/11/18/disconnected-vnics/" rel="bookmark">Disconnected vNIC&#39;s?</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-11-18T00:00:00">November 18, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Ever wonder why a VM isn&rsquo;t on the network?
+I was working on deploying some test VM&rsquo;s and for some reason all the VM&rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/11/18/disconnected-vnics/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+		
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/page/3/">«</a>
+	<span class="pagination__item pagination__item--current">4/11</span>
+	<a class="pagination__item pagination__item--next" href="/page/5/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/08/vexpert-2017/">vExpert 2017</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Ads</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

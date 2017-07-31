@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trend Micro on davidstamen.com</title>
+    <link>/categories/trend-micro/</link>
+    <description>Recent content in Trend Micro on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Dec 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/trend-micro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Updating Trend Micro Deep Security Manager Certificate</title>
+      <link>/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</link>
+      <pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</guid>
+      <description>So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.
+ Stop the “Trend Micro Deep Security Manager” service If not already created, create a folder on the root of C:\ called “certs” Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore” Copy .</description>
+    </item>
+    
+  </channel>
+</rss>

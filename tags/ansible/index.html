@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>Ansible</title>
+
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="Ansible" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/ansible/" />
+
+
+
+<meta property="og:updated_time" content="2016-02-04T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="davidstamen.com Feed" href="/tags/ansible/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">a blog about stuff.</h2>
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">Ansible</h1>
+		</header><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2016/02/04/using-ansible-to-run-powershell-scripts/" rel="bookmark">Using Ansible to Run Powershell Scripts</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-02-04T00:00:00">February 04, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
+Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Define your group variables.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2016/02/04/using-ansible-to-run-powershell-scripts/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2016/02/03/using-ansible-to-create-cisco-aci-filters/" rel="bookmark">Using Ansible to Create Cisco ACI Filters</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2016-02-03T00:00:00">February 03, 2016</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2016/02/03/using-ansible-to-create-cisco-aci-filters/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+
+		
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/08/vexpert-2017/">vExpert 2017</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Ads</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>Posts</title>
+
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/post/" />
+
+
+
+<meta property="og:updated_time" content="2014-09-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="davidstamen.com Feed" href="/post/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">a blog about stuff.</h2>
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+
+	<div class="main-content list content" role="main">
+		<header class="page-header">
+			<h1 class="page-header__title">Posts</h1>
+		</header><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/" rel="bookmark">Unable to Install .NET 3.5 on Server 2012R2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-09-11T00:00:00">September 11, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&rsquo;s and copied the files locally.
+Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. KB2734782
+Here are the full steps I followed to get .
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/" rel="bookmark">Sysprep runs repeatedly on virtual machines deployed to ESXi 5.1 build 1743533</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-07-08T00:00:00">July 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.
+Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 KB2077640 as referenced in this article KB2078352.
+However the hotfix only fixes future occurences, you still need to fix all the VMs affected.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/06/10/configuring-esxi-5-5-dump-collector/" rel="bookmark">Configuring ESXi 5.5 Dump Collector</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-06-10T00:00:00">June 10, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/06/10/configuring-esxi-5-5-dump-collector/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/06/10/configuring-esxi-5-5-syslog-collector/" rel="bookmark">Configuring ESXi 5.5 Syslog Collector</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-06-10T00:00:00">June 10, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/06/10/configuring-esxi-5-5-syslog-collector/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/06/04/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-3/" rel="bookmark">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 3)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-06-04T00:00:00">June 04, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			In Part 1 we showed you how to deploy vCloud Connector 2.6, and in Part 2 we showed you how to configure it.
+Here in Part 3 we will show you how to migrate a workload from your private cloud to your public cloud.
+Lets go back to our vCenter and select our vCloud Connector Plugin
+Expand your vCenter and select the folder that contains the VM you wish to copy to vCHS.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/06/04/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-3/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/" rel="bookmark">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-06-03T00:00:00">June 03, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			So luckily i was selected for the June 2014 wave of vCloud Hybrid Service access as a vExpert. I have been looking forwarding to using vCHS since it went GA and am glad to finally have the opportunity to use it hands on.
+Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/" rel="bookmark">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-06-03T00:00:00">June 03, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Here is Part 2 a continuation of Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1) (http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/) where we will configure vCloud connector to your Private(vCenter) and Public(vCHS) clouds.
+Lets start with getting the vCloud Connector Server ready. Just in case you forgot what IP you assigned we can open the appliance and view the management information.
+As we can see here the URL to configure the appliace is https://192.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/22/create-vmfs-datastore-using-powercli/" rel="bookmark">Create VMFS Datastore Using PowerCLI</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-22T00:00:00">May 22, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/05/22/create-vmfs-datastore-using-powercli/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/" rel="bookmark">vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-21T00:00:00">May 21, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
+ Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/" rel="bookmark">HA Error: Datastore Heartbeat is less than 2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-08T00:00:00">May 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			If you are configuring a cluster with less than 2 datastores, you will receive an HA warning &ldquo;The number of heartbeat datastores for host is 1, which is less than required: 2&rdquo; You can add an option to the HA Advanced Options to supress this warning.
+ Log in to vCenter Server Right-click the cluster and click Edit Settings Click vSphere HA &gt; Advanced Options Under Option, add an entry for das.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/post/page/9/">«</a>
+	<span class="pagination__item pagination__item--current">10/11</span>
+	<a class="pagination__item pagination__item--next" href="/post/page/11/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/08/vexpert-2017/">vExpert 2017</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Ads</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

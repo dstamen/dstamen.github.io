@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>davidstamen.com</title>
+
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="davidstamen.com" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+
+
+<meta property="og:updated_time" content="2015-09-22T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="alternate" type="application/rss+xml" title="davidstamen.com Feed" href="/index.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">a blog about stuff.</h2>
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+
+	<div class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/22/upgrading-vrealize-operations-horizon-adapter-to-61/" rel="bookmark">Upgrading vRealize Operations Horizon Adapter to 6.1</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-22T00:00:00">September 22, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process. This guide will show how to upgrade the Horizon Adapter for vROPS.
+To upgrade from vRealize Operations Horizon Adapter to the most recent version, follow these steps.
+Download the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/22/upgrading-vrealize-operations-horizon-adapter-to-61/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/22/upgrading-vrealize-operations-to-61/" rel="bookmark">Upgrading vRealize Operations to 6.1</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-22T00:00:00">September 22, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.
+To upgrade from vRealize Operations Manager to the most recent version, follow these steps.
+Download the PAK file(s) needed based on the type of cluster.
+ vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files. For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/22/upgrading-vrealize-operations-to-61/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/" rel="bookmark">Unable to SSH to vSphere 6 VCSA or PSC</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-21T00:00:00">September 21, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.
+While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/" rel="bookmark">Unable to join PSC to Domain via Webclient</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-21T00:00:00">September 21, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.
+When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: &ldquo;java.lang.reflect.invocationTargetException&rdquo;
+There are currently two workarounds now with 6.0U1 I am aware of.
+ The first method is to join to the domain using the CLI.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/16/enabling-biometrics-in-horizon-view-62/" rel="bookmark">Enabling Biometrics in Horizon View 6.2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-16T00:00:00">September 16, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.
+This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.
+Here is a link to the current VMware documentation.
+NOTE: This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/16/enabling-biometrics-in-horizon-view-62/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/16/upgrading-horizon-view-61-to-62/" rel="bookmark">Upgrading Horizon View 6.1 to 6.2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-16T00:00:00">September 16, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+First download the bits from here.
+The upgrade documentation can also be found here.
+Warning: In my environment I do not have a composer server, if you had one this would be upgraded first The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/16/upgrading-horizon-view-61-to-62/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/" rel="bookmark">Using PowerCLI to Extend VMDK and Windows OS Disk</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-15T00:00:00">September 15, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			I wanted to share this handy script i created when you have a need to extend a disk.
+This script can be extremely handy as it will take care of extending the VMDK and then going to the OS and then performing the expansion there as well. This has been helpful when needing to extend a large batch of servers (60+).
+Syntax: .\ExtendVMDKandGuest VMNAME
+You will then be prompted to enter in the Hard Disk #, the size you want to be extended, and then which drive letter that volume belongs to.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/14/using-powercli-to-detach-luns/" rel="bookmark">Using PowerCLI to Detach Luns</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-14T00:00:00">September 14, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
+Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;
+ Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/14/using-powercli-to-detach-luns/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/10/vsphere-60-update-1-released/" rel="bookmark">vSphere 6.0 Update 1 Released</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-10T00:00:00">September 10, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Today vSphere 6.0 U1 is released. This is normally the update everyone waits for before upgrading their production environments to the latest version. I think the first time in awhile, a lot of people will wait.
+You see, VMware has had a bug KB2124669 since ESXi 6.0 that can cause an ESXi host to randomly lose connection, freeze and overall act really terrible. With the release of 6.0U1 it still exists.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/10/vsphere-60-update-1-released/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/" rel="bookmark">Deploying and Hosting Jekyll on Ravello Systems</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-08T00:00:00">September 08, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Did you know you could get host your own blog on Ravello Systems?
+Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
+Please use my previous blog on how to get it deployed.
+Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/">Read more…</a>
+		</div>
+	</div>
+</article>
+
+		
+
+		
+<div class="pagination clearfix">
+	<a class="pagination__item pagination__item--prev" href="/page/6/">«</a>
+	<span class="pagination__item pagination__item--current">7/11</span>
+	<a class="pagination__item pagination__item--next" href="/page/8/">»</a>
+</div>
+
+	</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/08/vexpert-2017/">vExpert 2017</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Ads</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)</title>
+
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)" />
+<meta property="og:description" content="Here is Part 2 a continuation of Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1) (http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/) where we will configure vCloud connector to your Private(vCenter) and Public(vCHS) clouds.
+Lets start with getting the vCloud Connector Server ready. Just in case you forgot what IP you assigned we can open the appliance and view the management information.
+As we can see here the URL to configure the appliace is https://192." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/" />
+
+
+
+<meta property="article:published_time" content="2014-06-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-06-03T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">a blog about stuff.</h2>
+					</a>
+				</div>
+			</div>
+			<hr class="divider">
+		</header>
+		<div class="wrapper clearfix">
+
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2014-06-03T00:00:00">June 03, 2014</time>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			<p>Here is Part 2  a continuation of Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1) (<a href="http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/">http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/</a>)  where we will configure vCloud connector to your Private(vCenter) and Public(vCHS) clouds.</p>
+
+<p>Lets start with getting the vCloud Connector Server ready. Just in case you forgot what IP you assigned we can open the appliance and view the management information.</p>
+
+<p><img src="/images/screenshot.19.jpg" alt="" /></p>
+
+<p>As we can see here the URL to configure the appliace is <a href="https://192.168.0.13:5480">https://192.168.0.13:5480</a> and the default username is admin and default password is vmware.</p>
+
+<p>Once logged in it is best to update the timezone. Select your timezone and make sure to Save Settings.</p>
+
+<p><img src="/images/screenshot.21.jpg" alt="" /></p>
+
+<p>It is also best to make sure you change the default passwords, so select the Server tab and enter in your new information.</p>
+
+<p><img src="/images/screenshot.22.jpg" alt="" /></p>
+
+<p>The next thing we want to do is make sure we register the vCloud Connector Server with vCenter so we get the plugin to manage the solution. Select the vSphere Tab underneath server and enter in your vCenter information and make sure to select register.<img src="/images/screenshot.231.jpg" alt="" /></p>
+
+<p><img src="/images/screenshot.24.jpg" alt="" /></p>
+
+<p>Now that we have vCloud Connector registered with vCenter and the vSphere client we can go away and add in our nodes.</p>
+
+<p>Navigate to the nodes tab and select Register Node.</p>
+
+<p><img src="/images/screenshot.25.jpg" alt="" /></p>
+
+<p>In order to register vCHS as a node we first need to logon and gather some information. So navigate to <a href="https://vchs.vmware.com">https://vchs.vmware.com</a> and select your VDC. On the right hand side expand vCloud Director API URL underneath Related Links. We will need to copy the first aprt of the URL. In our case <a href="https://p1v17-vcd.vchs.vmware.com">https://p1v17-vcd.vchs.vmware.com</a></p>
+
+<p><img src="/images/screenshot.27.jpg" alt="" /></p>
+
+<p>Here we will need to enter in the vCHS tenant information. Our Display Name(This will be the cloud name within vCloud Connector) the Node URL(This is the link to your vCHS Instance, append 8443 as vCHS uses a different port), If it is a public cloud(vCHS), Cloud Type will be vCloud Director, vCD-Org Name will be your vCD name within vCHS and then username and password will be your vCHS Information.</p>
+
+<p><img src="/images/screenshot.281.jpg" alt="" /></p>
+
+<p>Once you are done select register and you will see your vCHS instance successfully registered. You will also note it appended the full url to the organization.</p>
+
+<p><img src="/images/screenshot.29.jpg" alt="" /></p>
+
+<p>Now we need to go ahead and configure our vCloud Connector Node to be able to add our vCenter(Private Cloud). Navigate to the management IP port 5480 and use the default username admin and password vmware as we did with the server. Make sure to update the timezone and password appropriately as we did above.</p>
+
+<p>Now we will navigate to the node tab and select Cloud Registration. This is where we will enter in our vCenter server. Enter in your vCenter IP and make sure to select Ignore SSL Cert if you are using the default certificate or future steps will fail. Select Update configuration and we are all done configuring the node.</p>
+
+<p><img src="/images/screenshot.35.jpg" alt="" /></p>
+
+<p>We will now go back to the vCloud Connector Server to register our additional node. Enter in the Display Name in which it will show up in the management console, the node URL, will be the IP of the vCloud Connector Node, Cloud Type will be vSphere and the credentials will be an account with administrator rights into vCenter.</p>
+
+<p><img src="/images/screenshot.37.jpg" alt="" />Select Register and you should now see your private and public clouds registered.</p>
+
+<p><img src="/images/screenshot.38.jpg" alt="" /></p>
+
+<p>Now that the vCloud Connector Server is all ready we can now add the Clouds we registered as nodes. Lets navigate to our vSphere client and look at a new plugin that has been added.</p>
+
+<p><img src="/images/screenshot.39.jpg" alt="" /></p>
+
+<p>Once selected we can now add objects to our cloud, select Clouds and select the green + sign to add our private and public clouds to manage.</p>
+
+<p><img src="/images/screenshot.40.jpg" alt="" /></p>
+
+<p>Lets add our Public Cloud (vCHS) First. From the Drop down for name select the display name you set above. All we need to enter here is your vCHS username and password and select Add.</p>
+
+<p><img src="/images/screenshot.411.jpg" alt="" /></p>
+
+<p>Now we can add our vCenter (Private Cloud)</p>
+
+<p>Select the + sign again and choose your vCenter node you registered previously. Enter in the same username and password you used to register the node.</p>
+
+<p><img src="/images/screenshot.42.jpg" alt="" /></p>
+
+<p>Now if we go back to our Clouds tab we can now see both our public and private clouds registered.</p>
+
+<p><img src="/images/screenshot.43.jpg" alt="" /></p>
+
+<p>You can now migrate your private cloud workloads to the public cloud!</p>
+
+<p><a href="http://davidstamen.com/2014/06/04/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-3/">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 3)</a></p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/vcloud-air/" rel="tag">vCloud Air</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/2014/05/22/create-vmfs-datastore-using-powercli/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Create VMFS Datastore Using PowerCLI</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1)</p></a>
+	</div>
+</nav>
+
+	
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidstamen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/08/vexpert-2017/">vExpert 2017</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Ads</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
+
