@@ -11,7 +11,7 @@
 <meta property="og:description" content="Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
 Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/2014/06/10/configuring-esxi-5-5-syslog-collector/" />
+<meta property="og:url" content="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/" />
 
 
 
@@ -158,7 +158,7 @@ $esxcli.system.syslog.reload()}
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
 	</form>
 </div>
 

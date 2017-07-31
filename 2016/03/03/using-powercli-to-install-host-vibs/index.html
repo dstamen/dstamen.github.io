@@ -11,7 +11,7 @@
 <meta property="og:description" content="So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
 Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/2016/03/03/using-powercli-to-install-host-vibs/" />
+<meta property="og:url" content="http://davidstamen.com/2016/03/03/using-powercli-to-install-host-vibs/" />
 
 
 
@@ -179,7 +179,7 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; 
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
 	</form>
 </div>
 

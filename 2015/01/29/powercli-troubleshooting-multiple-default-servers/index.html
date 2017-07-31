@@ -11,7 +11,7 @@
 <meta property="og:description" content="I use a customized version of http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/ by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.
 Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/2015/01/29/powercli-troubleshooting-multiple-default-servers/" />
+<meta property="og:url" content="http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/" />
 
 
 
@@ -136,7 +136,7 @@ Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
 	</form>
 </div>
 

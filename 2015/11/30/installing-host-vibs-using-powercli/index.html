@@ -11,7 +11,7 @@
 <meta property="og:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
 I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/2015/11/30/installing-host-vibs-using-powercli/" />
+<meta property="og:url" content="http://davidstamen.com/2015/11/30/installing-host-vibs-using-powercli/" />
 
 
 
@@ -159,7 +159,7 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq "PoweredOn" -and $_.Co
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
 	</form>
 </div>
 

@@ -11,7 +11,7 @@
 <meta property="og:description" content="I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
 Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/2015/01/14/powercli-enable-cpu-and-memory-hotadd/" />
+<meta property="og:url" content="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/" />
 
 
 
@@ -193,7 +193,7 @@ $vmview.ReconfigVM($vmConfigSpec)
 			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
 	</form>
 </div>
 
