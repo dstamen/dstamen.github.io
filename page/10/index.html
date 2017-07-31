@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-09-11T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-09-22T00:00:00&#43;00:00"/>
 
 
 
@@ -58,6 +58,27 @@ ga('send', 'pageview');
 
 
 	<div class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/09/22/vmware-data-protection-insuffient-disk-space-for-upgrade/" rel="bookmark">vSphere Data Protection - Insufficient Disk Space for Upgrade</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-09-22T00:00:00">September 22, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.
+&ldquo;Please make sure you have at least 20GB for repo, 10GB for var, and 1GB for root partition.&rdquo;
+Upon further research there seems to be an issue from 5.5.1 and 5.5.5 appliances with the /space partition filling up due to PostGres events. The issue can be resolving by installing the following VDP patch (vdp_patch-5.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/09/22/vmware-data-protection-insuffient-disk-space-for-upgrade/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -239,26 +260,6 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/" rel="bookmark">HA Error: Datastore Heartbeat is less than 2</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2014-05-08T00:00:00">May 08, 2014</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			If you are configuring a cluster with less than 2 datastores, you will receive an HA warning &ldquo;The number of heartbeat datastores for host is 1, which is less than required: 2&rdquo; You can add an option to the HA Advanced Options to supress this warning.
- Log in to vCenter Server Right-click the cluster and click Edit Settings Click vSphere HA &gt; Advanced Options Under Option, add an entry for das.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/">Read more…</a>
-		</div>
-	</div>
-</article>
 
 		
 
@@ -304,6 +305,7 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/2017/07/Another-New-Blog-Platform/">Another New Blog Platform</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></li>
@@ -313,7 +315,6 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
-			<li class="widget__item"><a class="widget__link" href="/2016/12/02/installing-ubiquiti-unifi-controller/">Installing Ubiquiti Unifi Controller</a></li>
 		</ul>
 	</div>
 </div>
@@ -331,6 +332,7 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hugo" title="hugo">hugo (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>

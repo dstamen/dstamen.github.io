@@ -6,10 +6,20 @@
     <description>Recent content in Posts on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jul 2017 16:51:28 -0400</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Another New Blog Platform</title>
+      <link>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</link>
+      <pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate>
+      
+      <guid>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</guid>
+      <description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
+All links should be functional and moved nicely, if they dont work, please leave a comment!</description>
+    </item>
     
     <item>
       <title>Using PowerCLI to Add vRealize Operations License Key</title>
