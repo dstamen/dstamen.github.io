@@ -94,7 +94,8 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>The script is pretty straight forward, just update the CSV file and then you execute the script.</p>
-#Define Variables
+
+<pre><code>#Define Variables
 param
 (
     [Parameter(Mandatory=$False,
@@ -107,12 +108,12 @@ Add-PSSnapin -Name VeeamPSSnapIn -ErrorAction SilentlyContinue
 
 #Check if CSV was specified, if not prompt.
 If($csvlist -eq $NULL){
-    $csvlist = Read-host -Prompt "Csv to import"
+    $csvlist = Read-host -Prompt &quot;Csv to import&quot;
 }
-If((Test-Path $csvlist) -eq $False){Write-host "Could not find CSV.";break}
+If((Test-Path $csvlist) -eq $False){Write-host &quot;Could not find CSV.&quot;;break}
 
 #Import CSV
-$iplist = Import-csv "$csvlist"
+$iplist = Import-csv &quot;$csvlist&quot;
 
 #Cycle through each row and add in the ReIP Rule
 Foreach ($item in $iplist) {
@@ -133,6 +134,7 @@ Foreach ($item in $iplist) {
   Set-VBRViReplicaJob -Job $replicajob -EnableReIp -ReIpRule $newrules
 
 }
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

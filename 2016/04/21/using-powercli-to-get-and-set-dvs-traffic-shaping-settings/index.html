@@ -97,23 +97,27 @@ ga('send', 'pageview');
 <p><em>This script assumes you have already launched PowerCLI and modified the variables</em></p>
 
 <h4 id="get-traffic-shaping-settings"><strong><em>Get Traffic Shaping Settings</em></strong></h4>
-Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
-  Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike "*DVUplinks*"}) {
-      Write "$VirtualPortGroup on $VirtualSwitch"
+
+<pre><code>Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
+  Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike &quot;*DVUplinks*&quot;}) {
+      Write &quot;$VirtualPortGroup on $VirtualSwitch&quot;
       $dvPg = Get-dvSwPg -dvSw $VirtualSwitch.ExtensionData -PGName $VirtualPortGroup
       Get-dvPgTrafficShaping -dvPg $dvPg|ft
   }
 }
+</code></pre>
 
 <h4 id="set-traffic-shaping-settings"><strong><em>Set Traffic Shaping Settings</em></strong></h4>
 
+<pre><code>
 Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
-  Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike "*DVUplinks*"}) {
-      Write "$VirtualPortGroup on $VirtualSwitch"
+  Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike &quot;*DVUplinks*&quot;}) {
+      Write &quot;$VirtualPortGroup on $VirtualSwitch&quot;
       $dvPg = Get-dvSwPg -dvSw $VirtualSwitch.ExtensionData -PGName $VirtualPortGroup
       Set-dvPgTrafficShaping -dvPg $dvPg -InShaping -inAverageKbps 10485760 -inBurstKB 102400 -inPeakKbps 10485760 -OutShaping -outAverageKbps 10485760 -outBurstKB 102400 -outPeakKbps 10485760
    }
 }
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

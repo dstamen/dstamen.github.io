@@ -92,14 +92,15 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-#Define Variables
+
+<pre><code>#Define Variables
 $cred = Get-Credential
-$domains = "ucs01.lab.local","ucs02.lab.local"
-$Descr = "SNMP config for UCS"
-$AdminState = "enabled"
-$SysContact = "admin@lab.local"
-$SysLocation = "US"
-$Community = "public"
+$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+$Descr = &quot;SNMP config for UCS&quot;
+$AdminState = &quot;enabled&quot;
+$SysContact = &quot;admin@lab.local&quot;
+$SysLocation = &quot;US&quot;
+$Community = &quot;public&quot;
 
 #Cycles through each UCS setting values
 Foreach ($ucs in $domains) {
@@ -110,6 +111,7 @@ Foreach ($ucs in $domains) {
   }
   Disconnect-UCS
 }
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

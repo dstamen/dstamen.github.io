@@ -92,27 +92,28 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>Fill in the appropriate variables, and execute the script.</p>
-Import-Module NTFSSecurity
+
+<pre><code>Import-Module NTFSSecurity
 
 #variables
-$sharename = "share"
-$cachingmode = "none"
+$sharename = &quot;share&quot;
+$cachingmode = &quot;none&quot;
 $continuouslyavailable = $true
 $encryptdata = $false
-$folderenumerationmode = "AccessBased"
-$path = "D:\Shares\"
-$scopename = "ClusterORResourceName"
+$folderenumerationmode = &quot;AccessBased&quot;
+$path = &quot;D:\Shares\&quot;
+$scopename = &quot;ClusterORResourceName&quot;
 $sharepath = $path+$sharename
-$fullaccess = "Everyone"
+$fullaccess = &quot;Everyone&quot;
 
 
 #check if path exists
 $PathCheck = Test-Path $sharepath
 if ($PathCheck -eq $true) {
-    Write-Host "$sharepath exists."
+    Write-Host &quot;$sharepath exists.&quot;
 }
 else {
-    Write-Host "$sharepath does not exist"
+    Write-Host &quot;$sharepath does not exist&quot;
     New-Item $sharepath -type directory
 }
 
@@ -124,6 +125,7 @@ New-SmbShare -Name $sharename -CachingMode $cachingmode -ContinuouslyAvailable $
 Disable-NTFSAccessInheritance $sharepath -RemoveInheritedAccessRules
 Add-NTFSAccess $sharepath -Account BUILTIN\Administrators -AccessRights FullControl
 Get-NTFSAccess $sharepath
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 
