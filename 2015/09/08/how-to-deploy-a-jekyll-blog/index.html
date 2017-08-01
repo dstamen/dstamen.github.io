@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>How To Deploy a Jekyll Blog</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
 <meta property="og:title" content="How To Deploy a Jekyll Blog" />
 <meta property="og:description" content="So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # = Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?" />
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/" />
 
@@ -72,42 +75,41 @@ ga('send', 'pageview');
   	<div class="post__content clearfix">
 			<p>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.</p>
 
-
-~ $ gem install jekyll
+<pre><code>~ $ gem install jekyll
 ~ $ jekyll new myblog
 ~ $ cd myblog
 ~/myblog $ jekyll serve
-# => Now browse to http://localhost:4000 and you will see the blog running!
-
+# =&gt; Now browse to http://localhost:4000 and you will see the blog running!
+</code></pre>
 
 <p>Easy Enough? Now how do you create a blog post?</p>
 
-<p>Create a file with the following name in the _posts directory.
+<p>Create a file with the following name in the _posts directory.</p>
 
-# Create a file with the following syntax
+<pre><code># Create a file with the following syntax
 YEAR-MONTH-DAY-title.md
 # Example: 2015-09-08-hi-to-my-new-blog.md
-</p>
+</code></pre>
 
-<p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information <a href="https://help.github.com/articles/markdown-basics/">here</a>
+<p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information <a href="https://help.github.com/articles/markdown-basics/">here</a></p>
 
----
+<pre><code>---
 layout: post
-title: "How To Deploy a Jekyll Blog"
+title: &quot;How To Deploy a Jekyll Blog&quot;
 tags:
 - Category
 ---
 Type your blogpost here.
-</p>
+</code></pre>
 
 <p>Once you save your file, you can refresh your browser pointing to <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p>
 
 <p>Your own host.</p>
 
-<p>Run the following command and then upload the content in the _site directory.
+<p>Run the following command and then upload the content in the _site directory.</p>
 
-jekyll build
-</p>
+<pre><code>jekyll build
+</code></pre>
 
 <p>GitHub Pages
 You can also load the site into GitHub pages and have a fully functioning site at username.github.io

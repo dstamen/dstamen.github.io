@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using PowerCLI to Replicate Templates to Multiple Clusters</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -94,16 +97,15 @@ ga('send', 'pageview');
 
 <p><em>This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.</em></p>
 
-
-#Import PowerCLI Module
+<pre><code>#Import PowerCLI Module
 Add-PSSnapin VMware.VimAutomation.Core
 
 #Define Variables
 $Credential = Get-Credential
-$vCenter = "vcenter.lab.local"
-$clusters = "Cluster01","Cluster02"
-$location = "Templates"
-$templates = "Template1","Template2"
+$vCenter = &quot;vcenter.lab.local&quot;
+$clusters = &quot;Cluster01&quot;,&quot;Cluster02&quot;
+$location = &quot;Templates&quot;
+$templates = &quot;Template1&quot;,&quot;Template2&quot;
 
 #Connect to vCenter
 Connect-VIServer $vCenter -Credential $Credential
@@ -131,7 +133,7 @@ foreach ($template in $templates){
 }
 #Disconnect from vCenter
 Disconnect-VIServer $vCenter -Force -Confirm:$false
-
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

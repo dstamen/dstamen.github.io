@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Unable to join PSC to Domain via Webclient</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -84,9 +87,8 @@ ga('send', 'pageview');
 <li>The first method is to join to the domain using the CLI.</li>
 </ul>
 
-
-/opt/likewise/bin/domainjoin-cli join domain username
-
+<pre><code>/opt/likewise/bin/domainjoin-cli join domain username
+</code></pre>
 
 <ul>
 <li>The second method is to use the new PSC interface to join to the domain.

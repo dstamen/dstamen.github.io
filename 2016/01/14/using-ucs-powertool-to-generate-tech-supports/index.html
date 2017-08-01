@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using UCS PowerTool To Generate Tech Supports</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -90,11 +93,10 @@ ga('send', 'pageview');
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-
-#Define Variables
+<pre><code>#Define Variables
 $cred = Get-Credential
-$domains = "ucs01.lab.local","ucs02.lab.local"
-$fileloc = "C:\Users\david\desktop\logs\"
+$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+$fileloc = &quot;C:\Users\david\desktop\logs\&quot;
 
 #Cycles through each UCS creating a tech support for each chassis.
 Foreach ($ucs in $domains) {
@@ -102,13 +104,13 @@ Connect-UCS $ucs -Credential $cred
 $Chassis = Get-UCSChassis
   Foreach ($chassis in $chassis) {
     $id = $chassis.id
-    $filename = "$fileloc$ucs-techsupp-chassis-$id.tar"
+    $filename = &quot;$fileloc$ucs-techsupp-chassis-$id.tar&quot;
     Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC 'all'
   }
 Disconnect-UCS
 }
 
-
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

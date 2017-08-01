@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using UCS PowerTool To Configure UCS Policy Backup and Export</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -90,18 +93,17 @@ ga('send', 'pageview');
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-
-#Define Variables
-$UCS = "FQDNofUCS" #FQDN of UCS To COnnect To
-$Hostname = "ucs.lab.local" #Hostname to Upload backup to.
-$Protocol = "scp" #Transfer Protocol. ftp,scp,tftp,sftp
-$User = "ftpuser" #Username
-$Password = "ftpuser" #Password
-$MgmtBackupRemoteFile = "Full" #Location/Prefix of File. Location/Prefix will be in front of filename
-$ConfigBackupRemoteFile = "AllConfig" #Location/Prefix of File. Location/Prefix will be in front of filename
-$AdminState = "enable" #enable or disable
-$Schedule = "1day" #1day, 7day, 14day for daily, weekly or biweekly backups
-
+<pre><code>#Define Variables
+$UCS = &quot;FQDNofUCS&quot; #FQDN of UCS To COnnect To
+$Hostname = &quot;ucs.lab.local&quot; #Hostname to Upload backup to.
+$Protocol = &quot;scp&quot; #Transfer Protocol. ftp,scp,tftp,sftp
+$User = &quot;ftpuser&quot; #Username
+$Password = &quot;ftpuser&quot; #Password
+$MgmtBackupRemoteFile = &quot;Full&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$ConfigBackupRemoteFile = &quot;AllConfig&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$AdminState = &quot;enable&quot; #enable or disable
+$Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly backups
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

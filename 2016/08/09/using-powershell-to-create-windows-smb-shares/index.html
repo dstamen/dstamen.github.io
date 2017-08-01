@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using Powershell to Create Windows SMB Shares</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -89,28 +92,27 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>Fill in the appropriate variables, and execute the script.</p>
-
-<pre><code class="language-powershell">Import-Module NTFSSecurity
+Import-Module NTFSSecurity
 
 #variables
-$sharename = &quot;share&quot;
-$cachingmode = &quot;none&quot;
+$sharename = "share"
+$cachingmode = "none"
 $continuouslyavailable = $true
 $encryptdata = $false
-$folderenumerationmode = &quot;AccessBased&quot;
-$path = &quot;D:\Shares\&quot;
-$scopename = &quot;ClusterORResourceName&quot;
+$folderenumerationmode = "AccessBased"
+$path = "D:\Shares\"
+$scopename = "ClusterORResourceName"
 $sharepath = $path+$sharename
-$fullaccess = &quot;Everyone&quot;
+$fullaccess = "Everyone"
 
 
 #check if path exists
 $PathCheck = Test-Path $sharepath
 if ($PathCheck -eq $true) {
-    Write-Host &quot;$sharepath exists.&quot;
+    Write-Host "$sharepath exists."
 }
 else {
-    Write-Host &quot;$sharepath does not exist&quot;
+    Write-Host "$sharepath does not exist"
     New-Item $sharepath -type directory
 }
 
@@ -122,7 +124,6 @@ New-SmbShare -Name $sharename -CachingMode $cachingmode -ContinuouslyAvailable $
 Disable-NTFSAccessInheritance $sharepath -RemoveInheritedAccessRules
 Add-NTFSAccess $sharepath -Account BUILTIN\Administrators -AccessRights FullControl
 Get-NTFSAccess $sharepath
-</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

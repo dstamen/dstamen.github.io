@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using UCS PowerTool To Set SNMP Configuration</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -89,15 +92,14 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code class="language-powershell">#Define Variables
+#Define Variables
 $cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$Descr = &quot;SNMP config for UCS&quot;
-$AdminState = &quot;enabled&quot;
-$SysContact = &quot;admin@lab.local&quot;
-$SysLocation = &quot;US&quot;
-$Community = &quot;public&quot;
+$domains = "ucs01.lab.local","ucs02.lab.local"
+$Descr = "SNMP config for UCS"
+$AdminState = "enabled"
+$SysContact = "admin@lab.local"
+$SysLocation = "US"
+$Community = "public"
 
 #Cycles through each UCS setting values
 Foreach ($ucs in $domains) {
@@ -108,7 +110,6 @@ Foreach ($ucs in $domains) {
   }
   Disconnect-UCS
 }
-</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

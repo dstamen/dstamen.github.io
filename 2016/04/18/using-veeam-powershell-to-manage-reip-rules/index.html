@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using Veeam Powershell to Manage ReIP Rules</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -91,8 +94,7 @@ ga('send', 'pageview');
 <h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
 
 <p>The script is pretty straight forward, just update the CSV file and then you execute the script.</p>
-
-<pre><code class="language-powershell">#Define Variables
+#Define Variables
 param
 (
     [Parameter(Mandatory=$False,
@@ -105,12 +107,12 @@ Add-PSSnapin -Name VeeamPSSnapIn -ErrorAction SilentlyContinue
 
 #Check if CSV was specified, if not prompt.
 If($csvlist -eq $NULL){
-    $csvlist = Read-host -Prompt &quot;Csv to import&quot;
+    $csvlist = Read-host -Prompt "Csv to import"
 }
-If((Test-Path $csvlist) -eq $False){Write-host &quot;Could not find CSV.&quot;;break}
+If((Test-Path $csvlist) -eq $False){Write-host "Could not find CSV.";break}
 
 #Import CSV
-$iplist = Import-csv &quot;$csvlist&quot;
+$iplist = Import-csv "$csvlist"
 
 #Cycle through each row and add in the ReIP Rule
 Foreach ($item in $iplist) {
@@ -131,7 +133,6 @@ Foreach ($item in $iplist) {
   Set-VBRViReplicaJob -Job $replicajob -EnableReIp -ReIpRule $newrules
 
 }
-</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using PowerCLI to Build Out vCenter</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -89,34 +92,34 @@ ga('send', 'pageview');
 
 <p>The code and Github Link can be found below.</p>
 
-<p><a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter">ConfigvCenter.ps1</a>
+<p><a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter">ConfigvCenter.ps1</a></p>
 
-# Variables
-$vcenter = "vc.lab.local"
-$esxusername = "root"
-$esxpassword = "password"
-$DSC = "DSC01"
-$Datacenter = "Lab"
+<pre><code># Variables
+$vcenter = &quot;vc.lab.local&quot;
+$esxusername = &quot;root&quot;
+$esxpassword = &quot;password&quot;
+$DSC = &quot;DSC01&quot;
+$Datacenter = &quot;Lab&quot;
 
 #Connect to vCenter
 #Connect-VIServer -Server $vCenter
 
 # Create Datacenters
-Write-Host "Creating Datacenter" -ForegroundColor "Green"
+Write-Host &quot;Creating Datacenter&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\createdatacenter.csv
 foreach ($datacenter in $csv) {
   New-Datacenter -Location (Get-Folder -NoRecursion) -Name $datacenter.Name
 }
 
 # Create Clusters
-Write-Host "Creating Clusters" -ForegroundColor "Green"
+Write-Host &quot;Creating Clusters&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\createcluster.csv
 foreach ($cluster in $csv) {
   New-Cluster -Name $cluster.Name -Location $cluster.Datacenter -DRSEnabled -DrsAutomationLevel FullyAutomated -HAEnabled
 }
 
 # Create Clusters
-Write-Host "Adding Hosts" -ForegroundColor "Green"
+Write-Host &quot;Adding Hosts&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\createhosts.csv
 foreach ($vmhost in $csv) {
   Add-VMHost -Name $vmhost.Name -Location $vmhost.Cluster -User $esxusername -Password $esxpassword
@@ -124,14 +127,14 @@ foreach ($vmhost in $csv) {
 }
 
 # Create Datastores
-Write-Host "Creating Datastores" -ForegroundColor "Green"
+Write-Host &quot;Creating Datastores&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\createdatastores.csv
 foreach ($datastore in $csv) {
   New-Datastore -VMHost $datastore.host -Name $datastore.Name -Path $datastore.NAAID -VMFS
 }
 
 # Create Datastore Cluster and Move Datastores In
-Write-Host "Creating Datastore Cluster and Adding Datastores" -ForegroundColor "Green"
+Write-Host &quot;Creating Datastore Cluster and Adding Datastores&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\createdatastores.csv
 New-DatastoreCluster -Name $DSC -Location $Datacenter
 foreach ($datastore in $csv) {
@@ -139,14 +142,14 @@ foreach ($datastore in $csv) {
 }
 
 # Apply HostProfile
-Write-Host "Applying HostProfiles" -ForegroundColor "Green"
+Write-Host &quot;Applying HostProfiles&quot; -ForegroundColor &quot;Green&quot;
 $csv = Import-CSV .\applyhostprofile.csv
 foreach ($hostprofile in $csv) {
   Apply-VMHostProfile -Entity $hostprofile.Entity -Profile $hostprofile.Profile -Confirm:$false
 }
 
-Write-Host "Complete!" -ForegroundColor "Green"
-</p>
+Write-Host &quot;Complete!&quot; -ForegroundColor &quot;Green&quot;
+</code></pre>
 
 		</div>
 		

@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -94,61 +97,60 @@ ga('send', 'pageview');
 <li><strong><em>scopereservations.csv</em></strong> - Used to create Scope Reservations. Input your ScopeID, MAC Address and Reservation Name. It automatically pulls an available IP and reserves it.</li>
 </ul>
 
-<p>Execute the Vagrant package by downloading it and running.
+<p>Execute the Vagrant package by downloading it and running.</p>
 
-vagrant up
-</p>
+<pre><code>vagrant up
+</code></pre>
 
-<p>Execute the powershell script by downloading the scripts folder and running.
+<p>Execute the powershell script by downloading the scripts folder and running.</p>
 
-.\install_ha_dhcp.ps1
-</p>
+<pre><code>.\install_ha_dhcp.ps1
+</code></pre>
 
 <h1 id="here-is-a-copy-of-the-raw-code">Here is a copy of the raw code.</h1>
 
-
-# Powershell Script for Vagrant to install and configure DHCP
+<pre><code># Powershell Script for Vagrant to install and configure DHCP
 # @davidstamen
 # http://davidstamen.com
 
 cd c:\vagrant\scripts
 
-$username = "vagrant"
-$password = "vagrant"
+$username = &quot;vagrant&quot;
+$password = &quot;vagrant&quot;
 $secstr = New-Object -TypeName System.Security.SecureString
 $password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
 
 # Install the DHCP Role
-Write-Host "Installing DHCP Server Role" -ForegroundColor "Red"
+Write-Host &quot;Installing DHCP Server Role&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\dhcpservers.csv
 foreach ($server in $csv) {
   Install-WindowsFeature DHCP -IncludeAllSubFeature -IncludeManagementTools -Computer $server.IP -Credential $cred -Verbose
 }
 
 # Authorize the DHCP server in Active Directory
-#Write-Host "Adding DHCP Server to AD" -ForegroundColor "Red"
+#Write-Host &quot;Adding DHCP Server to AD&quot; -ForegroundColor &quot;Red&quot;
 #$csv = Import-CSV .\dhcpservers.csv
 #foreach ($server in $csv) {
 #Add-DhcpServerInDC -DnsName $server.Name -IPAddress $server.IP
 #}
 
 # Create an IPv4 DHCP scope
-Write-Host "Adding DHCP Scopes" -ForegroundColor "Red"
+Write-Host &quot;Adding DHCP Scopes&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\createscopes.csv
 foreach ($scope in $csv) {
     Add-DhcpServerv4Scope -ComputerName $scope.Server -Name $scope.Name -StartRange $scope.Start -EndRange $scope.End -SubnetMask $scope.mask -Verbose
 }
 
 # Set DHCP Server Options
-Write-Host "Setting DHCP Server Options" -ForegroundColor "Red"
+Write-Host &quot;Setting DHCP Server Options&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\serveroptions.csv
 foreach ($scope in $csv) {
   Set-DhcpServerv4OptionValue -ComputerName $scope.Server -DnsDomain $scope.DNSDomain -DNSServer $scope.DNSServer -Verbose
 }
 
 # Set DHCP Scope Options
-Write-Host "Setting DHCP Scope Options" -ForegroundColor "Red"
+Write-Host &quot;Setting DHCP Scope Options&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\scopeoptions.csv
 foreach ($scope in $csv) {
   Set-DhcpServerv4OptionValue -ComputerName $scope.Server -ScopeId $scope.scopeID -Router $scope.Router -Verbose
@@ -156,14 +158,14 @@ foreach ($scope in $csv) {
 }
 
 # Configure Failover
-Write-Host "Configuring DHCP Failover" -ForegroundColor "Red"
+Write-Host &quot;Configuring DHCP Failover&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\scopefailover.csv
 foreach ($scope in $csv) {
   Add-DhcpServerv4Failover -ComputerName $scope.Server -Name $scope.scopeID -PartnerServer $scope.PartnerServer -ScopeId $scope.scopeID -LoadBalancePercent $scope.LoadBalancePercent -MaxClientLeadTime $scope.MaxClientLeadTime -AutoStateTransition ([System.Convert]::ToBoolean($scope.AutoStateTransition)) -StateSwitchInterval $scope.StateSwitchInterval -Verbose
 }
 
 #Create MAC Allow List DHCP policy
-Write-Host "Creating MAC Allow List Policy" -ForegroundColor "Red"
+Write-Host &quot;Creating MAC Allow List Policy&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\scopepolicy.csv
 foreach ($scope in $csv) {
   $maclist = @()
@@ -176,19 +178,19 @@ foreach ($scope in $csv) {
 }
 
 #Reserve IP's
-Write-Host "Reserving DHCP IPs" -ForegroundColor "Red"
+Write-Host &quot;Reserving DHCP IPs&quot; -ForegroundColor &quot;Red&quot;
 $csv = Import-CSV .\scopereservations.csv
 foreach ($scope in $csv) {
   Add-DhcpServerv4Reservation -ComputerName $scope.Server -ScopeId $scope.ScopeID -IPAddress (Get-DhcpServerv4FreeIPAddress -ComputerName $scope.Server -ScopeId $scope.ScopeID) -ClientId $Scope.MAC -Name $scope.Name -Verbose
 }
 
 #Replicate Settings
-Write-Host "Forcing Replication" -ForegroundColor "Red"
+Write-Host &quot;Forcing Replication&quot; -ForegroundColor &quot;Red&quot;
 Get-DhcpServerv4Failover -ComputerName $scope.Server|Invoke-DhcpServerv4FailoverReplication -ComputerName $scope.Server -Force
 #Convert Leases to Reservation
 #Get-DhcpServerv4Lease -ComputerName $server1 -ScopeID 10.10.10.0 | Add-DhcpServerv4Reservation -ComputerName $server1
 
-
+</code></pre>
 
 		</div>
 		

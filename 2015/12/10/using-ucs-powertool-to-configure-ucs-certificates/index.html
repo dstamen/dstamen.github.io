@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using UCS PowerTool To Configure UCS Certificates</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -90,29 +93,28 @@ ga('send', 'pageview');
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-
-#Define Variables
-$UCS = "FQDNofUCS" #Used to Connect to UCSM via PowerTool
-$TrustPoint = "TP-Name" #Name of TrustPoint, AKA Root CA
-$KeyRing = "KeyRingName" #name of KeyRing. Stores Certificate Information
-$Modulus = "mod2048" #2048 bit key this can be 1024,2048,4096, etc
-$CertDNS = "FQDNofUCS" #FQDN for Cert Request
-$CertLocality = "City" #City for Cert Request
-$CertState = "State" #State for Cert Request
-$CertCountry = "US" #Country for Cert Request
-$CertOrgName = "Org" #OrgName for Cert Request
-$CertEmail = "me@lab.com" #Email for Cert Request
-$CertSubjName = "FQDNofUCS" #FQDN for Cert Request
-$CertIP = "FI-VIP-IP" #FI-VIP IP for Cert Request
-$CertIpA = "FI-A-IP" #FI-A IP for Cert Request
-$CertIpB = "FI-B-IP" #FI-B IP for Cert Request
-$TPChain = "-----BEGIN CERTIFICATE-----
+<pre><code>#Define Variables
+$UCS = &quot;FQDNofUCS&quot; #Used to Connect to UCSM via PowerTool
+$TrustPoint = &quot;TP-Name&quot; #Name of TrustPoint, AKA Root CA
+$KeyRing = &quot;KeyRingName&quot; #name of KeyRing. Stores Certificate Information
+$Modulus = &quot;mod2048&quot; #2048 bit key this can be 1024,2048,4096, etc
+$CertDNS = &quot;FQDNofUCS&quot; #FQDN for Cert Request
+$CertLocality = &quot;City&quot; #City for Cert Request
+$CertState = &quot;State&quot; #State for Cert Request
+$CertCountry = &quot;US&quot; #Country for Cert Request
+$CertOrgName = &quot;Org&quot; #OrgName for Cert Request
+$CertEmail = &quot;me@lab.com&quot; #Email for Cert Request
+$CertSubjName = &quot;FQDNofUCS&quot; #FQDN for Cert Request
+$CertIP = &quot;FI-VIP-IP&quot; #FI-VIP IP for Cert Request
+$CertIpA = &quot;FI-A-IP&quot; #FI-A IP for Cert Request
+$CertIpB = &quot;FI-B-IP&quot; #FI-B IP for Cert Request
+$TPChain = &quot;-----BEGIN CERTIFICATE-----
 PASTE CERT CONTENT HERE FOR ROOTCA
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
 PASTE CERT CONTENT HERE FOR SUB CA
------END CERTIFICATE-----" #Delete Second part if not using a Root/Sub Scenario.
-
+-----END CERTIFICATE-----&quot; #Delete Second part if not using a Root/Sub Scenario.
+</code></pre>
 
 <p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
 

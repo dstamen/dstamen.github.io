@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using Ansible to Run Powershell Scripts</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -94,7 +97,7 @@ ga('send', 'pageview');
 
 <p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.</p>
 
-<pre><code class="language-yaml">ansible_ssh_user: admin
+<pre><code>ansible_ssh_user: admin
 ansible_ssh_pass: password
 ansible_ssh_port: 5985
 ansible_connection: winrm
@@ -102,15 +105,13 @@ ansible_winrm_server_cert_validation: ignore
 </code></pre>
 
 <p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
-
-<pre><code class="language-yaml">- name: Run Powershell Scripts
+- name: Run Powershell Scripts
   hosts: test
   tasks:
     - name: run a powershell script
       script: scripts/hello.ps1
       register: out
     - debug: var=out
-</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

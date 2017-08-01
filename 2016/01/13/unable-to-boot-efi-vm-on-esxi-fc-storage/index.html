@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Unable to Boot EFI VM on ESXi FC Storage</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -94,27 +97,26 @@ ga('send', 'pageview');
 
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 
-
-# PowerCLI Script for setting Disk Max IO Size
+<pre><code># PowerCLI Script for setting Disk Max IO Size
 # @davidstamen
 # http://davidstamen.com
 
 #Define Variables
 $cred = Get-Credential
-$VC = "vc.lab.local"
-$Cluster = "Production"
+$VC = &quot;vc.lab.local&quot;
+$Cluster = &quot;Production&quot;
 
 #Connect to vCenter
 Connect-VIServer $VC -Credential $cred
 
 #Get all Hosts
-$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq "PoweredOn" -and $_.ConnectionState -eq "Connected" } | Sort Name
+$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | Sort Name
 
 #For each host set DiskMaxIOsize to 4MB
 foreach ($esx in $esxHosts) {
   Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
 }
-
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

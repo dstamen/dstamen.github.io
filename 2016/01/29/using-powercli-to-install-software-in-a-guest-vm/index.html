@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Using PowerCLI to Install Software in a Guest VM</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -92,21 +95,20 @@ ga('send', 'pageview');
 
 <p><em>This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer</em></p>
 
-
-#Define Variables
-Write-Host "Prompt For Guest Credentials" -ForegroundColor Yellow
+<pre><code>#Define Variables
+Write-Host &quot;Prompt For Guest Credentials&quot; -ForegroundColor Yellow
 $Cred = Get-Credential
-$VMs = "VM1","VM2"
+$VMs = &quot;VM1&quot;,&quot;VM2&quot;
 #$VMs = Get-VM VM* | Sort Name
 
 Foreach ($VMName in $VMs) {
   $VM = Get-VM $VMName
 
 #Define file information. Include File Name, Parameters, Source and Destination
-  $File = "VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe"
-  $Param = "/s /v/qn REBOOT=Reallysuppress"
-  $SrcPath = "c:\"
-  $DstPath = "c:\temp\"
+  $File = &quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&quot;
+  $Param = &quot;/s /v/qn REBOOT=Reallysuppress&quot;
+  $SrcPath = &quot;c:\&quot;
+  $DstPath = &quot;c:\temp\&quot;
   $Fullpath = $SrcPath + $File
 
   Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
@@ -115,12 +117,12 @@ Foreach ($VMName in $VMs) {
   #Define Install File Command
   $Command = $DstPath + $File + $Param
   #Define Delete File Command
-  $Command2 = "del " + $DstPath + $File
+  $Command2 = &quot;del &quot; + $DstPath + $File
 
   Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
   $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
   $ExitCode = $Result.ExitCode
-  if ($ExitCode = "0") {
+  if ($ExitCode = &quot;0&quot;) {
     Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
   }
   Else {
@@ -129,7 +131,7 @@ Foreach ($VMName in $VMs) {
   Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
   $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
   $ExitCode2 = $Result2.ExitCode
-  if ($ExitCode2 = "0") {
+  if ($ExitCode2 = &quot;0&quot;) {
     Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
   }
   Else {
@@ -137,7 +139,7 @@ Foreach ($VMName in $VMs) {
   }
 }
 
-
+</code></pre>
 
 <h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
 

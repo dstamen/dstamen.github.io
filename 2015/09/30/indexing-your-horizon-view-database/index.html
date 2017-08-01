@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Indexing your Horizon View Database</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -76,9 +79,8 @@ ga('send', 'pageview');
 
 <p>To create an index on your event database run the following command on your SQL event database. XXX is the prefix of your database, if you do not have a prefix set, just leave it as <strong>dbo.event_data</strong>.</p>
 
-
-CREATE INDEX IX_eventid ON dbo.XXXevent_data (eventid)
-
+<pre><code>CREATE INDEX IX_eventid ON dbo.XXXevent_data (eventid)
+</code></pre>
 
 <p><img src="/images/indexviewdb.png" alt="" /></p>
 

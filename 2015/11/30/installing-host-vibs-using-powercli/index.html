@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <title>Installing Host VIB&#39;s Using PowerCLI</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
@@ -76,30 +79,29 @@ ga('send', 'pageview');
 
 <p>All you need to do is input your cluster and specify what VIB&rsquo;s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB&rsquo;s you want to install.</p>
 
-
-# Define Variables
-$Cluster = "Cluster"
-$VIBPATH1 = "/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib"
-$VIBPATH2 = "/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib"
+<pre><code># Define Variables
+$Cluster = &quot;Cluster&quot;
+$VIBPATH1 = &quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;
+$VIBPATH2 = &quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&quot;
 
 
 # Get each host in specified cluster that meets criteria
-Get-VMhost -Location $Cluster | where { $_.PowerState -eq "PoweredOn" -and $_.ConnectionState -eq "Connected" } | foreach {
+Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | foreach {
 
-    Write-host "Preparing $($_.Name) for ESXCLI" -ForegroundColor Yellow
+    Write-host &quot;Preparing $($_.Name) for ESXCLI&quot; -ForegroundColor Yellow
 
     $ESXCLI = Get-EsxCli -VMHost $_
 
     # Install VIBs
-    Write-host "Installing VIB on $($_.Name)" -ForegroundColor Yellow
+    Write-host &quot;Installing VIB on $($_.Name)&quot; -ForegroundColor Yellow
     $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
     $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
 
     # Verify VIB installed successfully
-    if ($action.Message -eq "Operation finished successfully."){Write-host "Action Completed successfully on $($_.Name)" -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-    if ($action2.Message -eq "Operation finished successfully."){Write-host "Action Completed successfully on $($_.Name)" -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+    if ($action.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+    if ($action2.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
 }
-
+</code></pre>
 
 <p>Hope this helps anyone else out wanting to automate vib installation using PowerCLI.</p>
 
