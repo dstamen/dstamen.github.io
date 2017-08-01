@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://davidstamen.com/2017/07/Test/</loc>
+    <lastmod>2017-07-31T21:23:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</loc>
     <lastmod>2017-07-31T16:51:28-04:00</lastmod>
   </url>
@@ -598,7 +603,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2017-07-31T21:23:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -635,6 +640,12 @@
   <url>
     <loc>http://davidstamen.com/tags/</loc>
     <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/tags/test/</loc>
+    <lastmod>2017-07-31T21:23:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -694,7 +705,7 @@
   
   <url>
     <loc>http://davidstamen.com/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2017-07-31T21:23:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
