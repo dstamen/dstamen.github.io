@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-04-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-04-01T00:00:00&#43;00:00"/>
 
 
 
@@ -58,25 +58,6 @@ ga('send', 'pageview');
 
 
 	<div class="main-content list content" role="main"><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/04/02/powercli-extend-vmdk-and-guest-os/" rel="bookmark">PowerCLI - Extend VMDK and Guest OS</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-04-02T00:00:00">April 02, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/04/02/powercli-extend-vmdk-and-guest-os/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -252,6 +233,27 @@ Upon further research i finally found the right combination of settings to allow
 		</div>
 	</div>
 </article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/" rel="bookmark">Office 365/Exchange EAC Pop Ups not working with Chrome 37</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-10-16T00:00:00">October 16, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.
+Download the Chrome Policy Plugin here
+ Open the zip file you just downloaded and locate the .ADM file that best matches your system: Extract the .ADM file to any folder on your hard drive Go to Start &gt; Run, and run gpedit.msc Right-click Local Computer Policy &gt; Computer Configuration &gt; Administrative Templates, and select Add/Remove Templates: Add the adm template that you saved to disk earlier: You should now see the template underneath a Google &gt; Google Chrome section within Administrative Templates 2.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/">Read more…</a>
+		</div>
+	</div>
+</article>
 
 		
 
@@ -297,7 +299,6 @@ Upon further research i finally found the right combination of settings to allow
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/2017/07/Test/">Test</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/07/Another-New-Blog-Platform/">Another New Blog Platform</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
@@ -307,6 +308,7 @@ Upon further research i finally found the right combination of settings to allow
 			<li class="widget__item"><a class="widget__link" href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/01/31/exporting-powerdns-zones-to-bind-files/">Exporting PowerDNS Zones to Bind Files</a></li>
 			<li class="widget__item"><a class="widget__link" href="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/">Functional Branding of vSphere Web Client Logon Page</a></li>
+			<li class="widget__item"><a class="widget__link" href="/2016/12/29/using-the-vmware-content-libray-assistant-fling/">Using the VMware Content Libray Assistant Fling</a></li>
 		</ul>
 	</div>
 </div>
@@ -333,7 +335,6 @@ Upon further research i finally found the right combination of settings to allow
 		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/test" title="test">test (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
