@@ -69,7 +69,7 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2015-01-29T00:00:00">January 29, 2015</time>
 			</p>
 		</header>
-		<div class="post__content clearfix">
+  	<div class="post__content clearfix">
 			<p>I use a customized version of <a href="http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/">http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/</a> by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.</p>
 
 <p>Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set. You can review the 3 scope options <a href="https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html">https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html</a></p>
@@ -88,6 +88,15 @@ Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:
 		<li class="tags__item"><a class="tags__link" href="/tags/powercli/" rel="tag">PowerCLI</a></li>
 	</ul>
 </div>
+
+		
+<h4>Share on</h4>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f&text=PowerCLI%20-%20Troubleshooting%20Multiple%20Default%20Servers" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f&title=PowerCLI%20-%20Troubleshooting%20Multiple%20Default%20Servers" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f&title=PowerCLI%20-%20Troubleshooting%20Multiple%20Default%20Servers" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
 
 	</article>
 	

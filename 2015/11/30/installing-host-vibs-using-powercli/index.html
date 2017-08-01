@@ -69,7 +69,7 @@ ga('send', 'pageview');
 				<time class="post__meta-date" datetime="2015-11-30T00:00:00">November 30, 2015</time>
 			</p>
 		</header>
-		<div class="post__content clearfix">
+  	<div class="post__content clearfix">
 			<p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a <a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
 
 <p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember <a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/">Brian Graf&rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
@@ -111,6 +111,15 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq "PoweredOn" -and $_.Co
 		<li class="tags__item"><a class="tags__link" href="/tags/powercli/" rel="tag">PowerCLI</a></li>
 	</ul>
 </div>
+
+		
+<h4>Share on</h4>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f&text=Installing%20Host%20VIB%27s%20Using%20PowerCLI" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f&title=Installing%20Host%20VIB%27s%20Using%20PowerCLI" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f&title=Installing%20Host%20VIB%27s%20Using%20PowerCLI" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
 
 	</article>
 	
