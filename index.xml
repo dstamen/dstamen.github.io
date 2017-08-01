@@ -6,10 +6,44 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jul 2017 16:51:28 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Home</title>
+      <link>http://davidstamen.com/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://davidstamen.com/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/resources/</guid>
+      <description>Here is a list of some great resources I have come across and thought I should share.
+Blogs
+ William Lam Ryan Johnson Brian Graf Michael Rudloff VMware Blogs VMware Community Podcast  Study Guides
+ VCP6-DCV Study Guide by @vHersey VCP6-DCV Study Guide by @dadowsitef VCP6-DCV Delta Study Guide by @IT_Muscle  </description>
+    </item>
+    
+    <item>
+      <title>Acclaim</title>
+      <link>http://davidstamen.com/acclaim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/acclaim/</guid>
+      <description>Here are some of my certification badges from Acclaim.
+My Acclaim
+VMware Certified Advanced Professional 6 – Data Center Virtualization Deployment
+VMware Certified Professional 6 – Data Center Virtualization
+MCSA: Office 365</description>
+    </item>
     
     <item>
       <title>Another New Blog Platform</title>

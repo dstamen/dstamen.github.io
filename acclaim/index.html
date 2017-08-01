@@ -7,19 +7,22 @@
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<title>Using Powershell to Create Windows SMB Shares</title>
+<title>Acclaim</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
-<meta property="og:title" content="Using Powershell to Create Windows SMB Shares" />
-<meta property="og:description" content="I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.
-Pre-Requsites  NTFS Security Module  Link to Script  Create-SMBShare.ps1  Preparing to Execute the Script Fill in the appropriate variables, and execute the script." />
+<meta property="og:title" content="Acclaim" />
+<meta property="og:description" content="Here are some of my certification badges from Acclaim.
+My Acclaim
+VMware Certified Advanced Professional 6 – Data Center Virtualization Deployment
+VMware Certified Professional 6 – Data Center Virtualization
+MCSA: Office 365" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://davidstamen.com/2016/08/09/using-powershell-to-create-windows-smb-shares/" />
+<meta property="og:url" content="http://davidstamen.com/acclaim/" />
 
 
 
-<meta property="article:published_time" content="2016-08-09T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2016-08-09T00:00:00&#43;00:00"/>
+
+
 
 
 
@@ -63,7 +66,7 @@ ga('send', 'pageview');
 	<ul class="menu__list">
 		<li class="menu__item "><a class="menu__link" href="/">HOME</a></li>
 		<li class="menu__item "><a class="menu__link" href="/resources/">RESOURCES</a></li>
-		<li class="menu__item "><a class="menu__link" href="/acclaim/">ACCLAIM</a></li>
+		<li class="menu__item menu__item--active"><a class="menu__link" href="/acclaim/">ACCLAIM</a></li>
 	</ul>
 </nav>
 
@@ -74,102 +77,42 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">Using Powershell to Create Windows SMB Shares</h1>
-			<p class="post__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2016-08-09T00:00:00">August 09, 2016</time>
-			</p>
+			<h1 class="post__title">Acclaim</h1>
 		</header>
   	<div class="post__content clearfix">
-			
+			<hr />
 
-<p>I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.</p>
+<p>Here are some of my certification badges from Acclaim.</p>
 
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+<p><a href="https://www.youracclaim.com/user/davidstamen">My Acclaim</a></p>
 
-<ul>
-<li><a href="https://gallery.technet.microsoft.com/scriptcenter/1abd77a5-9c0b-4a2b-acef-90dbb2b84e85">NTFS Security Module</a></li>
-</ul>
+<p><a href="https://www.youracclaim.com/badges/2bcffcad-19b8-4204-b71c-f77bc6e78431">VMware Certified Advanced Professional 6 – Data Center Virtualization Deployment</a></p>
 
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+<p><img src="/images/vmware-certified-advanced-professional-6-data-center-virtualization-deployment.png" alt="" /></p>
 
-<ul>
-<li><a href="https://github.com/dstamen/Powershell/blob/master/Create-SMBShare.ps1">Create-SMBShare.ps1</a></li>
-</ul>
+<p><a href="https://www.youracclaim.com/badges/ab5b2c7b-7083-4fd9-90e9-cc6644260064">VMware Certified Professional 6 – Data Center Virtualization</a></p>
 
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+<p><img src="/images/vmware-certified-professional-6-data-center-virtualization.png" alt="" /></p>
 
-<p>Fill in the appropriate variables, and execute the script.</p>
+<p><a href="https://www.youracclaim.com/badges/637a1fc8-d814-4155-986e-828523b96ccf">MCSA: Office 365</a></p>
 
-<pre><code>Import-Module NTFSSecurity
-
-#variables
-$sharename = &quot;share&quot;
-$cachingmode = &quot;none&quot;
-$continuouslyavailable = $true
-$encryptdata = $false
-$folderenumerationmode = &quot;AccessBased&quot;
-$path = &quot;D:\Shares\&quot;
-$scopename = &quot;ClusterORResourceName&quot;
-$sharepath = $path+$sharename
-$fullaccess = &quot;Everyone&quot;
-
-
-#check if path exists
-$PathCheck = Test-Path $sharepath
-if ($PathCheck -eq $true) {
-    Write-Host &quot;$sharepath exists.&quot;
-}
-else {
-    Write-Host &quot;$sharepath does not exist&quot;
-    New-Item $sharepath -type directory
-}
-
-
-#create share
-New-SmbShare -Name $sharename -CachingMode $cachingmode -ContinuouslyAvailable $continuouslyavailable -EncryptData $encryptdata -FolderEnumerationMode $folderenumerationmode -Path $sharepath -ScopeName $scopename -FullAccess $fullaccess
-
-#disable inheritance and add full access
-Disable-NTFSAccessInheritance $sharepath -RemoveInheritedAccessRules
-Add-NTFSAccess $sharepath -Account BUILTIN\Administrators -AccessRights FullControl
-Get-NTFSAccess $sharepath
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Create-SMBShare.ps1</li>
-</ul>
+<p><img src="/images/mcsa-office-365.png" alt="" /></p>
 
 		</div>
 		
-<div class="post__tags tags clearfix">
-	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/windows/" rel="tag">Windows</a></li>
-	</ul>
-</div>
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f&text=Using%20Powershell%20to%20Create%20Windows%20SMB%20Shares" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
-<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f&title=Using%20Powershell%20to%20Create%20Windows%20SMB%20Shares" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
-<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f&title=Using%20Powershell%20to%20Create%20Windows%20SMB%20Shares" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
-<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2016%2f08%2f09%2fusing-powershell-to-create-windows-smb-shares%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2facclaim%2f&text=Acclaim" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2facclaim%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2facclaim%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2facclaim%2f&title=Acclaim" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2facclaim%2f&title=Acclaim" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2facclaim%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
 
 	</article>
 	
 	
-<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/2016/11/16/vsphere-65-new-license-import-from-myvmware/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">vSphere 6.5 - New License Import from My VMware</p></a>
-	</div>
-</nav>
 
 	
 <div class="comments">

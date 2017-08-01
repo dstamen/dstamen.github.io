@@ -3,6 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://davidstamen.com/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/acclaim/</loc>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</loc>
     <lastmod>2017-07-31T16:51:28-04:00</lastmod>
   </url>
@@ -694,7 +707,7 @@
   
   <url>
     <loc>http://davidstamen.com/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
