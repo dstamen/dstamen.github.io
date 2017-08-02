@@ -177,11 +177,7 @@ This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been g
 			</div>
 		</header>
 		<div class="list__excerpt">
-			The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.
-vCenter Server 6.5a Release Notes
-ESXi Server 6.5a Release Notes
-You can find patch information here. https://kb.vmware.com/kb/2148330
- To download patch do not go to my.vmware.com, you need to navigate to the VMware Patch Download Center(https://my.vmware.com/group/vmware/patch) and select VC from the Search by Product drop down, and then vSphere 6.
+			Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, Udating, then Redeploying in this scenario.** The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">Read more…</a>

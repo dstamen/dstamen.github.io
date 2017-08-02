@@ -11,11 +11,7 @@
 
 <meta name="generator" content="Hugo 0.25.1" />
 <meta property="og:title" content="vSphere 6.5 - Updating Appliance configured with vCenter HA" />
-<meta property="og:description" content="The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.
-vCenter Server 6.5a Release Notes
-ESXi Server 6.5a Release Notes
-You can find patch information here. https://kb.vmware.com/kb/2148330
- To download patch do not go to my.vmware.com, you need to navigate to the VMware Patch Download Center(https://my.vmware.com/group/vmware/patch) and select VC from the Search by Product drop down, and then vSphere 6." />
+<meta property="og:description" content="Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, Udating, then Redeploying in this scenario.** The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" />
 
@@ -84,7 +80,17 @@ ga('send', 'pageview');
 			</p>
 		</header>
   	<div class="post__content clearfix">
-			<p>The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.</p>
+			
+
+<h5 id="warning">Warning:</h5>
+
+<h5 id="a-few-others-and-myself-have-noticed-that-when-updating-a-vcha-cluster-to-6-5u1-it-resets-the-hostname-to-localhost-localdomain-stopping-vcenter-web-client-from-loading">A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading.</h5>
+
+<h5 id="it-seems-to-be-isolated-to-advanced-deployments-and-not-basic-i-would-recommend-destroying-your-vcha-cluster-udating-then-redeploying-in-this-scenario">It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, Udating, then Redeploying in this scenario.**</h5>
+
+<hr />
+
+<p>The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.</p>
 
 <p><a href="http://pubs.vmware.com/Release_Notes/en/vsphere/65/vsphere-vcenter-server-650a-release-notes.html">vCenter Server 6.5a Release Notes</a></p>
 
@@ -109,8 +115,9 @@ ga('send', 'pageview');
 
 <li><p>Select Maintenance Mode and click OK.</p>
 
-<p><img src="/images/v65up2.png" alt="" />
-<img src="/images/v65up1.png" alt="" /></p></li>
+<p><img src="/images/v65up2.png" alt="" /></p>
+
+<p><img src="/images/v65up1.png" alt="" /></p></li>
 </ul></li>
 
 <li><p>SSH as root to the appliance shell of the Active Node using the Public IP.</p>
@@ -125,39 +132,19 @@ ga('send', 'pageview');
 <li>Note: Make sure you are not in <em>shell</em> but in <em>appliancesh</em></li>
 </ul></li>
 
-<li><p>We will now stage the patches to the witness node.</p>
+<li><p>We will now install the patches to the witness node.</p>
 
 <ul>
 <li>You will need to attach the patch .ISO you downloaded previously, as you cannot update straight from the URL since the witness/passive do not have internet access.</li>
 <li>To stage the patches run the following command.
 
 <ul>
-<li>software-packages stage &ndash;iso &ndash;acceptEulas</li>
+<li>software-packages install &ndash;iso &ndash;acceptEulas</li>
 </ul></li>
 </ul></li>
 </ul>
 
-<pre><code>Command&gt; software-packages stage --iso --acceptEulas
- [2017-02-03T07:44:01.034] : ISO mounted successfully
- [2017-02-03T07:44:01.034] : Staged 34 packages.
- [2017-02-03T07:44:01.034] : Verifying staging area
- [2017-02-03T07:44:01.034] : ISO unmounted successfully
- [2017-02-03T07:44:01.034] : Staging process completed successfully
-</code></pre>
-
-<ul>
-<li>We will now install the staged patches to the witness node.
-
-<ul>
-<li>To install the patches run the following command.
-
-<ul>
-<li>software-packages install &ndash;staged &ndash;acceptEulas</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<pre><code>Command&gt; software-packages install --staged --acceptEulas
+<pre><code>Command&gt; software-packages install --iso --acceptEulas
  [2017-02-03T07:46:10.034] : Validating software update payload
  [2017-02-03T07:46:10.034] : Validation successful
  [2017-02-03 07:46:10,986] : Copying software packages  [2017-02-03T07:46:11.034] : ISO mounted successfully
@@ -188,39 +175,19 @@ ga('send', 'pageview');
 <li>Note: Make sure you are not in <em>shell</em> but in <em>appliancesh</em></li>
 </ul></li>
 
-<li><p>We will now stage the patches to the passive node.</p>
+<li><p>We will now install the patches to the passive node.</p>
 
 <ul>
 <li>You will need to attach the patch .ISO you downloaded previously, as you cannot update straight from the URL since the witness/passive do not have internet access.</li>
 <li>To stage the patches run the following command.
 
 <ul>
-<li>software-packages stage &ndash;iso &ndash;acceptEulas</li>
+<li>software-packages install &ndash;iso &ndash;acceptEulas</li>
 </ul></li>
 </ul></li>
 </ul>
 
-<pre><code>Command&gt; software-packages stage --iso --acceptEulas
- [2017-02-03T12:56:34.034] : ISO mounted successfully
- [2017-02-03T12:56:34.034] : Staged 34 packages.
- [2017-02-03T12:56:34.034] : Verifying staging area
- [2017-02-03T12:56:35.034] : ISO unmounted successfully
- [2017-02-03T12:56:35.034] : Staging process completed successfully
-</code></pre>
-
-<ul>
-<li>We will now install the staged patches to the passive node.
-
-<ul>
-<li>To install the patches run the following command.
-
-<ul>
-<li>software-packages install &ndash;staged &ndash;acceptEulas</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<pre><code>Command&gt; software-packages install --staged --acceptEulas
+<pre><code>Command&gt; software-packages install --iso --acceptEulas
  [2017-02-03T12:56:57.034] : Validating software update payload
  [2017-02-03T12:56:57.034] : Validation successful
  [2017-02-03 12:56:57,376] : Copying software packages  [2017-02-03T12:56:57.034] : ISO mounted successfully
@@ -272,32 +239,12 @@ ga('send', 'pageview');
 <li>To stage the patches run the following command.
 
 <ul>
-<li>software-packages stage &ndash;iso &ndash;acceptEulas</li>
+<li>software-packages install &ndash;iso &ndash;acceptEulas</li>
 </ul></li>
 </ul></li>
 </ul>
 
-<pre><code>Command&gt; software-packages stage --iso --acceptEulas
- [2017-02-03T08:10:08.034] : ISO mounted successfully
- [2017-02-03T08:10:09.034] : Staged 34 packages.
- [2017-02-03T08:10:09.034] : Verifying staging area
- [2017-02-03T08:10:09.034] : ISO unmounted successfully
- [2017-02-03T08:10:09.034] : Staging process completed successfully
-</code></pre>
-
-<ul>
-<li>We will now install the staged patches to the new passive node.
-
-<ul>
-<li>To install the patches run the following command.
-
-<ul>
-<li>software-packages install &ndash;staged &ndash;acceptEulas</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<pre><code>Command&gt; software-packages install --staged --acceptEulas
+<pre><code>Command&gt; software-packages install --iso --acceptEulas
  [2017-02-03T08:10:27.034] : Validating software update payload
  [2017-02-03T08:10:27.034] : Validation successful
  [2017-02-03 08:10:27,512] : Copying software packages  [2017-02-03T08:10:27.034] : ISO mounted successfully
