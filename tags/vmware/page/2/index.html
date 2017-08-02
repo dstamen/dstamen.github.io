@@ -17,7 +17,7 @@
 
 
 
-<meta property="og:updated_time" content="2016-01-12T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-10-13T00:00:00&#43;00:00"/>
 
 
 
@@ -51,7 +51,7 @@ ga('send', 'pageview');
 				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
 					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
 						<h1 class="logo__title">davidstamen.com</h1>
-						<h2 class="logo__tagline">a blog about stuff.</h2>
+						<h2 class="logo__tagline">A Blog About Stuff.</h2>
 					</a>
 				</div>
 			</div>
@@ -72,69 +72,6 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Vmware</h1>
 		</header><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/" rel="bookmark">Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2016-01-12T00:00:00">January 12, 2016</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
-This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
- SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install &ndash;url &ndash;acceptEulas to download and install the packages from the VMware Repo.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/11/30/using-cli-to-manage-dvs-host-uplinks/" rel="bookmark">Using CLI to Manage DVS Host Uplinks</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-11-30T00:00:00">November 30, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
-After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/11/30/using-cli-to-manage-dvs-host-uplinks/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/11/18/disconnected-vnics/" rel="bookmark">Disconnected vNIC&#39;s?</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-11-18T00:00:00">November 18, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Ever wonder why a VM isn&rsquo;t on the network?
-I was working on deploying some test VM&rsquo;s and for some reason all the VM&rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
-I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/11/18/disconnected-vnics/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -279,6 +216,63 @@ Working with VMware support we were finally able to get it working with a few tw
 		</div>
 	</div>
 </article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/" rel="bookmark">vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-21T00:00:00">May 21, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
+ Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/" rel="bookmark">HA Error: Datastore Heartbeat is less than 2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-08T00:00:00">May 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			If you are configuring a cluster with less than 2 datastores, you will receive an HA warning &ldquo;The number of heartbeat datastores for host is 1, which is less than required: 2&rdquo; You can add an option to the HA Advanced Options to supress this warning.
+ Log in to vCenter Server Right-click the cluster and click Edit Settings Click vSphere HA &gt; Advanced Options Under Option, add an entry for das.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/08/ha-error-network-redundancy/" rel="bookmark">HA Error: Network Redundancy</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-08T00:00:00">May 08, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.
+To perform the steps in the c# client.  From the VMware Infrastructure Client, right-click on the cluster and click Edit Settings. Select vSphere HA and click Advanced Options. In the Options column, enter das.ignoreRedundantNetWarning In the Value column, type true Click OK.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/05/08/ha-error-network-redundancy/">Read more…</a>
+		</div>
+	</div>
+</article>
 
 
 		
@@ -354,7 +348,7 @@ Working with VMware support we were finally able to get it working with a few tw
 		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (18)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
@@ -362,10 +356,12 @@ Working with VMware support we were finally able to get it working with a few tw
 		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcenter" title="vcenter">vcenter (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (24)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vexpert" title="vexpert">vexpert (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (21)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
 	</div>

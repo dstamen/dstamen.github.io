@@ -391,7 +391,7 @@ select {
 
 .logo__link {
 	margin: 5px 0;
-	text-transform: uppercase;
+	/**text-transform: uppercase;**/
 }
 
 .logo__title {
@@ -424,12 +424,12 @@ select {
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
-	text-transform: uppercase;
+	/***text-transform: uppercase;***/
 }
 
 .menu__toggle {
 	background: #2a2a2a;
-	text-transform: uppercase;
+	/***text-transform: uppercase;***/
 	padding: 10px 15px;
 	color: #ffffff;
 	text-align: right;
@@ -623,7 +623,7 @@ select {
 	margin: 0 6px 6px 0;
 	margin: 0 0.375rem 0.375rem 0;
 	background: #2a2a2a;
-	text-transform: uppercase;
+	/***text-transform: uppercase;***/
 }
 
 .tags__item:hover {
@@ -747,7 +747,7 @@ select {
 	font-weight: 700;
 	line-height: 1;
 	margin-bottom: 5px;
-	text-transform: uppercase;
+	/***Text-transform: uppercase;***/
 	overflow: hidden;
 }
 
@@ -872,7 +872,7 @@ input[type=submit] {
 	padding: 10px 15px;
 	background: #000000;
 	cursor: pointer;
-	text-transform: uppercase;
+	/***text-transform: uppercase;***/
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
@@ -990,7 +990,7 @@ textarea {
 	padding: 5px 10px;
 	margin: 0 4px 8px 0;
 	white-space: nowrap;
-	text-transform: inherit;
+	text-transform: none;
 	background: #fff;
 }
 

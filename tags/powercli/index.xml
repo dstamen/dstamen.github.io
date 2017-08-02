@@ -6,10 +6,19 @@
     <description>Recent content in Powercli on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/tags/powercli/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using PowerCLI to Add vRealize Operations License Key</title>
+      <link>http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</guid>
+      <description>I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.</description>
+    </item>
     
     <item>
       <title>Using PowerCLI to Set vCenter Permissions on Datacenter</title>
