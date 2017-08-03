@@ -531,6 +531,7 @@ select {
 .page-header__title {
 	font-size: 28px;
 	font-size: 1.75rem;
+	text-transform: lowercase;*
 }
 
 .page-content {
@@ -990,7 +991,7 @@ textarea {
 	padding: 5px 10px;
 	margin: 0 4px 8px 0;
 	white-space: nowrap;
-	text-transform: lowercase;
+	/***text-transform: lowercase;***/
 	background: #fff;
 }
 
