@@ -531,7 +531,7 @@ select {
 .page-header__title {
 	font-size: 28px;
 	font-size: 1.75rem;
-	text-transform: lowercase;*
+	text-transform: lowercase;
 }
 
 .page-content {
@@ -972,6 +972,7 @@ textarea {
 /*** Default WordPress Widgets ***/
 .widget-categories li {
 	border-bottom: 1px dotted #ebebeb;
+	/**text-transform: none;***/
 }
 
 .widget-categories li a {
