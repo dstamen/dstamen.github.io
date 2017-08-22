@@ -46,6 +46,17 @@ MCSA: Office 365</description>
     </item>
     
     <item>
+      <title>vRA 7.3 - Using Active Directory Policies</title>
+      <link>http://davidstamen.com/2017/08/vRA-7.3---Using-Active-Directory-Policies/</link>
+      <pubDate>Tue, 22 Aug 2017 14:00:46 -0400</pubDate>
+      
+      <guid>http://davidstamen.com/2017/08/vRA-7.3---Using-Active-Directory-Policies/</guid>
+      <description>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.
+My question tody was how do I precreate an computer AD account, join a device to the domain and then clean it up when the machine is destroyed.
+Turns out this is super simple in vRealize Automation 7.</description>
+    </item>
+    
+    <item>
       <title>vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</title>
       <link>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</link>
       <pubDate>Wed, 02 Aug 2017 16:08:43 -0400</pubDate>
