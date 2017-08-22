@@ -18,7 +18,7 @@
       
       <guid>http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/</guid>
       <description>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.
-My question tody was how do I precreate an computer AD account, join a device to the domain and then clean it up when the machine is destroyed.
+My question today was how do I pre-create a computer AD account, join a device to the domain and then clean it up when the machine is destroyed.
 Turns out this is super simple in vRealize Automation 7.</description>
     </item>
     
