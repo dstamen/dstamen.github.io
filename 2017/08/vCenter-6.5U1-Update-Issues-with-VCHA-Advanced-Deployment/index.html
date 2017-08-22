@@ -9,7 +9,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <title>vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</title>
 
-<meta name="generator" content="Hugo 0.25.1" />
+<meta name="generator" content="Hugo 0.26" />
 <meta property="og:title" content="vCenter 6.5U1 Update Issues with VCHA Advanced Deployment" />
 <meta property="og:description" content="vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.
 Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow." />
@@ -81,7 +81,9 @@ ga('send', 'pageview');
 			</p>
 		</header>
   	<div class="post__content clearfix">
-			<p>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.</p>
+			
+
+<p>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.</p>
 
 <p>Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow. I followed my standard upgrade steps <a href="/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/">Updating a VCHA 6.5 vCenter</a> however when I went to failover the Active node to the upgraded passive/witness nodes, services would not start, I then noticed that the hostnames had reset to localhost.localdom which is kind of a big issue as vCenter relies on the hostname being set.</p>
 
@@ -90,6 +92,19 @@ ga('send', 'pageview');
 <p>Now we had this one upgraded, I still could not re-enable VCHA. I went through the process to configure VCHA, however every time I would deploy the passive/witness it would still reset the hostname, and when I went to finalize the configuration it would fail because the passive/witness hostnames did not match the active node. It seemed the issue was not with the servers themselves but possibly with some updated scripts that sync certain configuration files.</p>
 
 <p>I was able to find someone else who could reproduce this issue and we both opened a case with is being investigated by engineering.</p>
+
+<p><center><em>=========================================================================</em></center></p>
+
+<h1 id="update-finally-heard-back-from-support">Update. Finally heard back from support.</h1>
+
+<p>So it seems in some cases the VAMI configuration can be &ldquo;corrupt&rdquo; and can cause the hostname to reset.</p>
+
+<p>After upgrading your appliance, if you see the hostname reset, you can run the following command to reconfigure it properly.</p>
+
+<pre><code>/opt/vmware/share/vami/vami_config_net
+</code></pre>
+
+<p>Once I used the configuration script to reconfigure the hostname I was successfully able to redeploy VCHA.</p>
 
 		</div>
 		

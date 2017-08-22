@@ -9,7 +9,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <title>Get NAA.ID for Virtual Machine RDM&#39;s in VMware</title>
 
-<meta name="generator" content="Hugo 0.25.1" />
+<meta name="generator" content="Hugo 0.26" />
 <meta property="og:title" content="Get NAA.ID for Virtual Machine RDM&#39;s in VMware" />
 <meta property="og:description" content="This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl  If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
