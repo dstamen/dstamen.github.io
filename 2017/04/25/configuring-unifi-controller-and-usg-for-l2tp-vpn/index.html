@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <title>Configuring Unifi Controller and USG for L2TP VPN</title>
 
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30.2" />
 <meta property="og:title" content="Configuring Unifi Controller and USG for L2TP VPN" />
 <meta property="og:description" content="I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
 Unifi Controller 5.5.11
@@ -20,6 +17,7 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
 
 
 <meta property="article:published_time" content="2017-04-25T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2017-04-25T00:00:00&#43;00:00"/>
 
 
@@ -156,9 +154,9 @@ ga('send', 'pageview');
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f&text=Configuring%20Unifi%20Controller%20and%20USG%20for%20L2TP%20VPN" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f&text=Configuring%20Unifi%20Controller%20and%20USG%20for%20L2TP%20VPN" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
 <a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f&title=Configuring%20Unifi%20Controller%20and%20USG%20for%20L2TP%20VPN" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
 <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f&title=Configuring%20Unifi%20Controller%20and%20USG%20for%20L2TP%20VPN" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
 <a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2017%2f04%2f25%2fconfiguring-unifi-controller-and-usg-for-l2tp-vpn%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
@@ -176,18 +174,6 @@ ga('send', 'pageview');
 </nav>
 
 	
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout="image-middle"
-     data-ad-client="ca-pub-6907288179836979"
-     data-ad-slot="6612832785"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 </div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
@@ -260,7 +246,7 @@ ga('send', 'pageview');
 
 	
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Sponsors</h4>
+	<h4 class="widget-social__title widget__title">Ads</h4>
 	<div class="widget-social__content widget__content">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		
@@ -273,10 +259,6 @@ ga('send', 'pageview');
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-	<br><br>
-	<center>
-		<a href="https://www.vembu.com/free-vm-backup?utm_source=davidstamen.com&utm_medium=Banner&utm_campaign=Free%20VM%20Backup" target="_blank"><img src="/images/vembu.gif" width="163" height="163" title="Vembu"></a>
-</center>
 </div>
 
 </aside>

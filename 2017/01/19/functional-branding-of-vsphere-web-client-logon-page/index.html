@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <title>Functional Branding of vSphere Web Client Logon Page</title>
 
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30.2" />
 <meta property="og:title" content="Functional Branding of vSphere Web Client Logon Page" />
 <meta property="og:description" content="I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
 As people have noted before William Lam&rsquo;s - How to Customize Webclient Login UI
@@ -20,6 +17,7 @@ I figured since I am using the embedded SSO, I could update the login page to sh
 
 
 <meta property="article:published_time" content="2017-01-19T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2017-01-19T00:00:00&#43;00:00"/>
 
 
@@ -133,9 +131,9 @@ ga('send', 'pageview');
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f&text=Functional%20Branding%20of%20vSphere%20Web%20Client%20Logon%20Page" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f&text=Functional%20Branding%20of%20vSphere%20Web%20Client%20Logon%20Page" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
 <a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f&title=Functional%20Branding%20of%20vSphere%20Web%20Client%20Logon%20Page" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
 <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f&title=Functional%20Branding%20of%20vSphere%20Web%20Client%20Logon%20Page" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
 <a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
@@ -153,18 +151,6 @@ ga('send', 'pageview');
 </nav>
 
 	
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout="image-middle"
-     data-ad-client="ca-pub-6907288179836979"
-     data-ad-slot="6612832785"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 </div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
@@ -237,7 +223,7 @@ ga('send', 'pageview');
 
 	
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Sponsors</h4>
+	<h4 class="widget-social__title widget__title">Ads</h4>
 	<div class="widget-social__content widget__content">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		
@@ -250,10 +236,6 @@ ga('send', 'pageview');
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-	<br><br>
-	<center>
-		<a href="https://www.vembu.com/free-vm-backup?utm_source=davidstamen.com&utm_medium=Banner&utm_campaign=Free%20VM%20Backup" target="_blank"><img src="/images/vembu.gif" width="163" height="163" title="Vembu"></a>
-</center>
 </div>
 
 </aside>

@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <title>Section 1: Configure and Administer vSphere 6.x Security</title>
 
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30.2" />
 <meta property="og:title" content="Section 1: Configure and Administer vSphere 6.x Security" />
 <meta property="og:description" content="Section 1 of the VCP6-DCV blueprint
 Objective 1.1: Configure and Administer Role-based Access Control  Compare and contrast propagated and explicit permission assignments  An example of a propagated permission: Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously." />
@@ -19,6 +16,7 @@ Objective 1.1: Configure and Administer Role-based Access Control  Compare and c
 
 
 <meta property="article:published_time" content="2015-10-16T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2015-10-16T00:00:00&#43;00:00"/>
 
 
@@ -450,9 +448,9 @@ box and click OK.</li>
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f&text=Section%201%3a%20Configure%20and%20Administer%20vSphere%206.x%20Security" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f&text=Section%201%3a%20Configure%20and%20Administer%20vSphere%206.x%20Security" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
 <a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f&title=Section%201%3a%20Configure%20and%20Administer%20vSphere%206.x%20Security" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
 <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f&title=Section%201%3a%20Configure%20and%20Administer%20vSphere%206.x%20Security" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
 <a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2015%2f10%2f16%2fsection-1-configure-and-administer-vsphere-6x-security%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
@@ -470,18 +468,6 @@ box and click OK.</li>
 </nav>
 
 	
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout="image-middle"
-     data-ad-client="ca-pub-6907288179836979"
-     data-ad-slot="6612832785"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 </div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
@@ -554,7 +540,7 @@ box and click OK.</li>
 
 	
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Sponsors</h4>
+	<h4 class="widget-social__title widget__title">Ads</h4>
 	<div class="widget-social__content widget__content">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		
@@ -567,10 +553,6 @@ box and click OK.</li>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-	<br><br>
-	<center>
-		<a href="https://www.vembu.com/free-vm-backup?utm_source=davidstamen.com&utm_medium=Banner&utm_campaign=Free%20VM%20Backup" target="_blank"><img src="/images/vembu.gif" width="163" height="163" title="Vembu"></a>
-</center>
 </div>
 
 </aside>

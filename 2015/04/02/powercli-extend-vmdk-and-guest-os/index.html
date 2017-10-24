@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" type="text/css" media="all" />
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <title>PowerCLI - Extend VMDK and Guest OS</title>
 
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30.2" />
 <meta property="og:title" content="PowerCLI - Extend VMDK and Guest OS" />
 <meta property="og:description" content="So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience." />
 <meta property="og:type" content="article" />
@@ -18,6 +15,7 @@
 
 
 <meta property="article:published_time" content="2015-04-02T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2015-04-02T00:00:00&#43;00:00"/>
 
 
@@ -111,9 +109,9 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f&text=PowerCLI%20-%20Extend%20VMDK%20and%20Guest%20OS" target="_blank"><i class="fa fa-fw fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f&text=PowerCLI%20-%20Extend%20VMDK%20and%20Guest%20OS" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
 <a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f&title=PowerCLI%20-%20Extend%20VMDK%20and%20Guest%20OS" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
 <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f&title=PowerCLI%20-%20Extend%20VMDK%20and%20Guest%20OS" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
 <a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2015%2f04%2f02%2fpowercli-extend-vmdk-and-guest-os%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
@@ -131,18 +129,6 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 </nav>
 
 	
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout="image-middle"
-     data-ad-client="ca-pub-6907288179836979"
-     data-ad-slot="6612832785"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 </div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
@@ -215,7 +201,7 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 
 	
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">Sponsors</h4>
+	<h4 class="widget-social__title widget__title">Ads</h4>
 	<div class="widget-social__content widget__content">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		
@@ -228,10 +214,6 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-	<br><br>
-	<center>
-		<a href="https://www.vembu.com/free-vm-backup?utm_source=davidstamen.com&utm_medium=Banner&utm_campaign=Free%20VM%20Backup" target="_blank"><img src="/images/vembu.gif" width="163" height="163" title="Vembu"></a>
-</center>
 </div>
 
 </aside>
