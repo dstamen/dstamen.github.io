@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>VCAP6.5-DCV Design Experience</title>
+
+<meta name="generator" content="Hugo 0.30.2" />
+<meta property="og:title" content="VCAP6.5-DCV Design Experience" />
+<meta property="og:description" content="So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
+I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/" />
+
+
+
+<meta property="article:published_time" content="2017-12-21T10:29:15-05:00"/>
+
+<meta property="article:modified_time" content="2017-12-21T10:29:15-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-67336507-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-left-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="davidstamen.com" rel="home">
+						<h1 class="logo__title">davidstamen.com</h1>
+						<h2 class="logo__tagline">A Blog About Stuff.</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/">HOME</a></li>
+		<li class="menu__item "><a class="menu__link" href="/resources/">RESOURCES</a></li>
+		<li class="menu__item "><a class="menu__link" href="/acclaim/">ACCLAIM</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">VCAP6.5-DCV Design Experience</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2017-12-21T10:29:15">December 21, 2017</time>
+			</p>
+		</header>
+  	<div class="post__content clearfix">
+			
+
+<p>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam <a href="https://mylearn.vmware.com/mgrReg/plan.cfm?plan=102526&amp;ui=www_cert">3V0-624</a>!</p>
+
+<p>I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.5 was released in August and the Visio like design sections were dropped (which were the biggest pain), so I worked to acquire a voucher from work and decided on 3 days ago since I had some downtime at work I would go for it.</p>
+
+<p>The first thing i did was pull up the <a href="https://mylearn.vmware.com/lcms/web/portals/certification/exam_prep_guides/Exam_Prep_Guide_VCAP6.5-DCV_Design.pdf">6.5 exam guide</a>. I was surprised it was not detailed at all in the blueprint breakdown, id did have a lot more information on what to expect question wise. So my first recommendation is if you plan to take the 6.5 exam, use the <a href="https://mylearn.vmware.com/mgrReg/plan.cfm?plan=88743&amp;ui=www_cert">6.0 blueprint</a>. I also made a post <a href="http://davidstamen.com/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/">VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</a> that broke it down as well with links to all the documentation.</p>
+
+<p>Even with that I still felt a little lost on what to expect, there have not been a lot of blog posts about the experience with the 6.5 exam. All I knew is that it was 60 questions, that were multiple choice, matching, drag and drop and I had 135 minutes to complete it. After some digging I was able to find out <a href="http://www.vhersey.com/2017/09/some-vcap-6-5-dcv-design-exam-study-notes/">Hersey Cartwright</a> was the only person I was able to find who posted briefly about what to expect, and I think it definitely helped me a lot. Here were some of his tips, and a few of mine..</p>
+
+<h2 id="couple-of-tips-for-the-exam">Couple of tips for the exam:</h2>
+
+<ul>
+<li>Read the Exam Prep Guide!!! Everything you need to be successful is there (except experience).
+
+<ul>
+<li><strong>Definately read through this to understand some of the types of questions that will be asked!</strong></li>
+</ul></li>
+<li>When taking the exam MAKE SURE YOU READ THE QUESTION or DESIGN SCENARIO completely, then read it again before selecting your answers or completing the question activity.
+
+<ul>
+<li><strong>Some questions can be answered multiple ways, make sure to read it over and over and completely understand it, dont read the first line and jump to the end</strong></li>
+</ul></li>
+<li>You are able to flag questions for review – but use this wisely. If you are prepared trust your gut don’t second guess yourself.
+
+<ul>
+<li><strong>As always be cautious! Your first instinct may be right</strong></li>
+</ul></li>
+<li>Take your time. Since there are no Visio style questions you are given plenty of time (IMHO) to complete the exam. Relax, read the question, answer, move on.
+
+<ul>
+<li><strong>I completed the first pass in about an hour, the drag and drop and matching questions took a bit of time, but some of the multiple choice answers were very easy to answer and move ahead. It left me plenty of time to review and check things</strong></li>
+</ul></li>
+<li>Technical tip: Have a deep understand of dependencies required for, and limitations of, vSphere features and services and how these dependencies may impact the ability to meet a design requirement or may introduce risks into a design.
+
+<ul>
+<li><strong>This 100%, you need to understand all the components of a vSphere deployment including interoperability, upgrades and features. Please make note on what features would be available in 6.0 and 6.5 and upgrades!</strong></li>
+</ul></li>
+<li>AMPRS
+
+<ul>
+<li><strong>I could not say this any more, make sure to know about your Availability, Management, Performance, Recoverability and Security sections!</strong></li>
+</ul></li>
+<li>RCAR
+
+<ul>
+<li><strong>You NEED to know Risks, Constraints, Assumptions and Requirements. Just like AMPRS, if you don&rsquo;t have a solid understanding of this you will definitely fail this exam.</strong></li>
+</ul></li>
+<li>Functional vs Non-Functional Requirements
+
+<ul>
+<li><strong>Make sure to understand this as well, it is key</strong></li>
+</ul></li>
+</ul>
+
+<h2 id="interface-feedback">Interface Feedback</h2>
+
+<p>This was one thing I think they did much better, however there were some caveats.
+- With some of the drag and drops, it was hard to review you work as when you brought over the statement, you could no like see what it was assigned to without removing it.
+- On an example with diagrams, it would not let me move forward until I enlarged them all, once I did that it still refused. After a few minutes i realized one of the examples had scroll bars up and down and left and right, and even through the complete diagram was in view, I had to use the scroll bars to proceed. I was glad it did this, to prevent you from moving on and missing something, but the fact that multiple images were the same size and only 1 had scroll bars could be related to a UI issue.</p>
+
+<h2 id="study-materials">Study Materials</h2>
+
+<p>As far as study materials? I used quite a few. I will list them below and will add and update this blog as i remember a few more.</p>
+
+<p><strong><a href="https://vbrownbag.com/tag/vcap/">vBrownbag VCAP Series</a></strong>
+  - Not only did I look over the 6.0 series, I went back and reviewed some of the 5.5 ones as well as a lot of the information carried over.</p>
+
+<p><strong>vSAN 6.2 Essentials book</strong>
+  - If i needed to know about vSAN, what is a better place to learn?</p>
+
+<p><strong>VMware vSphere 6.x Datacenter Design Cookbook</strong>
+  - This was Hersey Cartwright&rsquo;s book, that had tons of information, and was probably my primary point of studying the last 3 days.</p>
+
+<p><strong>VCAP5-DCD Official Cert Guide (VMware Press)</strong>
+  - Yes. This is many versions ago, however the core principals still apply and the information within is still valid minus changes in vSphere versions.</p>
+
+<p><strong>Community</strong>
+  - Tons of users in the community have created countless study guides and exam feedback, my last half day of studying was just reviewing these things and trying to reinforce what I already know.</p>
+
+<h2 id="whats-next">Whats Next</h2>
+
+<p>Now? I met my yearly goal, and am now a VCIX! I am very proud of this achievement and appreciate everyone who helped me along the way. People asked me about my VCDX, and I think that will wait a bit&hellip;but you never know what will happen in the future.</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/certification/" rel="tag">Certification</a></li>
+	</ul>
+</div>
+
+		
+<h4>Share on</h4>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f&text=VCAP6.5-DCV%20Design%20Experience" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f&title=VCAP6.5-DCV%20Design%20Experience" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f&title=VCAP6.5-DCV%20Design%20Experience" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2017%2f12%2fVCAP6.5-DCV-Design-Experience%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
+
+	</article>
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/2017/08/My-New-Desk-by-StandDesk/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">My New Desk by StandDesk</p></a>
+	</div>
+</nav>
+
+	
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
+	</form>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">About Me</h4>
+	<div class="widget-social__content widget__content">
+		<center><img src="/img/me.jpeg" class="bio-photo" alt="bio photo" width="50%" height="50%"></center>
+
+	</br><center><h6>VCAP-DCA | MCSA | VMware vExpert</h6></center>
+
+		  	</br><a href="mailto:dstamen@gmail.com" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a></br>
+		  	<a href="http://twitter.com/davidstamen" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a></br>
+		  	<a href="http://linkedin.com/in/davidstamen" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a></br>
+		  	<a href="http://github.com/dstamen" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+		</div>
+</div>
+
+	
+
+	
+
+	
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/homelab" title="homelab">homelab (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/horizon-view" title="horizon-view">horizon-view (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hugo" title="hugo">hugo (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/messaging" title="messaging">messaging (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pernixdata" title="pernixdata">pernixdata (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powercli" title="powercli">powercli (18)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/powerdns" title="powerdns">powerdns (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/purestorage" title="purestorage">purestorage (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ravello" title="ravello">ravello (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/srm" title="srm">srm (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/standdesk" title="standdesk">standdesk (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/trend-micro" title="trend-micro">trend-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubiquiti" title="ubiquiti">ubiquiti (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vagrant" title="vagrant">vagrant (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcenter" title="vcenter">vcenter (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vcloud-air" title="vcloud-air">vcloud-air (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vdp" title="vdp">vdp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/veeam" title="veeam">veeam (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vexpert" title="vexpert">vexpert (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vmware" title="vmware">vmware (21)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vra" title="vra">vra (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vrops" title="vrops">vrops (4)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (3)</a>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Sponsors</h4>
+	<div class="widget-social__content widget__content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-6907288179836979"
+		     data-ad-slot="9289470156"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<br><br>
+	<center>
+		<a href="https://www.vembu.com/free-vm-backup?utm_source=davidstamen.com&utm_medium=Banner&utm_campaign=Free%20VM%20Backup" target="_blank"><img src="/images/vembu.gif" width="163" height="163" title="Vembu"></a>
+</center>
+</div>
+
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
+
