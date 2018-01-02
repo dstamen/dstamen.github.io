@@ -4,21 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<title>vExpert 2016</title>
+<title>Using Forestry.io to Manage Your Hugo Blog</title>
 
 <meta name="generator" content="Hugo 0.31.1" />
-<meta property="og:title" content="vExpert 2016" />
-<meta property="og:description" content="I am honored to have been selected as a VMware vExpert once again for 2016!
-This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!
-Can&rsquo;t wait to see what this year brings." />
+<meta property="og:title" content="Using Forestry.io to Manage Your Hugo Blog" />
+<meta property="og:description" content="Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
+It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://davidstamen.com/2016/02/05/vexpert-2016/" />
+<meta property="og:url" content="http://davidstamen.com/2018/01/Using-Forestry.io-to-Manage-Your-Hugo-Blog/" />
 
 
 
-<meta property="article:published_time" content="2016-02-05T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-01-02T08:26:54-05:00"/>
 
-<meta property="article:modified_time" content="2016-02-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-02T08:26:54-05:00"/>
 
 
 
@@ -73,48 +72,71 @@ ga('send', 'pageview');
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">vExpert 2016</h1>
+			<h1 class="post__title">Using Forestry.io to Manage Your Hugo Blog</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2016-02-05T00:00:00">February 05, 2016</time>
+				<time class="post__meta-date" datetime="2018-01-02T08:26:54">January 02, 2018</time>
 			</p>
 		</header>
   	<div class="post__content clearfix">
-			<p>I am honored to have been selected as a VMware vExpert once again for 2016!</p>
+			<p>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website <a href="https://forestry.io">Forestry.io</a></p>
 
-<p>This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!</p>
+<p>It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories. From here, click on Add Site.</p>
 
-<p>Can&rsquo;t wait to see what this year brings.</p>
+<p><img src="/images/forestry1.png" alt="" /></p>
 
-<p><img src="/images/vexpert-logo-2016.png" alt="" /></p>
+<p>From here you will select whether it is a huge or jekyll project, and select which version you wish to have the site built with (later is better!)</p>
+
+<p><img src="/images/forestry2.png" alt="" /></p>
+
+<p>From here you will choose where to import your project from, in my case i choose github. You will be prompted to login, and then choose a public or private repo.</p>
+
+<p><img src="/images/forestry3.png" alt="" /></p>
+
+<p><img src="/images/forestry4.png" alt="" /></p>
+
+<p>You will now select which repository and branch you wish to choose. Choose a name, and URL (optional)</p>
+
+<p><img src="/images/forestry5.png" alt="" /></p>
+
+<p>Then you will select how you wish Forestry to publish your site, you can choose from none, back to the source repo, github pages, ftp, and many many more. save your changes and your site will be processed and you are almost ready to go!</p>
+
+<p><img src="/images/forestry6.png" alt="" /></p>
+
+<p>We can see it imported my 3 pages, 112 posts, my site parameters, menus, media and front matter. One thing to note, it uses its own front matter templates for your posts, but will import yours in, but if you make any changes be careful as it only appends and doesn&rsquo;t overwrite.</p>
+
+<p>Dig into the settings and theres lots you can do. Its free for one user and seems logically priced to add more features/users. However i think this will be good to get my started on my blog post.</p>
+
+<p>If you are curious on testing it out, clone your repo, use that, commit the source to the local repo and use the built in preview to check it out.</p>
+
+<p><strong>This post was entirely written using the CMS service in the WYSIWYG editor.</strong></p>
+
+<p><em>I didn&rsquo;t have to update any markdown manually. (I hecked to make sure the formatting is correct!)</em></p>
 
 		</div>
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/vexpert/" rel="tag">vExpert</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/hugo/" rel="tag">hugo</a></li>
 	</ul>
 </div>
 
 		
 <h4>Share on</h4>
-<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f&text=vExpert%202016" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
-<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f&title=vExpert%202016" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
-<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f&title=vExpert%202016" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
-<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2016%2f02%2f05%2fvexpert-2016%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f&text=Using%20Forestry.io%20to%20Manage%20Your%20Hugo%20Blog" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f&title=Using%20Forestry.io%20to%20Manage%20Your%20Hugo%20Blog" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f&title=Using%20Forestry.io%20to%20Manage%20Your%20Hugo%20Blog" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fUsing-Forestry.io-to-Manage-Your-Hugo-Blog%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
 
 	</article>
 	
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/2016/02/04/using-ansible-to-run-powershell-scripts/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Using Ansible to Run Powershell Scripts</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">Using UCS PowerTool To Set SNMP Configuration</p></a>
+		<a class="post-nav__link" href="/2017/12/VCAP6.5-DCV-Design-Experience/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">VCAP6.5-DCV Design Experience</p></a>
 	</div>
 </nav>
 
