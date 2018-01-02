@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-09-21T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-16T00:00:00&#43;00:00"/>
 
 
 
@@ -69,28 +69,6 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/" rel="bookmark">Unable to join PSC to Domain via Webclient</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-09-21T00:00:00">September 21, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.
-When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: &ldquo;java.lang.reflect.invocationTargetException&rdquo;
-There are currently two workarounds now with 6.0U1 I am aware of.
- The first method is to join to the domain using the CLI.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -277,6 +255,26 @@ The bootstrap_linux_nginx.
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/2015/09/04/updated-platform/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/07/23/horizon-view-block-linux-vdi-console-access/" rel="bookmark">Horizon View - Block Linux VDI Console Access</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-07-23T00:00:00">July 23, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.
+Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/07/23/horizon-view-block-linux-vdi-console-access/">Read more…</a>
 		</div>
 	</div>
 </article>

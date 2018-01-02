@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-06-10T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-06-04T00:00:00&#43;00:00"/>
 
 
 
@@ -69,26 +69,6 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2014/06/10/configuring-esxi-5-5-syslog-collector/" rel="bookmark">Configuring ESXi 5.5 Syslog Collector</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2014-06-10T00:00:00">June 10, 2014</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2014/06/10/configuring-esxi-5-5-syslog-collector/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -263,6 +243,26 @@ KB2051606
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/2014/05/01/blocking-attachments-with-executable-content/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2014/05/01/enable-ssh-on-vma-5-0/" rel="bookmark">Enable SSH on vSphere Management Assistant 5.0</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2014-05-01T00:00:00">May 01, 2014</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
+ Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Scroll to the very bottom and type i to insert content into the file.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2014/05/01/enable-ssh-on-vma-5-0/">Read more…</a>
 		</div>
 	</div>
 </article>
