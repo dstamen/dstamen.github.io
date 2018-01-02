@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <title>PowerCLI - Extend VMDK and Guest OS</title>
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="PowerCLI - Extend VMDK and Guest OS" />
 <meta property="og:description" content="So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience." />
 <meta property="og:type" content="article" />
@@ -161,6 +161,14 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -168,6 +176,7 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
@@ -224,7 +233,7 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+				<p class="footer__copyright">&copy; 2018 davidstamen.com</p>
 			</div>
 		</footer>
 	</div>

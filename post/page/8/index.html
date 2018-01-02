@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <title>Posts</title>
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -69,6 +69,28 @@ ga('send', 'pageview');
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/09/16/enabling-biometrics-in-horizon-view-62/" rel="bookmark">Enabling Biometrics in Horizon View 6.2</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-09-16T00:00:00">September 16, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.
+This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.
+Here is a link to the current VMware documentation.
+NOTE: This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/09/16/enabling-biometrics-in-horizon-view-62/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -256,27 +278,6 @@ Right now there is no true workaround as that is how the view session is handled
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/" rel="bookmark">HTML Based Published Apps with Horizon View 6.1.1</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-06-10T00:00:00">June 10, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.
-I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.
- Install/Update Agents on virtual desktops to 6.1.1 (The HTML Access 3.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/">Read more…</a>
-		</div>
-	</div>
-</article>
 
 
 		
@@ -318,6 +319,14 @@ I am assuming you have already upgraded your View Composer, Connection and Secur
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -325,6 +334,7 @@ I am assuming you have already upgraded your View Composer, Connection and Secur
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
@@ -381,7 +391,7 @@ I am assuming you have already upgraded your View Composer, Connection and Secur
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+				<p class="footer__copyright">&copy; 2018 davidstamen.com</p>
 			</div>
 		</footer>
 	</div>

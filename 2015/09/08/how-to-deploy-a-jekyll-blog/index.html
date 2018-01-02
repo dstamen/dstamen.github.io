@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <title>How To Deploy a Jekyll Blog</title>
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="How To Deploy a Jekyll Blog" />
 <meta property="og:description" content="So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
 ~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?" />
@@ -189,6 +189,14 @@ You can use the following link for details.
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -196,6 +204,7 @@ You can use the following link for details.
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
@@ -252,7 +261,7 @@ You can use the following link for details.
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+				<p class="footer__copyright">&copy; 2018 davidstamen.com</p>
 			</div>
 		</footer>
 	</div>

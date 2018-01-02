@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <title>Configuring ESXi 5.5 Dump Collector</title>
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="Configuring ESXi 5.5 Dump Collector" />
 <meta property="og:description" content="Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
 Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell." />
@@ -181,6 +181,14 @@ If you wish to change the default port or maxsize of the dump, these can be chan
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -188,6 +196,7 @@ If you wish to change the default port or maxsize of the dump, these can be chan
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
@@ -244,7 +253,7 @@ If you wish to change the default port or maxsize of the dump, these can be chan
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+				<p class="footer__copyright">&copy; 2018 davidstamen.com</p>
 			</div>
 		</footer>
 	</div>

@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <title>Using PowerCLI to Get and Set DVS Traffic Shaping Settings</title>
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="Using PowerCLI to Get and Set DVS Traffic Shaping Settings" />
 <meta property="og:description" content="I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&rsquo;s.
 Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings." />
@@ -199,6 +199,14 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -206,6 +214,7 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
@@ -262,7 +271,7 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
 	</div>
 		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<div class="container container-inner">
-				<p class="footer__copyright">&copy; 2017 davidstamen.com</p>
+				<p class="footer__copyright">&copy; 2018 davidstamen.com</p>
 			</div>
 		</footer>
 	</div>
