@@ -16,6 +16,11 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/2018/01/this-is-a-test-post-2/</loc>
+    <lastmod>2018-01-02T13:14:19+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2018/01/This-is-a-test-post/</loc>
     <lastmod>2018-01-02T13:01:35+00:00</lastmod>
   </url>
@@ -643,7 +648,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-01-02T13:01:35+00:00</lastmod>
+    <lastmod>2018-01-02T13:14:19+00:00</lastmod>
     <priority>0</priority>
   </url>
   

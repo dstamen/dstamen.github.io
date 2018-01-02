@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-10-08T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-10-12T00:00:00&#43;00:00"/>
 
 
 
@@ -66,6 +66,28 @@ ga('send', 'pageview');
 
 
 	<div class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/" rel="bookmark">Using Vagrant to Deploy an Ubuntu Server running KVM</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2015-10-12T00:00:00">October 12, 2015</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			With all this talk about VMware vs KVM I figured that I would attempt to load a base install of KVM to see what it was all about.
+Here is a quick vagrant runbook that will quickly get a 3 linux servers deployed and installed with KVM to play with.
+There are 3 nodes..MGMT01,KVM01 and KVM02. I use MGMT01 VMM to manage KVM01 and KVM02.
+The code can be found here.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -251,28 +273,6 @@ While trying to setup my Platform Service Controllers for HA. I was having issue
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/" rel="bookmark">Unable to join PSC to Domain via Webclient</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2015-09-21T00:00:00">September 21, 2015</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.
-When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: &ldquo;java.lang.reflect.invocationTargetException&rdquo;
-There are currently two workarounds now with 6.0U1 I am aware of.
- The first method is to join to the domain using the CLI.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/">Read more…</a>
 		</div>
 	</div>
 </article>
