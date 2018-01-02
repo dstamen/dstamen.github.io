@@ -4,17 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<title>Posts</title>
+<title>Test</title>
 
 <meta name="generator" content="Hugo 0.31.1" />
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="Test" />
 <meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://davidstamen.com/post/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidstamen.com/2018/01/Test/" />
 
 
 
-<meta property="og:updated_time" content="2014-04-29T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-01-02T13:22:16&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-01-02T13:22:16&#43;00:00"/>
+
 
 
 
@@ -27,7 +30,7 @@
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-<link rel="alternate" type="application/rss+xml" title="davidstamen.com Feed" href="http://davidstamen.com/post/index.xml">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="/js/scripts.js"></script>
@@ -65,54 +68,40 @@ ga('send', 'pageview');
 		<div class="wrapper clearfix">
 
 
-	<div class="main-content list content" role="main">
-		<header class="page-header">
-			<h1 class="page-header__title">Posts</h1>
-		</header><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2014/04/29/cisco-ucs-and-native-vlan-tagging/" rel="bookmark">Cisco UCS and Native VLAN Tagging</a>
-			</h3>
-			<div class="list__meta meta">
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Test</h1>
+			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2014-04-29T00:00:00">April 29, 2014</time>
-			</div>
+				<time class="post__meta-date" datetime="2018-01-02T13:22:16">January 02, 2018</time>
+			</p>
 		</header>
-		<div class="list__excerpt">
-			Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.
-So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!
+  	<div class="post__content clearfix">
+			
 		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2014/04/29/cisco-ucs-and-native-vlan-tagging/">Read more…</a>
-		</div>
-	</div>
-</article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2014/04/29/nested-esxi-and-nfs/" rel="bookmark">Nested ESXi and NFS</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2014-04-29T00:00:00">April 29, 2014</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&rsquo;s couldn&rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &ldquo;Promiscuous Mode&rdquo; on the VSS to allow the traffic to pass.
-		</div>
-	</div>
-</article>
-
+		
 
 		
-<div class="pagination clearfix">
-	<a class="pagination__item pagination__item--prev" href="/post/page/11/">«</a>
-	<span class="pagination__item pagination__item--current">12/12</span>
-</div>
+<h4>Share on</h4>
+<a href="//twitter.com/share?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f&text=Test" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+<a href="//plus.google.com/share?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f" target="_blank" class="tumbler" title="Share on Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+<a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f" target="_blank" class="tumbler" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+<a href="//reddit.com/submit?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f&title=Test" target="_blank" class="tumbler" title="Share on Reddit"><i class="fa fa-fw fa-reddit-square fa-2x"></i></a>
+<a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f&title=Test" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin-square fa-2x"></i></a>
+<a href="mailto:?subject=Check out this post by &body=http%3a%2f%2fdavidstamen.com%2f2018%2f01%2fTest%2f" target="_blank" class="tumbler" title="Share on LinkedIn"><i class="fa fa-fw fa-envelope-square fa-2x"></i></a>
 
+	</article>
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/2017/12/VCAP6.5-DCV-Design-Experience/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">VCAP6.5-DCV Design Experience</p></a>
 	</div>
+</nav>
+
+	
+</div>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 	
@@ -219,3 +208,4 @@ So remember to set the VLAN to Native if using an operating system that does not
 </script>
 </body>
 </html>
+
