@@ -14,7 +14,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-02-01T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-02-03T00:00:00&#43;00:00"/>
 
 
 
@@ -66,6 +66,25 @@ ga('send', 'pageview');
 
 
 	<div class="main-content list content" role="main"><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" rel="bookmark">vSphere 6.5 - Updating Appliance configured with vCenter HA</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2017-02-03T00:00:00">February 03, 2017</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, updating, then redeploying in this scenario. Warning2: It also seems that if you try to redeploy VCHA Advanced after an upgrade, it still resets the hostname, I have a case opened and will update here as neccessary.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -254,27 +273,6 @@ Existing Content from VCAP5-DCD
 		</div>
 	</div>
 </article>
-<article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/2016/06/24/my-vcap6-dcv-deploy-beta-experience/" rel="bookmark">My VCAP6 DCV Deploy Beta Experience</a>
-			</h3>
-			<div class="list__meta meta">
-				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2016-06-24T00:00:00">June 24, 2016</time>
-			</div>
-		</header>
-		<div class="list__excerpt">
-			Today I took my VCAP6-DCV exam. This exam was announced with a two week availability in the US priced at $100.
-My experience with the exam was actually pretty good. The new interface for the advanced exams is that of an HOL. You are dropped onto the desktop and have a window that slides in and out to pull up the manual and other consoles.
-I would definately read up on Josh Andrew&rsquo;s post about what to expect.
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/2016/06/24/my-vcap6-dcv-deploy-beta-experience/">Read more…</a>
-		</div>
-	</div>
-</article>
 
 		
 
@@ -317,6 +315,14 @@ I would definately read up on Josh Andrew&rsquo;s post about what to expect.
 	
 
 	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/"></a></li>
+		</ul>
+	</div>
+</div>
 
 	
 
@@ -324,6 +330,7 @@ I would definately read up on Josh Andrew&rsquo;s post about what to expect.
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/" title=""> (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/ansible" title="ansible">ansible (2)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/certification" title="certification">certification (17)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cisco" title="cisco">cisco (13)</a>
