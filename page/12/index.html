@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-05-01T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-04-29T00:00:00&#43;00:00"/>
 
 
 
@@ -221,135 +221,6 @@
     <section id="main">
     
     
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/">
-    <h1 class="article-title" itemprop="name">
-        Enable SSH on vSphere Management Assistant 5.0
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-05-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">05.01.2014</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
- Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Scroll to the very bottom and type i to insert content into the file.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/" data-id="4c841f7458fbb886bceaf3b1cf051e6c" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -655,14 +526,6 @@ So remember to set the VLAN to Native if using an operating system that does not
                 
                 
 
-                    <p class="item-title"><a href="http://davidstamen.com/2018/01/04/this-is-a-test-post/" class="title">This is a test post</a></p><br>
-                
-            
-            
-            
-                
-                
-
                     <p class="item-title"><a href="http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/" class="title">Using Forestry.io to Manage Your Hugo Blog</a></p><br>
                 
             
@@ -731,6 +594,14 @@ So remember to set the VLAN to Native if using an operating system that does not
                 
             
             
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2017/02/08/vexpert-2017/" class="title">vExpert 2017</a></p><br>
+                
+            
+            
         
     </div>
 </div>
@@ -748,9 +619,6 @@ So remember to set the VLAN to Native if using an operating system that does not
         Tags
     </h3>
     <div class="widget tagcloud">
-        
-        
-        <a href="http://davidstamen.com/tags/12321312312312" style="font-size: 12px;">12321312312312</a>
         
         
         <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>

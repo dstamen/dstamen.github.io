@@ -16,11 +16,6 @@
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2018/01/04/this-is-a-test-post/</loc>
-    <lastmod>2018-01-04T10:29:41+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</loc>
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
   </url>
@@ -581,12 +576,6 @@
   </url>
   
   <url>
-    <loc>http://davidstamen.com/tags/12321312312312/</loc>
-    <lastmod>2018-01-04T10:29:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://davidstamen.com/tags/ansible/</loc>
     <lastmod>2016-02-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -647,7 +636,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-01-04T10:29:41+00:00</lastmod>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -689,7 +678,7 @@
   
   <url>
     <loc>http://davidstamen.com/tags/</loc>
-    <lastmod>2018-01-04T10:29:41+00:00</lastmod>
+    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

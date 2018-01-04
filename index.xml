@@ -48,15 +48,6 @@ MCSA: Office 365 - Certified 2016</description>
     </item>
     
     <item>
-      <title>This is a test post</title>
-      <link>http://davidstamen.com/2018/01/04/this-is-a-test-post/</link>
-      <pubDate>Thu, 04 Jan 2018 10:29:41 +0000</pubDate>
-      
-      <guid>http://davidstamen.com/2018/01/04/this-is-a-test-post/</guid>
-      <description>testing test testing</description>
-    </item>
-    
-    <item>
       <title>Using Forestry.io to Manage Your Hugo Blog</title>
       <link>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link>
       <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>

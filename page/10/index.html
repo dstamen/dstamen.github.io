@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-01-14T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-12-19T00:00:00&#43;00:00"/>
 
 
 
@@ -221,135 +221,6 @@
     <section id="main">
     
     
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">
-    <h1 class="article-title" itemprop="name">
-        PowerCLI - Enable CPU and Memory HotAdd
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-01-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">01.14.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/" data-id="7f8fd2bb74b82394498d23466b0d9bf7" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1515,6 +1386,135 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
     </div>
 </article>
 
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/">
+    <h1 class="article-title" itemprop="name">
+        Configuring ESXi 5.5 Syslog Collector
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">06.10.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/" data-id="f3f38e7e3b1d39defa16fca461b3c6bb" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
 
 <nav id="page-nav">
 
@@ -1561,14 +1561,6 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
     </h3>
     <div class="widget">
         
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/01/04/this-is-a-test-post/" class="title">This is a test post</a></p><br>
-                
-            
             
             
                 
@@ -1642,6 +1634,14 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
                 
             
             
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2017/02/08/vexpert-2017/" class="title">vExpert 2017</a></p><br>
+                
+            
+            
         
     </div>
 </div>
@@ -1659,9 +1659,6 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
         Tags
     </h3>
     <div class="widget tagcloud">
-        
-        
-        <a href="http://davidstamen.com/tags/12321312312312" style="font-size: 12px;">12321312312312</a>
         
         
         <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
