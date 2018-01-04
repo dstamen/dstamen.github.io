@@ -16,12 +16,17 @@
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</loc>
+    <loc>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</loc>
     <lastmod>2017-12-21T10:29:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2017/08/My-New-Desk-by-StandDesk/</loc>
+    <loc>http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/</loc>
     <lastmod>2017-08-24T16:33:29-04:00</lastmod>
   </url>
   
@@ -31,12 +36,12 @@
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</loc>
+    <loc>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</loc>
     <lastmod>2017-08-02T16:08:43-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</loc>
+    <loc>http://davidstamen.com/2017/07/31/another-new-blog-platform/</loc>
     <lastmod>2017-07-31T16:51:28-04:00</lastmod>
   </url>
   
@@ -607,7 +612,7 @@
   
   <url>
     <loc>http://davidstamen.com/tags/hugo/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -631,7 +636,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2017-12-21T10:29:15-05:00</lastmod>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   

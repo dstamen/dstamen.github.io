@@ -6,6 +6,7 @@
     <description>Recent content in Certification on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>davidstamen.com</copyright>
     <lastBuildDate>Thu, 21 Dec 2017 10:29:15 -0500</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/tags/certification/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>VCAP6.5-DCV Design Experience</title>
-      <link>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</link>
+      <link>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</link>
       <pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate>
       
-      <guid>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</guid>
+      <guid>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</guid>
       <description>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
 I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.</description>
     </item>
@@ -50,8 +51,7 @@ I would definately read up on Josh Andrew&amp;rsquo;s post about what to expect.
       
       <guid>http://davidstamen.com/2015/12/17/vcap6-design-beta-study-guide/</guid>
       <description>It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.
-###Section 1 – Create a vSphere Conceptual Design
-Objective 1.1 – Gather and analyze business requirements Skills and Abilities
+Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
  Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.</description>
     </item>
     

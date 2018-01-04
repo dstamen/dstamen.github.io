@@ -6,27 +6,38 @@
     <description>Recent content in Posts on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2017 10:29:15 -0500</lastBuildDate>
+    <copyright>davidstamen.com</copyright>
+    <lastBuildDate>Tue, 02 Jan 2018 08:26:54 -0500</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Using Forestry.io to Manage Your Hugo Blog</title>
+      <link>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link>
+      <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>
+      
+      <guid>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</guid>
+      <description>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&amp;hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
+It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories.</description>
+    </item>
+    
+    <item>
       <title>VCAP6.5-DCV Design Experience</title>
-      <link>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</link>
+      <link>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</link>
       <pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate>
       
-      <guid>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</guid>
+      <guid>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</guid>
       <description>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
 I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.</description>
     </item>
     
     <item>
       <title>My New Desk by StandDesk</title>
-      <link>http://davidstamen.com/2017/08/My-New-Desk-by-StandDesk/</link>
+      <link>http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/</link>
       <pubDate>Thu, 24 Aug 2017 16:33:29 -0400</pubDate>
       
-      <guid>http://davidstamen.com/2017/08/My-New-Desk-by-StandDesk/</guid>
+      <guid>http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/</guid>
       <description>I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&amp;rsquo;t been best for the low back and leg pains I experience.
 I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk).</description>
     </item>
@@ -44,20 +55,20 @@ Turns out this is super simple in vRealize Automation 7.</description>
     
     <item>
       <title>vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</title>
-      <link>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</link>
+      <link>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</link>
       <pubDate>Wed, 02 Aug 2017 16:08:43 -0400</pubDate>
       
-      <guid>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</guid>
+      <guid>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</guid>
       <description>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.
 Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow.</description>
     </item>
     
     <item>
       <title>Another New Blog Platform</title>
-      <link>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</link>
+      <link>http://davidstamen.com/2017/07/31/another-new-blog-platform/</link>
       <pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate>
       
-      <guid>http://davidstamen.com/2017/07/Another-New-Blog-Platform/</guid>
+      <guid>http://davidstamen.com/2017/07/31/another-new-blog-platform/</guid>
       <description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
 All links should be functional and moved nicely, if they dont work, please leave a comment!</description>
     </item>
@@ -410,8 +421,7 @@ Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing t
       
       <guid>http://davidstamen.com/2015/12/17/vcap6-design-beta-study-guide/</guid>
       <description>It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.
-###Section 1 – Create a vSphere Conceptual Design
-Objective 1.1 – Gather and analyze business requirements Skills and Abilities
+Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
  Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.</description>
     </item>
     

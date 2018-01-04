@@ -6,6 +6,7 @@
     <description>Recent content in Vcenter on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>davidstamen.com</copyright>
     <lastBuildDate>Wed, 02 Aug 2017 16:08:43 -0400</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/tags/vcenter/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</title>
-      <link>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</link>
+      <link>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</link>
       <pubDate>Wed, 02 Aug 2017 16:08:43 -0400</pubDate>
       
-      <guid>http://davidstamen.com/2017/08/vCenter-6.5U1-Update-Issues-with-VCHA-Advanced-Deployment/</guid>
+      <guid>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</guid>
       <description>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.
 Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow.</description>
     </item>
