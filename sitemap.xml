@@ -16,12 +16,20 @@
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</loc>
+=======
+    <loc>http://davidstamen.com/2018/01/Using-Forestry.io-to-Manage-Your-Hugo-Blog/</loc>
+>>>>>>> 1fc4f32137a662f8943a0af90599e0c42d0b2d8e
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</loc>
+=======
+    <loc>http://davidstamen.com/2017/12/VCAP6.5-DCV-Design-Experience/</loc>
+>>>>>>> 1fc4f32137a662f8943a0af90599e0c42d0b2d8e
     <lastmod>2017-12-21T10:29:15-05:00</lastmod>
   </url>
   
