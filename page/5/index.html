@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-12-10T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-12-11T00:00:00&#43;00:00"/>
 
 
 
@@ -221,6 +221,135 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/">
+    <h1 class="article-title" itemprop="name">
+        Using UCS PowerTool To Configure UCS Policy Backup and Export
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-12-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">12.11.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
+Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" data-id="86341edfb5165bef275ac5c24b720c88" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1389,135 +1518,6 @@ Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualiz
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/">
-    <h1 class="article-title" itemprop="name">
-        Section 3: Configure and Administer Advanced vSphere 6.x Storage
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Section 3 of the VCP6-DCV blueprint
-Objective 3.1: Manage vSphere Storage Virtualization  Discover new storage LUNs Configure FC/iSCSI/FCoE LUNs as ESXi boot devices Create an NFS share for use with vSphere Enable/Configure/Disable vCenter Server storage filters Configure/Edit hardware/dependent hardware initiators Enable/Disable software iSCSI initiator Configure/Edit software iSCSI initiator settings Configure iSCSI port binding Enable/Configure/Disable iSCSI CHAP Determine use cases for fiber channel zoning Compare and contrast array thin provisioning and virtual disk thin provisioning  Objective 3.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/" data-id="7d970f0ec3bf3e736b40d3d61a38351a" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1564,6 +1564,14 @@ Objective 3.1: Manage vSphere Storage Virtualization  Discover new storage LUNs 
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
+                
+            
             
             
                 
@@ -1634,14 +1642,6 @@ Objective 3.1: Manage vSphere Storage Virtualization  Discover new storage LUNs 
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/02/08/vexpert-2017/" class="title">vExpert 2017</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" class="title">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></p><br>
                 
             
             

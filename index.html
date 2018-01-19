@@ -228,6 +228,140 @@
         </a>
 
         <header class="article-header">
+    <a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">
+    <h1 class="article-title" itemprop="name">
+        Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-01-19 10:27:02 &#43;0000 &#43;0000" itemprop="datePublished">01.19.2018</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vcenter">vcenter</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">vmware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
+First step, check what luns are available to the cluster.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" data-id="d253042aec9888c9556e105ceddfcfc1" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
     <a href="http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/">
     <h1 class="article-title" itemprop="name">
         Using Forestry.io to Manage Your Hugo Blog
@@ -1392,134 +1526,6 @@ This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been g
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">
-    <h1 class="article-title" itemprop="name">
-        vSphere 6.5 - Updating Appliance configured with vCenter HA
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2017-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">02.03.2017</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vcenter">vCenter</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, updating, then redeploying in this scenario. Warning2: It also seems that if you try to redeploy VCHA Advanced after an upgrade, it still resets the hostname, I have a case opened and will update here as neccessary.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" data-id="a67aff13fa0e69b9651339fd676b103a" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1562,6 +1568,14 @@ This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been g
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
+                
+            
             
             
                 
@@ -1632,14 +1646,6 @@ This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been g
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/02/08/vexpert-2017/" class="title">vExpert 2017</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" class="title">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></p><br>
                 
             
             

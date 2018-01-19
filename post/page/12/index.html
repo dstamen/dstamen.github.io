@@ -238,6 +238,58 @@
           <article class="article article-type-post" itemscope="" itemprop="blogPost">
               <div class="article-inner">
                   <header class="article-header">
+    <a href="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/">
+    <h1 class="article-title" itemprop="name">
+        Cisco UCS and Native VLAN Tagging
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-04-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.29.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.
+So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
     <a href="http://davidstamen.com/2014/04/29/nested-esxi-and-nfs/">
     <h1 class="article-title" itemprop="name">
         Nested ESXi and NFS
@@ -329,6 +381,14 @@
                 
                 
 
+                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
+                
+            
+            
+            
+                
+                
+
                     <p class="item-title"><a href="http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/" class="title">Using Forestry.io to Manage Your Hugo Blog</a></p><br>
                 
             
@@ -394,14 +454,6 @@
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/02/08/vexpert-2017/" class="title">vExpert 2017</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" class="title">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></p><br>
                 
             
             
