@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>My New Desk by StandDesk &middot; davidstamen.com</title>
-    <meta name="generator" content="Hugo 0.31.1" />
+    <title>Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created &middot; davidstamen.com</title>
+    <meta name="generator" content="Hugo 0.32.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="David Stamen">
@@ -10,7 +10,7 @@
       <meta name="description" content="a blog about virtualization and stuff">
     
     
-    <link rel="canonical" href="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/"/>
+    <link rel="canonical" href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/"/>
     <link rel="icon" href="http://davidstamen.com/favicon.ico">
     <link rel="apple-touch-icon" href="http://davidstamen.com/apple-touch-icon.png"/>
     <link rel="stylesheet" href="http://davidstamen.com/css/style.css">
@@ -20,17 +20,18 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="My New Desk by StandDesk" />
-<meta property="og:description" content="I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&rsquo;t been best for the low back and leg pains I experience.
-I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk)." />
+    <meta property="og:title" content="Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created" />
+<meta property="og:description" content="Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
+First step, check what luns are available to the cluster." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/" />
+<meta property="og:url" content="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" />
 
 
 
-<meta property="article:published_time" content="2017-08-24T16:33:29-04:00"/>
+<meta property="article:published_time" content="2018-01-19T10:27:02&#43;00:00"/>
 
-<meta property="article:modified_time" content="2017-08-24T16:33:29-04:00"/>
+<meta property="article:modified_time" content="2018-01-19T10:27:02&#43;00:00"/>
 
 
 
@@ -44,22 +45,24 @@ I heard from a friend that getting a standing desk may be something that would b
 
     
     
-<meta itemprop="name" content="My New Desk by StandDesk">
-<meta itemprop="description" content="I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&rsquo;t been best for the low back and leg pains I experience.
-I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk).">
+<meta itemprop="name" content="Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created">
+<meta itemprop="description" content="Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
+First step, check what luns are available to the cluster.">
 
 
-<meta itemprop="datePublished" content="2017-08-24T16:33:29-04:00" />
-<meta itemprop="dateModified" content="2017-08-24T16:33:29-04:00" />
-<meta itemprop="wordCount" content="430">
+<meta itemprop="datePublished" content="2018-01-19T10:27:02&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-19T10:27:02&#43;00:00" />
+<meta itemprop="wordCount" content="411">
 
 
 
-<meta itemprop="keywords" content="StandDesk," />
+<meta itemprop="keywords" content="vcenter,vmware," />
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="My New Desk by StandDesk"/>
-<meta name="twitter:description" content="I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&rsquo;t been best for the low back and leg pains I experience.
-I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk)."/>
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created"/>
+<meta name="twitter:description" content="Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
+First step, check what luns are available to the cluster."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
     
@@ -236,9 +239,9 @@ I heard from a friend that getting a standing desk may be something that would b
         
 
         <header class="article-header">
-    <a href="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/">
+    <a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">
     <h1 class="article-title" itemprop="name">
-        My New Desk by StandDesk
+        Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created
     </h1>
     </a>
     <div class="article-meta">
@@ -246,7 +249,7 @@ I heard from a friend that getting a standing desk may be something that would b
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2017-08-24 16:33:29 -0400 EDT" itemprop="datePublished">08.24.2017</time>
+            <time datetime="2018-01-19 10:27:02 &#43;0000 &#43;0000" itemprop="datePublished">01.19.2018</time>
         </div>
         
         
@@ -258,7 +261,11 @@ I heard from a friend that getting a standing desk may be something that would b
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://davidstamen.com/tags/standdesk">StandDesk</a>
+                <a class="article-category-link" href="http://davidstamen.com/tags/vcenter">vcenter</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">vmware</a>
                 
                 
             </div>
@@ -268,46 +275,57 @@ I heard from a friend that getting a standing desk may be something that would b
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&rsquo;t been best for the low back and leg pains I experience.</p>
+            <p>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying <em>The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created.</em> This was strange because no other hosts had this issue.</p>
 
-<p>I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk).</p>
+<p><img src="/uploads/screenshot-2018-01-19 10-23-44.png" alt="" /></p>
 
-<p>Upon doing research there were quite a few companies I began to research. <a href="http://go.standdesk.co/j3MdN">StandDesk.co</a> <a href="https://www.autonomous.ai/">Autonomous</a> and <a href="https://www.fully.com/">Fully</a> were the ones I based my feedback on as they met my requirements of a few things, mainly price.</p>
+<p>I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!</p>
 
-<p>There are quite a few resources to start your search. Here are some i used.</p>
+<p>First step, check what luns are available to the cluster.</p>
 
-<ul>
-<li><a href="www.workwhilewalking.com/">Work While Walking</a></li>
-<li><a href="https://www.btod.com/blog/category/comparisons/electric-standing-desk-comparisons/">BTOD</a></li>
-<li><a href="https://www.reddit.com/r/StandingDesk/">Reddit-StandingDesk</a> and <a href="https://www.reddit.com/r/StandingDesks/">Reddit-StandingDesks</a></li>
-</ul>
+<pre><code>Get-Cluster $cluster | Get-Datastore | Select Name, ID | Sort ID
+</code></pre>
 
-<p>and of course the company websites themselves.</p>
+<p><img src="/uploads/screenshot-2018-01-19 10-30-17.png" alt="" /></p>
 
-<p>In the end i ended up choosing <a href="http://go.standdesk.co/j3MdN">StandDesk.co</a>&rsquo;s <strong><em>StandDesk Simple</em></strong> with the <strong><em>Brown Bamboo</em></strong> top. They do give you the option of just buying a stand and using your own top separately. However I was not up to the job this time around to find one, there is a lot of recommendations to use ones from Ikea, but I wanted to get a whole package that would be protected and warrantied through one company.</p>
+<p>Seems that <strong>1131</strong> is missing..</p>
 
-<p><img src="/images/standdeskpic.jpg" alt="" /></p>
+<p>Sometimes the more tools you have available to you, the easier it is to troubleshoot an issue. As part of my daily processes we have an automated script to execute and emails us an <a href="https://www.robware.net/rvtools/">RVTools</a> report so I can easily keep track of inventory objects in my vCenter, I went back a few days and was able to identify the lun, datastore and NAAID of this object.</p>
 
-<p>One great thing so about StandDesk is some of the other companies offer a 1 year warranty on a desk in this range. StandDesk offers a 30 day full price guarantee, and a 5 year warranty.</p>
+<p>Using vRealize Log Insight (Free for up to 25 OSI&rsquo;s, in my case i only have my vCenter for logs) I was able to search for the NAAID and see exactly when and what happened to this lun&hellip;.it was removed.</p>
 
-<p>Another positive about this desk was the installation. Doing my research I read about nightmares installing some standing desks. It was compared to Ikea instructions with many pieces and being very difficult. I was surprised to have a very nice instruction book included that was extremely clear. The install probably took me somewhere between 30-60 minutes as I had children running all over the place during the install.</p>
+<p><img src="/uploads/screenshot-2018-01-19 10-36-59.png" alt="" /></p>
 
-<p><img src="/images/standdeskinstallbook.jpg" alt="" /></p>
+<p>With this newfound information I went and spoke to our storage team, this lun was removed because it was no longer being used by <em>Cluster1.</em> Turns out This lun was zoned to two different clusters, but only used for VMs in Cluster1. Cluster2 in turn was using it for HA heartbeat. In my case to get HA to use a different lun, i chose option 3. Just in case lun&rsquo;s ever get removed again. However after reconfiguring HA it still was trying to use the lun that was removed.</p>
 
-<p>In the end I am very pleased with the desk and quality. The support team reached out as soon as I placed my order and tracked my shipment, the day it was delivered they sent me a personal message making sure it arrived properly and if I had any questions about the installation to contact them at any moment.</p>
+<p><img src="/uploads/screenshot-2018-01-19 10-24-16.png" alt="" /></p>
 
-<p>If you are in the market for a desk, I would definately check them out!</p>
+<p><strong>Resolution:</strong></p>
 
-<p>If you use the following referral link, you can also save <a href="http://go.standdesk.co/j3MdN">$30.</a></p>
+<p><strong>Use Option 2</strong> - Once I selected two specific datastores, I was able to reconfigure HA and no longer had any errors. At this point you can reconfigure HA Datastore Heartbeat to your standard settings and reconfigure the cluster once again.</p>
+
+<p><strong>How to Prevent This?</strong></p>
+
+<p>Always remove luns the right way, its a lot more work, but can prevent issues like this in the future.</p>
+
+<ol>
+<li>Unmount Datastore from all hosts</li>
+<li>Detach lun from all hosts (if LUN is used for HA, it wont let you)</li>
+<li>Unmap from storage array.</li>
+</ol>
+
+<p>You can also use the following script to detach lun&rsquo;s if you have a bunch of lun&rsquo;s and/or hosts. You will need to unmount the datastores first before running.</p>
+
+<p><a href="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" title="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/">http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</a></p>
 
         </div>
         <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/" data-id="b58a1f9cc5be6f0498aafc8a4d3fda06" class="article-share-link">
+    <a data-url="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" data-id="d253042aec9888c9556e105ceddfcfc1" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/#disqus_thread" class="article-comment-link">
+    <a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -384,21 +402,14 @@ I heard from a friend that getting a standing desk may be something that would b
     
 <nav id="article-nav">
     
-    <a href="http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
-      <div class="article-nav-title">vRA 7.3 - Using Active Directory Policies</div>
+      <div class="article-nav-title">Using Forestry.io to Manage Your Hugo Blog</div>
     </a>
     
 
-    
-    <a href="http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">
-          Newer
-      </strong>
-      <div class="article-nav-title">VCAP6.5-DCV Design Experience</div>
-    </a>
     
 </nav>
 
@@ -465,6 +476,14 @@ I heard from a friend that getting a standing desk may be something that would b
                 
                 
 
+                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
+                
+            
+            
+            
+                
+                
+
                     <p class="item-title"><a href="http://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/" class="title">Using Forestry.io to Manage Your Hugo Blog</a></p><br>
                 
             
@@ -474,14 +493,6 @@ I heard from a friend that getting a standing desk may be something that would b
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/" class="title">VCAP6.5-DCV Design Experience</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/24/my-new-desk-by-standdesk/" class="title">My New Desk by StandDesk</a></p><br>
                 
             
             
@@ -600,9 +611,6 @@ I heard from a friend that getting a standing desk may be something that would b
         
         
         <a href="http://davidstamen.com/tags/srm" style="font-size: 12px;">srm</a>
-        
-        
-        <a href="http://davidstamen.com/tags/standdesk" style="font-size: 12px;">standdesk</a>
         
         
         <a href="http://davidstamen.com/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
