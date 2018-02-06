@@ -16,6 +16,11 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/2018/02/03/to-infinity-and-beyond/</loc>
+    <lastmod>2018-02-03T22:38:34+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</loc>
     <lastmod>2018-01-19T10:27:02+00:00</lastmod>
   </url>
@@ -582,6 +587,12 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/tags/career/</loc>
+    <lastmod>2018-02-03T22:38:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -636,7 +647,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-01-19T10:27:02+00:00</lastmod>
+    <lastmod>2018-02-03T22:38:34+00:00</lastmod>
     <priority>0</priority>
   </url>
   
