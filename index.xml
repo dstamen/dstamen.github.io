@@ -6,7 +6,6 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>davidstamen.com</copyright>
     <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/index.xml" rel="self" type="application/rss+xml" />
@@ -45,6 +44,17 @@ VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design
 VMware Certified Advanced Professional 6 – Data Center Virtualization Deployment
 VMware Certified Professional 6 – Data Center Virtualization
 MCSA: Office 365 - Certified 2016</description>
+    </item>
+    
+    <item>
+      <title>vExpert 2018</title>
+      <link>http://davidstamen.com/2018/03/12/vexpert-2018/</link>
+      <pubDate>Mon, 12 Mar 2018 06:41:02 -0700</pubDate>
+      
+      <guid>http://davidstamen.com/2018/03/12/vexpert-2018/</guid>
+      <description>&lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2018!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
