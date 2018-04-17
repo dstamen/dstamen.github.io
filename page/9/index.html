@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-07-23T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-04T00:00:00&#43;00:00"/>
 
 
 
@@ -222,6 +222,134 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/04/updated-platform/">
+    <h1 class="article-title" itemprop="name">
+        Welcome to Jekyll!
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.04.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/jekyll">Jekyll</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                New Blog Platform! I have had a bit of issues with performance on my blog recently and looking on how to not overpay for hosting services. A good friend of mine suggested using Jekyll and GitHub Pages, so I took the challenge. Within a day I was able to get my blog posts exported from Wordpress and published on a new platform and it was quite simple! Be on the lookout for some upcoming posts.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2015/09/04/updated-platform/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2015/09/04/updated-platform/" data-id="363990fa5240a0b6b2a19ebc292202a3" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2015/09/04/updated-platform/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1391,135 +1519,6 @@ I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager wi
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/">
-    <h1 class="article-title" itemprop="name">
-        PowerCLI - Troubleshooting Multiple Default Servers
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-01-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">01.29.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I use a customized version of http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/ by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.
-Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/" data-id="fb6f9f427b6629b72c0d58f66fee13ef" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1566,6 +1565,14 @@ Doing some troubleshooting we noticed their DefaultVIServerMode was set to singl
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="title">Upgrading to VMware vSphere 6.7</a></p><br>
+                
+            
             
             
                 
@@ -1636,14 +1643,6 @@ Doing some troubleshooting we noticed their DefaultVIServerMode was set to singl
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/" class="title">Configuring Unifi Controller and USG for L2TP VPN</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="title">Using PowerCLI to Set vCenter Permissions on Datacenter</a></p><br>
                 
             
             

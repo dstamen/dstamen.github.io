@@ -229,6 +229,135 @@
         </a>
 
         <header class="article-header">
+    <a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/">
+    <h1 class="article-title" itemprop="name">
+        Upgrading to VMware vSphere 6.7
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-04-17 08:32:15 -0400 EDT" itemprop="datePublished">04.17.2018</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the <a href="http://www.vmware.com">vSphere Beta Program</a> and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+</p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" data-id="c05f04668ff1bda5af94625bfc4e0071" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
     <a href="http://davidstamen.com/2018/03/12/vexpert-2018/">
     <h1 class="article-title" itemprop="name">
         vExpert 2018
@@ -1398,139 +1527,6 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">
-    <h1 class="article-title" itemprop="name">
-        Using PowerCLI to Set vCenter Permissions on Datacenter
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2017-04-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.17.2017</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vcenter">vCenter</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" data-id="6756612c615a5622e2866da590028967" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1573,6 +1569,14 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permi
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="title">Upgrading to VMware vSphere 6.7</a></p><br>
+                
+            
             
             
                 
@@ -1643,14 +1647,6 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permi
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/" class="title">Configuring Unifi Controller and USG for L2TP VPN</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="title">Using PowerCLI to Set vCenter Permissions on Datacenter</a></p><br>
                 
             
             

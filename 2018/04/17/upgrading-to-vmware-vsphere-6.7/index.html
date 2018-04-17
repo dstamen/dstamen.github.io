@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>Configuring Unifi Controller and USG for L2TP VPN &middot; davidstamen.com</title>
+    <title>Upgrading to VMware vSphere 6.7 &middot; davidstamen.com</title>
     <meta name="generator" content="Hugo 0.38" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
       <meta name="description" content="a blog about virtualization and stuff">
     
     
-    <link rel="canonical" href="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/"/>
+    <link rel="canonical" href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/"/>
     <link rel="icon" href="http://davidstamen.com/favicon.ico">
     <link rel="apple-touch-icon" href="http://davidstamen.com/apple-touch-icon.png"/>
     <link rel="stylesheet" href="http://davidstamen.com/css/style.css">
@@ -20,18 +20,17 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="Configuring Unifi Controller and USG for L2TP VPN" />
-<meta property="og:description" content="I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
-Unifi Controller 5.5.11
-Configuration is quite simple! Just follow these few easy steps and you will be up in no time." />
+    <meta property="og:title" content="Upgrading to VMware vSphere 6.7" />
+<meta property="og:description" content="It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/" />
+<meta property="og:url" content="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" />
 
 
 
-<meta property="article:published_time" content="2017-04-25T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-04-17T08:32:15-04:00"/>
 
-<meta property="article:modified_time" content="2017-04-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-17T08:32:15-04:00"/>
 
 
 
@@ -45,25 +44,23 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
 
     
     
-<meta itemprop="name" content="Configuring Unifi Controller and USG for L2TP VPN">
-<meta itemprop="description" content="I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
-Unifi Controller 5.5.11
-Configuration is quite simple! Just follow these few easy steps and you will be up in no time.">
+<meta itemprop="name" content="Upgrading to VMware vSphere 6.7">
+<meta itemprop="description" content="It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+">
 
 
-<meta itemprop="datePublished" content="2017-04-25T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-04-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="312">
+<meta itemprop="datePublished" content="2018-04-17T08:32:15-04:00" />
+<meta itemprop="dateModified" content="2018-04-17T08:32:15-04:00" />
+<meta itemprop="wordCount" content="438">
 
 
 
-<meta itemprop="keywords" content="Ubiquiti," />
+<meta itemprop="keywords" content="VMware," />
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Configuring Unifi Controller and USG for L2TP VPN"/>
-<meta name="twitter:description" content="I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
-Unifi Controller 5.5.11
-Configuration is quite simple! Just follow these few easy steps and you will be up in no time."/>
+<meta name="twitter:title" content="Upgrading to VMware vSphere 6.7"/>
+<meta name="twitter:description" content="It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
     
@@ -240,9 +237,9 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
         
 
         <header class="article-header">
-    <a href="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">
+    <a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/">
     <h1 class="article-title" itemprop="name">
-        Configuring Unifi Controller and USG for L2TP VPN
+        Upgrading to VMware vSphere 6.7
     </h1>
     </a>
     <div class="article-meta">
@@ -250,7 +247,7 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2017-04-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.25.2017</time>
+            <time datetime="2018-04-17 08:32:15 -0400 EDT" itemprop="datePublished">04.17.2018</time>
         </div>
         
         
@@ -262,7 +259,7 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://davidstamen.com/tags/ubiquiti">Ubiquiti</a>
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
                 
                 
             </div>
@@ -272,77 +269,62 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.</p>
+            <p>It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the <a href="http://www.vmware.com">vSphere Beta Program</a> and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+</p>
 
-<p><a href="https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-5-11-Stable-Candidate-has-been-released/ba-p/1905832">Unifi Controller 5.5.11</a></p>
+<p>The first, thing I would like to mention is there is no supported migration from vSphere 5.x to 6.7. You must be running vSphere 6.0 or 6.5.</p>
 
-<p>Configuration is quite simple! Just follow these few easy steps and you will be up in no time.</p>
+<p><img src="/uploads/67upgrade1.png" alt="" /></p>
+
+<p>As we did with 6.5 and even more with 6.7 we are now calling the vCenter Server Appliance the default deployment. Why you ask? Well vSphere 6.7 is now the last release to support the Windows installer. So if you happened to upgrade to 6.5 and are still on Windows, you now have a supported upgrade path to the appliance on vSphere 6.7.</p>
+
+<p>Some key considerations with changed topologies as well. We now support Enhanced Link Mode (ELM) with embedded deployments. This means if you have a greenfield deployment, where you have 1 embedded deployment, you can now deploy a second embedded deployment and use ELM. However if you currently have two 6.0/6.5 embedded deployments in separate SSO domains and wish to upgrade to 6.7, there is no way yet to use ELM.</p>
+
+<p>Another considerations is we have removed what we called sites within SSO domains, this means there is now a lot more flexibility when planning your Platform Services Controller topology. With 6.7 we have enhanced the <strong>cmsso-util</strong> utility where you now can repoint to a PSC within the same SSO or across sites. You also now have the ability to repoint across SSO domains, so this will definitely help with consolidating environments (external PSC deployments only).</p>
+
+<p>And of course, if you are already on vSphere 6.5 an wondering why should I go to 6.7? Here are some key features that have improved the overall experience!</p>
 
 <ul>
-<li>The first step is to create your radius profile. to do this browse to <em>Settings</em> and then <em>Profiles</em>.
+<li>HTML5 Client
 
 <ul>
-<li>Here you will create a name for your radius profile, the only thing you will change here is the <em>IP Address</em> of your USG and then set the <em>Password/Pre Shared Secret</em>. When done hit save.</li>
+<li>VMware Update Manager integrated into the vSphere HTML5 Client</li>
+<li>More Supported Workflows</li>
+</ul></li>
+<li>VAMI
+
+<ul>
+<li>Built in Backup Scheduler w/ Retention in the VAMI</li>
+<li>Improved Services View (no longer need to go to vSphere Client)</li>
+<li>Improved Disk View</li>
+<li>Improved Monitoring (CPU, Memory, Network and Database)</li>
+<li>Improved Updates (Now you can select updates to install)</li>
+<li>Syslog now supports up to 3 targets</li>
+</ul></li>
+<li>ELM with Embedded deployments</li>
+<li>Performance Improvements</li>
+<li>Security Enhancements
+
+<ul>
+<li>VBS</li>
+<li>vTPM and TPM 20</li>
+<li>Encrypted xVC vMotion</li>
 </ul></li>
 </ul>
 
-<p><img src="/images/vpnradiusprofile.png" alt="" /></p>
+<p>and more&hellip;.</p>
 
-<ul>
-<li>Next up on the configuration is the Radius Service Configuration. Browse to <em>Settings</em> and <em>Services</em>.
+<p><a href="http://emadyounis.com/vcenter/vcenter-server-6-7-whats-new-rundown/">Emad Younis</a> has made a great post on 6.7 with a Whats New Feature Rundown, so I suggest you check it out.</p>
 
-<ul>
-<li>First up is the user, select Users and then enter in the following details.</li>
-<li>Name: username</li>
-<li>Password: password to be used for client conenctivity</li>
-<li>VLAN: leave blank</li>
-<li>Tunnel Type: 3 (For L2TP)</li>
-<li>Tunnel Medium Type: 1 (For IPv4)</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/vpnradiususers.png" alt="" /></p>
-
-<ul>
-<li>Next up on the Radius Service configuration is the <em>Server</em> Configuration.
-
-<ul>
-<li>Click on Server under Servers/Radius and <em>Enable Radius Server</em>.</li>
-<li>The only thing you will do here is set the <em>L2TP Secret</em>.</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/vpnradiusserver.png" alt="" /></p>
-
-<ul>
-<li>Next up on the configuration is to browse to <em>Settings</em> and <em>Networks</em>.
-
-<ul>
-<li>Here you will create a new network with the following details..</li>
-<li>Purpose: Remote User VPN</li>
-<li>VPN Type: L2TP Server</li>
-<li>Pre Shared Key: This is the <em>secret</em> you configured for the Radius Server.</li>
-<li>Gateway/Subnet: IP Information for your VPN Clients</li>
-<li>Other: Fill in other fields as needed.</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/vpnnetworks.png" alt="" /></p>
-
-<p>Once everything is complete you will now have an extra bubble with VPN statistics!</p>
-
-<p><img src="/images/dashboardview.png" alt="" /></p>
-
-<p>Nothing else is needed! Once the Unifi USG provisions it automatically adds in the needed firewall rules, you can now configure your normal L2TP client to connect.</p>
-
+<p>and for even more information make sure to check out the <a href="http://vmw.re/vsphere67launch">vSphere 6.7 Launch Blogs</a></p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/" data-id="957b197a5b1e4060d42f9eaf0f9827c0" class="article-share-link">
+    <a data-url="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" data-id="c05f04668ff1bda5af94625bfc4e0071" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/#disqus_thread" class="article-comment-link">
+    <a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -419,21 +401,14 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
     
 <nav id="article-nav">
     
-    <a href="http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="http://davidstamen.com/2018/03/12/vexpert-2018/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
-      <div class="article-nav-title">Using PowerCLI to Set vCenter Permissions on Datacenter</div>
+      <div class="article-nav-title">vExpert 2018</div>
     </a>
     
 
-    
-    <a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">
-          Newer
-      </strong>
-      <div class="article-nav-title">Using PowerCLI to Add vRealize Operations License Key</div>
-    </a>
     
 </nav>
 
