@@ -6,10 +6,20 @@
     <description>Recent content in Vcenter on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Apr 2018 08:32:15 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 23 May 2018 12:45:07 -0400</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/tags/vcenter/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Patching your vCenter Server Appliance from 6.7 to 6.7a</title>
+      <link>http://davidstamen.com/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/</link>
+      <pubDate>Wed, 23 May 2018 12:45:07 -0400</pubDate>
+      
+      <guid>http://davidstamen.com/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/</guid>
+      <description>&lt;p&gt;On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can upgrade your 6.7 GA vCenter Server to 6.7a.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Upgrading to VMware vSphere 6.7</title>
