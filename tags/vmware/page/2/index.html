@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-11-30T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2016-01-12T00:00:00&#43;00:00"/>
 
 
 
@@ -230,6 +230,59 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/">
+    <h1 class="article-title" itemprop="name">
+        Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2016-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">01.12.2016</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
+This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
+ SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install &ndash;url &ndash;acceptEulas to download and install the packages from the VMware Repo.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -697,58 +750,6 @@ You see, VMware has had a bug KB2124669 since ESXi 6.0 that can cause an ESXi ho
                       <p>
                           So one thing I have come across with a few VCSA6 installs was the inability to use login with current credentials via the Web client or vSphere client.
 Working with VMware support we were finally able to get it working with a few tweaks and there is a current pending KB that has not been published yet. (KB2113038) I have been told this affects both an embedded deployment (VCSA and PSC together) and external deployment (VCSA and PSC seperate.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/">
-    <h1 class="article-title" itemprop="name">
-        vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-05-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">05.21.2014</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
- Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  
                       </p>
                   </div>
               </div>
