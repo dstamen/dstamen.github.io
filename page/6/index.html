@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-10-16T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-11-11T00:00:00&#43;00:00"/>
 
 
 
@@ -222,6 +222,137 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/">
+    <h1 class="article-title" itemprop="name">
+        Reusing Horizon View Desktop Names
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-11-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">11.11.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/horizon-view">Horizon View</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Have you ever worked with a Horizon View pool with 10 VM&rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
+To connect to the View ADAM database:
+ Log in to one of the View Connection Servers as Domain Administrator.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/" data-id="970127ad47fbaa77db5b444a9358592c" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1384,135 +1515,6 @@ Objective 8.1: Deploy ESXi Hosts Using Autodeploy  Describe the components and a
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/">
-    <h1 class="article-title" itemprop="name">
-        Section 9: Configure and Administer vSphere Availability Solutions
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Section 9 of the VCP6-DCV blueprint
-Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advanced cluster settings Configure a network for use with HA heartbeats Apply an admission control policy for HA Enable/disable advanced vSphere HA settings Configure different heartbeat datastores for an HA cluster Apply virtual machine monitoring for a cluster Configure Virtual Machine Component Protection (VMCP) settings Implement vSphere HA on a Virtual SAN cluster Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management  Objective 9.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/" data-id="522a766b7b2fca3bd6d327e01547c2d0" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1559,6 +1561,14 @@ Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advance
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
+                
+            
             
             
                 
@@ -1629,14 +1639,6 @@ Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advance
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/07/31/another-new-blog-platform/" class="title">Another New Blog Platform</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/" class="title">Using PowerCLI to Add vRealize Operations License Key</a></p><br>
                 
             
             
@@ -1729,6 +1731,9 @@ Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advance
         
         
         <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
         
         
         <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>

@@ -239,6 +239,58 @@
           <article class="article article-type-post" itemscope="" itemprop="blogPost">
               <div class="article-inner">
                   <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/">
+    <h1 class="article-title" itemprop="name">
+        How To Deploy a Jekyll Blog
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.08.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/jekyll">Jekyll</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
     <a href="http://davidstamen.com/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/">
     <h1 class="article-title" itemprop="name">
         Using Vagrant to Deploy an Ubuntu Server running NGINX
@@ -702,59 +754,6 @@ VCP6-DCV Delta : Exam Code: 2V0-621D
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/02/18/srm-unable-to-uninstall-due-to-uac/">
-    <h1 class="article-title" itemprop="name">
-        SRM - Unable to uninstall due to UAC
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-02-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">02.18.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/srm">SRM</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.
-To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -802,6 +801,14 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
+                
+            
             
             
                 
@@ -872,14 +879,6 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/07/31/another-new-blog-platform/" class="title">Another New Blog Platform</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/" class="title">Using PowerCLI to Add vRealize Operations License Key</a></p><br>
                 
             
             
@@ -972,6 +971,9 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
         
         
         <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
         
         
         <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>

@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-04-25T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-07-27T00:00:00&#43;00:00"/>
 
 
 
@@ -222,6 +222,138 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">
+    <h1 class="article-title" itemprop="name">
+        Using PowerCLI to Add vRealize Operations License Key
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-07-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">07.27.2017</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vrops">vROPS</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.
+            </p>
+            <p class="article-more-link">
+                <a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/" data-id="12683d7369228f2c1ebd316683a30938" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1393,135 +1525,6 @@ If you are installing this on a bare metal or virtual machine, i suggest a debia
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://davidstamen.com/2016/11/21/vsphere-65-vcha-issues/">
-    <h1 class="article-title" itemprop="name">
-        vSphere 6.5 - vCenter HA (VCHA) Issues
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2016-11-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">11.21.2016</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                So as everyone has probably seen, vSphere 6.5 is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.
-Every time I would try to configure vCenter HA using the Advanced Wizard, I would get the following error.
-            </p>
-            <p class="article-more-link">
-                <a href="http://davidstamen.com/2016/11/21/vsphere-65-vcha-issues/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2016/11/21/vsphere-65-vcha-issues/" data-id="0115bb880509e8e4fba28a856763b0eb" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2016/11/21/vsphere-65-vcha-issues/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1568,6 +1571,14 @@ Every time I would try to configure vCenter HA using the Advanced Wizard, I woul
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
+                
+            
             
             
                 
@@ -1638,14 +1649,6 @@ Every time I would try to configure vCenter HA using the Advanced Wizard, I woul
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2017/07/31/another-new-blog-platform/" class="title">Another New Blog Platform</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/" class="title">Using PowerCLI to Add vRealize Operations License Key</a></p><br>
                 
             
             
@@ -1738,6 +1741,9 @@ Every time I would try to configure vCenter HA using the Advanced Wizard, I woul
         
         
         <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
         
         
         <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>
