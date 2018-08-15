@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2018-08-15T10:47:06-04:00" />
 <meta itemprop="dateModified" content="2018-08-15T10:47:06-04:00" />
-<meta itemprop="wordCount" content="160">
+<meta itemprop="wordCount" content="173">
 
 
 
@@ -272,11 +272,13 @@
             <p>On Tuesday August 14th, Intel Released their news on the latest vulnerability <strong>L1 Terminal Fault (L1TF) or ForeShadow</strong>. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.
 </p>
 
-<p>I wanted to clarify then when remediating you should make sure to address the update sequence in the corect order. vCenter Server MUST be patched prior to updating ESXi.</p>
+<p>I wanted to clarify when remediating your vSphere you should make sure to address the update sequence in the correct order. vCenter Server MUST be patched prior to updating ESXi.</p>
 
 <p><img src="https://kb.vmware.com/servlet/rtaImage?eid=ka1340000009O9X&amp;feoid=00N34000005kd1R&amp;refid=0EM340000003rNR" alt="L1TF Remediation Order" /></p>
 
 <p>In some cases I have seen users patching ESXi before their vCenter Server resulting in generic errors such as <code>xxx esx.problem.hyperthreading.unmitigated.formatOnHost not found xxx</code> or <code>esx.problem.hyperthreading.unmitigated</code></p>
+
+<p><a href="https://kb.vmware.com/s/article/57374">KB57374</a> has been created to inform users on details of this error.</p>
 
 <p><img src="/images/l1tfpatch2.png" alt="Patched Using Incorrect Order" /></p>
 
