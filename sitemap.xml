@@ -16,6 +16,26 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/</loc>
+    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/</loc>
+    <lastmod>2018-10-07T08:13:29-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</loc>
+    <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</loc>
+    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/</loc>
     <lastmod>2018-08-15T10:47:06-04:00</lastmod>
   </url>
@@ -667,7 +687,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -776,6 +796,12 @@
   <url>
     <loc>http://davidstamen.com/tags/vrops/</loc>
     <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidstamen.com/tags/vsphereupgrade/</loc>
+    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-09-08T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-16T00:00:00&#43;00:00"/>
 
 
 
@@ -230,6 +230,219 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/">
+    <h1 class="article-title" itemprop="name">
+        Upgrading Horizon View 6.1 to 6.2
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.16.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/horizon-view">Horizon View</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+First download the bits from here.
+The upgrade documentation can also be found here.
+Warning: In my environment I do not have a composer server, if you had one this would be upgraded first The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/">
+    <h1 class="article-title" itemprop="name">
+        Using PowerCLI to Extend VMDK and Windows OS Disk
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.15.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          I wanted to share this handy script i created when you have a need to extend a disk.
+This script can be extremely handy as it will take care of extending the VMDK and then going to the OS and then performing the expansion there as well. This has been helpful when needing to extend a large batch of servers (60+).
+Syntax: .\ExtendVMDKandGuest VMNAME
+You will then be prompted to enter in the Hard Disk #, the size you want to be extended, and then which drive letter that volume belongs to.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/">
+    <h1 class="article-title" itemprop="name">
+        Using PowerCLI to Detach Luns
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.14.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
+Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;
+ Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/09/10/vsphere-60-update-1-released/">
+    <h1 class="article-title" itemprop="name">
+        vSphere 6.0 Update 1 Released
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-09-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">09.10.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Today vSphere 6.0 U1 is released. This is normally the update everyone waits for before upgrading their production environments to the latest version. I think the first time in awhile, a lot of people will wait.
+You see, VMware has had a bug KB2124669 since ESXi 6.0 that can cause an ESXi host to randomly lose connection, freeze and overall act really terrible. With the release of 6.0U1 it still exists.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -551,213 +764,6 @@ I am assuming you have already upgraded your View Composer, Connection and Secur
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/05/07/honored-to-be-a-pernixpro/">
-    <h1 class="article-title" itemprop="name">
-        Honored to be a PernixPro
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-05-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">05.07.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/pernixdata">PernixData</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          I have been glad to have been accepted as a PernixPro. Look forward to seeing some more FVP related content on this blog, I am honored to have this title.
-PernixPro™ members are an elite community of IT professionals committed to advancing FVP storage acceleration technology. By facilitating collaboration between PernixData experts and the industry’s top luminaries, PernixPro breaks down the barriers to widespread adoption of server-side storage, giving companies of all sizes a cost-effective solution for scaling storage performance independent of storage capacity.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/">
-    <h1 class="article-title" itemprop="name">
-        VCP6-DCV Delta Exam (Beta) Thoughts
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.27.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Here is a bit of my experience with the VCP6-DCV Delta beta exam.
-Initial Thoughts Today I sat and took the VCP6-DCV Delta Exam beta. I have never taken a VMware beta exam so I wasn&rsquo;t quite sure what to expect, from what I have been told, I expected lots of questions with bad grammar and horrible spelling. However today I got something a bit different. Ill explain it best without violating any NDA.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/04/13/vsphere6-unable-to-use-session-credentials/">
-    <h1 class="article-title" itemprop="name">
-        vSphere6 - Unable to use session credentials
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-04-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.13.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          So one thing I have come across with a few VCSA6 installs was the inability to use login with current credentials via the Web client or vSphere client.
-Working with VMware support we were finally able to get it working with a few tweaks and there is a current pending KB that has not been published yet. (KB2113038) I have been told this affects both an embedded deployment (VCSA and PSC together) and external deployment (VCSA and PSC seperate.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/04/02/powercli-extend-vmdk-and-guest-os/">
-    <h1 class="article-title" itemprop="name">
-        PowerCLI - Extend VMDK and Guest OS
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-04-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.02.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -811,6 +817,38 @@ Working with VMware support we were finally able to get it working with a few tw
                 
                 
 
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
+                
+            
+            
+            
+                
+                
+
                     <p class="item-title"><a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="title">L1 Terminal Fault (L1TF) Patching Considerations</a></p><br>
                 
             
@@ -852,38 +890,6 @@ Working with VMware support we were finally able to get it working with a few tw
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2018/02/06/to-infinity-and-beyond/" class="title">To Infinity and Beyond</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/" class="title">VCAP6.5-DCV Design Experience</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/" class="title">vRA 7.3 - Using Active Directory Policies</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/" class="title">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a></p><br>
                 
             
             
@@ -985,6 +991,9 @@ Working with VMware support we were finally able to get it working with a few tw
         
         
         <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
         
         
         <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>

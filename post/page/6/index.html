@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-11-18T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-12-10T00:00:00&#43;00:00"/>
 
 
 
@@ -230,6 +230,217 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/">
+    <h1 class="article-title" itemprop="name">
+        Using UCS PowerTool To Configure UCS Certificates
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-12-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">12.10.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
+Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/11/30/installing-host-vibs-using-powercli/">
+    <h1 class="article-title" itemprop="name">
+        Installing Host VIB&#39;s Using PowerCLI
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-11-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">11.30.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/11/30/using-cli-to-manage-dvs-host-uplinks/">
+    <h1 class="article-title" itemprop="name">
+        Using CLI to Manage DVS Host Uplinks
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-11-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">11.30.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
+As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/11/23/configuring-multiple-ucs-vlans/">
+    <h1 class="article-title" itemprop="name">
+        Configuring Multiple UCS VLAN&#39;s
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-11-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">11.23.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
+Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+The script can be found here.
+# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -546,214 +757,6 @@ Objective 3.1: Manage vSphere Storage Virtualization  Discover new storage LUNs 
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-4-upgrade-a-vsphere-deployment-to-6x/">
-    <h1 class="article-title" itemprop="name">
-        Section 4: Upgrade a vSphere Deployment to 6.x
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Section 4 of the VCP6-DCV blueprint
-Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades  Configure download source(s) Setup UMDS to setup download repository Import ESXi images Create Baselines and/or Baseline groups Attach Baselines to vSphere objects Scan vSphere objects Stage patches &amp; Extensions Remediate an object Upgrade a vSphere Distributed Switch Upgrade VMware Tools Upgrade Virtual Machine hardware Upgrade an ESXi Host using vCenter Update Manager Stage multiple ESXi Host upgrades Align appropriate baselines with target inventory objects.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/">
-    <h1 class="article-title" itemprop="name">
-        Section 5: Administer and Manage vSphere 6.x Resources
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Section 5 of the VCP6-DCV blueprint
-Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/">
-    <h1 class="article-title" itemprop="name">
-        Section 6: Backup and Recover a vSphere Deployment
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Section 6 of the VCP6-DCV blueprint
-Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/">
-    <h1 class="article-title" itemprop="name">
-        Section 7: Troubleshoot a vSphere Deployment
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">10.16.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/certification">Certification</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Section 7 of the VCP6-DCV blueprint
-Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency   Objective 7.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -807,6 +810,38 @@ Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Mo
                 
                 
 
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
+                
+            
+            
+            
+                
+                
+
                     <p class="item-title"><a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="title">L1 Terminal Fault (L1TF) Patching Considerations</a></p><br>
                 
             
@@ -848,38 +883,6 @@ Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Mo
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2018/02/06/to-infinity-and-beyond/" class="title">To Infinity and Beyond</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/" class="title">VCAP6.5-DCV Design Experience</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/" class="title">vRA 7.3 - Using Active Directory Policies</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/" class="title">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a></p><br>
                 
             
             
@@ -981,6 +984,9 @@ Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Mo
         
         
         <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
         
         
         <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>

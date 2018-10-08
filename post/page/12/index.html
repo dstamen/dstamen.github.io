@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-05-08T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-06-03T00:00:00&#43;00:00"/>
 
 
 
@@ -230,6 +230,215 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/">
+    <h1 class="article-title" itemprop="name">
+        Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1)
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-06-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">06.03.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vcloud-air">vCloud Air</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          So luckily i was selected for the June 2014 wave of vCloud Hybrid Service access as a vExpert. I have been looking forwarding to using vCHS since it went GA and am glad to finally have the opportunity to use it hands on.
+Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/">
+    <h1 class="article-title" itemprop="name">
+        Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-06-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">06.03.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vcloud-air">vCloud Air</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          Here is Part 2 a continuation of Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1) (http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/) where we will configure vCloud connector to your Private(vCenter) and Public(vCHS) clouds.
+Lets start with getting the vCloud Connector Server ready. Just in case you forgot what IP you assigned we can open the appliance and view the management information.
+As we can see here the URL to configure the appliace is https://192.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/">
+    <h1 class="article-title" itemprop="name">
+        Create VMFS Datastore Using PowerCLI
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-05-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">05.22.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/">
+    <h1 class="article-title" itemprop="name">
+        vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-05-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">05.21.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vmware">VMware</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
+ Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -544,57 +753,6 @@ So remember to set the VLAN to Native if using an operating system that does not
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2014/04/29/nested-esxi-and-nfs/">
-    <h1 class="article-title" itemprop="name">
-        Nested ESXi and NFS
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-04-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.29.2014</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/homelab">HomeLab</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&rsquo;s couldn&rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &ldquo;Promiscuous Mode&rdquo; on the VSS to allow the traffic to pass.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -604,6 +762,10 @@ So remember to set the VLAN to Native if using an operating system that does not
             « Prev
         </a>
     
+    
+        <a class="extend next" rel="next" href="http://davidstamen.com/post/page/13/">
+            Next »
+        </a>
     
 
 </nav>
@@ -639,6 +801,38 @@ So remember to set the VLAN to Native if using an operating system that does not
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
+                
+            
             
             
                 
@@ -685,38 +879,6 @@ So remember to set the VLAN to Native if using an operating system that does not
                 
 
                     <p class="item-title"><a href="http://davidstamen.com/2018/02/06/to-infinity-and-beyond/" class="title">To Infinity and Beyond</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="title">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/" class="title">VCAP6.5-DCV Design Experience</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/" class="title">vRA 7.3 - Using Active Directory Policies</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/" class="title">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a></p><br>
                 
             
             
@@ -818,6 +980,9 @@ So remember to set the VLAN to Native if using an operating system that does not
         
         
         <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
         
         
         <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>
