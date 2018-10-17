@@ -6,10 +6,20 @@
     <description>Recent content in Vsphereupgrade on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Oct 2018 08:02:47 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://davidstamen.com/tags/vsphereupgrade/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why and How To Upgrade to vSphere 6.7 U1</title>
+      <link>http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/</guid>
+      <description>&lt;p&gt;vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Automating the Upgrade of the Virtual Distributed Switch</title>

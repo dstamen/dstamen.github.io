@@ -16,6 +16,11 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/</loc>
+    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/</loc>
     <lastmod>2018-10-08T08:02:47-04:00</lastmod>
   </url>
@@ -687,7 +692,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -801,7 +806,7 @@
   
   <url>
     <loc>http://davidstamen.com/tags/vsphereupgrade/</loc>
-    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
