@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Cisco UCS and Native VLAN Tagging &middot; davidstamen.com</title>
+    <meta name="generator" content="Hugo 0.46" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="David Stamen">
+    
+      <meta name="description" content="a blog about virtualization and stuff">
+    
+    
+    <link rel="canonical" href="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/"/>
+    <link rel="icon" href="http://davidstamen.com/favicon.ico">
+    <link rel="apple-touch-icon" href="http://davidstamen.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://davidstamen.com/css/style.css">
+    <link rel="stylesheet" href="http://davidstamen.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://davidstamen.com/css/monokai.css">
+    <link rel="stylesheet" href="http://davidstamen.com/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Cisco UCS and Native VLAN Tagging" />
+<meta property="og:description" content="Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.
+So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/" />
+
+
+
+<meta property="article:published_time" content="2014-04-29T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-04-29T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="Cisco UCS and Native VLAN Tagging">
+<meta itemprop="description" content="Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.
+So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!">
+
+
+<meta itemprop="datePublished" content="2014-04-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="78">
+
+
+
+<meta itemprop="keywords" content="Cisco," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cisco UCS and Native VLAN Tagging"/>
+<meta name="twitter:description" content="Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.
+So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!"/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://davidstamen.com/" id="logo">
+          
+          <i class="logo" style="background-image: url('http://davidstamen.com/images/apple-touch-icon-57x57.png')"></i>
+          
+          <span class="site-title">davidstamen.com</span>
+      </a>
+      <nav id="main-nav">
+          
+
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          <a class="main-nav-link" href="/resources/">Resources</a>
+          
+          <a class="main-nav-link" href="/acclaim/">Acclaim</a>
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://davidstamen.com/images/apple-touch-icon-57x57.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          <td><a class="main-nav-link" href="/resources/">Resources</a></td>
+          
+          <td><a class="main-nav-link" href="/acclaim/">Acclaim</a></td>
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/2051e99107a154b541623e5dd75293d3?s=100&d=identicon"/>
+      
+      <h2 id="name">David Stamen</h2>
+      <h3 id="title">Blogger | Technical Marketing Engineer | Dad</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Kissimmee, FL</span>
+      
+          <a id="follow" href="https://twitter.com/davidstamen">
+              Follow
+          </a>
+      
+    </div>
+    
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/dstamen" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/davidstamen" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://davidstamen.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/">
+    <h1 class="article-title" itemprop="name">
+        Cisco UCS and Native VLAN Tagging
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-04-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">04.29.2014</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.</p>
+
+<p>So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!</p>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/" data-id="d0b6af93c045f1ca2d40f0bdcd8d61fa" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://davidstamen.com/2014/04/29/nested-esxi-and-nfs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Nested ESXi and NFS</div>
+    </a>
+    
+
+    
+    <a href="http://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Enable SSH on vSphere Management Assistant 5.0</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Sponsors
+    </h3>
+    <div class="widget">
+				<center>
+                    
+                    <a href="mailto:dstamen+sponsor@gmail.com?subject=Advertise on davidstamen.com" target="_blank"><img src="/images/sponsor-here.png" width="163" height="163" title="Advertise Here"></a>
+			</center>
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="title">Why and How To Upgrade to vSphere 6.7 U1</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="title">L1 Terminal Fault (L1TF) Patching Considerations</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/" class="title">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="title">Upgrading to VMware vSphere 6.7</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/03/12/vexpert-2018/" class="title">vExpert 2018</a></p><br>
+                
+            
+            
+        
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
+        
+        
+        <a href="http://davidstamen.com/tags/career" style="font-size: 12px;">career</a>
+        
+        
+        <a href="http://davidstamen.com/tags/certification" style="font-size: 12px;">certification</a>
+        
+        
+        <a href="http://davidstamen.com/tags/cisco" style="font-size: 12px;">cisco</a>
+        
+        
+        <a href="http://davidstamen.com/tags/homelab" style="font-size: 12px;">homelab</a>
+        
+        
+        <a href="http://davidstamen.com/tags/horizon-view" style="font-size: 12px;">horizon-view</a>
+        
+        
+        <a href="http://davidstamen.com/tags/hugo" style="font-size: 12px;">hugo</a>
+        
+        
+        <a href="http://davidstamen.com/tags/jekyll" style="font-size: 12px;">jekyll</a>
+        
+        
+        <a href="http://davidstamen.com/tags/messaging" style="font-size: 12px;">messaging</a>
+        
+        
+        <a href="http://davidstamen.com/tags/pernixdata" style="font-size: 12px;">pernixdata</a>
+        
+        
+        <a href="http://davidstamen.com/tags/powercli" style="font-size: 12px;">powercli</a>
+        
+        
+        <a href="http://davidstamen.com/tags/powerdns" style="font-size: 12px;">powerdns</a>
+        
+        
+        <a href="http://davidstamen.com/tags/purestorage" style="font-size: 12px;">purestorage</a>
+        
+        
+        <a href="http://davidstamen.com/tags/ravello" style="font-size: 12px;">ravello</a>
+        
+        
+        <a href="http://davidstamen.com/tags/srm" style="font-size: 12px;">srm</a>
+        
+        
+        <a href="http://davidstamen.com/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
+        
+        
+        <a href="http://davidstamen.com/tags/ubiquiti" style="font-size: 12px;">ubiquiti</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vagrant" style="font-size: 12px;">vagrant</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vcenter" style="font-size: 12px;">vcenter</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vcloud-air" style="font-size: 12px;">vcloud-air</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vdp" style="font-size: 12px;">vdp</a>
+        
+        
+        <a href="http://davidstamen.com/tags/veeam" style="font-size: 12px;">veeam</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vexpert" style="font-size: 12px;">vexpert</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
+        
+        
+        <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018
+      davidstamen.com
+    </div>
+  </div>
+</footer>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="http://davidstamen.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://davidstamen.com/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

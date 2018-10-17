@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Upgrading Platform Services Controller and VCenter Server via the CLI Installer &middot; davidstamen.com</title>
+    <meta name="generator" content="Hugo 0.46" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="David Stamen">
+    
+      <meta name="description" content="a blog about virtualization and stuff">
+    
+    
+    <link rel="canonical" href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/"/>
+    <link rel="icon" href="http://davidstamen.com/favicon.ico">
+    <link rel="apple-touch-icon" href="http://davidstamen.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://davidstamen.com/css/style.css">
+    <link rel="stylesheet" href="http://davidstamen.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://davidstamen.com/css/monokai.css">
+    <link rel="stylesheet" href="http://davidstamen.com/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Upgrading Platform Services Controller and VCenter Server via the CLI Installer" />
+<meta property="og:description" content="The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&ndash;especially when having to perform the task if you have multiple PSC&rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&rsquo;s and benefits of using the CLI based approach.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" />
+
+
+
+<meta property="article:published_time" content="2018-10-05T09:08:15-04:00"/>
+
+<meta property="article:modified_time" content="2018-10-05T09:08:15-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="Upgrading Platform Services Controller and VCenter Server via the CLI Installer">
+<meta itemprop="description" content="The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&ndash;especially when having to perform the task if you have multiple PSC&rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&rsquo;s and benefits of using the CLI based approach.
+
+">
+
+
+<meta itemprop="datePublished" content="2018-10-05T09:08:15-04:00" />
+<meta itemprop="dateModified" content="2018-10-05T09:08:15-04:00" />
+<meta itemprop="wordCount" content="1544">
+
+
+
+<meta itemprop="keywords" content="vSphereUpgrade," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Upgrading Platform Services Controller and VCenter Server via the CLI Installer"/>
+<meta name="twitter:description" content="The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&ndash;especially when having to perform the task if you have multiple PSC&rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&rsquo;s and benefits of using the CLI based approach.
+
+"/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://davidstamen.com/" id="logo">
+          
+          <i class="logo" style="background-image: url('http://davidstamen.com/images/apple-touch-icon-57x57.png')"></i>
+          
+          <span class="site-title">davidstamen.com</span>
+      </a>
+      <nav id="main-nav">
+          
+
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          <a class="main-nav-link" href="/resources/">Resources</a>
+          
+          <a class="main-nav-link" href="/acclaim/">Acclaim</a>
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://davidstamen.com/images/apple-touch-icon-57x57.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          <td><a class="main-nav-link" href="/resources/">Resources</a></td>
+          
+          <td><a class="main-nav-link" href="/acclaim/">Acclaim</a></td>
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/2051e99107a154b541623e5dd75293d3?s=100&d=identicon"/>
+      
+      <h2 id="name">David Stamen</h2>
+      <h3 id="title">Blogger | Technical Marketing Engineer | Dad</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Kissimmee, FL</span>
+      
+          <a id="follow" href="https://twitter.com/davidstamen">
+              Follow
+          </a>
+      
+    </div>
+    
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/dstamen" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/davidstamen" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://davidstamen.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">
+    <h1 class="article-title" itemprop="name">
+        Upgrading Platform Services Controller and VCenter Server via the CLI Installer
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-10-05 09:08:15 -0400 EDT" itemprop="datePublished">10.05.2018</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/vsphereupgrade">vSphereUpgrade</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&ndash;especially when having to perform the task if you have multiple PSC&rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&rsquo;s and benefits of using the CLI based approach.</p>
+
+<p></p>
+
+<p><img src="/images/vsphereupgradeprocess-1.png" alt="" /></p>
+
+<p>When we start our vSphere Upgrade the first thing we want to do is to upgrade our PSC and vCenter Server before updating other components. If we happen to be using an Embedded PSC deployment the upgrade is simple, we can do the upgrade in one step (Step 1 and Step 2 combined). However, if we are using an External PSC deployment we must upgrade all of our PSC&rsquo;s within the same SSO domain first prior to upgrading any vCenter Servers&ndash;so this becomes a multi-step process.</p>
+
+<p><img src="/images/67applianceupgradeimage.png" alt="" /></p>
+
+<p>For this upgrade scenario we will be performing an upgrade from an External PSC deployment using appliances on vSphere 6.0 to an External PSC deployment using appliances on vSphere 6.7.</p>
+
+<h2 id="prepare-your-json-configuration-file-for-cli-upgrade">Prepare Your JSON Configuration File for CLI Upgrade</h2>
+
+<p>When doing a CLI based upgrade, we use a configuration file template (JSON) that is part of the vCenter Server Appliance (VCSA) ISO. When you mount the ISO you will see a directory labelled <strong>vcsa-cli-installer</strong> and within that folder is a directory called <strong>templates.</strong> Once you are here you have the option to see the CLI templates for install, migrate and upgrade. As a reminder a migration is when we are moving from a vCenter Server on Windows, and an upgrade is when we are moving from VCSA to VCSA.</p>
+
+<p>Since we are doing an <strong>upgrade</strong> we will browse to that folder and we are left seeing a <strong>vcsa6.0</strong> and <strong>vcsa6.5</strong> directory. The information we need when coming from each version is different so there is a unique set of templates for each version. Since we are upgrading from a vSphere 6.0 deployment we will head into the <strong>vcsa6.0</strong> directory.</p>
+
+<p>Once we are in this directory we can see a few different templates. We have a template for an embedded deployment, external PSC and external vCenter Server. Each template has an associated version whether or not we will be connecting to a vCenter Server or an ESXi host directly. The embedded template is for an embedded deployment which does both PSC and vCenter Server at the same time as we mentioned above, and the PSC and VCSA are separate templates as we need to do these one at a time.</p>
+
+<p><img src="/images/cli1.png" alt="" /></p>
+
+<p>Since we have an External PSC deployment and we are using a vCenter Server, we will first open the <strong>PSC_on_VC.json</strong>.</p>
+
+<p><img src="/images/cli2.png" alt="" /></p>
+
+<p>When opening this file at first glance you might say WOAH! That looks complicated, but there is quite a bit of extra text explaining each field. Lets fill in the blanks with the required information and take another look.</p>
+
+<p><img src="/images/cli3.png" alt="" /></p>
+
+<p>This looks a lot better, we can clearly see the details it is asking for. The vCenter Server to deploy the new appliance to, the appliance information, the temporary IP to use, and then last but not least the source information for the appliance we are upgrading. If we have a deployment where there are multiple PSC&rsquo;s we could see how easy it would be to make a copy of this file, and edit lines 17 and 41 putting in the second PSC and then re-saving. How much time saving could this be!? With vSphere 6.5 allowing 10 PSC&rsquo;s per SSO domain and vSphere 6.7 allowing 15 this could be quite a bit of time saved!</p>
+
+<p>Next up, its time to upgrade our vCenter Server. To get our JSON file ready we will head back and grab the <strong>vCSA_on_VC.json</strong> template. Also remember that if you happen to have multiple VCSA&rsquo;s to upgrade you can easily update lines 16 ,17 and 40 to upgrade other appliances in your environment.</p>
+
+<p><img src="/images/cli4.png" alt="" /></p>
+
+<blockquote>
+<p><em>Certain sensitive fields such as passwords can be left blank if chosen. When the CLI installer is run it will prompt for the password during runtime.</em></p>
+</blockquote>
+
+<p>Now that we have prepared our templates for our upgrade, the next section we will jump into how to actually perform our upgrade using the CLI.  </p>
+
+<p>More information on preparing the JSON template can be found <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.upgrade.doc/GUID-97DFD5CF-449A-4CB8-A5D1-9091D93E807B.html">here</a>.</p>
+
+<h2 id="upgrade-a-vcenter-server-appliance-or-platform-services-controller-appliance-by-using-the-cli">Upgrade a vCenter Server Appliance or Platform Services Controller Appliance by Using the CLI</h2>
+
+<p>CLI templates in hand, its now for the fun. Using these templates we will automate our upgrade. vSphere 6.0 originally introduced this concept of a CLI based tool, however its been enhanced with vSphere 6.7. With vSphere 6.7 we now have a &ldquo;batch template&rdquo; technology built into the installer. Prior to vSphere 6.7 we had to run the installer against a single JSON file and wait for it to finish, we would then have to manually kick off the second JSON file when the previous one completes. With the batch upgrade we can put multiple JSON files into a single directory and point the installer to the directory and it is smart enough to map out the dependencies and upgrade the PSC&rsquo;s first and then the vCenter Servers.</p>
+
+<p>Before we actually perform our upgrade, I want to explain some of the benefits of the CLI installer. If we happened to be using the GUI based upgrade, everything in that upgrade would have to be manually entered into the GUI and obviously that is susceptible to typos and errors. Also, if we happened to enter some incorrect information and had to retry our upgrade we would again have to re-type all that information. What if we had a way to perform an upgrade test without ever touching our production environment? With the CLI Installer we do! And its called a pre-check. When running the CLI installer with the <strong>--precheck-only</strong> flag we have the ability to go through a full dry run of our upgrade. If we happened to have a typo, insufficient capacity or any other errors it would spit this out, and we could easily correct the settings.</p>
+
+<p>To run our CLI based installer we will mount our vSphere 6.7 media as that is the version we are going to. We will again navigate to the <strong>vcsa-cli-installer</strong> directory. From here depending on the operating system of the machine we are on we will either navigate to the <strong>lin64, win32 or mac</strong> folder to use the supported installer for that operating system.</p>
+
+<p>Here we will see quite a few files, but the one we want to focus on is <strong>vcsa-deploy.exe</strong> in the win32 folder since I will be running this from a windows machine. If we run <strong>.\vcsa-deploy.exe</strong> <strong>upgrade</strong> it will give us the details on how to properly use the CLI tool.</p>
+
+<p><img src="/images/cli5.png" alt="" /></p>
+
+<p>As I mentioned previously one of the benefits of using the CLI tool is that you can execute a pre-check of your template against the environment to make sure things will pass. Usually with upgrades and migrations a big issue we see with them failing is due to a smaller appliance size being chosen for the new appliance or insufficient capacity in the vCenter Server environment. In this environment we will execute our vcsa-deploy utilizing the pre-check option and see our results.</p>
+
+<p>To run the pre-check I ran the following command: <code>.\vcsa-deploy.exe upgrade --no-ssl-certificate-verification --accept-eula --acknowledge-ceip --precheck-only C:\scripts\\6.7\upg60to67\</code></p>
+
+<p>I chose to point this to the folder to take advantage of the batch upgrade vs pointing it to the individual file, as I mentioned earlier it is smart enough to map out the dependencies as we can see from the below image.</p>
+
+<p><img src="/images/cli6.png" alt="" /></p>
+
+<p>Once the pre-check runs through we will either get a success or failure. In the image below my vCenter Server services were not running so the pre-check failed.</p>
+
+<p><img src="/images/cli7.png" alt="" /></p>
+
+<p>Now that we have the service running and re-run our pre-check we can see everything is successful and we can now proceed to remove the &ndash;precheck-only flag from our command.</p>
+
+<p><img src="/images/cli8.png" alt="" /></p>
+
+<p><code>.\vcsa-deploy.exe** **upgrade --no-ssl-certificate-verification --accept-eula --acknowledge-ceip C:\scripts\\6.7\upg60to67\</code></p>
+
+<p>The upgrade process is now happening without any additional user input. If you need to step away for lunch or if a co-worker needs you there is no additional action that is needed until the end. If you were using the GUI based approach once Stage 1 where the appliance is deployed is complete you have to manually start Stage 2 to configure the upgraded appliance. With the CLI based installer this is not needed. When our upgrade is complete we will be presented with the vCenter Server and login information as we can see below.</p>
+
+<p><img src="/images/cli9.png" alt="" /></p>
+
+<p>More information on Upgrading your PSC and vCenter Server via the CLI can be found <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.upgrade.doc/GUID-80ADA633-13EA-49B0-9AC9-2C4E6B513AAB.html">here</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Automating your vSphere Upgrade does not have to be scary or hard, as we went through the steps its actually quite easy. Now that we have our PSC and vCenter Server updated we can now proceed to our next step which is automating the upgrade of our ESXi hosts.</p>
+
+<hr />
+
+<p><strong>Cross-Posted from vSphere Blog</strong></p>
+
+<p><a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html">https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html</a></p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" data-id="1071103cfabacfc38b6a5a94d687b264" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
+                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">L1 Terminal Fault (L1TF) Patching Considerations</div>
+    </a>
+    
+
+    
+    <a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Automating Upgrade of VMware Tools and VM Compatibility</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Sponsors
+    </h3>
+    <div class="widget">
+				<center>
+                    
+                    <a href="mailto:dstamen+sponsor@gmail.com?subject=Advertise on davidstamen.com" target="_blank"><img src="/images/sponsor-here.png" width="163" height="163" title="Advertise Here"></a>
+			</center>
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="title">Why and How To Upgrade to vSphere 6.7 U1</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="title">L1 Terminal Fault (L1TF) Patching Considerations</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/" class="title">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="title">Upgrading to VMware vSphere 6.7</a></p><br>
+                
+            
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/03/12/vexpert-2018/" class="title">vExpert 2018</a></p><br>
+                
+            
+            
+        
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
+        
+        
+        <a href="http://davidstamen.com/tags/career" style="font-size: 12px;">career</a>
+        
+        
+        <a href="http://davidstamen.com/tags/certification" style="font-size: 12px;">certification</a>
+        
+        
+        <a href="http://davidstamen.com/tags/cisco" style="font-size: 12px;">cisco</a>
+        
+        
+        <a href="http://davidstamen.com/tags/homelab" style="font-size: 12px;">homelab</a>
+        
+        
+        <a href="http://davidstamen.com/tags/horizon-view" style="font-size: 12px;">horizon-view</a>
+        
+        
+        <a href="http://davidstamen.com/tags/hugo" style="font-size: 12px;">hugo</a>
+        
+        
+        <a href="http://davidstamen.com/tags/jekyll" style="font-size: 12px;">jekyll</a>
+        
+        
+        <a href="http://davidstamen.com/tags/messaging" style="font-size: 12px;">messaging</a>
+        
+        
+        <a href="http://davidstamen.com/tags/pernixdata" style="font-size: 12px;">pernixdata</a>
+        
+        
+        <a href="http://davidstamen.com/tags/powercli" style="font-size: 12px;">powercli</a>
+        
+        
+        <a href="http://davidstamen.com/tags/powerdns" style="font-size: 12px;">powerdns</a>
+        
+        
+        <a href="http://davidstamen.com/tags/purestorage" style="font-size: 12px;">purestorage</a>
+        
+        
+        <a href="http://davidstamen.com/tags/ravello" style="font-size: 12px;">ravello</a>
+        
+        
+        <a href="http://davidstamen.com/tags/srm" style="font-size: 12px;">srm</a>
+        
+        
+        <a href="http://davidstamen.com/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
+        
+        
+        <a href="http://davidstamen.com/tags/ubiquiti" style="font-size: 12px;">ubiquiti</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vagrant" style="font-size: 12px;">vagrant</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vcenter" style="font-size: 12px;">vcenter</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vcloud-air" style="font-size: 12px;">vcloud-air</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vdp" style="font-size: 12px;">vdp</a>
+        
+        
+        <a href="http://davidstamen.com/tags/veeam" style="font-size: 12px;">veeam</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vexpert" style="font-size: 12px;">vexpert</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
+        
+        
+        <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018
+      davidstamen.com
+    </div>
+  </div>
+</footer>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="http://davidstamen.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://davidstamen.com/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

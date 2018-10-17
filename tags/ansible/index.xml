@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ansible on davidstamen.com</title>
+    <link>http://davidstamen.com/tags/ansible/</link>
+    <description>Recent content in Ansible on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://davidstamen.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Ansible to Run Powershell Scripts</title>
+      <link>http://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</guid>
+      <description>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
+Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Define your group variables.</description>
+    </item>
+    
+    <item>
+      <title>Using Ansible to Create Cisco ACI Filters</title>
+      <link>http://davidstamen.com/2016/02/03/using-ansible-to-create-cisco-aci-filters/</link>
+      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://davidstamen.com/2016/02/03/using-ansible-to-create-cisco-aci-filters/</guid>
+      <description>In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries.</description>
+    </item>
+    
+  </channel>
+</rss>
