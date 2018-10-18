@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-06-10T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-07-23T00:00:00&#43;00:00"/>
 
 
 
@@ -228,6 +228,58 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/07/23/horizon-view-block-linux-vdi-console-access/">
+    <h1 class="article-title" itemprop="name">
+        Horizon View - Block Linux VDI Console Access
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-07-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">07.23.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/horizon-view">Horizon View</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.
+Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -704,58 +756,6 @@ Doing some troubleshooting we noticed their DefaultVIServerMode was set to singl
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">
-    <h1 class="article-title" itemprop="name">
-        PowerCLI - Enable CPU and Memory HotAdd
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-01-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">01.14.2015</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -788,6 +788,14 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="title">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></p><br>
+                
+            
             
             
                 
@@ -861,14 +869,6 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
                 
             
             
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/03/12/vexpert-2018/" class="title">vExpert 2018</a></p><br>
-                
-            
-            
         
     </div>
 </div>
@@ -891,6 +891,9 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
         <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
         
         
+        <a href="http://davidstamen.com/tags/autodeploy" style="font-size: 12px;">autodeploy</a>
+        
+        
         <a href="http://davidstamen.com/tags/career" style="font-size: 12px;">career</a>
         
         
@@ -910,6 +913,9 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
         
         
         <a href="http://davidstamen.com/tags/jekyll" style="font-size: 12px;">jekyll</a>
+        
+        
+        <a href="http://davidstamen.com/tags/lifecycle" style="font-size: 12px;">lifecycle</a>
         
         
         <a href="http://davidstamen.com/tags/messaging" style="font-size: 12px;">messaging</a>

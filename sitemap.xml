@@ -16,6 +16,11 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/</loc>
     <lastmod>2018-10-11T00:00:00+00:00</lastmod>
   </url>
@@ -632,6 +637,12 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/tags/autodeploy/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/tags/career/</loc>
     <lastmod>2018-02-06T10:34:32-05:00</lastmod>
     <priority>0</priority>
@@ -679,6 +690,12 @@
   </url>
   
   <url>
+    <loc>http://davidstamen.com/tags/lifecycle/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://davidstamen.com/tags/messaging/</loc>
     <lastmod>2014-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -692,7 +709,7 @@
   
   <url>
     <loc>http://davidstamen.com/post/</loc>
-    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-12-19T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-01-14T00:00:00&#43;00:00"/>
 
 
 
@@ -228,6 +228,58 @@
         </div>
         <div class="archives">
             
+            
+                <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        
+
+        <header class="archive-article-header">
+          <article class="article article-type-post" itemscope="" itemprop="blogPost">
+              <div class="article-inner">
+                  <header class="article-header">
+    <a href="http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">
+    <h1 class="article-title" itemprop="name">
+        PowerCLI - Enable CPU and Memory HotAdd
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-01-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">01.14.2015</time>
+        </div>
+        
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+                  <div class="article-entry" itemprop="articleBody">
+                      <p>
+                          I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
+                      </p>
+                  </div>
+              </div>
+          </article>
+        </header>
+    </div>
+</article>
+
             
                 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
@@ -700,58 +752,6 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
 </article>
 
             
-                <article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        
-
-        <header class="archive-article-header">
-          <article class="article article-type-post" itemscope="" itemprop="blogPost">
-              <div class="article-inner">
-                  <header class="article-header">
-    <a href="http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/">
-    <h1 class="article-title" itemprop="name">
-        Configuring ESXi 5.5 Syslog Collector
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-06-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">06.10.2014</time>
-        </div>
-        
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://davidstamen.com/tags/powercli">PowerCLI</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-                  <div class="article-entry" itemprop="articleBody">
-                      <p>
-                          Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
-                      </p>
-                  </div>
-              </div>
-          </article>
-        </header>
-    </div>
-</article>
-
-            
         </div>
     </section>
     <nav id="page-nav">
@@ -784,6 +784,14 @@ Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-
     </h3>
     <div class="widget">
         
+            
+            
+                
+                
+
+                    <p class="item-title"><a href="http://davidstamen.com/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="title">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></p><br>
+                
+            
             
             
                 
@@ -857,14 +865,6 @@ Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-
                 
             
             
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/03/12/vexpert-2018/" class="title">vExpert 2018</a></p><br>
-                
-            
-            
         
     </div>
 </div>
@@ -887,6 +887,9 @@ Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-
         <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
         
         
+        <a href="http://davidstamen.com/tags/autodeploy" style="font-size: 12px;">autodeploy</a>
+        
+        
         <a href="http://davidstamen.com/tags/career" style="font-size: 12px;">career</a>
         
         
@@ -906,6 +909,9 @@ Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-
         
         
         <a href="http://davidstamen.com/tags/jekyll" style="font-size: 12px;">jekyll</a>
+        
+        
+        <a href="http://davidstamen.com/tags/lifecycle" style="font-size: 12px;">lifecycle</a>
         
         
         <a href="http://davidstamen.com/tags/messaging" style="font-size: 12px;">messaging</a>
