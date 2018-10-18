@@ -81,11 +81,6 @@
   </url>
   
   <url>
-    <loc>http://davidstamen.com/2017/08/vra-73-using-active-directory-policies/</loc>
-    <lastmod>2017-08-22T14:00:46-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://davidstamen.com/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</loc>
     <lastmod>2017-08-02T16:08:43-04:00</lastmod>
   </url>
@@ -789,12 +784,6 @@
   <url>
     <loc>http://davidstamen.com/tags/vmworld/</loc>
     <lastmod>2018-07-18T10:19:35-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://davidstamen.com/tags/vra/</loc>
-    <lastmod>2017-08-22T14:00:46-04:00</lastmod>
     <priority>0</priority>
   </url>
   
