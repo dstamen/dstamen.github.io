@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vagrant on davidstamen.com</title>
-    <link>http://davidstamen.com/tags/vagrant/</link>
+    <link>/tags/vagrant/</link>
     <description>Recent content in Vagrant on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Oct 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidstamen.com/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Vagrant to Deploy an Ubuntu Server running KVM</title>
-      <link>http://davidstamen.com/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/</link>
+      <link>/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/</guid>
+      <guid>/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/</guid>
       <description>With all this talk about VMware vs KVM I figured that I would attempt to load a base install of KVM to see what it was all about.
 Here is a quick vagrant runbook that will quickly get a 3 linux servers deployed and installed with KVM to play with.
 There are 3 nodes..MGMT01,KVM01 and KVM02. I use MGMT01 VMM to manage KVM01 and KVM02.
@@ -25,10 +25,10 @@ The code can be found here.</description>
     
     <item>
       <title>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</title>
-      <link>http://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</link>
+      <link>/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid>
+      <guid>/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid>
       <description>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
 Here is a link to the GitHub repository containing all the code.
@@ -37,10 +37,10 @@ The code is also fairly simple, it pulls in data from a few .</description>
     
     <item>
       <title>Using Vagrant to Deploy an Ubuntu Server running NGINX</title>
-      <link>http://davidstamen.com/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/</link>
+      <link>/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/</guid>
+      <guid>/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/</guid>
       <description>So as I was getting around to trying to get a host platform setup for a Jekyll blog I was looking at an alternative to GitHub Pages. I decided I would run it on Ubuntu Server using NGINX as the web platform.
 Here is a quick vagrant runbook that will quickly get a linux server deployed and install NGINX to host your website.
 The code can be found here.

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vexpert on davidstamen.com</title>
-    <link>http://davidstamen.com/tags/vexpert/</link>
-    <description>Recent content in Vexpert on davidstamen.com</description>
+    <title>VExpert on davidstamen.com</title>
+    <link>/tags/vexpert/</link>
+    <description>Recent content in VExpert on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Mar 2018 06:41:02 -0700</lastBuildDate>
     
-	<atom:link href="http://davidstamen.com/tags/vexpert/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/vexpert/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vExpert 2018</title>
-      <link>http://davidstamen.com/2018/03/12/vexpert-2018/</link>
+      <link>/2018/03/12/vexpert-2018/</link>
       <pubDate>Mon, 12 Mar 2018 06:41:02 -0700</pubDate>
       
-      <guid>http://davidstamen.com/2018/03/12/vexpert-2018/</guid>
+      <guid>/2018/03/12/vexpert-2018/</guid>
       <description>&lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2018!&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,20 +24,20 @@
     
     <item>
       <title>vExpert 2017</title>
-      <link>http://davidstamen.com/2017/02/08/vexpert-2017/</link>
+      <link>/2017/02/08/vexpert-2017/</link>
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2017/02/08/vexpert-2017/</guid>
+      <guid>/2017/02/08/vexpert-2017/</guid>
       <description>I am honored to have been selected as a VMware vExpert once again for 2017!
 This is my fifth year as a vExpert (2013,2014,2015,2016 and 2017). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1464 vExperts!</description>
     </item>
     
     <item>
       <title>vExpert 2016</title>
-      <link>http://davidstamen.com/2016/02/05/vexpert-2016/</link>
+      <link>/2016/02/05/vexpert-2016/</link>
       <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2016/02/05/vexpert-2016/</guid>
+      <guid>/2016/02/05/vexpert-2016/</guid>
       <description>I am honored to have been selected as a VMware vExpert once again for 2016!
 This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!
 Can&amp;rsquo;t wait to see what this year brings.</description>

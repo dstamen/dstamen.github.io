@@ -1,91 +1,112 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Powercli on davidstamen.com</title>
-    <link>http://davidstamen.com/tags/powercli/</link>
-    <description>Recent content in Powercli on davidstamen.com</description>
+    <title>PowerCLI on davidstamen.com</title>
+    <link>/tags/powercli/</link>
+    <description>Recent content in PowerCLI on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://davidstamen.com/tags/powercli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/powercli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using PowerCLI to Add vRealize Operations License Key</title>
-      <link>http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</link>
+      <link>/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</guid>
+      <guid>/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</guid>
       <description>I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.</description>
     </item>
     
     <item>
       <title>Using PowerCLI to Set vCenter Permissions on Datacenter</title>
-      <link>http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/</link>
+      <link>/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/</guid>
+      <guid>/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/</guid>
       <description>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
 Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</description>
     </item>
     
     <item>
       <title>Using PowerCLI to Get and Set DVS Traffic Shaping Settings</title>
-      <link>http://davidstamen.com/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</link>
+      <link>/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</link>
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</guid>
+      <guid>/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</guid>
       <description>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&amp;rsquo;s.
 Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.</description>
     </item>
     
     <item>
       <title>Using PowerCLI to Install Host VIBs</title>
-      <link>http://davidstamen.com/2016/03/03/using-powercli-to-install-host-vibs/</link>
+      <link>/2016/03/03/using-powercli-to-install-host-vibs/</link>
       <pubDate>Thu, 03 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2016/03/03/using-powercli-to-install-host-vibs/</guid>
+      <guid>/2016/03/03/using-powercli-to-install-host-vibs/</guid>
       <description>So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
 Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
       <title>Using PowerCLI to Install Software in a Guest VM</title>
-      <link>http://davidstamen.com/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/</link>
+      <link>/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/</link>
       <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/</guid>
+      <guid>/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/</guid>
       <description>I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
 Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware.</description>
     </item>
     
     <item>
       <title>Using PowerCLI to Replicate Templates to Multiple Clusters</title>
-      <link>http://davidstamen.com/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/</link>
+      <link>/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/</link>
       <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/</guid>
+      <guid>/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/</guid>
       <description>We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.
 I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script.</description>
     </item>
     
     <item>
+      <title>Unable to Boot EFI VM on ESXi FC Storage</title>
+      <link>/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/</link>
+      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/</guid>
+      <description>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&amp;rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.</description>
+    </item>
+    
+    <item>
       <title>Installing Host VIB&#39;s Using PowerCLI</title>
-      <link>http://davidstamen.com/2015/11/30/installing-host-vibs-using-powercli/</link>
+      <link>/2015/11/30/installing-host-vibs-using-powercli/</link>
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/11/30/installing-host-vibs-using-powercli/</guid>
+      <guid>/2015/11/30/installing-host-vibs-using-powercli/</guid>
       <description>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&amp;rsquo;s latest enic/fnic drivers that wont let you install them via UM.
 I had to run these updates on over 50 hosts and I really didn&amp;rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.</description>
     </item>
     
     <item>
+      <title>Disconnected vNIC&#39;s?</title>
+      <link>/2015/11/18/disconnected-vnics/</link>
+      <pubDate>Wed, 18 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/11/18/disconnected-vnics/</guid>
+      <description>Ever wonder why a VM isn&amp;rsquo;t on the network?
+I was working on deploying some test VM&amp;rsquo;s and for some reason all the VM&amp;rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</description>
+    </item>
+    
+    <item>
       <title>Using PowerCLI to Build Out vCenter</title>
-      <link>http://davidstamen.com/2015/10/08/using-powercli-to-build-out-vcenter/</link>
+      <link>/2015/10/08/using-powercli-to-build-out-vcenter/</link>
       <pubDate>Thu, 08 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/10/08/using-powercli-to-build-out-vcenter/</guid>
+      <guid>/2015/10/08/using-powercli-to-build-out-vcenter/</guid>
       <description>I wanted to share this handy script i created when you have a need to build out a new vCenter.
 This script can be extremely handy as it will take care of creating the datacenter, cluster, adding hosts, creating datastores and then applying the appropriate host profile. It is all done via CSV files so it is extremely customizable.
 Files to modify to customize your configuration  createdatacenter.csv - Contains the name of the datacenter to create.</description>
@@ -93,10 +114,10 @@ Files to modify to customize your configuration  createdatacenter.csv - Contains
     
     <item>
       <title>Using PowerCLI to Extend VMDK and Windows OS Disk</title>
-      <link>http://davidstamen.com/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/</link>
+      <link>/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/</guid>
+      <guid>/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/</guid>
       <description>I wanted to share this handy script i created when you have a need to extend a disk.
 This script can be extremely handy as it will take care of extending the VMDK and then going to the OS and then performing the expansion there as well. This has been helpful when needing to extend a large batch of servers (60+).
 Syntax: .\ExtendVMDKandGuest VMNAME
@@ -105,10 +126,10 @@ You will then be prompted to enter in the Hard Disk #, the size you want to be e
     
     <item>
       <title>Using PowerCLI to Detach Luns</title>
-      <link>http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</link>
+      <link>/2015/09/14/using-powercli-to-detach-luns/</link>
       <pubDate>Mon, 14 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</guid>
+      <guid>/2015/09/14/using-powercli-to-detach-luns/</guid>
       <description>I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
 Have you ever had to remove a LUN from a cluster and thought &amp;ldquo;Do I really need to detach all the LUN&amp;rsquo;s, before un-mapping from my SAN?&amp;rdquo;
  Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output.</description>
@@ -116,39 +137,39 @@ Have you ever had to remove a LUN from a cluster and thought &amp;ldquo;Do I rea
     
     <item>
       <title>PowerCLI - Extend VMDK and Guest OS</title>
-      <link>http://davidstamen.com/2015/04/02/powercli-extend-vmdk-and-guest-os/</link>
+      <link>/2015/04/02/powercli-extend-vmdk-and-guest-os/</link>
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/04/02/powercli-extend-vmdk-and-guest-os/</guid>
+      <guid>/2015/04/02/powercli-extend-vmdk-and-guest-os/</guid>
       <description>So as always things change across multiple Window&amp;rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&amp;rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</description>
     </item>
     
     <item>
       <title>PowerCLI - Troubleshooting Multiple Default Servers</title>
-      <link>http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/</link>
+      <link>/2015/01/29/powercli-troubleshooting-multiple-default-servers/</link>
       <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/</guid>
+      <guid>/2015/01/29/powercli-troubleshooting-multiple-default-servers/</guid>
       <description>I use a customized version of http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/ by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.
 Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set.</description>
     </item>
     
     <item>
       <title>PowerCLI - Enable CPU and Memory HotAdd</title>
-      <link>http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</link>
+      <link>/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</guid>
+      <guid>/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</guid>
       <description>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
 Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.</description>
     </item>
     
     <item>
       <title>Sysprep runs repeatedly on virtual machines deployed to ESXi 5.1 build 1743533</title>
-      <link>http://davidstamen.com/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/</link>
+      <link>/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/</link>
       <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/</guid>
+      <guid>/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/</guid>
       <description>We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.
 Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 KB2077640 as referenced in this article KB2078352.
 However the hotfix only fixes future occurences, you still need to fix all the VMs affected.</description>
@@ -156,40 +177,40 @@ However the hotfix only fixes future occurences, you still need to fix all the V
     
     <item>
       <title>Configuring ESXi 5.5 Dump Collector</title>
-      <link>http://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/</link>
+      <link>/2014/06/10/configuring-esxi-5-5-dump-collector/</link>
       <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/</guid>
+      <guid>/2014/06/10/configuring-esxi-5-5-dump-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
 Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
     </item>
     
     <item>
       <title>Configuring ESXi 5.5 Syslog Collector</title>
-      <link>http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/</link>
+      <link>/2014/06/10/configuring-esxi-5-5-syslog-collector/</link>
       <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/</guid>
+      <guid>/2014/06/10/configuring-esxi-5-5-syslog-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
 Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
     </item>
     
     <item>
       <title>Create VMFS Datastore Using PowerCLI</title>
-      <link>http://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/</link>
+      <link>/2014/05/22/create-vmfs-datastore-using-powercli/</link>
       <pubDate>Thu, 22 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/</guid>
+      <guid>/2014/05/22/create-vmfs-datastore-using-powercli/</guid>
       <description>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
 How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?</description>
     </item>
     
     <item>
       <title>Get NAA.ID for Virtual Machine RDM&#39;s in VMware</title>
-      <link>http://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</link>
+      <link>/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</guid>
+      <guid>/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</guid>
       <description>This is a great script to keep handy. If you have multiple RDM&amp;rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &amp;quot;RawPhysical&amp;quot;,&amp;quot;RawVirtual&amp;quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl  If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
 KB2051606</description>

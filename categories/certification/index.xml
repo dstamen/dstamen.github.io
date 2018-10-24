@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Certification on davidstamen.com</title>
+    <link>/categories/certification/</link>
+    <description>Recent content in Certification on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Dec 2017 10:29:15 -0500</lastBuildDate>
+    
+	<atom:link href="/categories/certification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VCAP6.5-DCV Design Experience</title>
+      <link>/2017/12/21/vcap6.5-dcv-design-experience/</link>
+      <pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate>
+      
+      <guid>/2017/12/21/vcap6.5-dcv-design-experience/</guid>
+      <description>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
+I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.</description>
+    </item>
+    
+    <item>
+      <title>VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</title>
+      <link>/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</link>
+      <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</guid>
+      <description>I am about to start down my path of studying for my VCAP6-DCV Design Exam. I figured I would throw up the blueprint and fill in each section as applicable. Either way here is the blueprint laid out for anyone who may benefit. This is it as of 7/25/16.
+Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
+Existing Content from VCAP5-DCD</description>
+    </item>
+    
+    <item>
+      <title>My VCAP6 DCV Deploy Beta Experience</title>
+      <link>/2016/06/24/my-vcap6-dcv-deploy-beta-experience/</link>
+      <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/06/24/my-vcap6-dcv-deploy-beta-experience/</guid>
+      <description>Today I took my VCAP6-DCV exam. This exam was announced with a two week availability in the US priced at $100.
+My experience with the exam was actually pretty good. The new interface for the advanced exams is that of an HOL. You are dropped onto the desktop and have a window that slides in and out to pull up the manual and other consoles.
+I would definately read up on Josh Andrew&amp;rsquo;s post about what to expect.</description>
+    </item>
+    
+    <item>
+      <title>VCAP6-Design Beta Study Guide</title>
+      <link>/2015/12/17/vcap6-design-beta-study-guide/</link>
+      <pubDate>Thu, 17 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/12/17/vcap6-design-beta-study-guide/</guid>
+      <description>It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.
+Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
+ Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.</description>
+    </item>
+    
+    <item>
+      <title>Section 10: Administer and Manage vSphere Virtual Machines</title>
+      <link>/2015/10/16/section-10-administer-and-manage-vsphere-virtual-machines/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-10-administer-and-manage-vsphere-virtual-machines/</guid>
+      <description>Section 10 of the VCP6-DCV blueprint
+Objective 10.1: Configure Advanced vSphere Virtual Machine Settings  Determine how using a shared USB device impacts the environment Configure virtual machines for vGPUs, DirectPath I/O and SR-IOV Configure virtual machines for multicore vCPUs Differentiate virtual machine configuration settings Interpret virtual machine configuration files (.vmx) settings Enable/disable advanced virtual machine settings  Objective 10.2: Create and Manage a Multi-site Content Library  Publish a content catalog Subscribe to a published catalog Determine which privileges are required to globally manage a content catalog Compare the functionality of Automatic sync and On-Demand sync Configure Content Library to work across sites Configure Content Library authentication Set/configure Content Library roles Add/remove Content Libraries  Objective 10.</description>
+    </item>
+    
+    <item>
+      <title>Section 1: Configure and Administer vSphere 6.x Security</title>
+      <link>/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</guid>
+      <description>Section 1 of the VCP6-DCV blueprint
+Objective 1.1: Configure and Administer Role-based Access Control  Compare and contrast propagated and explicit permission assignments  An example of a propagated permission: Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</description>
+    </item>
+    
+    <item>
+      <title>Section 2: Configure and Administer Advanced vSphere 6.x Networking</title>
+      <link>/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</guid>
+      <description>Section 2 of the VCP6-DCV blueprint
+Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation  Create/Delete a vSphere Distributed Switch  In the vSphere Web Client, navigate to a data center. In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch. In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next. In Select version, select a distributed switch version and click Next.</description>
+    </item>
+    
+    <item>
+      <title>Section 3: Configure and Administer Advanced vSphere 6.x Storage</title>
+      <link>/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/</guid>
+      <description>Section 3 of the VCP6-DCV blueprint
+Objective 3.1: Manage vSphere Storage Virtualization  Discover new storage LUNs Configure FC/iSCSI/FCoE LUNs as ESXi boot devices Create an NFS share for use with vSphere Enable/Configure/Disable vCenter Server storage filters Configure/Edit hardware/dependent hardware initiators Enable/Disable software iSCSI initiator Configure/Edit software iSCSI initiator settings Configure iSCSI port binding Enable/Configure/Disable iSCSI CHAP Determine use cases for fiber channel zoning Compare and contrast array thin provisioning and virtual disk thin provisioning  Objective 3.</description>
+    </item>
+    
+    <item>
+      <title>Section 4: Upgrade a vSphere Deployment to 6.x</title>
+      <link>/2015/10/16/section-4-upgrade-a-vsphere-deployment-to-6x/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-4-upgrade-a-vsphere-deployment-to-6x/</guid>
+      <description>Section 4 of the VCP6-DCV blueprint
+Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades  Configure download source(s) Setup UMDS to setup download repository Import ESXi images Create Baselines and/or Baseline groups Attach Baselines to vSphere objects Scan vSphere objects Stage patches &amp;amp; Extensions Remediate an object Upgrade a vSphere Distributed Switch Upgrade VMware Tools Upgrade Virtual Machine hardware Upgrade an ESXi Host using vCenter Update Manager Stage multiple ESXi Host upgrades Align appropriate baselines with target inventory objects.</description>
+    </item>
+    
+    <item>
+      <title>Section 5: Administer and Manage vSphere 6.x Resources</title>
+      <link>/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</guid>
+      <description>Section 5 of the VCP6-DCV blueprint
+Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+    </item>
+    
+    <item>
+      <title>Section 6: Backup and Recover a vSphere Deployment</title>
+      <link>/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</guid>
+      <description>Section 6 of the VCP6-DCV blueprint
+Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+    </item>
+    
+    <item>
+      <title>Section 7: Troubleshoot a vSphere Deployment</title>
+      <link>/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</guid>
+      <description>Section 7 of the VCP6-DCV blueprint
+Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency   Objective 7.</description>
+    </item>
+    
+    <item>
+      <title>Section 8: Deploy and Consolidate vSphere Data Center</title>
+      <link>/2015/10/16/section-8-deploy-and-consolidate-vsphere-data-center/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-8-deploy-and-consolidate-vsphere-data-center/</guid>
+      <description>Section 8 of the VCP6-DCV blueprint
+Objective 8.1: Deploy ESXi Hosts Using Autodeploy  Describe the components and architecture of an Auto Deploy environment Use Auto Deploy Image Builder and PowerCLI scripts Implement Host Profiles with an Auto Deploy of an ESXi Host Install and configure Auto Deploy Understand PowerCLI cmdlets for Auto Deploy Deploy multiple ESXi Hosts using Auto Deploy Given a scenario, explain the Auto Deploy deployment model needed to meet a business requirement  Objective 8.</description>
+    </item>
+    
+    <item>
+      <title>Section 9: Configure and Administer vSphere Availability Solutions</title>
+      <link>/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/</link>
+      <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/</guid>
+      <description>Section 9 of the VCP6-DCV blueprint
+Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advanced cluster settings Configure a network for use with HA heartbeats Apply an admission control policy for HA Enable/disable advanced vSphere HA settings Configure different heartbeat datastores for an HA cluster Apply virtual machine monitoring for a cluster Configure Virtual Machine Component Protection (VMCP) settings Implement vSphere HA on a Virtual SAN cluster Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management  Objective 9.</description>
+    </item>
+    
+    <item>
+      <title>VCP6-DCV Study Guide</title>
+      <link>/2015/10/14/vcp6-dcv-study-guide/</link>
+      <pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/10/14/vcp6-dcv-study-guide/</guid>
+      <description>About to start to study for the VCP6 once again. So I figured I would start over with the guide as much of the blueprint has changed.
+As I progress through the sections this page will be updated with new content.
+ Section 1: Configure and Administer vSphere 6.x Security Section 2: Configure and Administer Advanced vSphere 6.x Networking Section 3: Configure and Administer Advanced vSphere 6.x Storage Section 4: Upgrade a vSphere Deployment to 6.</description>
+    </item>
+    
+    <item>
+      <title>VCP6-DCV Delta Exam (Beta) Thoughts</title>
+      <link>/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</guid>
+      <description>Here is a bit of my experience with the VCP6-DCV Delta beta exam.
+Initial Thoughts Today I sat and took the VCP6-DCV Delta Exam beta. I have never taken a VMware beta exam so I wasn&amp;rsquo;t quite sure what to expect, from what I have been told, I expected lots of questions with bad grammar and horrible spelling. However today I got something a bit different. Ill explain it best without violating any NDA.</description>
+    </item>
+    
+    <item>
+      <title>VCP6-DCV Beta Exam</title>
+      <link>/2015/04/01/vcp6-dcv-beta-exam/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/04/01/vcp6-dcv-beta-exam/</guid>
+      <description>VMware has announced https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;ui=www_cert the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.
+vSphere 6 Foundations : Exam code: 2V0-620
+VCP6-DCV : Exam Code: 2V0-621
+VCP6-DCV Delta : Exam Code: 2V0-621D</description>
+    </item>
+    
+  </channel>
+</rss>

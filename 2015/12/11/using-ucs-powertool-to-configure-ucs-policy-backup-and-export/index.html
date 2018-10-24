@@ -1,30 +1,79 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <title>Using UCS PowerTool To Configure UCS Policy Backup and Export &middot; davidstamen.com</title>
-    <meta name="generator" content="Hugo 0.46" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="David Stamen">
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Using UCS PowerTool To Configure UCS Policy Backup and Export",
+        "headline" : "Using UCS PowerTool To Configure UCS Policy Backup and Export",
+        "description" : "Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
+Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2015",
+        "datePublished": "2015-12-11 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2015-12-11 00:00:00 &#43;0000 UTC",
+        "url" : "/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/",
+        "wordCount" : "191",
+        "keywords" : [ "Cisco UCS","Powershell","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Using UCS PowerTool To Configure UCS Policy Backup and Export</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+  
     
-      <meta name="description" content="a blog about virtualization and stuff">
-    
-    
-    <link rel="canonical" href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/"/>
-    <link rel="icon" href="http://davidstamen.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://davidstamen.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://davidstamen.com/css/style.css">
-    <link rel="stylesheet" href="http://davidstamen.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://davidstamen.com/css/monokai.css">
-    <link rel="stylesheet" href="http://davidstamen.com/fancybox/jquery.fancybox.css">
-    
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="Using UCS PowerTool To Configure UCS Policy Backup and Export" />
+  
+
+  
+
+  <link rel="apple-touch-icon-precomposed" href='/favicon/apple-touch-icon-precomposed.png'>
+  <link rel="icon" href='/favicon/favicon.png'>
+  
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content='/favicon/mstile.png'>
+  <meta name="application-name" content="davidstamen.com">
+  <meta name="msapplication-tooltip" content="a blog about virtualization and stuff">
+  <meta name="msapplication-config" content='/favicon/ieconfig.xml'>
+
+
+
+        
+        
+            
+                <meta name="description" content="a blog about virtualization and stuff">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using UCS PowerTool To Configure UCS Policy Backup and Export"/>
+<meta name="twitter:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
+Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+        <meta property="og:title" content="Using UCS PowerTool To Configure UCS Policy Backup and Export" />
 <meta property="og:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
 Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
+<meta property="og:url" content="/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" />
 
 
 
@@ -42,8 +91,11 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  
 
 
 
-    
-    
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
 <meta itemprop="name" content="Using UCS PowerTool To Configure UCS Policy Backup and Export">
 <meta itemprop="description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
 Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.">
@@ -55,219 +107,593 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  
 
 
 
-<meta itemprop="keywords" content="Cisco," />
+<meta itemprop="keywords" content="Cisco UCS,Powershell," />
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using UCS PowerTool To Configure UCS Policy Backup and Export"/>
-<meta name="twitter:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
-<meta name="twitter:site" content="@davidstamen"/>
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
 
     
-
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
     
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-</head>
-<body>
-<div class="container">
-
-
-<div id="container">
-	<header id="header">
-  <div id="header-main" class="header-inner">
-    <div class="outer">
-      <a href="http://davidstamen.com/" id="logo">
-          
-          <i class="logo" style="background-image: url('http://davidstamen.com/images/apple-touch-icon-57x57.png')"></i>
-          
-          <span class="site-title">davidstamen.com</span>
-      </a>
-      <nav id="main-nav">
-          
-
-          
-          <a class="main-nav-link" href="/">Home</a>
-          
-          <a class="main-nav-link" href="/resources/">Resources</a>
-          
-          <a class="main-nav-link" href="/acclaim/">Acclaim</a>
-          
-
-          
-      </nav>
-        <nav id="sub-nav">
-          <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://davidstamen.com/images/apple-touch-icon-57x57.png"><i class="fa fa-caret-down"></i></a>
-          </div>
-        </nav>
-        <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-              <input type="search" name="q" class="search-form-input" placeholder="Search">
-              <button type="submit" class="search-form-submit">
-              </button>
-              <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
-         </form>
-        </div>
-    </div>
-  </div>
-  <div id="main-nav-mobile" class="header-sub header-inner">
-    <table class="menu outer">
-      <tbody>
-          <tr>
-          
-
-          
-          <td><a class="main-nav-link" href="/">Home</a></td>
-          
-          <td><a class="main-nav-link" href="/resources/">Resources</a></td>
-          
-          <td><a class="main-nav-link" href="/acclaim/">Acclaim</a></td>
-          
-
-          
-          <td>
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-          <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://davidstamen.com/" />
-          </form>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-hashtag">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/resources/">
+                            <i class="fa fa-link">&nbsp;</i>Resources
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/acclaim/">
+                            <i class="fa fa-list">&nbsp;</i>Acclaim
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-   	
-   	<div class="outer">
-   	
-    	<aside id="profile">
-  <div class="inner profile-inner">
-    <div class="base-info profile-block">
-      
-      <img id="avatar" src="https://www.gravatar.com/avatar/2051e99107a154b541623e5dd75293d3?s=100&d=identicon"/>
-      
-      <h2 id="name">David Stamen</h2>
-      <h3 id="title">Technical Marketing Engineer | VMware</h3>
-      <span id="location"><i class="fa fa-map-marker"></i>Kissimmee, FL</span>
-      
-          <a id="follow" href="https://twitter.com/davidstamen">
-              Follow
-          </a>
-      
-    </div>
-    
-    <div class="profile-block social-links">
-      <table>
-        <tr>
-          
-<td><a href="//github.com/dstamen" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<td><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<td><a href="//twitter.com/davidstamen" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
-
-
-          <td><a href="http://davidstamen.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</aside>
+<section id="menu">
 
     
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
 
-    <section id="main">
     
-    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-hashtag">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/resources/">
+                            <h3>
+                                <i class="fa fa-link">&nbsp;</i>Resources
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/acclaim/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Acclaim
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-18'>
+                                    October 18, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
         
 
-        <header class="article-header">
-    <a href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/">
-    <h1 class="article-title" itemprop="name">
-        Using UCS PowerTool To Configure UCS Policy Backup and Export
-    </h1>
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-11'>
+                                    October 11, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-08'>
+                                    October 8, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-07'>
+                                    October 7, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-06'>
+                                    October 6, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;text=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
     </a>
-    <div class="article-meta">
+</li>
 
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;title=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;title=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
         
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-12-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">12.11.2015</time>
-        </div>
         
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/">Using UCS PowerTool To Configure UCS Policy Backup and Export</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
         
 
+        <time class="published"
+            datetime='2015-12-11'>
+            December 11, 2015</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+  
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;text=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;title=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;title=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
         
             
             
-            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/cisco">Cisco</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://davidstamen.com/tags/cisco">Cisco</a>
+                <li><a class="article-category-link" href="/tags/cisco-ucs">Cisco UCS</a></li>
                 
                 
-            </div>
+                <li><a class="article-category-link" href="/tags/powershell">Powershell</a></li>
+                
             
         
-    </div>
-</header>
+    </ul>
+  </li>
+</ul>
 
-        <div class="article-entry" itemprop="articleBody">
-            
+  </footer>
+
+  <div id="content">
+    
 
 <p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!</p>
 
@@ -314,378 +740,543 @@ $Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly ba
 
 <h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup-export-on-cisco-ucs"><strong><em>Hope this helps anyone else out wanted to automate policy backup &amp; export on Cisco UCS.</em></strong></h4>
 
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/" data-id="86341edfb5165bef275ac5c24b720c88" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="//www.linkedin.com/shareArticle?url=' + encodedUrl + '" class="fa fa-linkedin article-share-facebook target="_blank" title="LinkedIn+"></a>',
-                            '<a href="//reddit.com/submit?url=' + encodedUrl + '" class="fa fa-reddit article-share-google target="_blank" title="Reddit"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-
-    
-<nav id="article-nav">
-    
-    <a href="http://davidstamen.com/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">
-          Older
-      </strong>
-      <div class="article-nav-title">Using UCS PowerTool To Configure UCS Certificates</div>
-    </a>
-    
-
-    
-    <a href="http://davidstamen.com/2015/12/17/vcap6-design-beta-study-guide/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">
-          Newer
-      </strong>
-      <div class="article-nav-title">VCAP6-Design Beta Study Guide</div>
-    </a>
-    
-</nav>
-
-
+  </div>
 </article>
 
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidstamen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
 
-<section id="comments">
-    <div id="disqus_thread">
-        
+
+<ul class="actions pagination">
+    
+        <li><a href="/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/"
+                class="button big previous">Using UCS PowerTool To Configure UCS Certificates</a></li>
+    
+
+    
+        <li><a href="/2015/12/17/vcap6-design-beta-study-guide/"
+                class="button big next">VCAP6-Design Beta Study Guide</a></li>
+    
+</ul>
+
+
     </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/me2.jpg" width="300" alt="me" /></a>
+      
+    
+    
+      <header>
+        <h2>David Stamen</h2>
+        <p>technical marketing engineer at vmware</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a>
+              </h3>
+              
+              <time class="published" datetime='2018-10-18'>
+                October 18, 2018
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a>
+              </h3>
+              
+              <time class="published" datetime='2018-10-11'>
+                October 11, 2018
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a>
+              </h3>
+              
+              <time class="published" datetime='2018-10-08'>
+                October 8, 2018
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a>
+              </h3>
+              
+              <time class="published" datetime='2018-10-07'>
+                October 7, 2018
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a>
+              </h3>
+              
+              <time class="published" datetime='2018-10-06'>
+                October 6, 2018
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
+            <img src="/images//" alt="" height="auto" width="auto">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>vExpert | VCIX6.5-DCV | Dad</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          davidstamen.com
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
 </section>
 
-
-    </section>
-
-   	
-    	<aside id="sidebar">
-    
-
-    
-<div class="widget-wrap">
-    <h3 class="widget-title">
-        Recents
-    </h3>
-    <div class="widget">
-        
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="title">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="title">Why and How To Upgrade to vSphere 6.7 U1</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="title">Automating the Upgrade of the Virtual Distributed Switch</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="title">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="title">Automating Upgrade of VMware Tools and VM Compatibility</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="title">Upgrading Platform Services Controller and VCenter Server via the CLI Installer</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="title">L1 Terminal Fault (L1TF) Patching Considerations</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/07/18/vmworld-2018-sessions-events/" class="title">VMworld 2018 - Sessions and Events</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/" class="title">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></p><br>
-                
-            
-            
-            
-                
-                
-
-                    <p class="item-title"><a href="http://davidstamen.com/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="title">Upgrading to VMware vSphere 6.7</a></p><br>
-                
-            
-            
-        
     </div>
-</div>
-
-
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
     
 
     
-
+      
     
 
-
-<div class="widget-wrap">
-    <h3 class="widget-title">
-        Tags
-    </h3>
-    <div class="widget tagcloud">
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
         
         
-        <a href="http://davidstamen.com/tags/ansible" style="font-size: 12px;">ansible</a>
         
-        
-        <a href="http://davidstamen.com/tags/autodeploy" style="font-size: 12px;">autodeploy</a>
-        
-        
-        <a href="http://davidstamen.com/tags/career" style="font-size: 12px;">career</a>
-        
-        
-        <a href="http://davidstamen.com/tags/certification" style="font-size: 12px;">certification</a>
-        
-        
-        <a href="http://davidstamen.com/tags/cisco" style="font-size: 12px;">cisco</a>
-        
-        
-        <a href="http://davidstamen.com/tags/homelab" style="font-size: 12px;">homelab</a>
-        
-        
-        <a href="http://davidstamen.com/tags/horizon-view" style="font-size: 12px;">horizon-view</a>
-        
-        
-        <a href="http://davidstamen.com/tags/hugo" style="font-size: 12px;">hugo</a>
-        
-        
-        <a href="http://davidstamen.com/tags/jekyll" style="font-size: 12px;">jekyll</a>
-        
-        
-        <a href="http://davidstamen.com/tags/lifecycle" style="font-size: 12px;">lifecycle</a>
-        
-        
-        <a href="http://davidstamen.com/tags/messaging" style="font-size: 12px;">messaging</a>
-        
-        
-        <a href="http://davidstamen.com/tags/pernixdata" style="font-size: 12px;">pernixdata</a>
-        
-        
-        <a href="http://davidstamen.com/tags/powercli" style="font-size: 12px;">powercli</a>
-        
-        
-        <a href="http://davidstamen.com/tags/powerdns" style="font-size: 12px;">powerdns</a>
-        
-        
-        <a href="http://davidstamen.com/tags/purestorage" style="font-size: 12px;">purestorage</a>
-        
-        
-        <a href="http://davidstamen.com/tags/ravello" style="font-size: 12px;">ravello</a>
-        
-        
-        <a href="http://davidstamen.com/tags/srm" style="font-size: 12px;">srm</a>
-        
-        
-        <a href="http://davidstamen.com/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
-        
-        
-        <a href="http://davidstamen.com/tags/ubiquiti" style="font-size: 12px;">ubiquiti</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vagrant" style="font-size: 12px;">vagrant</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vcenter" style="font-size: 12px;">vcenter</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vcloud-air" style="font-size: 12px;">vcloud-air</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vdp" style="font-size: 12px;">vdp</a>
-        
-        
-        <a href="http://davidstamen.com/tags/veeam" style="font-size: 12px;">veeam</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vexpert" style="font-size: 12px;">vexpert</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vmware" style="font-size: 12px;">vmware</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vmworld" style="font-size: 12px;">vmworld</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vra" style="font-size: 12px;">vra</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vrops" style="font-size: 12px;">vrops</a>
-        
-        
-        <a href="http://davidstamen.com/tags/vsphereupgrade" style="font-size: 12px;">vsphereupgrade</a>
-        
-        
-        <a href="http://davidstamen.com/tags/windows" style="font-size: 12px;">windows</a>
-        
-    </div>
-</div>
-
-
-
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
 
     
-</aside>
+      
+        
+      
+    
 
     
-	</div>
-</div>
-
-<footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018
-      davidstamen.com
-    </div>
-  </div>
-</footer>
-
-
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-67336507-1', 'auto');
-	
-	ga('send', 'pageview');
-}
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<script src="http://davidstamen.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://davidstamen.com/js/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
-
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']]}
-  });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-
-
-</body>
+  </body>
 </html>
+
