@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/12/21/vcap6.5-dcv-design-experience/</loc>
     <lastmod>2017-12-21T10:29:15-05:00</lastmod>
   </url>
@@ -696,7 +701,7 @@
   
   <url>
     <loc>/categories/blog/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -783,6 +788,12 @@
   </url>
   
   <url>
+    <loc>/tags/forestry.io/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/ha/</loc>
     <lastmod>2018-01-19T10:27:02+00:00</lastmod>
     <priority>0</priority>
@@ -802,7 +813,7 @@
   
   <url>
     <loc>/tags/hugo/</loc>
-    <lastmod>2017-07-31T16:51:28-04:00</lastmod>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1099,14 +1110,14 @@
   </url>
   
   <url>
-    <loc>/tags/vmware/</loc>
-    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <loc>/categories/vmware/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/vmware/</loc>
-    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <loc>/tags/vmware/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
