@@ -354,7 +354,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -390,7 +390,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -426,7 +426,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -462,7 +462,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -498,7 +498,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -630,7 +630,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -738,24 +738,172 @@ if (!doNotTrack) {
 
 <p></p>
 
-<p><img src="/images/vsphereupgradeprocess-6.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//vsphereupgradeprocess-6.png" data-caption=""><img src="/images//vsphereupgradeprocess-6.png"></a>
+      
+    </div>
+  
+
+
 
 <h2 id="considerations-for-upgrading-your-virtual-distributed-switch">Considerations for Upgrading your Virtual Distributed Switch</h2>
 
 <p>The first consideration we would like to think about is why would I want to upgrade my VDS? Well if you had previously upgraded from vSphere 5.5 your VDS still may be on version 5.5 and this is not compatible with vSphere 6.7. Another reason is that we can review the new features that are listed below, we can see this when we click on the <strong>(i</strong><strong>)</strong> within the VDS GUI. We can see that upgrading to version 6.0 gets us NIOC v3 and IGMP/MLD snooping, version 6.5 gives us port mirroring enhancements and version 6.6 gets us mac learning. If you run any nested virtualization in your environment this is a great enhancement as we <a href="https://www.virtuallyghetto.com/2018/04/native-mac-learning-in-vsphere-6-7-removes-the-need-for-promiscuous-mode-for-nested-esxi.html">no longer require you to enable promiscuous mode on your VM port group</a>.</p>
 
-<p><img src="/images/autovds4.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//autovds4.png" data-caption=""><img src="/images//autovds4.png"></a>
+      
+    </div>
+  
+
+
 
 <p>Another consideration I like to recommend is that you keep your VDS upgraded to the same version as your ESXi hosts whenever possible. Previously in most vSphere versions it has always been said that upgrading your VDS can be done at anytime and is a non-disruptive upgrade., but we always want to use caution and do this within a maintenance window. The VDS upgrade is also something that has no rollback, once it is complete it is permanent unless you have completed a backup. With vSphere 6.7 and the introduction of VDS version 6.6 there are some known issues and considerations I want to mention prior to getting started upgrading our switch. A question I get asked quite frequently is why is vSphere 6.7&rsquo;s VDS version 6.6? The answer is quite simple, VMware on AWS (VMC) shares quite a bit of the same code as vSphere On-Perm and since there were no major changes to the VDS features or functionality the version stayed the same. Prior to upgrading our VDS version to 6.6 we definitely want to make sure we review <a href="https://kb.vmware.com/s/article/52621">KB52621</a>. This KB covers considerations around known issues upgrading to version 6.6. Some of these considerations are making sure to put DRS into partially automated mode since if a vMotion occurs during the upgrade the VDS upgrade will fail. To take these considerations into account, we will make sure to include this in our Upgrading your Virtual Distributed Switch automation. Prior to upgrading we also need to verify that all hosts have been upgraded to vSphere 6.7 so we do not have any errors. If there is a incompatible host attached the upgrade will not be allowed to proceed. To validate our ESXi host version for all hosts attached to our VDS we can do so as follows.</p>
 
 <pre><code>Get-VDSwitch &quot;VDS&quot;|Get-VMHost|Select Name, Version|Sort Name
 </code></pre>
 
-<p><img src="/imagesautovds1.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//autovds1.png" data-caption=""><img src="/images//autovds1.png"></a>
+      
+    </div>
+  
+
+
 
 <p>We can see here that one of our hosts is not upgraded to 6.7 so if we were to proceed with upgrading our VDS it would fail. Before we proceed on to our next section we will make sure to upgrade our ESXi host to vSphere 6.7. If we were to attempt to upgrade our VDS prior to upgrading we would have encountered an error such as below.</p>
 
-<p><img src="/images/autovds2.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//autovds2.png" data-caption=""><img src="/images//autovds2.png"></a>
+      
+    </div>
+  
+
+
 
 <h2 id="upgrading-your-virtual-distributed-switch">Upgrading your Virtual Distributed Switch</h2>
 
@@ -783,7 +931,44 @@ ElseIf ($Cluster.DrsEnabled -like &quot;False&quot;) {
 }
 </code></pre>
 
-<p><img src="/images/autovds3.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//autovds3.png" data-caption=""><img src="/images//autovds3.png"></a>
+      
+    </div>
+  
+
+
 
 <p>As we can see the upgrade is now complete. Even though the upgrade is itself a simple one-liner:</p>
 
@@ -980,160 +1165,30 @@ ElseIf ($Cluster.DrsEnabled -like &quot;False&quot;) {
             <header>
                 <h6><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
       </div>

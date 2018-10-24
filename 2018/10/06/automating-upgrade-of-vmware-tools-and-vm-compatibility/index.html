@@ -350,7 +350,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -386,7 +386,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -422,7 +422,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -458,7 +458,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -494,7 +494,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -626,7 +626,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -736,7 +736,44 @@ if (!doNotTrack) {
     <p>Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.
 </p>
 
-<p><img src="http://blogs.vmware.com/vsphere/files/2018/09/vsphereupgradeprocess-4-1024x576.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//vsphereupgradeprocess-4.png" data-caption=""><img src="/images//vsphereupgradeprocess-4.png"></a>
+      
+    </div>
+  
+
+
 
 <h2 id="upgrading-vmware-tools">Upgrading VMware Tools</h2>
 
@@ -746,7 +783,44 @@ if (!doNotTrack) {
 
 <p>Before we can start to update our VMware Tools it might be a good idea to understand which VMs in our environment are currently out of compliance, the easiest way to check if a VM if out of compliance is to view it via the vSphere Client and it will show you details such as the version and compliance.</p>
 
-<p><img src="/imagesoolscli1.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli1.png" data-caption=""><img src="/images//toolscli1.png"></a>
+      
+    </div>
+  
+
+
 
 <p>However, since we are talking about automation lets show this another way using PowerCLI.</p>
 
@@ -755,14 +829,88 @@ if (!doNotTrack) {
 
 <p>Using this PowerCLI one-liner we are able to see more information at scale, we can see that within our folder we actually have 3 VMs that are out of compliance. To remediate these to the latest version its actually quite simple with PowerCLI as well.  </p>
 
-<p><img src="/images/toolscli2.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli2.png" data-caption=""><img src="/images//toolscli2.png"></a>
+      
+    </div>
+  
+
+
 
 <p>To make the information clearer on what needs an update we will use the same search only looking for VMs where ToolStatus is guestToolsNeedUpgrade. To do that we will use the following one-liner.</p>
 
 <pre><code>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &quot;guestToolsNeedUpgrade&quot;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Sort-Object Name
 </code></pre>
 
-<p><img src="/images/toolscli3.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli3.png" data-caption=""><img src="/images//toolscli3.png"></a>
+      
+    </div>
+  
+
+
 
 <h3 id="upgrading-vmware-tools-via-powercli">Upgrading VMware Tools via PowerCLI</h3>
 
@@ -771,7 +919,44 @@ if (!doNotTrack) {
 <pre><code>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &quot;guestToolsNeedUpgrade&quot;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Update-Tools -NoReboot -VM {$\_.Name} -Verbose
 </code></pre>
 
-<p><img src="/images/toolscli4.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli4.png" data-caption=""><img src="/images//toolscli4.png"></a>
+      
+    </div>
+  
+
+
 
 <p>You may have noticed that all the VMs had their updates kicked off at the same time and this may not be ideal, this is one way that the Update-Tools cmdlet works, however we can get around this by storing the VMs within a variable and then using a loop process them one at a time. This is definitely preferable as it will limit the impact to the environment.</p>
 
@@ -780,7 +965,44 @@ if (!doNotTrack) {
 ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
 </code></pre>
 
-<p><img src="/images/toolscli5.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli5.png" data-caption=""><img src="/images//toolscli5.png"></a>
+      
+    </div>
+  
+
+
 
 <p>Now our tools are up to date! For more information on upgrading your VMware Tools via PowerCLI you can find more information <a href="https://code.vmware.com/docs/7053/cmdlet-reference#/doc/Update-Tools.html">here</a>.  </p>
 
@@ -788,14 +1010,88 @@ ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
 
 <p>Using VM options to keep VMware Tools up to date is also another method to automatically keep VMs up to date. Enabling the &ldquo;Check and upgrade VMware Tools before each power on&rdquo; advanced setting use to not be used because of the additional reboot it would cause for virtual machines. Keep in mind that with Windows Server 2016 <a href="https://blogs.vmware.com/vsphere/2018/08/eliminate-the-windows-reboot-after-updating-vmware-tools.html">VMware Tools no longer need a reboot on upgrade</a>, it can be safe to enable this setting and have VMs stay up to date on every reboot. However this may not be applicable to all situations, so another recommendation would be to enable this for a lab environment or non-critical workloads. The easy way to enable this option is to log into the vSphere Client, edit the VM settings and enable the setting.</p>
 
-<p><img src="/imagesoolscli6.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli6.png" data-caption=""><img src="/images//toolscli6.png"></a>
+      
+    </div>
+  
+
+
 
 <p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM&rsquo;s setting so this gets easier when we have a large environment.</p>
 
 <pre><code>Get-Folder Testing|Get-VM|Get-View | select name,@{N='ToolsUpgradePolicy';E={$\_.Config.Tools.ToolsUpgradePolicy } } |Sort Name
 </code></pre>
 
-<p><img src="/images/toolscli7.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli7.png" data-caption=""><img src="/images//toolscli7.png"></a>
+      
+    </div>
+  
+
+
 
 <p>Here we can see which VMs have the automatic upgrade set and which ones are configured for manual. Utilizing a filter we can look for objects that are set for manual and then configure them to be set for upgradeAtPowerCycle</p>
 
@@ -810,11 +1106,85 @@ $VMConfig.ReconfigVM($vmConfigSpec)
 }
 </code></pre>
 
-<p><img src="/images/toolscli8.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli8.png" data-caption=""><img src="/images//toolscli8.png"></a>
+      
+    </div>
+  
+
+
 
 <p>If we do a final check we can see that all VMs are now set to <strong>upgradeAtPowerCycle</strong>.</p>
 
-<p><img src="/images/toolscli9.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli9.png" data-caption=""><img src="/images//toolscli9.png"></a>
+      
+    </div>
+  
+
+
 
 <h2 id="upgrading-vm-compatibility">Upgrading VM Compatibility</h2>
 
@@ -827,7 +1197,44 @@ $VMConfig.ReconfigVM($vmConfigSpec)
 <pre><code>Get-folder Testing | Get-VM | Select Name, Version | Sort Name
 </code></pre>
 
-<p><img src="/images/toolscli10.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli10.png" data-caption=""><img src="/images//toolscli10.png"></a>
+      
+    </div>
+  
+
+
 
 <p>As we can see above a few VMs are currently running v14 which is compatible with vSphere 6.7 only. This was needed for us to take advantage of <a href="https://blogs.vmware.com/vsphere/2018/05/introducing-support-virtualization-based-security-credential-guard-vsphere-6-7.html">VBS</a> and <a href="https://blogs.vmware.com/vsphere/2018/05/vsphere-6-7-virtual-trusted-platform-modules.html">TPM</a> security features. Again, we should only upgrade VM Compatibility when additional functionality is needed.</p>
 
@@ -847,7 +1254,44 @@ $VMConfig.ReconfigVM($vmConfigSpec)
 }
 </code></pre>
 
-<p><img src="/images/toolscli11.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//toolscli11.png" data-caption=""><img src="/images//toolscli11.png"></a>
+      
+    </div>
+  
+
+
 
 <p>This will not automatically upgrade the VM Compatibility, unlike VMware Tools this can not be done with the virtual machine Powered On. The next time the VM is rebooted it will be shutdown, the compatibility will be upgraded and then be powered back on.</p>
 
@@ -1039,160 +1483,30 @@ $VMConfig.ReconfigVM($vmConfigSpec)
             <header>
                 <h6><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
       </div>

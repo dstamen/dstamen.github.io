@@ -350,7 +350,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -386,7 +386,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -422,7 +422,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -458,7 +458,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -494,7 +494,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -626,7 +626,7 @@ if (!doNotTrack) {
         
 
         <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
+            <img src="/images//" alt="" height="50%" width="50%">
         </a>
     
 
@@ -733,7 +733,44 @@ if (!doNotTrack) {
     <p>Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.
 </p>
 
-<p><img src="/images/vsphereupgradeprocess-5.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//vsphereupgradeprocess-5.png" data-caption=""><img src="/images//vsphereupgradeprocess-5.png"></a>
+      
+    </div>
+  
+
+
 
 <blockquote>
 <p>Please note that vSphere 6.7 no longer supports VMFS-3. Prior to upgrading your ESXi host you should do an upgrade from VMFS-3 to VMFS-5 or they will be upgraded automatically during the Host upgrade.</p>
@@ -743,7 +780,44 @@ if (!doNotTrack) {
 
 <p>When we start our migration of our datastore&rsquo;s to VMFS-6 you may be wondering… Do I need to? What are the benefits? As we can see below graphic there was quite a few enhancements in support for Automatic Space Reclamation, In-Guest Space Reclamation and native support for 4K native storage.</p>
 
-<p><img src="/images/vmfs1.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//vmfs1.png" data-caption=""><img src="/images//vmfs1.png"></a>
+      
+    </div>
+  
+
+
 
 <p>You will also see that we have mentioned migrating from VMFS-5 to VMFS-6. Due to the underlying storage changes to support 4K Native storage as well as other features the metadata has changed and the upgrade cannot be done In-Place. The migration requires you to delete the current datastore and re-create. In a later section we will cover how to automate this process.</p>
 
@@ -756,7 +830,44 @@ if (!doNotTrack) {
 <pre><code>Get-Datastore | Select Name, FileSystemVersion
 </code></pre>
 
-<p><img src="/images/vmfs2.png" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//vmfs2.png" data-caption=""><img src="/images//vmfs2.png"></a>
+      
+    </div>
+  
+
+
 
 <p>Here we can see that DS01 is still at VMFS-5 and DS02 has already been upgraded to VMFS-6. In the next section we will target upgrading our datastore to VMFS-6.</p>
 
@@ -807,7 +918,44 @@ Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVer
 
 <p>It requires very minimal input, we will put in the source datastore, the temporary datastore, vCenter Server and the Target VMFS version. </p>
 
-<p><img src="/images/UpgradeVMFS5toVMFS6.gif" alt="" /></p>
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//UpgradeVMFS5toVMFS6.gif" data-caption=""><img src="/images//UpgradeVMFS5toVMFS6.gif"></a>
+      
+    </div>
+  
+
+
 
 <p>The above animated gif will show the process. It is quite simple and if you encounter errors they will be logged and you can rollback using the <strong>rollback</strong> parameter of if the error can resumed you can use the <strong>resume</strong> parameter.</p>
 
@@ -999,160 +1147,30 @@ Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVer
             <header>
                 <h6><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
           <article class=>
             <header>
                 <h6><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h6>
             </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
-            <img src="/images//" alt="" height="auto" width="auto">
-        </a>
-    
-
-
           </article>
         
       </div>
