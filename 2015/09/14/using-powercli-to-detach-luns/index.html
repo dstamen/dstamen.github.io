@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f14%2fusing-powercli-to-detach-luns%2f&amp;text=Using%20PowerCLI%20to%20Detach%20Luns&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,64 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.</p>
 
+<p>Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;</p>
+
+<ol>
+<li>Unmount Datastore</li>
+<li>Detach LUN</li>
+<li>Un-map from SAN</li>
+<li>Rescan Cluster</li>
+</ol>
+
+<p>Well here is a handy script with output. All you need to do is unmount your datastore(s), and then enter in your naaid of your LUN&rsquo;s and the cluster you want to remove it from, save it an execute. All the LUN&rsquo;s will be detached without having to manually go and detach it from every LUN in your cluster.</p>
+
+<p>The code and Github Link can be found below.</p>
+
+<p><a href="https://github.com/dstamen/PowerCLI/blob/master/Detach-SCSILun.ps1">Detach-ScsiLun.ps1</a></p>
+
+<pre><code># PowerCLI Script for detaching luns from a cluster
+# @davidstamen
+# http://davidstamen.com
+
+$LunIDs = &quot;naa.6000000001&quot;,&quot;naa.600000002&quot;
+$Clustername = &quot;MyCluster&quot;
+
+function Detach-Disk {
+    param(
+        [VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]$VMHost,
+        [string]$CanonicalName    )
+
+    $storSys = Get-View $VMHost.Extensiondata.ConfigManager.StorageSystem
+    $lunUuid = (Get-ScsiLun -VmHost $VMHost | where {$_.CanonicalName -eq $CanonicalName}).ExtensionData.Uuid
+
+    $storSys.DetachScsiLun($lunUuid)
+}
+
+$ClusterHosts = Get-Cluster $Clustername | Get-VMHost
+
+Foreach($VMHost in $ClusterHosts)
+{
+    Foreach($LUNid in $LunIDs)
+    {
+        Write-Host &quot;Detaching&quot; $LUNid &quot;from&quot; $VMHost -ForegroundColor &quot;Yellow&quot;
+        Detach-Disk -VMHost $VMHost -CanonicalName $LUNid
+    }
+}
+
+</code></pre>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +925,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,57 +965,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.</p>
-
-<p>Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;</p>
-
-<ol>
-<li>Unmount Datastore</li>
-<li>Detach LUN</li>
-<li>Un-map from SAN</li>
-<li>Rescan Cluster</li>
-</ol>
-
-<p>Well here is a handy script with output. All you need to do is unmount your datastore(s), and then enter in your naaid of your LUN&rsquo;s and the cluster you want to remove it from, save it an execute. All the LUN&rsquo;s will be detached without having to manually go and detach it from every LUN in your cluster.</p>
-
-<p>The code and Github Link can be found below.</p>
-
-<p><a href="https://github.com/dstamen/PowerCLI/blob/master/Detach-SCSILun.ps1">Detach-ScsiLun.ps1</a></p>
-
-<pre><code># PowerCLI Script for detaching luns from a cluster
-# @davidstamen
-# http://davidstamen.com
-
-$LunIDs = &quot;naa.6000000001&quot;,&quot;naa.600000002&quot;
-$Clustername = &quot;MyCluster&quot;
-
-function Detach-Disk {
-    param(
-        [VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]$VMHost,
-        [string]$CanonicalName    )
-
-    $storSys = Get-View $VMHost.Extensiondata.ConfigManager.StorageSystem
-    $lunUuid = (Get-ScsiLun -VmHost $VMHost | where {$_.CanonicalName -eq $CanonicalName}).ExtensionData.Uuid
-
-    $storSys.DetachScsiLun($lunUuid)
-}
-
-$ClusterHosts = Get-Cluster $Clustername | Get-VMHost
-
-Foreach($VMHost in $ClusterHosts)
-{
-    Foreach($LUNid in $LunIDs)
-    {
-        Write-Host &quot;Detaching&quot; $LUNid &quot;from&quot; $VMHost -ForegroundColor &quot;Yellow&quot;
-        Detach-Disk -VMHost $VMHost -CanonicalName $LUNid
-    }
-}
-
-</code></pre>
-
-  </div>
 </article>
 
     <article class="post">

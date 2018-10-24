@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f11%2f19%2fidentity-dirsync-distribution-groups-in-office365%2f&amp;text=Identify%20DirSync%20Distribution%20Groups%20in%20Office365&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,23 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So after recently implementing directory sync i wanted to make sure any new groups were properly set up in active directory.</p>
 
+<p>Unfortunately i was unable to find any commands so thanks to MS Support I was able to find a way to identify these. You would think it would be under Get-DistributionGroup but it is actually under Get-MSolGroup. After connecting via remote powershell you can run the below command to see all that are not synced.</p>
+
+<pre><code>Get-MsolGroup -All | Select DisplayName, LastDirSyncTime | Where-Object {$_.LastDirSyncTime -eq $null}
+</code></pre>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +880,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,16 +917,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So after recently implementing directory sync i wanted to make sure any new groups were properly set up in active directory.</p>
-
-<p>Unfortunately i was unable to find any commands so thanks to MS Support I was able to find a way to identify these. You would think it would be under Get-DistributionGroup but it is actually under Get-MSolGroup. After connecting via remote powershell you can run the below command to see all that are not synced.</p>
-
-<pre><code>Get-MsolGroup -All | Select DisplayName, LastDirSyncTime | Where-Object {$_.LastDirSyncTime -eq $null}
-</code></pre>
-
-  </div>
 </article>
 
     <article class="post">

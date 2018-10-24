@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f03%2f14%2fusing-purestorage-powershell-to-configure-syslog-servers%2f&amp;text=Using%20PureStorage%20Powershell%20to%20Configure%20SysLog%20Servers&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,58 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="http://blog.purestorage.com/announcing-the-new-pure-storage-powershell-sdk/">PureStorage Powershell SDK</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/PureStorage/blob/master/Set-PureStorageSyslog.ps1">Set-PureStorageSyslog.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<pre><code>#Import Module
+Import-Module PureStoragePowershellSDK
+
+#Define Variables
+$cred = Get-Credential
+$arrays = &quot;pure.lab.local&quot;
+$SysLogServers = &quot;tcp://syslog.lab.local:514&quot;
+
+#Cycles through each UCS setting values
+Foreach ($array in $arrays) {
+  Write-Host &quot;Setting Syslog Information for $array&quot;
+  $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
+  Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
+}
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Set-PureStorageSyslog.ps1</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +915,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,51 +955,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="http://blog.purestorage.com/announcing-the-new-pure-storage-powershell-sdk/">PureStorage Powershell SDK</a></li>
-</ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/PureStorage/blob/master/Set-PureStorageSyslog.ps1">Set-PureStorageSyslog.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code>#Import Module
-Import-Module PureStoragePowershellSDK
-
-#Define Variables
-$cred = Get-Credential
-$arrays = &quot;pure.lab.local&quot;
-$SysLogServers = &quot;tcp://syslog.lab.local:514&quot;
-
-#Cycles through each UCS setting values
-Foreach ($array in $arrays) {
-  Write-Host &quot;Setting Syslog Information for $array&quot;
-  $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
-  Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
-}
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Set-PureStorageSyslog.ps1</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

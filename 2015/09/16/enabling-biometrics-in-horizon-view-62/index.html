@@ -713,7 +713,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f16%2fenabling-biometrics-in-horizon-view-62%2f&amp;text=Enabling%20Biometrics%20in%20Horizon%20View%206.2&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -819,11 +818,46 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.</p>
 
+<p>This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.</p>
+
+<p><a href="https://pubs.vmware.com/horizon-62-view/index.jsp#com.vmware.horizon-view.administration.doc/GUID-02404EBB-0578-4046-93A6-D57CABA1A8F9.html?resultof=%2522%2562%2569%256f%256d%2565%2574%2572%2569%2563%2522%2520%2522%2562%2569%256f%256d%2565%2574%2572%2522%2520">Here</a> is a link to the current VMware documentation.</p>
+
+<p><strong>NOTE:</strong> This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.</p>
+
+<ul>
+<li>Log on to your connection server and launch ADSI Edit.</li>
+<li>In the Connection Settings dialog box, select or connect to DC=vdi,DC=vmware,DC=int.</li>
+<li>In the Computer pane, select or type localhost:389 or the fully qualified domain name (FQDN) of the View Connection Server host followed by port 389.
+
+<ul>
+<li>For example: localhost:389 or mycomputer.mydomain.com:389</li>
+</ul></li>
+</ul>
+
+<p><img src="/images/biometric1.png" alt="" /></p>
+
+<ul>
+<li>On the object CN=Common, OU=Global, OU=Properties, edit the pae-ClientConfig attribute and add the value BioMetricsTimeout=-1.</li>
+</ul>
+
+<p><img src="/images/biometric2.png" alt="" /></p>
+
+<ul>
+<li>The new setting takes effect immediately. You do not need to restart the View Connection Server service or the client device.</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -877,10 +911,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -913,39 +948,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.</p>
-
-<p>This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.</p>
-
-<p><a href="https://pubs.vmware.com/horizon-62-view/index.jsp#com.vmware.horizon-view.administration.doc/GUID-02404EBB-0578-4046-93A6-D57CABA1A8F9.html?resultof=%2522%2562%2569%256f%256d%2565%2574%2572%2569%2563%2522%2520%2522%2562%2569%256f%256d%2565%2574%2572%2522%2520">Here</a> is a link to the current VMware documentation.</p>
-
-<p><strong>NOTE:</strong> This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.</p>
-
-<ul>
-<li>Log on to your connection server and launch ADSI Edit.</li>
-<li>In the Connection Settings dialog box, select or connect to DC=vdi,DC=vmware,DC=int.</li>
-<li>In the Computer pane, select or type localhost:389 or the fully qualified domain name (FQDN) of the View Connection Server host followed by port 389.
-
-<ul>
-<li>For example: localhost:389 or mycomputer.mydomain.com:389</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/biometric1.png" alt="" /></p>
-
-<ul>
-<li>On the object CN=Common, OU=Global, OU=Properties, edit the pae-ClientConfig attribute and add the value BioMetricsTimeout=-1.</li>
-</ul>
-
-<p><img src="/images/biometric2.png" alt="" /></p>
-
-<ul>
-<li>The new setting takes effect immediately. You do not need to restart the View Connection Server service or the client device.</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

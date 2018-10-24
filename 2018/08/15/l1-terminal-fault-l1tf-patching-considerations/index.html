@@ -711,7 +711,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2018%2f08%2f15%2fl1-terminal-fault-l1tf-patching-considerations%2f&amp;text=L1%20Terminal%20Fault%20%28L1TF%29%20Patching%20Considerations&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -817,11 +816,36 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>On Tuesday August 14th, Intel Released their news on the latest vulnerability <strong>L1 Terminal Fault (L1TF) or ForeShadow</strong>. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.
+</p>
 
+<p>I wanted to clarify when remediating your vSphere you should make sure to address the update sequence in the correct order. vCenter Server MUST be patched prior to updating ESXi.</p>
+
+<p><img src="https://kb.vmware.com/servlet/rtaImage?eid=ka134000000Sa0y&amp;feoid=00N34000005kd1R&amp;refid=0EM340000003rNR" alt="L1TF Remediation Order" /></p>
+
+<p>In some cases I have seen users patching ESXi before their vCenter Server resulting in generic errors such as <code>xxx esx.problem.hyperthreading.unmitigated.formatOnHost not found xxx</code> or <code>esx.problem.hyperthreading.unmitigated</code></p>
+
+<p><a href="https://kb.vmware.com/s/article/57374">KB57374</a> has been created to inform users on details of this error.</p>
+
+<p><img src="/images/l1tfpatch2.png" alt="Patched Using Incorrect Order" /></p>
+
+<p>However if done properly, once ESXi is patched after vCenter Server you would see the following warning on your ESXi host.</p>
+
+<p><img src="/images/l1tfpatch1.png" alt="Patched Using Proper Order" /></p>
+
+<p>Once you have performed the remediation on the hosts to correct all aspects that warning will now go away.</p>
+
+<p>Please stay tuned to <a href="https://kb.vmware.com/s/article/55806">KB55806</a> and  <a href="https://www.vmware.com/security/advisories/VMSA-2018-0020.html">VMSA-2018-0020</a> for any updates to the remediation steps.</p>
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -875,10 +899,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -917,29 +942,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>On Tuesday August 14th, Intel Released their news on the latest vulnerability <strong>L1 Terminal Fault (L1TF) or ForeShadow</strong>. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.
-</p>
-
-<p>I wanted to clarify when remediating your vSphere you should make sure to address the update sequence in the correct order. vCenter Server MUST be patched prior to updating ESXi.</p>
-
-<p><img src="https://kb.vmware.com/servlet/rtaImage?eid=ka134000000Sa0y&amp;feoid=00N34000005kd1R&amp;refid=0EM340000003rNR" alt="L1TF Remediation Order" /></p>
-
-<p>In some cases I have seen users patching ESXi before their vCenter Server resulting in generic errors such as <code>xxx esx.problem.hyperthreading.unmitigated.formatOnHost not found xxx</code> or <code>esx.problem.hyperthreading.unmitigated</code></p>
-
-<p><a href="https://kb.vmware.com/s/article/57374">KB57374</a> has been created to inform users on details of this error.</p>
-
-<p><img src="/images/l1tfpatch2.png" alt="Patched Using Incorrect Order" /></p>
-
-<p>However if done properly, once ESXi is patched after vCenter Server you would see the following warning on your ESXi host.</p>
-
-<p><img src="/images/l1tfpatch1.png" alt="Patched Using Proper Order" /></p>
-
-<p>Once you have performed the remediation on the hosts to correct all aspects that warning will now go away.</p>
-
-<p>Please stay tuned to <a href="https://kb.vmware.com/s/article/55806">KB55806</a> and  <a href="https://www.vmware.com/security/advisories/VMSA-2018-0020.html">VMSA-2018-0020</a> for any updates to the remediation steps.</p>
-  </div>
 </article>
 
     <article class="post">

@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f05%2f06%2fget-naa-id-for-virtual-machine-rdms-in-vmware%2f&amp;text=Get%20NAA.ID%20for%20Virtual%20Machine%20RDM%27s%20in%20VMware&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,27 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
 
+<pre><code>Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
+</code></pre>
+
+<p><img src="/images/naaid.png" alt="" /></p>
+
+<p>If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.</p>
+
+<p><a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;amp;docType=kc&amp;amp;externalId=2051606">KB2051606</a></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +888,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,20 +928,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
-
-<pre><code>Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
-</code></pre>
-
-<p><img src="/images/naaid.png" alt="" /></p>
-
-<p>If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.</p>
-
-<p><a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;amp;docType=kc&amp;amp;externalId=2051606">KB2051606</a></p>
-
-  </div>
 </article>
 
     <article class="post">

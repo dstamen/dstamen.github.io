@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f11%2f30%2fusing-cli-to-manage-dvs-host-uplinks%2f&amp;text=Using%20CLI%20to%20Manage%20DVS%20Host%20Uplinks&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,42 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.</p>
 
+<p><strong><em>As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.</em></strong></p>
+
+<p>After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</p>
+
+<p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
+
+<pre><code>DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
+dvSwitch         256         3           256               1500    vmnic0,vmnic1
+
+  DVPort ID           In Use      Client
+  0                   1           vmnic0
+  1                   1           vmnic1
+</code></pre>
+
+<p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
+
+<pre><code>esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch
+</code></pre>
+
+<p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
+
+<pre><code>esxcfg-vswitch -P vmnic1 -V 1 dvSwitch
+</code></pre>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +903,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,35 +943,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.</p>
-
-<p><strong><em>As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.</em></strong></p>
-
-<p>After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</p>
-
-<p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
-
-<pre><code>DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-dvSwitch         256         3           256               1500    vmnic0,vmnic1
-
-  DVPort ID           In Use      Client
-  0                   1           vmnic0
-  1                   1           vmnic1
-</code></pre>
-
-<p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-
-<pre><code>esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch
-</code></pre>
-
-<p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-
-<pre><code>esxcfg-vswitch -P vmnic1 -V 1 dvSwitch
-</code></pre>
-
-  </div>
 </article>
 
     <article class="post">

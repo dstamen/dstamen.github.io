@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f10%2f16%2foffice-365exchange-eac-pop-ups-not-working-with-chrome-37%2f&amp;text=Office%20365%2fExchange%20EAC%20Pop%20Ups%20not%20working%20with%20Chrome%2037&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,41 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.</p>
 
+<p>Download the Chrome Policy Plugin <a href="http://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">here</a></p>
+
+<ol>
+<li>Open the zip file you just downloaded and locate the .ADM file that best matches your system:</li>
+<li>Extract the .ADM file to any folder on your hard drive</li>
+<li>Go to Start &gt; Run, and run gpedit.msc</li>
+<li>Right-click Local Computer Policy &gt; Computer Configuration &gt; Administrative Templates, and select Add/Remove Templates:</li>
+<li>Add the adm template that you saved to disk earlier:</li>
+<li>You should now see the template underneath a Google &gt; Google Chrome section within Administrative Templates</li>
+<li>2. Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:</li>
+<li>Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:</li>
+<li>NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.</li>
+<li>In the new screen that appears, click the Enabled radio button:</li>
+<li>In the Options section of the same screen, click the Show… button</li>
+<li>On the new screen that appears, type ShowModalDialog_EffectiveUntil20150430 into the first cell of the table that’s displayed and hit ENTER:
+-IMPORTANT NOTE: Make sure there are no spaces either before or after the ShowModalDialog_EffectiveUntil20150430  Otherwise, Chrome will reject the setting (see the Troubleshooting section for more information).</li>
+<li>Click OK</li>
+<li>To verify that this policy has taken effect, navigate to the following URL in Chrome: chrome://policy</li>
+<li>If everything is set up correctly, you should see a screen like the following</li>
+</ol>
+
+<p><img src="/images/chromemodal.jpg" alt="" /></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +902,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,34 +942,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.</p>
-
-<p>Download the Chrome Policy Plugin <a href="http://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">here</a></p>
-
-<ol>
-<li>Open the zip file you just downloaded and locate the .ADM file that best matches your system:</li>
-<li>Extract the .ADM file to any folder on your hard drive</li>
-<li>Go to Start &gt; Run, and run gpedit.msc</li>
-<li>Right-click Local Computer Policy &gt; Computer Configuration &gt; Administrative Templates, and select Add/Remove Templates:</li>
-<li>Add the adm template that you saved to disk earlier:</li>
-<li>You should now see the template underneath a Google &gt; Google Chrome section within Administrative Templates</li>
-<li>2. Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:</li>
-<li>Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:</li>
-<li>NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.</li>
-<li>In the new screen that appears, click the Enabled radio button:</li>
-<li>In the Options section of the same screen, click the Show… button</li>
-<li>On the new screen that appears, type ShowModalDialog_EffectiveUntil20150430 into the first cell of the table that’s displayed and hit ENTER:
--IMPORTANT NOTE: Make sure there are no spaces either before or after the ShowModalDialog_EffectiveUntil20150430  Otherwise, Chrome will reject the setting (see the Troubleshooting section for more information).</li>
-<li>Click OK</li>
-<li>To verify that this policy has taken effect, navigate to the following URL in Chrome: chrome://policy</li>
-<li>If everything is set up correctly, you should see a screen like the following</li>
-</ol>
-
-<p><img src="/images/chromemodal.jpg" alt="" /></p>
-
-  </div>
 </article>
 
     <article class="post">

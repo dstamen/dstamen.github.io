@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f01%2f13%2funable-to-boot-efi-vm-on-esxi-fc-storage%2f&amp;text=Unable%20to%20Boot%20EFI%20VM%20on%20ESXi%20FC%20Storage&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,69 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).</p>
+
+<p>Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine. I opened a case with VMware and our Storage vendor and no one had any idea what was causing it.</p>
+
+<p>Strangely enough my coworker found the following article today that explains and provides a workaround. <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2137402">KB2137402</a></p>
+
+<p>Also, our storage vendor Pure Storage also had an article explaining the issue. [Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion]<a href="http://community.purestorage.com/t5/Pure-Customer-Knowledge-Base/Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion/ta-p/4109]">http://community.purestorage.com/t5/Pure-Customer-Knowledge-Base/Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion/ta-p/4109]</a></p>
+
+<p>So today I went and modified a host to have the DiskMaxIOSize to be 4096 instead of the default 32767, and the VM booted up fine! All my stress and troubleshooting could finally be resolved. Strange enough this issue has been around since 5.5 and there is still no actual resolution. I am not even sure if this is an array or VMware issue as this seems to affect 3Par and XtremIO as well.</p>
+
+<p>However, since I had to replicate this change to a bunch of hosts I created a script to make this change.</p>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Set-MaxDiskIO.ps1">Set-MaxDiskIO.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<pre><code># PowerCLI Script for setting Disk Max IO Size
+# @davidstamen
+# http://davidstamen.com
+
+#Define Variables
+$cred = Get-Credential
+$VC = &quot;vc.lab.local&quot;
+$Cluster = &quot;Production&quot;
+
+#Connect to vCenter
+Connect-VIServer $VC -Credential $cred
+
+#Get all Hosts
+$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | Sort Name
+
+#For each host set DiskMaxIOsize to 4MB
+foreach ($esx in $esxHosts) {
+  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
+}
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Set-MaxDiskIO.ps1</li>
+</ul>
+
+<p>Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +926,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,62 +966,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).</p>
-
-<p>Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine. I opened a case with VMware and our Storage vendor and no one had any idea what was causing it.</p>
-
-<p>Strangely enough my coworker found the following article today that explains and provides a workaround. <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2137402">KB2137402</a></p>
-
-<p>Also, our storage vendor Pure Storage also had an article explaining the issue. [Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion]<a href="http://community.purestorage.com/t5/Pure-Customer-Knowledge-Base/Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion/ta-p/4109]">http://community.purestorage.com/t5/Pure-Customer-Knowledge-Base/Windows-2012-R2-and-Windows-8-boot-fails-after-Storage-VMotion/ta-p/4109]</a></p>
-
-<p>So today I went and modified a host to have the DiskMaxIOSize to be 4096 instead of the default 32767, and the VM booted up fine! All my stress and troubleshooting could finally be resolved. Strange enough this issue has been around since 5.5 and there is still no actual resolution. I am not even sure if this is an array or VMware issue as this seems to affect 3Par and XtremIO as well.</p>
-
-<p>However, since I had to replicate this change to a bunch of hosts I created a script to make this change.</p>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Set-MaxDiskIO.ps1">Set-MaxDiskIO.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code># PowerCLI Script for setting Disk Max IO Size
-# @davidstamen
-# http://davidstamen.com
-
-#Define Variables
-$cred = Get-Credential
-$VC = &quot;vc.lab.local&quot;
-$Cluster = &quot;Production&quot;
-
-#Connect to vCenter
-Connect-VIServer $VC -Credential $cred
-
-#Get all Hosts
-$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | Sort Name
-
-#For each host set DiskMaxIOsize to 4MB
-foreach ($esx in $esxHosts) {
-  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
-}
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Set-MaxDiskIO.ps1</li>
-</ul>
-
-<p>Hopefully this helps anyone else who comes across this issue, not alot of people have seen it.</p>
-
-  </div>
 </article>
 
     <article class="post">

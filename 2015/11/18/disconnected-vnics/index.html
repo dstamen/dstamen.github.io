@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f11%2f18%2fdisconnected-vnics%2f&amp;text=Disconnected%20vNIC%27s%3f&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,27 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Ever wonder why a VM isn&rsquo;t on the network?</p>
 
+<p>I was working on deploying some test VM&rsquo;s and for some reason all the VM&rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.</p>
+
+<p>I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</p>
+
+<pre><code>Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false
+</code></pre>
+
+<p>Voila! You are done.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +888,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,20 +928,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Ever wonder why a VM isn&rsquo;t on the network?</p>
-
-<p>I was working on deploying some test VM&rsquo;s and for some reason all the VM&rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.</p>
-
-<p>I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</p>
-
-<pre><code>Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false
-</code></pre>
-
-<p>Voila! You are done.</p>
-
-  </div>
 </article>
 
     <article class="post">

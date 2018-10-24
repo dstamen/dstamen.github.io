@@ -713,7 +713,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f10%2f12%2fusing-vagrant-to-deploy-an-ubuntu-server-running-kvm%2f&amp;text=Using%20Vagrant%20to%20Deploy%20an%20Ubuntu%20Server%20running%20KVM&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -819,11 +818,32 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>With all this talk about VMware vs KVM I figured that I would attempt to load a base install of KVM to see what it was all about.</p>
 
+<p>Here is a quick vagrant runbook that will quickly get a 3 linux servers deployed and installed with KVM to play with.</p>
+
+<p>There are 3 nodes..MGMT01,KVM01 and KVM02. I use MGMT01 VMM to manage KVM01 and KVM02.</p>
+
+<p>The code can be found <a href="https://github.com/dstamen/Vagrant/tree/master/ubuntukvm">here.</a></p>
+
+<p>The bootstrap_installkvm.sh file runs the following commands to install KVM.</p>
+
+<pre><code>sudo apt-get install --no-install-recommends lubuntu-desktop -y
+sudo apt-get install qemu-kvm qemu-system libvirt-bin bridge-utils virt-manager -y
+sudo adduser vagrant libvirtd
+sudo reboot
+</code></pre>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -877,10 +897,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -919,25 +940,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>With all this talk about VMware vs KVM I figured that I would attempt to load a base install of KVM to see what it was all about.</p>
-
-<p>Here is a quick vagrant runbook that will quickly get a 3 linux servers deployed and installed with KVM to play with.</p>
-
-<p>There are 3 nodes..MGMT01,KVM01 and KVM02. I use MGMT01 VMM to manage KVM01 and KVM02.</p>
-
-<p>The code can be found <a href="https://github.com/dstamen/Vagrant/tree/master/ubuntukvm">here.</a></p>
-
-<p>The bootstrap_installkvm.sh file runs the following commands to install KVM.</p>
-
-<pre><code>sudo apt-get install --no-install-recommends lubuntu-desktop -y
-sudo apt-get install qemu-kvm qemu-system libvirt-bin bridge-utils virt-manager -y
-sudo adduser vagrant libvirtd
-sudo reboot
-</code></pre>
-
-  </div>
 </article>
 
     <article class="post">

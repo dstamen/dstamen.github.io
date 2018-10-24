@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f11%2f21%2fvsphere-65-vcha-issues%2f&amp;text=vSphere%206.5%20-%20vCenter%20HA%20%28VCHA%29%20Issues&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,43 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.</p>
 
+<p>Every time I would try to configure vCenter HA using the Advanced Wizard, I would get the following error.</p>
+
+<pre><code>The operation is not allowed in the current state.
+Failed to get management network information. Verify if management interface (NIC0) is configured correctly and is reachable.
+</code></pre>
+
+<p><img src="/images/vcha1.png" alt="" /></p>
+
+<p>Obviously, if I am accessing the vCenter the management IP has to be configured and reachable correct?</p>
+
+<p>Turns out we tried to look through the logs in <strong>/var/log/vmware/vcha</strong> and they were no help. Next the technician tried to manually prepare for VCHA by running <strong>prepare-vcha</strong>. Once we ran this we were able to see a specific error outputted.</p>
+
+<pre><code>Unable to get hostname resolved IP address for eth0
+</code></pre>
+
+<p><img src="/images/vcha2.png" alt="" /></p>
+
+<p>This is more helpful! Turns out my vCenter somehow was missing it&rsquo;s reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
+
+<p>Once I created the reverse DNS, the wizard finally let me through and configure vCenter HA!</p>
+
+<p>Big thank you to the vExpert community and VMware Support.</p>
+
+<p>Look forward to a formal KB and a more descriptive error in the future.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +900,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,36 +940,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.</p>
-
-<p>Every time I would try to configure vCenter HA using the Advanced Wizard, I would get the following error.</p>
-
-<pre><code>The operation is not allowed in the current state.
-Failed to get management network information. Verify if management interface (NIC0) is configured correctly and is reachable.
-</code></pre>
-
-<p><img src="/images/vcha1.png" alt="" /></p>
-
-<p>Obviously, if I am accessing the vCenter the management IP has to be configured and reachable correct?</p>
-
-<p>Turns out we tried to look through the logs in <strong>/var/log/vmware/vcha</strong> and they were no help. Next the technician tried to manually prepare for VCHA by running <strong>prepare-vcha</strong>. Once we ran this we were able to see a specific error outputted.</p>
-
-<pre><code>Unable to get hostname resolved IP address for eth0
-</code></pre>
-
-<p><img src="/images/vcha2.png" alt="" /></p>
-
-<p>This is more helpful! Turns out my vCenter somehow was missing it&rsquo;s reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
-
-<p>Once I created the reverse DNS, the wizard finally let me through and configure vCenter HA!</p>
-
-<p>Big thank you to the vExpert community and VMware Support.</p>
-
-<p>Look forward to a formal KB and a more descriptive error in the future.</p>
-
-  </div>
 </article>
 
     <article class="post">

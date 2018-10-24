@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f01%2f15%2fusing-ucs-powertool-to-set-equipment-labels%2f&amp;text=Using%20UCS%20PowerTool%20To%20Set%20Equipment%20Labels&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,59 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1">Set-UCSEquipmentLabel.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<p><em>This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.</em></p>
+
+<pre><code>#Define Variables
+$cred = Get-Credential
+$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+
+#Cycles through each UCS setting values
+Foreach ($ucs in $domains) {
+  Connect-UCS $ucs -Credential $cred
+  $servers = Get-UCSRackUnit
+  Foreach ($server in $servers) {
+    Get-UCSRackUnit -id $server.id | Set-UCSRackunit -UsrLbl $server.assignedtodn.substring(12) -Name $server.assignedtodn.substring(12) -force
+  }
+  Disconnect-UCS
+}
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Set-UCSEquipmentLabel.ps1</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +916,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,52 +956,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
-</ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1">Set-UCSEquipmentLabel.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<p><em>This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.</em></p>
-
-<pre><code>#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-
-#Cycles through each UCS setting values
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  $servers = Get-UCSRackUnit
-  Foreach ($server in $servers) {
-    Get-UCSRackUnit -id $server.id | Set-UCSRackunit -UsrLbl $server.assignedtodn.substring(12) -Name $server.assignedtodn.substring(12) -force
-  }
-  Disconnect-UCS
-}
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Set-UCSEquipmentLabel.ps1</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

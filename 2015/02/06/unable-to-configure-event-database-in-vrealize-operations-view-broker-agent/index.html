@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f02%2f06%2funable-to-configure-event-database-in-vrealize-operations-view-broker-agent%2f&amp;text=Unable%20to%20Configure%20Event%20Database%20in%20vRealize%20Operations%20View%20Broker%20Agent&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,26 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. <strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)</strong></p>
 
+<p><img src="/images/vROeventdb.png" alt="" /></p>
+
+<p>I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&rsquo;t like certain characters in passwords.</p>
+
+<p>I came across this blog <a href="http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql">http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql</a></p>
+
+<p>So in the configuration page i entered in my password as <strong>&ldquo;password&rdquo;</strong> and voila it worked!</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +883,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,19 +923,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. <strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)</strong></p>
-
-<p><img src="/images/vROeventdb.png" alt="" /></p>
-
-<p>I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&rsquo;t like certain characters in passwords.</p>
-
-<p>I came across this blog <a href="http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql">http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql</a></p>
-
-<p>So in the configuration page i entered in my password as <strong>&ldquo;password&rdquo;</strong> and voila it worked!</p>
-
-  </div>
 </article>
 
     <article class="post">

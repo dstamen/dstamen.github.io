@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f12%2f19%2fupdating-trend-micro-deep-security-manager-certificate%2f&amp;text=Updating%20Trend%20Micro%20Deep%20Security%20Manager%20Certificate&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,44 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.</p>
 
+<ol>
+<li>Stop the “Trend Micro Deep Security Manager” service</li>
+<li>If not already created, create a folder on the root of C:\ called “certs”</li>
+<li>Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore”</li>
+<li>Copy .keystore and configuration.properties to Backupkeystore folder</li>
+<li>Open administrative command line &amp; change directory to “C:\Program Files \Trend Mirco\Deep Security Manager\jre\bin\”</li>
+<li>Run this command “keytool -genkey -alias tomcat -keyalg RSA -dname cn=(FQDN of Server)”.
+This will create a “.keystore” file under the C:\Users\ directory</li>
+<li>When prompted for password enter a password for the keystore.</li>
+<li>Run this command “keytool -certreq -keyalg RSA -alias tomcat -file certrequest.txt”</li>
+<li>When prompted for password use same password as entered in step 6.</li>
+<li>Open the certrequest.txt located in C:\Program Files \Trend Micro\Deep Security Manager\jre\bin\ and copy the contents of the file.</li>
+<li>Access the CA server site <a href="https://certsrv">https://certsrv</a> and click “Request a certificate”.</li>
+<li>Select “advanced certificate request”</li>
+<li>Select “Submit a certificate request by using a base-64-encoded CMC or PKCS #10 file, or submit a renewal request by using a base-64-encoded PKCS #7 file”</li>
+<li>Paste copied text from certrequest.txt in “Base-64-encoded certificate request” field, select “Web Server” under Certificate Template and enter Subject Alternative Names under Additional Attributes using the following format: “san:dns=&amp;dns=” and click “Submit.”</li>
+<li>Click “Download certificate chain” and save as “trend.p7b” in the certs folder on the C: drive</li>
+<li>From administrative command prompt run this command “keytool -import -trustcacerts -alias tomcat -file C:\certs\trend.p7b -keystore C:\Users\.keystore”</li>
+<li>When prompted for password use same password as entered in step 6.</li>
+<li>When prompted to “Install reply anyway”, type “yes”</li>
+<li>Copy .keystore from C:\Users\%username%\ and paste it into C:\Program Files \Trend Micro\Deep Security Manager</li>
+<li>From administrative command prompt change directories to C:\Program Files \Trend Micro\Deep Security Manager and run this command “.\configuration.properties”. This will open the configuration.properties in notepad.</li>
+<li>Look for the line keystorePass= and delete the entry after the = symbol, enter the password used in step 6 after the = and save and close the file.</li>
+<li>Restart the “Trend Micro Deep Security Manager” service</li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +901,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,37 +938,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.</p>
-
-<ol>
-<li>Stop the “Trend Micro Deep Security Manager” service</li>
-<li>If not already created, create a folder on the root of C:\ called “certs”</li>
-<li>Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore”</li>
-<li>Copy .keystore and configuration.properties to Backupkeystore folder</li>
-<li>Open administrative command line &amp; change directory to “C:\Program Files \Trend Mirco\Deep Security Manager\jre\bin\”</li>
-<li>Run this command “keytool -genkey -alias tomcat -keyalg RSA -dname cn=(FQDN of Server)”.
-This will create a “.keystore” file under the C:\Users\ directory</li>
-<li>When prompted for password enter a password for the keystore.</li>
-<li>Run this command “keytool -certreq -keyalg RSA -alias tomcat -file certrequest.txt”</li>
-<li>When prompted for password use same password as entered in step 6.</li>
-<li>Open the certrequest.txt located in C:\Program Files \Trend Micro\Deep Security Manager\jre\bin\ and copy the contents of the file.</li>
-<li>Access the CA server site <a href="https://certsrv">https://certsrv</a> and click “Request a certificate”.</li>
-<li>Select “advanced certificate request”</li>
-<li>Select “Submit a certificate request by using a base-64-encoded CMC or PKCS #10 file, or submit a renewal request by using a base-64-encoded PKCS #7 file”</li>
-<li>Paste copied text from certrequest.txt in “Base-64-encoded certificate request” field, select “Web Server” under Certificate Template and enter Subject Alternative Names under Additional Attributes using the following format: “san:dns=&amp;dns=” and click “Submit.”</li>
-<li>Click “Download certificate chain” and save as “trend.p7b” in the certs folder on the C: drive</li>
-<li>From administrative command prompt run this command “keytool -import -trustcacerts -alias tomcat -file C:\certs\trend.p7b -keystore C:\Users\.keystore”</li>
-<li>When prompted for password use same password as entered in step 6.</li>
-<li>When prompted to “Install reply anyway”, type “yes”</li>
-<li>Copy .keystore from C:\Users\%username%\ and paste it into C:\Program Files \Trend Micro\Deep Security Manager</li>
-<li>From administrative command prompt change directories to C:\Program Files \Trend Micro\Deep Security Manager and run this command “.\configuration.properties”. This will open the configuration.properties in notepad.</li>
-<li>Look for the line keystorePass= and delete the entry after the = symbol, enter the password used in step 6 after the = and save and close the file.</li>
-<li>Restart the “Trend Micro Deep Security Manager” service</li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f05%2f08%2fha-error-network-redundancy%2f&amp;text=HA%20Error%3a%20Network%20Redundancy&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,44 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.</p>
+
+<h2 id="to-perform-the-steps-in-the-c-client">To perform the steps in the c# client.</h2>
+
+<ol>
+<li>From the VMware Infrastructure Client, right-click on the cluster and click <strong>Edit Settings</strong>.</li>
+<li>Select <strong>vSphere HA</strong> and click <strong>Advanced Options</strong>.</li>
+<li>In the Options column, enter <strong>das.ignoreRedundantNetWarning</strong></li>
+<li>In the Value column, type <strong>true</strong></li>
+<li>Click <strong>OK</strong>.</li>
+<li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>. This reconfigures HA.</li>
+</ol>
+
+<h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.</h2>
+
+<ol>
+<li>From the vSphere Web Client, right click on the cluster.</li>
+<li>Click on the <b style="font-style: inherit;">Manage</b> tab for the cluster, then under Settings click <b style="font-style: inherit;">vSphere HA</b>.</li>
+<li>Click on the <b style="font-style: inherit;">Edit</b> button in the top right corner.</li>
+<li>Expand the <b style="font-style: inherit;">Advanced Options</b> section, and click <b style="font-style: inherit;">Add</b>.</li>
+<li>In the Options column, type <strong>das.ignoreRedundantNetWarning.</strong></li>
+<li>In the Value column, type <strong>true</strong>.</li>
+<li>Click <strong>OK</strong></li>
+<li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>.</li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +901,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,37 +941,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.</p>
-
-<h2 id="to-perform-the-steps-in-the-c-client">To perform the steps in the c# client.</h2>
-
-<ol>
-<li>From the VMware Infrastructure Client, right-click on the cluster and click <strong>Edit Settings</strong>.</li>
-<li>Select <strong>vSphere HA</strong> and click <strong>Advanced Options</strong>.</li>
-<li>In the Options column, enter <strong>das.ignoreRedundantNetWarning</strong></li>
-<li>In the Value column, type <strong>true</strong></li>
-<li>Click <strong>OK</strong>.</li>
-<li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>. This reconfigures HA.</li>
-</ol>
-
-<h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.</h2>
-
-<ol>
-<li>From the vSphere Web Client, right click on the cluster.</li>
-<li>Click on the <b style="font-style: inherit;">Manage</b> tab for the cluster, then under Settings click <b style="font-style: inherit;">vSphere HA</b>.</li>
-<li>Click on the <b style="font-style: inherit;">Edit</b> button in the top right corner.</li>
-<li>Expand the <b style="font-style: inherit;">Advanced Options</b> section, and click <b style="font-style: inherit;">Add</b>.</li>
-<li>In the Options column, type <strong>das.ignoreRedundantNetWarning.</strong></li>
-<li>In the Value column, type <strong>true</strong>.</li>
-<li>Click <strong>OK</strong></li>
-<li>Right-click the host and click <strong>Reconfigure for vSphere HA</strong>.</li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

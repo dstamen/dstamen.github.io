@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f09%2f11%2funable-to-install-net-3-5-on-server-2012r2%2f&amp;text=Unable%20to%20Install%20.NET%203.5%20on%20Server%202012R2&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,39 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&rsquo;s and copied the files locally.</p>
+
+<p><img src="/images/dotneterror.jpg" alt="" /></p>
+
+<p>Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. <a href="http://support.microsoft.com/kb/2734782&quot;&gt;http://support.microsoft.com/kb/2734782">KB2734782</a></p>
+
+<h3 id="here-are-the-full-steps-i-followed-to-get-net-installed">Here are the full steps I followed to get .NET installed.</h3>
+
+<ol>
+<li>Open <strong>gpedit.msc</strong> to modify your local group policy.</li>
+
+<li><p>Navigate to <strong>Computer Configuration/Administrative Tools/System</strong> and there should be an option for <strong>&ldquo;Specify Settings for optional component installation.&rdquo;</strong> Enable this option and select &ldquo;Contact Windows Update directly to download repair content.&rdquo;
+<img src="/images/dotnetstep2.jpg" alt="" /></p></li>
+
+<li><p>Now open up an elevated cmd/powershell prompt and run a gpupdate /force to enforce the new policy</p></li>
+
+<li><p>Run the following command to install .NET</p></li>
+
+<li><p>DISM /Online /Enable-Feature /FeatureName:NetFx3 /All</p></li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +900,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -909,32 +937,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&rsquo;s and copied the files locally.</p>
-
-<p><img src="/images/dotneterror.jpg" alt="" /></p>
-
-<p>Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. <a href="http://support.microsoft.com/kb/2734782&quot;&gt;http://support.microsoft.com/kb/2734782">KB2734782</a></p>
-
-<h3 id="here-are-the-full-steps-i-followed-to-get-net-installed">Here are the full steps I followed to get .NET installed.</h3>
-
-<ol>
-<li>Open <strong>gpedit.msc</strong> to modify your local group policy.</li>
-
-<li><p>Navigate to <strong>Computer Configuration/Administrative Tools/System</strong> and there should be an option for <strong>&ldquo;Specify Settings for optional component installation.&rdquo;</strong> Enable this option and select &ldquo;Contact Windows Update directly to download repair content.&rdquo;
-<img src="/images/dotnetstep2.jpg" alt="" /></p></li>
-
-<li><p>Now open up an elevated cmd/powershell prompt and run a gpupdate /force to enforce the new policy</p></li>
-
-<li><p>Run the following command to install .NET</p></li>
-
-<li><p>DISM /Online /Enable-Feature /FeatureName:NetFx3 /All</p></li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

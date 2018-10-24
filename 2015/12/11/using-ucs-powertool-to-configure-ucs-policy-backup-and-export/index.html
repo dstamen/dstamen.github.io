@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f12%2f11%2fusing-ucs-powertool-to-configure-ucs-policy-backup-and-export%2f&amp;text=Using%20UCS%20PowerTool%20To%20Configure%20UCS%20Policy%20Backup%20and%20Export&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,63 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSPolicyBackupandExport.ps1">Set-UCSPolicyBackupandExport.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<pre><code>#Define Variables
+$UCS = &quot;FQDNofUCS&quot; #FQDN of UCS To COnnect To
+$Hostname = &quot;ucs.lab.local&quot; #Hostname to Upload backup to.
+$Protocol = &quot;scp&quot; #Transfer Protocol. ftp,scp,tftp,sftp
+$User = &quot;ftpuser&quot; #Username
+$Password = &quot;ftpuser&quot; #Password
+$MgmtBackupRemoteFile = &quot;Full&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$ConfigBackupRemoteFile = &quot;AllConfig&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
+$AdminState = &quot;enable&quot; #enable or disable
+$Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly backups
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Set-UCSPolicyBackupandExport.ps1</li>
+<li>Logon and UCSM, Navigate to Admin/All and Then select the Policy Backup &amp; Export.
+
+<ul>
+<li>Verify Settings.</li>
+</ul></li>
+</ul>
+
+<p><img src="/images/ucspolicybackup.png" alt="" /></p>
+
+<h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup-export-on-cisco-ucs"><strong><em>Hope this helps anyone else out wanted to automate policy backup &amp; export on Cisco UCS.</em></strong></h4>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +920,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,56 +960,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
-</ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSPolicyBackupandExport.ps1">Set-UCSPolicyBackupandExport.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code>#Define Variables
-$UCS = &quot;FQDNofUCS&quot; #FQDN of UCS To COnnect To
-$Hostname = &quot;ucs.lab.local&quot; #Hostname to Upload backup to.
-$Protocol = &quot;scp&quot; #Transfer Protocol. ftp,scp,tftp,sftp
-$User = &quot;ftpuser&quot; #Username
-$Password = &quot;ftpuser&quot; #Password
-$MgmtBackupRemoteFile = &quot;Full&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$ConfigBackupRemoteFile = &quot;AllConfig&quot; #Location/Prefix of File. Location/Prefix will be in front of filename
-$AdminState = &quot;enable&quot; #enable or disable
-$Schedule = &quot;1day&quot; #1day, 7day, 14day for daily, weekly or biweekly backups
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Set-UCSPolicyBackupandExport.ps1</li>
-<li>Logon and UCSM, Navigate to Admin/All and Then select the Policy Backup &amp; Export.
-
-<ul>
-<li>Verify Settings.</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/ucspolicybackup.png" alt="" /></p>
-
-<h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-policy-backup-export-on-cisco-ucs"><strong><em>Hope this helps anyone else out wanted to automate policy backup &amp; export on Cisco UCS.</em></strong></h4>
-
-  </div>
 </article>
 
     <article class="post">

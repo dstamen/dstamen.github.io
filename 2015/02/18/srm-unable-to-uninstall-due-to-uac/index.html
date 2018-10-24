@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f02%2f18%2fsrm-unable-to-uninstall-due-to-uac%2f&amp;text=SRM%20-%20Unable%20to%20uninstall%20due%20to%20UAC&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,31 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.</p>
+
+<p><img src="/images/Screen-Shot-2015-02-18-at-9.01.23-AM.png" alt="" /></p>
+
+<p>To fully disable UAC run the following command from an elevated command prompt and then reboot the system.</p>
+
+<pre><code>REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f
+</code></pre>
+
+<h4 id="note">Note:</h4>
+
+<p>You can also avoid this by doing the uninstall as the builtin local administrator account</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +892,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -909,24 +929,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.</p>
-
-<p><img src="/images/Screen-Shot-2015-02-18-at-9.01.23-AM.png" alt="" /></p>
-
-<p>To fully disable UAC run the following command from an elevated command prompt and then reboot the system.</p>
-
-<pre><code>REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f
-</code></pre>
-
-<h4 id="note">Note:</h4>
-
-<p>You can also avoid this by doing the uninstall as the builtin local administrator account</p>
-
-  </div>
 </article>
 
     <article class="post">

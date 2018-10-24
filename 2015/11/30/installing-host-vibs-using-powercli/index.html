@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f11%2f30%2finstalling-host-vibs-using-powercli%2f&amp;text=Installing%20Host%20VIB%27s%20Using%20PowerCLI&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,48 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a <a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
 
+<p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember <a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/">Brian Graf&rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
+
+<p>All you need to do is input your cluster and specify what VIB&rsquo;s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB&rsquo;s you want to install.</p>
+
+<pre><code># Define Variables
+$Cluster = &quot;Cluster&quot;
+$VIBPATH1 = &quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;
+$VIBPATH2 = &quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&quot;
+
+
+# Get each host in specified cluster that meets criteria
+Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | foreach {
+
+    Write-host &quot;Preparing $($_.Name) for ESXCLI&quot; -ForegroundColor Yellow
+
+    $ESXCLI = Get-EsxCli -VMHost $_
+
+    # Install VIBs
+    Write-host &quot;Installing VIB on $($_.Name)&quot; -ForegroundColor Yellow
+    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
+    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
+
+    # Verify VIB installed successfully
+    if ($action.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+    if ($action2.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+}
+</code></pre>
+
+<p>Hope this helps anyone else out wanting to automate vib installation using PowerCLI.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +905,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,41 +945,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a <a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
-
-<p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember <a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/">Brian Graf&rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
-
-<p>All you need to do is input your cluster and specify what VIB&rsquo;s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB&rsquo;s you want to install.</p>
-
-<pre><code># Define Variables
-$Cluster = &quot;Cluster&quot;
-$VIBPATH1 = &quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;
-$VIBPATH2 = &quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&quot;
-
-
-# Get each host in specified cluster that meets criteria
-Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | foreach {
-
-    Write-host &quot;Preparing $($_.Name) for ESXCLI&quot; -ForegroundColor Yellow
-
-    $ESXCLI = Get-EsxCli -VMHost $_
-
-    # Install VIBs
-    Write-host &quot;Installing VIB on $($_.Name)&quot; -ForegroundColor Yellow
-    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
-    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
-
-    # Verify VIB installed successfully
-    if ($action.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-    if ($action2.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-}
-</code></pre>
-
-<p>Hope this helps anyone else out wanting to automate vib installation using PowerCLI.</p>
-
-  </div>
 </article>
 
     <article class="post">

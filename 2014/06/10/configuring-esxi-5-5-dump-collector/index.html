@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f06%2f10%2fconfiguring-esxi-5-5-dump-collector%2f&amp;text=Configuring%20ESXi%205.5%20Dump%20Collector&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,55 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.</p>
+
+<h1 id="check-the-esxi-dump-collector-configuration-example">Check the ESXi Dump Collector Configuration Example:</h1>
+
+<pre><code>Foreach ($vmhost in (get-vmhost)){
+$esxcli = Get-EsxCli -vmhost $vmhost
+$esxcli.system.coredump.network.get()}
+</code></pre>
+
+<p><img src="/images/screenshot.361.jpg" alt="" /></p>
+
+<h1 id="setting-the-esxi-dump-collector-example">Setting the ESXi Dump Collector Example:</h1>
+
+<pre><code>Foreach ($vmhost in (get-vmhost)) {
+$esxcli = Get-EsxCli -vmhost $vmhost
+$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″)
+$esxcli.system.coredump.network.set($true)}
+</code></pre>
+
+<p><img src="/images/screenshot.351.jpg" alt="" /></p>
+
+<h1 id="test-host-by-causing-psod">Test Host by Causing PSOD</h1>
+
+<p>Run the following command via SSH or Direct Shell. We can see that the server is now doing a network coredump.</p>
+
+<pre><code>vsish -e set /reliability/crashMe/Panic 1
+</code></pre>
+
+<p><img src="/images/screenshot.391.jpg" alt="" /></p>
+
+<p>#Post-Installation Changes
+If you wish to change the default port or maxsize of the dump, these can be changed by modifying the vmconfig-netdump.xml file. See below link with instructions on how to make the changes and restart the Dump Collector Service.
+<a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2002954">KB2002954</a></p>
+
+<p>#PowerCLI Scripts courtesy of Mike Laverick
+<a href="http://www.mikelaverick.com/2013/12/back-to-basics-installing-other-optional-vcenter-5-5-services/">http://www.mikelaverick.com/2013/12/back-to-basics-installing-other-optional-vcenter-5-5-services/</a></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +912,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,48 +952,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.</p>
-
-<h1 id="check-the-esxi-dump-collector-configuration-example">Check the ESXi Dump Collector Configuration Example:</h1>
-
-<pre><code>Foreach ($vmhost in (get-vmhost)){
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.coredump.network.get()}
-</code></pre>
-
-<p><img src="/images/screenshot.361.jpg" alt="" /></p>
-
-<h1 id="setting-the-esxi-dump-collector-example">Setting the ESXi Dump Collector Example:</h1>
-
-<pre><code>Foreach ($vmhost in (get-vmhost)) {
-$esxcli = Get-EsxCli -vmhost $vmhost
-$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″)
-$esxcli.system.coredump.network.set($true)}
-</code></pre>
-
-<p><img src="/images/screenshot.351.jpg" alt="" /></p>
-
-<h1 id="test-host-by-causing-psod">Test Host by Causing PSOD</h1>
-
-<p>Run the following command via SSH or Direct Shell. We can see that the server is now doing a network coredump.</p>
-
-<pre><code>vsish -e set /reliability/crashMe/Panic 1
-</code></pre>
-
-<p><img src="/images/screenshot.391.jpg" alt="" /></p>
-
-<p>#Post-Installation Changes
-If you wish to change the default port or maxsize of the dump, these can be changed by modifying the vmconfig-netdump.xml file. See below link with instructions on how to make the changes and restart the Dump Collector Service.
-<a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2002954">KB2002954</a></p>
-
-<p>#PowerCLI Scripts courtesy of Mike Laverick
-<a href="http://www.mikelaverick.com/2013/12/back-to-basics-installing-other-optional-vcenter-5-5-services/">http://www.mikelaverick.com/2013/12/back-to-basics-installing-other-optional-vcenter-5-5-services/</a></p>
-
-  </div>
 </article>
 
     <article class="post">

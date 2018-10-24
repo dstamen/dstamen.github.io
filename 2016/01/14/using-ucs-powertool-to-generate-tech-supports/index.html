@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f01%2f14%2fusing-ucs-powertool-to-generate-tech-supports%2f&amp;text=Using%20UCS%20PowerTool%20To%20Generate%20Tech%20Supports&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,61 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1">Create-UCSTechSupport.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<pre><code>#Define Variables
+$cred = Get-Credential
+$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+$fileloc = &quot;C:\Users\david\desktop\logs\&quot;
+
+#Cycles through each UCS creating a tech support for each chassis.
+Foreach ($ucs in $domains) {
+Connect-UCS $ucs -Credential $cred
+$Chassis = Get-UCSChassis
+  Foreach ($chassis in $chassis) {
+    $id = $chassis.id
+    $filename = &quot;$fileloc$ucs-techsupp-chassis-$id.tar&quot;
+    Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC 'all'
+  }
+Disconnect-UCS
+}
+
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Create-UCSTechSupport.ps1</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +918,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,54 +958,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
-</ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1">Create-UCSTechSupport.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code>#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$fileloc = &quot;C:\Users\david\desktop\logs\&quot;
-
-#Cycles through each UCS creating a tech support for each chassis.
-Foreach ($ucs in $domains) {
-Connect-UCS $ucs -Credential $cred
-$Chassis = Get-UCSChassis
-  Foreach ($chassis in $chassis) {
-    $id = $chassis.id
-    $filename = &quot;$fileloc$ucs-techsupp-chassis-$id.tar&quot;
-    Get-UcsTechSupport -PathPattern $filename -RemoveFromUcs -TimeoutSec 600 -ChassisId $id -CIMC 'all'
-  }
-Disconnect-UCS
-}
-
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Create-UCSTechSupport.ps1</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

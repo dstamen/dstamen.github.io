@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f21%2funable-to-ssh-to-vsphere-6-vcsa-or-psc%2f&amp;text=Unable%20to%20SSH%20to%20vSphere%206%20VCSA%20or%20PSC&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,29 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.</p>
 
+<p>While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</p>
+
+<p>By Default the PSC and VCSA have a default shell of /bin/appliancesh.</p>
+
+<p>To correct the issue we need to change the shell.</p>
+
+<pre><code>chsh -s &quot;/bin/bash&quot; root
+</code></pre>
+
+<p>Once it is changed, we can now ssh/scp to it.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +886,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,22 +926,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.</p>
-
-<p>While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</p>
-
-<p>By Default the PSC and VCSA have a default shell of /bin/appliancesh.</p>
-
-<p>To correct the issue we need to change the shell.</p>
-
-<pre><code>chsh -s &quot;/bin/bash&quot; root
-</code></pre>
-
-<p>Once it is changed, we can now ssh/scp to it.</p>
-
-  </div>
 </article>
 
     <article class="post">

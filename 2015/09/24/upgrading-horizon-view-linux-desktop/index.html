@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f24%2fupgrading-horizon-view-linux-desktop%2f&amp;text=Upgrading%20Horizon%20View%20Linux%20Desktop&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,50 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.</p>
 
+<p>Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.</p>
+
+<p>If you followed my <a href="{{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/">previous</a> post to disable Console access. Go ahead and shutdown the desktop and change it back to <strong>1</strong> to enable console, or you can do this all via <strong>SSH</strong> as well.</p>
+
+<p>Load up <strong>xterm</strong> and type in the following commmand to upgrade the linux kernel.</p>
+
+<pre><code>do-release-upgrade
+</code></pre>
+
+<p>This process will take some time and will run through all the updates, it can take a bit of time so grab a cup of coffee and sit back and wait.</p>
+
+<p><img src="/images/viewlinuxupdate1.png" alt="" /></p>
+
+<p>Once it is done, it will let you know its time to reboot.</p>
+
+<p><img src="/images/viewlinuxupdate2.png" alt="" /></p>
+
+<p>Now that the system is upgraded we can now upgrade the view agent which is very simple.</p>
+
+<p><a href="https://my.vmware.com/web/vmware/downloads">Download</a> the latest View Agent for Linux.</p>
+
+<ul>
+<li>SCP/SFTP/Etc&hellip;the agent to your linux box. In my case I put it in /tmp</li>
+<li>cd to /tmp and run <strong>tar -xzvf <viewagentfilename></strong></li>
+<li>cd to the directory based on the name of your file</li>
+<li>Run <strong>sudo ./install_viewagent.sh</strong></li>
+<li>Reboot and you are now done.</li>
+<li>If you enabled console again, follow the steps in the <a href="{{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/">post</a> to block console sessions again.</li>
+</ul>
+
+<p><strong><em>Your View Linux Desktop is now upgraded! Now enjoy the new features!</em></strong></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +911,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -909,43 +948,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.</p>
-
-<p>Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.</p>
-
-<p>If you followed my <a href="{{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/">previous</a> post to disable Console access. Go ahead and shutdown the desktop and change it back to <strong>1</strong> to enable console, or you can do this all via <strong>SSH</strong> as well.</p>
-
-<p>Load up <strong>xterm</strong> and type in the following commmand to upgrade the linux kernel.</p>
-
-<pre><code>do-release-upgrade
-</code></pre>
-
-<p>This process will take some time and will run through all the updates, it can take a bit of time so grab a cup of coffee and sit back and wait.</p>
-
-<p><img src="/images/viewlinuxupdate1.png" alt="" /></p>
-
-<p>Once it is done, it will let you know its time to reboot.</p>
-
-<p><img src="/images/viewlinuxupdate2.png" alt="" /></p>
-
-<p>Now that the system is upgraded we can now upgrade the view agent which is very simple.</p>
-
-<p><a href="https://my.vmware.com/web/vmware/downloads">Download</a> the latest View Agent for Linux.</p>
-
-<ul>
-<li>SCP/SFTP/Etc&hellip;the agent to your linux box. In my case I put it in /tmp</li>
-<li>cd to /tmp and run <strong>tar -xzvf <viewagentfilename></strong></li>
-<li>cd to the directory based on the name of your file</li>
-<li>Run <strong>sudo ./install_viewagent.sh</strong></li>
-<li>Reboot and you are now done.</li>
-<li>If you enabled console again, follow the steps in the <a href="{{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/">post</a> to block console sessions again.</li>
-</ul>
-
-<p><strong><em>Your View Linux Desktop is now upgraded! Now enjoy the new features!</em></strong></p>
-
-  </div>
 </article>
 
     <article class="post">

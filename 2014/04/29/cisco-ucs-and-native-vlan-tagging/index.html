@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f04%2f29%2fcisco-ucs-and-native-vlan-tagging%2f&amp;text=Cisco%20UCS%20and%20Native%20VLAN%20Tagging&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,20 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.</p>
 
+<p>So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +877,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,13 +914,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &ldquo;Native VLAN&rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.</p>
-
-<p>So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!</p>
-
-  </div>
 </article>
 
     <article class="post">

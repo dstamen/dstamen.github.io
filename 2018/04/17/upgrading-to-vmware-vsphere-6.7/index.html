@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2018%2f04%2f17%2fupgrading-to-vmware-vsphere-6.7%2f&amp;text=Upgrading%20to%20VMware%20vSphere%206.7&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,64 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the <a href="https://secure.vmware.com/43478_vSphere_Beta_Reg">vSphere Beta Program</a> and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+</p>
 
+<p>The first, thing I would like to mention is there is no supported migration from vSphere 5.x to 6.7. You must be running vSphere 6.0 or 6.5.</p>
+
+<p><img src="/uploads/67upgrade1.png" alt="" /></p>
+
+<p>As we did with 6.5 and even more with 6.7 we are now calling the vCenter Server Appliance the default deployment. Why you ask? Well vSphere 6.7 is now the last release to support the Windows installer. So if you happened to upgrade to 6.5 and are still on Windows, you now have a supported upgrade path to the appliance on vSphere 6.7.</p>
+
+<p>Some key considerations with changed topologies as well. We now support Enhanced Link Mode (ELM) with embedded deployments. This means if you have a greenfield deployment, where you have 1 embedded deployment, you can now deploy a second embedded deployment and use ELM. However if you currently have two 6.0/6.5 embedded deployments in separate SSO domains and wish to upgrade to 6.7, there is no way yet to use ELM.</p>
+
+<p>Another considerations is we have removed what we called sites within SSO domains, this means there is now a lot more flexibility when planning your Platform Services Controller topology. With 6.7 we have enhanced the <strong>cmsso-util</strong> utility where you now can repoint to a PSC within the same SSO or across sites. You also now have the ability to repoint across SSO domains, so this will definitely help with consolidating environments (external PSC deployments only).</p>
+
+<p>And of course, if you are already on vSphere 6.5 an wondering why should I go to 6.7? Here are some key features that have improved the overall experience!</p>
+
+<ul>
+<li>HTML5 Client
+
+<ul>
+<li>VMware Update Manager integrated into the vSphere HTML5 Client</li>
+<li>More Supported Workflows</li>
+</ul></li>
+<li>VAMI
+
+<ul>
+<li>Built in Backup Scheduler w/ Retention in the VAMI</li>
+<li>Improved Services View (no longer need to go to vSphere Client)</li>
+<li>Improved Disk View</li>
+<li>Improved Monitoring (CPU, Memory, Network and Database)</li>
+<li>Improved Updates (Now you can select updates to install)</li>
+<li>Syslog now supports up to 3 targets</li>
+</ul></li>
+<li>ELM with Embedded deployments</li>
+<li>Performance Improvements</li>
+<li>Security Enhancements
+
+<ul>
+<li>VBS</li>
+<li>vTPM and TPM 20</li>
+<li>Encrypted xVC vMotion</li>
+</ul></li>
+</ul>
+
+<p>and more&hellip;.</p>
+
+<p><a href="http://emadyounis.com/vcenter/vcenter-server-6-7-whats-new-rundown/">Emad Younis</a> has made a great post on 6.7 with a Whats New Feature Rundown, so I suggest you check it out.</p>
+
+<p>and for even more information make sure to check out the <a href="http://vmw.re/vsphere67launch">vSphere 6.7 Launch Blogs</a></p>
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +921,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -911,57 +964,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the <a href="https://secure.vmware.com/43478_vSphere_Beta_Reg">vSphere Beta Program</a> and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
-</p>
-
-<p>The first, thing I would like to mention is there is no supported migration from vSphere 5.x to 6.7. You must be running vSphere 6.0 or 6.5.</p>
-
-<p><img src="/uploads/67upgrade1.png" alt="" /></p>
-
-<p>As we did with 6.5 and even more with 6.7 we are now calling the vCenter Server Appliance the default deployment. Why you ask? Well vSphere 6.7 is now the last release to support the Windows installer. So if you happened to upgrade to 6.5 and are still on Windows, you now have a supported upgrade path to the appliance on vSphere 6.7.</p>
-
-<p>Some key considerations with changed topologies as well. We now support Enhanced Link Mode (ELM) with embedded deployments. This means if you have a greenfield deployment, where you have 1 embedded deployment, you can now deploy a second embedded deployment and use ELM. However if you currently have two 6.0/6.5 embedded deployments in separate SSO domains and wish to upgrade to 6.7, there is no way yet to use ELM.</p>
-
-<p>Another considerations is we have removed what we called sites within SSO domains, this means there is now a lot more flexibility when planning your Platform Services Controller topology. With 6.7 we have enhanced the <strong>cmsso-util</strong> utility where you now can repoint to a PSC within the same SSO or across sites. You also now have the ability to repoint across SSO domains, so this will definitely help with consolidating environments (external PSC deployments only).</p>
-
-<p>And of course, if you are already on vSphere 6.5 an wondering why should I go to 6.7? Here are some key features that have improved the overall experience!</p>
-
-<ul>
-<li>HTML5 Client
-
-<ul>
-<li>VMware Update Manager integrated into the vSphere HTML5 Client</li>
-<li>More Supported Workflows</li>
-</ul></li>
-<li>VAMI
-
-<ul>
-<li>Built in Backup Scheduler w/ Retention in the VAMI</li>
-<li>Improved Services View (no longer need to go to vSphere Client)</li>
-<li>Improved Disk View</li>
-<li>Improved Monitoring (CPU, Memory, Network and Database)</li>
-<li>Improved Updates (Now you can select updates to install)</li>
-<li>Syslog now supports up to 3 targets</li>
-</ul></li>
-<li>ELM with Embedded deployments</li>
-<li>Performance Improvements</li>
-<li>Security Enhancements
-
-<ul>
-<li>VBS</li>
-<li>vTPM and TPM 20</li>
-<li>Encrypted xVC vMotion</li>
-</ul></li>
-</ul>
-
-<p>and more&hellip;.</p>
-
-<p><a href="http://emadyounis.com/vcenter/vcenter-server-6-7-whats-new-rundown/">Emad Younis</a> has made a great post on 6.7 with a Whats New Feature Rundown, so I suggest you check it out.</p>
-
-<p>and for even more information make sure to check out the <a href="http://vmw.re/vsphere67launch">vSphere 6.7 Launch Blogs</a></p>
-  </div>
 </article>
 
     <article class="post">

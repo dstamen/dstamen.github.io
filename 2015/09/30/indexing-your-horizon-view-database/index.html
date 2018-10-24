@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f30%2findexing-your-horizon-view-database%2f&amp;text=Indexing%20your%20Horizon%20View%20Database&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,29 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I am currently troubleshooting some issues with the Horizon event database having some performance issues. Working with support they pointed me to <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2094580">KB2094580.</a></p>
 
+<p>By Default the view event database is not indexed. I was curious as to way I always had issues pulling up events in the Horizon View Administrative interface, but as soon as I followed the steps, it was almost immediate now, where i use to have to wait an extremely long time.</p>
+
+<p>To create an index on your event database run the following command on your SQL event database. XXX is the prefix of your database, if you do not have a prefix set, just leave it as <strong>dbo.event_data</strong>.</p>
+
+<pre><code>CREATE INDEX IX_eventid ON dbo.XXXevent_data (eventid)
+</code></pre>
+
+<p><img src="/images/indexviewdb.png" alt="" /></p>
+
+<p><strong><em>Your Horizon View DB is now Indexed. Enjoy the Speed!</em></strong></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +886,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,22 +923,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I am currently troubleshooting some issues with the Horizon event database having some performance issues. Working with support they pointed me to <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2094580">KB2094580.</a></p>
-
-<p>By Default the view event database is not indexed. I was curious as to way I always had issues pulling up events in the Horizon View Administrative interface, but as soon as I followed the steps, it was almost immediate now, where i use to have to wait an extremely long time.</p>
-
-<p>To create an index on your event database run the following command on your SQL event database. XXX is the prefix of your database, if you do not have a prefix set, just leave it as <strong>dbo.event_data</strong>.</p>
-
-<pre><code>CREATE INDEX IX_eventid ON dbo.XXXevent_data (eventid)
-</code></pre>
-
-<p><img src="/images/indexviewdb.png" alt="" /></p>
-
-<p><strong><em>Your Horizon View DB is now Indexed. Enjoy the Speed!</em></strong></p>
-
-  </div>
 </article>
 
     <article class="post">

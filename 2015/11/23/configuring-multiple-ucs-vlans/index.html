@@ -713,7 +713,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f11%2f23%2fconfiguring-multiple-ucs-vlans%2f&amp;text=Configuring%20Multiple%20UCS%20VLAN%27s&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -819,11 +818,47 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.</p>
 
+<p>Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.</p>
+
+<p>The script can be found <a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1">here.</a></p>
+
+<pre><code># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
+# @davidstamen
+# http://davidstamen.com
+
+#Define Variables
+$cred = Get-Credential
+$ucs = &quot;ucs01&quot;
+$startvlan = &quot;100&quot;
+$endvlan = &quot;150&quot;
+$vnictemplate = &quot;vnic-template&quot;
+$vlangroup = &quot;vlan-group&quot;
+
+#Connect to UCS
+Connect-UCS $ucs -credential $cred
+
+#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
+for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &quot;$i&quot;}
+
+#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
+for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &quot;$i&quot;}
+Disconnect-UCS
+</code></pre>
+
+<p>You now are done! In my case I had to add 500 VLAN&rsquo;s, so this script saved me quite a bit of time.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -877,10 +912,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -916,40 +952,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.</p>
-
-<p>Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.</p>
-
-<p>The script can be found <a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1">here.</a></p>
-
-<pre><code># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
-# @davidstamen
-# http://davidstamen.com
-
-#Define Variables
-$cred = Get-Credential
-$ucs = &quot;ucs01&quot;
-$startvlan = &quot;100&quot;
-$endvlan = &quot;150&quot;
-$vnictemplate = &quot;vnic-template&quot;
-$vlangroup = &quot;vlan-group&quot;
-
-#Connect to UCS
-Connect-UCS $ucs -credential $cred
-
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &quot;$i&quot;}
-
-#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
-for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &quot;$i&quot;}
-Disconnect-UCS
-</code></pre>
-
-<p>You now are done! In my case I had to add 500 VLAN&rsquo;s, so this script saved me quite a bit of time.</p>
-
-  </div>
 </article>
 
     <article class="post">

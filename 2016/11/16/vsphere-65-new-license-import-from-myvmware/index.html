@@ -717,7 +717,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f11%2f16%2fvsphere-65-new-license-import-from-myvmware%2f&amp;text=vSphere%206.5%20-%20New%20License%20Import%20from%20My%20VMware&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -823,11 +822,60 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.</p>
 
+<p>When you are adding in your VMware licenses, you now have an option to <strong>Import License Keys Data&hellip;</strong></p>
+
+<p>To start you need to generate a report from <a href="http://my.vmware.com">my.vmware.com</a>.</p>
+
+<ul>
+<li><p>Log in and Navigate to <strong>Download Reports</strong></p></li>
+
+<li><p>Click on the <strong>Available Reports</strong> dropdown, and select the <strong>Product Licenses, Details and History.</strong> You will be asked which account you would like to select, and if there was a specific timeframe to select. In my case i have selected all accounts and then click Create.</p></li>
+
+<li><p>The report will take about a minute to generate. You can click on <strong>Refresh Table.</strong> Once the report shows as complete. You can download it as a CSV. You will need this to complete the next steps.</p></li>
+
+<li><p>Log into your vSphere 6.5 Flash client <strong>(<a href="http://fqdn/vsphere-client">http://fqdn/vsphere-client</a>)</strong> and click on <strong>Home</strong> and then <strong>Licenses.</strong> In the top right corner you will see an option to <strong>Import License Keys Data&hellip;</strong></p></li>
+</ul>
+
+<p><img src="/images/licensekey1.png" alt="" /></p>
+
+<ul>
+<li>Now you will browse to the file you downloaded from <strong>my.vmware.com.</strong> If you have not downloaded it yet, you can select on <strong>Learn how to generate this CSV file</strong> to be shown the steps. Click <strong>Next</strong>.</li>
+</ul>
+
+<p><img src="/images/licensekey2.png" alt="" /></p>
+
+<ul>
+<li>At this point, the uploaded CSV file will be analyzed to see what licenses can be imported into your vCenter Inventory. Click <strong>Next</strong>.</li>
+</ul>
+
+<p><img src="/images/licensekey3.png" alt="" /></p>
+
+<ul>
+<li>The next screen will show what licenses were part of the CSV and give you an Overview. Click <strong>Next</strong>.</li>
+</ul>
+
+<p><img src="/images/licensekey5.png" alt="" /></p>
+
+<ul>
+<li>If you have any existing keys, it will update them with the My VMware settings, if there are new keys it will add them with the notes from My VMware.</li>
+</ul>
+
+<p><img src="/images/licensekey4.png" alt="" /></p>
+
+<p>This new feature is definitely a step in the right direction. Maybe in vNext you can log directly into your My VMware account from the Web Client and have it automatically pull in your licenses.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -881,10 +929,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -920,53 +969,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.</p>
-
-<p>When you are adding in your VMware licenses, you now have an option to <strong>Import License Keys Data&hellip;</strong></p>
-
-<p>To start you need to generate a report from <a href="http://my.vmware.com">my.vmware.com</a>.</p>
-
-<ul>
-<li><p>Log in and Navigate to <strong>Download Reports</strong></p></li>
-
-<li><p>Click on the <strong>Available Reports</strong> dropdown, and select the <strong>Product Licenses, Details and History.</strong> You will be asked which account you would like to select, and if there was a specific timeframe to select. In my case i have selected all accounts and then click Create.</p></li>
-
-<li><p>The report will take about a minute to generate. You can click on <strong>Refresh Table.</strong> Once the report shows as complete. You can download it as a CSV. You will need this to complete the next steps.</p></li>
-
-<li><p>Log into your vSphere 6.5 Flash client <strong>(<a href="http://fqdn/vsphere-client">http://fqdn/vsphere-client</a>)</strong> and click on <strong>Home</strong> and then <strong>Licenses.</strong> In the top right corner you will see an option to <strong>Import License Keys Data&hellip;</strong></p></li>
-</ul>
-
-<p><img src="/images/licensekey1.png" alt="" /></p>
-
-<ul>
-<li>Now you will browse to the file you downloaded from <strong>my.vmware.com.</strong> If you have not downloaded it yet, you can select on <strong>Learn how to generate this CSV file</strong> to be shown the steps. Click <strong>Next</strong>.</li>
-</ul>
-
-<p><img src="/images/licensekey2.png" alt="" /></p>
-
-<ul>
-<li>At this point, the uploaded CSV file will be analyzed to see what licenses can be imported into your vCenter Inventory. Click <strong>Next</strong>.</li>
-</ul>
-
-<p><img src="/images/licensekey3.png" alt="" /></p>
-
-<ul>
-<li>The next screen will show what licenses were part of the CSV and give you an Overview. Click <strong>Next</strong>.</li>
-</ul>
-
-<p><img src="/images/licensekey5.png" alt="" /></p>
-
-<ul>
-<li>If you have any existing keys, it will update them with the My VMware settings, if there are new keys it will add them with the notes from My VMware.</li>
-</ul>
-
-<p><img src="/images/licensekey4.png" alt="" /></p>
-
-<p>This new feature is definitely a step in the right direction. Maybe in vNext you can log directly into your My VMware account from the Web Client and have it automatically pull in your licenses.</p>
-
-  </div>
 </article>
 
     <article class="post">

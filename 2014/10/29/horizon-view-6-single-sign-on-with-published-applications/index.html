@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f10%2f29%2fhorizon-view-6-single-sign-on-with-published-applications%2f&amp;text=Horizon%20View%206%20-%20Single%20Sign%20On%20with%20Published%20Applications&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,37 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.</p>
 
+<p>Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.</p>
+
+<p>For some reason when the Horizon View 3.0/3.1 client is installed within a VDI you are not given the option to &ldquo;Logon As Current User&rdquo; this is essentially the trick for this, so all credentials are automatically passed through. To work around this we need to use the vdm_Client.adm template to apply this settings at a group policy level.</p>
+
+<ol>
+<li>The first thing we need to do is download the Horizon 6 Group Policy Templates. They can be downloaded at the following link.</li>
+<li><a href="https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-601-GA&amp;productId=420&amp;rPId=6889">https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-601-GA&amp;productId=420&amp;rPId=6889</a></li>
+<li>Once we have the admin templates downloaded we need to create a new group policy using the vdm_Client.adm template.</li>
+<li>Load up Group Policy Management and create a new GPO</li>
+<li>Import the vdm_client.adm template by navigating to Computer Configuration/Policies/Administrative Templates, Right Click and Select Add template. Select vdm_client.adm and select ok.</li>
+<li>Once the client is loaded we can expand Classic Administrative Templates and now we see a new set of policies &ldquo;VMware View Client Configuration&rdquo;</li>
+<li>If we navigate to the &ldquo;Scripting Definitions&rdquo; subfolder we can configure the Server URL, and if needed any specific logon username, password and application launch settings.</li>
+<li>Next we will navigate to the &ldquo;Security Settings&rdquo; subfolder and we can configure &ldquo;Default value of the &lsquo;Log in as current user&rsquo; checkbox, by default this is disabled, so we will want to set this to be enabled.</li>
+<li>We can now close the group policy editor and review the settingsviewclient</li>
+<li>Upon launching the Horizon View client, it will now automatically login to the URL specified with the currently logged on user.</li>
+<li>Right Click the Published Application and you have two choices. Create Shortcut, or Add to Start Menu.</li>
+<li>Now when a user launches a shortcut the Horizon View client will seamlessly launch.</li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +894,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,30 +931,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.</p>
-
-<p>Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.</p>
-
-<p>For some reason when the Horizon View 3.0/3.1 client is installed within a VDI you are not given the option to &ldquo;Logon As Current User&rdquo; this is essentially the trick for this, so all credentials are automatically passed through. To work around this we need to use the vdm_Client.adm template to apply this settings at a group policy level.</p>
-
-<ol>
-<li>The first thing we need to do is download the Horizon 6 Group Policy Templates. They can be downloaded at the following link.</li>
-<li><a href="https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-601-GA&amp;productId=420&amp;rPId=6889">https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-601-GA&amp;productId=420&amp;rPId=6889</a></li>
-<li>Once we have the admin templates downloaded we need to create a new group policy using the vdm_Client.adm template.</li>
-<li>Load up Group Policy Management and create a new GPO</li>
-<li>Import the vdm_client.adm template by navigating to Computer Configuration/Policies/Administrative Templates, Right Click and Select Add template. Select vdm_client.adm and select ok.</li>
-<li>Once the client is loaded we can expand Classic Administrative Templates and now we see a new set of policies &ldquo;VMware View Client Configuration&rdquo;</li>
-<li>If we navigate to the &ldquo;Scripting Definitions&rdquo; subfolder we can configure the Server URL, and if needed any specific logon username, password and application launch settings.</li>
-<li>Next we will navigate to the &ldquo;Security Settings&rdquo; subfolder and we can configure &ldquo;Default value of the &lsquo;Log in as current user&rsquo; checkbox, by default this is disabled, so we will want to set this to be enabled.</li>
-<li>We can now close the group policy editor and review the settingsviewclient</li>
-<li>Upon launching the Horizon View client, it will now automatically login to the URL specified with the currently logged on user.</li>
-<li>Right Click the Published Application and you have two choices. Create Shortcut, or Add to Start Menu.</li>
-<li>Now when a user launches a shortcut the Horizon View client will seamlessly launch.</li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

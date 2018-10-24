@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f03%2f14%2fusing-ucs-powertool-to-configure-syslog-servers%2f&amp;text=Using%20UCS%20PowerTool%20to%20Configure%20Syslog%20Servers&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,63 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+</ul>
+
+<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSSyslog.ps1">Set-UcsSyslog.ps1</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
+
+<pre><code># UCS PowerTool Script that to set Syslog
+# @davidstamen
+# http://davidstamen.com
+
+#Define Variables
+$cred = Get-Credential
+$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
+$SyslogServer = &quot;syslog.lab.local&quot;
+$Name = &quot;primary&quot;
+$Facility = &quot;local7&quot;
+$AdminState = &quot;enabled&quot;
+$Severity = &quot;notifications&quot;
+
+#Cycles through each UCS setting values
+Foreach ($ucs in $domains) {
+  Connect-UCS $ucs -Credential $cred
+  Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
+  Disconnect-UCS
+}
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run .\Set-UcsSyslog.ps1</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +920,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -911,56 +963,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
-</ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSSyslog.ps1">Set-UcsSyslog.ps1</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
-<pre><code># UCS PowerTool Script that to set Syslog
-# @davidstamen
-# http://davidstamen.com
-
-#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$SyslogServer = &quot;syslog.lab.local&quot;
-$Name = &quot;primary&quot;
-$Facility = &quot;local7&quot;
-$AdminState = &quot;enabled&quot;
-$Severity = &quot;notifications&quot;
-
-#Cycles through each UCS setting values
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
-  Disconnect-UCS
-}
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run .\Set-UcsSyslog.ps1</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f05%2f21%2fvsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files%2f&amp;text=vSphere%205.x%20Storage%20vMotion%20Does%20Not%20Rename%20Virtual%20Machine%20Files.&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,30 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.</p>
 
+<ol>
+<li>Log into the vSphere Client as an Administrator</li>
+<li>Click <strong>Administration &gt; vCenter Server Settings</strong></li>
+<li>Click <strong>Advanced Settings</strong></li>
+<li>Add this advanced parameter key:</li>
+<li>provisioning.relocate.enableRename</li>
+<li>Set the value to: <strong>true</strong></li>
+<li>Click <strong>Add</strong></li>
+<li>Click <strong>OK</strong></li>
+<li>Restart the VMware VirtualCenter Server service for the changes to take effect</li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +887,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,23 +927,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.</p>
-
-<ol>
-<li>Log into the vSphere Client as an Administrator</li>
-<li>Click <strong>Administration &gt; vCenter Server Settings</strong></li>
-<li>Click <strong>Advanced Settings</strong></li>
-<li>Add this advanced parameter key:</li>
-<li>provisioning.relocate.enableRename</li>
-<li>Set the value to: <strong>true</strong></li>
-<li>Click <strong>Add</strong></li>
-<li>Click <strong>OK</strong></li>
-<li>Restart the VMware VirtualCenter Server service for the changes to take effect</li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

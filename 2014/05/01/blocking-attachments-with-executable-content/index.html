@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2014%2f05%2f01%2fblocking-attachments-with-executable-content%2f&amp;text=Blocking%20Attachments%20With%20Executable%20Content&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,29 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I don&rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).</p>
 
+<ol>
+<li>Login to Exchange Admin Center using administrative credentials</li>
+<li>On the left pane select &ldquo;Mail flow&rdquo;</li>
+<li>On the top pane select &ldquo; Rules&rdquo;</li>
+<li>Click on the &ldquo;+&rdquo; sign and select create a new rule</li>
+<li>Give a name to the rule and select &ldquo;more options&rdquo; at the bottom of the page.</li>
+<li>Under <strong>&ldquo;Apply the rule if&rdquo;</strong> Select <strong>&ldquo;Any attachment has executable content&rdquo;</strong></li>
+<li>Under <strong>&ldquo;Do the following&rdquo;</strong> Select &ldquo;Reject the message with explanation&rdquo; and input your text.</li>
+<li>Save the rule.</li>
+</ol>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +886,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,22 +923,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I don&rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).</p>
-
-<ol>
-<li>Login to Exchange Admin Center using administrative credentials</li>
-<li>On the left pane select &ldquo;Mail flow&rdquo;</li>
-<li>On the top pane select &ldquo; Rules&rdquo;</li>
-<li>Click on the &ldquo;+&rdquo; sign and select create a new rule</li>
-<li>Give a name to the rule and select &ldquo;more options&rdquo; at the bottom of the page.</li>
-<li>Under <strong>&ldquo;Apply the rule if&rdquo;</strong> Select <strong>&ldquo;Any attachment has executable content&rdquo;</strong></li>
-<li>Under <strong>&ldquo;Do the following&rdquo;</strong> Select &ldquo;Reject the message with explanation&rdquo; and input your text.</li>
-<li>Save the rule.</li>
-</ol>
-
-  </div>
 </article>
 
     <article class="post">

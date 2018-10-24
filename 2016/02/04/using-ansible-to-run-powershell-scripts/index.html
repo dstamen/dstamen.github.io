@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f02%2f04%2fusing-ansible-to-run-powershell-scripts%2f&amp;text=Using%20Ansible%20to%20Run%20Powershell%20Scripts&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,63 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      
 
+<p>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.</p>
+
+<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
+
+<ul>
+<li><a href="http://docs.ansible.com/ansible/intro_installation.html">ansible</a></li>
+<li><a href="http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm">ansible-winrm</a></li>
+</ul>
+
+<h4 id="link-to-git-project"><strong><em>Link to Git Project</em></strong></h4>
+
+<ul>
+<li><a href="https://github.com/dstamen/Ansible/tree/master/ansible_powershell">ansible_powershell</a></li>
+</ul>
+
+<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
+
+<p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.</em></p>
+
+<p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.</p>
+
+<pre><code>ansible_ssh_user: admin
+ansible_ssh_pass: password
+ansible_ssh_port: 5985
+ansible_connection: winrm
+ansible_winrm_server_cert_validation: ignore
+</code></pre>
+
+<p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
+
+<pre><code class="language-yaml">- name: Run Powershell Scripts
+  hosts: test
+  tasks:
+    - name: run a powershell script
+      script: scripts/hello.ps1
+      register: out
+    - debug: var=out
+</code></pre>
+
+<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
+
+<ul>
+<li>Run ansible-playbook powershell.yml -i hosts</li>
+</ul>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +924,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -912,56 +964,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    
-
-<p>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
-<ul>
-<li><a href="http://docs.ansible.com/ansible/intro_installation.html">ansible</a></li>
-<li><a href="http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm">ansible-winrm</a></li>
-</ul>
-
-<h4 id="link-to-git-project"><strong><em>Link to Git Project</em></strong></h4>
-
-<ul>
-<li><a href="https://github.com/dstamen/Ansible/tree/master/ansible_powershell">ansible_powershell</a></li>
-</ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
-<p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.</em></p>
-
-<p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.</p>
-
-<pre><code>ansible_ssh_user: admin
-ansible_ssh_pass: password
-ansible_ssh_port: 5985
-ansible_connection: winrm
-ansible_winrm_server_cert_validation: ignore
-</code></pre>
-
-<p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
-
-<pre><code class="language-yaml">- name: Run Powershell Scripts
-  hosts: test
-  tasks:
-    - name: run a powershell script
-      script: scripts/hello.ps1
-      register: out
-    - debug: var=out
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
-<ul>
-<li>Run ansible-playbook powershell.yml -i hosts</li>
-</ul>
-
-  </div>
 </article>
 
     <article class="post">

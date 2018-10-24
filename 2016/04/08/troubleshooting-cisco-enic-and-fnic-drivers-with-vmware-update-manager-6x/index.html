@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f04%2f08%2ftroubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x%2f&amp;text=Troubleshooting%20Cisco%20ENIC%20and%20FNIC%20Drivers%20with%20VMware%20Update%20Manager%206.x&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,56 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.</p>
 
+<p>I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.</p>
+
+<p>From what I have found the issue lies in the metadata of the offline bundle. As you can see in the below screenshot. The ENIC driver is showing 6.x but the FNIC driver is showing 5.x. In this case the ENIC driver works and the FNIC driver does not.</p>
+
+<p><strong>Note: The ENIC driver for 2.3.0.7 was recently updated to fix this, but every other driver is currently broken.</strong></p>
+
+<p><img src="/images/vummetadata.png" alt="" /></p>
+
+<p>To update the metadata of the offline bundle and get VUM to work you need to perform the following steps.</p>
+
+<ul>
+<li>Make sure you have 7zip and setup an editor within 7zip. I used notepad++.</li>
+</ul>
+
+<p><img src="/images/7zipeditor.png" alt="" /></p>
+
+<ul>
+<li>Open the offline_bundle zip file</li>
+<li>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
+</ul>
+
+<p><img src="/images/vendorindexxml.png" alt="" /></p>
+
+<ul>
+<li>Open up the metadata.zip file</li>
+<li>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
+</ul>
+
+<p><img src="/images/vendorindexxml.png" alt="" /></p>
+
+<ul>
+<li>Edit the vmware.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
+</ul>
+
+<p><img src="/images/vmwarexml.png" alt="" /></p>
+
+<p>If you perform these steps, you can now import your customized offline bundle and it will accurately report 6.x in VUM and allow you to remediate your hosts. Please post any feedback below!</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +913,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -908,49 +953,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.</p>
-
-<p>I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.</p>
-
-<p>From what I have found the issue lies in the metadata of the offline bundle. As you can see in the below screenshot. The ENIC driver is showing 6.x but the FNIC driver is showing 5.x. In this case the ENIC driver works and the FNIC driver does not.</p>
-
-<p><strong>Note: The ENIC driver for 2.3.0.7 was recently updated to fix this, but every other driver is currently broken.</strong></p>
-
-<p><img src="/images/vummetadata.png" alt="" /></p>
-
-<p>To update the metadata of the offline bundle and get VUM to work you need to perform the following steps.</p>
-
-<ul>
-<li>Make sure you have 7zip and setup an editor within 7zip. I used notepad++.</li>
-</ul>
-
-<p><img src="/images/7zipeditor.png" alt="" /></p>
-
-<ul>
-<li>Open the offline_bundle zip file</li>
-<li>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
-</ul>
-
-<p><img src="/images/vendorindexxml.png" alt="" /></p>
-
-<ul>
-<li>Open up the metadata.zip file</li>
-<li>Edit the vendor-index.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
-</ul>
-
-<p><img src="/images/vendorindexxml.png" alt="" /></p>
-
-<ul>
-<li>Edit the vmware.xml file and replace the <strong>5</strong> with <strong>6</strong></li>
-</ul>
-
-<p><img src="/images/vmwarexml.png" alt="" /></p>
-
-<p>If you perform these steps, you can now import your customized offline bundle and it will accurately report 6.x in VUM and allow you to remediate your hosts. Please post any feedback below!</p>
-
-  </div>
 </article>
 
     <article class="post">

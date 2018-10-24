@@ -705,7 +705,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f&amp;text=PowerCLI%20-%20Troubleshooting%20Multiple%20Default%20Servers&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -811,11 +810,25 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I use a customized version of <a href="http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/">http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/</a> by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.</p>
 
+<p>Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set. You can review the 3 scope options <a href="https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html">https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html</a></p>
+
+<p>See below for command to run, for Session scope which is valid for the current vSphere PowerCLI session only and overrides any User and All Users settings.</p>
+
+<pre><code>Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:$false
+</code></pre>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -869,10 +882,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -905,18 +919,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I use a customized version of <a href="http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/">http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/</a> by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.</p>
-
-<p>Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set. You can review the 3 scope options <a href="https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html">https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html</a></p>
-
-<p>See below for command to run, for Session scope which is valid for the current vSphere PowerCLI session only and overrides any User and All Users settings.</p>
-
-<pre><code>Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:$false
-</code></pre>
-
-  </div>
 </article>
 
     <article class="post">

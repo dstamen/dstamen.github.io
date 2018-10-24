@@ -713,7 +713,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f21%2funable-to-join-psc-to-domain-via-webclient%2f&amp;text=Unable%20to%20join%20PSC%20to%20Domain%20via%20Webclient&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -819,11 +818,46 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.</p>
 
+<p>When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: <strong>&ldquo;java.lang.reflect.invocationTargetException&rdquo;</strong></p>
+
+<p><img src="/images/pscdomainerror.png" alt="" /></p>
+
+<p>There are currently two workarounds now with 6.0U1 I am aware of.</p>
+
+<ul>
+<li>The first method is to join to the domain using the CLI.</li>
+</ul>
+
+<pre><code>/opt/likewise/bin/domainjoin-cli join domain username
+</code></pre>
+
+<ul>
+<li>The second method is to use the new PSC interface to join to the domain.
+
+<ul>
+<li>Navigate to <strong><a href="https://fqdnofpsc/psc">https://fqdnofpsc/psc</a></strong></li>
+<li>Select <strong>Appliance Settings</strong></li>
+<li>Click on <strong>Manage</strong></li>
+<li>Under <strong>Active Directory</strong> Select Join and enter in your details</li>
+</ul></li>
+</ul>
+
+<p><img src="/images/pscdomainerror2.png" alt="" /></p>
+
+<p>Why this method works here, and not in the VCSA Webclient is confusing to me, however here you go. Hopefully it helps you resolve the issue the next time you come across it.</p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -877,10 +911,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -916,39 +951,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.</p>
-
-<p>When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: <strong>&ldquo;java.lang.reflect.invocationTargetException&rdquo;</strong></p>
-
-<p><img src="/images/pscdomainerror.png" alt="" /></p>
-
-<p>There are currently two workarounds now with 6.0U1 I am aware of.</p>
-
-<ul>
-<li>The first method is to join to the domain using the CLI.</li>
-</ul>
-
-<pre><code>/opt/likewise/bin/domainjoin-cli join domain username
-</code></pre>
-
-<ul>
-<li>The second method is to use the new PSC interface to join to the domain.
-
-<ul>
-<li>Navigate to <strong><a href="https://fqdnofpsc/psc">https://fqdnofpsc/psc</a></strong></li>
-<li>Select <strong>Appliance Settings</strong></li>
-<li>Click on <strong>Manage</strong></li>
-<li>Under <strong>Active Directory</strong> Select Join and enter in your details</li>
-</ul></li>
-</ul>
-
-<p><img src="/images/pscdomainerror2.png" alt="" /></p>
-
-<p>Why this method works here, and not in the VCSA Webclient is confusing to me, however here you go. Hopefully it helps you resolve the issue the next time you come across it.</p>
-
-  </div>
 </article>
 
     <article class="post">

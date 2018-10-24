@@ -709,7 +709,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2015%2f09%2f22%2fupgrading-vrealize-operations-horizon-adapter-to-61%2f&amp;text=Upgrading%20vRealize%20Operations%20Horizon%20Adapter%20to%206.1&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -815,11 +814,49 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
+  <div id="content">
+      <p>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process. This guide will show how to upgrade the Horizon Adapter for vROPS.</p>
 
+<p>To upgrade from vRealize Operations Horizon Adapter to the most recent version, follow these steps.</p>
+
+<p><a href="https://my.vmware.com/web/vmware/info?slug=desktop_end_user_computing/vmware_vrealize_operations_for_horizon_and_published_applications/6_0">Download</a> the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.</p>
+
+<ul>
+<li>Log on to the View Connection server where the previous broker agent is installed.
+
+<ul>
+<li>Select the <strong>vRealize Operations View Broker Agent Settings</strong> and stop the Broker Agent Service.</li>
+</ul></li>
+<li>Log on to the vRealize Operations Manager user interface with administrative permissions.
+
+<ul>
+<li>On the left pane select <strong>Administration</strong> and then <strong>Solutions.</strong></li>
+<li>On the <strong>Solutions</strong> tab, select <strong>VMware Horizon</strong> and click the Add icon.</li>
+<li>Browse to the <strong>Horizon Adapter</strong> that you downloaded and select the .PAK file.</li>
+<li>Select <strong>Install the PAK file even if it is already installed. and Reset predefined content to a newer version provided by this update.</strong> and click <strong>Upload</strong>
+<img src="/images/viewvrops61upgrade1.png" alt="" /></li>
+<li>Accept the <strong>EULA.</strong></li>
+<li>Click <strong>Finish</strong> when the upgrade Completes.</li>
+</ul></li>
+<li>Log back on to the View Connection Server where the previous broker agent is installed.
+
+<ul>
+<li>Run the <strong>vRealize Operations for Horizon Broker Agent</strong> file that you downloaded above.</li>
+<li>When finished, select the <strong>vRealize Operations View Broker Agent Settings</strong> and start the Broker Agent Service.</li>
+</ul></li>
+</ul>
+
+<p><strong><em>vRealize Operations Horizon Adapter is now upgraded! Now time to play with the new features.</em></strong></p>
+
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
 
 
 <li>
@@ -873,10 +910,11 @@ if (!doNotTrack) {
 
 
 
-      </ul>
-    </section>
-  
-  <footer>
+  </ul>
+</section>
+
+<hr>
+    <footer>
     <ul class="stats">
   <li class="categories">
     <ul>
@@ -909,42 +947,6 @@ if (!doNotTrack) {
 </ul>
 
   </footer>
-
-  <div id="content">
-    <p>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process. This guide will show how to upgrade the Horizon Adapter for vROPS.</p>
-
-<p>To upgrade from vRealize Operations Horizon Adapter to the most recent version, follow these steps.</p>
-
-<p><a href="https://my.vmware.com/web/vmware/info?slug=desktop_end_user_computing/vmware_vrealize_operations_for_horizon_and_published_applications/6_0">Download</a> the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.</p>
-
-<ul>
-<li>Log on to the View Connection server where the previous broker agent is installed.
-
-<ul>
-<li>Select the <strong>vRealize Operations View Broker Agent Settings</strong> and stop the Broker Agent Service.</li>
-</ul></li>
-<li>Log on to the vRealize Operations Manager user interface with administrative permissions.
-
-<ul>
-<li>On the left pane select <strong>Administration</strong> and then <strong>Solutions.</strong></li>
-<li>On the <strong>Solutions</strong> tab, select <strong>VMware Horizon</strong> and click the Add icon.</li>
-<li>Browse to the <strong>Horizon Adapter</strong> that you downloaded and select the .PAK file.</li>
-<li>Select <strong>Install the PAK file even if it is already installed. and Reset predefined content to a newer version provided by this update.</strong> and click <strong>Upload</strong>
-<img src="/images/viewvrops61upgrade1.png" alt="" /></li>
-<li>Accept the <strong>EULA.</strong></li>
-<li>Click <strong>Finish</strong> when the upgrade Completes.</li>
-</ul></li>
-<li>Log back on to the View Connection Server where the previous broker agent is installed.
-
-<ul>
-<li>Run the <strong>vRealize Operations for Horizon Broker Agent</strong> file that you downloaded above.</li>
-<li>When finished, select the <strong>vRealize Operations View Broker Agent Settings</strong> and start the Broker Agent Service.</li>
-</ul></li>
-</ul>
-
-<p><strong><em>vRealize Operations Horizon Adapter is now upgraded! Now time to play with the new features.</em></strong></p>
-
-  </div>
 </article>
 
     <article class="post">

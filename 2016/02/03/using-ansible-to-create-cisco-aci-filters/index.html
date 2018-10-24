@@ -701,7 +701,6 @@ if (!doNotTrack) {
             
 
 
-
 <li>
   <a href="//twitter.com/share?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;text=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters&amp;via=davidstamen" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
@@ -807,106 +806,8 @@ if (!doNotTrack) {
     
 
 
-  
-    <section id="social-share">
-      <ul class="icons">
-        
-
-
-
-<li>
-  <a href="//twitter.com/share?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;text=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters&amp;via=davidstamen" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;title=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;title=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-      </ul>
-    </section>
-  
-  <footer>
-    <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/automation">Automation</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/ansible">Ansible</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/cisco-aci">Cisco ACI</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-
   <div id="content">
-    
+      
 
 <p>In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries. The below example are the required ports for Horizon View.</p>
 
@@ -960,7 +861,108 @@ if (!doNotTrack) {
 <li>Run ansible-playbook horizonviewports.yml -i hosts</li>
 </ul>
 
-  </div>
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;text=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;title=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2016%2f02%2f03%2fusing-ansible-to-create-cisco-aci-filters%2f&amp;title=Using%20Ansible%20to%20Create%20Cisco%20ACI%20Filters" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+  </ul>
+</section>
+
+<hr>
+    <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/automation">Automation</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/ansible">Ansible</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/cisco-aci">Cisco ACI</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
 </article>
 
     <article class="post">
