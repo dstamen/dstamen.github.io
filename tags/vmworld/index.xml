@@ -6,10 +6,20 @@
     <description>Recent content in VMworld on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jul 2018 10:19:35 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 18 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vmworld/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VMworld EU - Sessions and Events</title>
+      <link>/2018/10/18/vmworld-eu---sessions-and-events/</link>
+      <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/18/vmworld-eu---sessions-and-events/</guid>
+      <description>&lt;p&gt;VMworld EU is around the corner and just like VMworld US I will be quite busy! If you are interested in where to find me, look below to see some my planned sessions.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>VMworld 2018 - Sessions and Events</title>
