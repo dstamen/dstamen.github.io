@@ -1,0 +1,1606 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Why and How To Upgrade to vSphere 6.7 U1",
+        "headline" : "Why and How To Upgrade to vSphere 6.7 U1",
+        "description" : "<p>vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-10-11 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-10-11 00:00:00 &#43;0000 UTC",
+        "url" : "/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/",
+        "wordCount" : "1082",
+        "keywords" : [ "vSphere Upgrade","vSphere 6.7","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Why and How To Upgrade to vSphere 6.7 U1</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+  
+    
+  
+
+  
+
+  <link rel="apple-touch-icon-precomposed" href='/favicon/apple-touch-icon-precomposed.png'>
+  <link rel="icon" href='/favicon/favicon.png'>
+  
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content='/favicon/mstile.png'>
+  <meta name="application-name" content="davidstamen.com">
+  <meta name="msapplication-tooltip" content="a blog about virtualization and stuff">
+  <meta name="msapplication-config" content='/favicon/ieconfig.xml'>
+
+
+
+        
+        
+            
+                <meta name="description" content="a blog about virtualization and stuff">
+            
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/logo.png"/>
+
+<meta name="twitter:title" content="Why and How To Upgrade to vSphere 6.7 U1"/>
+<meta name="twitter:description" content="vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+"/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+        <meta property="og:title" content="Why and How To Upgrade to vSphere 6.7 U1" />
+<meta property="og:description" content="vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" />
+
+  <meta property="og:image" content="/images/logo.png" />
+
+
+
+<meta property="article:published_time" content="2018-10-11T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-10-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Why and How To Upgrade to vSphere 6.7 U1">
+<meta itemprop="description" content="vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+">
+
+
+<meta itemprop="datePublished" content="2018-10-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1082">
+
+  <meta itemprop="image" content="/images/logo.png">
+
+
+
+<meta itemprop="keywords" content="vSphere Upgrade,vSphere 6.7," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-hashtag">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/resources/">
+                            <i class="fa fa-link">&nbsp;</i>Resources
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/acclaim/">
+                            <i class="fa fa-list">&nbsp;</i>Acclaim
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-question">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-hashtag">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/resources/">
+                            <h3>
+                                <i class="fa fa-link">&nbsp;</i>Resources
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/acclaim/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Acclaim
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-question">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-18'>
+                                    October 18, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-11'>
+                                    October 11, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-08'>
+                                    October 8, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-07'>
+                                    October 7, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-06'>
+                                    October 6, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-05'>
+                                    October 5, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/">L1 Terminal Fault (L1TF) Patching Considerations</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-15'>
+                                    August 15, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/07/18/vmworld-2018-sessions-events/">VMworld 2018 - Sessions and Events</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/07/18/vmworld-2018-sessions-events/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-05-23'>
+                                    May 23, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-04-17'>
+                                    April 17, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;text=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;title=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;title=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-10-11'>
+            October 11, 2018</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" class="image featured">
+            <img src="/images//" alt="" height="50%" width="50%">
+        </a>
+    
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;text=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;title=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2018%2f10%2f11%2fwhy-and-how-to-upgrade-to-vsphere-6.7-u1%2f&amp;title=Why%20and%20How%20To%20Upgrade%20to%20vSphere%206.7%20U1" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/vsphere-upgrade">vSphere Upgrade</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div id="content">
+    <p>vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+</p>
+
+<h2 id="why-should-i-upgrade-to-vsphere-6-7-update-1">Why should I upgrade to vSphere 6.7 Update 1?</h2>
+
+<p>vSphere 6.7 Update 1 has been a much anticipated release, it has many features folks have been waiting for some time. To highlight a few we now have a converge tool to migrate from an External PSC topology to an Embedded PSC topology, we now have a 100% Parity HTML-5 vSphere Client and more&hellip;. <a href="http://emadyounis.com/whats-new-in-vcenter-server-6-7-update-1/">My colleague Emad Younis has a great rundown on the new vSphere 6.7 Update 1 features.</a></p>
+
+<h2 id="how-do-i-upgrade-my-vsphere-environment-to-vsphere-6-7-update-1">How do I upgrade my vSphere Environment to vSphere 6.7 Update 1?</h2>
+
+<p>Actually upgrading to vSphere 6.7 Update 1 can be quite easy, but we don&rsquo;t just want to jump into the upgrade. We want to make sure we do some planning prior to performing our upgrade.</p>
+
+<h3 id="planning-for-your-vsphere-upgrade-to-vsphere-6-7-update-1">Planning for your vSphere Upgrade to vSphere 6.7 Update 1</h3>
+
+<p>Before we even begin to look at how to upgrade we need to make sure we don&rsquo;t have any roadblocks that will stop us from upgrading. First, we want to review the <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-671-release-notes.html#installupgrade">vCenter Server 6.7 Update 1</a> and <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-esxi-671-release-notes.html">ESXi 6.7 Update 1</a> release notes.</p>
+
+<p>When reviewing the vCenter Server release notes we want to pay close attention to the <strong>Installation and Upgrade Notes for This Release</strong> section as we would highlight any blocked paths such as upgrading from vSphere 6.5 Update 2 to vSphere 6.7 GA. We also want to review the <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-671-release-notes.html#knownissues">known issues</a> section of the release notes to make sure that none of the current known issues would impact us once we have upgraded.</p>
+
+<p>Once we have validated that we do not have any blockers to upgrade the next thing we want to do is validate compatibility. We need to validate with our 3rd party solutions such as backup, monitoring, security tools are compatible to the release are moving to. We also need to review the <a href="http://partnerweb.vmware.com/comp_guide2/sim/interop_matrix.php">VMware Product Interoperability Matrices</a> to make sure our VMware Products are Interoperable and we have a supported upgrade path as well. Last but not least we need to validate our hardware against the <a href="https://www.vmware.com/resources/compatibility/search.php">VMware Compatibility Guide</a> or the <a href="https://labs.vmware.com/flings/esxi-compatibility-checker">ESXi Compatibility Checker Fling.</a></p>
+
+<p>If we are using multiple VMware products and some are in need of upgrade we want to consult <a href="https://kb.vmware.com/s/article/53710">KB53710</a> which will tell us the update sequence for vSphere 6.7 and its compatible products. A key consideration here is that vCenter Server is actually #8 on the list so quite a few products may need to be upgraded prior to starting your core vSphere Upgrade.</p>
+
+<p>One last thing to consider when planning your upgrade to vSphere 6.7 Update 1 is your deployment topology. With vSphere 6.5 Update 2 and vSphere 6.7 we now support Enhanced LInked Mode for Embedded vCenter Server deployments. However, this was only available for greenfield or expanded deployments. With vSphere 6.7 Update 1 we now include a <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html">converge tool</a> that will allow you to migrate from an External PSC vCenter Server deployment to an Embedded PSC vCenter Server deployment. This is done as a post upgrade task and requires all PSC and vCenter Servers within the SSO domain to be upgraded to vSphere 6.7 Update 1 first.</p>
+
+<p>Once we have reviewed and planned our upgrade we can now begin to actually perform our upgrade.</p>
+
+<h3 id="performing-your-vsphere-upgrade-to-vsphere-6-7-update-1">Performing your vSphere Upgrade to vSphere 6.7 Update 1</h3>
+
+<p>I covered the actual upgrade process in this <a href="https://blogs.vmware.com/vsphere/2018/09/introduction-to-automating-your-vsphere-upgrade.html">blog series on Automating your vSphere Upgrade</a> but we want to cover the specifics of upgrading to vSphere 6.7 Update 1.</p>
+
+<p>Before starting our actual upgrade we want to make sure to backup our vCenter Server whether it is with the file-based backup or an image-based backup.</p>
+
+<h5 id="psc-vcenter-server">PSC / vCenter Server</h5>
+
+<p>There is no in-place upgrade to upgrade from 6.0 or 6.5, whether you are doing a migration (windows to vcsa) or upgrade (vcsa to vcsa) the process is the same, when utilizing the vCenter Server Appliance installer to upgrade we deploy a brand new vSphere 6.7 U1 appliance and then export and import the data. Do NOT try to attach the 6.7 U1 iso to your 6.0/6.5 appliance and upgrade in place as it will not work.</p>
+
+<p>When upgrading from vSphere 6.7 to 6.7 U1 this can be done through the vCenter Appliance Management Interface (VAMI). Please excercise caution when applying updates as folks may not realize that when going this route a major release could be occuring as it shows up as just a patch. This is where the planning stages we mentioned above come into place. The upgrade from vSphere 6.7 to 6.7 U1 is done as in-place upgrade so make sure you understand the upgrade plan depending on which version you are upgrading from.</p>
+
+<p>You can find more information on upgrading your PSC/vCenter Server <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.upgrade.doc/GUID-9ED7B32A-019F-4A97-BC58-1A9BF7D16C57.html">here.</a></p>
+
+<h5 id="esxi-hosts">ESXi Hosts</h5>
+
+<p>As far as your ESXi hosts go, we do have a supported upgrade path to do an in-place upgrade. Doing some workshops with customers I have heard that in the past they have opted to not use vSphere Update Manager (VUM) and choose to either rebuild or attach the ISO manually and upgrade and this is definitely not ideal!</p>
+
+<p>The recommended approach to upgrade your ESXi Hosts should be to utilize VUM to import the ESXi 6.7 U1 image, then create an upgrade baseline and remediate your cluster. This allows VUM to orchestrate the upgrades of the vCenter Server clusters and patch 1 host at a time without any impact to your running guests</p>
+
+<p>You can find more information on upgrading your ESXi Hosts <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.esxi.upgrade.doc/GUID-65B5B313-3DBB-4490-82D2-A225446F4C99.html">here.</a></p>
+
+<h5 id="vm-tools-vm-compatibility">VM Tools / VM Compatibility</h5>
+
+<p>Once your ESXi hosts have been updated to 6.7 U1 you may see that there are newer versions of tools available as well as a newer version of VM Compatibility (v14). VMware Tools should always be updated to the latest version, however when it comes to VM Compatibility we recomend only upgrading it when newer features need to be exposed. At a minimum you should be running v11 to protect against Spectre/Meltdown and only upgrading to v14 if you need features such as VBS, vTPM or Per-VM EVC.</p>
+
+<p>You can find more information on upgrading your Virtual Machines <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-EE77B0A9-F8FF-4785-BEAD-B6F04EE04492.html">here.</a></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When upgrading your vSphere environment, it does not help to rush and upgrade as soon as you can. To execute a successful upgrade it takes some planning to make sure you wont have any issues and need to rollback. Hopefully this has helped you and if you have any questions leave them below!</p>
+  </div>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidstamen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/"
+                class="button big previous">Automating the Upgrade of the Virtual Distributed Switch</a></li>
+    
+
+    
+        <li><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/"
+                class="button big next">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/me2.jpg" width="300" alt="me" /></a>
+      
+    
+    
+      <header>
+        <h2>David Stamen</h2>
+        <p>technical marketing engineer at vmware</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  
+  
+  
+
+  
+ <section>
+  <h3>Recent Posts</h3>
+   <section class="recent-posts">
+    <div class="mini-posts">
+
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/">L1 Terminal Fault (L1TF) Patching Considerations</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/07/18/vmworld-2018-sessions-events/">VMworld 2018 - Sessions and Events</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></h6>
+            </header>
+          </article>
+        
+          <article class=>
+            <header>
+                <h6><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a></h6>
+            </header>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+ </section>
+ <section>
+ <h3>Tag Cloud</h3>
+  
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/ansible" style="font-size: 12px;">Ansible</a>
+        
+        
+        <a href="/tags/autodeploy" style="font-size: 12px;">AutoDeploy</a>
+        
+        
+        <a href="/tags/availability" style="font-size: 12px;">Availability</a>
+        
+        
+        <a href="/tags/career" style="font-size: 12px;">Career</a>
+        
+        
+        <a href="/tags/chrome" style="font-size: 12px;">Chrome</a>
+        
+        
+        <a href="/tags/cisco-aci" style="font-size: 12px;">Cisco ACI</a>
+        
+        
+        <a href="/tags/cisco-champion" style="font-size: 12px;">Cisco Champion</a>
+        
+        
+        <a href="/tags/cisco-ucs" style="font-size: 12px;">Cisco UCS</a>
+        
+        
+        <a href="/tags/content-library" style="font-size: 12px;">Content Library</a>
+        
+        
+        <a href="/tags/dump-collector" style="font-size: 12px;">Dump Collector</a>
+        
+        
+        <a href="/tags/esxcli" style="font-size: 12px;">ESXCLI</a>
+        
+        
+        <a href="/tags/esxi" style="font-size: 12px;">ESXi</a>
+        
+        
+        <a href="/tags/exchange" style="font-size: 12px;">Exchange</a>
+        
+        
+        <a href="/tags/forestry.io" style="font-size: 12px;">Forestry.io</a>
+        
+        
+        <a href="/tags/ha" style="font-size: 12px;">HA</a>
+        
+        
+        <a href="/tags/homelab" style="font-size: 12px;">HomeLab</a>
+        
+        
+        <a href="/tags/horizon-view" style="font-size: 12px;">Horizon View</a>
+        
+        
+        <a href="/tags/hugo" style="font-size: 12px;">Hugo</a>
+        
+        
+        <a href="/tags/jekyll" style="font-size: 12px;">Jekyll</a>
+        
+        
+        <a href="/tags/kvm" style="font-size: 12px;">KVM</a>
+        
+        
+        <a href="/tags/l1tf" style="font-size: 12px;">L1TF</a>
+        
+        
+        <a href="/tags/lifecycle" style="font-size: 12px;">Lifecycle</a>
+        
+        
+        <a href="/tags/myvmware" style="font-size: 12px;">MyVMware</a>
+        
+        
+        <a href="/tags/network" style="font-size: 12px;">Network</a>
+        
+        
+        <a href="/tags/nginx" style="font-size: 12px;">Nginx</a>
+        
+        
+        <a href="/tags/psc" style="font-size: 12px;">PSC</a>
+        
+        
+        <a href="/tags/pernix-pro" style="font-size: 12px;">Pernix Pro</a>
+        
+        
+        <a href="/tags/powercli" style="font-size: 12px;">PowerCLI</a>
+        
+        
+        <a href="/tags/powerdns" style="font-size: 12px;">PowerDNS</a>
+        
+        
+        <a href="/tags/powershell" style="font-size: 12px;">Powershell</a>
+        
+        
+        <a href="/tags/ravello" style="font-size: 12px;">Ravello</a>
+        
+        
+        <a href="/tags/snmp" style="font-size: 12px;">SNMP</a>
+        
+        
+        <a href="/tags/srm" style="font-size: 12px;">SRM</a>
+        
+        
+        <a href="/tags/ssh" style="font-size: 12px;">SSH</a>
+        
+        
+        <a href="/tags/standdesk" style="font-size: 12px;">StandDesk</a>
+        
+        
+        <a href="/tags/storage" style="font-size: 12px;">Storage</a>
+        
+        
+        <a href="/tags/study-guide" style="font-size: 12px;">Study Guide</a>
+        
+        
+        <a href="/tags/syslog" style="font-size: 12px;">Syslog</a>
+        
+        
+        <a href="/tags/sysprep" style="font-size: 12px;">Sysprep</a>
+        
+        
+        <a href="/tags/trend-micro" style="font-size: 12px;">Trend Micro</a>
+        
+        
+        <a href="/tags/usg" style="font-size: 12px;">USG</a>
+        
+        
+        <a href="/tags/ubuntu" style="font-size: 12px;">Ubuntu</a>
+        
+        
+        <a href="/tags/unifi" style="font-size: 12px;">Unifi</a>
+        
+        
+        <a href="/tags/update-manager" style="font-size: 12px;">Update Manager</a>
+        
+        
+        <a href="/tags/vcap6-dcv-deploy" style="font-size: 12px;">VCAP6-DCV Deploy</a>
+        
+        
+        <a href="/tags/vcap6-dcv-design" style="font-size: 12px;">VCAP6-DCV Design</a>
+        
+        
+        <a href="/tags/vcap6.5-dcv-design" style="font-size: 12px;">VCAP6.5-DCV Design</a>
+        
+        
+        <a href="/tags/vcp6-dcv" style="font-size: 12px;">VCP6-DCV</a>
+        
+        
+        <a href="/tags/vdp" style="font-size: 12px;">VDP</a>
+        
+        
+        <a href="/tags/vm-compatibility" style="font-size: 12px;">VM Compatibility</a>
+        
+        
+        <a href="/tags/vm-tools" style="font-size: 12px;">VM Tools</a>
+        
+        
+        <a href="/tags/vmware-fling" style="font-size: 12px;">VMware Fling</a>
+        
+        
+        <a href="/tags/vmworld" style="font-size: 12px;">VMworld</a>
+        
+        
+        <a href="/tags/vpn" style="font-size: 12px;">VPN</a>
+        
+        
+        <a href="/tags/vagrant" style="font-size: 12px;">Vagrant</a>
+        
+        
+        <a href="/tags/veeam" style="font-size: 12px;">Veeam</a>
+        
+        
+        <a href="/tags/vulnerability" style="font-size: 12px;">Vulnerability</a>
+        
+        
+        <a href="/tags/webclient" style="font-size: 12px;">Webclient</a>
+        
+        
+        <a href="/tags/windows" style="font-size: 12px;">Windows</a>
+        
+        
+        <a href="/tags/vcenter-ha" style="font-size: 12px;">vCenter HA</a>
+        
+        
+        <a href="/tags/vcenter-server" style="font-size: 12px;">vCenter Server</a>
+        
+        
+        <a href="/tags/vcloud-air" style="font-size: 12px;">vCloud Air</a>
+        
+        
+        <a href="/tags/vexpert" style="font-size: 12px;">vExpert</a>
+        
+        
+        <a href="/tags/vma" style="font-size: 12px;">vMA</a>
+        
+        
+        <a href="/tags/vmotion" style="font-size: 12px;">vMotion</a>
+        
+        
+        <a href="/tags/vra" style="font-size: 12px;">vRA</a>
+        
+        
+        <a href="/tags/vrops" style="font-size: 12px;">vROPS</a>
+        
+        
+        <a href="/tags/vsphere-5.1" style="font-size: 12px;">vSphere 5.1</a>
+        
+        
+        <a href="/tags/vsphere-5.5" style="font-size: 12px;">vSphere 5.5</a>
+        
+        
+        <a href="/tags/vsphere-6.0" style="font-size: 12px;">vSphere 6.0</a>
+        
+        
+        <a href="/tags/vsphere-6.5" style="font-size: 12px;">vSphere 6.5</a>
+        
+        
+        <a href="/tags/vsphere-6.7" style="font-size: 12px;">vSphere 6.7</a>
+        
+        
+        <a href="/tags/vsphere-upgrade" style="font-size: 12px;">vSphere Upgrade</a>
+        
+    </div>
+</div>
+
+
+
+
+</section>
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          davidstamen.com
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

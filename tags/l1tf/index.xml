@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L1TF on davidstamen.com</title>
+    <link>/tags/l1tf/</link>
+    <description>Recent content in L1TF on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Aug 2018 10:47:06 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/l1tf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>L1 Terminal Fault (L1TF) Patching Considerations</title>
+      <link>/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/</link>
+      <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
+      
+      <guid>/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/</guid>
+      <description>&lt;p&gt;On Tuesday August 14th, Intel Released their news on the latest vulnerability &lt;strong&gt;L1 Terminal Fault (L1TF) or ForeShadow&lt;/strong&gt;. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

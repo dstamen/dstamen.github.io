@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMworld on davidstamen.com</title>
+    <link>/tags/vmworld/</link>
+    <description>Recent content in VMworld on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Jul 2018 10:19:35 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/vmworld/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMworld 2018 - Sessions and Events</title>
+      <link>/2018/07/18/vmworld-2018-sessions-events/</link>
+      <pubDate>Wed, 18 Jul 2018 10:19:35 -0400</pubDate>
+      
+      <guid>/2018/07/18/vmworld-2018-sessions-events/</guid>
+      <description>&lt;p&gt;This will be my first VMworld attending as an employee and quite a bit of things will be going on. Just in case anyone was interesting in vSphere Upgrades I wanted to share out some key sessions that I recommend including my own.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
