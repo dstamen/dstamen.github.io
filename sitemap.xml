@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</loc>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/10/24/vmworld-eu-2018-sessions-events/</loc>
     <lastmod>2018-10-24T00:00:00+00:00</lastmod>
   </url>
@@ -700,7 +705,7 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1032,7 +1037,7 @@
   
   <url>
     <loc>/tags/update-manager/</loc>
-    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1116,7 +1121,7 @@
   
   <url>
     <loc>/categories/vmware/</loc>
-    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1176,7 +1181,7 @@
   
   <url>
     <loc>/tags/vsphere-6.7/</loc>
-    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1218,7 +1223,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
