@@ -710,32 +710,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/11/21/vsphere-65-vcha-issues/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.</p>
   <footer>
     <ul class="actions">
@@ -798,32 +772,6 @@ if (!doNotTrack) {
         
     </div>
 </header>
-
-  
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/11/16/vsphere-65-new-license-import-from-myvmware/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
 
   
   <p>So as everyone has probably seen, <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html">vSphere 6.5</a> is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.</p>
@@ -890,32 +838,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across <a href="http://www.lucd.info/2011/06/11/dvswitch-scripting-part-9-traffic-shaping/">@Lucd</a> and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&rsquo;s.</p>
   <footer>
     <ul class="actions">
@@ -978,32 +900,6 @@ if (!doNotTrack) {
         
     </div>
 </header>
-
-  
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
 
   
   <p>I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.</p>
@@ -1070,32 +966,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/03/03/using-powercli-to-install-host-vibs/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.</p>
   <footer>
     <ul class="actions">
@@ -1160,32 +1030,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.</p>
   <footer>
     <ul class="actions">
@@ -1247,32 +1091,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.</p>
   <footer>
     <ul class="actions">
@@ -1332,32 +1150,6 @@ if (!doNotTrack) {
         
     </div>
 </header>
-
-  
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
 
   
   <p>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).</p>
@@ -1424,32 +1216,6 @@ if (!doNotTrack) {
 </header>
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
-
-  
   <p>Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.</p>
   <footer>
     <ul class="actions">
@@ -1509,32 +1275,6 @@ if (!doNotTrack) {
         
     </div>
 </header>
-
-  
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/2015/11/30/installing-host-vibs-using-powercli/" class="image featured">
-            <img src="/images//" alt="" height="50%" width="50%">
-        </a>
-    
-
 
   
   <p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a <a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
