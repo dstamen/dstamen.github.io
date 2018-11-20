@@ -6,10 +6,20 @@
     <description>Recent content in VSphere Upgrade on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vsphere-upgrade/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Upgrading to VMware vSphere 6.7 eBook - Now Available</title>
+      <link>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</guid>
+      <description>&lt;p&gt;I am proud to announce availability of the new Upgrading to VMware vSphere 6.7 eBook.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Why and How To Upgrade to vSphere 6.7 U1</title>

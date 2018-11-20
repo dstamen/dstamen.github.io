@@ -102,6 +102,15 @@
     </item>
     
     <item>
+      <title>EBook</title>
+      <link>/tags/ebook/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ESXCLI</title>
       <link>/tags/esxcli/</link>
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
@@ -608,7 +617,7 @@
     <item>
       <title>VSphere 6.7</title>
       <link>/tags/vsphere-6.7/</link>
-      <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/vsphere-6.7/</guid>
       <description></description>
@@ -617,7 +626,7 @@
     <item>
       <title>VSphere Upgrade</title>
       <link>/tags/vsphere-upgrade/</link>
-      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/vsphere-upgrade/</guid>
       <description></description>
