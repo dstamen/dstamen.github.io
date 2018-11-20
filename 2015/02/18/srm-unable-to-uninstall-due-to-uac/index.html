@@ -87,6 +87,11 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="200">
+        <meta property="og:title" content="SRM - Unable to uninstall due to UAC" />
+        <meta property="og:description" content="I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.
+To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account" />
+
         
 <meta itemprop="name" content="SRM - Unable to uninstall due to UAC">
 <meta itemprop="description" content="I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.
