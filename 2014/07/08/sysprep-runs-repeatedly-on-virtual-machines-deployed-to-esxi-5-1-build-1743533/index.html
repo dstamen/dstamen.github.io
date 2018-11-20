@@ -85,8 +85,8 @@ However the hotfix only fixes future occurences, you still need to fix all the V
         
         
         <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="200">
+        <meta property="og:image:width" content="200">
+        <meta property="og:image:height" content="300">
         <meta property="og:title" content="Sysprep runs repeatedly on virtual machines deployed to ESXi 5.1 build 1743533" />
         <meta property="og:description" content="We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.
 Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 KB2077640 as referenced in this article KB2078352.
