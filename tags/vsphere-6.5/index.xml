@@ -6,10 +6,20 @@
     <description>Recent content in VSphere 6.5 on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Oct 2018 09:08:15 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vsphere-6.5/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unable to Update to vCenter Server 6.5 U2d on VCSA</title>
+      <link>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</guid>
+      <description>&lt;p&gt;When trying to update your vSphere 6.5 environment to vSphere 6.5u2d it may show that there are no available updates.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Upgrading Platform Services Controller and vCenter Server via the CLI Installer</title>

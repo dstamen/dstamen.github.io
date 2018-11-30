@@ -31,8 +31,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2014",
-        "datePublished": "2014-06-10 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2014-06-10 00:00:00 &#43;0000 UTC",
+        "datePublished": "2014-07-08 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2014-07-08 00:00:00 &#43;0000 UTC",
         "url" : "/categories/vmware/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -307,6 +307,16 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-11-19'>
+                                    November 19, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
                                 
                                 <time class="published" datetime=
@@ -395,16 +405,6 @@ if (!doNotTrack) {
                             </header>
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/">L1 Terminal Fault (L1TF) Patching Considerations</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-15'>
-                                    August 15, 2018</time>
-                            </header>
-                        </article>
-                
 
                 
                     <a href=
@@ -424,6 +424,73 @@ if (!doNotTrack) {
     <div id="main">
         <h1>VMware</h1>
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/">Sysprep runs repeatedly on virtual machines deployed to ESXi 5.1 build 1743533</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2014-07-08'>
+            July 8, 2014</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+  
+  <p>We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/powercli">PowerCLI</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/sysprep">Sysprep</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/vsphere-5.1">vSphere 5.1</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
         
             <article class="post">
   <header>
@@ -990,70 +1057,6 @@ You can use the below PowerCLI commands to get the SCSI ID&rsquo;s,  Create the
 </article>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/">Get NAA.ID for Virtual Machine RDM&#39;s in VMware</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2014-05-06'>
-            May 6, 2014</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/powercli">PowerCLI</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/storage">Storage</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -1203,6 +1206,17 @@ You can use the below PowerCLI commands to get the SCSI ID&rsquo;s,  Create the
         
           <article class="mini-post">
             <header>
+              <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-11-19'>
+                  November 19, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
               <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
               
               <time class="published" datetime=
@@ -1296,17 +1310,6 @@ You can use the below PowerCLI commands to get the SCSI ID&rsquo;s,  Create the
               <time class="published" datetime=
                   '2018-10-05'>
                   October 5, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/">L1 Terminal Fault (L1TF) Patching Considerations</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-08-15'>
-                  August 15, 2018</time>
           </header>
             
           </article>

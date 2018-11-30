@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
@@ -1186,7 +1191,7 @@
   
   <url>
     <loc>/tags/vsphere-6.5/</loc>
-    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

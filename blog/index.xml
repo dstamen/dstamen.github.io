@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Unable to Update to vCenter Server 6.5 U2d on VCSA</title>
+      <link>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</guid>
+      <description>&lt;p&gt;When trying to update your vSphere 6.5 environment to vSphere 6.5u2d it may show that there are no available updates.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Upgrading to VMware vSphere 6.7 eBook - Now Available</title>
       <link>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
