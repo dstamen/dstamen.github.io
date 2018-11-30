@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VCenter Server on davidstamen.com</title>
+    <title>vCenter Server on davidstamen.com</title>
     <link>/tags/vcenter-server/</link>
-    <description>Recent content in VCenter Server on davidstamen.com</description>
+    <description>Recent content in vCenter Server on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Oct 2018 09:08:15 -0400</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
       <guid>/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</guid>
-      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,8 +26,7 @@
       <pubDate>Wed, 23 May 2018 12:45:07 -0400</pubDate>
       
       <guid>/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/</guid>
-      <description>&lt;p&gt;On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,16 +35,15 @@
       <pubDate>Tue, 17 Apr 2018 08:32:15 -0400</pubDate>
       
       <guid>/2018/04/17/upgrading-to-vmware-vsphere-6.7/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</title>
-      <link>/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</link>
+      <link>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</link>
       <pubDate>Fri, 19 Jan 2018 10:27:02 +0000</pubDate>
       
-      <guid>/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid>
+      <guid>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid>
       <description>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &amp;lsquo;vim.Datastore:datastore-1131&amp;rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
 I proceeded to follow standard troubleshooting steps, reconfigure HA&amp;hellip;same issue&amp;hellip;.disable HA for entire cluster and re-enable&amp;hellip;..same issue&amp;hellip;whoops thats not good!
 First step, check what luns are available to the cluster.</description>

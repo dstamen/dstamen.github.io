@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</loc>
+    <loc>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</loc>
+    <loc>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</loc>
     <lastmod>2018-01-19T10:27:02+00:00</lastmod>
   </url>
   
@@ -203,7 +203,7 @@
   </url>
   
   <url>
-    <loc>/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</loc>
+    <loc>/2016/07/25/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/</loc>
     <lastmod>2016-07-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -790,12 +790,6 @@
   </url>
   
   <url>
-    <loc>/tags/ebook/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/esxcli/</loc>
     <lastmod>2015-11-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1082,32 +1076,8 @@
   </url>
   
   <url>
-    <loc>/tags/vcenter-ha/</loc>
-    <lastmod>2017-08-02T16:08:43-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcenter-server/</loc>
-    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcloud-air/</loc>
-    <lastmod>2014-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/vdp/</loc>
     <lastmod>2014-09-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vexpert/</loc>
-    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1120,18 +1090,6 @@
   <url>
     <loc>/tags/vm-tools/</loc>
     <lastmod>2018-10-06T08:25:31-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vma/</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vmotion/</loc>
-    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1156,6 +1114,84 @@
   <url>
     <loc>/tags/vpn/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vagrant/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/veeam/</loc>
+    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vulnerability/</loc>
+    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/webclient/</loc>
+    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ebook/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcenter-ha/</loc>
+    <lastmod>2017-08-02T16:08:43-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcenter-server/</loc>
+    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcloud-air/</loc>
+    <lastmod>2014-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vexpert/</loc>
+    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vma/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vmotion/</loc>
+    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1203,42 +1239,6 @@
   
   <url>
     <loc>/tags/vsphere-upgrade/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vagrant/</loc>
-    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/veeam/</loc>
-    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vulnerability/</loc>
-    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/webclient/</loc>
-    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/windows/</loc>
-    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

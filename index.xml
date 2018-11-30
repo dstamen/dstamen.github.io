@@ -17,18 +17,16 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</guid>
-      <description>&lt;p&gt;When trying to update your vSphere 6.5 environment to vSphere 6.5u2d it may show that there are no available updates.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;When trying to update your vSphere 6.5 environment to vSphere 6.5u2d it may show that there are no available updates.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Upgrading to VMware vSphere 6.7 eBook - Now Available</title>
-      <link>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</link>
+      <link>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook---now-available/</guid>
-      <description>&lt;p&gt;I am proud to announce availability of the new Upgrading to VMware vSphere 6.7 eBook.
-&lt;/p&gt;</description>
+      <guid>/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/</guid>
+      <description>&lt;p&gt;I am proud to announce availability of the new Upgrading to VMware vSphere 6.7 eBook.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +35,7 @@
       <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</guid>
-      <description>&lt;p&gt;I recently deployed a couple new vSphere 6.7 labs and was having some issues running Check Compliance within Update Manager.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;I recently deployed a couple new vSphere 6.7 labs and was having some issues running Check Compliance within Update Manager.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,8 +44,7 @@
       <pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/10/24/vmworld-eu-2018-sessions-events/</guid>
-      <description>&lt;p&gt;VMworld EU is around the corner and just like VMworld US I will be quite busy! If you are interested in where to find me, look below to see some my planned sessions.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;VMworld EU is around the corner and just like VMworld US I will be quite busy! If you are interested in where to find me, look below to see some my planned sessions.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,8 +53,7 @@
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/</guid>
-      <description>&lt;p&gt;If you havent heard vSphere 6.7 U1 is now out and is loaded with all new features! If you have used 6.7 GA you may have noticed the Auto Deploy functionality did not yet make it into the long awaited vSphere Client. With vCenter Server 6.7 U1 we now have feature parity and this means Auto Deploy has been added to the vSphere Client. Lets jump in and see some of the new functionality that has been included.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you havent heard vSphere 6.7 U1 is now out and is loaded with all new features! If you have used 6.7 GA you may have noticed the Auto Deploy functionality did not yet make it into the long awaited vSphere Client. With vCenter Server 6.7 U1 we now have feature parity and this means Auto Deploy has been added to the vSphere Client. Lets jump in and see some of the new functionality that has been included.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,8 +62,7 @@
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/</guid>
-      <description>&lt;p&gt;vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,9 +71,7 @@
       <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
       
       <guid>/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/</guid>
-      <description>&lt;p&gt;We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -88,8 +80,7 @@
       <pubDate>Sun, 07 Oct 2018 08:13:29 -0400</pubDate>
       
       <guid>/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/</guid>
-      <description>&lt;p&gt;Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,8 +89,7 @@
       <pubDate>Sat, 06 Oct 2018 08:25:31 -0400</pubDate>
       
       <guid>/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</guid>
-      <description>&lt;p&gt;Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -108,9 +98,7 @@
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
       <guid>/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</guid>
-      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -119,8 +107,7 @@
       <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
       
       <guid>/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/</guid>
-      <description>&lt;p&gt;On Tuesday August 14th, Intel Released their news on the latest vulnerability &lt;strong&gt;L1 Terminal Fault (L1TF) or ForeShadow&lt;/strong&gt;. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;On Tuesday August 14th, Intel Released their news on the latest vulnerability &lt;strong&gt;L1 Terminal Fault (L1TF) or ForeShadow&lt;/strong&gt;. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -129,8 +116,7 @@
       <pubDate>Wed, 18 Jul 2018 10:19:35 -0400</pubDate>
       
       <guid>/2018/07/18/vmworld-2018-sessions-events/</guid>
-      <description>&lt;p&gt;This will be my first VMworld attending as an employee and quite a bit of things will be going on. Just in case anyone was interesting in vSphere Upgrades I wanted to share out some key sessions that I recommend including my own.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;This will be my first VMworld attending as an employee and quite a bit of things will be going on. Just in case anyone was interesting in vSphere Upgrades I wanted to share out some key sessions that I recommend including my own.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -139,8 +125,7 @@
       <pubDate>Wed, 23 May 2018 12:45:07 -0400</pubDate>
       
       <guid>/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/</guid>
-      <description>&lt;p&gt;On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -149,8 +134,7 @@
       <pubDate>Tue, 17 Apr 2018 08:32:15 -0400</pubDate>
       
       <guid>/2018/04/17/upgrading-to-vmware-vsphere-6.7/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -159,9 +143,7 @@
       <pubDate>Mon, 12 Mar 2018 06:41:02 -0700</pubDate>
       
       <guid>/2018/03/12/vexpert-2018/</guid>
-      <description>&lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2018!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am honored to have been selected as a VMware vExpert once again for 2018!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -172,17 +154,15 @@
       <guid>/2018/02/06/to-infinity-and-beyond/</guid>
       <description>&lt;p&gt;Life can always surprise you. For the past few years I have been chasing the dream like most to work for the “mothership” and recently the calling came.&lt;/p&gt;
 
-&lt;p&gt;This month, I will be joining the CPBU at VMware as a Technical Marketing Engineer focused on vSphere upgrades. I will be working alongside &lt;a href=&#34;https://twitter.com/eck79&#34;&gt;Adam Eckerle&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/emad_younis&#34;&gt;Emad Younis&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/kmruddy&#34;&gt;Kyle Ruddy&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/mikefoley&#34;&gt;Mike Foley&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/vBrianGraf&#34;&gt;Brian Graf&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/vCenterNerd&#34;&gt;Nigel Hickey&lt;/a&gt; and more!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This month, I will be joining the CPBU at VMware as a Technical Marketing Engineer focused on vSphere upgrades. I will be working alongside &lt;a href=&#34;https://twitter.com/eck79&#34;&gt;Adam Eckerle&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/emad_younis&#34;&gt;Emad Younis&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/kmruddy&#34;&gt;Kyle Ruddy&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/mikefoley&#34;&gt;Mike Foley&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/vBrianGraf&#34;&gt;Brian Graf&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/vCenterNerd&#34;&gt;Nigel Hickey&lt;/a&gt; and more!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</title>
-      <link>/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</link>
+      <link>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</link>
       <pubDate>Fri, 19 Jan 2018 10:27:02 +0000</pubDate>
       
-      <guid>/2018/01/19/reconfigure-ha---the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid>
+      <guid>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid>
       <description>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &amp;lsquo;vim.Datastore:datastore-1131&amp;rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
 I proceeded to follow standard troubleshooting steps, reconfigure HA&amp;hellip;same issue&amp;hellip;.disable HA for entire cluster and re-enable&amp;hellip;..same issue&amp;hellip;whoops thats not good!
 First step, check what luns are available to the cluster.</description>
@@ -424,10 +404,10 @@ Pre-Requsites  NTFS Security Module  Link to Script  Create-SMBShare.ps1  Prepar
     
     <item>
       <title>VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</title>
-      <link>/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</link>
+      <link>/2016/07/25/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/</link>
       <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</guid>
+      <guid>/2016/07/25/vmware-certified-advanced-professional-6-data-center-virtualization-design-guide-3v0-622/</guid>
       <description>I am about to start down my path of studying for my VCAP6-DCV Design Exam. I figured I would throw up the blueprint and fill in each section as applicable. Either way here is the blueprint laid out for anyone who may benefit. This is it as of 7/25/16.
 Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
 Existing Content from VCAP5-DCD</description>
