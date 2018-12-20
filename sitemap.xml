@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/</loc>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
@@ -715,7 +720,7 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -946,6 +951,12 @@
   </url>
   
   <url>
+    <loc>/tags/rest-api/</loc>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/ravello/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1095,7 +1106,7 @@
   
   <url>
     <loc>/categories/vmware/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1149,7 +1160,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1167,7 +1178,7 @@
   
   <url>
     <loc>/tags/vcenter-server/</loc>
-    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1233,7 +1244,7 @@
   
   <url>
     <loc>/tags/vsphere-6.7/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
