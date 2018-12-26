@@ -24,7 +24,7 @@
         "datePublished": "2018-12-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-26 00:00:00 &#43;0000 UTC",
         "url" : "/2018/12/26/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/",
-        "wordCount" : "893",
+        "wordCount" : "909",
         "keywords" : [ "vSphere 6.7","REST API","vCenter Server","Blog" ]
     }
     </script>
@@ -87,7 +87,7 @@
 
 <meta itemprop="datePublished" content="2018-12-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="893">
+<meta itemprop="wordCount" content="909">
 
   <meta itemprop="image" content="/images/vcsaupdateps1-fi.png">
 
@@ -1120,6 +1120,12 @@ if (!doNotTrack) {
 <p>This Examples assumes your VCSA has Internet Access and we will update via the Online Repo.</p>
 </blockquote>
 
+<p>You can access the Powershell Module <a href="https://github.com/dstamen/Powershell/blob/master/VCSA-Update-REST-PS.psm1">here on GitHub</a>.</p>
+
+<blockquote>
+<p>Import the module once downloaded, <code>Import-Module .\VCSA-Update-REST-PS.psm1</code></p>
+</blockquote>
+
 <ol>
 <li>Check for Updates
 
@@ -1146,7 +1152,7 @@ if (!doNotTrack) {
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p>I hope this module can be useful for you to get started with updating your VCSA in a more Automated fashion.</p>
+<p>I hope <a href="https://github.com/dstamen/Powershell/blob/master/VCSA-Update-REST-PS.psm1">this module</a> can be useful for you to get started with updating your VCSA in a more Automated fashion.</p>
 
 <p>I have a few more updates in mind for the module such as a better syntax for HTTP Return Codes and making the server, username, and passwords not hard-coded but in the meantime you can learn more about the REST APIs <a href="https://code.vmware.com/apis/366/vsphere-automation">here.</a></p>
 
