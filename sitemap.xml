@@ -3,8 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</loc>
     <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/powershell/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rest-api/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/vmware/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcenter-server/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-6.7/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,13 +77,55 @@
   </url>
   
   <url>
+    <loc>/tags/ebook/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-6.5/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-upgrade/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/update-manager/</loc>
+    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</loc>
     <lastmod>2018-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/vmworld/</loc>
+    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/10/24/vmworld-eu-2018-sessions-events/</loc>
     <lastmod>2018-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/autodeploy/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/lifecycle/</loc>
+    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -48,13 +144,43 @@
   </url>
   
   <url>
+    <loc>/tags/network/</loc>
+    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/</loc>
     <lastmod>2018-10-07T08:13:29-04:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/storage/</loc>
+    <lastmod>2018-10-07T08:13:29-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</loc>
     <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vm-compatibility/</loc>
+    <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vm-tools/</loc>
+    <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/psc/</loc>
+    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -65,6 +191,24 @@
   <url>
     <loc>/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/</loc>
     <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/l1tf/</loc>
+    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/security/</loc>
+    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vulnerability/</loc>
+    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -83,8 +227,32 @@
   </url>
   
   <url>
+    <loc>/categories/awards/</loc>
+    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vexpert/</loc>
+    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/03/12/vexpert-2018/</loc>
     <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/career/</loc>
+    <lastmod>2018-02-06T10:34:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/personal/</loc>
+    <lastmod>2018-02-06T10:34:32-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -93,13 +261,49 @@
   </url>
   
   <url>
+    <loc>/tags/ha/</loc>
+    <lastmod>2018-01-19T10:27:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</loc>
     <lastmod>2018-01-19T10:27:02+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/blog/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/forestry.io/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</loc>
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/certification/</loc>
+    <lastmod>2017-12-21T10:29:15-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcap6.5-dcv-design/</loc>
+    <lastmod>2017-12-21T10:29:15-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -113,6 +317,24 @@
   </url>
   
   <url>
+    <loc>/categories/office/</loc>
+    <lastmod>2017-08-24T16:33:29-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/standdesk/</loc>
+    <lastmod>2017-08-24T16:33:29-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vra/</loc>
+    <lastmod>2017-08-22T14:00:46-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2017/08/vra-73-using-active-directory-policies/</loc>
     <lastmod>2017-08-22T14:00:46-04:00</lastmod>
   </url>
@@ -123,13 +345,31 @@
   </url>
   
   <url>
+    <loc>/tags/vcenter-ha/</loc>
+    <lastmod>2017-08-02T16:08:43-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2017/07/31/another-new-blog-platform/</loc>
     <lastmod>2017-07-31T16:51:28-04:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/powercli/</loc>
+    <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</loc>
     <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vrops/</loc>
+    <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -153,8 +393,38 @@
   </url>
   
   <url>
+    <loc>/itemized/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/usg/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ubiquiti/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/unifi/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vpn/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -183,8 +453,38 @@
   </url>
   
   <url>
+    <loc>/categories/linux/</loc>
+    <lastmod>2017-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/powerdns/</loc>
+    <lastmod>2017-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</loc>
     <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/webclient/</loc>
+    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-6.0/</loc>
+    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/content-library/</loc>
+    <lastmod>2016-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -193,8 +493,20 @@
   </url>
   
   <url>
+    <loc>/tags/vmware-fling/</loc>
+    <lastmod>2016-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/12/02/installing-ubiquiti-unifi-controller/</loc>
     <lastmod>2016-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/availability/</loc>
+    <lastmod>2016-11-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -203,13 +515,43 @@
   </url>
   
   <url>
+    <loc>/tags/myvmware/</loc>
+    <lastmod>2016-11-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/11/16/vsphere-65-new-license-import-from-myvmware/</loc>
     <lastmod>2016-11-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/microsoft/</loc>
+    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/08/09/using-powershell-to-create-windows-smb-shares/</loc>
     <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/study-guide/</loc>
+    <lastmod>2016-07-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vcap6-dcv-design/</loc>
+    <lastmod>2016-07-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -223,8 +565,20 @@
   </url>
   
   <url>
+    <loc>/tags/vcap6-dcv-deploy/</loc>
+    <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</loc>
     <lastmod>2016-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/backup/</loc>
+    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -233,8 +587,38 @@
   </url>
   
   <url>
+    <loc>/tags/veeam/</loc>
+    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cisco-ucs/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cisco/</loc>
+    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/pure-storage/</loc>
+    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/syslog/</loc>
+    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -248,8 +632,20 @@
   </url>
   
   <url>
+    <loc>/tags/esxi/</loc>
+    <lastmod>2016-03-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/03/03/using-powercli-to-install-host-vibs/</loc>
     <lastmod>2016-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/snmp/</loc>
+    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -263,13 +659,37 @@
   </url>
   
   <url>
+    <loc>/tags/ansible/</loc>
+    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/automation/</loc>
+    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/02/04/using-ansible-to-run-powershell-scripts/</loc>
     <lastmod>2016-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/cisco-aci/</loc>
+    <lastmod>2016-02-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2016/02/03/using-ansible-to-create-cisco-aci-filters/</loc>
     <lastmod>2016-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cisco-champion/</loc>
+    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -328,6 +748,12 @@
   </url>
   
   <url>
+    <loc>/tags/esxcli/</loc>
+    <lastmod>2015-11-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2015/11/30/installing-host-vibs-using-powercli/</loc>
     <lastmod>2015-11-30T00:00:00+00:00</lastmod>
   </url>
@@ -345,6 +771,12 @@
   <url>
     <loc>/2015/11/18/disconnected-vnics/</loc>
     <lastmod>2015-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/horizon-view/</loc>
+    <lastmod>2015-11-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -403,6 +835,12 @@
   </url>
   
   <url>
+    <loc>/tags/vcp6-dcv/</loc>
+    <lastmod>2015-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2015/10/14/vcp6-dcv-study-guide/</loc>
     <lastmod>2015-10-14T00:00:00+00:00</lastmod>
   </url>
@@ -413,8 +851,26 @@
   </url>
   
   <url>
+    <loc>/tags/kvm/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ubuntu/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2015/10/12/using-vagrant-to-deploy-an-ubuntu-server-running-kvm/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vagrant/</loc>
+    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -430,6 +886,12 @@
   <url>
     <loc>/2015/10/06/esxi-60-update-1a-released/</loc>
     <lastmod>2015-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-5.5/</loc>
+    <lastmod>2015-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -455,6 +917,12 @@
   <url>
     <loc>/2015/09/22/upgrading-vrealize-operations-to-61/</loc>
     <lastmod>2015-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ssh/</loc>
+    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -503,6 +971,24 @@
   </url>
   
   <url>
+    <loc>/tags/jekyll/</loc>
+    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx/</loc>
+    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ravello/</loc>
+    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
   </url>
@@ -528,6 +1014,12 @@
   </url>
   
   <url>
+    <loc>/tags/pernix-pro/</loc>
+    <lastmod>2015-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</loc>
     <lastmod>2015-04-27T00:00:00+00:00</lastmod>
   </url>
@@ -545,6 +1037,12 @@
   <url>
     <loc>/2015/04/01/vcp6-dcv-beta-exam/</loc>
     <lastmod>2015-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/srm/</loc>
+    <lastmod>2015-02-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -568,6 +1066,12 @@
   </url>
   
   <url>
+    <loc>/tags/trend-micro/</loc>
+    <lastmod>2014-12-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</loc>
     <lastmod>2014-12-19T00:00:00+00:00</lastmod>
   </url>
@@ -575,6 +1079,12 @@
   <url>
     <loc>/2014/11/26/cisco-champion-2015/</loc>
     <lastmod>2014-11-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/exchange/</loc>
+    <lastmod>2014-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -588,8 +1098,20 @@
   </url>
   
   <url>
+    <loc>/tags/chrome/</loc>
+    <lastmod>2014-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</loc>
     <lastmod>2014-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vdp/</loc>
+    <lastmod>2014-09-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -603,8 +1125,20 @@
   </url>
   
   <url>
+    <loc>/tags/sysprep/</loc>
+    <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2014/07/08/sysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533/</loc>
     <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vsphere-5.1/</loc>
+    <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -618,8 +1152,20 @@
   </url>
   
   <url>
+    <loc>/tags/dump-collector/</loc>
+    <lastmod>2014-06-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2014/06/04/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-3/</loc>
     <lastmod>2014-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vcloud-air/</loc>
+    <lastmod>2014-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -635,6 +1181,12 @@
   <url>
     <loc>/2014/05/22/create-vmfs-datastore-using-powercli/</loc>
     <lastmod>2014-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vmotion/</loc>
+    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -668,161 +1220,14 @@
   </url>
   
   <url>
+    <loc>/tags/vma/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/2014/04/29/cisco-ucs-and-native-vlan-tagging/</loc>
     <lastmod>2014-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/04/29/nested-esxi-and-nfs/</loc>
-    <lastmod>2014-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/acclaim/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ansible/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/autodeploy/</loc>
-    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/automation/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/availability/</loc>
-    <lastmod>2016-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/awards/</loc>
-    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/backup/</loc>
-    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/blog/</loc>
-    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/career/</loc>
-    <lastmod>2018-02-06T10:34:32-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/certification/</loc>
-    <lastmod>2017-12-21T10:29:15-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/chrome/</loc>
-    <lastmod>2014-10-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cisco/</loc>
-    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cisco-aci/</loc>
-    <lastmod>2016-02-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cisco-champion/</loc>
-    <lastmod>2016-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cisco-ucs/</loc>
-    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/content-library/</loc>
-    <lastmod>2016-12-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dump-collector/</loc>
-    <lastmod>2014-06-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/esxcli/</loc>
-    <lastmod>2015-11-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/esxi/</loc>
-    <lastmod>2016-03-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/exchange/</loc>
-    <lastmod>2014-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/forestry.io/</loc>
-    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ha/</loc>
-    <lastmod>2018-01-19T10:27:02+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -832,427 +1237,20 @@
   </url>
   
   <url>
-    <loc>/tags/horizon-view/</loc>
-    <lastmod>2015-11-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/2014/04/29/nested-esxi-and-nfs/</loc>
+    <lastmod>2014-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2018-01-02T08:26:54-05:00</lastmod>
-    <priority>0</priority>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>/itemized/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/jekyll/</loc>
-    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/kvm/</loc>
-    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/l1tf/</loc>
-    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/lifecycle/</loc>
-    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/linux/</loc>
-    <lastmod>2017-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/microsoft/</loc>
-    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/myvmware/</loc>
-    <lastmod>2016-11-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/network/</loc>
-    <lastmod>2018-10-08T08:02:47-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nginx/</loc>
-    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/office/</loc>
-    <lastmod>2017-08-24T16:33:29-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/psc/</loc>
-    <lastmod>2018-10-05T09:08:15-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pernix-pro/</loc>
-    <lastmod>2015-05-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/personal/</loc>
-    <lastmod>2018-02-06T10:34:32-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/powercli/</loc>
-    <lastmod>2017-07-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/powerdns/</loc>
-    <lastmod>2017-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/powershell/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/pure-storage/</loc>
-    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rest-api/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ravello/</loc>
-    <lastmod>2015-09-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/acclaim/</loc>
   </url>
   
   <url>
     <loc>/resources/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/snmp/</loc>
-    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/srm/</loc>
-    <lastmod>2015-02-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ssh/</loc>
-    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/security/</loc>
-    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/standdesk/</loc>
-    <lastmod>2017-08-24T16:33:29-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/storage/</loc>
-    <lastmod>2018-10-07T08:13:29-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/study-guide/</loc>
-    <lastmod>2016-07-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/syslog/</loc>
-    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sysprep/</loc>
-    <lastmod>2014-07-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/trend-micro/</loc>
-    <lastmod>2014-12-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/usg/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ubiquiti/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ubuntu/</loc>
-    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/unifi/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/update-manager/</loc>
-    <lastmod>2018-10-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcap6-dcv-deploy/</loc>
-    <lastmod>2016-06-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcap6-dcv-design/</loc>
-    <lastmod>2016-07-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcap6.5-dcv-design/</loc>
-    <lastmod>2017-12-21T10:29:15-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcp6-dcv/</loc>
-    <lastmod>2015-10-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vdp/</loc>
-    <lastmod>2014-09-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vm-compatibility/</loc>
-    <lastmod>2018-10-06T08:25:31-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vm-tools/</loc>
-    <lastmod>2018-10-06T08:25:31-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vmware/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vmware-fling/</loc>
-    <lastmod>2016-12-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vmworld/</loc>
-    <lastmod>2018-10-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vpn/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vagrant/</loc>
-    <lastmod>2015-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/veeam/</loc>
-    <lastmod>2016-04-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vulnerability/</loc>
-    <lastmod>2018-08-15T10:47:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/webclient/</loc>
-    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/windows/</loc>
-    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ebook/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcenter-ha/</loc>
-    <lastmod>2017-08-02T16:08:43-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcenter-server/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vcloud-air/</loc>
-    <lastmod>2014-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vexpert/</loc>
-    <lastmod>2018-03-12T06:41:02-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vma/</loc>
-    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vmotion/</loc>
-    <lastmod>2014-05-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vra/</loc>
-    <lastmod>2017-08-22T14:00:46-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vrops/</loc>
-    <lastmod>2017-07-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-5.1/</loc>
-    <lastmod>2014-07-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-5.5/</loc>
-    <lastmod>2015-10-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-6.0/</loc>
-    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-6.5/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-6.7/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vsphere-upgrade/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

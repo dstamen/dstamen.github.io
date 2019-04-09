@@ -6,17 +6,26 @@
     <description>Recent content in Categories on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Automation</title>
-      <link>/categories/automation/</link>
-      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      <title>VMware</title>
+      <link>/categories/vmware/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/automation/</guid>
+      <guid>/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>/categories/security/</link>
+      <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
+      
+      <guid>/categories/security/</guid>
       <description></description>
     </item>
     
@@ -30,11 +39,11 @@
     </item>
     
     <item>
-      <title>Backup</title>
-      <link>/categories/backup/</link>
-      <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Personal</title>
+      <link>/categories/personal/</link>
+      <pubDate>Tue, 06 Feb 2018 10:34:32 -0500</pubDate>
       
-      <guid>/categories/backup/</guid>
+      <guid>/categories/personal/</guid>
       <description></description>
     </item>
     
@@ -57,11 +66,20 @@
     </item>
     
     <item>
-      <title>Cisco</title>
-      <link>/categories/cisco/</link>
-      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <title>Office</title>
+      <link>/categories/office/</link>
+      <pubDate>Thu, 24 Aug 2017 16:33:29 -0400</pubDate>
       
-      <guid>/categories/cisco/</guid>
+      <guid>/categories/office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubiquiti</title>
+      <link>/categories/ubiquiti/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ubiquiti/</guid>
       <description></description>
     </item>
     
@@ -84,20 +102,20 @@
     </item>
     
     <item>
-      <title>Office</title>
-      <link>/categories/office/</link>
-      <pubDate>Thu, 24 Aug 2017 16:33:29 -0400</pubDate>
+      <title>Backup</title>
+      <link>/categories/backup/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/office/</guid>
+      <guid>/categories/backup/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Personal</title>
-      <link>/categories/personal/</link>
-      <pubDate>Tue, 06 Feb 2018 10:34:32 -0500</pubDate>
+      <title>Cisco</title>
+      <link>/categories/cisco/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/personal/</guid>
+      <guid>/categories/cisco/</guid>
       <description></description>
     </item>
     
@@ -111,29 +129,11 @@
     </item>
     
     <item>
-      <title>Security</title>
-      <link>/categories/security/</link>
-      <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
+      <title>Automation</title>
+      <link>/categories/automation/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubiquiti</title>
-      <link>/categories/ubiquiti/</link>
-      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ubiquiti/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VMware</title>
-      <link>/categories/vmware/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/vmware/</guid>
+      <guid>/categories/automation/</guid>
       <description></description>
     </item>
     
