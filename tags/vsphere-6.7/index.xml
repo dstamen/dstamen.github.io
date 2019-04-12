@@ -6,10 +6,19 @@
     <description>Recent content in vSphere 6.7 on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vsphere-6.7/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vCenter Server Converge Tool - How do I Converge an Environment Using the UI</title>
+      <link>/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/</guid>
+      <description>&lt;p&gt;vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&amp;rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</title>

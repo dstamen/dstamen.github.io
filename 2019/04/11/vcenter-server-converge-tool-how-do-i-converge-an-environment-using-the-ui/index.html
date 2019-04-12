@@ -1,0 +1,1648 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog",
+        "name" : "vCenter Server Converge Tool - How do I Converge an Environment Using the UI",
+        "headline" : "vCenter Server Converge Tool - How do I Converge an Environment Using the UI",
+        "description" : "\x3cp\x3evSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let\x26rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.\x3c\/p\x3e",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-04-11 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-04-11 00:00:00 \x2b0000 UTC",
+        "url" : "\/2019\/04\/11\/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui\/",
+        "wordCount" : "802",
+        "keywords" : [ "vCenter Server","vSphere 6.7","Converge Tool","Blog" ]
+    }
+    </script>
+        
+            
+                <title>vCenter Server Converge Tool - How do I Converge an Environment Using the UI</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.55.0" />
+        
+  
+    
+  
+
+  
+
+  <link rel="apple-touch-icon-precomposed" href='/favicon/apple-touch-icon-precomposed.png'>
+  <link rel="icon" href='/favicon/favicon.png'>
+  
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content='/favicon/mstile.png'>
+  <meta name="application-name" content="davidstamen.com">
+  <meta name="msapplication-tooltip" content="a blog about virtualization and stuff">
+  <meta name="msapplication-config" content='/favicon/ieconfig.xml'>
+
+
+
+        
+        
+            
+                <meta name="description" content="a blog about virtualization and stuff">
+            
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/converge-ui-fi.png"/>
+
+<meta name="twitter:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI"/>
+<meta name="twitter:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI."/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+        
+        
+            <meta property="og:image" content="http://davidstamen.com/images/converge-ui-fi">
+        
+        
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="200">
+        <meta property="og:image:height" content="300">
+        <meta property="og:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI" />
+        <meta property="og:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI." />
+
+        
+<meta itemprop="name" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI">
+<meta itemprop="description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.">
+
+
+<meta itemprop="datePublished" content="2019-04-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="802">
+
+  <meta itemprop="image" content="/images/converge-ui-fi.png">
+
+
+
+<meta itemprop="keywords" content="vCenter Server,vSphere 6.7,Converge Tool," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-hashtag">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/acclaim/">
+                            <i class="fa fa-list">&nbsp;</i>Acclaim
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-question">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-hashtag">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/acclaim/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Acclaim
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-question">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-11'>
+                                    April 11, 2019</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-01-31'>
+                                    January 31, 2019</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-12-20'>
+                                    December 20, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-11-19'>
+                                    November 19, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-11-19'>
+                                    November 19, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/">vSphere Update Manager 6.7 Unable to Scan Cluster</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-25'>
+                                    October 25, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/24/vmworld-eu-2018-sessions-events/">VMworld EU - Sessions and Events</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-24'>
+                                    October 24, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-18'>
+                                    October 18, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-11'>
+                                    October 11, 2018</time>
+                            </header>
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-10-08'>
+                                    October 8, 2018</time>
+                            </header>
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;text=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;title=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;title=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-04-11'>
+            April 11, 2019</time>
+        <span class="author"></span>
+        
+        
+    </div>
+</header>
+
+  <div id="content">
+      <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
+
+<p>Included in vSphere 6.7 Update 2 is an overhauled system configuration section. Within system configuration you have a table view showing you the Platform Services Controllers and vCenter Servers in your Environment.</p>
+
+<h2 id="vcenter-server-topology-view">vCenter Server Topology View</h2>
+
+<p>Alongside the new system configuration table view there is a new topology view. This view allows you to have a graphical representation of the nodes in your SSO domain. This is useful when someone might&rsquo;ve configured additional replication agreements between External Platform Services Controllers. Previously the only method to view replication agreements was using <a href="https://kb.vmware.com/s/article/2127057">vdcrepadmin</a> against each PSC in your environment to manually build out the topology diagram.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc1vc-topology.png" data-caption="2psc1vc-topology"><img src="/images//2psc1vc-topology.png"></a>
+      
+    </div>
+  
+
+
+
+<p>When I am in the field we tend to inform users about how to properly setup additional replication agreements in an SSO domain when using 3 or more External PSCs or Embedded vCenter Servers. My recommendation is to create one additional replication agreement to be used as a ring topology. At some point I have heard of customers using a mesh topology, without mapping out all the replication agreements they may have never known they were in a non-recommended topology. Using the new topology view you can easily see if someone incorrectly setup additional replication agreements and then go back in and clean them up using <a href="https://kb.vmware.com/s/article/2127057">vdcrepadmin.</a></p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//mesh-topology.png" data-caption="mesh-topology"><img src="/images//mesh-topology.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="vcenter-server-converge-tool-ui">vCenter Server Converge Tool UI</h2>
+
+<p>When reviewing the new table view you might have noticed two new buttons. You now have the ability ability to Converge and Decommission nodes through the vSphere Client. No longer are you required to utilize the CLI and JSON templates to run the converge tool! This is great for customers or partners who wish for a simplistic and foolproof method to migrate their vSphere Environment to an Embedded vCenter Server Deployment.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-table.png" data-caption="2psc2vc-table"><img src="/images//2psc2vc-table.png"></a>
+      
+    </div>
+  
+
+
+
+<p>I will run through a convergence example of a vSphere Environment that has two External PSCs and two External vCenter Servers. I will be migrating these nodes to vCenter Servers with an Embedded PSC.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-topology.png" data-caption="2psc2vc-topology"><img src="/images//2psc2vc-topology.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Once I have selected our vCenter Server Appliance that we wish to converge to embedded I will first be notified that the vCenter Services will be restarted and then the next step will proceed to the information gathering screen. If you have previously used the CLI based Converge Tool you might of remember being prompted for the managing vCenter Server credentials. This is no longer needed as the vCenter Server Converge Tool is already aware of this information.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-converge.png" data-caption="2psc2vc-converge"><img src="/images//2psc2vc-converge.png"></a>
+      
+    </div>
+  
+
+
+
+<p>On this screen I&rsquo;ll will be prompted certain pieces of information:</p>
+
+<ul>
+<li>External PSC SSO Username and Password
+
+<ul>
+<li>Needed to be able to install the required components to the vCenter Server and allow replication between the new embedded vCenter Server and the existing External PSC.</li>
+</ul></li>
+<li>New Replication Partner
+
+<ul>
+<li>As seen below you can see that no embedded node is available. This is because this is the first node I have ran the converge utility against and it will reuse the existing replication agreement. When I proceed to converge any additional vCenter Servers I will see the already existing vCenter Servers with an Embedded PSC and will have the ability to choose a replication partner.</li>
+</ul></li>
+<li>Skip AD Join or Join AD
+
+<ul>
+<li>If you wish to join your vCenter Server Appliance to Active Directory then select this option and you will prompted to enter in additional information.</li>
+</ul></li>
+</ul>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-domain.png" data-caption="2psc2vc-domain"><img src="/images//2psc2vc-domain.png"></a>
+      
+    </div>
+  
+
+
+
+<ul>
+<li>Acknowledge that you have made a backup of your vCenter Server Appliance before initiating convergence.
+
+<ul>
+<li>This is extremely important as you are making major changes to your vSphere Environment. Before proceeding with convergence not only should you back up the node you are currently converging, but you should be backing up ALL External PSC and vCenter Servers within your SSO domain. To perform a backup you should be using the built in file-based backup in the VAMI and NOT relying on snapshots.</li>
+</ul></li>
+</ul>
+
+<p>Once I have successfully converged both our vCenter Servers I can now proceed to decommission the two External PSC&rsquo;s. As we are already aware of the managing vCenter Server all we need to do is enter in the vCenter Server SSO credentials so that the external PSC can be shutdown and unregistered from the SSO domain.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-decomm.png" data-caption="2psc2vc-decomm"><img src="/images//2psc2vc-decomm.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Now that the converge and decommission process is completed, I will go back and review the toplogy view to see that we now have migrated to our simplified deployment topology using Embedded PSCs.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+
+    <div class="fancybox">
+      <a data-fancybox="" href="/images//2psc2vc-complete.png" data-caption="2psc2vc-complete"><img src="/images//2psc2vc-complete.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://blogs.vmware.com/vsphere/2019/02/understanding-the-vcenter-server-converge-tool.html">Blog: Understanding the vCenter Server Converge Tool</a></li>
+<li><a href="https://blogs.vmware.com/vsphere/2019/04/vcenter-server-converge-tool-enhancements-in-vsphere-6-7-update-2.html">Blog: vCenter Server Converge Tool Enhancements in vSphere 6.7 Update 2</a></li>
+<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-a-load-balanced-external-vcenter-deployment-using-the-vsphere-client/">Product Walkthrough: Converging a Load Balanced External vCenter Deployment using the vSphere Client</a></li>
+<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-an-external-vcenter-deployment-using-the-vsphere-client-1/">Product Walkthrough: Converging an External vCenter Deployment using the vSphere Client</a></li>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html">Documentation: vCenter Server Converge Tool</a></li>
+</ul>
+    </div>
+<hr>
+
+<section id="social-share">
+  <ul class="icons">
+      <header>
+          <h3>Share this post</h3>
+      </header>
+    
+
+
+<li>
+  <a href="//twitter.com/share?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;text=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI&amp;via=davidstamen" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;title=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f&amp;title=vCenter%20Server%20Converge%20Tool%20-%20How%20do%20I%20Converge%20an%20Environment%20Using%20the%20UI" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+  </ul>
+</section>
+
+<hr>
+    <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/converge-tool">Converge Tool</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidstamen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/"
+                class="button big previous">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/me2-300.png" width="300" alt="me" /></a>
+      
+    
+    
+      <header>
+        <h2>David Stamen</h2>
+        <p>technical marketing engineer at vmware</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  
+  
+  
+
+  
+ <section>
+  <h3>Recent Posts</h3>
+   <section class="recent-posts">
+    <div class="mini-posts">
+
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h3>
+              
+              <time class="published" datetime=
+                  '2019-04-11'>
+                  April 11, 2019</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></h3>
+              
+              <time class="published" datetime=
+                  '2019-01-31'>
+                  January 31, 2019</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-12-20'>
+                  December 20, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-11-19'>
+                  November 19, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-11-19'>
+                  November 19, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/">vSphere Update Manager 6.7 Unable to Scan Cluster</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-10-25'>
+                  October 25, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/10/24/vmworld-eu-2018-sessions-events/">VMworld EU - Sessions and Events</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-10-24'>
+                  October 24, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-10-18'>
+                  October 18, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-10-11'>
+                  October 11, 2018</time>
+          </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
+              
+              <time class="published" datetime=
+                  '2018-10-08'>
+                  October 8, 2018</time>
+          </header>
+            
+          </article>
+        
+      </div>
+    </div>
+  </section>
+ </section>
+ <section>
+ <h3>Tag Cloud</h3>
+  
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/ansible" style="font-size: 12px;">ansible</a>
+        
+        
+        <a href="/tags/autodeploy" style="font-size: 12px;">autodeploy</a>
+        
+        
+        <a href="/tags/availability" style="font-size: 12px;">availability</a>
+        
+        
+        <a href="/tags/career" style="font-size: 12px;">career</a>
+        
+        
+        <a href="/tags/chrome" style="font-size: 12px;">chrome</a>
+        
+        
+        <a href="/tags/cisco-aci" style="font-size: 12px;">cisco-aci</a>
+        
+        
+        <a href="/tags/cisco-champion" style="font-size: 12px;">cisco-champion</a>
+        
+        
+        <a href="/tags/cisco-ucs" style="font-size: 12px;">cisco-ucs</a>
+        
+        
+        <a href="/tags/content-library" style="font-size: 12px;">content-library</a>
+        
+        
+        <a href="/tags/converge-tool" style="font-size: 12px;">converge-tool</a>
+        
+        
+        <a href="/tags/dump-collector" style="font-size: 12px;">dump-collector</a>
+        
+        
+        <a href="/tags/ebook" style="font-size: 12px;">ebook</a>
+        
+        
+        <a href="/tags/esxcli" style="font-size: 12px;">esxcli</a>
+        
+        
+        <a href="/tags/esxi" style="font-size: 12px;">esxi</a>
+        
+        
+        <a href="/tags/exchange" style="font-size: 12px;">exchange</a>
+        
+        
+        <a href="/tags/forestry.io" style="font-size: 12px;">forestry.io</a>
+        
+        
+        <a href="/tags/ha" style="font-size: 12px;">ha</a>
+        
+        
+        <a href="/tags/homelab" style="font-size: 12px;">homelab</a>
+        
+        
+        <a href="/tags/horizon-view" style="font-size: 12px;">horizon-view</a>
+        
+        
+        <a href="/tags/hugo" style="font-size: 12px;">hugo</a>
+        
+        
+        <a href="/tags/jekyll" style="font-size: 12px;">jekyll</a>
+        
+        
+        <a href="/tags/kvm" style="font-size: 12px;">kvm</a>
+        
+        
+        <a href="/tags/l1tf" style="font-size: 12px;">l1tf</a>
+        
+        
+        <a href="/tags/lifecycle" style="font-size: 12px;">lifecycle</a>
+        
+        
+        <a href="/tags/myvmware" style="font-size: 12px;">myvmware</a>
+        
+        
+        <a href="/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="/tags/pernix-pro" style="font-size: 12px;">pernix-pro</a>
+        
+        
+        <a href="/tags/powercli" style="font-size: 12px;">powercli</a>
+        
+        
+        <a href="/tags/powerdns" style="font-size: 12px;">powerdns</a>
+        
+        
+        <a href="/tags/powershell" style="font-size: 12px;">powershell</a>
+        
+        
+        <a href="/tags/psc" style="font-size: 12px;">psc</a>
+        
+        
+        <a href="/tags/ravello" style="font-size: 12px;">ravello</a>
+        
+        
+        <a href="/tags/rest-api" style="font-size: 12px;">rest-api</a>
+        
+        
+        <a href="/tags/snmp" style="font-size: 12px;">snmp</a>
+        
+        
+        <a href="/tags/srm" style="font-size: 12px;">srm</a>
+        
+        
+        <a href="/tags/ssh" style="font-size: 12px;">ssh</a>
+        
+        
+        <a href="/tags/standdesk" style="font-size: 12px;">standdesk</a>
+        
+        
+        <a href="/tags/storage" style="font-size: 12px;">storage</a>
+        
+        
+        <a href="/tags/study-guide" style="font-size: 12px;">study-guide</a>
+        
+        
+        <a href="/tags/syslog" style="font-size: 12px;">syslog</a>
+        
+        
+        <a href="/tags/sysprep" style="font-size: 12px;">sysprep</a>
+        
+        
+        <a href="/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
+        
+        
+        <a href="/tags/ubuntu" style="font-size: 12px;">ubuntu</a>
+        
+        
+        <a href="/tags/unifi" style="font-size: 12px;">unifi</a>
+        
+        
+        <a href="/tags/update-manager" style="font-size: 12px;">update-manager</a>
+        
+        
+        <a href="/tags/usg" style="font-size: 12px;">usg</a>
+        
+        
+        <a href="/tags/vagrant" style="font-size: 12px;">vagrant</a>
+        
+        
+        <a href="/tags/vcap6-dcv-deploy" style="font-size: 12px;">vcap6-dcv-deploy</a>
+        
+        
+        <a href="/tags/vcap6-dcv-design" style="font-size: 12px;">vcap6-dcv-design</a>
+        
+        
+        <a href="/tags/vcap6.5-dcv-design" style="font-size: 12px;">vcap6.5-dcv-design</a>
+        
+        
+        <a href="/tags/vcenter-ha" style="font-size: 12px;">vcenter-ha</a>
+        
+        
+        <a href="/tags/vcenter-server" style="font-size: 12px;">vcenter-server</a>
+        
+        
+        <a href="/tags/vcloud-air" style="font-size: 12px;">vcloud-air</a>
+        
+        
+        <a href="/tags/vcp6-dcv" style="font-size: 12px;">vcp6-dcv</a>
+        
+        
+        <a href="/tags/vdp" style="font-size: 12px;">vdp</a>
+        
+        
+        <a href="/tags/veeam" style="font-size: 12px;">veeam</a>
+        
+        
+        <a href="/tags/vexpert" style="font-size: 12px;">vexpert</a>
+        
+        
+        <a href="/tags/vm-compatibility" style="font-size: 12px;">vm-compatibility</a>
+        
+        
+        <a href="/tags/vm-tools" style="font-size: 12px;">vm-tools</a>
+        
+        
+        <a href="/tags/vma" style="font-size: 12px;">vma</a>
+        
+        
+        <a href="/tags/vmotion" style="font-size: 12px;">vmotion</a>
+        
+        
+        <a href="/tags/vmware-fling" style="font-size: 12px;">vmware-fling</a>
+        
+        
+        <a href="/tags/vmworld" style="font-size: 12px;">vmworld</a>
+        
+        
+        <a href="/tags/vpn" style="font-size: 12px;">vpn</a>
+        
+        
+        <a href="/tags/vra" style="font-size: 12px;">vra</a>
+        
+        
+        <a href="/tags/vrops" style="font-size: 12px;">vrops</a>
+        
+        
+        <a href="/tags/vsphere-5.1" style="font-size: 12px;">vsphere-5.1</a>
+        
+        
+        <a href="/tags/vsphere-5.5" style="font-size: 12px;">vsphere-5.5</a>
+        
+        
+        <a href="/tags/vsphere-6.0" style="font-size: 12px;">vsphere-6.0</a>
+        
+        
+        <a href="/tags/vsphere-6.5" style="font-size: 12px;">vsphere-6.5</a>
+        
+        
+        <a href="/tags/vsphere-6.7" style="font-size: 12px;">vsphere-6.7</a>
+        
+        
+        <a href="/tags/vsphere-upgrade" style="font-size: 12px;">vsphere-upgrade</a>
+        
+        
+        <a href="/tags/vulnerability" style="font-size: 12px;">vulnerability</a>
+        
+        
+        <a href="/tags/webclient" style="font-size: 12px;">webclient</a>
+        
+        
+        <a href="/tags/windows" style="font-size: 12px;">windows</a>
+        
+    </div>
+</div>
+
+
+
+
+</section>
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          davidstamen.com
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
