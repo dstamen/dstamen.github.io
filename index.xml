@@ -1370,14 +1370,5 @@ So remember to set the VLAN to Native if using an operating system that does not
       <description>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&amp;rsquo;s couldn&amp;rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>/page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/page/</guid>
-      <description>{{ partial all_taxonimies.html }</description>
-    </item>
-    
   </channel>
 </rss>
