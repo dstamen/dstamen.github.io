@@ -18,11 +18,6 @@
 
 
 
-  <meta property="og:title" content="vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.  &middot; davidstamen.com ">
-  <meta property="og:site_name" content="davidstamen.com"/>
-  <meta property="og:url" content="/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/" />
-  <meta property="og:locale" content="en-us">
-
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content=""/>
@@ -37,15 +32,21 @@
     
   
 
-  
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@dstamen" />
-<meta name="twitter:creator" content="@dstamen" />
-<meta name="twitter:title" content="vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files." />
-<meta name="twitter:description" content="" />
-<meta name="twitter:url" content="/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/" />
-<meta name="twitter:domain" content="/">
-  
+  <meta property="og:title" content="vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files." />
+<meta property="og:description" content="After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
+ Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/" />
+<meta property="article:published_time" content="2014-05-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-05-21T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files."/>
+<meta name="twitter:description" content="After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
+ Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  "/>
+
+
+
 
 
 
