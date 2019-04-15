@@ -1,1727 +1,762 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>vCenter Server  &middot; davidstamen.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="">
 
 
 
+  <meta property="og:title" content="vCenter Server  &middot; davidstamen.com ">
+  <meta property="og:site_name" content="davidstamen.com"/>
+  <meta property="og:url" content="/tags/vcenter-server/" />
+  <meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="website" />
+
+
+
+<link href="/tags/vcenter-server/index.xml" rel="alternate" type="application/rss+xml" title="vCenter Server" />
+
+  <link rel="canonical" href="/tags/vcenter-server/" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.55.0" />
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <script src="/js/clr-1.0/clr-icons.min.js"></script>
+    <script src="/js/clr-1.0/custom-elements.min.js"></script>
+    
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    
+    <link href="/css/clr-1.0/clr-ui.css" rel="stylesheet">
+    
+    <link href="/css/clr-1.0/clr-icons.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+</head>
+<body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+  <div class="main-container">
+    
+<header class="header-7">
+  <div class="branding">
     
 
-
-
-
-<!DOCTYPE HTML>
-
-<html>
-    <head>
-        <script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "\/"
-        },
-        "articleSection" : "tags",
-        "name" : "vCenter Server",
-        "headline" : "vCenter Server",
-        "description" : "",
-        "inLanguage" : "en",
-        "author" : "",
-        "creator" : "",
-        "publisher": "",
-        "accountablePerson" : "",
-        "copyrightHolder" : "",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-04-11 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-04-11 00:00:00 \x2b0000 UTC",
-        "url" : "\/tags\/vcenter-server\/",
-        "wordCount" : "0",
-        "keywords" : [ "Blog" ]
-    }
-    </script>
-        
-            <title>vCenter Server - davidstamen.com</title>
-        
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.55.0" />
-        
-  
     
-  
-
-  
-
-  <link rel="apple-touch-icon-precomposed" href='/favicon/apple-touch-icon-precomposed.png'>
-  <link rel="icon" href='/favicon/favicon.png'>
-  
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content='/favicon/mstile.png'>
-  <meta name="application-name" content="davidstamen.com">
-  <meta name="msapplication-tooltip" content="a blog about virtualization and stuff">
-  <meta name="msapplication-config" content='/favicon/ieconfig.xml'>
-
-
-
-        
-        
-            
-                <meta name="description" content="a blog about virtualization and stuff">
-            
-        
-
-        <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="vCenter Server"/>
-<meta name="twitter:description" content="a blog about virtualization and stuff"/>
-<meta name="twitter:site" content="@davidstamen"/>
-
-        
-        
-            <meta property="og:image" content="http://davidstamen.com/images/logo.png">
-        
-        
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="200">
-        <meta property="og:image:height" content="300">
-        <meta property="og:title" content="vCenter Server" />
-        <meta property="og:description" content="a blog about virtualization and stuff" />
-
-        
-<meta itemprop="name" content="vCenter Server">
-<meta itemprop="description" content="a blog about virtualization and stuff">
-
-
-        
-
-        
-            
-        
-
-        
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/add-on.css">
-            <link rel="stylesheet" href="/css/academicons.min.css">
-        
-
-        
-            
-                
-            
-        
-
-
-  
-    
-    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
-  
-
-
+    <a class="navbar-brand-img" href="/">
+      <img alt="" src="">
+      <span class="title">davidstamen.com</span>
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-67336507-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-    </head>
-    <body>
-
-      
-      <div id="wrapper">
-
+    </a>  
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
     
-<header id="header">
     
-      <h1><a href="/">tags</a></h1>
+        <a class="nav-link  nav-text" href="/" >
+          
+          Home
+        </a>
     
-
-    <nav class="links">
-        <ul>
-            
-                <li>
-                    <a href="/">
-                            <i class="fa fa-home">&nbsp;</i>Home
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/tags/">
-                            <i class="fa fa-hashtag">&nbsp;</i>Tags
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/categories/">
-                            <i class="fa fa-sitemap">&nbsp;</i>Categories
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/acclaim/">
-                            <i class="fa fa-list">&nbsp;</i>Acclaim
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/about/">
-                            <i class="fa fa-question">&nbsp;</i>About
-                    </a>
-                </li>
-            
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            
-            <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="//google.com/search">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="davidstamen.com">
-                </form>
-            </li>
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
+        <a class="nav-link  nav-text" href="/tags/" >
+          
+          Tags
+        </a>
+    
+        <a class="nav-link  nav-text" href="/categories/" >
+          
+          Categories
+        </a>
+    
+        <a class="nav-link  nav-text" href="/acclaim" >
+          
+          Acclaim
+        </a>
+    
+        <a class="nav-link  nav-text" href="/about" >
+          
+          About
+        </a>
+    
+  </div>
+  <div class="header-actions">
+  <form class="search"id="search" method="get" action="//google.com/search">
+    <label for="search_input">
+        <input id="search_input" type="text" name="q" placeholder="Search ...">
+        <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+    </label>
+</form>
+</div>
 </header>
 
 
-<section id="menu">
 
+<div class="content-container">
+  <div class="content-area">
+    <h1>vCenter Server
+</h1>
+
+    <div class="clr-row">
     
-        <section>
-            <form class="search" method="get" action="//google.com/search">
-                <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="/">
-            </form>
-        </section>
-
-    
-        <section>
-            <ul class="links">
-                
-                    <li>
-                        <a href="/">
-                            <h3>
-                                <i class="fa fa-home">&nbsp;</i>Home
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags/">
-                            <h3>
-                                <i class="fa fa-hashtag">&nbsp;</i>Tags
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories/">
-                            <h3>
-                                <i class="fa fa-sitemap">&nbsp;</i>Categories
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/acclaim/">
-                            <h3>
-                                <i class="fa fa-list">&nbsp;</i>Acclaim
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/about/">
-                            <h3>
-                                <i class="fa fa-question">&nbsp;</i>About
-                            </h3>
-                        </a>
-                    </li>
-                
-            </ul>
-        </section>
-
-    
-        <section class="recent-posts">
-            <div class="mini-posts">
-                <header>
-                    <h3>Recent Posts</h3>
-                </header>
-                
-
-                
-                    
-                
-
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-04-11'>
-                                    April 11, 2019</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-01-31'>
-                                    January 31, 2019</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-12-20'>
-                                    December 20, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-11-19'>
-                                    November 19, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-11-19'>
-                                    November 19, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/">vSphere Update Manager 6.7 Unable to Scan Cluster</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-10-25'>
-                                    October 25, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/10/24/vmworld-eu-2018-sessions-events/">VMworld EU - Sessions and Events</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-10-24'>
-                                    October 24, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-10-18'>
-                                    October 18, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-10-11'>
-                                    October 11, 2018</time>
-                            </header>
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-10-08'>
-                                    October 8, 2018</time>
-                            </header>
-                        </article>
-                
-
-                
-                    <a href=
-                        
-                            /blog/
-                        
-                        class="button">View more posts</a>
-                
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 11, 2019 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
             </div>
-        </section>
-
-    
-        
-</section>
-
-    
-    <div id="main">
-        <h1>vCenter Server</h1>
-        
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2019-04-11'>
-            April 11, 2019</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
   
-  <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/converge-tool">Converge Tool</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2019-01-31'>
-            January 31, 2019</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>Previously I covered how to use the <a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html">VCSA Installer to do a scripted upgrade</a> and then I covered <a href="https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a> However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/rest-api">REST API</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/powershell">Powershell</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-12-20'>
-            December 20, 2018</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/rest-api">REST API</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-10-05'>
-            October 5, 2018</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&ndash;especially when having to perform the task if you have multiple&hellip;</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-upgrade">vSphere Upgrade</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.5">vSphere 6.5</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/psc">PSC</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-05-23'>
-            May 23, 2018</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-04-17'>
-            April 17, 2018</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>It&rsquo;s finally out! vSphere 6.7 is the next major release of VMware&rsquo;s virtualization software. I&rsquo;ve been using 6.7 through the <a href="https://secure.vmware.com/43478_vSphere_Beta_Reg">vSphere Beta Program</a> and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.7">vSphere 6.7</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-upgrade">vSphere Upgrade</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-01-19'>
-            January 19, 2018</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying <em>The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created.</em> This was strange because no other hosts had this issue.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/storage">Storage</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/ha">HA</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-08-02'>
-            August 2, 2017</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.5">vSphere 6.5</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-ha">vCenter HA</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-04-17'>
-            April 17, 2017</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/powercli">PowerCLI</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-02-03'>
-            February 3, 2017</time>
-        <span class="author"></span>
-        
-        
-    </div>
-</header>
-
-  
-  <p>The first vSphere 6.5 Patch (6.5a) was just released! So far it seems there are a few critical fixes but the biggest feature is NSX 6.3 support.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/vmware">VMware</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-server">vCenter Server</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vsphere-6.5">vSphere 6.5</a></li>
-                
-                
-                <li><a class="article-category-link" href="/tags/vcenter-ha">vCenter HA</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-
-        
-<ul class="actions pagination">
-    
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
-    
-
-    
-        <li><a href="/tags/vcenter-server/page/2/"
-                class="button big next">Next Page</a></li>
-    
-</ul>
-
-    </div>
-    
-<section id="sidebar">
-
-  
-  <section id="intro">
-    
-    
-      
-        <a href='/'><img src="/images/me2-300.png" width="300" alt="me" /></a>
-      
-    
-    
-      <header>
-        <h2>David Stamen</h2>
-        <p>technical marketing engineer at vmware</p>
-      </header>
-    
-    
-      <ul class="icons">
-        
-          
-    <li><a href="/tags/vcenter-server/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
-
-
-        
-        
-  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </ul>
-    
-  </section>
-
-  
-  
-  
-  
-
-  
- <section>
-  <h3>Recent Posts</h3>
-   <section class="recent-posts">
-    <div class="mini-posts">
-
-      <div class="posts-container">
-        
-
-        
-          
-        
-
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></h3>
-              
-              <time class="published" datetime=
-                  '2019-04-11'>
-                  April 11, 2019</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></h3>
-              
-              <time class="published" datetime=
-                  '2019-01-31'>
-                  January 31, 2019</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-12-20'>
-                  December 20, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-11-19'>
-                  November 19, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-11-19'>
-                  November 19, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/">vSphere Update Manager 6.7 Unable to Scan Cluster</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-10-25'>
-                  October 25, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/10/24/vmworld-eu-2018-sessions-events/">VMworld EU - Sessions and Events</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-10-24'>
-                  October 24, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/">What&#39;s New with Auto Deploy in vSphere 6.7 U1</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-10-18'>
-                  October 18, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-10-11'>
-                  October 11, 2018</time>
-          </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3><a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a></h3>
-              
-              <time class="published" datetime=
-                  '2018-10-08'>
-                  October 8, 2018</time>
-          </header>
-            
-          </article>
-        
-      </div>
-    </div>
-  </section>
- </section>
- <section>
- <h3>Tag Cloud</h3>
+    vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let’s dive in and take a look at whats new and see how to converge a deployment using the new UI.
+Included in vSphere 6.7 Update 2 is an overhauled system configuration section. Within system configuration you have a table view showing you the Platform Services Controllers and vCenter Servers in your Environment.
   
 
 
-<div class="widget-wrap">
-    <h3 class="widget-title">
-        
-    </h3>
-    <div class="widget tagcloud">
-        
-        
-        <a href="/tags/ansible" style="font-size: 12px;">ansible</a>
-        
-        
-        <a href="/tags/autodeploy" style="font-size: 12px;">autodeploy</a>
-        
-        
-        <a href="/tags/availability" style="font-size: 12px;">availability</a>
-        
-        
-        <a href="/tags/career" style="font-size: 12px;">career</a>
-        
-        
-        <a href="/tags/chrome" style="font-size: 12px;">chrome</a>
-        
-        
-        <a href="/tags/cisco-aci" style="font-size: 12px;">cisco-aci</a>
-        
-        
-        <a href="/tags/cisco-champion" style="font-size: 12px;">cisco-champion</a>
-        
-        
-        <a href="/tags/cisco-ucs" style="font-size: 12px;">cisco-ucs</a>
-        
-        
-        <a href="/tags/content-library" style="font-size: 12px;">content-library</a>
-        
-        
-        <a href="/tags/converge-tool" style="font-size: 12px;">converge-tool</a>
-        
-        
-        <a href="/tags/dump-collector" style="font-size: 12px;">dump-collector</a>
-        
-        
-        <a href="/tags/ebook" style="font-size: 12px;">ebook</a>
-        
-        
-        <a href="/tags/esxcli" style="font-size: 12px;">esxcli</a>
-        
-        
-        <a href="/tags/esxi" style="font-size: 12px;">esxi</a>
-        
-        
-        <a href="/tags/exchange" style="font-size: 12px;">exchange</a>
-        
-        
-        <a href="/tags/forestry.io" style="font-size: 12px;">forestry.io</a>
-        
-        
-        <a href="/tags/ha" style="font-size: 12px;">ha</a>
-        
-        
-        <a href="/tags/homelab" style="font-size: 12px;">homelab</a>
-        
-        
-        <a href="/tags/horizon-view" style="font-size: 12px;">horizon-view</a>
-        
-        
-        <a href="/tags/hugo" style="font-size: 12px;">hugo</a>
-        
-        
-        <a href="/tags/jekyll" style="font-size: 12px;">jekyll</a>
-        
-        
-        <a href="/tags/kvm" style="font-size: 12px;">kvm</a>
-        
-        
-        <a href="/tags/l1tf" style="font-size: 12px;">l1tf</a>
-        
-        
-        <a href="/tags/lifecycle" style="font-size: 12px;">lifecycle</a>
-        
-        
-        <a href="/tags/myvmware" style="font-size: 12px;">myvmware</a>
-        
-        
-        <a href="/tags/network" style="font-size: 12px;">network</a>
-        
-        
-        <a href="/tags/nginx" style="font-size: 12px;">nginx</a>
-        
-        
-        <a href="/tags/pernix-pro" style="font-size: 12px;">pernix-pro</a>
-        
-        
-        <a href="/tags/powercli" style="font-size: 12px;">powercli</a>
-        
-        
-        <a href="/tags/powerdns" style="font-size: 12px;">powerdns</a>
-        
-        
-        <a href="/tags/powershell" style="font-size: 12px;">powershell</a>
-        
-        
-        <a href="/tags/psc" style="font-size: 12px;">psc</a>
-        
-        
-        <a href="/tags/ravello" style="font-size: 12px;">ravello</a>
-        
-        
-        <a href="/tags/rest-api" style="font-size: 12px;">rest-api</a>
-        
-        
-        <a href="/tags/snmp" style="font-size: 12px;">snmp</a>
-        
-        
-        <a href="/tags/srm" style="font-size: 12px;">srm</a>
-        
-        
-        <a href="/tags/ssh" style="font-size: 12px;">ssh</a>
-        
-        
-        <a href="/tags/standdesk" style="font-size: 12px;">standdesk</a>
-        
-        
-        <a href="/tags/storage" style="font-size: 12px;">storage</a>
-        
-        
-        <a href="/tags/study-guide" style="font-size: 12px;">study-guide</a>
-        
-        
-        <a href="/tags/syslog" style="font-size: 12px;">syslog</a>
-        
-        
-        <a href="/tags/sysprep" style="font-size: 12px;">sysprep</a>
-        
-        
-        <a href="/tags/trend-micro" style="font-size: 12px;">trend-micro</a>
-        
-        
-        <a href="/tags/ubuntu" style="font-size: 12px;">ubuntu</a>
-        
-        
-        <a href="/tags/unifi" style="font-size: 12px;">unifi</a>
-        
-        
-        <a href="/tags/update-manager" style="font-size: 12px;">update-manager</a>
-        
-        
-        <a href="/tags/usg" style="font-size: 12px;">usg</a>
-        
-        
-        <a href="/tags/vagrant" style="font-size: 12px;">vagrant</a>
-        
-        
-        <a href="/tags/vcap6-dcv-deploy" style="font-size: 12px;">vcap6-dcv-deploy</a>
-        
-        
-        <a href="/tags/vcap6-dcv-design" style="font-size: 12px;">vcap6-dcv-design</a>
-        
-        
-        <a href="/tags/vcap6.5-dcv-design" style="font-size: 12px;">vcap6.5-dcv-design</a>
-        
-        
-        <a href="/tags/vcenter-ha" style="font-size: 12px;">vcenter-ha</a>
-        
-        
-        <a href="/tags/vcenter-server" style="font-size: 12px;">vcenter-server</a>
-        
-        
-        <a href="/tags/vcloud-air" style="font-size: 12px;">vcloud-air</a>
-        
-        
-        <a href="/tags/vcp6-dcv" style="font-size: 12px;">vcp6-dcv</a>
-        
-        
-        <a href="/tags/vdp" style="font-size: 12px;">vdp</a>
-        
-        
-        <a href="/tags/veeam" style="font-size: 12px;">veeam</a>
-        
-        
-        <a href="/tags/vexpert" style="font-size: 12px;">vexpert</a>
-        
-        
-        <a href="/tags/vm-compatibility" style="font-size: 12px;">vm-compatibility</a>
-        
-        
-        <a href="/tags/vm-tools" style="font-size: 12px;">vm-tools</a>
-        
-        
-        <a href="/tags/vma" style="font-size: 12px;">vma</a>
-        
-        
-        <a href="/tags/vmotion" style="font-size: 12px;">vmotion</a>
-        
-        
-        <a href="/tags/vmware-fling" style="font-size: 12px;">vmware-fling</a>
-        
-        
-        <a href="/tags/vmworld" style="font-size: 12px;">vmworld</a>
-        
-        
-        <a href="/tags/vpn" style="font-size: 12px;">vpn</a>
-        
-        
-        <a href="/tags/vra" style="font-size: 12px;">vra</a>
-        
-        
-        <a href="/tags/vrops" style="font-size: 12px;">vrops</a>
-        
-        
-        <a href="/tags/vsphere-5.1" style="font-size: 12px;">vsphere-5.1</a>
-        
-        
-        <a href="/tags/vsphere-5.5" style="font-size: 12px;">vsphere-5.5</a>
-        
-        
-        <a href="/tags/vsphere-6.0" style="font-size: 12px;">vsphere-6.0</a>
-        
-        
-        <a href="/tags/vsphere-6.5" style="font-size: 12px;">vsphere-6.5</a>
-        
-        
-        <a href="/tags/vsphere-6.7" style="font-size: 12px;">vsphere-6.7</a>
-        
-        
-        <a href="/tags/vsphere-upgrade" style="font-size: 12px;">vsphere-upgrade</a>
-        
-        
-        <a href="/tags/vulnerability" style="font-size: 12px;">vulnerability</a>
-        
-        
-        <a href="/tags/webclient" style="font-size: 12px;">webclient</a>
-        
-        
-        <a href="/tags/windows" style="font-size: 12px;">windows</a>
-        
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a> and <a class="" href="/tags/converge-tool">Converge Tool</a>
+        </div>
     </div>
 </div>
-
-
-
-
-</section>
-
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+January 31, 2019 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
   
-  <section id="footer">
     
-      <ul class="icons">
-        
-          
-    <li><a href="/tags/vcenter-server/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+  
 
 
-        
-        
-  <li><a href="//github.com/dstamen" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/davidstamen" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//twitter.com/davidstamen" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </ul>
-    
-    <p class="copyright">
-      
-        &copy; 2019
-        
-          davidstamen.com
-        
-      .
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
-    </p>
-  </section>
-</section>
-
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/rest-api">REST API</a>, <a class="" href="/tags/vcenter-server">vCenter Server</a> and <a class="" href="/tags/powershell">Powershell</a>
+        </div>
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+December 20, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/rest-api">REST API</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 5, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren’t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless–especially when having to perform the task if you have multiple PSC’s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to’s and benefits of using the CLI based approach.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/psc">PSC</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/">Patching your vCenter Server Appliance from 6.7 to 6.7a</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+May 23, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a> and <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 17, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    It’s finally out! vSphere 6.7 is the next major release of VMware’s virtualization software. I’ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/vcenter-server">vCenter Server</a> and <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+January 19, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object ‘vim.Datastore:datastore-1131’ has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA…same issue….disable HA for entire cluster and re-enable…..same issue…whoops thats not good!
+First step, check what luns are available to the cluster.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/storage">Storage</a> and <a class="" href="/tags/ha">HA</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+August 2, 2017 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.
+Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vcenter-ha">vCenter HA</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 17, 2017 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
+Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+February 3, 2017 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, updating, then redeploying in this scenario. Warning2: It also seems that if you try to redeploy VCHA Advanced after an upgrade, it still resets the hostname, I have a case opened and will update here as neccessary.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vcenter-ha">vCenter HA</a>
+        </div>
+    </div>
+</div>
+    
+    </div>
+    
+<nav>
+  <ul class="pagination">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul class="pagination">
+    
+    
     
 
     
-      
     
 
     
-      
-      
-      
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
-        
-        
-        
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
-        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-      
     
     
+      
+
+      
+      
+      
+
+        
+
+      
+
+      
+      
+        <li class="pagination__item pagination__item--current">
+          <a href="/tags/vcenter-server/" class="btn btn-sm  btn btn-primary ">
+            1
+          </a>
+        </li>
+      
+
     
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-      <script src="/js/util.js"></script>
-      <script src="/js/main.js"></script>
-      <script src="/js/backToTop.js"></script>
+    
+      
+
+      
+      
+      
+
+        
+
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/tags/vcenter-server/page/2/" class="btn btn-sm  btn btn-outline">
+            2
+          </a>
+        </li>
+      
+
     
 
     
-      
-        
-      
+    
+    <li class="pagination__item pagination__item--next">
+      <a href="/tags/vcenter-server/page/2/" class="btn btn-sm btn-outline">
+        ...
+      </a>
+    </li>
     
 
     
-    <script>hljs.initHighlightingOnLoad();</script>
-      <script src="//yihui.name/js/math-code.js"></script>
-<script async
-src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    
+    <li class="pagination__item pagination__item--last">
+      <a class="btn btn-sm btn btn-outline" href="/tags/vcenter-server/page/2/">
+        2
+      </a>
+    </li>
+    
+
+  </ul>
+
+  </ul>
+</nav>
+
+
+  </div>
+  
+    <nav class="sidenav clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+  <section class="sidenav-content">
+    
+    <section class="nav-group collapsible">
+      <input id="LatestPosts" type="checkbox">
+      <label for="LatestPosts">Latest Posts</label>
+      <ul class="nav-list">
+        
+        <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        
+        <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        
+        <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        
+        <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
+        
+        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
+        
+      </ul>
+    </section> 
+    <section class="nav-group collapsible">
+      <input id="Tags" type="checkbox">
+      <label for="Tags">Tags (Top 20)</label>
+      <ul class="nav-list">
+      
+          
+          
+          
+          
+          
+          <li><a href="/tags/powercli" class="nav-link">powercli <span class="badge badge-7">20</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcp6-dcv" class="nav-link">vcp6 dcv <span class="badge badge-7">13</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/study-guide" class="nav-link">study guide <span class="badge badge-7">12</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/powershell" class="nav-link">powershell <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/storage" class="nav-link">storage <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcenter-server" class="nav-link">vcenter server <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/cisco-ucs" class="nav-link">cisco ucs <span class="badge badge-7">10</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.7" class="nav-link">vsphere 6.7 <span class="badge badge-7">10</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/horizon-view" class="nav-link">horizon view <span class="badge badge-7">9</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-upgrade" class="nav-link">vsphere upgrade <span class="badge badge-7">8</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.0" class="nav-link">vsphere 6.0 <span class="badge badge-7">7</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.5" class="nav-link">vsphere 6.5 <span class="badge badge-7">6</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcenter-ha" class="nav-link">vcenter ha <span class="badge badge-7">4</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vrops" class="nav-link">vrops <span class="badge badge-7">4</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/exchange" class="nav-link">exchange <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/jekyll" class="nav-link">jekyll <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/psc" class="nav-link">psc <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/syslog" class="nav-link">syslog <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vagrant" class="nav-link">vagrant <span class="badge badge-7">3</span></a></li>
+          
+      
+    </section>
+    
+  </section>
+</nav>
+  
+</div>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67336507-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67336507-1');
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
   </body>
 </html>
 

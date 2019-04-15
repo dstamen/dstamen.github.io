@@ -1,367 +1,295 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
-    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>404 Page not found  &middot; davidstamen.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <style>
-     * {
-         -moz-box-sizing:border-box;
-         -webkit-box-sizing:border-box;
-         box-sizing:border-box;
-     }
+  <meta name="description" content="" />
 
-     html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-     abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-     small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-     fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup,
-     menu, nav, section, summary, time, mark, audio, video {
-         margin:0;
-         padding:0;
-         border:0;
-         outline:0;
-         vertical-align:baseline;
-         background:transparent;
-     }
-
-     article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-         display: block;
-     }
-
-     html {
-         font-size: 16px;
-         line-height: 24px;
-         width:100%;
-         height:100%;
-         -webkit-text-size-adjust: 100%;
-         -ms-text-size-adjust: 100%;
-         overflow-y:scroll;
-         overflow-x:hidden;
-     }
-
-     img {
-         vertical-align:middle;
-         max-width: 100%;
-         height: auto;
-         border: 0;
-         -ms-interpolation-mode: bicubic;
-     }
-
-     body {
-         min-height:100%;
-         -webkit-font-smoothing: subpixel-antialiased;
-     }
-
-     .clearfix {
-	       clear:both;
-	       zoom: 1;
-     }
-     .clearfix:before, .clearfix:after {
-         content: "\0020";
-         display: block;
-         height: 0;
-         visibility: hidden;
-     }
-     .clearfix:after {
-         clear: both;
-     }
-    </style>
-    <style>
-  .plain.error-page-wrapper {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color:#6355bc;
-    padding:0 5%;
-    position:relative;
-  }
-
-  .plain.error-page-wrapper .content-container {
-    -webkit-transition: left .5s ease-out, opacity .5s ease-out;
-    -moz-transition: left .5s ease-out, opacity .5s ease-out;
-    -ms-transition: left .5s ease-out, opacity .5s ease-out;
-    -o-transition: left .5s ease-out, opacity .5s ease-out;
-    transition: left .5s ease-out, opacity .5s ease-out;
-    max-width:400px;
-    position:relative;
-    left:-30px;
-    opacity:0;
-  }
-
-  .plain.error-page-wrapper .content-container.in {
-    left: 0px;
-    opacity:1;
-  }
-
-  .plain.error-page-wrapper .head-line {
-    transition: color .2s linear;
-    font-size:48px;
-    line-height:60px;
-    color:rgba(255,255,255,.2);
-    letter-spacing: -1px;
-    margin-bottom: 5px;
-  }
-  .plain.error-page-wrapper .subheader {
-    transition: color .2s linear;
-    font-size:36px;
-    line-height:46px;
-    color:#fff;
-  }
-  .plain.error-page-wrapper hr {
-    height:1px;
-    background-color: rgba(255,255,255,.2);
-    border:none;
-    width:250px;
-    margin:35px 0;
-  }
-  .plain.error-page-wrapper .context {
-    transition: color .2s linear;
-    font-size:18px;
-    line-height:27px;
-    color:#fff;
-  }
-  .plain.error-page-wrapper .context p {
-    margin:0;
-  }
-  .plain.error-page-wrapper .context p:nth-child(n+2) {
-    margin-top:12px;
-  }
-  .plain.error-page-wrapper .buttons-container {
-    margin-top: 45px;
-    overflow: hidden;
-  }
-  .plain.error-page-wrapper .buttons-container a {
-    transition: color .2s linear, border-color .2s linear;
-    font-size:14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color:#fff;
-    border:2px solid white;
-    border-radius: 99px;
-    padding:8px 30px 9px;
-    display: inline-block;
-    float:left;
-  }
-  .plain.error-page-wrapper .buttons-container a:hover {
-    background-color:rgba(255,255,255,.05);
-  }
-  .plain.error-page-wrapper .buttons-container a:first-child {
-    margin-right:25px;
-  }
-
-  @media screen and (max-width: 485px) {
-    .plain.error-page-wrapper .header {
-      font-size:36px;
-     }
-    .plain.error-page-wrapper .subheader {
-      font-size:27px;
-      line-height:38px;
-     }
-    .plain.error-page-wrapper hr {
-      width:185px;
-      margin:25px 0;
-     }
-
-    .plain.error-page-wrapper .context {
-      font-size:16px;
-      line-height: 24px;
-     }
-    .plain.error-page-wrapper .buttons-container {
-      margin-top:35px;
-    }
-
-    .plain.error-page-wrapper .buttons-container a {
-      font-size:13px;
-      padding:8px 0 7px;
-      width:45%;
-      text-align: center;
-    }
-    .plain.error-page-wrapper .buttons-container a:first-child {
-      margin-right:10%;
-    }
-  }
-</style>
-    <style>
-
-    .background-color {
-      background-color: rgba(244, 244, 244, 1) !important;
-    }
+  <meta name="keywords" content="">
 
 
-    .primary-text-color {
-      color: rgba(171, 171, 171, 1) !important;
-    }
 
-    .secondary-text-color {
-      color: rgba(0, 0, 0, 1) !important;
-    }
+  <meta property="og:title" content="404 Page not found  &middot; davidstamen.com ">
+  <meta property="og:site_name" content="davidstamen.com"/>
+  <meta property="og:url" content="/404.html" />
+  <meta property="og:locale" content="en-us">
 
-    .sign-text-color {
-      color: #FFBA00 !important;
-    }
 
-    .sign-frame-color {
-      color: #343C3F;
-    }
+<meta property="og:type" content="website" />
 
-    .pane {
-      background-color: #FFFFFF !important;
-    }
 
-    .border-button {
-      color: rgba(46, 186, 174, 1) !important;
-      border-color: rgba(46, 186, 174, 1) !important;
-    }
-    .button {
-      background-color: rgba(46, 186, 174, 1) !important;
-      color: #FFFFFF !important;
-    }
 
-    .shadow {
-      box-shadow: 0 0 60px #000000;
-    }
+  <link rel="canonical" href="/404.html" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.55.0" />
 
-</style>
-  </head>
-  <body class="plain error-page-wrapper background-color background-image">
-    <div class="content-container">
-	<div class="head-line secondary-text-color">
-		404
-	</div>
-	<div class="subheader primary-text-color">
-		Oops, the page you're <br>
-		looking for does not exist.
-	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		
-    <p>
-      You may want to head back to the homepage.<br />
-      If you think something is broken, report a problem.
-    </p>
-	</div>
-	<div class="buttons-container">
-		<a class="border-button" href="/">Go To Homepage</a>
-		<a class="border-button" href="mailto:">Report A Problem</a>
-	</div>
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <script src="/js/clr-1.0/clr-icons.min.js"></script>
+    <script src="/js/clr-1.0/custom-elements.min.js"></script>
+    
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    
+    <link href="/css/clr-1.0/clr-ui.css" rel="stylesheet">
+    
+    <link href="/css/clr-1.0/clr-icons.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+</head>
+<body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+  <div class="main-container">
+    
+<header class="header-7">
+  <div class="branding">
+    
+
+    
+    <a class="navbar-brand-img" href="/">
+      <img alt="" src="">
+      <span class="title">davidstamen.com</span>
+      
+    </a>  
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    
+    
+        <a class="nav-link  nav-text" href="/" >
+          
+          Home
+        </a>
+    
+        <a class="nav-link  nav-text" href="/tags/" >
+          
+          Tags
+        </a>
+    
+        <a class="nav-link  nav-text" href="/categories/" >
+          
+          Categories
+        </a>
+    
+        <a class="nav-link  nav-text" href="/acclaim" >
+          
+          Acclaim
+        </a>
+    
+        <a class="nav-link  nav-text" href="/about" >
+          
+          About
+        </a>
+    
+  </div>
+  <div class="header-actions">
+  <form class="search"id="search" method="get" action="//google.com/search">
+    <label for="search_input">
+        <input id="search_input" type="text" name="q" placeholder="Search ...">
+        <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+    </label>
+</form>
 </div>
-
-    <script>
-     function ErrorPage(container, pageType, templateName) {
-       this.$container = $(container);
-       this.$contentContainer = this.$container.find(templateName == 'sign' ? '.sign-container' : '.content-container');
-       this.pageType = pageType;
-       this.templateName = templateName;
-     }
-
-     ErrorPage.prototype.centerContent = function () {
-       var containerHeight = this.$container.outerHeight()
-         , contentContainerHeight = this.$contentContainer.outerHeight()
-         , top = (containerHeight - contentContainerHeight) / 2
-         , offset = this.templateName == 'sign' ? -100 : 0;
-
-       this.$contentContainer.css('top', top + offset);
-     };
-
-     ErrorPage.prototype.initialize = function () {
-       var self = this;
-
-       this.centerContent();
-       this.$container.on('resize', function (e) {
-         e.preventDefault();
-         e.stopPropagation();
-         self.centerContent();
-       });
-
-       
-       if (this.templateName == 'plain') {
-         window.setTimeout(function () {
-           self.$contentContainer.addClass('in');
-         }, 500);
-       }
-
-       
-       if (this.templateName == 'sign') {
-         $('.sign-container').animate({textIndent : 0}, {
-           step : function (now) {
-             $(this).css({
-               transform : 'rotate(' + now + 'deg)',
-               'transform-origin' : 'top center'
-             });
-           },
-           duration : 1000,
-           easing : 'easeOutBounce'
-         });
-       }
-     };
+</header>
 
 
-     ErrorPage.prototype.createTimeRangeTag = function(start, end) {
-       return (
-         '<time utime=' + start + ' simple_format="MMM DD, YYYY HH:mm">' + start + '</time> - <time utime=' + end + ' simple_format="MMM DD, YYYY HH:mm">' + end + '</time>.'
-       )
-     };
+
+    <div class="content-container">
+      <div class="content-area">
+          <h1>404 Not Found</h1>
+          <p>What you're looking for isn't here, sorry!</p>
+          <p><a href="http://davidstamen.com">&larr; Click here to go back home</a></p>
+          </div>
+      
+      <nav class="sidenav clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+  <section class="sidenav-content">
+    
+    <section class="nav-group collapsible">
+      <input id="LatestPosts" type="checkbox">
+      <label for="LatestPosts">Latest Posts</label>
+      <ul class="nav-list">
+        
+        <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        
+        <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        
+        <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        
+        <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
+        
+        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
+        
+      </ul>
+    </section> 
+    <section class="nav-group collapsible">
+      <input id="Tags" type="checkbox">
+      <label for="Tags">Tags (Top 20)</label>
+      <ul class="nav-list">
+      
+          
+          
+          
+          
+          
+          <li><a href="/tags/powercli" class="nav-link">powercli <span class="badge badge-7">20</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcp6-dcv" class="nav-link">vcp6 dcv <span class="badge badge-7">13</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/study-guide" class="nav-link">study guide <span class="badge badge-7">12</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/powershell" class="nav-link">powershell <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/storage" class="nav-link">storage <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcenter-server" class="nav-link">vcenter server <span class="badge badge-7">11</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/cisco-ucs" class="nav-link">cisco ucs <span class="badge badge-7">10</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.7" class="nav-link">vsphere 6.7 <span class="badge badge-7">10</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/horizon-view" class="nav-link">horizon view <span class="badge badge-7">9</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-upgrade" class="nav-link">vsphere upgrade <span class="badge badge-7">8</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.0" class="nav-link">vsphere 6.0 <span class="badge badge-7">7</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vsphere-6.5" class="nav-link">vsphere 6.5 <span class="badge badge-7">6</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vcenter-ha" class="nav-link">vcenter ha <span class="badge badge-7">4</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vrops" class="nav-link">vrops <span class="badge badge-7">4</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/exchange" class="nav-link">exchange <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/jekyll" class="nav-link">jekyll <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/psc" class="nav-link">psc <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/syslog" class="nav-link">syslog <span class="badge badge-7">3</span></a></li>
+          
+      
+          
+          
+          <li><a href="/tags/vagrant" class="nav-link">vagrant <span class="badge badge-7">3</span></a></li>
+          
+      
+    </section>
+    
+  </section>
+</nav>
+      
+    </div>
+      
+      
 
 
-     ErrorPage.prototype.handleStatusFetchSuccess = function (pageType, data) {
-       if (pageType == '503') {
-         $('#replace-with-fetched-data').html(data.status.description);
-       } else {
-         if (!!data.scheduled_maintenances.length) {
-           var maint = data.scheduled_maintenances[0];
-           $('#replace-with-fetched-data').html(this.createTimeRangeTag(maint.scheduled_for, maint.scheduled_until));
-           $.fn.localizeTime();
-         }
-         else {
-           $('#replace-with-fetched-data').html('<em>(there are no active scheduled maintenances)</em>');
-         }
-       }
-     };
 
 
-     ErrorPage.prototype.handleStatusFetchFail = function (pageType) {
-       $('#replace-with-fetched-data').html('<em>(enter a valid StatusPage.io url)</em>');
-     };
 
 
-     ErrorPage.prototype.fetchStatus = function (pageUrl, pageType) {
-       
-       if (!pageUrl || !pageType || pageType == '404') return;
-
-       var url = ''
-         , self = this;
-
-       if (pageType == '503') {
-         url = pageUrl + '/api/v2/status.json';
-       }
-       else {
-         url = pageUrl + '/api/v2/scheduled-maintenances/active.json';
-       }
-
-       $.ajax({
-         type : "GET",
-         url : url,
-       }).success(function (data, status) {
-         
-         self.handleStatusFetchSuccess(pageType, data);
-       }).fail(function (xhr, msg) {
-         
-         self.handleStatusFetchFail(pageType);
-       });
-
-     };
-     var ep = new ErrorPage('body', "404", "plain");
-     ep.initialize();
-
-     
-     $(window).on('resize', function() {
-       $('body').trigger('resize')
-     });
-
-    </script>
 
 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67336507-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67336507-1');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
   </body>
 </html>
+

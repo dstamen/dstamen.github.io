@@ -17,7 +17,8 @@
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/</guid>
-      <description>&lt;p&gt;vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&amp;rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.&lt;/p&gt;</description>
+      <description>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&amp;rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.
+Included in vSphere 6.7 Update 2 is an overhauled system configuration section. Within system configuration you have a table view showing you the Platform Services Controllers and vCenter Servers in your Environment.</description>
     </item>
     
   </channel>

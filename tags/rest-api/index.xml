@@ -17,7 +17,8 @@
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</guid>
-      <description>&lt;p&gt;Previously I covered how to use the &lt;a href=&#34;https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html&#34;&gt;VCSA Installer to do a scripted upgrade&lt;/a&gt; and then I covered &lt;a href=&#34;https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/&#34;&gt;Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)&lt;/a&gt; However, after learning recently how to call API&amp;rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?&lt;/p&gt;</description>
+      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&amp;rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
     </item>
     
     <item>
