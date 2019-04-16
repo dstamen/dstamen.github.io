@@ -45,6 +45,7 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
 <meta name="twitter:description" content="Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
 Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell."/>
 
+  
 
 
 
@@ -425,40 +426,6 @@ If you wish to change the default port or maxsize of the dump, these can be chan
   
 </div>
       
-      
-
-
-
-
-
-
-
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67336507-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-67336507-1');
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </body>
 </html>

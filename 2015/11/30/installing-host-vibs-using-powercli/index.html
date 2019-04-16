@@ -45,6 +45,7 @@ I had to run these updates on over 50 hosts and I really didn&rsquo;t want to ha
 <meta name="twitter:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
 I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script."/>
 
+  
 
 
 
@@ -418,40 +419,6 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; 
   
 </div>
       
-      
-
-
-
-
-
-
-
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67336507-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-67336507-1');
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </body>
 </html>
