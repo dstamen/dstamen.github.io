@@ -320,5 +320,5 @@ background-color: #FF6600
 @media screen and (min-width: 0px) and (max-width: 700px) {
   nav.sidenav { display: none; }
   div.header-nav { display: none; }
-  div.header-actions { display: none; }
+  div.header-actions { display: inline; }
 }
