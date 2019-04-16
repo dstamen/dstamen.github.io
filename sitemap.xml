@@ -820,7 +820,19 @@
   </url>
   
   <url>
+    <loc>/series/</loc>
+    <lastmod>2015-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/vcp6-dcv/</loc>
+    <lastmod>2015-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/series/vcp6-dcv-study-guide/</loc>
     <lastmod>2015-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -1236,11 +1248,6 @@
   
   <url>
     <loc>/authors/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/series/</loc>
     <priority>0</priority>
   </url>
   
