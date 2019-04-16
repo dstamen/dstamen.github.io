@@ -121,6 +121,11 @@ if (!doNotTrack) {
           Categories
         </a>
     
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
         <a class="nav-link  nav-text" href="/acclaim" >
           
           Acclaim
@@ -166,7 +171,7 @@ April 2, 2015 under <a class="" href="/category/vmware">VMware</a>
 <hr>
 
       
-      
+       <img src="/featured/powercli.png" class="clr-post-featured-image"> 
 <p>So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</p>
 
 <p>I will be sharing it with you to save you the time. The script is very simple all you need to do is pass it the VM Name, VMware Hard Disk #, New Hard Disk Size in GB, and the Volume Letter.</p></p>
@@ -358,7 +363,7 @@ Invoke-VMScript -vm $VM -ScriptText &quot;echo select vol $VolumeLetter &gt; c:\
       
           
           
-          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          <li><a href="/tags/networking" class="nav-link">networking <span class="badge badge-7">9</span></a></li>
           
       
           

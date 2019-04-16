@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Pure Storage  &middot; davidstamen.com</title>
+  <title>Automating your vSphere Upgrade  &middot; davidstamen.com</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -23,9 +23,9 @@
 
 
 
-<link href="/categories/pure-storage/index.xml" rel="alternate" type="application/rss+xml" title="Pure Storage" />
+<link href="/series/automating-your-vsphere-upgrade/index.xml" rel="alternate" type="application/rss+xml" title="Automating your vSphere Upgrade" />
 
-  <link rel="canonical" href="/categories/pure-storage/" />
+  <link rel="canonical" href="/series/automating-your-vsphere-upgrade/" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
   <link rel="icon" href="/favicon/favicon.ico">
 <meta name="generator" content="Hugo 0.55.1" />
@@ -83,6 +83,11 @@
           Categories
         </a>
     
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
         <a class="nav-link  nav-text" href="/acclaim" >
           
           Acclaim
@@ -108,7 +113,7 @@
 
 <div class="content-container">
   <div class="content-area">
-    <h1>Pure Storage
+    <h1>Automating your vSphere Upgrade
 </h1>
 
     <div class="clr-row">
@@ -116,7 +121,7 @@
       <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
     <div class="card">
         <div class="card-header">
-            <a href="/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/">Using PureStorage Powershell to Configure SysLog Servers</a>
+            <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a>
         </div>
         <div class="card-block">
             <div class="card-media-block">
@@ -124,7 +129,7 @@
                     <span class="card-media-title clr-card-authors">
                         <div class="clr-card-authors">
                         Published on 
-March 14, 2016 under <a class="" href="/category/pure-storage">Pure Storage</a>
+October 8, 2018 under <a class="" href="/category/vmware">VMware</a>
                         </div>
                     </span>
                 </div>
@@ -132,11 +137,10 @@ March 14, 2016 under <a class="" href="/category/pure-storage">Pure Storage</a>
         </div>
         <div class="card-block">
             <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
                     
   
-    Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
-Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+    We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.
   
 
 
@@ -145,7 +149,115 @@ Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog
         </div>
         <div class="card-footer">
             
-            Tagged <a class="" href="/tags/storage">Storage</a> and <a class="" href="/tags/syslog">Syslog</a>
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/vds">VDS</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 7, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a> and <a class="" href="/tags/storage">Storage</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 6, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vm-tools">VM Tools</a> and <a class="" href="/tags/vm-compatibility">VM Compatibility</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 5, 2018 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren’t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless–especially when having to perform the task if you have multiple PSC’s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to’s and benefits of using the CLI based approach.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/psc">PSC</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
         </div>
     </div>
 </div>
@@ -230,7 +342,7 @@ Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog
       
           
           
-          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          <li><a href="/tags/networking" class="nav-link">networking <span class="badge badge-7">9</span></a></li>
           
       
           

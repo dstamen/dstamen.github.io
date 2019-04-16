@@ -120,11 +120,20 @@
     </item>
     
     <item>
-      <title>Network</title>
-      <link>/tags/network/</link>
+      <title>Networking</title>
+      <link>/tags/networking/</link>
       <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
       
-      <guid>/tags/network/</guid>
+      <guid>/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VDS</title>
+      <link>/tags/vds/</link>
+      <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
+      
+      <guid>/tags/vds/</guid>
       <description></description>
     </item>
     

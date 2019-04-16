@@ -14,7 +14,7 @@
 
   <meta name="description" content="" />
 
-  <meta name="keywords" content="vSphere Upgrade, Network, ">
+  <meta name="keywords" content="vSphere Upgrade, Networking, VDS, ">
 
 
 
@@ -28,7 +28,9 @@
     
 <meta property="og:article:tag" content="vSphere Upgrade">
     
-<meta property="og:article:tag" content="Network">
+<meta property="og:article:tag" content="Networking">
+    
+<meta property="og:article:tag" content="VDS">
     
   
 
@@ -40,6 +42,7 @@
 <meta property="og:image" content="/images/vsphereupgradeprocess-6.png" />
 <meta property="article:published_time" content="2018-10-08T08:02:47-04:00"/>
 <meta property="article:modified_time" content="2018-10-08T08:02:47-04:00"/>
+
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/vsphereupgradeprocess-6.png"/>
@@ -125,6 +128,11 @@ if (!doNotTrack) {
           Categories
         </a>
     
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
         <a class="nav-link  nav-text" href="/acclaim" >
           
           Acclaim
@@ -159,7 +167,7 @@ if (!doNotTrack) {
       <div class="clr-card-authors">
         Published on 
 October 8, 2018 under <a class="" href="/category/vmware">VMware</a>
-        &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a> and <a class="" href="/tags/network">Network</a>
+        &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/vds">VDS</a>
         &middot; Read in about 6 min (1092 words)
       </div>
   </span>
@@ -170,6 +178,541 @@ October 8, 2018 under <a class="" href="/category/vmware">VMware</a>
 <hr>
 
       
+  
+  <div class="alert alert-info" role="alert">
+      <div class="alert-items">
+          <div class="alert-item static">
+              <div class="alert-icon-wrapper">
+                  <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+              </div>
+              <span class="alert-text">This post is part of the <a href="series/automating-your-vsphere-upgrade">Automating your vSphere Upgrade</a> series.</span>
+              <div class="alert-actions">
+                <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                    Automating the Upgrade of the Virtual Distributed Switch
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+
        <img src="/featured/vsphere.png" class="clr-post-featured-image"> 
 <p>We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.</p>
 
@@ -591,7 +1134,7 @@ ElseIf ($Cluster.DrsEnabled -like &quot;False&quot;) {
       
           
           
-          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          <li><a href="/tags/networking" class="nav-link">networking <span class="badge badge-7">9</span></a></li>
           
       
           

@@ -162,7 +162,8 @@ Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a
       <pubDate>Tue, 17 Apr 2018 08:32:15 -0400</pubDate>
       
       <guid>/2018/04/17/upgrading-to-vmware-vsphere-6.7/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the &lt;a href=&#34;https://secure.vmware.com/43478_vSphere_Beta_Reg&#34;&gt;vSphere Beta Program&lt;/a&gt; and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.&lt;/p&gt;</description>
+      <description>It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+The first, thing I would like to mention is there is no supported migration from vSphere 5.</description>
     </item>
     
     <item>

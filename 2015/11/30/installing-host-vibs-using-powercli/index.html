@@ -123,6 +123,11 @@ if (!doNotTrack) {
           Categories
         </a>
     
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
         <a class="nav-link  nav-text" href="/acclaim" >
           
           Acclaim
@@ -168,7 +173,7 @@ November 30, 2015 under <a class="" href="/category/vmware">VMware</a>
 <hr>
 
       
-      
+       <img src="/featured/powercli.png" class="clr-post-featured-image"> 
 <p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a <a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
 
 <p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember <a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/">Brian Graf&rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
@@ -372,7 +377,7 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; 
       
           
           
-          <li><a href="/tags/network" class="nav-link">network <span class="badge badge-7">9</span></a></li>
+          <li><a href="/tags/networking" class="nav-link">networking <span class="badge badge-7">9</span></a></li>
           
       
           

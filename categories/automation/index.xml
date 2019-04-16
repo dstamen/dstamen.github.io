@@ -6,10 +6,20 @@
     <description>Recent content in Automation on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Mar 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/automation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using PureStorage Powershell to Configure SysLog Servers</title>
+      <link>/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/</guid>
+      <description>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
+Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+    </item>
     
     <item>
       <title>Using Ansible to Run Powershell Scripts</title>
