@@ -105,7 +105,7 @@ if (!doNotTrack) {
       <img alt="" src="">
       <span class="title">davidstamen.com</span>
       
-    </a>  
+    </a>
   </div>
   <div class="header-nav" [clr-nav-level]="1">
     
@@ -175,8 +175,7 @@ May 6, 2014 under <a class="" href="/category/vmware">VMware</a>
 <hr>
 
       
-       <img src="/featured/powercli.png" class="clr-post-featured-image"> 
-<p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
+      <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
 
 <pre><code>Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
 </code></pre>
