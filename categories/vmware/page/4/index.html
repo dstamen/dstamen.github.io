@@ -98,6 +98,11 @@
           About
         </a>
     
+        <a class="nav-link  nav-text" href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator
+        </a>
+    
   </div>
   <div class="header-actions">
   <form class="search" id="search" method="get" action="//google.com/search">
@@ -117,6 +122,43 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 8, 2016 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
+I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a> and <a class="" href="/tags/update-manager">Update Manager</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -456,44 +498,6 @@ To connect to the View ADAM database:
     </div>
 </div>
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/">Unregistering vSphere 6 VCSA from PSC</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-October 13, 2015 under <a class="" href="/category/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA’s. The problem is when I went to redeploy it I got the following error.
-Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
- Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/vsphere-6.0">vSphere 6.0</a> and <a class="" href="/tags/psc">PSC</a>
-        </div>
-    </div>
-</div>
-    
     </div>
     
 <nav>
@@ -804,6 +808,8 @@ Decoding the error, I pretty much figured that the object already existed in the
       <label for="LatestPosts">Latest Posts</label>
       <ul class="nav-list">
         
+        <li><a class="nav-link" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
         <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
         <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
@@ -811,8 +817,6 @@ Decoding the error, I pretty much figured that the object already existed in the
         <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
         <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
-        
-        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
         
       </ul>
     </section> 
@@ -841,6 +845,11 @@ Decoding the error, I pretty much figured that the object already existed in the
       
           
           
+          <a href="/tags/vcenter-server">vcenter server</a>
+          
+      
+          
+          
           <a href="/tags/powershell">powershell</a>
           
       
@@ -851,17 +860,12 @@ Decoding the error, I pretty much figured that the object already existed in the
       
           
           
-          <a href="/tags/vcenter-server">vcenter server</a>
+          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
           
           <a href="/tags/cisco-ucs">cisco ucs</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
@@ -1006,6 +1010,11 @@ Decoding the error, I pretty much figured that the object already existed in the
       
           
           
+          <a href="/tags/angular">angular</a>
+          
+      
+          
+          
           <a href="/tags/autodeploy">autodeploy</a>
           
       
@@ -1026,12 +1035,22 @@ Decoding the error, I pretty much figured that the object already existed in the
       
           
           
+          <a href="/tags/clarity">clarity</a>
+          
+      
+          
+          
           <a href="/tags/content-library">content library</a>
           
       
           
           
           <a href="/tags/converge-tool">converge tool</a>
+          
+      
+          
+          
+          <a href="/tags/cooltool">cooltool</a>
           
       
           
@@ -1057,21 +1076,6 @@ Decoding the error, I pretty much figured that the object already existed in the
           
           
           <a href="/tags/homelab">homelab</a>
-          
-      
-          
-          
-          <a href="/tags/kvm">kvm</a>
-          
-      
-          
-          
-          <a href="/tags/l1tf">l1tf</a>
-          
-      
-          
-          
-          <a href="/tags/lifecycle">lifecycle</a>
           
       
       </ul>

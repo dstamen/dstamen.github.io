@@ -6,10 +6,19 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vCenter Server Appliance CLI - JSON Creator</title>
+      <link>/2019/04/24/vcenter-server-appliance-cli-json-creator/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/24/vcenter-server-appliance-cli-json-creator/</guid>
+      <description>&lt;p&gt;I am proud to announce that my first VMware Clarity Project is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. The first Project is the VCSA JSON Creator. Let&amp;rsquo;s dive in and take a look.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>vCenter Server Converge Tool - How do I Converge an Environment Using the UI</title>

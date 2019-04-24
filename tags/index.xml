@@ -6,24 +6,42 @@
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Converge Tool</title>
-      <link>/tags/converge-tool/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Angular</title>
+      <link>/tags/angular/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/converge-tool/</guid>
+      <guid>/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clarity</title>
+      <link>/tags/clarity/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/clarity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CoolTool</title>
+      <link>/tags/cooltool/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cooltool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter Server</title>
       <link>/tags/vcenter-server/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/vcenter-server/</guid>
       <description></description>
@@ -32,9 +50,18 @@
     <item>
       <title>vSphere 6.7</title>
       <link>/tags/vsphere-6.7/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/vsphere-6.7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Converge Tool</title>
+      <link>/tags/converge-tool/</link>
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/converge-tool/</guid>
       <description></description>
     </item>
     

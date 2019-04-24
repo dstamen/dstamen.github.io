@@ -98,6 +98,11 @@
           About
         </a>
     
+        <a class="nav-link  nav-text" href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator
+        </a>
+    
   </div>
   <div class="header-actions">
   <form class="search" id="search" method="get" action="//google.com/search">
@@ -117,6 +122,43 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/">vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+August 2, 2017 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.
+Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vcenter-ha">vCenter HA</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -452,43 +494,6 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/networking">Networking</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-April 8, 2016 under <a class="" href="/category/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
-I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a> and <a class="" href="/tags/update-manager">Update Manager</a>
         </div>
     </div>
 </div>
@@ -835,6 +840,8 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       <label for="LatestPosts">Latest Posts</label>
       <ul class="nav-list">
         
+        <li><a class="nav-link" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
         <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
         <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
@@ -842,8 +849,6 @@ I have recently made a breakthrough working with VMware Support and stumbling th
         <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
         <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
-        
-        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
         
       </ul>
     </section> 
@@ -872,6 +877,11 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       
           
           
+          <a href="/tags/vcenter-server">vcenter server</a>
+          
+      
+          
+          
           <a href="/tags/powershell">powershell</a>
           
       
@@ -882,17 +892,12 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       
           
           
-          <a href="/tags/vcenter-server">vcenter server</a>
+          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
           
           <a href="/tags/cisco-ucs">cisco ucs</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
@@ -1037,6 +1042,11 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       
           
           
+          <a href="/tags/angular">angular</a>
+          
+      
+          
+          
           <a href="/tags/autodeploy">autodeploy</a>
           
       
@@ -1057,12 +1067,22 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       
           
           
+          <a href="/tags/clarity">clarity</a>
+          
+      
+          
+          
           <a href="/tags/content-library">content library</a>
           
       
           
           
           <a href="/tags/converge-tool">converge tool</a>
+          
+      
+          
+          
+          <a href="/tags/cooltool">cooltool</a>
           
       
           
@@ -1088,21 +1108,6 @@ I have recently made a breakthrough working with VMware Support and stumbling th
           
           
           <a href="/tags/homelab">homelab</a>
-          
-      
-          
-          
-          <a href="/tags/kvm">kvm</a>
-          
-      
-          
-          
-          <a href="/tags/l1tf">l1tf</a>
-          
-      
-          
-          
-          <a href="/tags/lifecycle">lifecycle</a>
           
       
       </ul>

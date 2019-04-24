@@ -98,6 +98,11 @@
           About
         </a>
     
+        <a class="nav-link  nav-text" href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator
+        </a>
+    
   </div>
   <div class="header-actions">
   <form class="search" id="search" method="get" action="//google.com/search">
@@ -117,6 +122,43 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2014/05/22/create-vmfs-datastore-using-powercli/">Create VMFS Datastore Using PowerCLI</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+May 22, 2014 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID’s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -662,6 +704,8 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
       <label for="LatestPosts">Latest Posts</label>
       <ul class="nav-list">
         
+        <li><a class="nav-link" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
         <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
         <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
@@ -669,8 +713,6 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
         <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
         <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
-        
-        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
         
       </ul>
     </section> 
@@ -699,6 +741,11 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
       
           
           
+          <a href="/tags/vcenter-server">vcenter server</a>
+          
+      
+          
+          
           <a href="/tags/powershell">powershell</a>
           
       
@@ -709,17 +756,12 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
       
           
           
-          <a href="/tags/vcenter-server">vcenter server</a>
+          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
           
           <a href="/tags/cisco-ucs">cisco ucs</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
@@ -864,6 +906,11 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
       
           
           
+          <a href="/tags/angular">angular</a>
+          
+      
+          
+          
           <a href="/tags/autodeploy">autodeploy</a>
           
       
@@ -884,12 +931,22 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
       
           
           
+          <a href="/tags/clarity">clarity</a>
+          
+      
+          
+          
           <a href="/tags/content-library">content library</a>
           
       
           
           
           <a href="/tags/converge-tool">converge tool</a>
+          
+      
+          
+          
+          <a href="/tags/cooltool">cooltool</a>
           
       
           
@@ -915,21 +972,6 @@ April 29, 2014 under <a class="" href="/category/vmware">VMware</a>
           
           
           <a href="/tags/homelab">homelab</a>
-          
-      
-          
-          
-          <a href="/tags/kvm">kvm</a>
-          
-      
-          
-          
-          <a href="/tags/l1tf">l1tf</a>
-          
-      
-          
-          
-          <a href="/tags/lifecycle">lifecycle</a>
           
       
       </ul>

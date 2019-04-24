@@ -98,6 +98,11 @@
           About
         </a>
     
+        <a class="nav-link  nav-text" href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator
+        </a>
+    
   </div>
   <div class="header-actions">
   <form class="search" id="search" method="get" action="//google.com/search">
@@ -117,6 +122,45 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2015/09/16/enabling-biometrics-in-horizon-view-62/">Enabling Biometrics in Horizon View 6.2</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+September 16, 2015 under <a class="" href="/category/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.
+This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.
+Here is a link to the current VMware documentation.
+NOTE: This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/horizon-view">Horizon View</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -457,43 +501,6 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
     </div>
 </div>
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/">Unable to Configure Event Database in vRealize Operations View Broker Agent</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-February 6, 2015 under <a class="" href="/category/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn’t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn’t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/horizon-view">Horizon View</a> and <a class="" href="/tags/vrops">vROPS</a>
-        </div>
-    </div>
-</div>
-    
     </div>
     
 <nav>
@@ -828,6 +835,8 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
       <label for="LatestPosts">Latest Posts</label>
       <ul class="nav-list">
         
+        <li><a class="nav-link" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
         <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
         <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
@@ -835,8 +844,6 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
         <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
         <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
-        
-        <li><a class="nav-link" href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
         
       </ul>
     </section> 
@@ -865,6 +872,11 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
       
           
           
+          <a href="/tags/vcenter-server">vcenter server</a>
+          
+      
+          
+          
           <a href="/tags/powershell">powershell</a>
           
       
@@ -875,17 +887,12 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
       
           
           
-          <a href="/tags/vcenter-server">vcenter server</a>
+          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
           
           <a href="/tags/cisco-ucs">cisco ucs</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
           
       
           
@@ -1030,6 +1037,11 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
       
           
           
+          <a href="/tags/angular">angular</a>
+          
+      
+          
+          
           <a href="/tags/autodeploy">autodeploy</a>
           
       
@@ -1050,12 +1062,22 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
       
           
           
+          <a href="/tags/clarity">clarity</a>
+          
+      
+          
+          
           <a href="/tags/content-library">content library</a>
           
       
           
           
           <a href="/tags/converge-tool">converge tool</a>
+          
+      
+          
+          
+          <a href="/tags/cooltool">cooltool</a>
           
       
           
@@ -1081,21 +1103,6 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
           
           
           <a href="/tags/homelab">homelab</a>
-          
-      
-          
-          
-          <a href="/tags/kvm">kvm</a>
-          
-      
-          
-          
-          <a href="/tags/l1tf">l1tf</a>
-          
-      
-          
-          
-          <a href="/tags/lifecycle">lifecycle</a>
           
       
       </ul>
