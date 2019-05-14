@@ -365,12 +365,14 @@ foreach ($item in $permission) {
     
     
     
-    <section id="site-intro" class="nav-group">
+    <div class="card">
+    <div class="card-block">
+    <div class="card-text" id="site-intro">
       <img src="/images/me2-300.png">
-            <p>a blog about virtualization and stuff
-            
-                <ul class="nav-list-inline">
-                  <a href="//github.com/dstamen" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a>
+        <p>a blog about virtualization and stuff
+        
+        <ul class="nav-list-inline">
+          <a href="//github.com/dstamen" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a>
 
 
 
@@ -409,290 +411,37 @@ foreach ($item in $permission) {
 
 <a href="mailto:dstamen@gmail.com" target="_blank" title="Email" class="fas fa-envelope"></a>
 
-                  
+          
 
-                </ul>
-            
-    </section>
+        </ul>
+        
+    </div>
+    </div>
+    </div>
     <hr>
-    <section class="nav-group">
-      <input id="LatestPosts" type="checkbox">
-      <label for="LatestPosts">Latest Posts</label>
-      <ul class="nav-list">
+    <div class="card">
+    <div class="card-header">
+      <b>Latest Posts</b>
+    </div>
+  <div class="card-block">
+    <div class="card-text">
+      <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
-        <li><a class="nav-link" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
-        <li><a class="nav-link" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
-        <li><a class="nav-link" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
-        <li><a class="nav-link" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
-        <li><a class="nav-link" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
+        <li><a class="nav-list" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
         
       </ul>
-    </section>
-      <section class="nav-group">
-      <input id="Tags" type="checkbox">
-      <label for="Tags">Tags</label>
-      <ul class="nav-list">
-      
-          
-          
-          
-          
-          
-          <a href="/tags/powercli">powercli</a>
-          
-      
-          
-          
-          <a href="/tags/vcp6-dcv">vcp6 dcv</a>
-          
-      
-          
-          
-          <a href="/tags/study-guide">study guide</a>
-          
-      
-          
-          
-          <a href="/tags/vcenter-server">vcenter server</a>
-          
-      
-          
-          
-          <a href="/tags/powershell">powershell</a>
-          
-      
-          
-          
-          <a href="/tags/storage">storage</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.7">vsphere 6.7</a>
-          
-      
-          
-          
-          <a href="/tags/cisco-ucs">cisco ucs</a>
-          
-      
-          
-          
-          <a href="/tags/horizon-view">horizon view</a>
-          
-      
-          
-          
-          <a href="/tags/networking">networking</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-upgrade">vsphere upgrade</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.0">vsphere 6.0</a>
-          
-      
-          
-          
-          <a href="/tags/vsphere-6.5">vsphere 6.5</a>
-          
-      
-          
-          
-          <a href="/tags/vcenter-ha">vcenter ha</a>
-          
-      
-          
-          
-          <a href="/tags/vrops">vrops</a>
-          
-      
-          
-          
-          <a href="/tags/exchange">exchange</a>
-          
-      
-          
-          
-          <a href="/tags/jekyll">jekyll</a>
-          
-      
-          
-          
-          <a href="/tags/psc">psc</a>
-          
-      
-          
-          
-          <a href="/tags/syslog">syslog</a>
-          
-      
-          
-          
-          <a href="/tags/vagrant">vagrant</a>
-          
-      
-          
-          
-          <a href="/tags/vcloud-air">vcloud air</a>
-          
-      
-          
-          
-          <a href="/tags/vexpert">vexpert</a>
-          
-      
-          
-          
-          <a href="/tags/windows">windows</a>
-          
-      
-          
-          
-          <a href="/tags/ansible">ansible</a>
-          
-      
-          
-          
-          <a href="/tags/availability">availability</a>
-          
-      
-          
-          
-          <a href="/tags/cisco-champion">cisco champion</a>
-          
-      
-          
-          
-          <a href="/tags/esxi">esxi</a>
-          
-      
-          
-          
-          <a href="/tags/ha">ha</a>
-          
-      
-          
-          
-          <a href="/tags/rest-api">rest api</a>
-          
-      
-          
-          
-          <a href="/tags/ssh">ssh</a>
-          
-      
-          
-          
-          <a href="/tags/ubuntu">ubuntu</a>
-          
-      
-          
-          
-          <a href="/tags/unifi">unifi</a>
-          
-      
-          
-          
-          <a href="/tags/update-manager">update manager</a>
-          
-      
-          
-          
-          <a href="/tags/vcap6-dcv-design">vcap6 dcv design</a>
-          
-      
-          
-          
-          <a href="/tags/vmworld">vmworld</a>
-          
-      
-          
-          
-          <a href="/tags/webclient">webclient</a>
-          
-      
-          
-          
-          <a href="/tags/angular">angular</a>
-          
-      
-          
-          
-          <a href="/tags/autodeploy">autodeploy</a>
-          
-      
-          
-          
-          <a href="/tags/career">career</a>
-          
-      
-          
-          
-          <a href="/tags/chrome">chrome</a>
-          
-      
-          
-          
-          <a href="/tags/cisco-aci">cisco aci</a>
-          
-      
-          
-          
-          <a href="/tags/clarity">clarity</a>
-          
-      
-          
-          
-          <a href="/tags/content-library">content library</a>
-          
-      
-          
-          
-          <a href="/tags/converge-tool">converge tool</a>
-          
-      
-          
-          
-          <a href="/tags/cooltool">cooltool</a>
-          
-      
-          
-          
-          <a href="/tags/dump-collector">dump collector</a>
-          
-      
-          
-          
-          <a href="/tags/ebook">ebook</a>
-          
-      
-          
-          
-          <a href="/tags/esxcli">esxcli</a>
-          
-      
-          
-          
-          <a href="/tags/forestry.io">forestry.io</a>
-          
-      
-          
-          
-          <a href="/tags/homelab">homelab</a>
-          
-      
-      </ul>
-    </section>
-  </section>
+    </div>
+  </div>
+</div>
+</section>
 </nav>
   
 </div>

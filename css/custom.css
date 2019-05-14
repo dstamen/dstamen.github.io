@@ -329,12 +329,13 @@ background-color: #FF6600
   padding: 0em;
   text-align: center;
 }
-.nav-group img {
+
+.card .card-block .card-text img {
   max-width: 100%;
   height: auto;
 }
 
-.nav-group .nav-list-inline {
+.card .card-block .card-text .nav-list-inline {
     font-size: 20px;
     margin: 5px;
     letter-spacing: .25em;
