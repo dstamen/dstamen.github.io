@@ -322,3 +322,43 @@ background-color: #FF6600
   div.header-nav { display: none; }
   div.header-actions { display: none; }
 }
+
+#site-intro {
+  align-items: center;
+  margin-top: 0.5em;
+  padding: 0em;
+  text-align: center;
+}
+.nav-group img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-group .nav-list-inline {
+    font-size: 20px;
+    margin: 5px;
+    letter-spacing: .25em;
+  }
+
+a.fas,
+a.fab {
+  color: grey;
+}
+
+.sidenav .nav-group label {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  padding: 0em;
+}
+
+.sidenav .nav-group .nav-list {
+  display: inline-block;
+  padding: .75em;
+}
+
+.sidenav .nav-group .nav-list .nav-link {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0em;
+}
