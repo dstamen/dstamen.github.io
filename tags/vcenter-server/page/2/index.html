@@ -22,23 +22,16 @@
 <meta property="og:type" content="website" />
 
 
-
-<link href="/tags/vcenter-server/index.xml" rel="alternate" type="application/rss+xml" title="vCenter Server" />
-
   <link rel="canonical" href="/tags/vcenter-server/" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
   <link rel="icon" href="/favicon/favicon.ico">
-<meta name="generator" content="Hugo 0.55.5" />
+
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     
     <script src="/js/clr-1.0/clr-icons.min.js"></script>
     <script src="/js/clr-1.0/custom-elements.min.js"></script>
@@ -47,7 +40,14 @@
     <link href="/css/clr-1.0/clr-ui.css" rel="stylesheet">
     
     <link href="/css/clr-1.0/clr-icons.min.css" rel="stylesheet">
-<link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+
+
+
 
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
@@ -97,11 +97,6 @@
           About
         </a>
     
-        <a class="nav-link  nav-text" href="/vcsa-json-creator" >
-          
-          VCSA JSON Creator
-        </a>
-    
   </div>
   <div class="header-actions">
   <form class="search" id="search" method="get" action="//google.com/search">
@@ -112,7 +107,19 @@
 </form>
 </div>
 </header>
-
+<nav class="subnav" [clr-nav-level]="2">
+  <ul class="nav">
+    
+    
+    <li class="nav-item">
+        <a class="nav-link " href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator 9000
+        </a>
+    </li>
+    
+  </ul>
+</nav>
 
 
 <div class="content-container">
