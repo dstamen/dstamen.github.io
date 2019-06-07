@@ -129,6 +129,43 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/">Using PowerCLI to Get and Set DVS Traffic Shaping Settings</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS’s.
+Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/networking">Networking</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a>
         </div>
         <div class="card-block">
@@ -458,45 +495,6 @@ I decided to throw together this quick one-liner that will make sure every VM is
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/powercli">PowerCLI</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/11/11/reusing-horizon-view-desktop-names/">Reusing Horizon View Desktop Names</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-November 11, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    Have you ever worked with a Horizon View pool with 10 VM’s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
-First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
-To connect to the View ADAM database:
- Log in to one of the View Connection Servers as Domain Administrator.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/horizon-view">Horizon View</a>
         </div>
     </div>
 </div>
@@ -871,6 +869,8 @@ To connect to the View ADAM database:
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
@@ -878,8 +878,6 @@ To connect to the View ADAM database:
         <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
         <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
-        
-        <li><a class="nav-list" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
         
       </ul>
     </div>

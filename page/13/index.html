@@ -128,6 +128,43 @@
             <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2014/06/10/configuring-esxi-5-5-dump-collector/">Configuring ESXi 5.5 Dump Collector</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/dump-collector">Dump Collector</a>
+        </div>
+    </div>
+</div>
+          
+            <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2014/06/10/configuring-esxi-5-5-syslog-collector/">Configuring ESXi 5.5 Syslog Collector</a>
         </div>
         <div class="card-block">
@@ -458,43 +495,6 @@ KB2051606
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        </div>
-    </div>
-</div>
-          
-            <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2014/05/01/blocking-attachments-with-executable-content/">Blocking Attachments With Executable Content</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-May 1, 2014 under <a class="" href="/categories/microsoft">Microsoft</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I don’t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
- Login to Exchange Admin Center using administrative credentials On the left pane select “Mail flow” On the top pane select “ Rules” Click on the “&#43;” sign and select create a new rule Give a name to the rule and select “more options” at the bottom of the page.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/exchange">Exchange</a>
         </div>
     </div>
 </div>
@@ -1055,6 +1055,8 @@ May 1, 2014 under <a class="" href="/categories/microsoft">Microsoft</a>
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
@@ -1062,8 +1064,6 @@ May 1, 2014 under <a class="" href="/categories/microsoft">Microsoft</a>
         <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
         <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
-        
-        <li><a class="nav-list" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
         
       </ul>
     </div>

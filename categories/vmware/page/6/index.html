@@ -129,6 +129,45 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2015/09/21/unable-to-join-psc-to-domain-via-webclient/">Unable to join PSC to Domain via Webclient</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+September 21, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.
+When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: “java.lang.reflect.invocationTargetException”
+There are currently two workarounds now with 6.0U1 I am aware of.
+ The first method is to join to the domain using the CLI.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/psc">PSC</a> and <a class="" href="/tags/webclient">Webclient</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2015/09/16/enabling-biometrics-in-horizon-view-62/">Enabling Biometrics in Horizon View 6.2</a>
         </div>
         <div class="card-block">
@@ -462,44 +501,6 @@ April 2, 2015 under <a class="" href="/categories/vmware">VMware</a>
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/02/18/srm-unable-to-uninstall-due-to-uac/">SRM - Unable to uninstall due to UAC</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to “Never Notify” SRM didnt like this.
-To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/srm">SRM</a>
         </div>
     </div>
 </div>
@@ -898,6 +899,8 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
@@ -905,8 +908,6 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
         <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
         <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
-        
-        <li><a class="nav-list" href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a></li>
         
       </ul>
     </div>

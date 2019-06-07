@@ -6,10 +6,19 @@
     <description>Recent content in vCenter Server on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vcenter-server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vCenter Server Converge Tool - What About My Certificates</title>
+      <link>/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/</guid>
+      <description>&lt;p&gt;As more customers get ready to run the vCenter Server Converge Tool in their environments, a common question that has been asked is &amp;ldquo;What Happens to my Certificates?&amp;rdquo; Well that is a good question so lets find out!&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>vCenter Server Appliance CLI - JSON Creator</title>
