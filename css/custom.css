@@ -363,3 +363,10 @@ a.fab {
   display: inline-block;
   padding: 0em;
 }
+
+ul.pagination {
+  list-style: none;
+}
+li.pagination__item {
+  display: inline-block;
+}
