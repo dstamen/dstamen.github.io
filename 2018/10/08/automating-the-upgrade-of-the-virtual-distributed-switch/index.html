@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Automating the Upgrade of the Virtual Distributed Switch  &middot; davidstamen.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="vSphere Upgrade, Networking, VDS, ">
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-10-08T08:02:47-04:00" />
+<meta property="og:article:modified_time" content="2018-10-08T08:02:47-04:00" />
+
+  
+    
+<meta property="og:article:tag" content="vSphere Upgrade">
+    
+<meta property="og:article:tag" content="Networking">
+    
+<meta property="og:article:tag" content="VDS">
+    
+  
+
+  <meta property="og:title" content="Automating the Upgrade of the Virtual Distributed Switch" />
+<meta property="og:description" content="We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" />
+
+<meta property="og:image" content="/images/vsphereupgradeprocess-6.png" />
+<meta property="article:published_time" content="2018-10-08T08:02:47-04:00"/>
+<meta property="article:modified_time" content="2018-10-08T08:02:47-04:00"/>
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/vsphereupgradeprocess-6.png"/>
+
+<meta name="twitter:title" content="Automating the Upgrade of the Virtual Distributed Switch"/>
+<meta name="twitter:description" content="We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5."/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+
+  <link rel="canonical" href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="icon" href="/favicon/favicon.ico">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6907288179836979",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <script src="/js/clr-2.0/clr-icons.min.js"></script>
+    <script src="/js/clr-2.0/custom-elements.min.js"></script>
+
+    
+    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    
+    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+  <div class="main-container">
+    
+<header class="header-7">
+  <div class="branding">
+    
+
+    
+    <a class="navbar-brand-img" href="/">
+      <img alt="" src="">
+      <span class="title">davidstamen.com</span>
+      
+    </a>
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    
+    
+        <a class="nav-link  nav-text" href="/" >
+          
+          Home
+        </a>
+    
+        <a class="nav-link  nav-text" href="/tags/" >
+          
+          Tags
+        </a>
+    
+        <a class="nav-link  nav-text" href="/categories/" >
+          
+          Categories
+        </a>
+    
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
+        <a class="nav-link  nav-text" href="/acclaim" >
+          
+          Acclaim
+        </a>
+    
+        <a class="nav-link  nav-text" href="/about" >
+          
+          About
+        </a>
+    
+  </div>
+  <div class="header-actions">
+  <form class="search" id="search" method="get" action="//google.com/search">
+    <label for="search_input">
+        <input id="search_input" type="text" name="q" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+    </label>
+</form>
+</div>
+</header>
+<nav class="subnav" [clr-nav-level]="2">
+  <ul class="nav">
+    
+    
+    <li class="nav-item">
+        <a class="nav-link " href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator 9000
+        </a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+<div class="content-container">
+  <div class="content-area">
+      <h1>Automating the Upgrade of the Virtual Distributed Switch
+</h1>
+
+      <div class="metas">
+  
+  <span class="clr-card-authors">
+      <div class="clr-card-authors">
+        Published on 
+October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
+        &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/vds">VDS</a>
+        &middot; Read in about 6 min (1092 words)
+      </div>
+  </span>
+  
+    
+    
+</div>
+<hr>
+
+      
+  
+  <div class="alert alert-info" role="alert">
+      <div class="alert-items">
+          <div class="alert-item static">
+              <div class="alert-icon-wrapper">
+                  <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+              </div>
+              <span class="alert-text">This post is part of the <a href="series/automating-your-vsphere-upgrade">Automating your vSphere Upgrade</a> series.</span>
+              <div class="alert-actions">
+                <ol>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                    Automating the Upgrade of the Virtual Distributed Switch
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                  <li>
+                  
+                      <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a>
+                    
+                    </li>
+                  
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+
+      <p>We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.</p>
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vsphereupgradeprocess-6.png" data-caption=""><img width=100% src="/images/vsphereupgradeprocess-6.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="considerations-for-upgrading-your-virtual-distributed-switch">Considerations for Upgrading your Virtual Distributed Switch</h2>
+
+<p>The first consideration we would like to think about is why would I want to upgrade my VDS? Well if you had previously upgraded from vSphere 5.5 your VDS still may be on version 5.5 and this is not compatible with vSphere 6.7. Another reason is that we can review the new features that are listed below, we can see this when we click on the <strong>(i</strong><strong>)</strong> within the VDS GUI. We can see that upgrading to version 6.0 gets us NIOC v3 and IGMP/MLD snooping, version 6.5 gives us port mirroring enhancements and version 6.6 gets us mac learning. If you run any nested virtualization in your environment this is a great enhancement as we <a href="https://www.virtuallyghetto.com/2018/04/native-mac-learning-in-vsphere-6-7-removes-the-need-for-promiscuous-mode-for-nested-esxi.html">no longer require you to enable promiscuous mode on your VM port group</a>.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/autovds4.png" data-caption=""><img width=100% src="/images/autovds4.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Another consideration I like to recommend is that you keep your VDS upgraded to the same version as your ESXi hosts whenever possible. Previously in most vSphere versions it has always been said that upgrading your VDS can be done at anytime and is a non-disruptive upgrade., but we always want to use caution and do this within a maintenance window. The VDS upgrade is also something that has no rollback, once it is complete it is permanent unless you have completed a backup. With vSphere 6.7 and the introduction of VDS version 6.6 there are some known issues and considerations I want to mention prior to getting started upgrading our switch. A question I get asked quite frequently is why is vSphere 6.7&rsquo;s VDS version 6.6? The answer is quite simple, VMware on AWS (VMC) shares quite a bit of the same code as vSphere On-Perm and since there were no major changes to the VDS features or functionality the version stayed the same. Prior to upgrading our VDS version to 6.6 we definitely want to make sure we review <a href="https://kb.vmware.com/s/article/52621">KB52621</a>. This KB covers considerations around known issues upgrading to version 6.6. Some of these considerations are making sure to put DRS into partially automated mode since if a vMotion occurs during the upgrade the VDS upgrade will fail. To take these considerations into account, we will make sure to include this in our Upgrading your Virtual Distributed Switch automation. Prior to upgrading we also need to verify that all hosts have been upgraded to vSphere 6.7 so we do not have any errors. If there is a incompatible host attached the upgrade will not be allowed to proceed. To validate our ESXi host version for all hosts attached to our VDS we can do so as follows.</p>
+
+<pre><code>Get-VDSwitch &quot;VDS&quot;|Get-VMHost|Select Name, Version|Sort Name
+</code></pre>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/autovds1.png" data-caption=""><img width=100% src="/images/autovds1.png"></a>
+      
+    </div>
+  
+
+
+
+<p>We can see here that one of our hosts is not upgraded to 6.7 so if we were to proceed with upgrading our VDS it would fail. Before we proceed on to our next section we will make sure to upgrade our ESXi host to vSphere 6.7. If we were to attempt to upgrade our VDS prior to upgrading we would have encountered an error such as below.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/autovds2.png" data-caption=""><img width=100% src="/images/autovds2.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="upgrading-your-virtual-distributed-switch">Upgrading your Virtual Distributed Switch</h2>
+
+<p>Now that we are ready to move forward with upgrading our VDS, we will take some of the above considerations into place. Since we know if a vMotion is occurring during upgrade it will fail. We will make sure that if DRS is enabled we will put it into <strong>Partially Automated</strong> mode. Also, since we know we cannot rollback from a version upgrade we will make sure to take a backup prior to our upgrade. Unlike our previous blogs where we used simple one-liners, we will utilize a bit more logic in this upgrade that will be required as a script. As an introduction to the below script we will outline what it does. At the top we define variables for the VDS Name, Version we wish to upgrade to and the cluster(s) in which the VDS is attached. We will then check if DRS is enabled on the vSphere Cluster. If DRS is enabled we will store the current DRS Automation level and set it to Partially Automated, Backup the VDS, Upgrade the VDS and then we will restore the DRS Level back to the original state. If DRS is disabled, we perform a Backup of the VDS and then Upgrade the VDS. You can see the  code below and grab the script from <a href="https://github.com/dstamen/PowerCLI/blob/master/UpgradeVDS.ps1">GitHub</a>.</p>
+
+<pre><code>Connect-VIServer &quot;ds-vcsa-03.cpbu.lab&quot; | Out-Null
+$VDSwitch = &quot;VDS&quot;
+$VDVersion = &quot;6.6.0&quot;
+$Cluster = Get-Cluster &quot;Cluster&quot;
+
+If ($Cluster.DrsEnabled -like &quot;True&quot;) {
+    Write-Host &quot;DRS is Enabled, it will be temporarily disabled during upgrade.&quot; -ForegroundColor &quot;Green&quot;
+    $ClusterDRSLevel = $Cluster.DrsAutomationLevel
+    Write-Host &quot;DRS Cluster is currently set to $ClusterDRSLevel. Will change back when complete.&quot; -ForegroundColor &quot;Green&quot;
+    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel &quot;PartiallyAutomated&quot; -Confirm:$false
+    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &quot;My Backup&quot; -Destination &quot;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&quot;
+    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
+    Write-Host &quot;Upgrade is complete. Setting Cluster to $ClusterDRSLevel.&quot; -ForegroundColor &quot;Green&quot;
+    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel $ClusterDRSLevel -Confirm:$false
+}
+ElseIf ($Cluster.DrsEnabled -like &quot;False&quot;) {
+    Write-Host &quot;DRS is Disabled, No additional action needed.&quot; -ForegroundColor &quot;Green&quot;
+    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &quot;My Backup&quot; -Destination &quot;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&quot;
+    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
+}
+</code></pre>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/autovds3.png" data-caption=""><img width=100% src="/images/autovds3.png"></a>
+      
+    </div>
+  
+
+
+
+<p>As we can see the upgrade is now complete. Even though the upgrade is itself a simple one-liner:</p>
+
+<pre><code>(Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion)
+</code></pre>
+
+<p>We can automate the pre-requisites, backups and considerations to make this a more seamless upgrade.  If you are interested in understanding how you can upgrade your VDS through the UI please see my colleague Nigel Hickeys blog <a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-6-upgrading-vsphere-networking.html">here</a>.</p>
+
+<p>You can find more information on Backing Up and Restoring your VDS <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-140C6A52-F4C1-4B13-B2A3-9FFCF6000991.html">here</a> and more information on Upgrading your Virtual Distributed Switch <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-330A0689-574A-4589-9462-14CA03F3F2F4.html">here</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>As we have now completed Automating our vSphere Upgrade we can see it wasn’t so bad after all. Im hoping this series has helped you better understand what it takes to Automate your vSphere Upgrade and for those of you with large environments it gives you an idea on how you can start to streamline the upgrades across your entire vSphere environment.</p>
+
+<hr />
+
+<p><strong>Cross-Posted from vSphere Blog</strong></p>
+
+<p><a href="https://blogs.vmware.com/vsphere/2018/10/automating-upgrade-of-virtual-distributed-switch.html">https://blogs.vmware.com/vsphere/2018/10/automating-upgrade-of-virtual-distributed-switch.html</a></p>
+      <h6>Share this post</h6>
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Automating%20the%20Upgrade%20of%20the%20Virtual%20Distributed%20Switch&amp;url=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+      </div>
+    </div>
+  </a>
+  <a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f&amp;title=Automating%20the%20Upgrade%20of%20the%20Virtual%20Distributed%20Switch&amp;summary=Automating%20the%20Upgrade%20of%20the%20Virtual%20Distributed%20Switch&amp;source=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f&amp;resubmit=true&amp;title=Automating%20the%20Upgrade%20of%20the%20Virtual%20Distributed%20Switch" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="mailto:?subject=Automating%20the%20Upgrade%20of%20the%20Virtual%20Distributed%20Switch&amp;body=%2f2018%2f10%2f08%2fautomating-the-upgrade-of-the-virtual-distributed-switch%2f" target="_self" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+        </div>
+    </div>
+    </a>
+
+      
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'davidstamen';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+
+<h3>See Also</h3>
+<ul>
+	
+	<li><a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a></li>
+	
+	<li><a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a></li>
+	
+	<li><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></li>
+	
+	<li><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a></li>
+	
+	<li><a href="/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/">Configuring Unifi Controller and USG for L2TP VPN</a></li>
+	
+</ul>
+
+      <div class="clarity-prev-next col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      
+      <nav class="clarity-page-prev-next">
+            
+            <div class="clr-nav-previous">
+                  <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" title="Automating Migration of VMFS-5 to VMFS-6 Datastores" class="btn btn-sm btn-outline">
+                  Previous
+                  </a>
+            </div>
+            
+            
+            <div class="clr-nav-next">
+                  <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/" title="Why and How To Upgrade to vSphere 6.7 U1" class="btn btn-sm btn-outline">
+                  Next
+                  </a>
+            </div>
+            
+      </nav>
+      
+
+</div>
+
+  </div>
+  
+  <nav class="sidenav clr-col-2 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+  <section class="sidenav-content">
+    
+    
+    
+    <div class="card">
+    <div class="card-block">
+    <div class="card-text" id="site-intro">
+      <img src="/images/me2-300.png">
+        <p>a blog about virtualization and stuff
+        
+        <ul class="nav-list-inline">
+          <a href="//github.com/dstamen" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="//linkedin.com/in/davidstamen" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="//twitter.com/davidstamen" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a>
+
+
+
+
+
+
+
+
+<a href="mailto:dstamen@gmail.com" target="_blank" title="Email" class="fas fa-envelope"></a>
+
+          
+
+        </ul>
+        
+    </div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="card-header">
+      <b>Latest Posts</b>
+    </div>
+  <div class="card-block">
+    <div class="card-text">
+      <ul class="list" style="list-style-type:square;list-style-position:inherit">
+        
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        
+        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        
+        <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+</nav>
+  
+</div>
+      
+    </div>
+  </body>
+</html>
+

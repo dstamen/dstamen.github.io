@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>vSphere Upgrade  &middot; davidstamen.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="">
+
+
+
+
+<meta property="og:type" content="website" />
+
+
+  <link rel="canonical" href="/tags/vsphere-upgrade/" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="icon" href="/favicon/favicon.ico">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6907288179836979",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <script src="/js/clr-2.0/clr-icons.min.js"></script>
+    <script src="/js/clr-2.0/custom-elements.min.js"></script>
+
+    
+    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    
+    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+  <div class="main-container">
+    
+<header class="header-7">
+  <div class="branding">
+    
+
+    
+    <a class="navbar-brand-img" href="/">
+      <img alt="" src="">
+      <span class="title">davidstamen.com</span>
+      
+    </a>
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    
+    
+        <a class="nav-link  nav-text" href="/" >
+          
+          Home
+        </a>
+    
+        <a class="nav-link  nav-text" href="/tags/" >
+          
+          Tags
+        </a>
+    
+        <a class="nav-link  nav-text" href="/categories/" >
+          
+          Categories
+        </a>
+    
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
+        <a class="nav-link  nav-text" href="/acclaim" >
+          
+          Acclaim
+        </a>
+    
+        <a class="nav-link  nav-text" href="/about" >
+          
+          About
+        </a>
+    
+  </div>
+  <div class="header-actions">
+  <form class="search" id="search" method="get" action="//google.com/search">
+    <label for="search_input">
+        <input id="search_input" type="text" name="q" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+    </label>
+</form>
+</div>
+</header>
+<nav class="subnav" [clr-nav-level]="2">
+  <ul class="nav">
+    
+    
+    <li class="nav-item">
+        <a class="nav-link " href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator 9000
+        </a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+<div class="content-container">
+  <div class="content-area">
+    <h1>vSphere Upgrade
+</h1>
+
+    <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/">Unable to Update to vCenter Server 6.5 U2d on VCSA</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+November 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    When trying to update your vSphere 6.5 environment to vSphere 6.5u2d it may show that there are no available updates.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+November 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/ebook67.png" class="clr-card-featured-image"> 
+                    
+  
+    I am proud to announce availability of the new Upgrading to VMware vSphere 6.7 eBook.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/ebook">eBook</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a> and <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/11/why-and-how-to-upgrade-to-vsphere-6.7-u1/">Why and How To Upgrade to vSphere 6.7 U1</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 11, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    vSphere 6.7 Update 1 is finally here! Lets jump in and find out how and why to upgrade!
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a> and <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/08/automating-the-upgrade-of-the-virtual-distributed-switch/">Automating the Upgrade of the Virtual Distributed Switch</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    We are on the home stretch of our Automating your vSphere Upgrade blog series. The final step of completing our upgrade will be upgrading our Virtual Distributed Switch (VDS). When upgrading your VDS on vSphere 6.7 the version is actually 6.6 (we will cover the details later). Please make sure prior to upgrading your VDS to 6.6 all ESXi hosts have been upgraded to ESXi 6.7, if you still have hosts on ESXi 6.5 you will only be able to upgrade to version 6.5.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/vds">VDS</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/">Automating Migration of VMFS-5 to VMFS-6 Datastores</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a> and <a class="" href="/tags/storage">Storage</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/">Automating Upgrade of VMware Tools and VM Compatibility</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vm-tools">VM Tools</a> and <a class="" href="/tags/vm-compatibility">VM Compatibility</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 5, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren’t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless–especially when having to perform the task if you have multiple PSC’s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to’s and benefits of using the CLI based approach.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/psc">PSC</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 17, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    It’s finally out! vSphere 6.7 is the next major release of VMware’s virtualization software. I’ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+The first, thing I would like to mention is there is no supported migration from vSphere 5.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/vcenter-server">vCenter Server</a> and <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>
+        </div>
+    </div>
+</div>
+    
+    </div>
+    
+
+  </div>
+  
+    <nav class="sidenav clr-col-2 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+  <section class="sidenav-content">
+    
+    
+    
+    <div class="card">
+    <div class="card-block">
+    <div class="card-text" id="site-intro">
+      <img src="/images/me2-300.png">
+        <p>a blog about virtualization and stuff
+        
+        <ul class="nav-list-inline">
+          <a href="//github.com/dstamen" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="//linkedin.com/in/davidstamen" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="//twitter.com/davidstamen" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a>
+
+
+
+
+
+
+
+
+<a href="mailto:dstamen@gmail.com" target="_blank" title="Email" class="fas fa-envelope"></a>
+
+          
+    <a href="/tags/vsphere-upgrade/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a>
+
+
+        </ul>
+        
+    </div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="card-header">
+      <b>Latest Posts</b>
+    </div>
+  <div class="card-block">
+    <div class="card-text">
+      <ul class="list" style="list-style-type:square;list-style-position:inherit">
+        
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        
+        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        
+        <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+</nav>
+  
+</div>
+      
+    </div>
+  </body>
+</html>
+

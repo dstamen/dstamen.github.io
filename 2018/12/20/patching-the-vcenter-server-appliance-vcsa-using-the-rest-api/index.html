@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)  &middot; davidstamen.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="vSphere 6.7, REST API, vCenter Server, ">
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-12-20T00:00:00Z" />
+<meta property="og:article:modified_time" content="2018-12-20T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="vSphere 6.7">
+    
+<meta property="og:article:tag" content="REST API">
+    
+<meta property="og:article:tag" content="vCenter Server">
+    
+  
+
+  <meta property="og:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)" />
+<meta property="og:description" content="I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" />
+
+<meta property="og:image" content="/images/vcsaapi4.png" />
+<meta property="article:published_time" content="2018-12-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-20T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/vcsaapi4.png"/>
+
+<meta name="twitter:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)"/>
+<meta name="twitter:description" content="I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API."/>
+<meta name="twitter:site" content="@davidstamen"/>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-67336507-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+
+  <link rel="canonical" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="icon" href="/favicon/favicon.ico">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6907288179836979",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <script src="/js/clr-2.0/clr-icons.min.js"></script>
+    <script src="/js/clr-2.0/custom-elements.min.js"></script>
+
+    
+    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    
+    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.css">
+</head>
+<body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+  <div class="main-container">
+    
+<header class="header-7">
+  <div class="branding">
+    
+
+    
+    <a class="navbar-brand-img" href="/">
+      <img alt="" src="">
+      <span class="title">davidstamen.com</span>
+      
+    </a>
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    
+    
+        <a class="nav-link  nav-text" href="/" >
+          
+          Home
+        </a>
+    
+        <a class="nav-link  nav-text" href="/tags/" >
+          
+          Tags
+        </a>
+    
+        <a class="nav-link  nav-text" href="/categories/" >
+          
+          Categories
+        </a>
+    
+        <a class="nav-link  nav-text" href="/series/" >
+          
+          Series
+        </a>
+    
+        <a class="nav-link  nav-text" href="/acclaim" >
+          
+          Acclaim
+        </a>
+    
+        <a class="nav-link  nav-text" href="/about" >
+          
+          About
+        </a>
+    
+  </div>
+  <div class="header-actions">
+  <form class="search" id="search" method="get" action="//google.com/search">
+    <label for="search_input">
+        <input id="search_input" type="text" name="q" placeholder="Search">
+        <input type="hidden" name="as_sitesearch" value="davidstamen.com">
+    </label>
+</form>
+</div>
+</header>
+<nav class="subnav" [clr-nav-level]="2">
+  <ul class="nav">
+    
+    
+    <li class="nav-item">
+        <a class="nav-link " href="/vcsa-json-creator" >
+          
+          VCSA JSON Creator 9000
+        </a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+<div class="content-container">
+  <div class="content-area">
+      <h1>Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)
+</h1>
+
+      <div class="metas">
+  
+  <span class="clr-card-authors">
+      <div class="clr-card-authors">
+        Published on 
+December 20, 2018 under <a class="" href="/categories/vmware">VMware</a>
+        &middot; Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/rest-api">REST API</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        &middot; Read in about 6 min (1152 words)
+      </div>
+  </span>
+  
+    
+    
+</div>
+<hr>
+
+      
+      <p>I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API.</p>
+
+<p>I previously wrote about <a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Automating your vCenter Server Upgrade</a> and created a feature-walkthrough which covers <a href="https://vspherecentral.vmware.com/t/vcenter-server/vcenter-lifecycle-install-upgrade-and-migrate-3/upgrading-vcenter-server-6-5-to-vcenter-server-6-7-using-vcsa-cli-1/">vCenter Server Upgrade using the VCSA CLI</a>.</p>
+
+<p>With vSphere 6.7 VMware introduced new REST API&rsquo;s. You can learn more about those using the <a href="https://code.vmware.com/apis/366/vsphere-automation">VMware Code online documentation</a>. VMware initially introduced the update REST updates in vSphere 6.5 but they were under tech-preview and limited. With full support in vSphere 6.7 I wanted to cover the REST API&rsquo;s that are available to handle lifecycle of your VCSA.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>For those of you who may not be familiar with REST API&rsquo;s it might be intimidating to use them, however using tools such as <a href="https://www.getpostman.com/">Postman</a> can make it a bit easier. Postman is a GUI based tool that allows you to create API samples to use and share. When I first was learning about APIs I was completely lost, however when I saw the <a href="https://github.com/vmware/vsphere-automation-sdk-rest">VMware Code Team had Postman samples</a> already created it helped me learn how to handle some APIs. However when browsing the samples, I had noticed there were no ones currently available for vSphere 6.7 Update REST API. Using the samples and the REST API documentation I was able to update and give back to the community and we will review the REST API based methods to patch your VCSA.</p>
+
+<h1 id="postman-collection">Postman Collection</h1>
+
+<p>I have done a pull request to get these added to the VMware Code Repository. However until that is complete, you can find a copy of the Postman samples on my Github <a href="https://github.com/dstamen/Postman/blob/master/vSphere/vCenter%20Server%206.7%20-%20%20Appliance%20Patching.postman_collection.json">here</a>.</p>
+
+<h1 id="exploring-the-api">Exploring the API</h1>
+
+<p>When it comes to exploring the available API&rsquo;s we have a few options. The first is to read the documentation. When reviewing the documentation it will give you details such as the HTTP request, parameters and response but if you are not familiar with the API&rsquo;s then this can be quite difficult.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi1.png" data-caption=""><img width=100% src="/images/vcsaapi1.png"></a>
+      
+    </div>
+  
+
+
+
+<p>This is where API Explorer comes in. API Explorer is available at <code>https://fqdnOFvcsa/apiexplorer</code> and it allows you to explore the API, not only do we give you details such as the HTTP, Parameters and Response but we actually allow you to try it out against the live environment and it will provide you the associated curl command and syntax along with the full response body of your request.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi2.png" data-caption=""><img width=100% src="/images/vcsaapi2.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Using the API Explorer and documentation we can see the updates are broken down in into 5 main sections.</p>
+
+<pre><code>* Cancel -  Cancellation of an update currently in progress.
+* Get - Gets the status of the appliance update.
+* Pending - Allows the manipulation of pending updates. This includes listing, staging, install,precheck and validation.
+* Policy - Get's or set's the  background check for the new updates.
+* Staged - Get's or delete's a staged update.
+</code></pre>
+
+<h2 id="usage-of-the-rest-api-using-postman">Usage of the REST API Using Postman</h2>
+
+<blockquote>
+<p>I will not go into the setup of Postman variables, but before proceeding up validate you have your Environmental Variables setup for  <strong>vc, sso-password, user and password.</strong></p>
+</blockquote>
+
+<h2 id="login-and-logout-of-the-vcsa-rest-api">Login and Logout of the VCSA REST API</h2>
+
+<p>Just like using a GUI or a Script the first thing we must do is login. We have a Postman section to handle the Login/Logout to your VCSA Appliance. This will provide us the session authorization we need to move forward and proceed with the updates.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi3.png" data-caption=""><img width=100% src="/images/vcsaapi3.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="checking-for-updates">Checking for Updates</h2>
+
+<p>When it comes to checking for updates, we can either check locally or locally and online in this example my VCSA has access to the internet so I will navigate to the <code>Check vCenter Server Update - URL &amp; CD-ROM</code> section and Send this request to our VCSA. Once it finishes we will be provided the details of all pending updates. It will let us know the same values available in the UI such as the severity, release date, version and more.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi4.png" data-caption=""><img width=100% src="/images/vcsaapi4.png"></a>
+      
+    </div>
+  
+
+
+
+<p>The next few requests utilize a variable called <strong>version</strong> to populate this variable it is quite easy using Postman. If we highlight the version that was returned. We can right-click and for our environment we can set it for the <strong>version</strong> variable.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi5.png" data-caption=""><img width=100% src="/images/vcsaapi5.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="checking-the-update-details">Checking the Update Details</h2>
+
+<p>We will next review the <code>vCenter Server Update - Version Details</code> request. This will get details for the specific version update such as the name, version, priority and impact to the vCenter Server such as do services need to be restarted or does the appliance need to be rebooted.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi6.png" data-caption=""><img width=100% src="/images/vcsaapi6.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="staging-the-update">Staging the Update</h2>
+
+<p>Prior to installing any update they must be staged, we do have the ability to stage and install the update in one workflow, but I want to explorer the API&rsquo;s available for staging the patch. The sample requests provide the ability to stage the update, get information on the staged update and delete the staged update.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi7.png" data-caption=""><img width=100% src="/images/vcsaapi7.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Please note that when the update is staged the request will be complete but the update may not be fully staged yet. You can check the status of the staged update by using the vCenter Server Update - Status request. We can see below the Staging is in Progress</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi8.png" data-caption=""><img width=100% src="/images/vcsaapi8.png"></a>
+      
+    </div>
+  
+
+
+
+<p>Now that the Update is staged we can see that the state is <code>UPDATES_PENDING</code> with the version that is staged.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi9.png" data-caption=""><img width=100% src="/images/vcsaapi9.png"></a>
+      
+    </div>
+  
+
+
+
+<h2 id="installing-the-update">Installing the Update</h2>
+
+<p>When it comes to installing an update we will follow the workflow of precheck, validate and install. A feature that is included as part of the installation process is the ability to do a precheck. When executed it will review the VCSA details and provide any warnings or errors as well as the estimated time for the update to install.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi10.png" data-caption=""><img width=100% src="/images/vcsaapi10.png"></a>
+      
+    </div>
+  
+
+
+
+<p>If we previously staged our update we can run the <code>vCenter Server Update - Install</code> request, if we have not previously staged the update we will use the <code>vCenter Server Update - Stage and Install</code>. As soon as we hit send, the update starts but we will not be given any status.</p>
+
+<p>To check the status of the update we will go back to the <code>vCenter Server Update - Status</code> request and execute it. Since the update does stop and restart services initially you might get a 503 service unavailable or be prompted to log back in and this is ok. If you wish to keep tabs on the update process keep sending the request to check for updates and login again if needed.</p>
+
+<p>We can see that the API is now available again and the Update is in progress.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi11.png" data-caption=""><img width=100% src="/images/vcsaapi11.png"></a>
+      
+    </div>
+  
+
+
+
+<p>When it is complete we will see the state is UP_TO_DATE and our VCSA update is now complete.</p>
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+      
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+      <a data-fancybox="" href="/images/vcsaapi12.png" data-caption=""><img width=100% src="/images/vcsaapi12.png"></a>
+      
+    </div>
+  
+
+
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Using the REST API&rsquo;s does not have to be hard especially when tied in with pre-built sample resources such as Postman requests. Hopefully this has been helpful for you to start the patching of your VCSA using the REST API&rsquo;s.</p>
+
+<p>If you have any questions feel free to reach out here or on twitter <a href="https://twitter.com/davidstamen">@davidstamen</a></p>
+      <h6>Share this post</h6>
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Patching%20the%20vCenter%20Server%20Appliance%20%28VCSA%29%20using%20the%20REST%20API%20-%20Part%201%20%28Postman%20Collection%29&amp;url=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+      </div>
+    </div>
+  </a>
+  <a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f&amp;title=Patching%20the%20vCenter%20Server%20Appliance%20%28VCSA%29%20using%20the%20REST%20API%20-%20Part%201%20%28Postman%20Collection%29&amp;summary=Patching%20the%20vCenter%20Server%20Appliance%20%28VCSA%29%20using%20the%20REST%20API%20-%20Part%201%20%28Postman%20Collection%29&amp;source=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f&amp;resubmit=true&amp;title=Patching%20the%20vCenter%20Server%20Appliance%20%28VCSA%29%20using%20the%20REST%20API%20-%20Part%201%20%28Postman%20Collection%29" target="_blank" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+      </div>
+    </div>
+  </a>
+    <a class="resp-sharing-button__link" href="mailto:?subject=Patching%20the%20vCenter%20Server%20Appliance%20%28VCSA%29%20using%20the%20REST%20API%20-%20Part%201%20%28Postman%20Collection%29&amp;body=%2f2018%2f12%2f20%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api%2f" target="_self" rel="noopener" aria-label="">
+    <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+        </div>
+    </div>
+    </a>
+
+      
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'davidstamen';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+
+<h3>See Also</h3>
+<ul>
+	
+	<li><a href="/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></li>
+	
+	<li><a href="/2018/05/23/patching-your-vcenter-server-appliance-from-6.7-to-6.7a/">Patching your vCenter Server Appliance from 6.7 to 6.7a</a></li>
+	
+	<li><a href="/2018/04/17/upgrading-to-vmware-vsphere-6.7/">Upgrading to VMware vSphere 6.7</a></li>
+	
+	<li><a href="/2018/11/19/upgrading-to-vmware-vsphere-6.7-ebook-now-available/">Upgrading to VMware vSphere 6.7 eBook - Now Available</a></li>
+	
+	<li><a href="/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/">vSphere Update Manager 6.7 Unable to Scan Cluster</a></li>
+	
+</ul>
+
+      <div class="clarity-prev-next col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      
+      <nav class="clarity-page-prev-next">
+            
+            <div class="clr-nav-previous">
+                  <a href="/2018/11/19/unable-to-update-to-vcenter-server-6.5-u2d-on-vcsa/" title="Unable to Update to vCenter Server 6.5 U2d on VCSA" class="btn btn-sm btn-outline">
+                  Previous
+                  </a>
+            </div>
+            
+            
+            <div class="clr-nav-next">
+                  <a href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/" title="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)" class="btn btn-sm btn-outline">
+                  Next
+                  </a>
+            </div>
+            
+      </nav>
+      
+
+</div>
+
+  </div>
+  
+  <nav class="sidenav clr-col-2 clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-6">
+  <section class="sidenav-content">
+    
+    
+    
+    <div class="card">
+    <div class="card-block">
+    <div class="card-text" id="site-intro">
+      <img src="/images/me2-300.png">
+        <p>a blog about virtualization and stuff
+        
+        <ul class="nav-list-inline">
+          <a href="//github.com/dstamen" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="//linkedin.com/in/davidstamen" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="//twitter.com/davidstamen" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a>
+
+
+
+
+
+
+
+
+<a href="mailto:dstamen@gmail.com" target="_blank" title="Email" class="fas fa-envelope"></a>
+
+          
+
+        </ul>
+        
+    </div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="card-header">
+      <b>Latest Posts</b>
+    </div>
+  <div class="card-block">
+    <div class="card-text">
+      <ul class="list" style="list-style-type:square;list-style-position:inherit">
+        
+        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
+        
+        <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+        
+        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
+        
+        <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+</nav>
+  
+</div>
+      
+    </div>
+  </body>
+</html>
+
