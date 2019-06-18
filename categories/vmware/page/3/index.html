@@ -132,6 +132,44 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/">Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
+                    
+  
+    Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object ‘vim.Datastore:datastore-1131’ has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+I proceeded to follow standard troubleshooting steps, reconfigure HA…same issue….disable HA for entire cluster and re-enable…..same issue…whoops thats not good!
+First step, check what luns are available to the cluster.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/storage">Storage</a> and <a class="" href="/tags/ha">HA</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2017/08/vra-73-using-active-directory-policies/">vRA 7.3 - Using Active Directory Policies</a>
         </div>
         <div class="card-block">
@@ -461,46 +499,6 @@ Every time I would try to configure vCenter HA using the Advanced Wizard, I woul
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/vcenter-ha">vCenter HA</a> and <a class="" href="/tags/availability">Availability</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2016/11/16/vsphere-65-new-license-import-from-myvmware/">vSphere 6.5 - New License Import from My VMware</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-November 16, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
-When you are adding in your VMware licenses, you now have an option to Import License Keys Data…
-To start you need to generate a report from my.vmware.com.
- Log in and Navigate to Download Reports
- Click on the Available Reports dropdown, and select the Product Licenses, Details and History.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/myvmware">MyVMware</a>
         </div>
     </div>
 </div>
@@ -905,6 +903,8 @@ To start you need to generate a report from my.vmware.com.
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
+        
         <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
         
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
@@ -912,8 +912,6 @@ To start you need to generate a report from my.vmware.com.
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
         <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
-        
-        <li><a class="nav-list" href="/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a></li>
         
       </ul>
     </div>
