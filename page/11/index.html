@@ -131,6 +131,43 @@
             <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2015/09/08/how-to-deploy-a-jekyll-blog/">How To Deploy a Jekyll Blog</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to &lt;a href=&#34;http://localhost:4000&#34;&gt;http://localhost:4000&lt;/a&gt; and you will see the blog running!  Easy Enough? Now how do you create a blog post?
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/jekyll">Jekyll</a>
+        </div>
+    </div>
+</div>
+          
+            <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2015/09/08/using-vagrant-to-deploy-an-ubuntu-server-running-nginx/">Using Vagrant to Deploy an Ubuntu Server running NGINX</a>
         </div>
         <div class="card-block">
@@ -460,44 +497,6 @@ VCP6-DCV Delta : Exam Code: 2V0-621D
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/vcp6-dcv">VCP6-DCV</a>
-        </div>
-    </div>
-</div>
-          
-            <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/02/18/srm-unable-to-uninstall-due-to-uac/">SRM - Unable to uninstall due to UAC</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to “Never Notify” SRM didnt like this.
-To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/srm">SRM</a>
         </div>
     </div>
 </div>
@@ -1014,6 +1013,8 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/">Windows Server 2008 is Going EOL - What about my vCenter Server?</a></li>
+        
         <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
         
         <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
@@ -1021,8 +1022,6 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
-        
-        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
       </ul>
     </div>

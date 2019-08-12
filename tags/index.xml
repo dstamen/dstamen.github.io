@@ -6,10 +6,37 @@
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vCenter Server</title>
+      <link>/tags/vcenter-server/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vcenter-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Server 6.5</title>
+      <link>/tags/vcenter-server-6.5/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vcenter-server-6.5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSphere 6.7</title>
+      <link>/tags/vsphere-6.7/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vsphere-6.7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>VMworld</title>
@@ -35,24 +62,6 @@
       <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/converge-tool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vCenter Server</title>
-      <link>/tags/vcenter-server/</link>
-      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vcenter-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vSphere 6.7</title>
-      <link>/tags/vsphere-6.7/</link>
-      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vsphere-6.7/</guid>
       <description></description>
     </item>
     

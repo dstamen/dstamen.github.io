@@ -131,6 +131,43 @@
             <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2016/03/03/using-powercli-to-install-host-vibs/">Using PowerCLI to Install Host VIBs</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
+Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/esxi">ESXi</a>
+        </div>
+    </div>
+</div>
+          
+            <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/">Using UCS PowerTool To Set SNMP Configuration</a>
         </div>
         <div class="card-block">
@@ -459,43 +496,6 @@ Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Prepari
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a> and <a class="" href="/tags/powershell">Powershell</a>
-        </div>
-    </div>
-</div>
-          
-            <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/">Unable to Boot EFI VM on ESXi FC Storage</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
-Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
         </div>
     </div>
 </div>
@@ -1012,6 +1012,8 @@ Whenever I would move the VM to our new DC, it would fail to boot properly. It w
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/">Windows Server 2008 is Going EOL - What about my vCenter Server?</a></li>
+        
         <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
         
         <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
@@ -1019,8 +1021,6 @@ Whenever I would move the VM to our new DC, it would fail to boot properly. It w
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
         
         <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
-        
-        <li><a class="nav-list" href="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</a></li>
         
       </ul>
     </div>
