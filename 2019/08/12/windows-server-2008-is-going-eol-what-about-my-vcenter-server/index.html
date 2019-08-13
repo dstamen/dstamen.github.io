@@ -182,7 +182,7 @@ if (!doNotTrack) {
         Published on 
 August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a> and <a class="" href="/tags/vcenter-server-6.5">vCenter Server 6.5</a>
-        &middot; Read in about 2 min (423 words)
+        &middot; Read in about 3 min (459 words)
       </div>
   </span>
   
@@ -253,7 +253,7 @@ August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
 
 <p>The only supported method would be to take a backup of the existing environment including the database. You will then shutdown the old Windows Server 2008 vCenter Server, and deploy a new VM running your newer operating system with the exact same FQDN and IP. Once this machine is online, you would re-install vCenter Server for Windows using your existing vCenter Server Database.</p>
 
-<p>The backup and restore options for vCenter Server 6.x are outlined in the following <a href="https://kb.vmware.com/s/article/2149237?lang=en_US">KB2149237</a></p>
+<p>The backup and restore options for vCenter Server 6.x are outlined in the following <a href="https://kb.vmware.com/s/article/2149237?lang=en_US">KB2149237.</a> However please note there could be some considerations such as change of UUID, loss of certificates, tags, roles and other policies, so when migrating or moving the vCenter Server database check out <a href="https://ikb.vmware.com/s/article/2144536">KB2144536</a> for more information!</p>
 
 <h2 id="wrap-up">Wrap Up</h2>
 
