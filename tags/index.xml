@@ -6,19 +6,10 @@
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>VMworld</title>
-      <link>/tags/vmworld/</link>
-      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vmworld/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>vCenter Server</title>
@@ -44,6 +35,15 @@
       <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/vsphere-6.7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMworld</title>
+      <link>/tags/vmworld/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vmworld/</guid>
       <description></description>
     </item>
     
