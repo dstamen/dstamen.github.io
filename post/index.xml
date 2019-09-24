@@ -17,7 +17,7 @@
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/</guid>
-      <description>&lt;p&gt;VMworld US has now wrapped up and now its time to focus on VMworld EU! Let&amp;rsquo;s jump in and find out what&amp;rsquo;s going on in the world of vSphere Lifecycle. Check out this post to see how I will be engaging with our customers at this years events!&lt;/p&gt;</description>
+      <description>&lt;p&gt;VMworld US has wrapped up and now its time to focus on VMworld EU! Let&amp;rsquo;s jump in and find out what&amp;rsquo;s going on in the world of vSphere Lifecycle. Check out this post to see how I will be engaging with our customers at this years events!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -957,16 +957,6 @@ Download the PAK file(s) needed based on the type of cluster.
     </item>
     
     <item>
-      <title>Unable to SSH to vSphere 6 VCSA or PSC</title>
-      <link>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</link>
-      <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</guid>
-      <description>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.
-While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</description>
-    </item>
-    
-    <item>
       <title>Unable to join PSC to Domain via Webclient</title>
       <link>/2015/09/21/unable-to-join-psc-to-domain-via-webclient/</link>
       <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
@@ -976,6 +966,16 @@ While trying to setup my Platform Service Controllers for HA. I was having issue
 When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: &amp;ldquo;java.lang.reflect.invocationTargetException&amp;rdquo;
 There are currently two workarounds now with 6.0U1 I am aware of.
  The first method is to join to the domain using the CLI.</description>
+    </item>
+    
+    <item>
+      <title>Unable to SSH to vSphere 6 VCSA or PSC</title>
+      <link>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</link>
+      <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</guid>
+      <description>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.
+While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</description>
     </item>
     
     <item>

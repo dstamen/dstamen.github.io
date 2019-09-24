@@ -37,8 +37,8 @@
 Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2014/06/10/configuring-esxi-5-5-dump-collector/" />
-<meta property="article:published_time" content="2014-06-10T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2014-06-10T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2014-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-06-10T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Configuring ESXi 5.5 Dump Collector"/>
