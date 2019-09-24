@@ -3,8 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <loc>/categories/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
   </url>
@@ -41,91 +39,12 @@
   
   <url>
     <loc>/authors/</loc>
-=======
-    <loc>/authors/</loc>
-=======
-    <loc>/authors/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
->>>>>>> parent of 9e2486bf0... Publishing to GitHub
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vmware/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-<<<<<<< HEAD
-    <loc>/categories/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vmware/</loc>
-=======
-    <loc>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</loc>
->>>>>>> parent of 9e2486bf0... Publishing to GitHub
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-<<<<<<< HEAD
-    <loc>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</loc>
->>>>>>> parent of 9e2486bf0... Publishing to GitHub
-=======
-    <loc>/</loc>
->>>>>>> parent of 9e2486bf0... Publishing to GitHub
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-<<<<<<< HEAD
     <loc>/tags/vcenter-server/</loc>
-=======
-    <loc>/</loc>
->>>>>>> parent of 9e2486bf0... Publishing to GitHub
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -141,18 +60,6 @@
   <url>
     <loc>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/vmworld/</loc>
-    <lastmod>2019-06-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vmworld/</loc>
-    <lastmod>2019-06-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

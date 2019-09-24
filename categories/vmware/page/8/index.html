@@ -132,6 +132,43 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2014/06/10/configuring-esxi-5-5-syslog-collector/">Configuring ESXi 5.5 Syslog Collector</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/syslog">Syslog</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2014/06/04/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-3/">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 3)</a>
         </div>
         <div class="card-block">
@@ -466,42 +503,6 @@ May 1, 2014 under <a class="" href="/categories/vmware">VMware</a>
     </div>
 </div>
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2014/04/29/nested-esxi-and-nfs/">Nested ESXi and NFS</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host’s couldn’t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable “Promiscuous Mode” on the VSS to allow the traffic to pass.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/homelab">HomeLab</a> and <a class="" href="/tags/networking">Networking</a>
-        </div>
-    </div>
-</div>
-    
     </div>
     
 <nav>
@@ -639,8 +640,6 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
           
           
-            
-          
 
 
         
@@ -651,12 +650,6 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
       
 
       
-      
-        <li class="pagination__item">
-          <a href="/categories/vmware/page/4/" class="btn btn-sm  btn btn-outline">
-            4
-          </a>
-        </li>
       
 
     
@@ -800,11 +793,58 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
       
 
     
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+            
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/categories/vmware/page/9/" class="btn btn-sm  btn btn-outline">
+            9
+          </a>
+        </li>
+      
+
+    
 
     
     
+    <li class="pagination__item pagination__item--next">
+      <a href="/categories/vmware/page/9/" class="btn btn-sm btn-outline">
+        ...
+      </a>
+    </li>
+    
 
     
+    
+    <li class="pagination__item pagination__item--last">
+      <a class="btn btn-sm btn btn-outline" href="/categories/vmware/page/9/">
+        9
+      </a>
+    </li>
     
 
   </ul>
@@ -882,6 +922,8 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/">VMworld EU 2019 - vSphere Lifecycle Sessions</a></li>
+        
         <li><a class="nav-list" href="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/">Windows Server 2008 is Going EOL - What about my vCenter Server?</a></li>
         
         <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
@@ -889,8 +931,6 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
         <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
         
         <li><a class="nav-list" href="/2019/04/24/vcenter-server-appliance-cli-json-creator/">vCenter Server Appliance CLI - JSON Creator</a></li>
-        
-        <li><a class="nav-list" href="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
         
       </ul>
     </div>

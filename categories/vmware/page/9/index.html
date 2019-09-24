@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Jekyll  &middot; davidstamen.com</title>
+  <title>VMware  &middot; davidstamen.com</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -22,7 +22,7 @@
 <meta property="og:type" content="website" />
 
 
-  <link rel="canonical" href="/tags/jekyll/" />
+  <link rel="canonical" href="/categories/vmware/" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
   <link rel="icon" href="/favicon/favicon.ico">
 
@@ -124,7 +124,7 @@
 
 <div class="content-container">
   <div class="content-area">
-    <h1>Jekyll
+    <h1>VMware
 </h1>
 
     <div class="clr-row">
@@ -132,7 +132,7 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
-            <a href="/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/">Deploying and Hosting Jekyll on Ravello Systems</a>
+            <a href="/2014/04/29/nested-esxi-and-nfs/">Nested ESXi and NFS</a>
         </div>
         <div class="card-block">
             <div class="card-media-block">
@@ -140,7 +140,7 @@
                     <span class="card-media-title clr-card-authors">
                         <div class="clr-card-authors">
                         Published on 
-September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
+April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
                         </div>
                     </span>
                 </div>
@@ -151,10 +151,7 @@ September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
                     
                     
   
-    Did you know you could get host your own blog on Ravello Systems?
-Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
-Please use my previous blog on how to get it deployed.
-Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.
+    I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host’s couldn’t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable “Promiscuous Mode” on the VSS to allow the traffic to pass.
   
 
 
@@ -163,86 +160,347 @@ Disclaimer: This is in no way supported or recommended by Ravello Systems, runni
         </div>
         <div class="card-footer">
             
-            Tagged <a class="" href="/tags/jekyll">Jekyll</a> and <a class="" href="/tags/ravello">Ravello</a>
+            Tagged <a class="" href="/tags/homelab">HomeLab</a> and <a class="" href="/tags/networking">Networking</a>
         </div>
     </div>
 </div>
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/09/08/how-to-deploy-a-jekyll-blog/">How To Deploy a Jekyll Blog</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to &lt;a href=&#34;http://localhost:4000&#34;&gt;http://localhost:4000&lt;/a&gt; and you will see the blog running!  Easy Enough? Now how do you create a blog post?
-  
+    </div>
+    
+<nav>
+    
 
 
 
-            </div>
-        </div>
-        <div class="card-footer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul class="pagination">
+    
+    
+    
+    <li class="pagination__item pagination__item--first">
+      <a class="btn btn-sm btn btn-outline" href="/categories/vmware/">
+        1
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="pagination__item pagination__item--previous">
+      <a href="/categories/vmware/page/8/" class="btn btn-sm btn btn-outline">
+        ...
+      </a>
+    </li>
+    
+
+    
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
             
-            Tagged <a class="" href="/tags/jekyll">Jekyll</a>
-        </div>
-    </div>
-</div>
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/categories/vmware/page/5/" class="btn btn-sm  btn btn-outline">
+            5
+          </a>
+        </li>
+      
+
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/09/04/updated-platform/">Welcome to Jekyll!</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-September 4, 2015 under <a class="" href="/categories/blog">Blog</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    New Blog Platform! I have had a bit of issues with performance on my blog recently and looking on how to not overpay for hosting services. A good friend of mine suggested using Jekyll and GitHub Pages, so I took the challenge. Within a day I was able to get my blog posts exported from Wordpress and published on a new platform and it was quite simple! Be on the lookout for some upcoming posts.
-  
+    
+      
+
+      
+      
+      
 
 
+        
+        
+        
 
-            </div>
-        </div>
-        <div class="card-footer">
+          
+          
             
-            Tagged <a class="" href="/tags/jekyll">Jekyll</a>
-        </div>
-    </div>
-</div>
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/categories/vmware/page/6/" class="btn btn-sm  btn btn-outline">
+            6
+          </a>
+        </li>
+      
+
     
-    </div>
     
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+            
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/categories/vmware/page/7/" class="btn btn-sm  btn btn-outline">
+            7
+          </a>
+        </li>
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+            
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/categories/vmware/page/8/" class="btn btn-sm  btn btn-outline">
+            8
+          </a>
+        </li>
+      
+
+    
+    
+      
+
+      
+      
+      
+
+
+        
+        
+        
+
+          
+          
+            
+          
+
+
+        
+        
+
+      
+      
+      
+
+      
+      
+        <li class="pagination__item pagination__item--current">
+          <a href="/categories/vmware/page/9/" class="btn btn-sm  btn btn-primary ">
+            9
+          </a>
+        </li>
+      
+
+    
+
+    
+    
+
+    
+    
+
+  </ul>
+
+</nav>
+
 
   </div>
   
@@ -298,7 +556,7 @@ September 4, 2015 under <a class="" href="/categories/blog">Blog</a>
 <a href="mailto:dstamen@gmail.com" target="_blank" title="Email" class="fas fa-envelope"></a>
 
           
-    <a href="/tags/jekyll/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a>
+    <a href="/categories/vmware/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a>
 
 
         </ul>
