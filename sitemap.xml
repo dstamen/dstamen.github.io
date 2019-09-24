@@ -5,31 +5,31 @@
   <url>
     <loc>/categories/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/vmware/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vmworld/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -38,28 +38,44 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2019-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/authors/</loc>
+    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/vcenter-server/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vcenter-server-6.5/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vsphere-6.7/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -70,11 +86,13 @@
   <url>
     <loc>/tags/certificates/</loc>
     <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/converge-tool/</loc>
     <lastmod>2019-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -85,16 +103,19 @@
   <url>
     <loc>/tags/angular/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/clarity/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/cooltool/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -115,21 +136,18 @@
   <url>
     <loc>/tags/powershell/</loc>
     <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/rest-api/</loc>
     <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ebook/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -143,18 +161,27 @@
   </url>
   
   <url>
+    <loc>/tags/ebook/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/vsphere-6.5/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vsphere-upgrade/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/update-manager/</loc>
     <lastmod>2018-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -170,11 +197,13 @@
   <url>
     <loc>/tags/autodeploy/</loc>
     <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/lifecycle/</loc>
     <lastmod>2018-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -195,21 +224,25 @@
   <url>
     <loc>/series/automating-your-vsphere-upgrade/</loc>
     <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/networking/</loc>
     <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/series/</loc>
     <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vds/</loc>
     <lastmod>2018-10-08T08:02:47-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -220,6 +253,7 @@
   <url>
     <loc>/tags/storage/</loc>
     <lastmod>2018-10-07T08:13:29-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -230,16 +264,19 @@
   <url>
     <loc>/tags/vm-compatibility/</loc>
     <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vm-tools/</loc>
     <lastmod>2018-10-06T08:25:31-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/psc/</loc>
     <lastmod>2018-10-05T09:08:15-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -255,16 +292,19 @@
   <url>
     <loc>/tags/l1tf/</loc>
     <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/security/</loc>
     <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vulnerability/</loc>
     <lastmod>2018-08-15T10:47:06-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -285,11 +325,13 @@
   <url>
     <loc>/categories/awards/</loc>
     <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vexpert/</loc>
     <lastmod>2018-03-12T06:41:02-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -300,11 +342,13 @@
   <url>
     <loc>/tags/career/</loc>
     <lastmod>2018-02-06T10:34:32-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/personal/</loc>
     <lastmod>2018-02-06T10:34:32-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -315,6 +359,7 @@
   <url>
     <loc>/tags/ha/</loc>
     <lastmod>2018-01-19T10:27:02+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -325,16 +370,19 @@
   <url>
     <loc>/categories/blog/</loc>
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/forestry.io/</loc>
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/hugo/</loc>
     <lastmod>2018-01-02T08:26:54-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -345,11 +393,13 @@
   <url>
     <loc>/categories/certification/</loc>
     <lastmod>2017-12-21T10:29:15-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vcap6.5-dcv-design/</loc>
     <lastmod>2017-12-21T10:29:15-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -365,16 +415,19 @@
   <url>
     <loc>/categories/office/</loc>
     <lastmod>2017-08-24T16:33:29-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/standdesk/</loc>
     <lastmod>2017-08-24T16:33:29-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vra/</loc>
     <lastmod>2017-08-22T14:00:46-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -390,6 +443,7 @@
   <url>
     <loc>/tags/vcenter-ha/</loc>
     <lastmod>2017-08-02T16:08:43-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -400,6 +454,7 @@
   <url>
     <loc>/tags/powercli/</loc>
     <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -410,6 +465,7 @@
   <url>
     <loc>/tags/vrops/</loc>
     <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -418,23 +474,27 @@
   </url>
   
   <url>
+    <loc>/tags/usg/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/ubiquiti/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/unifi/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/usg/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vpn/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -465,11 +525,13 @@
   <url>
     <loc>/categories/linux/</loc>
     <lastmod>2017-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/powerdns/</loc>
     <lastmod>2017-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -478,18 +540,21 @@
   </url>
   
   <url>
-    <loc>/tags/vsphere-6.0/</loc>
+    <loc>/tags/webclient/</loc>
     <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/webclient/</loc>
+    <loc>/tags/vsphere-6.0/</loc>
     <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/content-library/</loc>
     <lastmod>2016-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -500,6 +565,7 @@
   <url>
     <loc>/tags/vmware-fling/</loc>
     <lastmod>2016-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -510,6 +576,7 @@
   <url>
     <loc>/tags/availability/</loc>
     <lastmod>2016-11-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -520,6 +587,7 @@
   <url>
     <loc>/tags/myvmware/</loc>
     <lastmod>2016-11-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -530,6 +598,7 @@
   <url>
     <loc>/categories/microsoft/</loc>
     <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -540,16 +609,19 @@
   <url>
     <loc>/tags/windows/</loc>
     <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/study-guide/</loc>
     <lastmod>2016-07-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/vcap6-dcv-design/</loc>
     <lastmod>2016-07-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -565,6 +637,7 @@
   <url>
     <loc>/tags/vcap6-dcv-deploy/</loc>
     <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -575,6 +648,7 @@
   <url>
     <loc>/categories/backup/</loc>
     <lastmod>2016-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -585,11 +659,13 @@
   <url>
     <loc>/tags/veeam/</loc>
     <lastmod>2016-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/cisco-ucs/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -600,16 +676,19 @@
   <url>
     <loc>/categories/automation/</loc>
     <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/cisco/</loc>
     <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/syslog/</loc>
     <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -625,6 +704,7 @@
   <url>
     <loc>/tags/esxi/</loc>
     <lastmod>2016-03-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -635,6 +715,7 @@
   <url>
     <loc>/tags/snmp/</loc>
     <lastmod>2016-03-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -650,6 +731,7 @@
   <url>
     <loc>/tags/ansible/</loc>
     <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -660,6 +742,7 @@
   <url>
     <loc>/tags/cisco-aci/</loc>
     <lastmod>2016-02-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -670,6 +753,7 @@
   <url>
     <loc>/tags/cisco-champion/</loc>
     <lastmod>2016-01-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -730,6 +814,7 @@
   <url>
     <loc>/tags/esxcli/</loc>
     <lastmod>2015-11-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -755,6 +840,7 @@
   <url>
     <loc>/tags/horizon-view/</loc>
     <lastmod>2015-11-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -815,11 +901,13 @@
   <url>
     <loc>/tags/vcp6-dcv/</loc>
     <lastmod>2015-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/series/vcp6-dcv-study-guide/</loc>
     <lastmod>2015-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -835,11 +923,13 @@
   <url>
     <loc>/tags/kvm/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ubuntu/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -850,6 +940,7 @@
   <url>
     <loc>/tags/vagrant/</loc>
     <lastmod>2015-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -870,6 +961,7 @@
   <url>
     <loc>/tags/vsphere-5.5/</loc>
     <lastmod>2015-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -900,15 +992,16 @@
   <url>
     <loc>/tags/ssh/</loc>
     <lastmod>2015-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/09/21/unable-to-join-psc-to-domain-via-webclient/</loc>
-    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</loc>
+    <lastmod>2015-09-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/09/21/unable-to-join-psc-to-domain-via-webclient/</loc>
     <lastmod>2015-09-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -950,16 +1043,19 @@
   <url>
     <loc>/tags/jekyll/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/nginx/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ravello/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -990,6 +1086,7 @@
   <url>
     <loc>/tags/pernix-pro/</loc>
     <lastmod>2015-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1015,6 +1112,7 @@
   <url>
     <loc>/tags/srm/</loc>
     <lastmod>2015-02-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1040,6 +1138,7 @@
   <url>
     <loc>/tags/trend-micro/</loc>
     <lastmod>2014-12-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1055,6 +1154,7 @@
   <url>
     <loc>/tags/exchange/</loc>
     <lastmod>2014-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1070,6 +1170,7 @@
   <url>
     <loc>/tags/chrome/</loc>
     <lastmod>2014-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1080,6 +1181,7 @@
   <url>
     <loc>/tags/vdp/</loc>
     <lastmod>2014-09-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1095,6 +1197,7 @@
   <url>
     <loc>/tags/sysprep/</loc>
     <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1105,6 +1208,7 @@
   <url>
     <loc>/tags/vsphere-5.1/</loc>
     <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1120,6 +1224,7 @@
   <url>
     <loc>/tags/dump-collector/</loc>
     <lastmod>2014-06-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1130,6 +1235,7 @@
   <url>
     <loc>/tags/vcloud-air/</loc>
     <lastmod>2014-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1150,6 +1256,7 @@
   <url>
     <loc>/tags/vmotion/</loc>
     <lastmod>2014-05-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1185,6 +1292,7 @@
   <url>
     <loc>/tags/vma/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1195,6 +1303,7 @@
   <url>
     <loc>/tags/homelab/</loc>
     <lastmod>2014-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
