@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on davidstamen.com</title>
+    <link>/tags/ssh/</link>
+    <description>Recent content in SSH on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unable to SSH to vSphere 6 VCSA or PSC</title>
+      <link>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</link>
+      <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</guid>
+      <description>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.
+While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</description>
+    </item>
+    
+    <item>
+      <title>Enable SSH on vSphere Management Assistant 5.0</title>
+      <link>/2014/05/01/enable-ssh-on-vma-5-0/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/2014/05/01/enable-ssh-on-vma-5-0/</guid>
+      <description>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
+ Logon to vMA via a Console Session Run &amp;lsquo;sudo vi /etc/hosts.allow&amp;rsquo; Scroll to the very bottom and type i to insert content into the file.</description>
+    </item>
+    
+  </channel>
+</rss>

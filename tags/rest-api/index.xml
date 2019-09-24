@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>REST API on davidstamen.com</title>
+    <link>/tags/rest-api/</link>
+    <description>Recent content in REST API on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rest-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)</title>
+      <link>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</guid>
+      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&amp;rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
+    </item>
+    
+    <item>
+      <title>Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</title>
+      <link>/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/</guid>
+      <description>&lt;p&gt;I am a huge fan of Automating the vSphere Lifecycle process. The next step I wanted to cover was patching the vCenter Server Appliance (VCSA) using the REST API.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
