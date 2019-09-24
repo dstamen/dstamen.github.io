@@ -6,10 +6,19 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VMworld EU 2019 - vSphere Lifecycle Sessions</title>
+      <link>/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/</link>
+      <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/</guid>
+      <description>&lt;p&gt;VMworld US has now wrapped up and now its time to focus on VMworld EU! Let&amp;rsquo;s jump in and find out what&amp;rsquo;s going on in the world of vSphere Lifecycle. Check out this post to see how I will be engaging with our customers at this years events!&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Windows Server 2008 is Going EOL - What about my vCenter Server?</title>
