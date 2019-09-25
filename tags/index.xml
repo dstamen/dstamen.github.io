@@ -336,20 +336,20 @@
     </item>
     
     <item>
-      <title>USG</title>
-      <link>/tags/usg/</link>
-      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/usg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Unifi</title>
       <link>/tags/unifi/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/unifi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>USG</title>
+      <link>/tags/usg/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/usg/</guid>
       <description></description>
     </item>
     
@@ -372,20 +372,20 @@
     </item>
     
     <item>
-      <title>Webclient</title>
-      <link>/tags/webclient/</link>
-      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/webclient/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>vSphere 6.0</title>
       <link>/tags/vsphere-6.0/</link>
       <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/vsphere-6.0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webclient</title>
+      <link>/tags/webclient/</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/webclient/</guid>
       <description></description>
     </item>
     
