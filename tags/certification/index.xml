@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Certification on davidstamen.com</title>
+    <link>/tags/certification/</link>
+    <description>Recent content in Certification on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Certified Kubernetes Administrator (CKA) Exam Experience</title>
+      <link>/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/</guid>
+      <description>&lt;p&gt;It has now been about two months since I have began learning Kubernetes as I started to cover Project Pacific in my new role. With that said, one of my goals was to achieve the Certified Kubernetes Administrator (CKA) to prove  my current knowledge. This post will be a recap of my experience studying for the exam.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
