@@ -753,7 +753,6 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   </div>
 
       <p>Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.</p>
-
   
     
     
@@ -791,15 +790,12 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h2 id="upgrading-vmware-tools">Upgrading VMware Tools</h2>
-
-<p>When it comes to keeping your VMware Tools up to date we have a few options but I will focus on two of my favorite methods. Keeping VMware tools up to date is very important as VMware includes drivers and tools to make sure your VM&rsquo;s run optimally with the latest features. <a href="https://twitter.com/eric_gray">Eric Gray</a> of our CPBU Technical Marketing Team covers a few considerations and methods in depth in the following blog post <a href="https://blogs.vmware.com/vsphere/2016/03/six-methods-for-keeping-vm-tools-up-to-date.html">Six Methods for Keeping VM Tools Up to Date</a>.</p>
-
+<p>When it comes to keeping your VMware Tools up to date we have a few options but I will focus on two of my favorite methods. Keeping VMware tools up to date is very important as VMware includes drivers and tools to make sure your VM's run optimally with the latest features. 
+<a href="https://twitter.com/eric_gray" target="_blank">Eric Gray</a> of our CPBU Technical Marketing Team covers a few considerations and methods in depth in the following blog post 
+<a href="https://blogs.vmware.com/vsphere/2016/03/six-methods-for-keeping-vm-tools-up-to-date.html" target="_blank">Six Methods for Keeping VM Tools Up to Date</a>.</p>
 <h3 id="checking-vmware-tools-compliance">Checking VMware Tools Compliance</h3>
-
 <p>Before we can start to update our VMware Tools it might be a good idea to understand which VMs in our environment are currently out of compliance, the easiest way to check if a VM if out of compliance is to view it via the vSphere Client and it will show you details such as the version and compliance.</p>
-
 
 
 
@@ -840,14 +836,9 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>However, since we are talking about automation lets show this another way using PowerCLI.</p>
-
 <pre><code>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } | select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}|Sort-Object Name
-</code></pre>
-
-<p>Using this PowerCLI one-liner we are able to see more information at scale, we can see that within our folder we actually have 3 VMs that are out of compliance. To remediate these to the latest version its actually quite simple with PowerCLI as well.  </p>
-
+</code></pre><p>Using this PowerCLI one-liner we are able to see more information at scale, we can see that within our folder we actually have 3 VMs that are out of compliance. To remediate these to the latest version its actually quite simple with PowerCLI as well.  </p>
 
 
 
@@ -888,13 +879,9 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>To make the information clearer on what needs an update we will use the same search only looking for VMs where ToolStatus is guestToolsNeedUpgrade. To do that we will use the following one-liner.</p>
-
 <pre><code>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &quot;guestToolsNeedUpgrade&quot;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Sort-Object Name
 </code></pre>
-
-
 
 
   
@@ -934,15 +921,10 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h3 id="upgrading-vmware-tools-via-powercli">Upgrading VMware Tools via PowerCLI</h3>
-
 <p>Now that we know which VMs need tools update we can actually go forth and upgrade tools. That is quite simple we can do this using the Update-Tools PowerCLI cmdlet. Using our existing one-liner from above we will just append Update-Tools to update the VMs with tools currently out of compliance.</p>
-
 <pre><code>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &quot;guestToolsNeedUpgrade&quot;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Update-Tools -NoReboot -VM {$\_.Name} -Verbose
 </code></pre>
-
-
 
 
   
@@ -982,15 +964,11 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>You may have noticed that all the VMs had their updates kicked off at the same time and this may not be ideal, this is one way that the Update-Tools cmdlet works, however we can get around this by storing the VMs within a variable and then using a loop process them one at a time. This is definitely preferable as it will limit the impact to the environment.</p>
-
 <pre><code>$OutofDateVMs = Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &quot;guestToolsNeedUpgrade&quot;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}
 
 ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
 </code></pre>
-
-
 
 
   
@@ -1030,13 +1008,11 @@ ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
   
 
 
-
-<p>Now our tools are up to date! For more information on upgrading your VMware Tools via PowerCLI you can find more information <a href="https://code.vmware.com/docs/7053/cmdlet-reference#/doc/Update-Tools.html">here</a>.  </p>
-
+<p>Now our tools are up to date! For more information on upgrading your VMware Tools via PowerCLI you can find more information 
+<a href="https://code.vmware.com/docs/7053/cmdlet-reference#/doc/Update-Tools.html" target="_blank">here</a>.  </p>
 <h3 id="upgrading-tools-automatically-on-reboot">Upgrading Tools Automatically on Reboot</h3>
-
-<p>Using VM options to keep VMware Tools up to date is also another method to automatically keep VMs up to date. Enabling the &ldquo;Check and upgrade VMware Tools before each power on&rdquo; advanced setting use to not be used because of the additional reboot it would cause for virtual machines. Keep in mind that with Windows Server 2016 <a href="https://blogs.vmware.com/vsphere/2018/08/eliminate-the-windows-reboot-after-updating-vmware-tools.html">VMware Tools no longer need a reboot on upgrade</a>, it can be safe to enable this setting and have VMs stay up to date on every reboot. However this may not be applicable to all situations, so another recommendation would be to enable this for a lab environment or non-critical workloads. The easy way to enable this option is to log into the vSphere Client, edit the VM settings and enable the setting.</p>
-
+<p>Using VM options to keep VMware Tools up to date is also another method to automatically keep VMs up to date. Enabling the &ldquo;Check and upgrade VMware Tools before each power on&rdquo; advanced setting use to not be used because of the additional reboot it would cause for virtual machines. Keep in mind that with Windows Server 2016 
+<a href="https://blogs.vmware.com/vsphere/2018/08/eliminate-the-windows-reboot-after-updating-vmware-tools.html" target="_blank">VMware Tools no longer need a reboot on upgrade</a>, it can be safe to enable this setting and have VMs stay up to date on every reboot. However this may not be applicable to all situations, so another recommendation would be to enable this for a lab environment or non-critical workloads. The easy way to enable this option is to log into the vSphere Client, edit the VM settings and enable the setting.</p>
 
 
 
@@ -1077,13 +1053,9 @@ ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
   
 
 
-
-<p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM&rsquo;s setting so this gets easier when we have a large environment.</p>
-
+<p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM's setting so this gets easier when we have a large environment.</p>
 <pre><code>Get-Folder Testing|Get-VM|Get-View | select name,@{N='ToolsUpgradePolicy';E={$\_.Config.Tools.ToolsUpgradePolicy } } |Sort Name
 </code></pre>
-
-
 
 
   
@@ -1123,9 +1095,7 @@ ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
   
 
 
-
 <p>Here we can see which VMs have the automatic upgrade set and which ones are configured for manual. Utilizing a filter we can look for objects that are set for manual and then configure them to be set for upgradeAtPowerCycle</p>
-
 <pre><code>$ManualUpdateVMs = Get-Folder Testing|Get-VM|Get-View | Where-Object {$\_.Config.Tools.ToolsUpgradePolicy -like &quot;manual&quot;}|select name,@{N='ToolsUpgradePolicy';E={$\_.Config.Tools.ToolsUpgradePolicy } }
 
 Foreach ($VM in ($ManualUpdateVMs)) {
@@ -1136,8 +1106,6 @@ $vmConfigSpec.Tools.ToolsUpgradePolicy = &quot;UpgradeAtPowerCycle&quot;
 $VMConfig.ReconfigVM($vmConfigSpec)
 }
 </code></pre>
-
-
 
 
   
@@ -1177,9 +1145,7 @@ $VMConfig.ReconfigVM($vmConfigSpec)
   
 
 
-
 <p>If we do a final check we can see that all VMs are now set to <strong>upgradeAtPowerCycle</strong>.</p>
-
 
 
 
@@ -1220,19 +1186,12 @@ $VMConfig.ReconfigVM($vmConfigSpec)
   
 
 
-
 <h2 id="upgrading-vm-compatibility">Upgrading VM Compatibility</h2>
-
 <p>When it comes to upgrading your VM Compatibility this is something that should be done with caution. Upgrading VM Compatibility aka VM Hardware is like pulling out the motherboard and replacing it with a new one, so this should only be done when features and functionality in a higher level are needed. Our current recommended level is Hardware Version 11 as it handles remediation from current security threats. Prior to upgrading your VM Compatibility you should always make sure VMware Tools are up to date first as new drivers can be required for the new virtual hardware. As I mentioned previously prior to upgrading your VM Compatibility I recommend taking a snapshot or a backup of the virtual machine in case a rollback is needed.  </p>
-
 <h3 id="checking-vm-compatibility-version">Checking VM Compatibility Version</h3>
-
 <p>Its quite easy to see the current version of VM Compatibility via the vSphere Client, however when checking the current levels across our entire vCenter Server we may want to automate this Below you will find a quick and easy one-liner to identify the VMs and their current VM Compatibility version.</p>
-
 <pre><code>Get-folder Testing | Get-VM | Select Name, Version | Sort Name
 </code></pre>
-
-
 
 
   
@@ -1272,13 +1231,12 @@ $VMConfig.ReconfigVM($vmConfigSpec)
   
 
 
-
-<p>As we can see above a few VMs are currently running v14 which is compatible with vSphere 6.7 only. This was needed for us to take advantage of <a href="https://blogs.vmware.com/vsphere/2018/05/introducing-support-virtualization-based-security-credential-guard-vsphere-6-7.html">VBS</a> and <a href="https://blogs.vmware.com/vsphere/2018/05/vsphere-6-7-virtual-trusted-platform-modules.html">TPM</a> security features. Again, we should only upgrade VM Compatibility when additional functionality is needed.</p>
-
+<p>As we can see above a few VMs are currently running v14 which is compatible with vSphere 6.7 only. This was needed for us to take advantage of 
+<a href="https://blogs.vmware.com/vsphere/2018/05/introducing-support-virtualization-based-security-credential-guard-vsphere-6-7.html" target="_blank">VBS</a> and 
+<a href="https://blogs.vmware.com/vsphere/2018/05/vsphere-6-7-virtual-trusted-platform-modules.html" target="_blank">TPM</a> security features. Again, we should only upgrade VM Compatibility when additional functionality is needed.</p>
 <h3 id="upgrading-vm-compatibility-version">Upgrading VM Compatibility Version</h3>
-
-<p>We have identified a need to upgrade VM08 also to v14 to take advantage of Per-VM EVC so we can handle the automation of the VM compatibility upgrade. We can do this again quite easily with PowerCLI. If you wish to do this via the vSphere Client my colleague Nigel Hickey covers this in his blog series <a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-4-upgrading-vmware-tools-and-vm-compatibility.html">here</a>. However, we are talking automation here so lets jump into the quick script to accomplish this.</p>
-
+<p>We have identified a need to upgrade VM08 also to v14 to take advantage of Per-VM EVC so we can handle the automation of the VM compatibility upgrade. We can do this again quite easily with PowerCLI. If you wish to do this via the vSphere Client my colleague Nigel Hickey covers this in his blog series 
+<a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-4-upgrading-vmware-tools-and-vm-compatibility.html" target="_blank">here</a>. However, we are talking automation here so lets jump into the quick script to accomplish this.</p>
 <pre><code>$HardwareUpdateVMs = Get-Folder Testing | Get-VM VM08
 
 Foreach ($VM in ($HardwareUpdateVMs)) {
@@ -1290,8 +1248,6 @@ $vmConfigSpec.ScheduledHardwareUpgradeInfo.VersionKey = “vmx-14”
 $VMConfig.ReconfigVM($vmConfigSpec)
 }
 </code></pre>
-
-
 
 
   
@@ -1331,20 +1287,16 @@ $VMConfig.ReconfigVM($vmConfigSpec)
   
 
 
-
 <p>This will not automatically upgrade the VM Compatibility, unlike VMware Tools this can not be done with the virtual machine Powered On. The next time the VM is rebooted it will be shutdown, the compatibility will be upgraded and then be powered back on.</p>
-
-<p>More information on upgrading VM Compatibility can be found <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-96C06236-C271-4CFE-857E-22D1FDEECC95.html">here</a>.</p>
-
+<p>More information on upgrading VM Compatibility can be found 
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-96C06236-C271-4CFE-857E-22D1FDEECC95.html" target="_blank">here</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
-
-<p>Automating your VMware Tools and VM Compatibility upgrades do not need to be hard, we have quite a few ways to help you with this and help this blog has helped educate you on some additional methods. For more information on Automating your vSphere Upgrade be sure to check out the full series <a href="https://blogs.vmware.com/vsphere/2018/09/introduction-to-automating-your-vsphere-upgrade.html">here</a>.</p>
-
-<hr />
-
+<p>Automating your VMware Tools and VM Compatibility upgrades do not need to be hard, we have quite a few ways to help you with this and help this blog has helped educate you on some additional methods. For more information on Automating your vSphere Upgrade be sure to check out the full series 
+<a href="https://blogs.vmware.com/vsphere/2018/09/introduction-to-automating-your-vsphere-upgrade.html" target="_blank">here</a>.</p>
+<hr>
 <p><strong>Cross-Posted from vSphere Blog</strong></p>
-
-<p><a href="https://blogs.vmware.com/vsphere/2018/09/automating-upgrade-of-vmware-tools-and-vmware-compatibility.html">https://blogs.vmware.com/vsphere/2018/09/automating-upgrade-of-vmware-tools-and-vmware-compatibility.html</a></p>
+<p>
+<a href="https://blogs.vmware.com/vsphere/2018/09/automating-upgrade-of-vmware-tools-and-vmware-compatibility.html" target="_blank">https://blogs.vmware.com/vsphere/2018/09/automating-upgrade-of-vmware-tools-and-vmware-compatibility.html</a></p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f06%2fautomating-upgrade-of-vmware-tools-and-vm-compatibility%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

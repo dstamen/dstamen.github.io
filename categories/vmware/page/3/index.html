@@ -186,7 +186,7 @@ April 17, 2018 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
                     
   
-    It’s finally out! vSphere 6.7 is the next major release of VMware’s virtualization software. I’ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+    It&#39;s finally out! vSphere 6.7 is the next major release of VMware&#39;s virtualization software. I&#39;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
 The first, thing I would like to mention is there is no supported migration from vSphere 5.
   
 
@@ -224,8 +224,8 @@ January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object ‘vim.Datastore:datastore-1131’ has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
+![](/uploads/screenshot-2018-01-19 10-23-44.png)
 I proceeded to follow standard troubleshooting steps, reconfigure HA…same issue….disable HA for entire cluster and re-enable…..same issue…whoops thats not good!
-First step, check what luns are available to the cluster.
   
 
 
@@ -373,7 +373,7 @@ April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
   
 
 
@@ -484,7 +484,7 @@ January 19, 2017 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam’s - How to Customize Webclient Login UI
+As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.
   
 

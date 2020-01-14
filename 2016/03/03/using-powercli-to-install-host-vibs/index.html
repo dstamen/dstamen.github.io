@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using PowerCLI to Install Host VIBs" />
 <meta property="og:description" content="So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/03/03/using-powercli-to-install-host-vibs/" />
 <meta property="article:published_time" content="2016-03-03T00:00:00+00:00" />
@@ -43,7 +43,7 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing t
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using PowerCLI to Install Host VIBs"/>
 <meta name="twitter:description" content="So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,28 +186,20 @@ March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Install-HostVIB.ps1">Install-HostVIB.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/Install-HostVIB.ps1" target="_blank">Install-HostVIB.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <p><em>This script assumes you have already launched PowerCLI and modified the variables</em></p>
-
 <pre><code># Define Variables
 $Cluster = &quot;Cluster&quot;
 $VIBPATH = &quot;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic_1.6.0.24-1OEM.600.0.0.2494585.vib&quot;
@@ -231,10 +223,7 @@ Get-VMhost -Location $Cluster | where { $_.PowerState -eq &quot;PoweredOn&quot; 
     # Verify VIB installed successfully
     if ($action.Message -eq &quot;Operation finished successfully.&quot;){Write-host &quot;Action Completed successfully on $($_.Name)&quot; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Install-HostVIB.ps1</li>
 </ul>

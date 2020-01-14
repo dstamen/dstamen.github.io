@@ -188,30 +188,18 @@ August 2, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.</p>
-
-<p>Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow. I followed my standard upgrade steps <a href="/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/">Updating a VCHA 6.5 vCenter</a> however when I went to failover the Active node to the upgraded passive/witness nodes, services would not start, I then noticed that the hostnames had reset to localhost.localdom which is kind of a big issue as vCenter relies on the hostname being set.</p>
-
+      <p>vSphere 6.5U1 was released on July 27th. This is an incremental update a lot of people wait for before upgrading from a previous version. I have been lucky to have been running on vSphere 6.5 for quite some time and have been enjoying it very much.</p>
+<p>Obviously we never upgrade production first, if we can help it. I decided to attempt an upgrade on one of our QA vCenters that was deployed using the VCHA Advanced workflow. I followed my standard upgrade steps 
+<a href="/vmware/vsphere-65-updating-appliance-configured-with-vcenter-ha/">Updating a VCHA 6.5 vCenter</a> however when I went to failover the Active node to the upgraded passive/witness nodes, services would not start, I then noticed that the hostnames had reset to localhost.localdom which is kind of a big issue as vCenter relies on the hostname being set.</p>
 <p>I was able to workaround this issue temporarily by setting the hostname correctly in <em>/etc/hostname and /etc/hosts</em> to be able to recover from the failure and break VCHA. Luckily i had a snapshot to rollback to as well.</p>
-
 <p>Now we had this one upgraded, I still could not re-enable VCHA. I went through the process to configure VCHA, however every time I would deploy the passive/witness it would still reset the hostname, and when I went to finalize the configuration it would fail because the passive/witness hostnames did not match the active node. It seemed the issue was not with the servers themselves but possibly with some updated scripts that sync certain configuration files.</p>
-
 <p>I was able to find someone else who could reproduce this issue and we both opened a case with is being investigated by engineering.</p>
-
-<p><center><em>=========================================================================</em></center></p>
-
+<center>*=========================================================================*</center>
 <h1 id="update-finally-heard-back-from-support">Update. Finally heard back from support.</h1>
-
 <p>So it seems in some cases the VAMI configuration can be &ldquo;corrupt&rdquo; and can cause the hostname to reset.</p>
-
 <p>After upgrading your appliance, if you see the hostname reset, you can run the following command to reconfigure it properly.</p>
-
 <pre><code>/opt/vmware/share/vami/vami_config_net
-</code></pre>
-
-<p>Once I used the configuration script to reconfigure the hostname I was successfully able to redeploy VCHA.</p>
+</code></pre><p>Once I used the configuration script to reconfigure the hostname I was successfully able to redeploy VCHA.</p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2017%2f08%2f02%2fvcenter-6.5u1-update-issues-with-vcha-advanced-deployment%2f" target="_blank" rel="noopener" aria-label="">

@@ -187,60 +187,49 @@ January 12, 2016 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.</p>
-
 <p>This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.</p>
-
 <ul>
 <li>SSH to your Primary PSC.</li>
 <li>If you are currently in the bash shell, type appliancesh to switch shells to run the update.</li>
 <li>Run software-packages install &ndash;url &ndash;acceptEulas to download and install the packages from the VMware Repo.
-
 <ul>
 <li>You can use the &ndash;ISO switch or supply a custom url as well if needed.</li>
-</ul></li>
+</ul>
+</li>
 <li>Sit back and wait. Once it is finished you will be prompted to reboot.
-
 <ul>
 <li>Reboot by typing shutdown reboot /r reason</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/pscupgrade1.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/pscupgrade1.png" alt=""></p>
 <ul>
 <li>When VM boots you will now be at the latest version.</li>
 </ul>
-
-<p><img src="/images/pscupgrade2.png" alt="" /></p>
-
+<p><img src="/images/pscupgrade2.png" alt=""></p>
 <ul>
-<li>Repeat if you have additional PSC&rsquo;s in your environment.</li>
+<li>Repeat if you have additional PSC's in your environment.</li>
 </ul>
-
 <p>Now that our Platform Service Controllers are upgraded we can proceed on with our vCenter Appliance.</p>
-
 <ul>
 <li>SSH to your vCenter Appliance.</li>
 <li>If you are currently in the bash shell, type appliancesh to switch shells to run the update.</li>
 <li>Run software-packages install &ndash;url &ndash;acceptEulas to download and install the packages from the VMware Repo.
-
 <ul>
 <li>You can use the &ndash;ISO switch or supply a custom url as well if needed.</li>
-</ul></li>
+</ul>
+</li>
 <li>Sit back and wait. Once it is finished you will be prompted to reboot.
-
 <ul>
 <li>Reboot by typing shutdown reboot /r reason</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/vcupgrade1.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/vcupgrade1.png" alt=""></p>
 <ul>
 <li>When VM boots you will now be at the latest version.</li>
 </ul>
-
-<p><img src="/images/vcupgrade2.png" alt="" /></p>
+<p><img src="/images/vcupgrade2.png" alt=""></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2016%2f01%2f12%2fupgrading-vcsa-from-60-u1a-to-60u1b%2f" target="_blank" rel="noopener" aria-label="">

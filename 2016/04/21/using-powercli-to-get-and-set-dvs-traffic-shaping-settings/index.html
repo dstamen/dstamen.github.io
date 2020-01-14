@@ -33,8 +33,8 @@
   
 
   <meta property="og:title" content="Using PowerCLI to Get and Set DVS Traffic Shaping Settings" />
-<meta property="og:description" content="I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&rsquo;s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings." />
+<meta property="og:description" content="I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/" />
 <meta property="article:published_time" content="2016-04-21T00:00:00+00:00" />
@@ -42,8 +42,8 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using PowerCLI to Get and Set DVS Traffic Shaping Settings"/>
-<meta name="twitter:description" content="I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&rsquo;s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings."/>
+<meta name="twitter:description" content="I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,31 +186,24 @@ April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across <a href="http://www.lucd.info/2011/06/11/dvswitch-scripting-part-9-traffic-shaping/">@Lucd</a> and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&rsquo;s.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across 
+<a href="http://www.lucd.info/2011/06/11/dvswitch-scripting-part-9-traffic-shaping/" target="_blank">@Lucd</a> and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS's.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Get-VMwareTrafficShapingSettings.ps1">Get-VMwareTrafficShapingSettings.ps1</a></li>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Set-VMwareTrafficShapingSettings.ps1">Set-VMwareTrafficShapingSettings.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/Get-VMwareTrafficShapingSettings.ps1" target="_blank">Get-VMwareTrafficShapingSettings.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/Set-VMwareTrafficShapingSettings.ps1" target="_blank">Set-VMwareTrafficShapingSettings.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <p><em>This script assumes you have already launched PowerCLI and modified the variables</em></p>
-
-<h4 id="get-traffic-shaping-settings"><strong><em>Get Traffic Shaping Settings</em></strong></h4>
-
+<h4 id="get-traffic-shaping-settings"><em><strong>Get Traffic Shaping Settings</strong></em></h4>
 <pre><code>Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
   Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike &quot;*DVUplinks*&quot;}) {
       Write &quot;$VirtualPortGroup on $VirtualSwitch&quot;
@@ -218,10 +211,7 @@ April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
       Get-dvPgTrafficShaping -dvPg $dvPg|ft
   }
 }
-</code></pre>
-
-<h4 id="set-traffic-shaping-settings"><strong><em>Set Traffic Shaping Settings</em></strong></h4>
-
+</code></pre><h4 id="set-traffic-shaping-settings"><em><strong>Set Traffic Shaping Settings</strong></em></h4>
 <pre><code>
 Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
   Foreach ($VirtualPortGroup in Get-VirtualPortGroup -VirtualSwitch $VirtualSwitch|Where {$_.Name -notlike &quot;*DVUplinks*&quot;}) {
@@ -230,18 +220,13 @@ Foreach ($VirtualSwitch in Get-VirtualSwitch -Distributed)  {
       Set-dvPgTrafficShaping -dvPg $dvPg -InShaping -inAverageKbps 10485760 -inBurstKB 102400 -inPeakKbps 10485760 -OutShaping -outAverageKbps 10485760 -outBurstKB 102400 -outPeakKbps 10485760
    }
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Get-VMwareTrafficShapingSettings.ps1</li>
 <li>Run .\Set-VMwareTrafficShapingSettings.ps1</li>
 </ul>
-
-<h4 id="screenshots"><strong><em>Screenshots</em></strong></h4>
-
-<p><img src="/images/trafficshaping1.png" alt="" /></p>
+<h4 id="screenshots"><em><strong>Screenshots</strong></em></h4>
+<p><img src="/images/trafficshaping1.png" alt=""></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2016%2f04%2f21%2fusing-powercli-to-get-and-set-dvs-traffic-shaping-settings%2f" target="_blank" rel="noopener" aria-label="">

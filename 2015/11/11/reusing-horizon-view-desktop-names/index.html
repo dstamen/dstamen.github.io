@@ -31,7 +31,7 @@
   
 
   <meta property="og:title" content="Reusing Horizon View Desktop Names" />
-<meta property="og:description" content="Have you ever worked with a Horizon View pool with 10 VM&rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+<meta property="og:description" content="Have you ever worked with a Horizon View pool with 10 VM&#39;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
 First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
 To connect to the View ADAM database:
  Log in to one of the View Connection Servers as Domain Administrator." />
@@ -42,7 +42,7 @@ To connect to the View ADAM database:
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reusing Horizon View Desktop Names"/>
-<meta name="twitter:description" content="Have you ever worked with a Horizon View pool with 10 VM&rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+<meta name="twitter:description" content="Have you ever worked with a Horizon View pool with 10 VM&#39;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
 First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
 To connect to the View ADAM database:
  Log in to one of the View Connection Servers as Domain Administrator."/>
@@ -188,55 +188,48 @@ November 11, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>Have you ever worked with a Horizon View pool with 10 VM&rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.</p>
-
-<p>First you will need to connect to the ADAM database on one of your servers. Use <a href="http://kb.vmware.com/kb/2012377">KB2012377</a> for instructions.</p>
-
+      <p>Have you ever worked with a Horizon View pool with 10 VM's and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.</p>
+<p>First you will need to connect to the ADAM database on one of your servers. Use 
+<a href="http://kb.vmware.com/kb/2012377" target="_blank">KB2012377</a> for instructions.</p>
 <p>To connect to the View ADAM database:</p>
-
 <ul>
 <li>Log in to one of the View Connection Servers as Domain Administrator.</li>
 <li>Click Start &gt; Administrative Tools &gt; ADSI Edit.</li>
 <li>In the console window, right-click ADSI Edit and click Connect to.</li>
 <li>In the Name field type:
-
 <ul>
 <li>View ADAM Database</li>
-</ul></li>
+</ul>
+</li>
 <li>Select Select or type a Distinguished Name or Naming Context.</li>
 <li>In the field below Select or type a Distinguished Name or Naming Context, type:
-
 <ul>
 <li>dc=vdi,dc=vmware,dc=int</li>
-</ul></li>
+</ul>
+</li>
 <li>Select Select or type a domain or server.</li>
 <li>In the field below Select or type a domain or server, type:
-
 <ul>
 <li>localhost:389</li>
-</ul></li>
+</ul>
+</li>
 <li>Click OK.</li>
 <li>Click View ADAM Database [localhost:389] to expand.</li>
 <li>Click DC=vdi,dc=vmware,dc=int to expand.</li>
 </ul>
-
-<p><img src="/images/viewadamconnectionsettings.png" alt="" /></p>
-
+<p><img src="/images/viewadamconnectionsettings.png" alt=""></p>
 <p>Now perform the following steps to set the pool to reuse the VM Names</p>
-
 <ul>
 <li>Expand dc=vdi,dc=vmware,dc=int</li>
 <li>Expand OU=Server Groups</li>
 <li>Double Click CN=(Pool Name)</li>
 <li>Find the entry &ldquo;pae-VmNameReuseAllowed&rdquo;
-
 <ul>
 <li>Open this entry and change the value to 1</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/viewreuseattribute.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/viewreuseattribute.png" alt=""></p>
 <p>The next VM should now start reusing the old VM names that were in the pool.</p>
 
       <h6>Share this post</h6>

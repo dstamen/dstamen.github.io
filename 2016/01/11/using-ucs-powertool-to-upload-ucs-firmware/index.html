@@ -33,8 +33,8 @@
   
 
   <meta property="og:title" content="Using UCS PowerTool To Upload UCS Firmware" />
-<meta property="og:description" content="It&rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
+<meta property="og:description" content="It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/" />
 <meta property="article:published_time" content="2016-01-11T00:00:00+00:00" />
@@ -42,8 +42,8 @@ Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing t
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using UCS PowerTool To Upload UCS Firmware"/>
-<meta name="twitter:description" content="It&rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+<meta name="twitter:description" content="It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,26 +186,19 @@ January 11, 2016 under <a class="" href="/categories/cisco">Cisco</a>
 <hr>
 
       
-      
-
-<p>It&rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>It's patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+<li>
+<a href="https://communities.cisco.com/docs/DOC-53838" target="_blank">UCS Powertool</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1">UploadUCSFirmware.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1" target="_blank">UploadUCSFirmware.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <pre><code>#Define Variables
 $cred = Get-Credential
 $domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
@@ -217,10 +210,7 @@ Foreach ($ucs in $domains) {
   Send-UcsFirmware -LiteralPath $fileName | Watch-Ucs -Property TransferState -SuccessValue downloaded -PollSec 30 -TimeoutSec 600
   Disconnect-UCS
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\UploadUCSFirmware.ps1</li>
 </ul>

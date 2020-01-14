@@ -36,8 +36,8 @@
 
   <meta property="og:title" content="Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created" />
 <meta property="og:description" content="Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
-I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
-First step, check what luns are available to the cluster." />
+![](/uploads/screenshot-2018-01-19 10-23-44.png)
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/" />
 <meta property="article:published_time" content="2018-01-19T10:27:02+00:00" />
@@ -46,8 +46,8 @@ First step, check what luns are available to the cluster." />
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reconfigure HA - The object &#39;vim.Datastore:datastore-XXXX&#39; has already been deleted or has not been completely created"/>
 <meta name="twitter:description" content="Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
-I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!
-First step, check what luns are available to the cluster."/>
+![](/uploads/screenshot-2018-01-19 10-23-44.png)
+I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -180,7 +180,7 @@ if (!doNotTrack) {
         Published on 
 January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/storage">Storage</a> and <a class="" href="/tags/ha">HA</a>
-        &middot; Read in about 2 min (411 words)
+        &middot; Read in about 2 min (419 words)
       </div>
   </span>
   
@@ -191,47 +191,31 @@ January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying <em>The object &lsquo;vim.Datastore:datastore-1131&rsquo; has already been deleted or has not been completely created.</em> This was strange because no other hosts had this issue.</p>
-
-<p><img src="/uploads/screenshot-2018-01-19 10-23-44.png" alt="" /></p>
-
+<p>![](/uploads/screenshot-2018-01-19 10-23-44.png)</p>
 <p>I proceeded to follow standard troubleshooting steps, reconfigure HA&hellip;same issue&hellip;.disable HA for entire cluster and re-enable&hellip;..same issue&hellip;whoops thats not good!</p>
-
 <p>First step, check what luns are available to the cluster.</p>
-
 <pre><code>Get-Cluster $cluster | Get-Datastore | Select Name, ID | Sort ID
 </code></pre>
-
-<p><img src="/uploads/screenshot-2018-01-19 10-30-17.png" alt="" /></p>
-
+<p>![](/uploads/screenshot-2018-01-19 10-30-17.png)</p>
 <p>Seems that <strong>1131</strong> is missing..</p>
-
-<p>Sometimes the more tools you have available to you, the easier it is to troubleshoot an issue. As part of my daily processes we have an automated script to execute and emails us an <a href="https://www.robware.net/rvtools/">RVTools</a> report so I can easily keep track of inventory objects in my vCenter, I went back a few days and was able to identify the lun, datastore and NAAID of this object.</p>
-
-<p>Using vRealize Log Insight (Free for up to 25 OSI&rsquo;s, in my case i only have my vCenter for logs) I was able to search for the NAAID and see exactly when and what happened to this lun&hellip;.it was removed.</p>
-
-<p><img src="/uploads/screenshot-2018-01-19 10-36-59.png" alt="" /></p>
-
-<p>With this newfound information I went and spoke to our storage team, this lun was removed because it was no longer being used by <em>Cluster1.</em> Turns out This lun was zoned to two different clusters, but only used for VMs in Cluster1. Cluster2 in turn was using it for HA heartbeat. In my case to get HA to use a different lun, i chose option 3. Just in case lun&rsquo;s ever get removed again. However after reconfiguring HA it still was trying to use the lun that was removed.</p>
-
-<p><img src="/uploads/screenshot-2018-01-19 10-24-16.png" alt="" /></p>
-
+<p>Sometimes the more tools you have available to you, the easier it is to troubleshoot an issue. As part of my daily processes we have an automated script to execute and emails us an 
+<a href="https://www.robware.net/rvtools/" target="_blank">RVTools</a> report so I can easily keep track of inventory objects in my vCenter, I went back a few days and was able to identify the lun, datastore and NAAID of this object.</p>
+<p>Using vRealize Log Insight (Free for up to 25 OSI's, in my case i only have my vCenter for logs) I was able to search for the NAAID and see exactly when and what happened to this lun&hellip;.it was removed.</p>
+<p>![](/uploads/screenshot-2018-01-19 10-36-59.png)</p>
+<p>With this newfound information I went and spoke to our storage team, this lun was removed because it was no longer being used by <em>Cluster1.</em> Turns out This lun was zoned to two different clusters, but only used for VMs in Cluster1. Cluster2 in turn was using it for HA heartbeat. In my case to get HA to use a different lun, i chose option 3. Just in case lun's ever get removed again. However after reconfiguring HA it still was trying to use the lun that was removed.</p>
+<p>![](/uploads/screenshot-2018-01-19 10-24-16.png)</p>
 <p><strong>Resolution:</strong></p>
-
 <p><strong>Use Option 2</strong> - Once I selected two specific datastores, I was able to reconfigure HA and no longer had any errors. At this point you can reconfigure HA Datastore Heartbeat to your standard settings and reconfigure the cluster once again.</p>
-
 <p><strong>How to Prevent This?</strong></p>
-
 <p>Always remove luns the right way, its a lot more work, but can prevent issues like this in the future.</p>
-
 <ol>
 <li>Unmount Datastore from all hosts</li>
 <li>Detach lun from all hosts (if LUN is used for HA, it wont let you)</li>
 <li>Unmap from storage array.</li>
 </ol>
-
-<p>You can also use the following script to detach lun&rsquo;s if you have a bunch of lun&rsquo;s and/or hosts. You will need to unmount the datastores first before running.</p>
-
-<p><a href="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" title="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/">http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</a></p>
+<p>You can also use the following script to detach lun's if you have a bunch of lun's and/or hosts. You will need to unmount the datastores first before running.</p>
+<p>
+<a href="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" title="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" target="_blank">http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</a></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f01%2f19%2freconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created%2f" target="_blank" rel="noopener" aria-label="">

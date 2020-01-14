@@ -32,7 +32,7 @@
 
   <meta property="og:title" content="How To Deploy a Jekyll Blog" />
 <meta property="og:description" content="So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?" />
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/09/08/how-to-deploy-a-jekyll-blog/" />
 <meta property="article:published_time" content="2015-09-08T00:00:00+00:00" />
@@ -41,7 +41,7 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How To Deploy a Jekyll Blog"/>
 <meta name="twitter:description" content="So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?"/>
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -185,25 +185,18 @@ September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
 
       
       <p>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.</p>
-
 <pre><code>~ $ gem install jekyll
 ~ $ jekyll new myblog
 ~ $ cd myblog
 ~/myblog $ jekyll serve
 # =&gt; Now browse to http://localhost:4000 and you will see the blog running!
-</code></pre>
-
-<p>Easy Enough? Now how do you create a blog post?</p>
-
+</code></pre><p>Easy Enough? Now how do you create a blog post?</p>
 <p>Create a file with the following name in the _posts directory.</p>
-
 <pre><code># Create a file with the following syntax
 YEAR-MONTH-DAY-title.md
 # Example: 2015-09-08-hi-to-my-new-blog.md
-</code></pre>
-
-<p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information <a href="https://help.github.com/articles/markdown-basics/">here</a></p>
-
+</code></pre><p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information 
+<a href="https://help.github.com/articles/markdown-basics/" target="_blank">here</a></p>
 <pre><code>---
 layout: post
 title: &quot;How To Deploy a Jekyll Blog&quot;
@@ -211,24 +204,17 @@ tags:
 - Category
 ---
 Type your blogpost here.
-</code></pre>
-
-<p>Once you save your file, you can refresh your browser pointing to <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p>
-
+</code></pre><p>Once you save your file, you can refresh your browser pointing to http://127.0.0.1:4000 and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p>
 <p>Your own host.</p>
-
 <p>Run the following command and then upload the content in the _site directory.</p>
-
 <pre><code>jekyll build
-</code></pre>
-
-<p>GitHub Pages
+</code></pre><p>GitHub Pages
 You can also load the site into GitHub pages and have a fully functioning site at username.github.io
 You can use the following link for details.
-<a href="http://jekyllrb.com/docs/github-pages/">Host Jekyll Site using GitHub Pages</a></p>
 
-<p>Once you get it all up and running you can look at other <a href="http://jekyllthemes.org/">themes</a> that you can clone from github and port over your posts and content.</p>
-
+<a href="http://jekyllrb.com/docs/github-pages/" target="_blank">Host Jekyll Site using GitHub Pages</a></p>
+<p>Once you get it all up and running you can look at other 
+<a href="http://jekyllthemes.org/" target="_blank">themes</a> that you can clone from github and port over your posts and content.</p>
 <p>Be on the lookout for a future blogpost on how to get an Ubuntu Server running NGINX to host your Jekyll Blog.</p>
 
       <h6>Share this post</h6>

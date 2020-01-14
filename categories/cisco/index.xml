@@ -18,7 +18,7 @@
       
       <guid>/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</guid>
       <description>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Ex
       
       <guid>/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/</guid>
       <description>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Prep
       
       <guid>/2016/01/15/using-ucs-powertool-to-set-equipment-labels/</guid>
       <description>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Prepari
       
       <guid>/2016/01/14/using-ucs-powertool-to-generate-tech-supports/</guid>
       <description>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -57,8 +57,8 @@ Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Prepari
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/</guid>
-      <description>It&amp;rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+      <description>It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing t
       
       <guid>/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/</guid>
       <description>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  
       
       <guid>/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/</guid>
       <description>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
-Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -88,7 +88,7 @@ Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execu
       
       <guid>/2015/11/23/configuring-multiple-ucs-vlans/</guid>
       <description>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
-Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+Since currently Cisco UCS does not allow selecting multiple VLAN&#39;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
 # PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.</description>
     </item>

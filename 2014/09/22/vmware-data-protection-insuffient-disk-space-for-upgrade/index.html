@@ -186,30 +186,30 @@ September 22, 2014 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.</p>
-
+      <p>As I was upgrading my VDP-A environment from 5.5 to 5.8 the upgrade failed due to the following error.</p>
 <p>&ldquo;Please make sure you have at least 20GB for repo, 10GB for var, and 1GB for root partition.&rdquo;</p>
-
-<p><img src="/images/vdpa-diskspace1.jpg" alt="" /></p>
-
+<p><img src="/images/vdpa-diskspace1.jpg" alt=""></p>
 <p>Upon further research there seems to be an issue from 5.5.1 and 5.5.5 appliances with the /space partition filling up due to PostGres events. The issue can be resolving by installing the following VDP patch (vdp_patch-5.5.5.190.)</p>
-
-<p><a href="http://kb.vmware.com/kb/2067635">KB2067635</a></p>
-
+<p>
+<a href="http://kb.vmware.com/kb/2067635" target="_blank">KB2067635</a></p>
 <h1 id="the-installation-is-pretty-straightforward">The installation is pretty straightforward.</h1>
-
 <ol>
 <li>Download the patch</li>
-<li><a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDP55_5&amp;productId=351&amp;rPId=4857">VDP</a></li>
-<li><a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDPADV55_5&amp;productId=375&amp;rPId=4606">VDP-Advanced</a></li>
+</ol>
+<ul>
+<li>
+<a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDP55_5&amp;productId=351&amp;rPId=4857" target="_blank">VDP</a></li>
+<li>
+<a href="https://my.vmware.com/web/vmware/details?downloadGroup=VDPADV55_5&amp;productId=375&amp;rPId=4606" target="_blank">VDP-Advanced</a></li>
+</ul>
+<ol start="3">
 <li>Copy the patch file to the VDP appliance and place it in the /root directory using filezilla/winscp</li>
 <li>Using an SSH session or the console of the VDP appliance, log in as root and run these commands:</li>
+</ol>
+<ul>
 <li>chmod +x vdp_patch-5.5.5.190.run</li>
 <li>sh vdp_patch-5.5.5.190.run</li>
-</ol>
-
+</ul>
 <p>After the installation is complete, verify all the services are running and you are good to go.</p>
 
       <h6>Share this post</h6>

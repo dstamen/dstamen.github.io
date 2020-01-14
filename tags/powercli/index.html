@@ -187,7 +187,7 @@ April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
   
 
 
@@ -223,8 +223,8 @@ April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS’s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.
+    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings.
   
 
 
@@ -261,7 +261,7 @@ March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -298,7 +298,7 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware.
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
   
 
 
@@ -371,7 +371,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
   
 
@@ -408,8 +408,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf’s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 
@@ -445,8 +445,8 @@ November 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Ever wonder why a VM isn’t on the network?
-I was working on deploying some test VM’s and for some reason all the VM’s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+    Ever wonder why a VM isn&#39;t on the network?
+I was working on deploying some test VM&#39;s and for some reason all the VM&#39;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
 I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.
   
 

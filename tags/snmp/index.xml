@@ -18,7 +18,7 @@
       
       <guid>/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/</guid>
       <description>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
   </channel>

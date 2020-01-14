@@ -193,18 +193,14 @@ September 8, 2015 under <a class="" href="/categories/automation">Automation</a>
 
       
       <p>So as I was getting around to trying to get a host platform setup for a Jekyll blog I was looking at an alternative to GitHub Pages. I decided I would run it on Ubuntu Server using NGINX as the web platform.</p>
-
 <p>Here is a quick vagrant runbook that will quickly get a linux server deployed and install NGINX to host your website.</p>
-
-<p>The code can be found <a href="https://github.com/dstamen/Vagrant/tree/master/jekyll-nginx">here.</a></p>
-
+<p>The code can be found 
+<a href="https://github.com/dstamen/Vagrant/tree/master/jekyll-nginx" target="_blank">here.</a></p>
 <p>The bootstrap_linux_nginx.sh file runs the following commands to install NGINX. You can add commands to your file to automatically create your configuration and sites to publish automatically. By default this will just bring up the default nginx site.</p>
-
 <pre><code>sudo apt-get install nginx -y
 sudo service nginx start
 update-rc.d nginx defaults
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f09%2f08%2fusing-vagrant-to-deploy-an-ubuntu-server-running-nginx%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

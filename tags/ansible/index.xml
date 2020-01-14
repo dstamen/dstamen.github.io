@@ -18,7 +18,7 @@
       
       <guid>/2016/02/04/using-ansible-to-run-powershell-scripts/</guid>
       <description>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
-Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Pre-Requsites   ansible  ansible-winrm  Link to Git Project   ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
 Define your group variables.</description>
     </item>
     

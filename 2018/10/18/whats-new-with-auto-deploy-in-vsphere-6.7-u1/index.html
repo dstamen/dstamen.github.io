@@ -38,7 +38,6 @@
 <meta property="og:description" content="If you havent heard vSphere 6.7 U1 is now out and is loaded with all new features! If you have used 6.7 GA you may have noticed the Auto Deploy functionality did not yet make it into the long awaited vSphere Client. With vCenter Server 6.7 U1 we now have feature parity and this means Auto Deploy has been added to the vSphere Client. Lets jump in and see some of the new functionality that has been included." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2018/10/18/whats-new-with-auto-deploy-in-vsphere-6.7-u1/" />
-
 <meta property="og:image" content="/images/featuredimage-autodeploy.png" />
 <meta property="article:published_time" content="2018-10-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-10-18T00:00:00+00:00" />
@@ -191,27 +190,19 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>If you havent heard vSphere 6.7 U1 is now out and is loaded with all new features! If you have used 6.7 GA you may have noticed the Auto Deploy functionality did not yet make it into the long awaited vSphere Client. With vCenter Server 6.7 U1 we now have feature parity and this means Auto Deploy has been added to the vSphere Client. Lets jump in and see some of the new functionality that has been included.</p>
-
 <h3 id="what-is-auto-deploy">What is Auto Deploy?</h3>
-
 <p>For those who may not be familiar with Auto Deploy I will give a brief overview on it. Auto Deploy allows you to utilize vCenter Server, a TFTP Server and Network Boot to automatically have hosts boot or install ESXi.</p>
-
 <p>There are 3 types of Auto Deploy:</p>
-
 <ul>
 <li><strong>Stateless</strong> - This feature allows you to have a host re-provisioned on each the hosts is rebooted with Auto Deploy.</li>
-<li><strong>Stateless Caching</strong> – This feature allows you to cache the host&rsquo;s image locally on the host or on a usb drive and continue to provision the host with Auto Deploy.</li>
+<li><strong>Stateless Caching</strong> – This feature allows you to cache the host's image locally on the host or on a usb drive and continue to provision the host with Auto Deploy.</li>
 <li><strong>Stateful Installs</strong> – This feature allows you to install hosts over the network without setting up a complete PXE boot infrastructure. After the initial network boot, these hosts boot like other hosts on which ESXi is installed.</li>
 </ul>
-
-<p>More information on installing hosts using Auto Deploy can be found <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.esxi.install.doc/GUID-CAB84194-3D8E-45F0-ABF9-0277710C8F98.html">here.</a></p>
-
-<h3 id="what-s-new-with-auto-deploy">What&rsquo;s New with Auto Deploy</h3>
-
-<p>There have not been any major changes with Auto Deploy in vSphere 6.7 outside of some bug fixes and performance improvements, but 6.7 U1 included an updated workflow to manage Auto Deploy in the vSphere Client so let&rsquo;s check out the new interface and see how we can configure Auto Deploy using the new interface.</p>
-
+<p>More information on installing hosts using Auto Deploy can be found 
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.esxi.install.doc/GUID-CAB84194-3D8E-45F0-ABF9-0277710C8F98.html" target="_blank">here.</a></p>
+<h3 id="whats-new-with-auto-deploy">What's New with Auto Deploy</h3>
+<p>There have not been any major changes with Auto Deploy in vSphere 6.7 outside of some bug fixes and performance improvements, but 6.7 U1 included an updated workflow to manage Auto Deploy in the vSphere Client so let's check out the new interface and see how we can configure Auto Deploy using the new interface.</p>
 <p>We can now enable Auto Deploy and Image Builder in One-Click. No longer do we need to go into the services and edit the startup policy, and start the services.</p>
-
 
 
 
@@ -252,9 +243,7 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>When utilizing an Online Depot we can easily check for updates, view the software packages, image profiles and even export them as needed to be used in an offline software depot.</p>
-
 
 
 
@@ -295,9 +284,7 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>The workflow to create a deploy rule has also been simplified and can easily see patterns to add or use the default setting of all hosts.</p>
-
 
 
 
@@ -338,9 +325,7 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>We can also see the current deploy rules and choose to activate or deactivate and test them before activation</p>
-
 
 
 
@@ -381,9 +366,7 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>So far I have loved using the vSphere Client as it has improved on many tasks we do as a VMware Administrator. Bringing all the configuration into a single UI also makes Auto Deploy easier to manage. Hopefully this has helped highlight some of the changes in vSphere 6.7 U1. Please reach out to me with any feedback!</p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f18%2fwhats-new-with-auto-deploy-in-vsphere-6.7-u1%2f" target="_blank" rel="noopener" aria-label="">

@@ -36,7 +36,6 @@
 <meta property="og:description" content="On Tuesday August 14th, Intel Released their news on the latest vulnerability L1 Terminal Fault (L1TF) or ForeShadow. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2018/08/15/l1-terminal-fault-l1tf-patching-considerations/" />
-
 <meta property="og:image" content="/images/l1tfpatch1.png" />
 <meta property="article:published_time" content="2018-08-15T10:47:06-04:00" />
 <meta property="article:modified_time" content="2018-08-15T10:47:06-04:00" />
@@ -189,24 +188,18 @@ August 15, 2018 under <a class="" href="/categories/vmware">VMware</a> and <a cl
 
       
       <p>On Tuesday August 14th, Intel Released their news on the latest vulnerability <strong>L1 Terminal Fault (L1TF) or ForeShadow</strong>. In response to this VMware released vSphere patches to address the issues. Since then I have seen quite a few threads come up and thought i would address them from a patching perspective.</p>
-
 <p>I wanted to clarify when remediating your vSphere you should make sure to address the update sequence in the correct order. vCenter Server MUST be patched prior to updating ESXi.</p>
-
-<p><img src="https://kb.vmware.com/servlet/rtaImage?eid=ka134000000Sa0y&amp;feoid=00N34000005kd1R&amp;refid=0EM340000003rNR" alt="L1TF Remediation Order" /></p>
-
+<p><img src="https://kb.vmware.com/servlet/rtaImage?eid=ka134000000Sa0y&amp;feoid=00N34000005kd1R&amp;refid=0EM340000003rNR" alt="L1TF Remediation Order"></p>
 <p>In some cases I have seen users patching ESXi before their vCenter Server resulting in generic errors such as <code>xxx esx.problem.hyperthreading.unmitigated.formatOnHost not found xxx</code> or <code>esx.problem.hyperthreading.unmitigated</code></p>
-
-<p><a href="https://kb.vmware.com/s/article/57374">KB57374</a> has been created to inform users on details of this error.</p>
-
-<p><img src="/images/l1tfpatch2.png" alt="Patched Using Incorrect Order" /></p>
-
+<p>
+<a href="https://kb.vmware.com/s/article/57374" target="_blank">KB57374</a> has been created to inform users on details of this error.</p>
+<p><img src="/images/l1tfpatch2.png" alt="Patched Using Incorrect Order"></p>
 <p>However if done properly, once ESXi is patched after vCenter Server you would see the following warning on your ESXi host.</p>
-
-<p><img src="/images/l1tfpatch1.png" alt="Patched Using Proper Order" /></p>
-
+<p><img src="/images/l1tfpatch1.png" alt="Patched Using Proper Order"></p>
 <p>Once you have performed the remediation on the hosts to correct all aspects that warning will now go away.</p>
-
-<p>Please stay tuned to <a href="https://kb.vmware.com/s/article/55806">KB55806</a> and  <a href="https://www.vmware.com/security/advisories/VMSA-2018-0020.html">VMSA-2018-0020</a> for any updates to the remediation steps.</p>
+<p>Please stay tuned to 
+<a href="https://kb.vmware.com/s/article/55806" target="_blank">KB55806</a> and  
+<a href="https://www.vmware.com/security/advisories/VMSA-2018-0020.html" target="_blank">VMSA-2018-0020</a> for any updates to the remediation steps.</p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f08%2f15%2fl1-terminal-fault-l1tf-patching-considerations%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

@@ -36,7 +36,6 @@
 <meta property="og:description" content="Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2018/10/07/automating-migration-of-vmfs-5-to-vmfs-6-datastores/" />
-
 <meta property="og:image" content="/images/logo.png" />
 <meta property="article:published_time" content="2018-10-07T08:13:29-04:00" />
 <meta property="article:modified_time" content="2018-10-07T08:13:29-04:00" />
@@ -755,7 +754,6 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
   </div>
 
       <p>Next up in our Automating your vSphere Upgrade blog series is your VMFS Datastore. vSphere 6.5 and vSphere 6.7 both support the latest VMFS-6. Once all of your ESXi hosts that are connected to the VMFS-5 datastore have been upgraded to vSphere 6.5 or vSphere 6.7 you can then proceed to migrate your datastore to VMFS-6.</p>
-
   
     
     
@@ -793,15 +791,11 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <blockquote>
 <p>Please note that vSphere 6.7 no longer supports VMFS-3. Prior to upgrading your ESXi host you should do an upgrade from VMFS-3 to VMFS-5 or they will be upgraded automatically during the Host upgrade.</p>
 </blockquote>
-
 <h2 id="migrating-from-vmfs-5-to-vmfs-6"><strong>Migrating from VMFS-5 to VMFS-6</strong></h2>
-
-<p>When we start our migration of our datastore&rsquo;s to VMFS-6 you may be wondering… Do I need to? What are the benefits? As we can see below graphic there was quite a few enhancements in support for Automatic Space Reclamation, In-Guest Space Reclamation and native support for 4K native storage.</p>
-
+<p>When we start our migration of our datastore's to VMFS-6 you may be wondering… Do I need to? What are the benefits? As we can see below graphic there was quite a few enhancements in support for Automatic Space Reclamation, In-Guest Space Reclamation and native support for 4K native storage.</p>
 
 
 
@@ -842,19 +836,13 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>You will also see that we have mentioned migrating from VMFS-5 to VMFS-6. Due to the underlying storage changes to support 4K Native storage as well as other features the metadata has changed and the upgrade cannot be done In-Place. The migration requires you to delete the current datastore and re-create. In a later section we will cover how to automate this process.</p>
-
-<p>You can find out more information on vSphere 6.7 Storage enhancements <a href="https://storagehub.vmware.com/export_to_pdf/vsphere-6-7-core-storage-1">here</a>.</p>
-
+<p>You can find out more information on vSphere 6.7 Storage enhancements 
+<a href="https://storagehub.vmware.com/export_to_pdf/vsphere-6-7-core-storage-1" target="_blank">here</a>.</p>
 <h3 id="checking-current-vmfs-version"><strong>Checking Current VMFS Version</strong></h3>
-
 <p>In case you are not sure what VMFS version your datastore is currently running, we can find out with a simple PowerCLI one-liner.</p>
-
 <pre><code>Get-Datastore | Select Name, FileSystemVersion
 </code></pre>
-
-
 
 
   
@@ -894,31 +882,25 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>Here we can see that DS01 is still at VMFS-5 and DS02 has already been upgraded to VMFS-6. In the next section we will target upgrading our datastore to VMFS-6.</p>
-
 <h3 id="updating-vmfs-version"><strong>Updating VMFS Version</strong></h3>
-
-<p>When it comes to migrating to VMFS-6 we have a few methods. A good reference to use is <a href="https://kb.vmware.com/s/article/2147824">KB2147924</a>, this KB covers the supported methods and ways to update your VMFS version. My colleague Nigel Hickey has covered how to do GUI based <a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-5-upgrading-vmfs-storage.html">upgrades of VMFS</a>. However, when you have many datastore&rsquo;s it may help to automate this process.</p>
-
+<p>When it comes to migrating to VMFS-6 we have a few methods. A good reference to use is 
+<a href="https://kb.vmware.com/s/article/2147824" target="_blank">KB2147924</a>, this KB covers the supported methods and ways to update your VMFS version. My colleague Nigel Hickey has covered how to do GUI based 
+<a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-5-upgrading-vmfs-storage.html" target="_blank">upgrades of VMFS</a>. However, when you have many datastore's it may help to automate this process.</p>
 <p>As we reference the above KB it mentions a PowerCLI cmdlet called <strong>Update-VMFSDatastore.</strong> This is an powerful tool that acts a bit different than your standard PowerCLI cmdlet, it is very verbose and detailed with the checks that it does. However, there are also some considerations to take into account when using it.</p>
-
 <p>A few considerations when using it are as follows:</p>
-
 <ul>
 <li>Requires use of datastore cluster and have a temporary VMFS-5 datastore of equal or greater capacity.</li>
 <li>Issues storage vMotion requests to the temporary datastore.</li>
 <li>Validates that no unsupported VMs exist on the datastore such as those with SRM, VADP, VRM or Clustering.</li>
 <li>Will temporarily disable Storage DRS and enable once complete.
-
 <ul>
 <li>If cmdlet fails enabling storage DRS is a manual effort.</li>
-</ul></li>
+</ul>
+</li>
 <li>Carefully review the usage of the <strong>Resume</strong> and <strong>Rollback</strong> parameters in case of any errors.</li>
 </ul>
-
 <p>So now that we know some things to look out for what does the cmdlet actually do?</p>
-
 <ol>
 <li>Checks for VADP, SMPFT, MSCS/RAC virtual machines on Source Datastore.</li>
 <li>Makes sure datastore is accessible to all hosts.</li>
@@ -930,9 +912,7 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <li>Moves VM and orphaned data from Temp to Source datastore.</li>
 <li>Restores Original Storage DRS setting.</li>
 </ol>
-
 <p>Now that we understand how it works, lets jump into the usage.</p>
-
 <pre><code>Connect-VIServer ds-vcsa-03.cpbu.lab
 
 $Source = Get-Datastore &quot;DS02&quot;
@@ -940,10 +920,7 @@ $Temp = Get-Datastore &quot;DS-TEMP&quot;
 $Server = (Get-VIServer -Server &quot;ds-vcsa-03.cpbu.lab&quot;)
 
 Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVersion &quot;6&quot; -Server $Server
-</code></pre>
-
-<p>It requires very minimal input, we will put in the source datastore, the temporary datastore, vCenter Server and the Target VMFS version. </p>
-
+</code></pre><p>It requires very minimal input, we will put in the source datastore, the temporary datastore, vCenter Server and the Target VMFS version. </p>
 
 
 
@@ -984,20 +961,15 @@ Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVer
   
 
 
-
 <p>The above animated gif will show the process. It is quite simple and if you encounter errors they will be logged and you can rollback using the <strong>rollback</strong> parameter of if the error can resumed you can use the <strong>resume</strong> parameter.</p>
-
-<p>You can see more information on the usage of <strong>Update-VMFSDatastore</strong> at the <a href="https://code.vmware.com/docs/5730/cmdlet-reference#/doc/Update-VmfsDatastore.html">PowerCLI Reference</a>.</p>
-
+<p>You can see more information on the usage of <strong>Update-VMFSDatastore</strong> at the 
+<a href="https://code.vmware.com/docs/5730/cmdlet-reference#/doc/Update-VmfsDatastore.html" target="_blank">PowerCLI Reference</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
-
-<p>It is always great to see some native tools to assist us in accomplishing complicated tasks. For those who have an abundance of datastore&rsquo;s in their environment, this cmdlet can save quite a bit of time. If you have used it, leave some feedback on your thoughts. Next up on our series will be Automating Your Virtual Distributed Switch upgrade.</p>
-
-<hr />
-
+<p>It is always great to see some native tools to assist us in accomplishing complicated tasks. For those who have an abundance of datastore's in their environment, this cmdlet can save quite a bit of time. If you have used it, leave some feedback on your thoughts. Next up on our series will be Automating Your Virtual Distributed Switch upgrade.</p>
+<hr>
 <p><strong>Cross-Posted from vSphere Blog</strong></p>
-
-<p><a href="https://blogs.vmware.com/vsphere/2018/10/automating-migration-of-vmfs-5-to-vmfs-6-datastores.html">https://blogs.vmware.com/vsphere/2018/10/automating-migration-of-vmfs-5-to-vmfs-6-datastores.html</a></p>
+<p>
+<a href="https://blogs.vmware.com/vsphere/2018/10/automating-migration-of-vmfs-5-to-vmfs-6-datastores.html" target="_blank">https://blogs.vmware.com/vsphere/2018/10/automating-migration-of-vmfs-5-to-vmfs-6-datastores.html</a></p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f10%2f07%2fautomating-migration-of-vmfs-5-to-vmfs-6-datastores%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

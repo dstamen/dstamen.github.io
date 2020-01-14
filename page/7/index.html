@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.59.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -149,7 +149,7 @@ January 15, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -186,7 +186,7 @@ January 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -222,7 +222,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
   
 
@@ -261,7 +261,7 @@ January 12, 2016 under <a class="" href="/categories/vmware">VMware</a>
   
     Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
 This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
- SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install –url –acceptEulas to download and install the packages from the VMware Repo.
+SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install –url –acceptEulas to download and install the packages from the VMware Repo.
   
 
 
@@ -297,8 +297,8 @@ January 11, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
                     
   
-    It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+    It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -336,7 +336,7 @@ December 17, 2015 under <a class="" href="/categories/certification">Certificati
   
     It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.
 Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and analyze business requirements Skills and Abilities
- Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.
+Associate a stakeholder with the information that needs to be collected. Utilize inventory and assessment data from a current environment to define a baseline state. Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.
   
 
 
@@ -373,7 +373,7 @@ December 11, 2015 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -410,7 +410,7 @@ December 10, 2015 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
-Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -446,8 +446,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf’s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 
@@ -484,7 +484,7 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
   
 

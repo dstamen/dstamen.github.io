@@ -191,31 +191,24 @@ September 21, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.</p>
-
 <p>When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: <strong>&ldquo;java.lang.reflect.invocationTargetException&rdquo;</strong></p>
-
-<p><img src="/images/pscdomainerror.png" alt="" /></p>
-
+<p><img src="/images/pscdomainerror.png" alt=""></p>
 <p>There are currently two workarounds now with 6.0U1 I am aware of.</p>
-
 <ul>
-<li><p>The first method is to join to the domain using the CLI.</p>
-
+<li>The first method is to join to the domain using the CLI.</li>
+</ul>
 <pre><code>/opt/likewise/bin/domainjoin-cli join domain username
-</code></pre></li>
-
-<li><p>The second method is to use the new PSC interface to join to the domain.</p>
-
+</code></pre><ul>
+<li>The second method is to use the new PSC interface to join to the domain.
 <ul>
-<li>Navigate to <strong><a href="https://fqdnofpsc/psc">https://fqdnofpsc/psc</a></strong></li>
+<li>Navigate to <strong>https://fqdnofpsc/psc</strong></li>
 <li>Select <strong>Appliance Settings</strong></li>
 <li>Click on <strong>Manage</strong></li>
 <li>Under <strong>Active Directory</strong> Select Join and enter in your details</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/pscdomainerror2.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/pscdomainerror2.png" alt=""></p>
 <p>Why this method works here, and not in the VCSA Webclient is confusing to me, however here you go. Hopefully it helps you resolve the issue the next time you come across it.</p>
 
       <h6>Share this post</h6>

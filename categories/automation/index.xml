@@ -18,7 +18,7 @@
       
       <guid>/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/</guid>
       <description>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
-Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   PureStorage Powershell SDK  Link to Script   Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog
       
       <guid>/2016/02/04/using-ansible-to-run-powershell-scripts/</guid>
       <description>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
-Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Pre-Requsites   ansible  ansible-winrm  Link to Git Project   ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
 Define your group variables.</description>
     </item>
     
@@ -61,7 +61,7 @@ The code can be found here.</description>
       <guid>/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid>
       <description>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
-Here is a link to the GitHub repository containing all the code.
+ Here is a link to the GitHub repository containing all the code.
 The code is also fairly simple, it pulls in data from a few .</description>
     </item>
     

@@ -191,17 +191,15 @@ July 8, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>We had a strange issue that any time a VM was snapshotted it then forced a reboot and sysprep. Reviewing the customization logs(C:\windows\temp\vmware-imc\guestcust.log) I noticed the following error..Unable to set customization status in vmx.</p>
-
-<p>Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 <a href="http://kb.vmware.com/selfservice/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=2077640">KB2077640</a> as referenced in this article <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2078352">KB2078352</a>.</p>
-
-<p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM&rsquo;s that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
-
+<p>Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 
+<a href="http://kb.vmware.com/selfservice/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=2077640" target="_blank">KB2077640</a> as referenced in this article 
+<a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2078352" target="_blank">KB2078352</a>.</p>
+<p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM's that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
 <pre><code>Connect-VIServer vcenter.lab.local
 $VMs = Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | Where-Object {$_.Value -ne &quot;&quot;}
 $VMs | Select Entity, Value
 $VMs | ForEach {Get-VM $_.Entity | Get-AdvancedSetting -Name tools.deployPkg.fileName | Set-AdvancedSetting -Value '' -Confirm:$false}
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2014%2f07%2f08%2fsysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

@@ -40,7 +40,6 @@
 <meta property="og:description" content="As more customers get ready to run the vCenter Server Converge Tool in their environments, a common question that has been asked is &ldquo;What Happens to my Certificates?&rdquo; Well that is a good question so lets find out!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/" />
-
 <meta property="og:image" content="/images/vsphereclient-certificates.png" />
 <meta property="article:published_time" content="2019-06-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-06-07T00:00:00+00:00" />
@@ -193,7 +192,6 @@ June 7, 2019 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>As more customers get ready to run the vCenter Server Converge Tool in their environments, a common question that has been asked is &ldquo;What Happens to my Certificates?&rdquo; Well that is a good question so lets find out!</p>
-
   
     
     
@@ -231,58 +229,49 @@ June 7, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>When using certificates in your vSphere Environment there have traditionally been a few ways to deploy them.</p>
-
 <ul>
 <li>Default VMCA</li>
 <li>Subordinate CA</li>
 <li>Hybrid Mode</li>
 <li>Custom Certificates</li>
 </ul>
-
-<p><a href="https://blogs.vmware.com/vsphere/2019/06/10-things-about-vsphere-certificate-management.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Bob Plankers</a> has a very good post on our vSphere Blogs which cover 10 Things To Know about vSphere Certificate Management</p>
-
+<p>
+<a href="https://blogs.vmware.com/vsphere/2019/06/10-things-about-vsphere-certificate-management.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Bob Plankers</a> has a very good post on our vSphere Blogs which cover 10 Things To Know about vSphere Certificate Management</p>
 <h3 id="default-vmca">Default VMCA</h3>
-
 <p>Included in vCenter Server 6.0 is a VMware Certificate Authority also known as the VMCA. This is usually used as the default unless customers have requirements to use 3rd party signed certificates. This is also the most common as you can easily download the VMCA Root Certificates from your vCenter Server and add them to your trusted root authority either manually or via group policy. This easily meets the requirements for customers who wish to &ldquo;get rid of the red X&rdquo; in the address bar.</p>
-
 <p><em>In the case of vCenter Server Convergence, vCenter Server automatically regenerates any certificates and there are no additional tasks needed.</em></p>
-
 <h3 id="subordinate-ca">Subordinate CA</h3>
-
 <p>This Subordinate CA method is one that when implemented, the VMCA actually becomes a subordinate CA of your Microsoft Certificate Authority. In this case it is not recommended as it does pose some risks as you cannot actually validate from your Root CA what certificates are being issued. This also poses problems with vCenter Server convergence as VMware does not have the ability to move the Subordinate CA.</p>
-
 <p><em>In the case of vCenter Server Convergence, VMware recommends moving to the</em> <strong>Hybrid Certificate or Default VMCA</strong> <em>Model. If you must continue to use Subordinate CA, you will need to Converge your vCenter Server, then change the Embedded vCenter Server to be a Subordinate CA, reissue certificates and then decommission the external PSC and Old Subordinate CA.</em></p>
-
 <h3 id="hybrid-mode">Hybrid Mode</h3>
-
 <p>Other then using the Default VMCA, the Hybrid Model is the next recommended approach. When doing a Hybrid Mode certificate setup you replace the machine certificates with 3rd Party certificates allowing all web services to be trusted, while your ESXi hosts still utilize the VMCA for certificates.</p>
-
 <p><em>In the case of vCenter Server Convergence, as nothing is using the External PSC directly, during the vCenter Server convergence no changes are needed.</em></p>
-
 <h3 id="custom-certificates">Custom Certificates</h3>
-
 <p>Custom certificates are one of the most difficult certificate solutions to use. This is where no Certificate Authorities are used and EVERY certificate is replaced manually. This is traditionally used only in extremely secure locations such as government.</p>
-
 <p><em>In the case of vCenter Server Convergence, as nothing is using the External PSC directly, during the vCenter Server convergence no changes are needed.</em></p>
-
 <h3 id="wrap-up">Wrap Up</h3>
-
-<p>Hopefully this has helped clarify some questions around using certificates with the vCenter Server converge tool, don&rsquo;t forget to review the additional resources below.</p>
-
+<p>Hopefully this has helped clarify some questions around using certificates with the vCenter Server converge tool, don't forget to review the additional resources below.</p>
 <h2 id="additional-resources">Additional Resources</h2>
-
 <ul>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.psc.doc/GUID-3D0DE463-D0EC-442E-B524-64759D063E25.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Documentation: Certificate Management Overview</a></li>
-<li><a href="https://blogs.vmware.com/vsphere/2019/06/10-things-about-vsphere-certificate-management.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: 10 Things To Know About vSphere Certificate Management</a></li>
-<li><a href="https://blogs.vmware.com/vsphere/2017/01/walkthrough-hybrid-ssl-certificate-replacement.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: Hybrid vSphere SSL Certificate Replacement</a>)</li>
-<li><a href="https://davidstamen.com/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/">Blog: vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
-<li><a href="https://blogs.vmware.com/vsphere/2019/02/understanding-the-vcenter-server-converge-tool.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: Understanding the vCenter Server Converge Tool</a></li>
-<li><a href="https://blogs.vmware.com/vsphere/2019/04/vcenter-server-converge-tool-enhancements-in-vsphere-6-7-update-2.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: vCenter Server Converge Tool Enhancements in vSphere 6.7 Update 2</a></li>
-<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-a-load-balanced-external-vcenter-deployment-using-the-vsphere-client/">Product Walkthrough: Converging a Load Balanced External vCenter Deployment using the vSphere Client</a></li>
-<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-an-external-vcenter-deployment-using-the-vsphere-client-1/">Product Walkthrough: Converging an External vCenter Deployment using the vSphere Client</a></li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Documentation: vCenter Server Converge Tool</a></li>
+<li>
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.psc.doc/GUID-3D0DE463-D0EC-442E-B524-64759D063E25.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Documentation: Certificate Management Overview</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2019/06/10-things-about-vsphere-certificate-management.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: 10 Things To Know About vSphere Certificate Management</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2017/01/walkthrough-hybrid-ssl-certificate-replacement.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: Hybrid vSphere SSL Certificate Replacement</a>)</li>
+<li>
+<a href="https://davidstamen.com/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/" target="_blank">Blog: vCenter Server Converge Tool - How do I Converge an Environment Using the UI</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2019/02/understanding-the-vcenter-server-converge-tool.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: Understanding the vCenter Server Converge Tool</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2019/04/vcenter-server-converge-tool-enhancements-in-vsphere-6-7-update-2.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: vCenter Server Converge Tool Enhancements in vSphere 6.7 Update 2</a></li>
+<li>
+<a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-a-load-balanced-external-vcenter-deployment-using-the-vsphere-client/" target="_blank">Product Walkthrough: Converging a Load Balanced External vCenter Deployment using the vSphere Client</a></li>
+<li>
+<a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-an-external-vcenter-deployment-using-the-vsphere-client-1/" target="_blank">Product Walkthrough: Converging an External vCenter Deployment using the vSphere Client</a></li>
+<li>
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Documentation: vCenter Server Converge Tool</a></li>
 </ul>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2019%2f06%2f07%2fvcenter-server-converge-tool-what-about-my-certificates%2f" target="_blank" rel="noopener" aria-label="">

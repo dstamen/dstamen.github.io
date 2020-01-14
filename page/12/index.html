@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.59.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -148,7 +148,7 @@ April 2, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    So as always things change across multiple Window’s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn’t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
+    So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
   
 
 
@@ -184,10 +184,9 @@ April 1, 2015 under <a class="" href="/categories/certification">Certification</
                     
                     
   
-    VMware has announced &lt;a href=&#34;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;ui=www_cert&#34;&gt;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;ui=www_cert&lt;/a&gt; the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.
+    VMware has announced &lt;a href=&#34;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;amp;ui=www_cert&#34;&gt;https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;amp;ui=www_cert&lt;/a&gt; the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.
 vSphere 6 Foundations : Exam code: 2V0-620
 VCP6-DCV : Exam Code: 2V0-621
-VCP6-DCV Delta : Exam Code: 2V0-621D
   
 
 
@@ -225,7 +224,7 @@ February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
   
     I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to “Never Notify” SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account
   
 
 
@@ -261,8 +260,8 @@ February 6, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn’t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn’t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.
+    I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.
   
 
 
@@ -336,7 +335,7 @@ January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
   
 
 
@@ -373,7 +372,7 @@ December 19, 2014 under <a class="" href="/categories/security">Security</a>
                     
   
     So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.
- Stop the “Trend Micro Deep Security Manager” service If not already created, create a folder on the root of C:\ called “certs” Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore” Copy .
+Stop the “Trend Micro Deep Security Manager” service If not already created, create a folder on the root of C:\ called “certs” Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore” Copy .
   
 
 

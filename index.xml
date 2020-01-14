@@ -26,7 +26,7 @@
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/</guid>
-      <description>&lt;p&gt;VMworld US has wrapped up and now its time to focus on VMworld EU! Let&amp;rsquo;s jump in and find out what&amp;rsquo;s going on in the world of vSphere Lifecycle. Check out this post to see how I will be engaging with our customers at this years events!&lt;/p&gt;</description>
+      <description>&lt;p&gt;VMworld US has wrapped up and now its time to focus on VMworld EU! Let&#39;s jump in and find out what&#39;s going on in the world of vSphere Lifecycle. Check out this post to see how I will be engaging with our customers at this years events!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/</guid>
-      <description>&lt;p&gt;Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &amp;ldquo;What are my options?&amp;rdquo; Let&amp;rsquo;s dive in and find out what it takes to move to a supported OS!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &amp;ldquo;What are my options?&amp;rdquo; Let&#39;s dive in and find out what it takes to move to a supported OS!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/04/24/vcenter-server-appliance-cli-json-creator/</guid>
-      <description>&lt;p&gt;I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&amp;rsquo;s dive in and take a look.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&#39;s dive in and take a look.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/</guid>
-      <description>&lt;p&gt;vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&amp;rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.&lt;/p&gt;</description>
+      <description>&lt;p&gt;vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&#39;s dive in and take a look at whats new and see how to converge a deployment using the new UI.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,8 +80,8 @@
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</guid>
-      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&amp;rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
+      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
     </item>
     
     <item>
@@ -180,7 +180,7 @@ Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
       <guid>/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</guid>
-      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&#39;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&#39;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&#39;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -216,7 +216,7 @@ Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a
       <pubDate>Tue, 17 Apr 2018 08:32:15 -0400</pubDate>
       
       <guid>/2018/04/17/upgrading-to-vmware-vsphere-6.7/</guid>
-      <description>It&amp;rsquo;s finally out! vSphere 6.7 is the next major release of VMware&amp;rsquo;s virtualization software. I&amp;rsquo;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
+      <description>It&#39;s finally out! vSphere 6.7 is the next major release of VMware&#39;s virtualization software. I&#39;ve been using 6.7 through the vSphere Beta Program and testing even newer features in my current role. I am here to talk to you about planning your vSphere upgrade and some planning and considerations you should have when going to the latest release.
 The first, thing I would like to mention is there is no supported migration from vSphere 5.</description>
     </item>
     
@@ -249,8 +249,8 @@ Nigel has it perfect when he titled his announcement “Oh the places you’ll g
       
       <guid>/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid>
       <description>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying The object &amp;lsquo;vim.Datastore:datastore-1131&amp;rsquo; has already been deleted or has not been completely created. This was strange because no other hosts had this issue.
-I proceeded to follow standard troubleshooting steps, reconfigure HA&amp;hellip;same issue&amp;hellip;.disable HA for entire cluster and re-enable&amp;hellip;..same issue&amp;hellip;whoops thats not good!
-First step, check what luns are available to the cluster.</description>
+![](/uploads/screenshot-2018-01-19 10-23-44.png)
+I proceeded to follow standard troubleshooting steps, reconfigure HA&amp;hellip;same issue&amp;hellip;.disable HA for entire cluster and re-enable&amp;hellip;..same issue&amp;hellip;whoops thats not good!</description>
     </item>
     
     <item>
@@ -279,7 +279,7 @@ I had set a personal goal at the beginning of the year, that I would pass the VC
       <pubDate>Thu, 24 Aug 2017 16:33:29 -0400</pubDate>
       
       <guid>/2017/08/24/my-new-desk-by-standdesk/</guid>
-      <description>I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&amp;rsquo;t been best for the low back and leg pains I experience.
+      <description>I have been looking for a new desk for awhile. Working from home I do not get to go into an office, or walk around to meet up with coworkers. I found myself sitting for way too long which hasn&#39;t been best for the low back and leg pains I experience.
 I heard from a friend that getting a standing desk may be something that would be good. Standing desks come in all shapes and sizes but I knew from the start that I wanted a dedicated standing desk and just not a riser (one that sits on an existing desk).</description>
     </item>
     
@@ -330,7 +330,7 @@ All links should be functional and moved nicely, if they dont work, please leave
       
       <guid>/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</guid>
       <description>I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
-Unifi Controller 5.5.11
+ Unifi Controller 5.5.11
 Configuration is quite simple! Just follow these few easy steps and you will be up in no time.</description>
     </item>
     
@@ -341,7 +341,7 @@ Configuration is quite simple! Just follow these few easy steps and you will be 
       
       <guid>/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/</guid>
       <description>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</description>
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</description>
     </item>
     
     <item>
@@ -391,7 +391,7 @@ I have been working on a Migration from PowerDNS using a MySQL DB. We have a cus
       
       <guid>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid>
       <description>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&amp;rsquo;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;#39;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.</description>
     </item>
     
@@ -402,9 +402,9 @@ I figured since I am using the embedded SSO, I could update the login page to sh
       
       <guid>/2016/12/29/using-the-vmware-content-libray-assistant-fling/</guid>
       <description>So VMware Flings have been on a roll recently. They have released what they call &amp;ldquo;VMware Content Library Assistant.&amp;rdquo; This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
-You can find the fling at the following URL&amp;hellip;https://labs.vmware.com/flings/vsphere-content-library-assistant)
+You can find the fling at the following URL&amp;hellip; https://labs.vmware.com/flings/vsphere-content-library-assistant)
 Once you download the fling, you can just run the following command.
-java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password  In my case my java home isn&amp;rsquo;t setup on my mac so I had to run the following command to get it to work.</description>
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&#39;t setup on my mac so I had to run the following command to get it to work.</description>
     </item>
     
     <item>
@@ -437,8 +437,8 @@ Every time I would try to configure vCenter HA using the Advanced Wizard, I woul
       <description>So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
 When you are adding in your VMware licenses, you now have an option to Import License Keys Data&amp;hellip;
 To start you need to generate a report from my.vmware.com.
- Log in and Navigate to Download Reports
- Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description>
+  Log in and Navigate to Download Reports
+  Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description>
     </item>
     
     <item>
@@ -448,7 +448,7 @@ To start you need to generate a report from my.vmware.com.
       
       <guid>/2016/08/09/using-powershell-to-create-windows-smb-shares/</guid>
       <description>I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.
-Pre-Requsites  NTFS Security Module  Link to Script  Create-SMBShare.ps1  Preparing to Execute the Script Fill in the appropriate variables, and execute the script.</description>
+Pre-Requsites   NTFS Security Module  Link to Script   Create-SMBShare.</description>
     </item>
     
     <item>
@@ -470,7 +470,7 @@ Existing Content from VCAP5-DCD</description>
       <guid>/2016/06/24/my-vcap6-dcv-deploy-beta-experience/</guid>
       <description>Today I took my VCAP6-DCV exam. This exam was announced with a two week availability in the US priced at $100.
 My experience with the exam was actually pretty good. The new interface for the advanced exams is that of an HOL. You are dropped onto the desktop and have a window that slides in and out to pull up the manual and other consoles.
-I would definately read up on Josh Andrew&amp;rsquo;s post about what to expect.</description>
+I would definately read up on Josh Andrew&#39;s post about what to expect.</description>
     </item>
     
     <item>
@@ -479,8 +479,8 @@ I would definately read up on Josh Andrew&amp;rsquo;s post about what to expect.
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</guid>
-      <description>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&amp;rsquo;s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.</description>
+      <description>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings.</description>
     </item>
     
     <item>
@@ -509,7 +509,7 @@ I have recently made a breakthrough working with VMware Support and stumbling th
       
       <guid>/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/</guid>
       <description>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
-Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   PureStorage Powershell SDK  Link to Script   Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -519,7 +519,7 @@ Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog
       
       <guid>/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</guid>
       <description>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
     <item>
@@ -529,7 +529,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Ex
       
       <guid>/2016/03/03/using-powercli-to-install-host-vibs/</guid>
       <description>So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -539,7 +539,7 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing t
       
       <guid>/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/</guid>
       <description>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
     <item>
@@ -550,7 +550,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Prep
       <guid>/2016/02/05/vexpert-2016/</guid>
       <description>I am honored to have been selected as a VMware vExpert once again for 2016!
 This is my fourth year as a vExpert (2013,2014,2015 and 2016). It has been great to see the community grow and the amount of vExperts increase. I did a quick count, and in 2016 we are up to 1360 vExperts!
-Can&amp;rsquo;t wait to see what this year brings.</description>
+Can&#39;t wait to see what this year brings.</description>
     </item>
     
     <item>
@@ -560,7 +560,7 @@ Can&amp;rsquo;t wait to see what this year brings.</description>
       
       <guid>/2016/02/04/using-ansible-to-run-powershell-scripts/</guid>
       <description>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
-Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Pre-Requsites   ansible  ansible-winrm  Link to Git Project   ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
 Define your group variables.</description>
     </item>
     
@@ -591,7 +591,7 @@ I am a member of the Cisco Champions Program. Cisco Champions are passionate abo
       
       <guid>/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/</guid>
       <description>I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware.</description>
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.</description>
     </item>
     
     <item>
@@ -611,7 +611,7 @@ I really wanted to utilize the vSphere Content Libary for these, but there is cu
       
       <guid>/2016/01/15/using-ucs-powertool-to-set-equipment-labels/</guid>
       <description>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -621,7 +621,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Prepari
       
       <guid>/2016/01/14/using-ucs-powertool-to-generate-tech-supports/</guid>
       <description>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -630,7 +630,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Prepari
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/</guid>
-      <description>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&amp;rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+      <description>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.</description>
     </item>
     
@@ -651,8 +651,8 @@ This process is very straight forward. We will begin with updating our Platform 
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/</guid>
-      <description>It&amp;rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+      <description>It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -673,7 +673,7 @@ Section 1 – Create a vSphere Conceptual Design Objective 1.1 – Gather and an
       
       <guid>/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/</guid>
       <description>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -683,7 +683,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  
       
       <guid>/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/</guid>
       <description>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
-Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -692,8 +692,8 @@ Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execu
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/11/30/installing-host-vibs-using-powercli/</guid>
-      <description>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&amp;rsquo;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&amp;rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.</description>
+      <description>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.</description>
     </item>
     
     <item>
@@ -703,7 +703,7 @@ I had to run these updates on over 50 hosts and I really didn&amp;rsquo;t want t
       
       <guid>/2015/11/30/using-cli-to-manage-dvs-host-uplinks/</guid>
       <description>Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&amp;rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After &amp;ldquo;Restoring Network Configuration&amp;rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</description>
     </item>
     
@@ -714,7 +714,7 @@ After &amp;ldquo;Restoring Network Configuration&amp;rdquo; a few too many times
       
       <guid>/2015/11/23/configuring-multiple-ucs-vlans/</guid>
       <description>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
-Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+Since currently Cisco UCS does not allow selecting multiple VLAN&#39;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
 # PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.</description>
     </item>
@@ -725,8 +725,8 @@ The script can be found here.
       <pubDate>Wed, 18 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/11/18/disconnected-vnics/</guid>
-      <description>Ever wonder why a VM isn&amp;rsquo;t on the network?
-I was working on deploying some test VM&amp;rsquo;s and for some reason all the VM&amp;rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+      <description>Ever wonder why a VM isn&#39;t on the network?
+I was working on deploying some test VM&#39;s and for some reason all the VM&#39;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
 I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</description>
     </item>
     
@@ -736,7 +736,7 @@ I decided to throw together this quick one-liner that will make sure every VM is
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/11/11/reusing-horizon-view-desktop-names/</guid>
-      <description>Have you ever worked with a Horizon View pool with 10 VM&amp;rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+      <description>Have you ever worked with a Horizon View pool with 10 VM&#39;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
 First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
 To connect to the View ADAM database:
  Log in to one of the View Connection Servers as Domain Administrator.</description>
@@ -759,7 +759,8 @@ Objective 10.1: Configure Advanced vSphere Virtual Machine Settings  Determine h
       
       <guid>/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</guid>
       <description>Section 1 of the VCP6-DCV blueprint
-Objective 1.1: Configure and Administer Role-based Access Control  Compare and contrast propagated and explicit permission assignments  An example of a propagated permission: Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</description>
+Objective 1.1: Configure and Administer Role-based Access Control   Compare and contrast propagated and explicit permission assignments
+ An example of a propagated permission:  Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</description>
     </item>
     
     <item>
@@ -769,7 +770,8 @@ Objective 1.1: Configure and Administer Role-based Access Control  Compare and c
       
       <guid>/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</guid>
       <description>Section 2 of the VCP6-DCV blueprint
-Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation  Create/Delete a vSphere Distributed Switch  In the vSphere Web Client, navigate to a data center. In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch. In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next. In Select version, select a distributed switch version and click Next.</description>
+Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation   Create/Delete a vSphere Distributed Switch
+ In the vSphere Web Client, navigate to a data center. In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch. In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next. In Select version, select a distributed switch version and click Next.</description>
     </item>
     
     <item>
@@ -799,7 +801,7 @@ Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades  Configure downloa
       
       <guid>/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</guid>
       <description>Section 5 of the VCP6-DCV blueprint
-Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section   Section 1: Configure and Administer vSphere 6.</description>
     </item>
     
     <item>
@@ -809,7 +811,7 @@ Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply De
       
       <guid>/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</guid>
       <description>Section 6 of the VCP6-DCV blueprint
-Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section   Section 1: Configure and Administer vSphere 6.</description>
     </item>
     
     <item>
@@ -819,7 +821,7 @@ Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication So
       
       <guid>/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</guid>
       <description>Section 7 of the VCP6-DCV blueprint
-Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency   Objective 7.</description>
+Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency    Objective 7.</description>
     </item>
     
     <item>
@@ -850,7 +852,7 @@ Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advance
       <guid>/2015/10/14/vcp6-dcv-study-guide/</guid>
       <description>About to start to study for the VCP6 once again. So I figured I would start over with the guide as much of the blueprint has changed.
 As I progress through the sections this page will be updated with new content.
- Section 1: Configure and Administer vSphere 6.x Security Section 2: Configure and Administer Advanced vSphere 6.x Networking Section 3: Configure and Administer Advanced vSphere 6.x Storage Section 4: Upgrade a vSphere Deployment to 6.</description>
+  Section 1: Configure and Administer vSphere 6.x Security  Section 2: Configure and Administer Advanced vSphere 6.x Networking  Section 3: Configure and Administer Advanced vSphere 6.x Storage  Section 4: Upgrade a vSphere Deployment to 6.</description>
     </item>
     
     <item>
@@ -859,7 +861,7 @@ As I progress through the sections this page will be updated with new content.
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</guid>
-      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&amp;rsquo;s. The problem is when I went to redeploy it I got the following error.
+      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
  Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.</description>
     </item>
@@ -917,7 +919,7 @@ If you are looking to install ESXi 6.0 U1 from scratch or update from a previous
       <guid>/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid>
       <description>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
-Here is a link to the GitHub repository containing all the code.
+ Here is a link to the GitHub repository containing all the code.
 The code is also fairly simple, it pulls in data from a few .</description>
     </item>
     
@@ -939,7 +941,7 @@ By Default the view event database is not indexed. I was curious as to way I alw
       <guid>/2015/09/24/upgrading-horizon-view-linux-desktop/</guid>
       <description>Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.
 Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.
-If you followed my previous post to disable Console access.</description>
+If you followed my [previous]({{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/) post to disable Console access.</description>
     </item>
     
     <item>
@@ -950,7 +952,7 @@ If you followed my previous post to disable Console access.</description>
       <guid>/2015/09/22/upgrading-vrealize-operations-horizon-adapter-to-61/</guid>
       <description>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process. This guide will show how to upgrade the Horizon Adapter for vROPS.
 To upgrade from vRealize Operations Horizon Adapter to the most recent version, follow these steps.
-Download the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.</description>
+ Download the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.</description>
     </item>
     
     <item>
@@ -961,8 +963,8 @@ Download the neccessary file(s) needed. In my case I needed the vRealize Operati
       <guid>/2015/09/22/upgrading-vrealize-operations-to-61/</guid>
       <description>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.
 To upgrade from vRealize Operations Manager to the most recent version, follow these steps.
-Download the PAK file(s) needed based on the type of cluster.
- vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files. For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.</description>
+ Download the PAK file(s) needed based on the type of cluster.
+ vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.  For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.</description>
     </item>
     
     <item>
@@ -995,7 +997,7 @@ While trying to setup my Platform Service Controllers for HA. I was having issue
       <guid>/2015/09/16/enabling-biometrics-in-horizon-view-62/</guid>
       <description>Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.
 This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.
-Here is a link to the current VMware documentation.
+ Here is a link to the current VMware documentation.
 NOTE: This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.</description>
     </item>
     
@@ -1030,7 +1032,7 @@ You will then be prompted to enter in the Hard Disk #, the size you want to be e
       
       <guid>/2015/09/14/using-powercli-to-detach-luns/</guid>
       <description>I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
-Have you ever had to remove a LUN from a cluster and thought &amp;ldquo;Do I really need to detach all the LUN&amp;rsquo;s, before un-mapping from my SAN?&amp;rdquo;
+Have you ever had to remove a LUN from a cluster and thought &amp;ldquo;Do I really need to detach all the LUN&#39;s, before un-mapping from my SAN?&amp;rdquo;
  Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output.</description>
     </item>
     
@@ -1052,7 +1054,7 @@ You see, VMware has had a bug KB2124669 since ESXi 6.0 that can cause an ESXi ho
       <guid>/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</guid>
       <description>Did you know you could get host your own blog on Ravello Systems?
 Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
-Please use my previous blog on how to get it deployed.
+Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
 Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.</description>
     </item>
     
@@ -1063,7 +1065,7 @@ Disclaimer: This is in no way supported or recommended by Ravello Systems, runni
       
       <guid>/2015/09/08/how-to-deploy-a-jekyll-blog/</guid>
       <description>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?</description>
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description>
     </item>
     
     <item>
@@ -1125,7 +1127,7 @@ PernixPro™ members are an elite community of IT professionals committed to adv
       
       <guid>/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</guid>
       <description>Here is a bit of my experience with the VCP6-DCV Delta beta exam.
-Initial Thoughts Today I sat and took the VCP6-DCV Delta Exam beta. I have never taken a VMware beta exam so I wasn&amp;rsquo;t quite sure what to expect, from what I have been told, I expected lots of questions with bad grammar and horrible spelling. However today I got something a bit different. Ill explain it best without violating any NDA.</description>
+Initial Thoughts Today I sat and took the VCP6-DCV Delta Exam beta. I have never taken a VMware beta exam so I wasn&#39;t quite sure what to expect, from what I have been told, I expected lots of questions with bad grammar and horrible spelling. However today I got something a bit different. Ill explain it best without violating any NDA.</description>
     </item>
     
     <item>
@@ -1144,7 +1146,7 @@ Working with VMware support we were finally able to get it working with a few tw
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/04/02/powercli-extend-vmdk-and-guest-os/</guid>
-      <description>So as always things change across multiple Window&amp;rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&amp;rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</description>
+      <description>So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</description>
     </item>
     
     <item>
@@ -1153,10 +1155,9 @@ Working with VMware support we were finally able to get it working with a few tw
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/04/01/vcp6-dcv-beta-exam/</guid>
-      <description>VMware has announced https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;ui=www_cert the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.
-vSphere 6 Foundations : Exam code: 2V0-620
-VCP6-DCV : Exam Code: 2V0-621
-VCP6-DCV Delta : Exam Code: 2V0-621D</description>
+      <description>VMware has announced https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;amp;ui=www_cert the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.
+ vSphere 6 Foundations : Exam code: 2V0-620
+ VCP6-DCV : Exam Code: 2V0-621</description>
     </item>
     
     <item>
@@ -1167,7 +1168,7 @@ VCP6-DCV Delta : Exam Code: 2V0-621D</description>
       <guid>/2015/02/18/srm-unable-to-uninstall-due-to-uac/</guid>
       <description>I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &amp;ldquo;Never Notify&amp;rdquo; SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account</description>
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account</description>
     </item>
     
     <item>
@@ -1176,8 +1177,8 @@ REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v 
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</guid>
-      <description>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&amp;rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn&amp;rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.</description>
+      <description>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.</description>
     </item>
     
     <item>
@@ -1197,7 +1198,7 @@ Doing some troubleshooting we noticed their DefaultVIServerMode was set to singl
       
       <guid>/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</guid>
       <description>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.</description>
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.</description>
     </item>
     
     <item>
@@ -1247,7 +1248,7 @@ Upon further research i finally found the right combination of settings to allow
       <guid>/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</guid>
       <description>Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.
 Download the Chrome Policy Plugin here
- Open the zip file you just downloaded and locate the .ADM file that best matches your system: Extract the .ADM file to any folder on your hard drive Go to Start &amp;gt; Run, and run gpedit.msc Right-click Local Computer Policy &amp;gt; Computer Configuration &amp;gt; Administrative Templates, and select Add/Remove Templates: Add the adm template that you saved to disk earlier: You should now see the template underneath a Google &amp;gt; Google Chrome section within Administrative Templates 2.</description>
+ Open the zip file you just downloaded and locate the .ADM file that best matches your system: Extract the .ADM file to any folder on your hard drive Go to Start &amp;gt; Run, and run gpedit.msc Right-click Local Computer Policy &amp;gt; Computer Configuration &amp;gt; Administrative Templates, and select Add/Remove Templates: Add the adm template that you saved to disk earlier:   You should now see the template underneath a Google &amp;gt; Google Chrome section within Administrative Templates  Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:    Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:   NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.</description>
     </item>
     
     <item>
@@ -1267,9 +1268,9 @@ Upon further research there seems to be an issue from 5.5.1 and 5.5.5 appliances
       <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</guid>
-      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&amp;rsquo;s and copied the files locally.
+      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&#39;s and copied the files locally.
 Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. KB2734782
-Here are the full steps I followed to get .</description>
+Here are the full steps I followed to get .NET installed.</description>
     </item>
     
     <item>
@@ -1290,7 +1291,7 @@ However the hotfix only fixes future occurences, you still need to fix all the V
       
       <guid>/2014/06/10/configuring-esxi-5-5-dump-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
     </item>
     
     <item>
@@ -1300,7 +1301,7 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
       
       <guid>/2014/06/10/configuring-esxi-5-5-syslog-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
     </item>
     
     <item>
@@ -1342,8 +1343,8 @@ As we can see here the URL to configure the appliace is https://192.</descriptio
       <pubDate>Thu, 22 May 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/05/22/create-vmfs-datastore-using-powercli/</guid>
-      <description>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
-How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?</description>
+      <description>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?</description>
     </item>
     
     <item>
@@ -1353,7 +1354,7 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
       
       <guid>/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/</guid>
       <description>After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
- Log into the vSphere Client as an Administrator Click Administration &amp;gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  </description>
+ Log into the vSphere Client as an Administrator Click Administration &amp;gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key:   provisioning.relocate.enableRename  Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect  </description>
     </item>
     
     <item>
@@ -1382,9 +1383,9 @@ To perform the steps in the c# client.  From the VMware Infrastructure Client, r
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</guid>
-      <description>This is a great script to keep handy. If you have multiple RDM&amp;rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-Get-VM VMNAME| Get-HardDisk -DiskType &amp;quot;RawPhysical&amp;quot;,&amp;quot;RawVirtual&amp;quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl  If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
-KB2051606</description>
+      <description>This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+Get-VM VMNAME| Get-HardDisk -DiskType &amp;quot;RawPhysical&amp;quot;,&amp;quot;RawVirtual&amp;quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+ KB2051606</description>
     </item>
     
     <item>
@@ -1393,8 +1394,8 @@ KB2051606</description>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/05/01/blocking-attachments-with-executable-content/</guid>
-      <description>I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
- Login to Exchange Admin Center using administrative credentials On the left pane select &amp;ldquo;Mail flow&amp;rdquo; On the top pane select &amp;ldquo; Rules&amp;rdquo; Click on the &amp;ldquo;+&amp;rdquo; sign and select create a new rule Give a name to the rule and select &amp;ldquo;more options&amp;rdquo; at the bottom of the page.</description>
+      <description>I don&#39;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
+ Login to Exchange Admin Center using administrative credentials On the left pane select &amp;ldquo;Mail flow&amp;rdquo; On the top pane select &amp;quot; Rules&amp;rdquo; Click on the &amp;ldquo;+&amp;rdquo; sign and select create a new rule Give a name to the rule and select &amp;ldquo;more options&amp;rdquo; at the bottom of the page.</description>
     </item>
     
     <item>
@@ -1404,7 +1405,7 @@ KB2051606</description>
       
       <guid>/2014/05/01/enable-ssh-on-vma-5-0/</guid>
       <description>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
- Logon to vMA via a Console Session Run &amp;lsquo;sudo vi /etc/hosts.allow&amp;rsquo; Scroll to the very bottom and type i to insert content into the file.</description>
+ Logon to vMA via a Console Session Run   &amp;lsquo;sudo vi /etc/hosts.allow&amp;rsquo;  Scroll to the very bottom and type i to insert content into the file.</description>
     </item>
     
     <item>
@@ -1423,7 +1424,7 @@ So remember to set the VLAN to Native if using an operating system that does not
       <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/04/29/nested-esxi-and-nfs/</guid>
-      <description>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&amp;rsquo;s couldn&amp;rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.</description>
+      <description>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&#39;s couldn&#39;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.</description>
     </item>
     
   </channel>

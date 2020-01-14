@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Enable SSH on vSphere Management Assistant 5.0" />
 <meta property="og:description" content="While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
- Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Scroll to the very bottom and type i to insert content into the file." />
+ Logon to vMA via a Console Session Run   &lsquo;sudo vi /etc/hosts.allow&rsquo;  Scroll to the very bottom and type i to insert content into the file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2014/05/01/enable-ssh-on-vma-5-0/" />
 <meta property="article:published_time" content="2014-05-01T00:00:00+00:00" />
@@ -43,7 +43,7 @@
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Enable SSH on vSphere Management Assistant 5.0"/>
 <meta name="twitter:description" content="While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
- Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Scroll to the very bottom and type i to insert content into the file."/>
+ Logon to vMA via a Console Session Run   &lsquo;sudo vi /etc/hosts.allow&rsquo;  Scroll to the very bottom and type i to insert content into the file."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -187,27 +187,30 @@ May 1, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.</p>
-
 <ol>
 <li>Logon to vMA via a Console Session</li>
 <li>Run</li>
-<li>&lsquo;sudo vi /etc/hosts.allow&rsquo;</li>
-<li>Scroll to the very bottom and type <strong><em>i</em></strong> to insert content into the file.</li>
-<li>On the last line add </li>
-<li>&lsquo;sshd: ALL: ALLOW&rsquo;</li>
 </ol>
-
-<p><img src="/images/vmaa1.jpg" alt="" /></p>
-
-<ol>
+<ul>
+<li>&lsquo;sudo vi /etc/hosts.allow&rsquo;</li>
+</ul>
+<ol start="3">
+<li>Scroll to the very bottom and type <em><strong>i</strong></em> to insert content into the file.</li>
+<li>On the last line add </li>
+</ol>
+<ul>
+<li>&lsquo;sshd: ALL: ALLOW&rsquo;</li>
+</ul>
+<p><img src="/images/vmaa1.jpg" alt=""></p>
+<ol start="5">
 <li>Hit &lsquo;ESC&rsquo; then type &lsquo;:wq!&rsquo; to save.</li>
 <li>Restart SSH services to enable the change.</li>
-<li>&lsquo;sudo /etc/initd/sshd restart&rsquo;</li>
 </ol>
-
-<p><img src="/images/vmaa2.jpg" alt="" /></p>
-
-<ol>
+<ul>
+<li>&lsquo;sudo /etc/initd/sshd restart&rsquo;</li>
+</ul>
+<p><img src="/images/vmaa2.jpg" alt=""></p>
+<ol start="7">
 <li>You will now be able to SSH to the vMA.</li>
 </ol>
 

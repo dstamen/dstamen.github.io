@@ -185,44 +185,38 @@ June 3, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>So luckily i was selected for the June 2014 wave of vCloud Hybrid Service  access as a vExpert. I have been looking forwarding to using vCHS since it went GA and am glad to finally have the opportunity to use it hands on.</p>
-
-<p>Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.6 but couldn&rsquo;t find anything as it was just released and majorly overhauled.</p>
-
+<p>Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.6 but couldn't find anything as it was just released and majorly overhauled.</p>
 <p>So here is my first howto blog post, I hope it helps you get your POC configured nice and smooth.</p>
-
 <p>First you will need to download the vCloud Connector Server and vCloud Connector Node from <a href="https://my.vmware.com">https://my.vmware.com</a>. vCloud Connector 2.6 is now free and no longer needs a license.</p>
-
 <p>Once you have the two OVF bundles downloaded you will need to deploy them through vCenter.</p>
-
 <ol>
 <li>Select File, Deploy OVF.
-<img src="/images/screenshot.7.jpg" alt="" /></li>
+<img src="/images/screenshot.7.jpg" alt=""></li>
 <li>Now browse and select the vCloud Connector Server OVF File
-<img src="/images/screenshot.8.jpg" alt="" /></li>
+<img src="/images/screenshot.8.jpg" alt=""></li>
 <li>Next you will be prompted with the OVF Information and requirements, select Next.
-<img src="/images/screenshot.9.jpg" alt="" /></li>
+<img src="/images/screenshot.9.jpg" alt=""></li>
 <li>Accept the EULA.
-<img src="/images/screenshot.10.jpg" alt="" /></li>
+<img src="/images/screenshot.10.jpg" alt=""></li>
 <li>Leave Default VM Name
-<img src="/images/screenshot.11.jpg" alt="" /></li>
+<img src="/images/screenshot.11.jpg" alt=""></li>
 <li>Choose the host/cluster you wish to deploy to.
-<img src="/images/screenshot.121.jpg" alt="" /></li>
+<img src="/images/screenshot.121.jpg" alt=""></li>
 <li>Choose a resource pool (if utilized)
-<img src="/images/screenshot.13.jpg" alt="" /></li>
+<img src="/images/screenshot.13.jpg" alt=""></li>
 <li>Choose your datastore.
-<img src="/images/screenshot.14.jpg" alt="" /></li>
+<img src="/images/screenshot.14.jpg" alt=""></li>
 <li>Choose your Disk Format, in most cases you may want to use Thin.
-<img src="/images/screenshot.15.jpg" alt="" /></li>
+<img src="/images/screenshot.15.jpg" alt=""></li>
 <li>Select your network port group.
-<img src="/images/screenshot.16.jpg" alt="" /></li>
+<img src="/images/screenshot.16.jpg" alt=""></li>
 <li>Fill in Static IP information, if you want to use DHCP leave all fields blank.
-<img src="/images/screenshot.17.jpg" alt="" /></li>
+<img src="/images/screenshot.17.jpg" alt=""></li>
 <li>Review your settings and then hit Finish to deploy your vCloud Connector Server.</li>
 </ol>
-
 <p>Repeat all steps above for your vCloud Connector Node. This will be utilized to add your Private Cloud (vCenter) to vCloud Connector to move virtual machines to vCHS.</p>
-
-<p><a href="http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)</a></p>
+<p>
+<a href="http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-2/" target="_blank">Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 2)</a></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2014%2f06%2f03%2fdeploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1%2f" target="_blank" rel="noopener" aria-label="">

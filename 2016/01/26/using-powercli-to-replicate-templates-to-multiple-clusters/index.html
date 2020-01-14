@@ -184,30 +184,21 @@ January 26, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.</p>
-
+      <p>We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.</p>
 <p>I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script. I am hoping when that is available, I will update this post.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/CloneTemplateToClusters.ps1">CloneTemplateToClusters.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/CloneTemplateToClusters.ps1" target="_blank">CloneTemplateToClusters.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <p><em>This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.</em></p>
-
 <pre><code>#Import PowerCLI Module
 Add-PSSnapin VMware.VimAutomation.Core
 
@@ -244,10 +235,7 @@ foreach ($template in $templates){
 }
 #Disconnect from vCenter
 Disconnect-VIServer $vCenter -Force -Confirm:$false
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\CloneTemplateToClusters.ps1</li>
 </ul>

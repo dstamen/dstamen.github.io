@@ -184,59 +184,71 @@ April 13, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>So one thing I have come across with a few VCSA6 installs was the inability to use login with current credentials via the Web client or vSphere client.</p>
-
-<p><img src="/images/Screen-Shot-2015-04-13-at-10.57.41-AM.png" alt="" /></p>
-
+      <p>So one thing I have come across with a few VCSA6 installs was the inability to use login with current credentials via the Web client or vSphere client.</p>
+<p><img src="/images/Screen-Shot-2015-04-13-at-10.57.41-AM.png" alt=""></p>
 <p>Working with VMware support we were finally able to get it working with a few tweaks and there is a current pending KB that has not been published yet. (KB2113038) I have been told this affects both an embedded deployment (VCSA and PSC together) and external deployment (VCSA and PSC seperate.)</p>
-
-<h3 id="if-using-an-embedded-vcsa-psc-make-sure-the-vm-is-joined-to-the-domain-if-using-an-external-vcsa-and-psc-you-can-easily-join-the-psc-to-the-domain-using-the-vsphere-web-client">If using an embedded VCSA+PSC make sure the VM is joined to the domain. If using an external VCSA and PSC you can easily join the PSC to the domain using the vSphere Web Client.</h3>
-
+<h3 id="if-using-an-embedded-vcsapsc-make-sure-the-vm-is-joined-to-the-domain-if-using-an-external-vcsa-and-psc-you-can-easily-join-the-psc-to-the-domain-using-the-vsphere-web-client">If using an embedded VCSA+PSC make sure the VM is joined to the domain. If using an external VCSA and PSC you can easily join the PSC to the domain using the vSphere Web Client.</h3>
 <ol>
 <li>Log in to your vSphere Web Client.</li>
 <li>Navigate to Administration-&gt;System Configuration-&gt;Nodes</li>
 <li>Select your PSC and select the Active Directory Tab.</li>
-<li>From here you can enter in your domain and credentials and join it to the domain, after it is successful you will need to restart the PSC.</li>
 </ol>
-
-<p><img src="/images/Screen-Shot-2015-04-13-at-11.37.23-AM.png" alt="" /></p>
-
+<ul>
+<li>From here you can enter in your domain and credentials and join it to the domain, after it is successful you will need to restart the PSC.</li>
+</ul>
+<p><img src="/images/Screen-Shot-2015-04-13-at-11.37.23-AM.png" alt=""></p>
 <h3 id="if-you-try-to-select-your-vcsa-and-look-for-the-active-directory-tab-you-will-notice-it-is-missing-to-join-your-vcsa-to-the-domain-you-need-to-perform-the-domain-join-via-the-cli">If you try to select your VCSA and look for the Active Directory tab you will notice it is missing, to join your VCSA to the domain you need to perform the domain join via the CLI.</h3>
-
 <ol>
 <li>SSH to your VCSA</li>
 <li>Query the device to see if it is joined to the domain</li>
+</ol>
+<ul>
 <li>/opt/likewise/bin/domainjoin-cli query
-<img src="/images/Screen-Shot-2015-04-13-at-11.42.37-AM.png" alt="" /></li>
+<img src="/images/Screen-Shot-2015-04-13-at-11.42.37-AM.png" alt=""></li>
+</ul>
+<ol start="3">
 <li>Join the device to the domain using the following syntax, you will need to enter int he domainname, user with rights to join domain</li>
+</ol>
+<ul>
 <li>/opt/likewise/bin/domainjoin-cli join domainname adminusername
-<img src="/images/Screen-Shot-2015-04-13-at-11.43.31-AM.png" alt="" /></li>
+<img src="/images/Screen-Shot-2015-04-13-at-11.43.31-AM.png" alt=""></li>
+</ul>
+<ol start="4">
 <li>Once it is successful reboot the system and rerun the query to see if it was successfully joined</li>
+</ol>
+<ul>
 <li>/opt/likewise/bin/domainjoin-cli query
-<img src="/images/Screen-Shot-2015-04-13-at-11.43.45-AM.png" alt="" /></li>
-</ol>
-
+<img src="/images/Screen-Shot-2015-04-13-at-11.43.45-AM.png" alt=""></li>
+</ul>
 <h3 id="at-this-point-if-you-try-to-login-with-the-current-credentials-you-will-still-fail-as-there-is-one-additional-step-this-will-need-to-be-completed-on-the-vcsa-virtual-machine">At this point if you try to login with the current credentials you will still fail as there is one additional step. This will need to be completed on the VCSA virtual machine.</h3>
-
 <ol>
-<li>SSH to the appropriate appliance</li>
-<li>Navigate to /etc/ and using your favorite text editor modify the nsswitch.conf file. (Examples are using VI)</li>
-<li>Look for the line &ldquo;password: compat ato&rdquo; this line will need to be modified
-<img src="/images/Screen-Shot-2015-04-13-at-11.01.00-AM.png" alt="" /></li>
-
-<li><p>Modify the line to read &ldquo;passwd: compat ato lsass&rdquo;
-<img src="/images/Screen-Shot-2015-04-13-at-11.02.20-AM.png" alt="" /></p></li>
-
-<li><p>Once you have updated the file and saved it, restart the VCSA or its services</p></li>
-
-<li><p>service vmware-vpxd restart</p></li>
-
-<li><p>Now wait&hellip;.in multiple tests it takes 30 minutes until you are able to logon using the credentials and it will now work for both the web and c# client.</p></li>
-
-<li><p>In some cases this file will also need to be modified on the PSC.</p></li>
+<li>
+<p>SSH to the appropriate appliance</p>
+</li>
+<li>
+<p>Navigate to /etc/ and using your favorite text editor modify the nsswitch.conf file. (Examples are using VI)</p>
+</li>
+<li>
+<p>Look for the line &ldquo;password: compat ato&rdquo; this line will need to be modified
+<img src="/images/Screen-Shot-2015-04-13-at-11.01.00-AM.png" alt=""></p>
+</li>
+<li>
+<p>Modify the line to read &ldquo;passwd: compat ato lsass&rdquo;
+<img src="/images/Screen-Shot-2015-04-13-at-11.02.20-AM.png" alt=""></p>
+</li>
+<li>
+<p>Once you have updated the file and saved it, restart the VCSA or its services</p>
+</li>
 </ol>
+<ul>
+<li>service vmware-vpxd restart</li>
+</ul>
+<ol start="6">
+<li>Now wait&hellip;.in multiple tests it takes 30 minutes until you are able to logon using the credentials and it will now work for both the web and c# client.</li>
+</ol>
+<ul>
+<li>In some cases this file will also need to be modified on the PSC.</li>
+</ul>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f04%2f13%2fvsphere6-unable-to-use-session-credentials%2f" target="_blank" rel="noopener" aria-label="">

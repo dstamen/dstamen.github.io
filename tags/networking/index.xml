@@ -27,7 +27,7 @@
       
       <guid>/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</guid>
       <description>I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
-Unifi Controller 5.5.11
+ Unifi Controller 5.5.11
 Configuration is quite simple! Just follow these few easy steps and you will be up in no time.</description>
     </item>
     
@@ -48,8 +48,8 @@ If you are installing this on a bare metal or virtual machine, i suggest a debia
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/04/21/using-powercli-to-get-and-set-dvs-traffic-shaping-settings/</guid>
-      <description>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&amp;rsquo;s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.</description>
+      <description>I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings
       
       <guid>/2015/11/30/using-cli-to-manage-dvs-host-uplinks/</guid>
       <description>Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&amp;rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After &amp;ldquo;Restoring Network Configuration&amp;rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</description>
     </item>
     
@@ -70,7 +70,7 @@ After &amp;ldquo;Restoring Network Configuration&amp;rdquo; a few too many times
       
       <guid>/2015/11/23/configuring-multiple-ucs-vlans/</guid>
       <description>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
-Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+Since currently Cisco UCS does not allow selecting multiple VLAN&#39;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
 # PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.</description>
     </item>
@@ -81,8 +81,8 @@ The script can be found here.
       <pubDate>Wed, 18 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/11/18/disconnected-vnics/</guid>
-      <description>Ever wonder why a VM isn&amp;rsquo;t on the network?
-I was working on deploying some test VM&amp;rsquo;s and for some reason all the VM&amp;rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+      <description>Ever wonder why a VM isn&#39;t on the network?
+I was working on deploying some test VM&#39;s and for some reason all the VM&#39;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
 I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</description>
     </item>
     
@@ -102,7 +102,7 @@ To perform the steps in the c# client.  From the VMware Infrastructure Client, r
       <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/04/29/nested-esxi-and-nfs/</guid>
-      <description>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&amp;rsquo;s couldn&amp;rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.</description>
+      <description>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&#39;s couldn&#39;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.</description>
     </item>
     
   </channel>

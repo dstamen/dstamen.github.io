@@ -17,7 +17,7 @@
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/11/11/reusing-horizon-view-desktop-names/</guid>
-      <description>Have you ever worked with a Horizon View pool with 10 VM&amp;rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+      <description>Have you ever worked with a Horizon View pool with 10 VM&#39;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
 First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
 To connect to the View ADAM database:
  Log in to one of the View Connection Servers as Domain Administrator.</description>
@@ -41,7 +41,7 @@ By Default the view event database is not indexed. I was curious as to way I alw
       <guid>/2015/09/24/upgrading-horizon-view-linux-desktop/</guid>
       <description>Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.
 Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.
-If you followed my previous post to disable Console access.</description>
+If you followed my [previous]({{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/) post to disable Console access.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ If you followed my previous post to disable Console access.</description>
       <guid>/2015/09/16/enabling-biometrics-in-horizon-view-62/</guid>
       <description>Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.
 This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.
-Here is a link to the current VMware documentation.
+ Here is a link to the current VMware documentation.
 NOTE: This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.</description>
     </item>
     
@@ -95,8 +95,8 @@ I am assuming you have already upgraded your View Composer, Connection and Secur
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</guid>
-      <description>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&amp;rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn&amp;rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.</description>
+      <description>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.</description>
     </item>
     
     <item>

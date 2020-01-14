@@ -191,17 +191,12 @@ September 15, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>I wanted to share this handy script i created when you have a need to extend a disk.</p>
-
 <p>This script can be extremely handy as it will take care of extending the VMDK and then going to the OS and then performing the expansion there as well. This has been helpful when needing to extend a large batch of servers (60+).</p>
-
 <p><strong>Syntax:</strong> .\ExtendVMDKandGuest VMNAME</p>
-
 <p>You will then be prompted to enter in the Hard Disk #, the size you want to be extended, and then which drive letter that volume belongs to.</p>
-
 <p>The code and Github Link can be found below.</p>
-
-<p><a href="https://github.com/dstamen/PowerCLI/blob/master/ExtendVMDKandGuest.ps1">ExtendVMDKandGuest.ps1</a></p>
-
+<p>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/ExtendVMDKandGuest.ps1" target="_blank">ExtendVMDKandGuest.ps1</a></p>
 <pre><code># PowerCLI Script for adding vmdk to VM and extending disk in windows
 # @davidstamen
 # http://davidstamen.com
@@ -218,7 +213,6 @@ $VolumeLetter = Read-Host &quot;Enter the volume letter (Ex. c,d,e,f)&quot;
 Get-HardDisk -vm $VM | where {$_.Name -eq $HardDisk} | Set-HardDisk -CapacityGB $HardDiskSize -Confirm:$false
 Invoke-VMScript -vm $VM -ScriptText &quot;echo rescan &gt; c:\diskpart.txt &amp;&amp; echo select vol $VolumeLetter &gt;&gt; c:\diskpart.txt &amp;&amp; echo extend &gt;&gt; c:\diskpart.txt &amp;&amp; diskpart.exe /s c:\diskpart.txt&quot; -ScriptType BAT
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f09%2f15%2fusing-powercli-to-extend-vmdk-and-windows-os-disk%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

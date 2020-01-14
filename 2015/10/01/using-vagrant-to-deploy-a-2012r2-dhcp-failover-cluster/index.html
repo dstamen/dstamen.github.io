@@ -35,7 +35,7 @@
   <meta property="og:title" content="Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster" />
 <meta property="og:description" content="So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
-Here is a link to the GitHub repository containing all the code.
+ Here is a link to the GitHub repository containing all the code.
 The code is also fairly simple, it pulls in data from a few ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/" />
@@ -46,7 +46,7 @@ The code is also fairly simple, it pulls in data from a few ." />
 <meta name="twitter:title" content="Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster"/>
 <meta name="twitter:description" content="So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
-Here is a link to the GitHub repository containing all the code.
+ Here is a link to the GitHub repository containing all the code.
 The code is also fairly simple, it pulls in data from a few ."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -190,40 +190,26 @@ October 1, 2015 under <a class="" href="/categories/automation">Automation</a>
 <hr>
 
       
-      
-
-<p>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.</p>
-
+      <p>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.</p>
 <p>I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.</p>
-
-<p><a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp">Here</a> is a link to the <strong>GitHub</strong> repository containing all the code.</p>
-
-<p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy&rsquo;s the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.</p>
-
+<p>
+<a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp" target="_blank">Here</a> is a link to the <strong>GitHub</strong> repository containing all the code.</p>
+<p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy's the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.</p>
 <h1 id="files-to-modify-to-customize-your-installation">Files to modify to customize your installation</h1>
-
 <ul>
-<li><strong><em>dhcpservers.csv</em></strong> - IP&rsquo;s of your two DHCP servers</li>
-<li><strong><em>createscopes.csv</em></strong> - Contains your Scope Name, StartRange, EndRange, Mask and Server to deploy to</li>
-<li><strong><em>scopeoptions.csv</em></strong> - Contains your server specific options. You can add more columns and adjust the code to add alternate options</li>
-<li><strong><em>scopeoptions.csv</em></strong> - Contains your scope specific options. You can add more columns and adjust the code to add alternate options</li>
-<li><strong><em>scopefailover.csv</em></strong> - Used to create Failover Scopes, Specify the ScopeID, PartnerServer, LoadBalancePercent, MaxClientLeadTime, AutoStateTransition, StateSwitchInterval and Server to deploy against</li>
-<li><strong><em>scopepolicy.csv</em></strong> - Used to create Scope Policies. In this example it creates a MAC Allow list, so only Mac Addresses listed will be allowed to pull leases.</li>
-<li><strong><em>scopereservations.csv</em></strong> - Used to create Scope Reservations. Input your ScopeID, MAC Address and Reservation Name. It automatically pulls an available IP and reserves it.</li>
+<li><em><strong>dhcpservers.csv</strong></em> - IP's of your two DHCP servers</li>
+<li><em><strong>createscopes.csv</strong></em> - Contains your Scope Name, StartRange, EndRange, Mask and Server to deploy to</li>
+<li><em><strong>scopeoptions.csv</strong></em> - Contains your server specific options. You can add more columns and adjust the code to add alternate options</li>
+<li><em><strong>scopeoptions.csv</strong></em> - Contains your scope specific options. You can add more columns and adjust the code to add alternate options</li>
+<li><em><strong>scopefailover.csv</strong></em> - Used to create Failover Scopes, Specify the ScopeID, PartnerServer, LoadBalancePercent, MaxClientLeadTime, AutoStateTransition, StateSwitchInterval and Server to deploy against</li>
+<li><em><strong>scopepolicy.csv</strong></em> - Used to create Scope Policies. In this example it creates a MAC Allow list, so only Mac Addresses listed will be allowed to pull leases.</li>
+<li><em><strong>scopereservations.csv</strong></em> - Used to create Scope Reservations. Input your ScopeID, MAC Address and Reservation Name. It automatically pulls an available IP and reserves it.</li>
 </ul>
-
 <p>Execute the Vagrant package by downloading it and running.</p>
-
 <pre><code>vagrant up
-</code></pre>
-
-<p>Execute the powershell script by downloading the scripts folder and running.</p>
-
+</code></pre><p>Execute the powershell script by downloading the scripts folder and running.</p>
 <pre><code>.\install_ha_dhcp.ps1
-</code></pre>
-
-<h1 id="here-is-a-copy-of-the-raw-code">Here is a copy of the raw code.</h1>
-
+</code></pre><h1 id="here-is-a-copy-of-the-raw-code">Here is a copy of the raw code.</h1>
 <pre><code># Powershell Script for Vagrant to install and configure DHCP
 # @davidstamen
 # http://davidstamen.com
@@ -306,7 +292,6 @@ Get-DhcpServerv4Failover -ComputerName $scope.Server|Invoke-DhcpServerv4Failover
 #Get-DhcpServerv4Lease -ComputerName $server1 -ScopeID 10.10.10.0 | Add-DhcpServerv4Reservation -ComputerName $server1
 
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f10%2f01%2fusing-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

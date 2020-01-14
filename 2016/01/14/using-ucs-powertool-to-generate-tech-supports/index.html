@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using UCS PowerTool To Generate Tech Supports" />
 <meta property="og:description" content="Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/01/14/using-ucs-powertool-to-generate-tech-supports/" />
 <meta property="article:published_time" content="2016-01-14T00:00:00+00:00" />
@@ -43,7 +43,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Prepari
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using UCS PowerTool To Generate Tech Supports"/>
 <meta name="twitter:description" content="Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,26 +186,19 @@ January 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
 <hr>
 
       
-      
-
-<p>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+<li>
+<a href="https://communities.cisco.com/docs/DOC-53838" target="_blank">UCS Powertool</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1">Create-UCSTechSupport.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1" target="_blank">Create-UCSTechSupport.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <pre><code>#Define Variables
 $cred = Get-Credential
 $domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
@@ -223,10 +216,7 @@ $Chassis = Get-UCSChassis
 Disconnect-UCS
 }
 
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Create-UCSTechSupport.ps1</li>
 </ul>

@@ -35,10 +35,9 @@
   
 
   <meta property="og:title" content="Windows Server 2008 is Going EOL - What about my vCenter Server?" />
-<meta property="og:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!" />
+<meta property="og:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&#39;s dive in and find out what it takes to move to a supported OS!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/" />
-
 <meta property="og:image" content="/featured/vsphere.png" />
 <meta property="article:published_time" content="2019-08-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-08-12T00:00:00+00:00" />
@@ -47,7 +46,7 @@
 <meta name="twitter:image" content="/featured/vsphere.png"/>
 
 <meta name="twitter:title" content="Windows Server 2008 is Going EOL - What about my vCenter Server?"/>
-<meta name="twitter:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!"/>
+<meta name="twitter:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&#39;s dive in and find out what it takes to move to a supported OS!"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -181,7 +180,7 @@ if (!doNotTrack) {
         Published on 
 August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a> and <a class="" href="/tags/vcenter-server-6.5">vCenter Server 6.5</a>
-        &middot; Read in about 3 min (459 words)
+        &middot; Read in about 3 min (460 words)
       </div>
   </span>
   
@@ -191,14 +190,11 @@ August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!</p>
-
+      <p>Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let's dive in and find out what it takes to move to a supported OS!</p>
 <h2 id="migrate-to-the-vcenter-server-appliance-vcsa">Migrate to the vCenter Server Appliance (VCSA)</h2>
-
-<p>Mentioned in August 2017,<a href="https://blogs.vmware.com/vsphere/2017/08/farewell-vcenter-server-windows.html">Farewell, vCenter Server for Windows</a>. The VCSA is now the default deployment recommended for vCenter Server. If you are currently running vCenter Server on Windows, during your next upgrade you should be migrating to the VCSA. Features such as many performance and security enhancements and new features such as vCenter HA and the File-Based Backup are exclusive to the VCSA.</p>
-
+<p>Mentioned in August 2017,
+<a href="https://blogs.vmware.com/vsphere/2017/08/farewell-vcenter-server-windows.html" target="_blank">Farewell, vCenter Server for Windows</a>. The VCSA is now the default deployment recommended for vCenter Server. If you are currently running vCenter Server on Windows, during your next upgrade you should be migrating to the VCSA. Features such as many performance and security enhancements and new features such as vCenter HA and the File-Based Backup are exclusive to the VCSA.</p>
 <p>VMware has provided a migration tool directly in the VCSA Installer for 6.5 and 6.7. This migration tool will deploy a brand new VCSA running the latest version, and then import the data from the source Windows vCenter Server shutting it down in the process. This migration option allows you to maintain the same PNID, UID, Certificates, Tags, Roles, etc&hellip;.including the VDS!</p>
-
 
 
 
@@ -239,24 +235,21 @@ August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
-<p>If you want to learn more on Migration to the VCSA, check out <a href="https://vspherecentral.vmware.com">vSphere Central</a></p>
-
-<h2 id="migrate-to-vcenter-server-on-windows-server-2012-2016-2019">Migrate to vCenter Server on Windows Server 2012/2016/2019</h2>
-
-<p>If you are unfortunately unable to migrate to the VCSA, there is an alternative option. It is <strong>NOT SUPPORTED</strong> to do an in-place upgrade from 2008 to a newer operating system with vCenter Server installed. <a href="https://kb.vmware.com/s/article/2018695">KB2018695</a> can be referenced for more information but explicitly states:</p>
-
+<p>If you want to learn more on Migration to the VCSA, check out 
+<a href="https://vspherecentral.vmware.com" target="_blank">vSphere Central</a></p>
+<h2 id="migrate-to-vcenter-server-on-windows-server-201220162019">Migrate to vCenter Server on Windows Server 2012/2016/2019</h2>
+<p>If you are unfortunately unable to migrate to the VCSA, there is an alternative option. It is <strong>NOT SUPPORTED</strong> to do an in-place upgrade from 2008 to a newer operating system with vCenter Server installed. 
+<a href="https://kb.vmware.com/s/article/2018695" target="_blank">KB2018695</a> can be referenced for more information but explicitly states:</p>
 <blockquote>
-<p><strong><em>VMware does not support the installation of major update releases on an operating system as an upgrade in a virtual machine, such as Windows 7 to Windows 8 or RHEL 5.x to RHEL 6.0. VMware recommends the installation of a new major releases in a new virtual machine.</em></strong></p>
+<p><em><strong>VMware does not support the installation of major update releases on an operating system as an upgrade in a virtual machine, such as Windows 7 to Windows 8 or RHEL 5.x to RHEL 6.0. VMware recommends the installation of a new major releases in a new virtual machine.</strong></em></p>
 </blockquote>
-
 <p>The only supported method would be to take a backup of the existing environment including the database. You will then shutdown the old Windows Server 2008 vCenter Server, and deploy a new VM running your newer operating system with the exact same FQDN and IP. Once this machine is online, you would re-install vCenter Server for Windows using your existing vCenter Server Database.</p>
-
-<p>The backup and restore options for vCenter Server 6.x are outlined in the following <a href="https://kb.vmware.com/s/article/2149237?lang=en_US">KB2149237.</a> However please note there could be some considerations such as change of UUID, loss of certificates, tags, roles and other policies, so when migrating or moving the vCenter Server database check out <a href="https://ikb.vmware.com/s/article/2144536">KB2144536</a> for more information!</p>
-
+<p>The backup and restore options for vCenter Server 6.x are outlined in the following 
+<a href="https://kb.vmware.com/s/article/2149237?lang=en_US" target="_blank">KB2149237.</a> However please note there could be some considerations such as change of UUID, loss of certificates, tags, roles and other policies, so when migrating or moving the vCenter Server database check out 
+<a href="https://ikb.vmware.com/s/article/2144536" target="_blank">KB2144536</a> for more information!</p>
 <h2 id="wrap-up">Wrap Up</h2>
-
-<p>Its a good idea to keep an eye on EOL/EOGS dates for products you have running in your environment. To understand the EOGS support for VMware Products you can find more information on the VMware <a href="https://vmware.com/go/lifecycle">Lifecycle Matrix</a>.</p>
+<p>Its a good idea to keep an eye on EOL/EOGS dates for products you have running in your environment. To understand the EOGS support for VMware Products you can find more information on the VMware 
+<a href="https://vmware.com/go/lifecycle" target="_blank">Lifecycle Matrix</a>.</p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2019%2f08%2f12%2fwindows-server-2008-is-going-eol-what-about-my-vcenter-server%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

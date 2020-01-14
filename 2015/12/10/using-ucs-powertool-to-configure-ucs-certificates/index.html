@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using UCS PowerTool To Configure UCS Certificates" />
 <meta property="og:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
-Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
+Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/" />
 <meta property="article:published_time" content="2015-12-10T00:00:00+00:00" />
@@ -43,7 +43,7 @@ Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execu
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using UCS PowerTool To Configure UCS Certificates"/>
 <meta name="twitter:description" content="Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.
-Pre-Requsites  UCS Powertool  Link to Script  AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,26 +186,19 @@ December 10, 2015 under <a class="" href="/categories/cisco">Cisco</a>
 <hr>
 
       
-      
-
-<p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+<li>
+<a href="https://communities.cisco.com/docs/DOC-53838" target="_blank">UCS Powertool</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1">AddUCSCert.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1" target="_blank">AddUCSCert.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <pre><code>#Define Variables
 $UCS = &quot;FQDNofUCS&quot; #Used to Connect to UCSM via PowerTool
 $TrustPoint = &quot;TP-Name&quot; #Name of TrustPoint, AKA Root CA
@@ -227,51 +220,36 @@ PASTE CERT CONTENT HERE FOR ROOTCA
 -----BEGIN CERTIFICATE-----
 PASTE CERT CONTENT HERE FOR SUB CA
 -----END CERTIFICATE-----&quot; #Delete Second part if not using a Root/Sub Scenario.
-</code></pre>
-
-<p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
-
+</code></pre><p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
 <ul>
-<li>If using a Microsoft CA navigate to <a href="http://caroot/certsrv">http://caroot/certsrv</a>. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
-<li>If using a Microsoft Sub CA as well, navigate to <a href="http://casub/certsrv">http://casub/certsrv</a>. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
+<li>If using a Microsoft CA navigate to http://caroot/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
+<li>If using a Microsoft Sub CA as well, navigate to http://casub/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>
 </ul>
-
-<p><img src="/images/downloadcacert.png" alt="" /></p>
-
+<p><img src="/images/downloadcacert.png" alt=""></p>
 <ul>
 <li>If using a Non-Microsoft CA, contact your certificate provider for their root certificate and following the remaining steps.</li>
 <li>Open Certificate using a text editor and you should have it in a standard format, paste that info in the variable field. If not using a Sub, Delete the second part.</li>
 </ul>
-
-<h4 id="executing-the-script"><strong><em>Executing the Script</em></strong></h4>
-
+<h4 id="executing-the-script"><em><strong>Executing the Script</strong></em></h4>
 <ul>
 <li>Navigate to the directory using PowerShell and run .\AddUCSCert.ps1</li>
 <li>If you look inside UCSM you will see the script create the TrustPoint and KeyRing for the new certificate</li>
 </ul>
-
-<p><img src="/images/ucsmcert1.png" alt="" /></p>
-
+<p><img src="/images/ucsmcert1.png" alt=""></p>
 <ul>
 <li>If you navigate to the KeyRing you will see the completed certificate Request.</li>
 </ul>
-
-<p><img src="/images/ucsmcert2.png" alt="" /></p>
-
+<p><img src="/images/ucsmcert2.png" alt=""></p>
 <ul>
 <li>You will also see a popup, asking you for the completed certificate information. From here you will either submit it to your microsoft ca at htt://ca/certsrv and request an advanced web server certificate based on the CSR info in the keyring, or submit this to your 3rd party certificate provider.</li>
 </ul>
-
-<p><img src="/images/ucsmcert3.png" alt="" /></p>
-
+<p><img src="/images/ucsmcert3.png" alt=""></p>
 <ul>
 <li>Once you paste the completed certificate in the script will finish executing, and will input the certificate information and set UCSM to use the new certificate. (You will be disconnected and have to reconnect.)</li>
 <li>You can verify the certificate information by logging back in and selecting the Certificate Details button on the keyring.</li>
 </ul>
-
-<p><img src="/images/ucsmcert4.png" alt="" /></p>
-
-<h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-certificate-replacement-on-cisco-ucs"><strong><em>Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.</em></strong></h4>
+<p><img src="/images/ucsmcert4.png" alt=""></p>
+<h4 id="hope-this-helps-anyone-else-out-wanted-to-automate-certificate-replacement-on-cisco-ucs"><em><strong>Hope this helps anyone else out wanted to automate certificate replacement on Cisco UCS.</strong></em></h4>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f12%2f10%2fusing-ucs-powertool-to-configure-ucs-certificates%2f" target="_blank" rel="noopener" aria-label="">

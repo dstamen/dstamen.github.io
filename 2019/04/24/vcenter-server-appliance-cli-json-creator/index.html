@@ -39,10 +39,9 @@
   
 
   <meta property="og:title" content="vCenter Server Appliance CLI - JSON Creator" />
-<meta property="og:description" content="I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&rsquo;s dive in and take a look." />
+<meta property="og:description" content="I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&#39;s dive in and take a look." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/04/24/vcenter-server-appliance-cli-json-creator/" />
-
 <meta property="og:image" content="/featured/claritydesign.png" />
 <meta property="article:published_time" content="2019-04-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-04-24T00:00:00+00:00" />
@@ -51,7 +50,7 @@
 <meta name="twitter:image" content="/featured/claritydesign.png"/>
 
 <meta name="twitter:title" content="vCenter Server Appliance CLI - JSON Creator"/>
-<meta name="twitter:description" content="I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&rsquo;s dive in and take a look."/>
+<meta name="twitter:description" content="I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&#39;s dive in and take a look."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -194,15 +193,12 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let&rsquo;s dive in and take a look.</p>
-
+      <p>I am proud to announce that my first VMware Clarity Project the VCSA JSON Creator is now live! This has been something I have wanted to do for some time, and am glad to finally have the first version available for feedback. Let's dive in and take a look.</p>
 <p>I first want to start off that I would not have been able to do this without the awesome <a href="https://www.thehumblelab.com/getting-started-with-clarityui/" target="_blank">Cody De Arkland</a> explaining how to get started with Clarity UI.</p>
-
 <p>When I discuss with customers about using the vCenter Server Appliance CLI Tools that have been included since vSphere 6.5, they tend to not have used it before. When I have asked why, I normally hear that the JSON is too complex to figure out.</p>
-
-<p>With this being said I am proud to share my first ClarityUI Project the <a href="http://davidstamen.com/vcsa-json-creator">VCSA JSON Creator 9000</a></p>
-
-<p><html>
+<p>With this being said I am proud to share my first ClarityUI Project the 
+<a href="http://davidstamen.com/vcsa-json-creator" target="_blank">VCSA JSON Creator 9000</a></p>
+<html>
         <div class="alert alert-app-level alert-warning" role="alert">
                 <div class="alert-items">
                     <div class="alert-item static">
@@ -215,14 +211,10 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
                     </div>
                 </div>
             </div>
-</html></p>
-
+</html>
 <h1 id="why">Why?</h1>
-
 <p>I have built the VCSA JSON Creator to be used as a resource to understand how the JSON templates should be created. I currently have two wizards created and I hope to create more based on feedback.</p>
-
 <p><strong>Current</strong></p>
-
 <pre><code>* Installation of an Embedded VCSA 6.7
 * Upgrade of an Embedded VCSA 6.5 to 6.7
 * Migration of an Embedded Windows vCenter Server 6.5 to 6.7 - Added 4/25/19
@@ -231,16 +223,11 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
 * Add Download of JSON Template - Added 5/7/19
 * Upgrade of External PSC Appliance and External vCenter Server Appliance - Added 5/8/19
 </code></pre>
-
 <p><strong>Planned</strong></p>
-
 <pre><code>* Migration of External PSC and External vCenter Server
 </code></pre>
-
 <h1 id="how-does-it-work">How does it work?</h1>
-
 <p>If you take a look at the tool it should look very similar to the vSphere Client. This is because its using the awesome Clarity Design Interface. When you navigate to the homescreen you will see the wizards that are currently available. At this time we can choose create a JSON for an Installation of an Embedded 6.7 VCSA or an Upgrade of a VCSA from 6.5 to 6.7.</p>
-
 
 
 
@@ -281,9 +268,8 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
-<p>For this example we have chosen to do an Install of an Embedded VCSA 6.7. When the wizard is launched you will be prompted for all of the standard information requested as part of the manual creation of the JSON. If you have any questions on how fields should be populated or the format, you can access the link to the <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-3683BA76-B08A-4DDB-9CCF-66660F6AD1CF.html">documentation</a> or select the (i) signpost to view more information about the fields. Once the first section is filled out we can proceed.</p>
-
+<p>For this example we have chosen to do an Install of an Embedded VCSA 6.7. When the wizard is launched you will be prompted for all of the standard information requested as part of the manual creation of the JSON. If you have any questions on how fields should be populated or the format, you can access the link to the 
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-3683BA76-B08A-4DDB-9CCF-66660F6AD1CF.html" target="_blank">documentation</a> or select the (i) signpost to view more information about the fields. Once the first section is filled out we can proceed.</p>
 
 
 
@@ -324,9 +310,7 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
-<p>Once we have filled out the first section with the Appliance Deployment Information we can input information for configuration. To simplify this screen a few fields have built-in dropdown&rsquo;s for the requested items. Proceed to fill in all available fields and then proceed to click next.</p>
-
+<p>Once we have filled out the first section with the Appliance Deployment Information we can input information for configuration. To simplify this screen a few fields have built-in dropdown's for the requested items. Proceed to fill in all available fields and then proceed to click next.</p>
 
 
 
@@ -367,13 +351,10 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>Once all our fields have been filled out, your JSON will now be created. You can review how the fields have been entered and then <strong>Copy</strong> the file to your favorite text editor and save it as a <strong>Filename.json</strong>.</p>
-
 <blockquote>
 <p>A download button should hopefully be added in the next update.</p>
 </blockquote>
-
 
 
 
@@ -414,17 +395,16 @@ April 24, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h1 id="conclusion">Conclusion</h1>
-
-<p>Using the CLI based tools doesn&rsquo;t have to be overwhelming, hopefully this tool can help you understand the process to create the JSON and maybe even save you some time. Look at the additional resources for some references on how to use the VCSA CLI Installer once you have your JSON created. Have any feedback? Leave a comment below!</p>
-
+<p>Using the CLI based tools doesn't have to be overwhelming, hopefully this tool can help you understand the process to create the JSON and maybe even save you some time. Look at the additional resources for some references on how to use the VCSA CLI Installer once you have your JSON created. Have any feedback? Leave a comment below!</p>
 <h2 id="additional-resources">Additional Resources</h2>
-
 <ul>
-<li><a href="https://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></li>
-<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/vcenter-lifecycle-install-upgrade-and-migrate-3/upgrading-vcenter-server-6-5-to-vcenter-server-6-7-using-vcsa-cli-1/">Product Walkthrough: Upgrading vCenter Server 6.5 to vCenter Server 6.7 using VCSA CLI</a></li>
-<li><a href="http://davidstamen.com/vcsa-json-creator">VCSA JSON Creator 9000</a></li>
+<li>
+<a href="https://davidstamen.com/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/" target="_blank">Upgrading Platform Services Controller and vCenter Server via the CLI Installer</a></li>
+<li>
+<a href="https://vspherecentral.vmware.com/t/vcenter-server/vcenter-lifecycle-install-upgrade-and-migrate-3/upgrading-vcenter-server-6-5-to-vcenter-server-6-7-using-vcsa-cli-1/" target="_blank">Product Walkthrough: Upgrading vCenter Server 6.5 to vCenter Server 6.7 using VCSA CLI</a></li>
+<li>
+<a href="http://davidstamen.com/vcsa-json-creator" target="_blank">VCSA JSON Creator 9000</a></li>
 </ul>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2019%2f04%2f24%2fvcenter-server-appliance-cli-json-creator%2f" target="_blank" rel="noopener" aria-label="">

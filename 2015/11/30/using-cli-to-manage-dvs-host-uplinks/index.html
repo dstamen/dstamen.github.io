@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using CLI to Manage DVS Host Uplinks" />
 <meta property="og:description" content="Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/11/30/using-cli-to-manage-dvs-host-uplinks/" />
@@ -44,7 +44,7 @@ After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I fina
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using CLI to Manage DVS Host Uplinks"/>
 <meta name="twitter:description" content="Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -189,31 +189,20 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.</p>
-
-<p><strong><em>As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.</em></strong></p>
-
+<p><em><strong>As a heads up. If you are doing this on ESXi 6.0.. don't. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.</strong></em></p>
 <p>After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</p>
-
 <p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
-
 <pre><code>DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
 dvSwitch         256         3           256               1500    vmnic0,vmnic1
 
   DVPort ID           In Use      Client
   0                   1           vmnic0
   1                   1           vmnic1
-</code></pre>
-
-<p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-
+</code></pre><p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 <pre><code>esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch
-</code></pre>
-
-<p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-
+</code></pre><p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
 <pre><code>esxcfg-vswitch -P vmnic1 -V 1 dvSwitch
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f11%2f30%2fusing-cli-to-manage-dvs-host-uplinks%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

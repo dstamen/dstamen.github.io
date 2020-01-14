@@ -185,67 +185,50 @@ May 23, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>On May 22nd we released the first update to our vCenter Server 6.7 version, 6.7a. I will let you know how you can patch your 6.7 GA vCenter Server to 6.7a.</p>
-
 <h4><span style="color:red">There is still no supported upgrade path from 6.5U2 to 6.7.</span></h4>
-
-<p>The first thing we will do is review the <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-670a-release-notes.html">vCenter Server 6.7a Release notes.</a></p>
-
+<p>The first thing we will do is review the 
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-670a-release-notes.html" target="_blank">vCenter Server 6.7a Release notes.</a></p>
 <p>The update process is quite simple, we can either use the VMware Appliance Management Interface (VAMI) or the CLI.</p>
-
 <p>If we choose to use the VAMI, we can either choose to download the update from the online repository, or download the patch and mount it directly to the vCenter Server.</p>
-
-<p>You can download the patch from the <a href="https://my.vmware.com/group/vmware/patch">VMware Patch Portal</a></p>
-
+<p>You can download the patch from the 
+<a href="https://my.vmware.com/group/vmware/patch" target="_blank">VMware Patch Portal</a></p>
 <h3>CLI Update</h3>
-
 <ol>
 <li>Attach the <em>VMware-vCenter-Server-Appliance-6.7.0.11000-8546234-patch-FP.iso​</em> file to vCenter Server Appliance CD or DVD drive.</li>
-<li>SSH to the appliance as root and run the the commands given below:
-
+<li>SSH to the appliance as root and run the the commands given below:</li>
+</ol>
 <ul>
 <li>To stage the ISO: <strong>software-packages stage &ndash;iso</strong></li>
 <li>To see the staged content: <strong>software-packages list &ndash;staged</strong></li>
 <li>To install the staged rpms: <strong>software-packages install &ndash;staged</strong></li>
-</ul></li>
-</ol>
-
+</ul>
 <h3>VAMI Update</h3>
-
-<p><img src="/images/67update1.png" alt="" /></p>
-
+<p><img src="/images/67update1.png" alt=""></p>
 <h6>From ISO</h6>
-
 <ol>
 <li>Attach the <em>VMware-vCenter-Server-Appliance-6.7.0.11000-8546234-patch-FP.iso​</em> file to vCenter Server Appliance CD or DVD drive.</li>
-<li>Login to VAMI <em><a href="https://fqdn-of-vcenter:5480">https://fqdn-of-vcenter:5480</a></em></li>
+<li>Login to VAMI <em>https://fqdn-of-vcenter:5480</em></li>
 <li>Click on Update, and then in top right corner select Check Updates -&gt; Check CD Rom</li>
 <li>Select Update, and select Stage and Install.</li>
 </ol>
-
 <h6>From URL</h6>
-
 <ol>
-<li>Login to VAMI <em><a href="https://fqdn-of-vcenter:5480">https://fqdn-of-vcenter:5480</a></em></li>
+<li>Login to VAMI <em>https://fqdn-of-vcenter:5480</em></li>
 <li>Click on Update, and then in top right corner select Check Updates -&gt; Check CD-Rom + URL</li>
 <li>Select Update, and select Stage and Install.</li>
 </ol>
-
 <h4><span style="color:red">If you check for updates and it does not detect anything from the online repository please perform the below tasks</span></h4>
-
-<p><strong><a href="https://kb.vmware.com/kb/55683">KB55683</a> has been created with the workaround information.</strong></p>
-
+<p><strong>
+<a href="https://kb.vmware.com/kb/55683" target="_blank">KB55683</a> has been created with the workaround information.</strong></p>
 <ol>
-<li>Login to VAMI <em><a href="https://fqdn-of-vcenter:5480">https://fqdn-of-vcenter:5480</a></em></li>
+<li>Login to VAMI <em>https://fqdn-of-vcenter:5480</em></li>
 <li>Click on Update, and then in top right corner select Settings.</li>
 <li>In Custom URL copy and paste the following URL. <em><a href="https://vapp-updates.vmware.com/vai-catalog/valm/vmw/8d167796-34d5-4899-be0a-6daade4005a3/6.7.0.10000.latest/">https://vapp-updates.vmware.com/vai-catalog/valm/vmw/8d167796-34d5-4899-be0a-6daade4005a3/6.7.0.10000.latest/</a></em></li>
 <li>When you check for updates from URL, it should now properly list the patches.</li>
 </ol>
-
 <p>We are currently investigating the above issue and will update with any official KB or documentation when available.</p>
-
-<p><h3>Conclusion</h3>
-The update process has been simplified greatly, especially when multiple patches are released we can now pick and choose which one we would like to apply. Also now with the ability to stage patches, if the vCenter has a slow internet connection we can now stage the patches prior to update to reduce downtime. Also no longer does every patch require a reboot, s please make note in the patch notes if a reboot will be required. Also, when running the Pre-Update Checks you will be provided an estimated downtime for your appliance during the update.</p>
-
+<h3>Conclusion</h3>
+The update process has been simplified greatly, especially when multiple patches are released we can now pick and choose which one we would like to apply. Also now with the ability to stage patches, if the vCenter has a slow internet connection we can now stage the patches prior to update to reduce downtime. Also no longer does every patch require a reboot, s please make note in the patch notes if a reboot will be required. Also, when running the Pre-Update Checks you will be provided an estimated downtime for your appliance during the update.
 <p>Now its time to do one last read of the product documentation and release notes and go upgrade!</p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2018%2f05%2f23%2fpatching-your-vcenter-server-appliance-from-6.7-to-6.7a%2f" target="_blank" rel="noopener" aria-label="">

@@ -18,7 +18,7 @@
       
       <guid>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid>
       <description>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&amp;rsquo;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;#39;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.</description>
     </item>
     
@@ -39,7 +39,7 @@ This process is very straight forward. We will begin with updating our Platform 
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</guid>
-      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&amp;rsquo;s. The problem is when I went to redeploy it I got the following error.
+      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
  Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.</description>
     </item>

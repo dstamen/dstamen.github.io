@@ -35,7 +35,7 @@
   <meta property="og:title" content="Deploying and Hosting Jekyll on Ravello Systems" />
 <meta property="og:description" content="Did you know you could get host your own blog on Ravello Systems?
 Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
-Please use my previous blog on how to get it deployed.
+Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
 Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/" />
@@ -46,7 +46,7 @@ Disclaimer: This is in no way supported or recommended by Ravello Systems, runni
 <meta name="twitter:title" content="Deploying and Hosting Jekyll on Ravello Systems"/>
 <meta name="twitter:description" content="Did you know you could get host your own blog on Ravello Systems?
 Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
-Please use my previous blog on how to get it deployed.
+Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
 Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -180,7 +180,7 @@ if (!doNotTrack) {
         Published on 
 September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
         &middot; Tagged <a class="" href="/tags/jekyll">Jekyll</a> and <a class="" href="/tags/ravello">Ravello</a>
-        &middot; Read in about 3 min (570 words)
+        &middot; Read in about 3 min (573 words)
       </div>
   </span>
   
@@ -190,113 +190,96 @@ September 8, 2015 under <a class="" href="/categories/blog">Blog</a>
 <hr>
 
       
-      
-
-<p>Did you know you could get host your own blog on <a href="http://ravellosystems.com/">Ravello Systems</a>?</p>
-
+      <p>Did you know you could get host your own blog on 
+<a href="http://ravellosystems.com/" target="_blank">Ravello Systems</a>?</p>
 <p>Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.</p>
-
-<p>Please use my previous <a href="{% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}">blog</a> on how to get it deployed.</p>
-
-<h4 id="disclaimer-this-is-in-no-way-supported-or-recommended-by-ravello-systems-running-this-24x7-even-with-1cpu-will-consume-most-of-your-free-trial-vexpert-hours-so-please-use-this-at-your-own-risk"><strong>Disclaimer</strong>: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours. So please use this at your own risk.</h4>
-
+<p>Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.</p>
+<h4 id="disclaimer-this-is-in-no-way-supported-or-recommended-by-ravello-systems-running-this-24x7-even-with-1cpu-will-consume-most-of-your-free-trialvexpert-hours-so-please-use-this-at-your-own-risk"><strong>Disclaimer</strong>: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours. So please use this at your own risk.</h4>
 <p>Lets get started!</p>
-
 <ul>
-<li>Logon to your existing Ravello account. If you do not have one you can sign up for the <a href="https://www.ravellosystems.com/free-trial-description">free trial</a></li>
+<li>Logon to your existing Ravello account. If you do not have one you can sign up for the 
+<a href="https://www.ravellosystems.com/free-trial-description" target="_blank">free trial</a></li>
 <li>Create your Application</li>
 </ul>
-
-<p><img src="/images/createapplication.png" alt="" /></p>
-
+<p><img src="/images/createapplication.png" alt=""></p>
 <ul>
 <li>Once your application is created you will be dropped to the Canvas. Here we can use a pre-existing blueprint(template) as our base. I used <strong>Ubuntu Server 14.04.1 20150301</strong>.</li>
 <li>Click and drag it to your Canvas.</li>
 </ul>
-
-<p><img src="/images/blueprintcanvas.png" alt="" /></p>
-
+<p><img src="/images/blueprintcanvas.png" alt=""></p>
 <ul>
 <li>By Default, the blueprint is a 1CPU, 2GB RAM, 32GB HDD which should be plenty to run your blog. You can customize your virtual machine on the following fields. Make sure to hit save!
-
 <ul>
 <li>Summary: Overall Details of your VM</li>
 <li>General: Name your VM here, add a description and hostname. You will also create and choose your keypair to use to logon to the linux server</li>
 <li>System: Allocate your CPU and RAM here</li>
 <li>Disks: Modify disk size or allocate additional space</li>
 <li>Network: Set IP to be DHCP or Static within your application.
-
 <ul>
 <li><strong>Pro Tip: Use an Elastic IP so your server always has the same external IP</strong></li>
-</ul></li>
+</ul>
+</li>
 <li>Services: Set what ports you want available externally, by default 22 for ssh is there, you will want to add http(port80) for your website to become available.</li>
-</ul></li>
+</ul>
+</li>
 <li>You will now see your updated VM and tabs for the enabled services. Now you are ready to Publish it.</li>
 </ul>
-
-<p><img src="/images/canvasvm.png" alt="" /></p>
-
+<p><img src="/images/canvasvm.png" alt=""></p>
 <ul>
 <li>Here you will chose whether you want to publish your VM for cost or performance and if you want to use Amazon or Google clouds.
-
 <ul>
 <li>I have chosen to use Amazon Performance based out of Virginia. You can see the details and breakdown on cost.</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/publishvm.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/publishvm.png" alt=""></p>
 <ul>
 <li>Your VM will now be published and started.
-
 <ul>
 <li>Once it is started you will see the status and the information to access it.</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/startedvm.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/startedvm.png" alt=""></p>
 <ul>
 <li>You can ssh to yoserver-jekyll-eagwapmr.srv.ravcloud.com linux VM with the following syntax.
-
 <ul>
-<li>ssh ubuntu@server-jekyll-eagwapmr.srv.ravcloud.com -i keyfilename.pem</li>
-</ul></li>
+<li>ssh <a href="mailto:ubuntu@server-jekyll-eagwapmr.srv.ravcloud.com">ubuntu@server-jekyll-eagwapmr.srv.ravcloud.com</a> -i keyfilename.pem</li>
+</ul>
+</li>
 <li>Now you are logged on you can install and configure NGINX to host your website.
-
 <ul>
 <li>Update the repository: <strong>sudo apt-get update</strong></li>
 <li>Install NGINX: <strong>sudo apt-get install nginx</strong></li>
-</ul></li>
+</ul>
+</li>
 <li>Access your blog <a href="http://server-jekyll-eagwapmr.srv.ravcloud.com/">http://server-jekyll-eagwapmr.srv.ravcloud.com/</a>
-
 <ul>
 <li>If you setup your services appropriately you will now see the Welcome to nginx! site. What?! It is that easy? Yep!</li>
-</ul></li>
 </ul>
-
-<p><img src="/images/welcometonginx.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/images/welcometonginx.png" alt=""></p>
 <ul>
 <li>We will go one step further to reconfigure to host our own blog.
-
 <ul>
 <li>Create directory to host your site: <strong>sudo mkdir /var/www/mydomain.com</strong></li>
 <li>Make website folder available publically: <strong>sudo chmod 775 /var/www/mydomain.com</strong></li>
 <li>Upload your website content here. For Jekyll upload the built _sites folder.</li>
-</ul></li>
+</ul>
+</li>
 <li>Now lets configure nginx to host your new website!
-
 <ul>
 <li>Copy default configuration file as a template: sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/mydomain.com</li>
 <li>Use VIM to update file: <strong>VIM /etc/nginx/sites-available/mydomain.com</strong></li>
 <li>We only need to edit a few lines here:
-
 <ul>
 <li>Change host directory from: root /usr/share/nginx/html; to root /var/www/mydomain.com</li>
-<li>Change server_name to be your websites URL: server_name localhost; to server_name www.mydomain.com mydomain.com;</li>
-</ul></li>
-</ul></li>
+<li>Change server_name to be your websites URL: server_name localhost; to server_name <a href="http://www.mydomain.com">www.mydomain.com</a> mydomain.com;</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Create link to publish site: <strong>sudo ln -s /etc/nginx/sites-available/mydomain.com /etc/nginx/sites-enabled/</strong></li>
 <li>Reload nginx config: sudo service nginx restart</li>
 <li>Your new site is now available! Enjoy being your own hosting provider.</li>

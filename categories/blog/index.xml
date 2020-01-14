@@ -39,7 +39,7 @@ All links should be functional and moved nicely, if they dont work, please leave
       <guid>/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</guid>
       <description>Did you know you could get host your own blog on Ravello Systems?
 Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
-Please use my previous blog on how to get it deployed.
+Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
 Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.</description>
     </item>
     
@@ -50,7 +50,7 @@ Disclaimer: This is in no way supported or recommended by Ravello Systems, runni
       
       <guid>/2015/09/08/how-to-deploy-a-jekyll-blog/</guid>
       <description>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running!  Easy Enough? Now how do you create a blog post?</description>
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description>
     </item>
     
     <item>

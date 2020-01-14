@@ -39,7 +39,8 @@ Objective 10.1: Configure Advanced vSphere Virtual Machine Settings  Determine h
       
       <guid>/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</guid>
       <description>Section 1 of the VCP6-DCV blueprint
-Objective 1.1: Configure and Administer Role-based Access Control  Compare and contrast propagated and explicit permission assignments  An example of a propagated permission: Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</description>
+Objective 1.1: Configure and Administer Role-based Access Control   Compare and contrast propagated and explicit permission assignments
+ An example of a propagated permission:  Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.</description>
     </item>
     
     <item>
@@ -49,7 +50,8 @@ Objective 1.1: Configure and Administer Role-based Access Control  Compare and c
       
       <guid>/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</guid>
       <description>Section 2 of the VCP6-DCV blueprint
-Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation  Create/Delete a vSphere Distributed Switch  In the vSphere Web Client, navigate to a data center. In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch. In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next. In Select version, select a distributed switch version and click Next.</description>
+Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation   Create/Delete a vSphere Distributed Switch
+ In the vSphere Web Client, navigate to a data center. In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch. In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next. In Select version, select a distributed switch version and click Next.</description>
     </item>
     
     <item>
@@ -79,7 +81,7 @@ Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades  Configure downloa
       
       <guid>/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</guid>
       <description>Section 5 of the VCP6-DCV blueprint
-Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply Determine the effect of the Expandable Reservation parameter on resource allocation Create a resource pool hierarchical structure Configure custom resource pool attributes Determine how resource pools apply to vApps Describe vFlash architecture Create/Remove a Resource Pool Add/Remove virtual machines from a Resource Pool Create/Delete vFlash Resource Pool Assign vFlash resources to VMDKs Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools  Check out another blueprint section   Section 1: Configure and Administer vSphere 6.</description>
     </item>
     
     <item>
@@ -89,7 +91,7 @@ Objective 5.1: Configure Advanced/Multilevel Resource Pools  Understand/Apply De
       
       <guid>/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</guid>
       <description>Section 6 of the VCP6-DCV blueprint
-Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section  Section 1: Configure and Administer vSphere 6.</description>
+Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution  Compare and contrast vSphere Replication compression methods Differentiate VMware Data Protection capabilities Configure recovery point objective (RPO) for a protected virtual machine Explain VMware Data Protection sizing guidelines Create/Delete/Consolidate virtual machine snapshots Install and Configure VMware Data Protection Create a backup job with VMware Data Protection Backup/Restore a virtual machine with VMware Data Protection Install/Configure/Upgrade vSphere Replication Configure VMware Certificate Authority (VMCA) integration with vSphere Replication Configure vSphere Replication for Single/Multiple VMs Recover a VM using vSphere Replication Perform a failback operation using vSphere Replication Deploy a pair of vSphere Replication virtual appliances  Check out another blueprint section   Section 1: Configure and Administer vSphere 6.</description>
     </item>
     
     <item>
@@ -99,7 +101,7 @@ Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication So
       
       <guid>/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</guid>
       <description>Section 7 of the VCP6-DCV blueprint
-Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency   Objective 7.</description>
+Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines  Monitor status of the vCenter Server service Perform basic maintenance of a vCenter Server database Monitor status of ESXi management agents Determine ESXi Host stability issues and gather diagnostics information Monitor ESXi system health Locate and analyze vCenter Server and ESXi logs Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task Troubleshoot common issues, including:  vCenter Server service SSO vCenter Server connectivity Virtual machine resource contention, configuration and operation Platform Services Controller (PSC) Problems with installation VMware Tools installation Fault Tolerant network latency    Objective 7.</description>
     </item>
     
     <item>
@@ -130,7 +132,7 @@ Objective 9.1: Configure Advanced vSphere HA Features  Modify vSphere HA advance
       <guid>/2015/10/14/vcp6-dcv-study-guide/</guid>
       <description>About to start to study for the VCP6 once again. So I figured I would start over with the guide as much of the blueprint has changed.
 As I progress through the sections this page will be updated with new content.
- Section 1: Configure and Administer vSphere 6.x Security Section 2: Configure and Administer Advanced vSphere 6.x Networking Section 3: Configure and Administer Advanced vSphere 6.x Storage Section 4: Upgrade a vSphere Deployment to 6.</description>
+  Section 1: Configure and Administer vSphere 6.x Security  Section 2: Configure and Administer Advanced vSphere 6.x Networking  Section 3: Configure and Administer Advanced vSphere 6.x Storage  Section 4: Upgrade a vSphere Deployment to 6.</description>
     </item>
     
   </channel>

@@ -152,7 +152,7 @@ June 10, 2015 under <a class="" href="/categories/vmware">VMware</a>
   
     So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.
 I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.
- Install/Update Agents on virtual desktops to 6.1.1 (The HTML Access 3.
+Install/Update Agents on virtual desktops to 6.1.1 (The HTML Access 3.
   
 
 
@@ -225,7 +225,7 @@ April 2, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    So as always things change across multiple Window’s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn’t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
+    So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
   
 
 
@@ -263,7 +263,7 @@ February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
   
     I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to “Never Notify” SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f  Note: You can also avoid this by doing the uninstall as the builtin local administrator account
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account
   
 
 
@@ -299,8 +299,8 @@ February 6, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn’t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn’t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.
+    I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs.
   
 
 
@@ -374,7 +374,7 @@ January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName  Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
   
 
 
@@ -487,7 +487,7 @@ June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()}  Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)}  Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
   
 
 

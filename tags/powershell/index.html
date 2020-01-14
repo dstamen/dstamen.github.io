@@ -150,8 +150,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API’s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API’s a bit easier, but you still need to be familiar with a separate tool or UI.
+    Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI.
   
 
 
@@ -188,7 +188,7 @@ August 9, 2016 under <a class="" href="/categories/microsoft">Microsoft</a>
                     
   
     I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.
-Pre-Requsites  NTFS Security Module  Link to Script  Create-SMBShare.ps1  Preparing to Execute the Script Fill in the appropriate variables, and execute the script.
+Pre-Requsites   NTFS Security Module  Link to Script   Create-SMBShare.
   
 
 
@@ -261,7 +261,7 @@ March 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
   
 
 
@@ -298,7 +298,7 @@ March 1, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.
   
 
 
@@ -335,7 +335,7 @@ February 4, 2016 under <a class="" href="/categories/automation">Automation</a>
                     
   
     In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.
-Pre-Requsites  ansible ansible-winrm  Link to Git Project  ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
+Pre-Requsites   ansible  ansible-winrm  Link to Git Project   ansible_powershell  Preparing to Execute the Script This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.
 Define your group variables.
   
 
@@ -373,7 +373,7 @@ January 15, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -410,7 +410,7 @@ January 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.
-Pre-Requsites  UCS Powertool  Link to Script  Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -446,8 +446,8 @@ January 11, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
                     
   
-    It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
-Pre-Requsites  UCS Powertool  Link to Script  UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+    It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -484,7 +484,7 @@ December 11, 2015 under <a class="" href="/categories/cisco">Cisco</a>
                     
   
     Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSPolicyBackupandExport.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 

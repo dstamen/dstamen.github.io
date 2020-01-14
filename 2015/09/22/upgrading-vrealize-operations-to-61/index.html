@@ -33,8 +33,8 @@
   <meta property="og:title" content="Upgrading vRealize Operations to 6.1" />
 <meta property="og:description" content="vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.
 To upgrade from vRealize Operations Manager to the most recent version, follow these steps.
-Download the PAK file(s) needed based on the type of cluster.
- vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files. For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx." />
+ Download the PAK file(s) needed based on the type of cluster.
+ vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.  For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/09/22/upgrading-vrealize-operations-to-61/" />
 <meta property="article:published_time" content="2015-09-22T00:00:00+00:00" />
@@ -44,8 +44,8 @@ Download the PAK file(s) needed based on the type of cluster.
 <meta name="twitter:title" content="Upgrading vRealize Operations to 6.1"/>
 <meta name="twitter:description" content="vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.
 To upgrade from vRealize Operations Manager to the most recent version, follow these steps.
-Download the PAK file(s) needed based on the type of cluster.
- vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files. For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx."/>
+ Download the PAK file(s) needed based on the type of cluster.
+ vApp clusters  The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.  For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -189,74 +189,75 @@ September 22, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.</p>
-
 <p>To upgrade from vRealize Operations Manager to the most recent version, follow these steps.</p>
-
-<p><a href="https://my.vmware.com/group/vmware/details?productId=538&amp;downloadGroup=VROPS-610">Download</a> the PAK file(s) needed based on the type of cluster.</p>
-
+<p>
+<a href="https://my.vmware.com/group/vmware/details?productId=538&amp;downloadGroup=VROPS-610" target="_blank">Download</a> the PAK file(s) needed based on the type of cluster.</p>
 <ul>
 <li>vApp clusters
-
 <ul>
-<li>The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.</li>
+<li>The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.
+<ul>
 <li>For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.pak</li>
 <li>For the product upgrade of vApp clusters, the file is: vRealize_Operations_Manager-VA-xxx.pak</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>vApp heterogeneous clusters
-
 <ul>
-<li>The vApp heterogeneous cluster requires the deployment of the OS upgrade and the product upgrade .pak files.</li>
+<li>The vApp heterogeneous cluster requires the deployment of the OS upgrade and the product upgrade .pak files.
+<ul>
 <li>For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.pak</li>
 <li>For the product upgrade of a heterogeneous cluster that has VA nodes with Windows Remote Collectors, the file is: vRealize_Operations_Manager-VA-WIN-xxx.pak</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>RHEL standalone clusters
-
 <ul>
 <li>The RHEL standalone cluster requires the deployment of only the product upgrade .pak file.</li>
 <li>For the product upgrade of RHEL clusters, the file is: vRealize_Operations_Manager-RHEL-xxx.pak</li>
-</ul></li>
+</ul>
+</li>
 <li>RHEL heterogeneous clusters
-
 <ul>
 <li>The RHEL heterogeneous cluster requires the deployment of only the product upgrade .pak file.</li>
 <li>For the product upgrade of a heterogeneous cluster that has RHEL nodes with Windows Remote Collectors, the file is: vRealize_Operations_Manager-RHEL-WIN-xxx.pak</li>
-</ul></li>
+</ul>
+</li>
 <li>Windows clusters
-
 <ul>
 <li>The Windows cluster requires the deployment of only the product upgrade .pak file.</li>
 <li>For the product upgrade of Windows clusters, the file is: vRealize_Operations_Manager-WIN-xxx.pak</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>The rest of the upgrade process is pretty straightforward.</p>
-
 <ul>
-<li>On your existing vRealize Operations Manager cluster, log in to the administrator interface. <a href="https://FQDN/admin">https://FQDN/admin</a></li>
+<li>On your existing vRealize Operations Manager cluster, log in to the administrator interface. https://FQDN/admin</li>
 <li>On the left, click <strong>Software Update</strong>.</li>
 <li>Click <strong>Install a Software Update.</strong></li>
 <li>Perform the OS upgrade.
-
 <ul>
 <li>Select the .PAK file as listed above.</li>
 <li>Once uploaded, you will get the details that it is ready to install. Click Next
-<img src="/images/vrops61upgrade1.png" alt="" /></li>
+<img src="/images/vrops61upgrade1.png" alt=""></li>
 <li>Accept the EULA</li>
 <li>You may get disconnected. Log back on and view the Software Update tab and you can see when the update is complete.
-<img src="/images/vrops61upgrade2.png" alt="" /></li>
-</ul></li>
+<img src="/images/vrops61upgrade2.png" alt=""></li>
+</ul>
+</li>
 <li>Install the cluster upgrade file.
-
 <ul>
 <li>Select the .PAK file as listed above.</li>
 <li>Once uploaded, you will get the details that it is ready to install. Click Next
-<img src="/images/vrops61upgrade3.png" alt="" /></li>
+<img src="/images/vrops61upgrade3.png" alt=""></li>
 <li>Accept the EULA</li>
 <li>You may get disconnected. Log back on and view the Software Update tab and you can see when the update is complete.</li>
-</ul></li>
 </ul>
-
-<p><strong><em>vRealize Operations is now upgraded! Now proceed to update any adapters.</em></strong></p>
+</li>
+</ul>
+<p><em><strong>vRealize Operations is now upgraded! Now proceed to update any adapters.</strong></em></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f09%2f22%2fupgrading-vrealize-operations-to-61%2f" target="_blank" rel="noopener" aria-label="">

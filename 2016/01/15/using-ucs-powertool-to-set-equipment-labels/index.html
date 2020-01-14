@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using UCS PowerTool To Set Equipment Labels" />
 <meta property="og:description" content="For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/01/15/using-ucs-powertool-to-set-equipment-labels/" />
 <meta property="article:published_time" content="2016-01-15T00:00:00+00:00" />
@@ -43,7 +43,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Prepari
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using UCS PowerTool To Set Equipment Labels"/>
 <meta name="twitter:description" content="For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UCSEquipmentLabel.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,28 +186,20 @@ January 15, 2016 under <a class="" href="/categories/cisco">Cisco</a>
 <hr>
 
       
-      
-
-<p>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+<li>
+<a href="https://communities.cisco.com/docs/DOC-53838" target="_blank">UCS Powertool</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1">Set-UCSEquipmentLabel.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1" target="_blank">Set-UCSEquipmentLabel.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <p><em>This script is currently setup to be applied to Rack Units. To have this work for blades, change the Get-UCSRackUnit and Set-UCSRackunit to be Get-UCSBlade and Set-UCSBlade.</em></p>
-
 <pre><code>#Define Variables
 $cred = Get-Credential
 $domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
@@ -221,10 +213,7 @@ Foreach ($ucs in $domains) {
   }
   Disconnect-UCS
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-UCSEquipmentLabel.ps1</li>
 </ul>

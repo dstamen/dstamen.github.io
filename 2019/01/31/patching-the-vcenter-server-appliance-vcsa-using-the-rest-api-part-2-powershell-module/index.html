@@ -37,11 +37,10 @@
   
 
   <meta property="og:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)" />
-<meta property="og:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI." />
+<meta property="og:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/" />
-
 <meta property="og:image" content="/featured/powercli.png" />
 <meta property="article:published_time" content="2019-01-31T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-01-31T00:00:00+00:00" />
@@ -50,8 +49,8 @@ Introduction Using tools such as Postman can make it utilizing API&rsquo;s a bit
 <meta name="twitter:image" content="/featured/powercli.png"/>
 
 <meta name="twitter:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)"/>
-<meta name="twitter:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI."/>
+<meta name="twitter:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -194,28 +193,21 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>Previously I covered how to use the <a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">VCSA Installer to do a scripted upgrade</a> and then I covered <a href="https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a> However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?</p>
-
+      <p>Previously I covered how to use the 
+<a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">VCSA Installer to do a scripted upgrade</a> and then I covered 
+<a href="https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" target="_blank">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a> However, after learning recently how to call API's from Powershell I thought to myself, why not write a Powershell Module for this?</p>
 <h1 id="introduction">Introduction</h1>
-
-<p>Using tools such as <a href="https://www.getpostman.com/">Postman</a> can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI. I was able to develop my own version and build my first Powershell Module that you can use to patch the VCSA in a simple method. Some of the function names below may not be 100% exact and this is due to the accepted verbs for Powershell. If you have further recommendations I would be happy to entertain changing the Powershell verbage.</p>
-
+<p>Using tools such as 
+<a href="https://www.getpostman.com/" target="_blank">Postman</a> can make it utilizing API's a bit easier, but you still need to be familiar with a separate tool or UI. I was able to develop my own version and build my first Powershell Module that you can use to patch the VCSA in a simple method. Some of the function names below may not be 100% exact and this is due to the accepted verbs for Powershell. If you have further recommendations I would be happy to entertain changing the Powershell verbage.</p>
 <h1 id="use-cases">Use Cases</h1>
-
 <p>Why would you want to use a Powershell module such as this? Well this tool can support multiple vCenter Servers. So here are a few ideas.</p>
-
 <ul>
 <li>Modify a Custom URL Repository Across all vCenter Servers in your Environment</li>
 <li>Stage Patches across all vCenter Servers in your Environment.</li>
 <li>Patch Multiple Servers Simultaneously</li>
 </ul>
-
 <h1 id="exploring-the-powershell-module-functions">Exploring the Powershell Module Functions</h1>
-
 <p>As of current, the Powershell module currently has 12 Functions.</p>
-
 <ul>
 <li>Copy-VCSAUpdate</li>
 <li>Get-VCSAUpdate</li>
@@ -231,18 +223,12 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <li>Start-VCSAUpdateValidate</li>
 <li>Stop-VCSAUpdate</li>
 </ul>
-
 <h3 id="copy-vcsaupdate">Copy-VCSAUpdate</h3>
-
 <p>Copy-VCSAUpdate is the command you will use when you want to manually stage the update.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Copy-VCSAUpdate -Version &quot;6.7.0.20100&quot;
 </code></pre>
-
-
 
 
   
@@ -282,13 +268,9 @@ Copy-VCSAUpdate -Version &quot;6.7.0.20100&quot;
   
 
 
-
 <h3 id="get-vcsaupdate">Get-VCSAUpdate</h3>
-
 <p>Get-VCSAUpdate is the command you will use when you want to wish to check for new updates. There is an optional Parameter for Source, &ldquo;Local&rdquo; or &ldquo;Online&rdquo;, if no parameter is chosen it will default to Online.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdate
 
@@ -298,8 +280,6 @@ Get-VCSAUpdate -Source &quot;Online&quot;
 Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdate -Source &quot;Local&quot;
 </code></pre>
-
-
 
 
   
@@ -339,18 +319,12 @@ Get-VCSAUpdate -Source &quot;Local&quot;
   
 
 
-
 <h3 id="get-vcsaupdatedetail">Get-VCSAUpdateDetail</h3>
-
 <p>Get-VCSAUpdateDetail is the command you will use when you want to wish to get more details about a specific update. There is a mandatory parameter for Version.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdateDetail -Version &quot;6.7.0.20100&quot;
 </code></pre>
-
-
 
 
   
@@ -390,18 +364,12 @@ Get-VCSAUpdateDetail -Version &quot;6.7.0.20100&quot;
   
 
 
-
 <h3 id="get-vcsaupdatepolicy">Get-VCSAUpdatePolicy</h3>
-
 <p>Get-VCSAUpdatePolicy is the command you will use when you want to wish to get information about the current appliance update settings.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdatePolicy
 </code></pre>
-
-
 
 
   
@@ -441,13 +409,9 @@ Get-VCSAUpdatePolicy
   
 
 
-
 <h3 id="set-vcsaupdatepolicy">Set-VCSAUpdatePolicy</h3>
-
 <p>Set-VCSAUpdatePolicy is the command you will use when you want to wish to set information for the current appliance update settings.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Set-VCSAUpdatePolicy -AutoStage $True
 
@@ -469,8 +433,6 @@ Set-VCSAUpdatePolicy -CheckSchedule WeeklyThursday
 Set-VCSAUpdatePolicy -CheckSchedule WeeklyFriday
 Set-VCSAUpdatePolicy -CheckSchedule WeeklySaturday
 </code></pre>
-
-
 
 
   
@@ -510,18 +472,12 @@ Set-VCSAUpdatePolicy -CheckSchedule WeeklySaturday
   
 
 
-
 <h3 id="get-vcsaupdatestaged">Get-VCSAUpdateStaged</h3>
-
 <p>Get-VCSAUpdateStaged is the command you will use when you want to wish to get information about the current staged update.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdateStaged
 </code></pre>
-
-
 
 
   
@@ -561,18 +517,12 @@ Get-VCSAUpdateStaged
   
 
 
-
 <h3 id="get-vcsaupdatestatus">Get-VCSAUpdateStatus</h3>
-
 <p>Get-VCSAUpdateStaged is the command you will use when you want to wish to get information about the current update status. This command can be used to get status of staged update, install update or any other update status.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Get-VCSAUpdateStatus
 </code></pre>
-
-
 
 
   
@@ -612,18 +562,12 @@ Get-VCSAUpdateStatus
   
 
 
-
 <h3 id="remove-vcsaupdate">Remove-VCSAUpdate</h3>
-
 <p>Remove-VCSAUpdate is the command you will use when you wish to remove a staged update.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Remove-VCSAUpdate
 </code></pre>
-
-
 
 
   
@@ -663,18 +607,12 @@ Remove-VCSAUpdate
   
 
 
-
 <h3 id="start-vcsaupdateinstall">Start-VCSAUpdateInstall</h3>
-
 <p>Start-VCSAUpdateInstall is the command you will use when you wish to install a currently staged update. If no update is staged you must use <code>Start-VCSAUpdateStageandInstall</code></p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Start-VCSAUpdateInstall -Version &quot;6.7.0.20100&quot; -SSODomainPass &quot;VMware1!&quot;
 </code></pre>
-
-
 
 
   
@@ -714,18 +652,12 @@ Start-VCSAUpdateInstall -Version &quot;6.7.0.20100&quot; -SSODomainPass &quot;VM
   
 
 
-
 <h3 id="start-vcsaupdateprecheck">Start-VCSAUpdatePrecheck</h3>
-
 <p>Start-VCSAUpdatePrecheck is the command you will use when you wish to run the built-in update Precheck.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Start-VCSAUpdatePrecheck -Version &quot;6.7.0.20100&quot;
 </code></pre>
-
-
 
 
   
@@ -765,18 +697,12 @@ Start-VCSAUpdatePrecheck -Version &quot;6.7.0.20100&quot;
   
 
 
-
 <h3 id="start-vcsaupdatestageandinstall">Start-VCSAUpdateStageandInstall</h3>
-
 <p>Start-VCSAUpdateInstall is the command you will use when you wish to install and stage an update.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Start-VCSAUpdateStageandInstall -Version &quot;6.7.0.20100&quot; -SSODomainPass &quot;VMware1!&quot;
 </code></pre>
-
-
 
 
   
@@ -816,18 +742,12 @@ Start-VCSAUpdateStageandInstall -Version &quot;6.7.0.20100&quot; -SSODomainPass 
   
 
 
-
 <h3 id="start-vcsaupdatevalidate">Start-VCSAUpdateValidate</h3>
-
 <p>Start-VCSAUpdateValidate is the command you will use when you wish validate the current update.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Start-VCSAUpdateValidate -Version &quot;6.7.0.20100&quot; -SSODomainPass &quot;VMware1!&quot;
 </code></pre>
-
-
 
 
   
@@ -867,18 +787,12 @@ Start-VCSAUpdateValidate -Version &quot;6.7.0.20100&quot; -SSODomainPass &quot;V
   
 
 
-
 <h3 id="stop-vcsaupdate">Stop-VCSAUpdate</h3>
-
 <p>Stop-VCSAUpdate is the command you will use when you want to cancel an update task such as staging an update or other task that has a status of cancelable.</p>
-
 <p><strong>Example:</strong></p>
-
 <pre><code>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
 Stop-VCSAUpdate
 </code></pre>
-
-
 
 
   
@@ -918,55 +832,51 @@ Stop-VCSAUpdate
   
 
 
-
 <h1 id="putting-the-powershell-module-to-use">Putting the Powershell Module to Use</h1>
-
 <h6 id="this-examples-assumes-your-vcsa-has-internet-access-and-we-will-update-via-the-online-repo">This Examples assumes your VCSA has Internet Access and we will update via the Online Repo.</h6>
-
-<p>You can access the Powershell Module <a href="https://github.com/dstamen/Powershell/blob/master/VCSA-VAMI-Patch.psm1">here on GitHub</a>.</p>
-
+<p>You can access the Powershell Module 
+<a href="https://github.com/dstamen/Powershell/blob/master/VCSA-VAMI-Patch.psm1" target="_blank">here on GitHub</a>.</p>
 <blockquote>
 <p><strong>Important Note:</strong> The code samples included in this module are
 not supported by VMware. The code included is only provided as
 sample code for the purpose of demonstrating different tasks using
 the PowerCLI and the REST API.</p>
 </blockquote>
-
 <ol>
 <li>Import the module
-
 <ul>
 <li><code>Import-Module .\VCSA-VAMI-Patch.psm1</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Check for Updates
-
 <ul>
 <li><code>Get-VCSAUpdate</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Stage Update and Check Status
-
 <ul>
 <li><code>Copy-VCSAUpdate -Version &quot;6.7.0.20100&quot;</code> and <code>Get-VCSAUpdateStatus</code> until status shows <code>UPDATE_PENDING</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Run Update Precheck and Validate
-
 <ul>
 <li><code>Start-VCSAUpdatePrecheck -Version 6.7.0.20100</code> and <code>Start-VCSAUpdateValidate -Version 6.7.0.20100 -SSODomainPass VMware1!</code></li>
 <li>If no errors, proceed with Install</li>
-</ul></li>
+</ul>
+</li>
 <li>Run Update Install
-
 <ul>
 <li><code>Start-VCSAUpdateInstall -Version 6.7.0.20100 -SSODomainPass VMware1!</code> and <code>Get-VCSAUpdateStatus</code> until you see status as <code>UPDATE_COMPLETE</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Validate Update Version in VCSA UI or in vSphere Client</li>
 </ol>
-
 <h1 id="conclusion">Conclusion</h1>
-
-<p>I hope <a href="https://github.com/dstamen/Powershell/blob/master/VCSA-VAMI-Patch.psm1">this module</a> can be useful for you to get started with updating your VCSA in a more Automated fashion. Big thanks to <a href="https://twitter.com/stvkpln">Steve Kaplan</a> for taking time to review the module and provide feedback and input!</p>
-
-<p>If you have any questions feel free to reach out here or on twitter <a href="https://twitter.com/davidstamen">@davidstamen</a></p>
+<p>I hope 
+<a href="https://github.com/dstamen/Powershell/blob/master/VCSA-VAMI-Patch.psm1" target="_blank">this module</a> can be useful for you to get started with updating your VCSA in a more Automated fashion. Big thanks to 
+<a href="https://twitter.com/stvkpln" target="_blank">Steve Kaplan</a> for taking time to review the module and provide feedback and input!</p>
+<p>If you have any questions feel free to reach out here or on twitter 
+<a href="https://twitter.com/davidstamen" target="_blank">@davidstamen</a></p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2019%2f01%2f31%2fpatching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module%2f" target="_blank" rel="noopener" aria-label="">

@@ -33,8 +33,8 @@
   
 
   <meta property="og:title" content="Create VMFS Datastore Using PowerCLI" />
-<meta property="og:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
-How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?" />
+<meta property="og:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2014/05/22/create-vmfs-datastore-using-powercli/" />
 <meta property="article:published_time" content="2014-05-22T00:00:00+00:00" />
@@ -42,8 +42,8 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create VMFS Datastore Using PowerCLI"/>
-<meta name="twitter:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
-How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?"/>
+<meta name="twitter:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,26 +186,15 @@ May 22, 2014 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me!
-You can use the below PowerCLI commands to get the SCSI ID&rsquo;s,  Create the Datastore and then Rescan all hosts in the cluster.</p>
-
+      <p>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me!
+You can use the below PowerCLI commands to get the SCSI ID's,  Create the Datastore and then Rescan all hosts in the cluster.</p>
 <h2 id="how-do-i-get-the-canonicalname-for-allocated-disks">How do i get the CanonicalName for allocated disks?</h2>
-
 <pre><code>Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity
-</code></pre>
-
-<h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?</h2>
-
+</code></pre><h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?</h2>
 <pre><code>New-Datastore -VMHost Host -Name Datastore -Path CanonicalName -VMFS
-</code></pre>
-
-<h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastore-br">How do i rescan all the hosts in the cluster to see the new datastore?<br /></h2>
-
+</code></pre><h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastorebr-">How do i rescan all the hosts in the cluster to see the new datastore?<br /></h2>
 <pre><code>Get-Cluster -name Cluster | Get-VMhost | Get-VMHostStorage -RescanAllHBA
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2014%2f05%2f22%2fcreate-vmfs-datastore-using-powercli%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

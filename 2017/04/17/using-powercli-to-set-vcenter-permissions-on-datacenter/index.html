@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using PowerCLI to Set vCenter Permissions on Datacenter" />
 <meta property="og:description" content="I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role." />
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/" />
 <meta property="article:published_time" content="2017-04-17T00:00:00+00:00" />
@@ -43,7 +43,7 @@ Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permi
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using PowerCLI to Set vCenter Permissions on Datacenter"/>
 <meta name="twitter:description" content="I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
-Pre-Requsites  VMware PowerCLI  Link to Script  Set-vCenterPermissions.ps1 permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role."/>
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -186,29 +186,22 @@ April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/Set-vCenterPermissions.ps1">Set-vCenterPermissions.ps1</a></li>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/permissions.csv">permissions.csv</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/Set-vCenterPermissions.ps1" target="_blank">Set-vCenterPermissions.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/permissions.csv" target="_blank">permissions.csv</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</p>
-
 <p><em>This script assumes you have already launched PowerCLI and modified the csv</em></p>
-
 <pre><code># PowerCLI Script for setting vCenter Permissions base don AD Group and Datacenter
 # @davidstamen
 # http://davidstamen.com
@@ -247,10 +240,7 @@ foreach ($item in $permission) {
   Write-host &quot;Setting $group permissions to $role on $vCenter&quot; -ForegroundColor Green
   $Permission=New-VIPermission -Entity (Get-Datacenter $datacenter) -Principal (Get-VIAccount -Domain $domain -Group|Where-Object {$_.Name -like &quot;*$group*&quot;}) -Role (Get-VIRole $role) -Propagate:$true|Out-Null
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-vCenterPermissions.ps1 .\permissions.csv</li>
 </ul>

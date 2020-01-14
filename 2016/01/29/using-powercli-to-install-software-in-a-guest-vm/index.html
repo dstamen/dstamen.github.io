@@ -32,7 +32,7 @@
 
   <meta property="og:title" content="Using PowerCLI to Install Software in a Guest VM" />
 <meta property="og:description" content="I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware." />
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/" />
 <meta property="article:published_time" content="2016-01-29T00:00:00+00:00" />
@@ -41,7 +41,7 @@ Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware." />
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using PowerCLI to Install Software in a Guest VM"/>
 <meta name="twitter:description" content="I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware."/>
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -184,28 +184,20 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/PowerCLI/blob/master/InstallVMSoftware.ps1">InstallVMSoftware.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/PowerCLI/blob/master/InstallVMSoftware.ps1" target="_blank">InstallVMSoftware.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <p><em>This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer</em></p>
-
 <pre><code>#Define Variables
 Write-Host &quot;Prompt For Guest Credentials&quot; -ForegroundColor Yellow
 $Cred = Get-Credential
@@ -250,10 +242,7 @@ Foreach ($VMName in $VMs) {
   }
 }
 
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\InstallVMSoftware.ps1</li>
 </ul>

@@ -17,7 +17,7 @@
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
       <guid>/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</guid>
-      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&#39;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&#39;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&#39;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</guid>
-      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&amp;rsquo;s. The problem is when I went to redeploy it I got the following error.
+      <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
  Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.</description>
     </item>

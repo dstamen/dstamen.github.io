@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Configuring Multiple UCS VLAN&#39;s" />
 <meta property="og:description" content="We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
-Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+Since currently Cisco UCS does not allow selecting multiple VLAN&#39;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
 # PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen." />
 <meta property="og:type" content="article" />
@@ -45,7 +45,7 @@ The script can be found here.
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Configuring Multiple UCS VLAN&#39;s"/>
 <meta name="twitter:description" content="We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
-Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
+Since currently Cisco UCS does not allow selecting multiple VLAN&#39;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
 # PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen."/>
 <meta name="twitter:site" content="@davidstamen"/>
@@ -191,11 +191,9 @@ November 23, 2015 under <a class="" href="/categories/cisco">Cisco</a>
 
       
       <p>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.</p>
-
-<p>Since currently Cisco UCS does not allow selecting multiple VLAN&rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.</p>
-
-<p>The script can be found <a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1">here.</a></p>
-
+<p>Since currently Cisco UCS does not allow selecting multiple VLAN's easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.</p>
+<p>The script can be found 
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1" target="_blank">here.</a></p>
 <pre><code># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
 # @davidstamen
 # http://davidstamen.com
@@ -217,9 +215,7 @@ for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |
 #Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
 for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &quot;$i&quot;}
 Disconnect-UCS
-</code></pre>
-
-<p>You now are done! In my case I had to add 500 VLAN&rsquo;s, so this script saved me quite a bit of time.</p>
+</code></pre><p>You now are done! In my case I had to add 500 VLAN's, so this script saved me quite a bit of time.</p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f11%2f23%2fconfiguring-multiple-ucs-vlans%2f" target="_blank" rel="noopener" aria-label="">

@@ -184,24 +184,16 @@ July 27, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://www.vmware.com/support/developer/PowerCLI/">VMware PowerCLI</a></li>
+<li>
+<a href="https://www.vmware.com/support/developer/PowerCLI/" target="_blank">VMware PowerCLI</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, you can either export the license keys from an old vRealize Operations Server (6.6+) or create a CSV with column (LicenseKey) to be imported.</p>
-
 <p>If you are choosing to export keys from an existing server, it has to be on a version that currently has API support. (I used v6.6)</p>
-
 <p>You can run the following script to export all keys to a csv file.</p>
-
 <pre><code>$Cred = Get-Credential
 $vrom = &quot;vromold.lab.local&quot;
 
@@ -210,10 +202,7 @@ Connect-OMServer -Server $vrom -Credential $Cred
 $omServer = $global:DefaultOMServers[0].ExtensionData
 $omLicense = $OmServer.GetLicenseKeysForProduct()
 $omLicense.Solutionlicense|Export-Csv C:\temp\omkeys2.csv -NoTypeInformation
-</code></pre>
-
-<p>If you exported the keys above, you should be immediately ready to import the keys to your new vRealize Operations Server, if not you can manually create the csv as listed above.</p>
-
+</code></pre><p>If you exported the keys above, you should be immediately ready to import the keys to your new vRealize Operations Server, if not you can manually create the csv as listed above.</p>
 <pre><code>$Cred = Get-Credential
 $vrom = &quot;vromnew.lab.local&quot;
 
@@ -227,14 +216,9 @@ foreach ($key in $keys) {
     $solutionLicenses.Solutionlicense = $solutionLicense
     $omserver.AddLicenseKeyToProduct($solutionLicenses)
 }
-</code></pre>
-
-<p>The documentation was pretty spotty on this as it stated you only needed to pass the key to AddLicenseKeyToProduct(), but after multiple tests I realized that was not true. I eventually found out i have to create SolutionLicense objects and link them till i got the proper format. This was quite fun as i learned alot about PowerShell and API documentation in this process.</p>
-
-<p>You can find API documentation for vRealize Operations at <a href="https://fqdn/suite-api/docs/rest/index.html">https://fqdn/suite-api/docs/rest/index.html</a></p>
-
-<p><img src="/images/vrom1.png" alt="" /></p>
-
+</code></pre><p>The documentation was pretty spotty on this as it stated you only needed to pass the key to AddLicenseKeyToProduct(), but after multiple tests I realized that was not true. I eventually found out i have to create SolutionLicense objects and link them till i got the proper format. This was quite fun as i learned alot about PowerShell and API documentation in this process.</p>
+<p>You can find API documentation for vRealize Operations at https://fqdn/suite-api/docs/rest/index.html</p>
+<p><img src="/images/vrom1.png" alt=""></p>
 <p>Hope this helps you out, leave any feedback or questions below.</p>
 
       <h6>Share this post</h6>

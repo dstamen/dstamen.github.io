@@ -26,7 +26,7 @@
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
       <guid>/2018/10/05/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer/</guid>
-      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&amp;rsquo;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&amp;rsquo;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&amp;rsquo;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&#39;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless&amp;ndash;especially when having to perform the task if you have multiple PSC&#39;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&#39;s and benefits of using the CLI based approach.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,8 +68,8 @@ There is a log file located in /var/log/vmware/vcha</description>
       <description>So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
 When you are adding in your VMware licenses, you now have an option to Import License Keys Data&amp;hellip;
 To start you need to generate a report from my.vmware.com.
- Log in and Navigate to Download Reports
- Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description>
+  Log in and Navigate to Download Reports
+  Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description>
     </item>
     
   </channel>

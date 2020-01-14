@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Functional Branding of vSphere Web Client Logon Page" />
 <meta property="og:description" content="I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&rsquo;s - How to Customize Webclient Login UI
+As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/" />
@@ -44,7 +44,7 @@ I figured since I am using the embedded SSO, I could update the login page to sh
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functional Branding of vSphere Web Client Logon Page"/>
 <meta name="twitter:description" content="I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&rsquo;s - How to Customize Webclient Login UI
+As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -189,44 +189,36 @@ January 19, 2017 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.</p>
-
-<p>As people have noted before <a href="http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html">William Lam&rsquo;s - How to Customize Webclient Login UI</a></p>
-
+<p>As people have noted before 
+<a href="http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html" target="_blank">William Lam&#39;s - How to Customize Webclient Login UI</a></p>
 <p>I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node. In my case I updated the text to show which node you are connected to. You can see this without even logging in!</p>
-
-<p><img src="/images/webclientbranding.png" alt="" /></p>
-
+<p><img src="/images/webclientbranding.png" alt=""></p>
 <p>How can I do this you ask? Easy! You just need to update one file, two if you would like to update your logo&hellip;</p>
-
 <ul>
 <li>Logon to your PSC or VC with Embedded PSC via SSH or FTP.</li>
 <li>Make sure to backup the files before making any changes!</li>
 <li>Update the following file <strong>/usr/lib/vmware-sso/vmware-sts/webapps/websso/WEB-INF/views/unpentry.jsp</strong>
-
 <ul>
 <li>If you look at lines 126-131, you can see a few lines of code you will need to update.</li>
 <li>Line 127 - You can input your text here, my example was to post if i was connected to Primary or Secondary.</li>
 <li>Line 130 - I commented out to hide the &ldquo;VMware vCenter Single Sign-on&rdquo; logo.</li>
-</ul></li>
+</ul>
+</li>
 <li>To update your logo, you can overwrite the following file <strong>/usr/lib/vmware-sso/vmware-sts/webapps/websso/resources/img/vmwareLogoBigger.png</strong>
-
 <ul>
 <li>You may need to adjust your logo size for the right look</li>
-</ul></li>
+</ul>
+</li>
 <li>Save and Upload your file and refresh your webclient UI and you will see your new branding!</li>
 </ul>
-
 <p>Here is a snippet of my code.</p>
-
 <pre><code>   &lt;div id=&quot;productName&quot;&gt;
   Welcome to my Homelab!&lt;/br&gt;&lt;h6&gt;Connected to Primary Appliance (vcsa6-01.lab.local)&lt;/h6&gt;&lt;/br&gt;
     &lt;script type=&quot;text/javascript&quot;&gt;
       if (isVCLogin()) {
         //document.write(&quot;&lt;img id=\&quot;VCSSO-Title\&quot; src=\&quot;../../resources/img/VCSSO-title.png\&quot; /&gt;&quot;);
       }
-</code></pre>
-
-<p>Please note this is #unsupported, but extremely useful! Hope you enjoy it. Leave a comment if you have any questions.</p>
+</code></pre><p>Please note this is #unsupported, but extremely useful! Hope you enjoy it. Leave a comment if you have any questions.</p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2017%2f01%2f19%2ffunctional-branding-of-vsphere-web-client-logon-page%2f" target="_blank" rel="noopener" aria-label="">

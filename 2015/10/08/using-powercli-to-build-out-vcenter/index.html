@@ -188,26 +188,19 @@ October 8, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>I wanted to share this handy script i created when you have a need to build out a new vCenter.</p>
-
+      <p>I wanted to share this handy script i created when you have a need to build out a new vCenter.</p>
 <p>This script can be extremely handy as it will take care of creating the datacenter, cluster, adding hosts, creating datastores and then applying the appropriate host profile. It is all done via CSV files so it is extremely customizable.</p>
-
 <h3 id="files-to-modify-to-customize-your-configuration">Files to modify to customize your configuration</h3>
-
 <ul>
-<li><strong><em>createdatacenter.csv</em></strong> - Contains the name of the datacenter to create.</li>
-<li><strong><em>createcluster.csv</em></strong> - Contains the name of the cluster to create and the datacenter to put it in.</li>
-<li><strong><em>createhosts.csv</em></strong> - Contains the Name of the host and which cluster to place them in.</li>
-<li><strong><em>createdatastores.csv</em></strong> - Contains the name of the datastore, naaid of the lun and the datastore cluster to put it in.</li>
-<li><strong><em>applyhostprofile.csv</em></strong> - Contains the name of the host and hostprofile to apply.</li>
+<li><em><strong>createdatacenter.csv</strong></em> - Contains the name of the datacenter to create.</li>
+<li><em><strong>createcluster.csv</strong></em> - Contains the name of the cluster to create and the datacenter to put it in.</li>
+<li><em><strong>createhosts.csv</strong></em> - Contains the Name of the host and which cluster to place them in.</li>
+<li><em><strong>createdatastores.csv</strong></em> - Contains the name of the datastore, naaid of the lun and the datastore cluster to put it in.</li>
+<li><em><strong>applyhostprofile.csv</strong></em> - Contains the name of the host and hostprofile to apply.</li>
 </ul>
-
 <p>The code and Github Link can be found below.</p>
-
-<p><a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter">ConfigvCenter.ps1</a></p>
-
+<p>
+<a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter" target="_blank">ConfigvCenter.ps1</a></p>
 <pre><code># Variables
 $vcenter = &quot;vc.lab.local&quot;
 $esxusername = &quot;root&quot;
@@ -264,7 +257,6 @@ foreach ($hostprofile in $csv) {
 
 Write-Host &quot;Complete!&quot; -ForegroundColor &quot;Green&quot;
 </code></pre>
-
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2015%2f10%2f08%2fusing-powercli-to-build-out-vcenter%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

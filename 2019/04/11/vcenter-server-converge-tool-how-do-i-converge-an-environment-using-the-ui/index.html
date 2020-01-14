@@ -35,10 +35,9 @@
   
 
   <meta property="og:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI" />
-<meta property="og:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI." />
+<meta property="og:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&#39;s dive in and take a look at whats new and see how to converge a deployment using the new UI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/" />
-
 <meta property="og:image" content="http://davidstamen.com/images/converge-ui-fi.png" />
 <meta property="article:published_time" content="2019-04-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-04-11T00:00:00+00:00" />
@@ -47,7 +46,7 @@
 <meta name="twitter:image" content="http://davidstamen.com/images/converge-ui-fi.png"/>
 
 <meta name="twitter:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI"/>
-<meta name="twitter:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI."/>
+<meta name="twitter:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&#39;s dive in and take a look at whats new and see how to converge a deployment using the new UI."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -190,14 +189,11 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
-
+      <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let's dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
 <p>Included in vSphere 6.7 Update 2 is an overhauled system configuration section. Within system configuration you have a table view showing you the Platform Services Controllers and vCenter Servers in your Environment.</p>
-
 <h2 id="vcenter-server-topology-view">vCenter Server Topology View</h2>
-
-<p>Alongside the new system configuration table view there is a new topology view. This view allows you to have a graphical representation of the nodes in your SSO domain. This is useful when someone might&rsquo;ve configured additional replication agreements between External Platform Services Controllers. Previously the only method to view replication agreements was using <a href="https://kb.vmware.com/s/article/2127057">vdcrepadmin</a> against each PSC in your environment to manually build out the topology diagram.</p>
-
+<p>Alongside the new system configuration table view there is a new topology view. This view allows you to have a graphical representation of the nodes in your SSO domain. This is useful when someone might've configured additional replication agreements between External Platform Services Controllers. Previously the only method to view replication agreements was using 
+<a href="https://kb.vmware.com/s/article/2127057" target="_blank">vdcrepadmin</a> against each PSC in your environment to manually build out the topology diagram.</p>
 
 
 
@@ -238,9 +234,8 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
-<p>When I am in the field we tend to inform users about how to properly setup additional replication agreements in an SSO domain when using 3 or more External PSCs or Embedded vCenter Servers. My recommendation is to create one additional replication agreement to be used as a ring topology. At some point I have heard of customers using a mesh topology, without mapping out all the replication agreements they may have never known they were in a non-recommended topology. Using the new topology view you can easily see if someone incorrectly setup additional replication agreements and then go back in and clean them up using <a href="https://kb.vmware.com/s/article/2127057">vdcrepadmin.</a></p>
-
+<p>When I am in the field we tend to inform users about how to properly setup additional replication agreements in an SSO domain when using 3 or more External PSCs or Embedded vCenter Servers. My recommendation is to create one additional replication agreement to be used as a ring topology. At some point I have heard of customers using a mesh topology, without mapping out all the replication agreements they may have never known they were in a non-recommended topology. Using the new topology view you can easily see if someone incorrectly setup additional replication agreements and then go back in and clean them up using 
+<a href="https://kb.vmware.com/s/article/2127057" target="_blank">vdcrepadmin.</a></p>
 
 
 
@@ -281,11 +276,8 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h2 id="vcenter-server-converge-tool-ui">vCenter Server Converge Tool UI</h2>
-
 <p>When reviewing the new table view you might have noticed two new buttons. You now have the ability ability to Converge and Decommission nodes through the vSphere Client. No longer are you required to utilize the CLI and JSON templates to run the converge tool! This is great for customers or partners who wish for a simplistic and foolproof method to migrate their vSphere Environment to an Embedded vCenter Server Deployment.</p>
-
 
 
 
@@ -326,9 +318,7 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>I will run through a convergence example of a vSphere Environment that has two External PSCs and two External vCenter Servers. I will be migrating these nodes to vCenter Servers with an Embedded PSC.</p>
-
 
 
 
@@ -369,9 +359,7 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>Once I have selected our vCenter Server Appliance that we wish to converge to embedded I will first be notified that the vCenter Services will be restarted and then the next step will proceed to the information gathering screen. If you have previously used the CLI based Converge Tool you might of remember being prompted for the managing vCenter Server credentials. This is no longer needed as the vCenter Server Converge Tool is already aware of this information.</p>
-
 
 
 
@@ -412,27 +400,24 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
-<p>On this screen I&rsquo;ll will be prompted certain pieces of information:</p>
-
+<p>On this screen I'll will be prompted certain pieces of information:</p>
 <ul>
 <li>External PSC SSO Username and Password
-
 <ul>
 <li>Needed to be able to install the required components to the vCenter Server and allow replication between the new embedded vCenter Server and the existing External PSC.</li>
-</ul></li>
+</ul>
+</li>
 <li>New Replication Partner
-
 <ul>
 <li>As seen below you can see that no embedded node is available. This is because this is the first node I have ran the converge utility against and it will reuse the existing replication agreement. When I proceed to converge any additional vCenter Servers I will see the already existing vCenter Servers with an Embedded PSC and will have the ability to choose a replication partner.</li>
-</ul></li>
+</ul>
+</li>
 <li>Skip AD Join or Join AD
-
 <ul>
 <li>If you wish to join your vCenter Server Appliance to Active Directory then select this option and you will prompted to enter in additional information.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 
 
 
@@ -473,17 +458,14 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <ul>
 <li>Acknowledge that you have made a backup of your vCenter Server Appliance before initiating convergence.
-
 <ul>
 <li>This is extremely important as you are making major changes to your vSphere Environment. Before proceeding with convergence not only should you back up the node you are currently converging, but you should be backing up ALL External PSC and vCenter Servers within your SSO domain. To perform a backup you should be using the built in file-based backup in the VAMI and NOT relying on snapshots.</li>
-</ul></li>
 </ul>
-
-<p>Once I have successfully converged both our vCenter Servers I can now proceed to decommission the two External PSC&rsquo;s. As we are already aware of the managing vCenter Server all we need to do is enter in the vCenter Server SSO credentials so that the external PSC can be shutdown and unregistered from the SSO domain.</p>
-
+</li>
+</ul>
+<p>Once I have successfully converged both our vCenter Servers I can now proceed to decommission the two External PSC's. As we are already aware of the managing vCenter Server all we need to do is enter in the vCenter Server SSO credentials so that the external PSC can be shutdown and unregistered from the SSO domain.</p>
 
 
 
@@ -524,9 +506,7 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <p>Now that the converge and decommission process is completed, I will go back and review the toplogy view to see that we now have migrated to our simplified deployment topology using Embedded PSCs.</p>
-
 
 
 
@@ -567,15 +547,18 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-
 <h2 id="additional-resources">Additional Resources</h2>
-
 <ul>
-<li><a href="https://blogs.vmware.com/vsphere/2019/02/understanding-the-vcenter-server-converge-tool.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: Understanding the vCenter Server Converge Tool</a></li>
-<li><a href="https://blogs.vmware.com/vsphere/2019/04/vcenter-server-converge-tool-enhancements-in-vsphere-6-7-update-2.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Blog: vCenter Server Converge Tool Enhancements in vSphere 6.7 Update 2</a></li>
-<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-a-load-balanced-external-vcenter-deployment-using-the-vsphere-client/">Product Walkthrough: Converging a Load Balanced External vCenter Deployment using the vSphere Client</a></li>
-<li><a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-an-external-vcenter-deployment-using-the-vsphere-client-1/">Product Walkthrough: Converging an External vCenter Deployment using the vSphere Client</a></li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0">Documentation: vCenter Server Converge Tool</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2019/02/understanding-the-vcenter-server-converge-tool.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: Understanding the vCenter Server Converge Tool</a></li>
+<li>
+<a href="https://blogs.vmware.com/vsphere/2019/04/vcenter-server-converge-tool-enhancements-in-vsphere-6-7-update-2.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Blog: vCenter Server Converge Tool Enhancements in vSphere 6.7 Update 2</a></li>
+<li>
+<a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-a-load-balanced-external-vcenter-deployment-using-the-vsphere-client/" target="_blank">Product Walkthrough: Converging a Load Balanced External vCenter Deployment using the vSphere Client</a></li>
+<li>
+<a href="https://vspherecentral.vmware.com/t/vcenter-server/configuration-and-day-2-operations/converging-an-external-vcenter-deployment-using-the-vsphere-client-1/" target="_blank">Product Walkthrough: Converging an External vCenter Deployment using the vSphere Client</a></li>
+<li>
+<a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-CE9B6683-D7B0-4717-AD7E-5E89CD069500.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Documentation: vCenter Server Converge Tool</a></li>
 </ul>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f2019%2f04%2f11%2fvcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui%2f" target="_blank" rel="noopener" aria-label="">

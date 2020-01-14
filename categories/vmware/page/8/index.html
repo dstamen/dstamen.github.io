@@ -151,7 +151,7 @@ June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
   
 
 
@@ -265,7 +265,7 @@ June 3, 2014 under <a class="" href="/categories/vmware">VMware</a>
   
     Here is Part 2 a continuation of Deploying vCloud Connector 2.6 and Configuring For vCHS (Part 1) (&lt;a href=&#34;http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/&#34;&gt;http://davidstamen.com/2014/06/03/deploying-vcloud-connector-2-6-and-configuring-for-vchs-part-1/&lt;/a&gt;) where we will configure vCloud connector to your Private(vCenter) and Public(vCHS) clouds.
 Lets start with getting the vCloud Connector Server ready. Just in case you forgot what IP you assigned we can open the appliance and view the management information.
-As we can see here the URL to configure the appliace is &lt;a href=&#34;https://192&#34;&gt;https://192&lt;/a&gt;.
+As we can see here the URL to configure the appliace is https://192.
   
 
 
@@ -301,8 +301,8 @@ May 22, 2014 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID’s, Create the Datastore and then Rescan all hosts in the cluster.
-How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity  How do I create a VMFS datastore for the CanonicalName I identified above?
+    For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?
   
 
 
@@ -339,7 +339,7 @@ May 21, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.
- Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key: provisioning.relocate.enableRename Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect
+Log into the vSphere Client as an Administrator Click Administration &gt; vCenter Server Settings Click Advanced Settings Add this advanced parameter key:   provisioning.relocate.enableRename  Set the value to: true Click Add Click OK Restart the VMware VirtualCenter Server service for the changes to take effect
   
 
 
@@ -376,7 +376,7 @@ May 8, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     If you are configuring a cluster with less than 2 datastores, you will receive an HA warning “The number of heartbeat datastores for host is 1, which is less than required: 2” You can add an option to the HA Advanced Options to supress this warning.
- Log in to vCenter Server Right-click the cluster and click Edit Settings Click vSphere HA &gt; Advanced Options Under Option, add an entry for das.
+Log in to vCenter Server Right-click the cluster and click Edit Settings Click vSphere HA &gt; Advanced Options Under Option, add an entry for das.
   
 
 
@@ -449,8 +449,8 @@ May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl  If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+    This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
 KB2051606
   
 
@@ -488,7 +488,7 @@ May 1, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
- Logon to vMA via a Console Session Run ‘sudo vi /etc/hosts.allow’ Scroll to the very bottom and type i to insert content into the file.
+Logon to vMA via a Console Session Run   ‘sudo vi /etc/hosts.allow’  Scroll to the very bottom and type i to insert content into the file.
   
 
 

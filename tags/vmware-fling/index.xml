@@ -18,9 +18,9 @@
       
       <guid>/2016/12/29/using-the-vmware-content-libray-assistant-fling/</guid>
       <description>So VMware Flings have been on a roll recently. They have released what they call &amp;ldquo;VMware Content Library Assistant.&amp;rdquo; This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
-You can find the fling at the following URL&amp;hellip;https://labs.vmware.com/flings/vsphere-content-library-assistant)
+You can find the fling at the following URL&amp;hellip; https://labs.vmware.com/flings/vsphere-content-library-assistant)
 Once you download the fling, you can just run the following command.
-java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password  In my case my java home isn&amp;rsquo;t setup on my mac so I had to run the following command to get it to work.</description>
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&#39;t setup on my mac so I had to run the following command to get it to work.</description>
     </item>
     
   </channel>

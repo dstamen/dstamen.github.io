@@ -151,9 +151,9 @@ December 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     So VMware Flings have been on a roll recently. They have released what they call “VMware Content Library Assistant.” This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
-You can find the fling at the following URL…&lt;a href=&#34;https://labs.vmware.com/flings/vsphere-content-library-assistant)&#34;&gt;https://labs.vmware.com/flings/vsphere-content-library-assistant)&lt;/a&gt;
+You can find the fling at the following URL… &lt;a href=&#34;https://labs.vmware.com/flings/vsphere-content-library-assistant&#34;&gt;https://labs.vmware.com/flings/vsphere-content-library-assistant&lt;/a&gt;)
 Once you download the fling, you can just run the following command.
-java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password  In my case my java home isn’t setup on my mac so I had to run the following command to get it to work.
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&#39;t setup on my mac so I had to run the following command to get it to work.
   
 
 
@@ -229,8 +229,8 @@ November 16, 2016 under <a class="" href="/categories/vmware">VMware</a>
     So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
 When you are adding in your VMware licenses, you now have an option to Import License Keys Data…
 To start you need to generate a report from my.vmware.com.
- Log in and Navigate to Download Reports
- Click on the Available Reports dropdown, and select the Product Licenses, Details and History.
+Log in and Navigate to Download Reports
+Click on the Available Reports dropdown, and select the Product Licenses, Details and History.
   
 
 
@@ -266,8 +266,8 @@ April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS’s.
-Pre-Requsites  VMware PowerCLI  Link to Script  Get-VMwareTrafficShapingSettings.ps1 Set-VMwareTrafficShapingSettings.
+    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings.
   
 
 
@@ -341,7 +341,7 @@ March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites  VMware PowerCLI  Link to Script  Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
 
@@ -378,7 +378,7 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites  VMware PowerCLI  Link to Script  InstallVMSoftware.
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
   
 
 
@@ -451,7 +451,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
   
 
@@ -490,7 +490,7 @@ January 12, 2016 under <a class="" href="/categories/vmware">VMware</a>
   
     Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
 This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
- SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install –url –acceptEulas to download and install the packages from the VMware Repo.
+SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install –url –acceptEulas to download and install the packages from the VMware Repo.
   
 
 

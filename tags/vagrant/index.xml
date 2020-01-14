@@ -31,7 +31,7 @@ The code can be found here.</description>
       <guid>/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid>
       <description>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.
 I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.
-Here is a link to the GitHub repository containing all the code.
+ Here is a link to the GitHub repository containing all the code.
 The code is also fairly simple, it pulls in data from a few .</description>
     </item>
     

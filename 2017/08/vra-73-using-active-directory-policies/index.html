@@ -186,26 +186,17 @@ August 22, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      
-
-<p>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.</p>
-
+      <p>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.</p>
 <p>My question today was how do I pre-create a computer AD account, join a device to the domain and then clean it up when the machine is destroyed.</p>
-
 <p>Turns out this is super simple in vRealize Automation 7.3!</p>
-
-<p>TIP: If you want to practice or follow along you can use  <em>HOL-1733-SDC-1</em> (vRealize Automation 7.2: What&rsquo;s New)</p>
-
+<p>TIP: If you want to practice or follow along you can use  <em>HOL-1733-SDC-1</em> (vRealize Automation 7.2: What's New)</p>
 <p>vRealize Automation 7.1 introduced the ability to place new machines in specific Organizational Units based on Business Group membership or a specific blueprint.  To accomplish this, the following steps must be completed in vRealize Automation.</p>
-
 <ol>
 <li>Create an Active Directory Endpoint</li>
 <li>Create an Active Directory Policy</li>
 <li>Assign the Policy to a Blueprint or Business Group.</li>
 </ol>
-
 <h5 id="create-an-active-directory-endpoint">Create an Active Directory Endpoint</h5>
-
 <ol>
 <li>Log in to vRA as a tenant administrator.</li>
 <li>Navigate to the Administration Tab and select vRO Configuration.</li>
@@ -219,13 +210,9 @@ August 22, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <li>Enter in a user that will have rights to create, delete and move computer objects.</li>
 <li>Enter the Password.</li>
 </ol>
-
-<p><img src="/images/vraendpointad.png" alt="endpoint" /></p>
-
+<p><img src="/images/vraendpointad.png" alt="endpoint"></p>
 <p>Now your Active Directory Endpoint should be created and we can proceed to the next step.</p>
-
 <h4 id="create-an-active-directory-policy">Create an Active Directory Policy</h4>
-
 <ol>
 <li>Log in to vRA as a tenant administrator.</li>
 <li>Navigate to the Administration Tab and select Active Directory Policies.</li>
@@ -234,28 +221,19 @@ August 22, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <li>Enter in your domain name</li>
 <li>Enter in the OU you wish the accounts to be created in.</li>
 </ol>
-
-<p><img src="/images/vraadpolicy.png" alt="" /></p>
-
+<p><img src="/images/vraadpolicy.png" alt=""></p>
 <p>Now your Active Directory Policy should be created and we can proceed to the next step.</p>
-
 <h4 id="assign-the-policy-to-a-business-group">Assign the Policy to a Business Group.</h4>
-
 <ol>
 <li>Log in to vRA as a tenant administrator.</li>
 <li>Navigate to the Administration Tab, select Users &amp; Groups and then Business Groups.</li>
 <li>Edit an existing or create a new business group.</li>
 <li>Update the Active Directory Policy to be the policy you created above.</li>
 </ol>
-
-<p><img src="/images/vrabgadpolicy.png" alt="" /></p>
-
+<p><img src="/images/vrabgadpolicy.png" alt=""></p>
 <p>Now your Active Directory Policy is assigned to the Business Group and we can proceed to the next step. Testing!</p>
-
 <p>Make sure you have a customization specification set on your blueprint that will join to the domain and kick it off, you should see the account get created and the machine deployed.</p>
-
 <p>Once you destroy the machine, the account will be deleted and voila lifecycle is complete.</p>
-
 <p>Hope this helps anyone, and if you have questions feel free to reach out on social media.</p>
 
       <h6>Share this post</h6>

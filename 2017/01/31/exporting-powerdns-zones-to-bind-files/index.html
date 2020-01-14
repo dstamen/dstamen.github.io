@@ -185,15 +185,11 @@ January 31, 2017 under <a class="" href="/categories/linux">Linux</a>
 
       
       <p>Can you easily export PowerDNS zones using a MySQL DB? The answer may not be as easy as it seems.</p>
-
 <p>I have been working on a Migration from PowerDNS using a MySQL DB. We have a custom solution which gets updated and gets pushed to Akamai. The problem is, this custom solution requires all the zones to be in bind format. Doing some research I found out there is no easy way to get these zones into a bind zone file. You could setup a secondary server and do zone transfers, but that wouldnt meet my requirements.</p>
-
-<p>Luckily I stumbled across this post by <a href="http://jameslinden.com/code/powerdns-to-bind-zone/">James Linden</a> in which he created a PHP script that scrapes the entire database and then generates a bind file for each zone with the records.</p>
-
+<p>Luckily I stumbled across this post by 
+<a href="http://jameslinden.com/code/powerdns-to-bind-zone/" target="_blank">James Linden</a> in which he created a PHP script that scrapes the entire database and then generates a bind file for each zone with the records.</p>
 <p>It is actually a pretty easy script to run, you need to fill in about 5 variables and then you are good to execute it. Here is a copy of the script in case it is no longer available. (It was created in 2013, but still works flawlessly!)</p>
-
 <p>All you need to do is update the 3 lines, to put in the MySQL DB IP, the username, password and database name. You will then enter in the nameservers and hostmaster to be used for the bind files.</p>
-
 <pre><code>#!/bin/env php
 &lt;?php
 
@@ -279,17 +275,10 @@ if( is_array( $zones ) &amp;&amp; count( $zones ) &gt; 0 ) {
 }
 
 ?&gt;
-</code></pre>
-
-<p>Once you have populated the script, you can run it by going to a commandline that has MySQL tools and PHP installed and run</p>
-
+</code></pre><p>Once you have populated the script, you can run it by going to a commandline that has MySQL tools and PHP installed and run</p>
 <pre><code>php scriptname.php
-</code></pre>
-
-<p>This will create a <em>/tmp</em> folder in the same directory with an export of all your zones.</p>
-
+</code></pre><p>This will create a <em>/tmp</em> folder in the same directory with an export of all your zones.</p>
 <p>Thats it! I just wanted to blog about this in case other people were looking for a way to accomplish this, its actually quite simple!</p>
-
 <p>Thanks for stopping by.</p>
 
       <h6>Share this post</h6>

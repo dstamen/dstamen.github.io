@@ -18,7 +18,7 @@
       
       <guid>/2016/03/14/using-purestorage-powershell-to-configure-syslog-servers/</guid>
       <description>Currently working on the final steps of getting our new equipment configured. The next step was to configure Syslog on all of our Pure Arrays. Another reason to script this task! Easily populate your arrays and server and at the click of a button you can configure all your arrays easily.
-Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
+Pre-Requsites   PureStorage Powershell SDK  Link to Script   Set-PureStorageSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Pre-Requsites  PureStorage Powershell SDK  Link to Script  Set-PureStorageSyslog
       
       <guid>/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</guid>
       <description>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSyslog.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSyslog.ps1  Preparing to Ex
       
       <guid>/2014/06/10/configuring-esxi-5-5-syslog-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()}  Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()}  Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;quot;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
     </item>
     
   </channel>

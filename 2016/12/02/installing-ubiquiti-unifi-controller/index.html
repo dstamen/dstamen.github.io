@@ -189,11 +189,8 @@ December 2, 2016 under <a class="" href="/categories/ubiquiti">Ubiquiti</a>
 
       
       <p>I have been using Ubiquiti equipment for awhile at home and I figured i would finally write a blog post about it. Ubiquiti equipment is &ldquo;enterprise class&rdquo; equipment for the consumer.</p>
-
 <p>I figured I would create a post that goes over two ways of loading the controller. The first option will be installing it on Ubuntu on bare metal or a VM, the second option is a docker container.</p>
-
 <p>If you are installing this on a bare metal or virtual machine, i suggest a debian based image. My preference is Ubuntu.</p>
-
 <pre><code>echo &quot;deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti&quot; &gt; \
   /etc/apt/sources.list.d/20ubiquiti.list &amp;&amp; \
   echo &quot;deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen&quot; &gt; \
@@ -207,14 +204,13 @@ apt-get -q update &amp;&amp; \
   rm -rf /var/lib/apt/lists/*
 
 service unifi start
-</code></pre>
-
-<p>Once that completes you can access the controller at <a href="https://iporfqdn:8443">https://iporfqdn:8443</a></p>
-
-<p>A second option is to use a docker container. I built an image through some testing that is hosted on dockerhub <a href="https://hub.docker.com/r/dstamen/unifi/">dstamen/unifi</a>. It works and there are plenty of images out there. It is based on the following <a href="https://github.com/dstamen/unifi/blob/master/Dockerfile">dockerfile</a>.</p>
-
-<p>A few other containers to review that are highly recommended are <a href="https://hub.docker.com/r/linuxserver/unifi/">linuxserver/unifi</a> and <a href="https://hub.docker.com/r/jacobalberty/unifi/">jacobalberty/unifi</a></p>
-
+</code></pre><p>Once that completes you can access the controller at https://iporfqdn:8443</p>
+<p>A second option is to use a docker container. I built an image through some testing that is hosted on dockerhub 
+<a href="https://hub.docker.com/r/dstamen/unifi/" target="_blank">dstamen/unifi</a>. It works and there are plenty of images out there. It is based on the following 
+<a href="https://github.com/dstamen/unifi/blob/master/Dockerfile" target="_blank">dockerfile</a>.</p>
+<p>A few other containers to review that are highly recommended are 
+<a href="https://hub.docker.com/r/linuxserver/unifi/" target="_blank">linuxserver/unifi</a> and 
+<a href="https://hub.docker.com/r/jacobalberty/unifi/" target="_blank">jacobalberty/unifi</a></p>
 <p>I hope this helps you on our way to getting your controller online.</p>
 
       <h6>Share this post</h6>

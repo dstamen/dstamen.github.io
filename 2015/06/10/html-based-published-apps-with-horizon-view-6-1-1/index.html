@@ -187,20 +187,23 @@ June 10, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.</p>
-
 <p>I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.</p>
-
 <ol>
 <li>Install/Update Agents on virtual desktops to 6.1.1 <strong>(The HTML Access 3.4 client will not work with previous agent versions)</li>
 <li>Install/Update Agents on RDS servers to 6.1.1</li>
 <li>Install the HTML Access 3.4 to all your connection servers within the appropriate enviroment if load balanced</li>
 <li>Now you can logon to your HTML Client and look for your published apps&hellip;.however you will see that they are missing&hellip;.looking into the actual guide for the html access there is an additional step.</li>
-<li><a href="https://www.vmware.com/pdf/horizon-view/horizon-html-access-3x-document.pdf">HTML Access Guide</a></li>
+</ol>
+<ul>
+<li>
+<a href="https://www.vmware.com/pdf/horizon-view/horizon-html-access-3x-document.pdf" target="_blank">HTML Access Guide</a></li>
+</ul>
+<ol start="5">
 <li>Log on to a connection server running 6.1.1 (If you are in a mixed enviroment this change cannot be made on a previous version.</li>
 <li>Navigate to Farms and then edit each RDS farm to enable HTML Access.
-<img src="/images/Screen-Shot-2015-06-10-at-10.53.53-AM.png#center" alt="" /></li>
+<img src="/images/Screen-Shot-2015-06-10-at-10.53.53-AM.png#center" alt=""></li>
 <li>Voila you now have access to all your applications via the HTML client with a fancy new interface!
-<img src="/images/Screen-Shot-2015-06-10-at-10.43.23-AM-1024x362.png#center" alt="" /></li>
+<img src="/images/Screen-Shot-2015-06-10-at-10.43.23-AM-1024x362.png#center" alt=""></li>
 </ol>
 
       <h6>Share this post</h6>

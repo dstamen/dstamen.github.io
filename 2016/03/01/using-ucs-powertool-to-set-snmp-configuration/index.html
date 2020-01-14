@@ -36,7 +36,7 @@
 
   <meta property="og:title" content="Using UCS PowerTool To Set SNMP Configuration" />
 <meta property="og:description" content="Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process." />
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/" />
 <meta property="article:published_time" content="2016-03-01T00:00:00+00:00" />
@@ -45,7 +45,7 @@ Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Prep
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using UCS PowerTool To Set SNMP Configuration"/>
 <meta name="twitter:description" content="Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.
-Pre-Requsites  UCS Powertool  Link to Script  Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process."/>
+Pre-Requsites   UCS Powertool  Link to Script   Set-UcsSnmpConfiguration.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -188,26 +188,19 @@ March 1, 2016 under <a class="" href="/categories/cisco">Cisco</a>
 <hr>
 
       
-      
-
-<p>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.</p>
-
-<h4 id="pre-requsites"><strong><em>Pre-Requsites</em></strong></h4>
-
+      <p>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.</p>
+<h4 id="pre-requsites"><em><strong>Pre-Requsites</strong></em></h4>
 <ul>
-<li><a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool</a></li>
+<li>
+<a href="https://communities.cisco.com/docs/DOC-53838" target="_blank">UCS Powertool</a></li>
 </ul>
-
-<h4 id="link-to-script"><strong><em>Link to Script</em></strong></h4>
-
+<h4 id="link-to-script"><em><strong>Link to Script</strong></em></h4>
 <ul>
-<li><a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1">Set-UcsSnmpConfiguration.ps1</a></li>
+<li>
+<a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1" target="_blank">Set-UcsSnmpConfiguration.ps1</a></li>
 </ul>
-
-<h4 id="preparing-to-execute-the-script"><strong><em>Preparing to Execute the Script</em></strong></h4>
-
+<h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-
 <pre><code>#Define Variables
 $cred = Get-Credential
 $domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
@@ -226,10 +219,7 @@ Foreach ($ucs in $domains) {
   }
   Disconnect-UCS
 }
-</code></pre>
-
-<h4 id="execute-the-script"><strong><em>Execute the Script</em></strong></h4>
-
+</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-UcsSnmpConfiguration.ps1</li>
 </ul>
