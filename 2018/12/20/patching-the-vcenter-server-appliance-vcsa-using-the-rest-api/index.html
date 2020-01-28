@@ -89,16 +89,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -193,17 +194,17 @@ December 20, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>I previously wrote about 
 <a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">Automating your vCenter Server Upgrade</a> and created a feature-walkthrough which covers 
 <a href="https://vspherecentral.vmware.com/t/vcenter-server/vcenter-lifecycle-install-upgrade-and-migrate-3/upgrading-vcenter-server-6-5-to-vcenter-server-6-7-using-vcsa-cli-1/" target="_blank">vCenter Server Upgrade using the VCSA CLI</a>.</p>
-<p>With vSphere 6.7 VMware introduced new REST API's. You can learn more about those using the 
-<a href="https://code.vmware.com/apis/366/vsphere-automation" target="_blank">VMware Code online documentation</a>. VMware initially introduced the update REST updates in vSphere 6.5 but they were under tech-preview and limited. With full support in vSphere 6.7 I wanted to cover the REST API's that are available to handle lifecycle of your VCSA.</p>
+<p>With vSphere 6.7 VMware introduced new REST API&rsquo;s. You can learn more about those using the 
+<a href="https://code.vmware.com/apis/366/vsphere-automation" target="_blank">VMware Code online documentation</a>. VMware initially introduced the update REST updates in vSphere 6.5 but they were under tech-preview and limited. With full support in vSphere 6.7 I wanted to cover the REST API&rsquo;s that are available to handle lifecycle of your VCSA.</p>
 <h1 id="introduction">Introduction</h1>
-<p>For those of you who may not be familiar with REST API's it might be intimidating to use them, however using tools such as 
+<p>For those of you who may not be familiar with REST API&rsquo;s it might be intimidating to use them, however using tools such as 
 <a href="https://www.getpostman.com/" target="_blank">Postman</a> can make it a bit easier. Postman is a GUI based tool that allows you to create API samples to use and share. When I first was learning about APIs I was completely lost, however when I saw the 
 <a href="https://github.com/vmware/vsphere-automation-sdk-rest" target="_blank">VMware Code Team had Postman samples</a> already created it helped me learn how to handle some APIs. However when browsing the samples, I had noticed there were no ones currently available for vSphere 6.7 Update REST API. Using the samples and the REST API documentation I was able to update and give back to the community and we will review the REST API based methods to patch your VCSA.</p>
 <h1 id="postman-collection">Postman Collection</h1>
 <p>I have done a pull request to get these added to the VMware Code Repository. However until that is complete, you can find a copy of the Postman samples on my Github 
 <a href="https://github.com/dstamen/Postman/blob/master/vSphere/vCenter%20Server%206.7%20-%20%20Appliance%20Patching.postman_collection.json" target="_blank">here</a>.</p>
 <h1 id="exploring-the-api">Exploring the API</h1>
-<p>When it comes to exploring the available API's we have a few options. The first is to read the documentation. When reviewing the documentation it will give you details such as the HTTP request, parameters and response but if you are not familiar with the API's then this can be quite difficult.</p>
+<p>When it comes to exploring the available API&rsquo;s we have a few options. The first is to read the documentation. When reviewing the documentation it will give you details such as the HTTP request, parameters and response but if you are not familiar with the API&rsquo;s then this can be quite difficult.</p>
 
 
 
@@ -464,7 +465,7 @@ December 20, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <h2 id="staging-the-update">Staging the Update</h2>
-<p>Prior to installing any update they must be staged, we do have the ability to stage and install the update in one workflow, but I want to explorer the API's available for staging the patch. The sample requests provide the ability to stage the update, get information on the staged update and delete the staged update.</p>
+<p>Prior to installing any update they must be staged, we do have the ability to stage and install the update in one workflow, but I want to explorer the API&rsquo;s available for staging the patch. The sample requests provide the ability to stage the update, get information on the staged update and delete the staged update.</p>
 
 
 
@@ -714,7 +715,7 @@ December 20, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <h1 id="conclusion">Conclusion</h1>
-<p>Using the REST API's does not have to be hard especially when tied in with pre-built sample resources such as Postman requests. Hopefully this has been helpful for you to start the patching of your VCSA using the REST API's.</p>
+<p>Using the REST API&rsquo;s does not have to be hard especially when tied in with pre-built sample resources such as Postman requests. Hopefully this has been helpful for you to start the patching of your VCSA using the REST API&rsquo;s.</p>
 <p>If you have any questions feel free to reach out here or on twitter 
 <a href="https://twitter.com/davidstamen" target="_blank">@davidstamen</a></p>
       <h6>Share this post</h6>

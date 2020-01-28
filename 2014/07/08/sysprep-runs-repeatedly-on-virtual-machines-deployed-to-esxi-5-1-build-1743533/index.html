@@ -90,16 +90,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -194,7 +195,7 @@ July 8, 2014 under <a class="" href="/categories/vmware">VMware</a>
 <p>Upon further research it seems this is a known issue and is resolved in ESXi 5.1 Express Patch 5 
 <a href="http://kb.vmware.com/selfservice/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=2077640" target="_blank">KB2077640</a> as referenced in this article 
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2078352" target="_blank">KB2078352</a>.</p>
-<p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM's that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
+<p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM&rsquo;s that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
 <pre><code>Connect-VIServer vcenter.lab.local
 $VMs = Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | Where-Object {$_.Value -ne &quot;&quot;}
 $VMs | Select Entity, Value

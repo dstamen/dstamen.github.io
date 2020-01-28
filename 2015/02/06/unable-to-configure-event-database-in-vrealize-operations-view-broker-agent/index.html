@@ -33,8 +33,8 @@
   
 
   <meta property="og:title" content="Unable to Configure Event Database in vRealize Operations View Broker Agent" />
-<meta property="og:description" content="I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs." />
+<meta property="og:description" content="I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/" />
 <meta property="article:published_time" content="2015-02-06T00:00:00+00:00" />
@@ -42,8 +42,8 @@ I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Unable to Configure Event Database in vRealize Operations View Broker Agent"/>
-<meta name="twitter:description" content="I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&#39;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
-I knew it wasn&#39;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs."/>
+<meta name="twitter:description" content="I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. FAILED (Format of the initialization string does not conform to specification starting at index 88.)
+I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -186,9 +187,9 @@ February 6, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn't get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. <strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)</strong></p>
+      <p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. <strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)</strong></p>
 <p><img src="/images/vROeventdb.png" alt=""></p>
-<p>I knew it wasn't a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven't like certain characters in passwords.</p>
+<p>I knew it wasn&rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&rsquo;t like certain characters in passwords.</p>
 <p>I came across this blog 
 <a href="http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql" target="_blank">http://stackoverflow.com/questions/2030610/password-limitations-in-sql-server-and-mysql</a></p>
 <p>So in the configuration page i entered in my password as <strong>&ldquo;password&rdquo;</strong> and voila it worked!</p>

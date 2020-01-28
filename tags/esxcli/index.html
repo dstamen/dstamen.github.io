@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -151,7 +152,7 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
   
 

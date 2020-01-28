@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -150,7 +151,7 @@ October 5, 2018 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/vsphere.png" class="clr-card-featured-image"> 
                     
   
-    The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren&#39;t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless–especially when having to perform the task if you have multiple PSC&#39;s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to&#39;s and benefits of using the CLI based approach.
+    The first topic we will cover in our Automating your vSphere Upgrade series is updating our core infrastructure. Upgrading Platform Services Controller(PSC)  and vCenter Server via the CLI installer. In our workshops one of the common things I hear is that most folks aren’t using the CLI based tools that have been included in the installer. I am a huge fan of these as they make migrations and upgrades seamless–especially when having to perform the task if you have multiple PSC’s and vCenter Servers. Using the CLI tools don’t have to be intimidating, as we go through this blog we will cover some how-to’s and benefits of using the CLI based approach.
   
 
 
@@ -186,7 +187,7 @@ October 13, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
+    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA’s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
 Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.
   

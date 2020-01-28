@@ -58,7 +58,7 @@ Download the Chrome Policy Plugin here
       <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</guid>
-      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&#39;s and copied the files locally.
+      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&amp;rsquo;s and copied the files locally.
 Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. KB2734782
 Here are the full steps I followed to get .NET installed.</description>
     </item>
@@ -69,7 +69,7 @@ Here are the full steps I followed to get .NET installed.</description>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/05/01/blocking-attachments-with-executable-content/</guid>
-      <description>I don&#39;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
+      <description>I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
  Login to Exchange Admin Center using administrative credentials On the left pane select &amp;ldquo;Mail flow&amp;rdquo; On the top pane select &amp;quot; Rules&amp;rdquo; Click on the &amp;ldquo;+&amp;rdquo; sign and select create a new rule Give a name to the rule and select &amp;ldquo;more options&amp;rdquo; at the bottom of the page.</description>
     </item>
     

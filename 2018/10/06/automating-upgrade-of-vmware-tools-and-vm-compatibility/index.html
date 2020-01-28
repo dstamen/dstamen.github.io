@@ -87,16 +87,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -789,7 +790,7 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <h2 id="upgrading-vmware-tools">Upgrading VMware Tools</h2>
-<p>When it comes to keeping your VMware Tools up to date we have a few options but I will focus on two of my favorite methods. Keeping VMware tools up to date is very important as VMware includes drivers and tools to make sure your VM's run optimally with the latest features. 
+<p>When it comes to keeping your VMware Tools up to date we have a few options but I will focus on two of my favorite methods. Keeping VMware tools up to date is very important as VMware includes drivers and tools to make sure your VM&rsquo;s run optimally with the latest features. 
 <a href="https://twitter.com/eric_gray" target="_blank">Eric Gray</a> of our CPBU Technical Marketing Team covers a few considerations and methods in depth in the following blog post 
 <a href="https://blogs.vmware.com/vsphere/2016/03/six-methods-for-keeping-vm-tools-up-to-date.html" target="_blank">Six Methods for Keeping VM Tools Up to Date</a>.</p>
 <h3 id="checking-vmware-tools-compliance">Checking VMware Tools Compliance</h3>
@@ -1051,7 +1052,7 @@ ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
   
 
 
-<p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM's setting so this gets easier when we have a large environment.</p>
+<p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM&rsquo;s setting so this gets easier when we have a large environment.</p>
 <pre><code>Get-Folder Testing|Get-VM|Get-View | select name,@{N='ToolsUpgradePolicy';E={$\_.Config.Tools.ToolsUpgradePolicy } } |Sort Name
 </code></pre>
 

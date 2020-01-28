@@ -39,7 +39,7 @@ The code is also fairly simple, it pulls in data from a few .</description>
       <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</guid>
-      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&#39;s and copied the files locally.
+      <description>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&amp;rsquo;s and copied the files locally.
 Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. KB2734782
 Here are the full steps I followed to get .NET installed.</description>
     </item>

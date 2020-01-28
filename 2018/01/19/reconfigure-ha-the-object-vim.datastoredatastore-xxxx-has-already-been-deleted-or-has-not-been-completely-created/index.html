@@ -90,16 +90,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -200,9 +201,9 @@ January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>Seems that <strong>1131</strong> is missing..</p>
 <p>Sometimes the more tools you have available to you, the easier it is to troubleshoot an issue. As part of my daily processes we have an automated script to execute and emails us an 
 <a href="https://www.robware.net/rvtools/" target="_blank">RVTools</a> report so I can easily keep track of inventory objects in my vCenter, I went back a few days and was able to identify the lun, datastore and NAAID of this object.</p>
-<p>Using vRealize Log Insight (Free for up to 25 OSI's, in my case i only have my vCenter for logs) I was able to search for the NAAID and see exactly when and what happened to this lun&hellip;.it was removed.</p>
+<p>Using vRealize Log Insight (Free for up to 25 OSI&rsquo;s, in my case i only have my vCenter for logs) I was able to search for the NAAID and see exactly when and what happened to this lun&hellip;.it was removed.</p>
 <p>![](/uploads/screenshot-2018-01-19 10-36-59.png)</p>
-<p>With this newfound information I went and spoke to our storage team, this lun was removed because it was no longer being used by <em>Cluster1.</em> Turns out This lun was zoned to two different clusters, but only used for VMs in Cluster1. Cluster2 in turn was using it for HA heartbeat. In my case to get HA to use a different lun, i chose option 3. Just in case lun's ever get removed again. However after reconfiguring HA it still was trying to use the lun that was removed.</p>
+<p>With this newfound information I went and spoke to our storage team, this lun was removed because it was no longer being used by <em>Cluster1.</em> Turns out This lun was zoned to two different clusters, but only used for VMs in Cluster1. Cluster2 in turn was using it for HA heartbeat. In my case to get HA to use a different lun, i chose option 3. Just in case lun&rsquo;s ever get removed again. However after reconfiguring HA it still was trying to use the lun that was removed.</p>
 <p>![](/uploads/screenshot-2018-01-19 10-24-16.png)</p>
 <p><strong>Resolution:</strong></p>
 <p><strong>Use Option 2</strong> - Once I selected two specific datastores, I was able to reconfigure HA and no longer had any errors. At this point you can reconfigure HA Datastore Heartbeat to your standard settings and reconfigure the cluster once again.</p>
@@ -213,7 +214,7 @@ January 19, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <li>Detach lun from all hosts (if LUN is used for HA, it wont let you)</li>
 <li>Unmap from storage array.</li>
 </ol>
-<p>You can also use the following script to detach lun's if you have a bunch of lun's and/or hosts. You will need to unmount the datastores first before running.</p>
+<p>You can also use the following script to detach lun&rsquo;s if you have a bunch of lun&rsquo;s and/or hosts. You will need to unmount the datastores first before running.</p>
 <p>
 <a href="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" title="http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/" target="_blank">http://davidstamen.com/2015/09/14/using-powercli-to-detach-luns/</a></p>
 

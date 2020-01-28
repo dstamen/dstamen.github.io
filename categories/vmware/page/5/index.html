@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -150,8 +151,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 
@@ -188,7 +189,7 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
   
 
@@ -225,8 +226,8 @@ November 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Ever wonder why a VM isn&#39;t on the network?
-I was working on deploying some test VM&#39;s and for some reason all the VM&#39;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+    Ever wonder why a VM isn’t on the network?
+I was working on deploying some test VM’s and for some reason all the VM’s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
 I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.
   
 
@@ -263,7 +264,7 @@ November 11, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    Have you ever worked with a Horizon View pool with 10 VM&#39;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
+    Have you ever worked with a Horizon View pool with 10 VM’s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.
 First you will need to connect to the ADAM database on one of your servers. Use KB2012377 for instructions.
 To connect to the View ADAM database:
 Log in to one of the View Connection Servers as Domain Administrator.
@@ -302,7 +303,7 @@ October 13, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
+    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA’s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
 Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.
   

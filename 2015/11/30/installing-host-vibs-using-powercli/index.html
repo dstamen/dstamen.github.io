@@ -33,8 +33,8 @@
   
 
   <meta property="og:title" content="Installing Host VIB&#39;s Using PowerCLI" />
-<meta property="og:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script." />
+<meta property="og:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/11/30/installing-host-vibs-using-powercli/" />
 <meta property="article:published_time" content="2015-11-30T00:00:00+00:00" />
@@ -42,8 +42,8 @@ I had to run these updates on over 50 hosts and I really didn&#39;t want to have
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installing Host VIB&#39;s Using PowerCLI"/>
-<meta name="twitter:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script."/>
+<meta name="twitter:description" content="Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -187,10 +188,10 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>Normally when i need to install and update a host VIB I use Update Manager. However there is currently a 
-<a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/" target="_blank">bug</a> with Cisco's latest enic/fnic drivers that wont let you install them via UM.</p>
-<p>I had to run these updates on over 50 hosts and I really didn't want to have to ssh and install it manually. Lucky I remember 
-<a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/" target="_blank">Brian Graf&#39;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
-<p>All you need to do is input your cluster and specify what VIB's you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB's you want to install.</p>
+<a href="https://tools.cisco.com/bugsearch/bug/CSCuw47512/" target="_blank">bug</a> with Cisco&rsquo;s latest enic/fnic drivers that wont let you install them via UM.</p>
+<p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember 
+<a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/" target="_blank">Brian Graf&amp;rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
+<p>All you need to do is input your cluster and specify what VIB&rsquo;s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB&rsquo;s you want to install.</p>
 <pre><code># Define Variables
 $Cluster = &quot;Cluster&quot;
 $VIBPATH1 = &quot;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&quot;

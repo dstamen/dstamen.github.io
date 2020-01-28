@@ -17,8 +17,8 @@
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</guid>
-      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
+      <description>Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&amp;rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&amp;rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI.</description>
     </item>
     
     <item>
@@ -97,7 +97,7 @@ Pre-Requsites   UCS Powertool  Link to Script   Create-UCSTechSupport.ps1  Prepa
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/</guid>
-      <description>It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+      <description>It&amp;rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
 Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.</description>
     </item>
     

@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -196,7 +197,7 @@ Failed to get management network information. Verify if management interface (NI
 <p>Turns out we tried to look through the logs in <strong>/var/log/vmware/vcha</strong> and they were no help. Next the technician tried to manually prepare for VCHA by running <strong>prepare-vcha</strong>. Once we ran this we were able to see a specific error outputted.</p>
 <pre><code>Unable to get hostname resolved IP address for eth0
 </code></pre><p><img src="/images/vcha2.png" alt=""></p>
-<p>This is more helpful! Turns out my vCenter somehow was missing it's reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
+<p>This is more helpful! Turns out my vCenter somehow was missing it&rsquo;s reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
 <p>Once I created the reverse DNS, the wizard finally let me through and configure vCenter HA!</p>
 <p>Big thank you to the vExpert community and VMware Support.</p>
 <p>Look forward to a formal KB and a more descriptive error in the future.</p>

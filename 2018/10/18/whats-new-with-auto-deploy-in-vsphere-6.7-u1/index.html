@@ -89,16 +89,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -195,13 +196,13 @@ October 18, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>There are 3 types of Auto Deploy:</p>
 <ul>
 <li><strong>Stateless</strong> - This feature allows you to have a host re-provisioned on each the hosts is rebooted with Auto Deploy.</li>
-<li><strong>Stateless Caching</strong> – This feature allows you to cache the host's image locally on the host or on a usb drive and continue to provision the host with Auto Deploy.</li>
+<li><strong>Stateless Caching</strong> – This feature allows you to cache the host&rsquo;s image locally on the host or on a usb drive and continue to provision the host with Auto Deploy.</li>
 <li><strong>Stateful Installs</strong> – This feature allows you to install hosts over the network without setting up a complete PXE boot infrastructure. After the initial network boot, these hosts boot like other hosts on which ESXi is installed.</li>
 </ul>
 <p>More information on installing hosts using Auto Deploy can be found 
 <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.esxi.install.doc/GUID-CAB84194-3D8E-45F0-ABF9-0277710C8F98.html" target="_blank">here.</a></p>
-<h3 id="whats-new-with-auto-deploy">What's New with Auto Deploy</h3>
-<p>There have not been any major changes with Auto Deploy in vSphere 6.7 outside of some bug fixes and performance improvements, but 6.7 U1 included an updated workflow to manage Auto Deploy in the vSphere Client so let's check out the new interface and see how we can configure Auto Deploy using the new interface.</p>
+<h3 id="whats-new-with-auto-deploy">What&rsquo;s New with Auto Deploy</h3>
+<p>There have not been any major changes with Auto Deploy in vSphere 6.7 outside of some bug fixes and performance improvements, but 6.7 U1 included an updated workflow to manage Auto Deploy in the vSphere Client so let&rsquo;s check out the new interface and see how we can configure Auto Deploy using the new interface.</p>
 <p>We can now enable Auto Deploy and Image Builder in One-Click. No longer do we need to go into the services and edit the startup policy, and start the services.</p>
 
 

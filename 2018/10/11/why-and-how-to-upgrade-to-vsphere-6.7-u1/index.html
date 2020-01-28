@@ -87,16 +87,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -192,9 +193,9 @@ October 11, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>vSphere 6.7 Update 1 has been a much anticipated release, it has many features folks have been waiting for some time. To highlight a few we now have a converge tool to migrate from an External PSC topology to an Embedded PSC topology, we now have a 100% Parity HTML-5 vSphere Client and more&hellip;. 
 <a href="http://emadyounis.com/whats-new-in-vcenter-server-6-7-update-1/" target="_blank">My colleague Emad Younis has a great rundown on the new vSphere 6.7 Update 1 features.</a></p>
 <h2 id="how-do-i-upgrade-my-vsphere-environment-to-vsphere-67-update-1">How do I upgrade my vSphere Environment to vSphere 6.7 Update 1?</h2>
-<p>Actually upgrading to vSphere 6.7 Update 1 can be quite easy, but we don't just want to jump into the upgrade. We want to make sure we do some planning prior to performing our upgrade.</p>
+<p>Actually upgrading to vSphere 6.7 Update 1 can be quite easy, but we don&rsquo;t just want to jump into the upgrade. We want to make sure we do some planning prior to performing our upgrade.</p>
 <h3 id="planning-for-your-vsphere-upgrade-to-vsphere-67-update-1">Planning for your vSphere Upgrade to vSphere 6.7 Update 1</h3>
-<p>Before we even begin to look at how to upgrade we need to make sure we don't have any roadblocks that will stop us from upgrading. First, we want to review the 
+<p>Before we even begin to look at how to upgrade we need to make sure we don&rsquo;t have any roadblocks that will stop us from upgrading. First, we want to review the 
 <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-vcenter-server-671-release-notes.html#installupgrade" target="_blank">vCenter Server 6.7 Update 1</a> and 
 <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/rn/vsphere-esxi-671-release-notes.html" target="_blank">ESXi 6.7 Update 1</a> release notes.</p>
 <p>When reviewing the vCenter Server release notes we want to pay close attention to the <strong>Installation and Upgrade Notes for This Release</strong> section as we would highlight any blocked paths such as upgrading from vSphere 6.5 Update 2 to vSphere 6.7 GA. We also want to review the 

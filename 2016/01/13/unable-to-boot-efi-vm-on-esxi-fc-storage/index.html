@@ -33,7 +33,7 @@
   
 
   <meta property="og:title" content="Unable to Boot EFI VM on ESXi FC Storage" />
-<meta property="og:description" content="For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+<meta property="og:description" content="For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2016/01/13/unable-to-boot-efi-vm-on-esxi-fc-storage/" />
@@ -42,7 +42,7 @@ Whenever I would move the VM to our new DC, it would fail to boot properly. It w
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Unable to Boot EFI VM on ESXi FC Storage"/>
-<meta name="twitter:description" content="For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+<meta name="twitter:description" content="For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -186,7 +187,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM's from our legacy datacenter(iSCSI) to our new datacenter(FC).</p>
+      <p>For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&rsquo;s from our legacy datacenter(iSCSI) to our new datacenter(FC).</p>
 <p>Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine. I opened a case with VMware and our Storage vendor and no one had any idea what was causing it.</p>
 <p>Strangely enough my coworker found the following article today that explains and provides a workaround. 
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2137402" target="_blank">KB2137402</a></p>

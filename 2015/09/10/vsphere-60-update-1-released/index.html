@@ -84,16 +84,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -187,11 +188,11 @@ September 10, 2015 under <a class="" href="/categories/vmware">VMware</a>
       <p>Today vSphere 6.0 U1 is released. This is normally the update everyone waits for before upgrading their production environments to the latest version. I think the first time in awhile, a lot of people will wait.</p>
 <p>You see, VMware has had a bug 
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2124669" target="_blank">KB2124669</a> since ESXi 6.0 that can cause an ESXi host to randomly lose connection, freeze and overall act really terrible. With the release of 6.0U1 it still exists.</p>
-<p>Here is VMware's exlanation of the cause.</p>
+<p>Here is VMware&rsquo;s exlanation of the cause.</p>
 <pre><code>ESXi migrates interrupts across physical CPUs in order to load balance the interrupt activity in the system. As part of the ESXi
 6.0 changes to increase the number of interrupts supported, provisions were made to retire a vector on an old physical CPU when
 the interrupt migrates to a new one. In 6.0, interrupts tend to arrive at retired vectors, for unknown reasons at this time.
-</code></pre><p>There is however a workaround, but it can have an impact on CPU performance, and who want's that?</p>
+</code></pre><p>There is however a workaround, but it can have an impact on CPU performance, and who want&rsquo;s that?</p>
 <p><strong>To Install/Enable the script:</strong></p>
 <pre><code>1. Download the attached 2124669_stop_intr_mig.zip file.
 2. Extract the file.

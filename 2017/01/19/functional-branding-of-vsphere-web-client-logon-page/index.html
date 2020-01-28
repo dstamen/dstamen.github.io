@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Functional Branding of vSphere Web Client Logon Page" />
 <meta property="og:description" content="I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;rsquo;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/" />
@@ -44,7 +44,7 @@ I figured since I am using the embedded SSO, I could update the login page to sh
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functional Branding of vSphere Web Client Logon Page"/>
 <meta name="twitter:description" content="I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;rsquo;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -88,16 +88,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -190,7 +191,7 @@ January 19, 2017 under <a class="" href="/categories/vmware">VMware</a>
       
       <p>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.</p>
 <p>As people have noted before 
-<a href="http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html" target="_blank">William Lam&#39;s - How to Customize Webclient Login UI</a></p>
+<a href="http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html" target="_blank">William Lam&amp;rsquo;s - How to Customize Webclient Login UI</a></p>
 <p>I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node. In my case I updated the text to show which node you are connected to. You can see this without even logging in!</p>
 <p><img src="/images/webclientbranding.png" alt=""></p>
 <p>How can I do this you ask? Easy! You just need to update one file, two if you would like to update your logo&hellip;</p>

@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -150,8 +151,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI.
+    Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API’s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API’s a bit easier, but you still need to be familiar with a separate tool or UI.
   
 
 
@@ -446,7 +447,7 @@ January 11, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
                     
   
-    It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+    It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
 Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 

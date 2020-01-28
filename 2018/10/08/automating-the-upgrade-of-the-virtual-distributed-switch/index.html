@@ -90,16 +90,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -834,7 +835,7 @@ October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-<p>Another consideration I like to recommend is that you keep your VDS upgraded to the same version as your ESXi hosts whenever possible. Previously in most vSphere versions it has always been said that upgrading your VDS can be done at anytime and is a non-disruptive upgrade., but we always want to use caution and do this within a maintenance window. The VDS upgrade is also something that has no rollback, once it is complete it is permanent unless you have completed a backup. With vSphere 6.7 and the introduction of VDS version 6.6 there are some known issues and considerations I want to mention prior to getting started upgrading our switch. A question I get asked quite frequently is why is vSphere 6.7's VDS version 6.6? The answer is quite simple, VMware on AWS (VMC) shares quite a bit of the same code as vSphere On-Perm and since there were no major changes to the VDS features or functionality the version stayed the same. Prior to upgrading our VDS version to 6.6 we definitely want to make sure we review 
+<p>Another consideration I like to recommend is that you keep your VDS upgraded to the same version as your ESXi hosts whenever possible. Previously in most vSphere versions it has always been said that upgrading your VDS can be done at anytime and is a non-disruptive upgrade., but we always want to use caution and do this within a maintenance window. The VDS upgrade is also something that has no rollback, once it is complete it is permanent unless you have completed a backup. With vSphere 6.7 and the introduction of VDS version 6.6 there are some known issues and considerations I want to mention prior to getting started upgrading our switch. A question I get asked quite frequently is why is vSphere 6.7&rsquo;s VDS version 6.6? The answer is quite simple, VMware on AWS (VMC) shares quite a bit of the same code as vSphere On-Perm and since there were no major changes to the VDS features or functionality the version stayed the same. Prior to upgrading our VDS version to 6.6 we definitely want to make sure we review 
 <a href="https://kb.vmware.com/s/article/52621" target="_blank">KB52621</a>. This KB covers considerations around known issues upgrading to version 6.6. Some of these considerations are making sure to put DRS into partially automated mode since if a vMotion occurs during the upgrade the VDS upgrade will fail. To take these considerations into account, we will make sure to include this in our Upgrading your Virtual Distributed Switch automation. Prior to upgrading we also need to verify that all hosts have been upgraded to vSphere 6.7 so we do not have any errors. If there is a incompatible host attached the upgrade will not be allowed to proceed. To validate our ESXi host version for all hosts attached to our VDS we can do so as follows.</p>
 <pre><code>Get-VDSwitch &quot;VDS&quot;|Get-VMHost|Select Name, Version|Sort Name
 </code></pre>

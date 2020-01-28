@@ -33,7 +33,7 @@
   
 
   <meta property="og:title" content="Create VMFS Datastore Using PowerCLI" />
-<meta property="og:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+<meta property="og:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
 How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2014/05/22/create-vmfs-datastore-using-powercli/" />
@@ -42,7 +42,7 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create VMFS Datastore Using PowerCLI"/>
-<meta name="twitter:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+<meta name="twitter:description" content="For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
 How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -187,7 +188,7 @@ May 22, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me!
-You can use the below PowerCLI commands to get the SCSI ID's,  Create the Datastore and then Rescan all hosts in the cluster.</p>
+You can use the below PowerCLI commands to get the SCSI ID&rsquo;s,  Create the Datastore and then Rescan all hosts in the cluster.</p>
 <h2 id="how-do-i-get-the-canonicalname-for-allocated-disks">How do i get the CanonicalName for allocated disks?</h2>
 <pre><code>Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity
 </code></pre><h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?</h2>

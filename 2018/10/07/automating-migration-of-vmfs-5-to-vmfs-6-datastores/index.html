@@ -88,16 +88,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -793,7 +794,7 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>Please note that vSphere 6.7 no longer supports VMFS-3. Prior to upgrading your ESXi host you should do an upgrade from VMFS-3 to VMFS-5 or they will be upgraded automatically during the Host upgrade.</p>
 </blockquote>
 <h2 id="migrating-from-vmfs-5-to-vmfs-6"><strong>Migrating from VMFS-5 to VMFS-6</strong></h2>
-<p>When we start our migration of our datastore's to VMFS-6 you may be wondering… Do I need to? What are the benefits? As we can see below graphic there was quite a few enhancements in support for Automatic Space Reclamation, In-Guest Space Reclamation and native support for 4K native storage.</p>
+<p>When we start our migration of our datastore&rsquo;s to VMFS-6 you may be wondering… Do I need to? What are the benefits? As we can see below graphic there was quite a few enhancements in support for Automatic Space Reclamation, In-Guest Space Reclamation and native support for 4K native storage.</p>
 
 
 
@@ -884,7 +885,7 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="updating-vmfs-version"><strong>Updating VMFS Version</strong></h3>
 <p>When it comes to migrating to VMFS-6 we have a few methods. A good reference to use is 
 <a href="https://kb.vmware.com/s/article/2147824" target="_blank">KB2147924</a>, this KB covers the supported methods and ways to update your VMFS version. My colleague Nigel Hickey has covered how to do GUI based 
-<a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-5-upgrading-vmfs-storage.html" target="_blank">upgrades of VMFS</a>. However, when you have many datastore's it may help to automate this process.</p>
+<a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-5-upgrading-vmfs-storage.html" target="_blank">upgrades of VMFS</a>. However, when you have many datastore&rsquo;s it may help to automate this process.</p>
 <p>As we reference the above KB it mentions a PowerCLI cmdlet called <strong>Update-VMFSDatastore.</strong> This is an powerful tool that acts a bit different than your standard PowerCLI cmdlet, it is very verbose and detailed with the checks that it does. However, there are also some considerations to take into account when using it.</p>
 <p>A few considerations when using it are as follows:</p>
 <ul>
@@ -963,7 +964,7 @@ Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVer
 <p>You can see more information on the usage of <strong>Update-VMFSDatastore</strong> at the 
 <a href="https://code.vmware.com/docs/5730/cmdlet-reference#/doc/Update-VmfsDatastore.html" target="_blank">PowerCLI Reference</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>It is always great to see some native tools to assist us in accomplishing complicated tasks. For those who have an abundance of datastore's in their environment, this cmdlet can save quite a bit of time. If you have used it, leave some feedback on your thoughts. Next up on our series will be Automating Your Virtual Distributed Switch upgrade.</p>
+<p>It is always great to see some native tools to assist us in accomplishing complicated tasks. For those who have an abundance of datastore&rsquo;s in their environment, this cmdlet can save quite a bit of time. If you have used it, leave some feedback on your thoughts. Next up on our series will be Automating Your Virtual Distributed Switch upgrade.</p>
 <hr>
 <p><strong>Cross-Posted from vSphere Blog</strong></p>
 <p>

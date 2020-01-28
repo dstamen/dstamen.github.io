@@ -35,7 +35,7 @@
   
 
   <meta property="og:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI" />
-<meta property="og:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&#39;s dive in and take a look at whats new and see how to converge a deployment using the new UI." />
+<meta property="og:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/04/11/vcenter-server-converge-tool-how-do-i-converge-an-environment-using-the-ui/" />
 <meta property="og:image" content="http://davidstamen.com/images/converge-ui-fi.png" />
@@ -46,7 +46,7 @@
 <meta name="twitter:image" content="http://davidstamen.com/images/converge-ui-fi.png"/>
 
 <meta name="twitter:title" content="vCenter Server Converge Tool - How do I Converge an Environment Using the UI"/>
-<meta name="twitter:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&#39;s dive in and take a look at whats new and see how to converge a deployment using the new UI."/>
+<meta name="twitter:description" content="vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -89,16 +89,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -189,10 +190,10 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let's dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
+      <p>vSphere 6.7 Update 2 is now available! Inside this update include enhancements to the vCenter Server Converge Tool. Let&rsquo;s dive in and take a look at whats new and see how to converge a deployment using the new UI.</p>
 <p>Included in vSphere 6.7 Update 2 is an overhauled system configuration section. Within system configuration you have a table view showing you the Platform Services Controllers and vCenter Servers in your Environment.</p>
 <h2 id="vcenter-server-topology-view">vCenter Server Topology View</h2>
-<p>Alongside the new system configuration table view there is a new topology view. This view allows you to have a graphical representation of the nodes in your SSO domain. This is useful when someone might've configured additional replication agreements between External Platform Services Controllers. Previously the only method to view replication agreements was using 
+<p>Alongside the new system configuration table view there is a new topology view. This view allows you to have a graphical representation of the nodes in your SSO domain. This is useful when someone might&rsquo;ve configured additional replication agreements between External Platform Services Controllers. Previously the only method to view replication agreements was using 
 <a href="https://kb.vmware.com/s/article/2127057" target="_blank">vdcrepadmin</a> against each PSC in your environment to manually build out the topology diagram.</p>
 
 
@@ -400,7 +401,7 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
   
 
 
-<p>On this screen I'll will be prompted certain pieces of information:</p>
+<p>On this screen I&rsquo;ll will be prompted certain pieces of information:</p>
 <ul>
 <li>External PSC SSO Username and Password
 <ul>
@@ -465,7 +466,7 @@ April 11, 2019 under <a class="" href="/categories/vmware">VMware</a>
 </ul>
 </li>
 </ul>
-<p>Once I have successfully converged both our vCenter Servers I can now proceed to decommission the two External PSC's. As we are already aware of the managing vCenter Server all we need to do is enter in the vCenter Server SSO credentials so that the external PSC can be shutdown and unregistered from the SSO domain.</p>
+<p>Once I have successfully converged both our vCenter Servers I can now proceed to decommission the two External PSC&rsquo;s. As we are already aware of the managing vCenter Server all we need to do is enter in the vCenter Server SSO credentials so that the external PSC can be shutdown and unregistered from the SSO domain.</p>
 
 
 

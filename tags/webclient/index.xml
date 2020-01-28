@@ -18,7 +18,7 @@
       
       <guid>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid>
       <description>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&amp;#39;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;amp;rsquo;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.</description>
     </item>
     

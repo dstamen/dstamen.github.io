@@ -33,7 +33,7 @@
   
 
   <meta property="og:title" content="Get NAA.ID for Virtual Machine RDM&#39;s in VMware" />
-<meta property="og:description" content="This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+<meta property="og:description" content="This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
  KB2051606" />
 <meta property="og:type" content="article" />
@@ -43,7 +43,7 @@ Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&q
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Get NAA.ID for Virtual Machine RDM&#39;s in VMware"/>
-<meta name="twitter:description" content="This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+<meta name="twitter:description" content="This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
  KB2051606"/>
 <meta name="twitter:site" content="@davidstamen"/>
@@ -88,16 +88,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -188,7 +189,7 @@ May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>This is a great script to keep handy. If you have multiple RDM's on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
+      <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
 <pre><code>Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
 </code></pre><p><img src="/images/naaid.png" alt=""></p>
 <p>If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.</p>

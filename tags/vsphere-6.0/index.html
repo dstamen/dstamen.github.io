@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -151,7 +152,7 @@ January 19, 2017 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
-As people have noted before William Lam&#39;s - How to Customize Webclient Login UI
+As people have noted before William Lam&amp;rsquo;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.
   
 
@@ -226,7 +227,7 @@ October 13, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&#39;s. The problem is when I went to redeploy it I got the following error.
+    So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA’s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
 Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.
   

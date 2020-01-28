@@ -35,7 +35,7 @@
   
 
   <meta property="og:title" content="Windows Server 2008 is Going EOL - What about my vCenter Server?" />
-<meta property="og:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&#39;s dive in and find out what it takes to move to a supported OS!" />
+<meta property="og:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/" />
 <meta property="og:image" content="/featured/vsphere.png" />
@@ -46,7 +46,7 @@
 <meta name="twitter:image" content="/featured/vsphere.png"/>
 
 <meta name="twitter:title" content="Windows Server 2008 is Going EOL - What about my vCenter Server?"/>
-<meta name="twitter:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&#39;s dive in and find out what it takes to move to a supported OS!"/>
+<meta name="twitter:description" content="Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -89,16 +89,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -190,7 +191,7 @@ August 12, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let's dive in and find out what it takes to move to a supported OS!</p>
+      <p>Windows Server 2008 and 2008 R2 will be end-of-life on January 14th, 2020. This impacts quite a few folks who may have deployed their vCenter Server for Windows on these Operating Systems. I have been asked quite often recently, &ldquo;What are my options?&rdquo; Let&rsquo;s dive in and find out what it takes to move to a supported OS!</p>
 <h2 id="migrate-to-the-vcenter-server-appliance-vcsa">Migrate to the vCenter Server Appliance (VCSA)</h2>
 <p>Mentioned in August 2017,
 <a href="https://blogs.vmware.com/vsphere/2017/08/farewell-vcenter-server-windows.html" target="_blank">Farewell, vCenter Server for Windows</a>. The VCSA is now the default deployment recommended for vCenter Server. If you are currently running vCenter Server on Windows, during your next upgrade you should be migrating to the VCSA. Features such as many performance and security enhancements and new features such as vCenter HA and the File-Based Backup are exclusive to the VCSA.</p>

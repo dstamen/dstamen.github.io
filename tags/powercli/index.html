@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -223,7 +224,7 @@ April 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS&#39;s.
+    I have been in process in configuring traffic shaping for multiple port groups. It seems with PowerCLI 6.3 R1 there are no native Powershell Cmdlets. Luckily I stumbled across @Lucd and his PowerCLI functions to manage these settings, i have put these into a script to mass get and set the settings for all port groups of a DVS’s.
 Pre-Requsites   VMware PowerCLI  Link to Script   Get-VMwareTrafficShapingSettings.
   
 
@@ -371,7 +372,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
   
 
@@ -408,8 +409,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 
@@ -445,8 +446,8 @@ November 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Ever wonder why a VM isn&#39;t on the network?
-I was working on deploying some test VM&#39;s and for some reason all the VM&#39;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
+    Ever wonder why a VM isn’t on the network?
+I was working on deploying some test VM’s and for some reason all the VM’s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.
 I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.
   
 

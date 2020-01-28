@@ -33,7 +33,7 @@
   
 
   <meta property="og:title" content="PowerCLI - Extend VMDK and Guest OS" />
-<meta property="og:description" content="So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience." />
+<meta property="og:description" content="So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/04/02/powercli-extend-vmdk-and-guest-os/" />
 <meta property="article:published_time" content="2015-04-02T00:00:00+00:00" />
@@ -41,7 +41,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerCLI - Extend VMDK and Guest OS"/>
-<meta name="twitter:description" content="So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience."/>
+<meta name="twitter:description" content="So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -84,16 +84,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -184,7 +185,7 @@ April 2, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <hr>
 
       
-      <p>So as always things change across multiple Window's operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn't want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</p>
+      <p>So as always things change across multiple Window&rsquo;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&rsquo;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.</p>
 <p>I will be sharing it with you to save you the time. The script is very simple all you need to do is pass it the VM Name, VMware Hard Disk #, New Hard Disk Size in GB, and the Volume Letter.</p></p>
 <pre><code>param(
   [string]$VM

@@ -37,8 +37,8 @@
   
 
   <meta property="og:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)" />
-<meta property="og:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI." />
+<meta property="og:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/" />
 <meta property="og:image" content="/featured/powercli.png" />
@@ -49,8 +49,8 @@ Introduction Using tools such as Postman can make it utilizing API&#39;s a bit e
 <meta name="twitter:image" content="/featured/powercli.png"/>
 
 <meta name="twitter:title" content="Patching the vCenter Server Appliance (VCSA) using the REST API - Part 2 (PowerCLI Module)"/>
-<meta name="twitter:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&#39;s from Powershell I thought to myself, why not write a Powershell Module for this?
-Introduction Using tools such as Postman can make it utilizing API&#39;s a bit easier, but you still need to be familiar with a separate tool or UI."/>
+<meta name="twitter:description" content="Previously I covered how to use the VCSA Installer to do a scripted upgrade and then I covered Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection) However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?
+Introduction Using tools such as Postman can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -93,16 +93,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -195,10 +196,10 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
       
       <p>Previously I covered how to use the 
 <a href="https://blogs.vmware.com/vsphere/2018/09/upgrading-platform-services-controller-and-vcenter-server-via-the-cli-installer.html?cid=70134000001kxaB&amp;src=so_5c783ca7348a0" target="_blank">VCSA Installer to do a scripted upgrade</a> and then I covered 
-<a href="https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" target="_blank">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a> However, after learning recently how to call API's from Powershell I thought to myself, why not write a Powershell Module for this?</p>
+<a href="https://davidstamen.com/2018/12/20/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api/" target="_blank">Patching the vCenter Server Appliance (VCSA) using the REST API - Part 1 (Postman Collection)</a> However, after learning recently how to call API&rsquo;s from Powershell I thought to myself, why not write a Powershell Module for this?</p>
 <h1 id="introduction">Introduction</h1>
 <p>Using tools such as 
-<a href="https://www.getpostman.com/" target="_blank">Postman</a> can make it utilizing API's a bit easier, but you still need to be familiar with a separate tool or UI. I was able to develop my own version and build my first Powershell Module that you can use to patch the VCSA in a simple method. Some of the function names below may not be 100% exact and this is due to the accepted verbs for Powershell. If you have further recommendations I would be happy to entertain changing the Powershell verbage.</p>
+<a href="https://www.getpostman.com/" target="_blank">Postman</a> can make it utilizing API&rsquo;s a bit easier, but you still need to be familiar with a separate tool or UI. I was able to develop my own version and build my first Powershell Module that you can use to patch the VCSA in a simple method. Some of the function names below may not be 100% exact and this is due to the accepted verbs for Powershell. If you have further recommendations I would be happy to entertain changing the Powershell verbage.</p>
 <h1 id="use-cases">Use Cases</h1>
 <p>Why would you want to use a Powershell module such as this? Well this tool can support multiple vCenter Servers. So here are a few ideas.</p>
 <ul>

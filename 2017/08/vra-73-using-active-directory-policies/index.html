@@ -86,16 +86,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -189,7 +190,7 @@ August 22, 2017 under <a class="" href="/categories/vmware">VMware</a>
       <p>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.</p>
 <p>My question today was how do I pre-create a computer AD account, join a device to the domain and then clean it up when the machine is destroyed.</p>
 <p>Turns out this is super simple in vRealize Automation 7.3!</p>
-<p>TIP: If you want to practice or follow along you can use  <em>HOL-1733-SDC-1</em> (vRealize Automation 7.2: What's New)</p>
+<p>TIP: If you want to practice or follow along you can use  <em>HOL-1733-SDC-1</em> (vRealize Automation 7.2: What&rsquo;s New)</p>
 <p>vRealize Automation 7.1 introduced the ability to place new machines in specific Organizational Units based on Business Group membership or a specific blueprint.  To accomplish this, the following steps must be completed in vRealize Automation.</p>
 <ol>
 <li>Create an Active Directory Endpoint</li>

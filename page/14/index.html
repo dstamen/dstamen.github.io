@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,16 +44,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -259,7 +260,7 @@ May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+    This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
 KB2051606
   
@@ -297,7 +298,7 @@ May 1, 2014 under <a class="" href="/categories/microsoft">Microsoft</a>
                     
                     
   
-    I don&#39;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
+    I don’t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
 Login to Exchange Admin Center using administrative credentials On the left pane select “Mail flow” On the top pane select &#34; Rules” Click on the “&#43;” sign and select create a new rule Give a name to the rule and select “more options” at the bottom of the page.
   
 
@@ -408,7 +409,7 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
                     
   
-    I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&#39;s couldn&#39;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable “Promiscuous Mode” on the VSS to allow the traffic to pass.
+    I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host’s couldn’t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable “Promiscuous Mode” on the VSS to allow the traffic to pass.
   
 
 

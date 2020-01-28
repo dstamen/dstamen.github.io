@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -187,8 +188,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 

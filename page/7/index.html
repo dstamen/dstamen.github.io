@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,16 +44,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -222,7 +223,7 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM&#39;s from our legacy datacenter(iSCSI) to our new datacenter(FC).
+    For the past week, I have been troubleshooting the strangest issue. I have been attempting to move some Windows 8.1 VM’s from our legacy datacenter(iSCSI) to our new datacenter(FC).
 Whenever I would move the VM to our new DC, it would fail to boot properly. It would boot straight to Windows Recovery. If I moved the same VM to any other type of storage(NFS, iSCSI, Local) the VM would boot perfectly fine.
   
 
@@ -297,7 +298,7 @@ January 11, 2016 under <a class="" href="/categories/cisco">Cisco</a>
                     
                     
   
-    It&#39;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
+    It’s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.
 Pre-Requsites   UCS Powertool  Link to Script   UploadUCSFirmware.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
   
 
@@ -446,8 +447,8 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco&#39;s latest enic/fnic drivers that wont let you install them via UM.
-I had to run these updates on over 50 hosts and I really didn&#39;t want to have to ssh and install it manually. Lucky I remember Brian Graf&#39;s Host Client Install Fling and borrowed some of the code to come up with the below script.
+    Normally when i need to install and update a host VIB I use Update Manager. However there is currently a bug with Cisco’s latest enic/fnic drivers that wont let you install them via UM.
+I had to run these updates on over 50 hosts and I really didn’t want to have to ssh and install it manually. Lucky I remember Brian Graf&amp;rsquo;s Host Client Install Fling and borrowed some of the code to come up with the below script.
   
 
 
@@ -484,7 +485,7 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Ever needed to modify a DVS uplink configuration from ESXi Shell? I am currently troubleshooting some issues with DVS uplinks no longer being assigned on reboot.
-As a heads up. If you are doing this on ESXi 6.0.. don&#39;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
+As a heads up. If you are doing this on ESXi 6.0.. don’t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.
 After “Restoring Network Configuration” a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.
   
 

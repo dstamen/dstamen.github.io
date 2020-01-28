@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Using PowerCLI to Detach Luns" />
 <meta property="og:description" content="I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
-Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&#39;s, before un-mapping from my SAN?&rdquo;
+Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;
  Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/2015/09/14/using-powercli-to-detach-luns/" />
@@ -44,7 +44,7 @@ Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using PowerCLI to Detach Luns"/>
 <meta name="twitter:description" content="I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
-Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&#39;s, before un-mapping from my SAN?&rdquo;
+Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;
  Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -88,16 +88,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -189,14 +190,14 @@ September 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.</p>
-<p>Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN's, before un-mapping from my SAN?&rdquo;</p>
+<p>Have you ever had to remove a LUN from a cluster and thought &ldquo;Do I really need to detach all the LUN&rsquo;s, before un-mapping from my SAN?&rdquo;</p>
 <ol>
 <li>Unmount Datastore</li>
 <li>Detach LUN</li>
 <li>Un-map from SAN</li>
 <li>Rescan Cluster</li>
 </ol>
-<p>Well here is a handy script with output. All you need to do is unmount your datastore(s), and then enter in your naaid of your LUN's and the cluster you want to remove it from, save it an execute. All the LUN's will be detached without having to manually go and detach it from every LUN in your cluster.</p>
+<p>Well here is a handy script with output. All you need to do is unmount your datastore(s), and then enter in your naaid of your LUN&rsquo;s and the cluster you want to remove it from, save it an execute. All the LUN&rsquo;s will be detached without having to manually go and detach it from every LUN in your cluster.</p>
 <p>The code and Github Link can be found below.</p>
 <p>
 <a href="https://github.com/dstamen/PowerCLI/blob/master/Detach-SCSILun.ps1" target="_blank">Detach-ScsiLun.ps1</a></p>

@@ -84,16 +84,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -185,7 +186,7 @@ June 3, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>So luckily i was selected for the June 2014 wave of vCloud Hybrid Service  access as a vExpert. I have been looking forwarding to using vCHS since it went GA and am glad to finally have the opportunity to use it hands on.</p>
-<p>Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.6 but couldn't find anything as it was just released and majorly overhauled.</p>
+<p>Once I got access I knew I wanted to copy some of my existing workloads to vCHS instead of having to start from scratch. I begin to look for some good guides on implementing vCloud Connector 2.6 but couldn&rsquo;t find anything as it was just released and majorly overhauled.</p>
 <p>So here is my first howto blog post, I hope it helps you get your POC configured nice and smooth.</p>
 <p>First you will need to download the vCloud Connector Server and vCloud Connector Node from <a href="https://my.vmware.com">https://my.vmware.com</a>. vCloud Connector 2.6 is now free and no longer needs a license.</p>
 <p>Once you have the two OVF bundles downloaded you will need to deploy them through vCenter.</p>

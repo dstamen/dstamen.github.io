@@ -43,16 +43,17 @@
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -190,7 +191,7 @@ September 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I thought I would share this script, its been circulating a bit but I feel it is a nice one to have in your toolkit.
-Have you ever had to remove a LUN from a cluster and thought “Do I really need to detach all the LUN&#39;s, before un-mapping from my SAN?”
+Have you ever had to remove a LUN from a cluster and thought “Do I really need to detach all the LUN’s, before un-mapping from my SAN?”
 Unmount Datastore Detach LUN Un-map from SAN Rescan Cluster  Well here is a handy script with output.
   
 
@@ -227,7 +228,7 @@ April 2, 2015 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    So as always things change across multiple Window&#39;s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn&#39;t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
+    So as always things change across multiple Window’s operating systems and VMware revisions. I had a need to extend the drives on about 50 VMs today and really didn’t want to do all that clicking. I remember awhile back it was easy to do this with a Basic Set-Harddisk and use the -ResizeGuestPartition but alas that has been removed from the current functionality. So I took my search to google and found a couple scripts that worked ok, but nothing that was a seamless experience.
   
 
 
@@ -449,7 +450,7 @@ May 22, 2014 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&#39;s, Create the Datastore and then Rescan all hosts in the cluster.
+    For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID’s, Create the Datastore and then Rescan all hosts in the cluster.
 How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?
   
 
@@ -486,7 +487,7 @@ May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
                      <img src="/featured/powercli.png" class="clr-card-featured-image"> 
                     
   
-    This is a great script to keep handy. If you have multiple RDM&#39;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+    This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
 Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
 KB2051606
   

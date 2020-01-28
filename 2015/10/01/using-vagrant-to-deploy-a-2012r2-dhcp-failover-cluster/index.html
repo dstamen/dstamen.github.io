@@ -90,16 +90,17 @@ if (!doNotTrack) {
     <script src="/js/clr-2.0/custom-elements.min.js"></script>
 
     
-    <link href="/css/clr-2.0/clr-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.css" />
     
-    <link href="/css/clr-2.0/clr-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@clr/icons/clr-icons.min.css" />
+
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/all.css">
 </head>
 <body data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
   <div class="main-container">
     
-<header class="header-7">
+<header class="header-2">
   <div class="branding">
     
 
@@ -194,10 +195,10 @@ October 1, 2015 under <a class="" href="/categories/automation">Automation</a>
 <p>I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.</p>
 <p>
 <a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp" target="_blank">Here</a> is a link to the <strong>GitHub</strong> repository containing all the code.</p>
-<p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy's the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.</p>
+<p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy&rsquo;s the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.</p>
 <h1 id="files-to-modify-to-customize-your-installation">Files to modify to customize your installation</h1>
 <ul>
-<li><em><strong>dhcpservers.csv</strong></em> - IP's of your two DHCP servers</li>
+<li><em><strong>dhcpservers.csv</strong></em> - IP&rsquo;s of your two DHCP servers</li>
 <li><em><strong>createscopes.csv</strong></em> - Contains your Scope Name, StartRange, EndRange, Mask and Server to deploy to</li>
 <li><em><strong>scopeoptions.csv</strong></em> - Contains your server specific options. You can add more columns and adjust the code to add alternate options</li>
 <li><em><strong>scopeoptions.csv</strong></em> - Contains your scope specific options. You can add more columns and adjust the code to add alternate options</li>
