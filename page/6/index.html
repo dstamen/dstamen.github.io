@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.64.0" />
+	<meta name="generator" content="Hugo 0.64.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,6 +113,43 @@
 <div class="content-container">
     <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="clr-row">
+        
+          <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/">Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 8, 2016 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
+I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a> and <a class="" href="/tags/update-manager">Update Manager</a>
+        </div>
+    </div>
+</div>
         
           <div class="clr-col-12">
     <div class="card">
@@ -436,43 +473,6 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
   
     I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
 Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        </div>
-    </div>
-</div>
-        
-          <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/">Using PowerCLI to Replicate Templates to Multiple Clusters</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 26, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.
-I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script.
   
 
 
@@ -998,6 +998,8 @@ I really wanted to utilize the vSphere Content Libary for these, but there is cu
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2020/02/12/back-to-work-im-going-to.../">Back to Work, I&#39;m Going to...</a></li>
+        
         <li><a class="nav-list" href="/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
         
         <li><a class="nav-list" href="/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/">VMworld EU 2019 - vSphere Lifecycle Sessions</a></li>
@@ -1005,8 +1007,6 @@ I really wanted to utilize the vSphere Content Libary for these, but there is cu
         <li><a class="nav-list" href="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/">Windows Server 2008 is Going EOL - What about my vCenter Server?</a></li>
         
         <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
-        
-        <li><a class="nav-list" href="/2019/06/07/vcenter-server-converge-tool-what-about-my-certificates/">vCenter Server Converge Tool - What About My Certificates</a></li>
         
       </ul>
     </div>
