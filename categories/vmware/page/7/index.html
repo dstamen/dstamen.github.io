@@ -119,6 +119,43 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2015/07/23/horizon-view-block-linux-vdi-console-access/">Horizon View - Block Linux VDI Console Access</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+July 23, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.
+Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/horizon-view">Horizon View</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/">HTML Based Published Apps with Horizon View 6.1.1</a>
         </div>
         <div class="card-block">
@@ -448,43 +485,6 @@ However the hotfix only fixes future occurences, you still need to fix all the V
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/powercli">PowerCLI</a>, <a class="" href="/tags/sysprep">Sysprep</a> and <a class="" href="/tags/vsphere-5.1">vSphere 5.1</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2014/06/10/configuring-esxi-5-5-dump-collector/">Configuring ESXi 5.5 Dump Collector</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/dump-collector">Dump Collector</a>
         </div>
     </div>
 </div>
@@ -908,6 +908,8 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-1/">Considerations for vSphere Component Backup and Restore: Part 1</a></li>
+        
         <li><a class="nav-list" href="/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
@@ -915,8 +917,6 @@ Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vm
         <li><a class="nav-list" href="/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/">VMworld EU 2019 - vSphere Lifecycle Sessions</a></li>
         
         <li><a class="nav-list" href="/2019/08/12/windows-server-2008-is-going-eol-what-about-my-vcenter-server/">Windows Server 2008 is Going EOL - What about my vCenter Server?</a></li>
-        
-        <li><a class="nav-list" href="/2019/06/18/vmworld-2019-sessions-and-events/">VMworld 2019 - Sessions and Events</a></li>
         
       </ul>
     </div>

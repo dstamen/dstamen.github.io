@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on davidstamen.com</title>
+    <link>/tags/backup/</link>
+    <description>Recent content in Backup on davidstamen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Considerations for vSphere Component Backup and Restore: Part 1</title>
+      <link>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-1/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-1/</guid>
+      <description>You spend time planning and implementing updates, upgrades and configuration changes to vSphere Environments. Rollback or recovery is usually the last thing on the mind. Did you know there are multiple ways to successfully backup each component in a vSphere Environment? There are also many ways to recover those same components.
+In this series we will talk about considerations to backup and restore or rollback your vSphere environment if we have a need to.</description>
+    </item>
+    
+  </channel>
+</rss>
