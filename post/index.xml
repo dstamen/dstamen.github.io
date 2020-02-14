@@ -22,6 +22,16 @@ In this series we will talk about considerations to backup and restore or rollba
     </item>
     
     <item>
+      <title>Considerations for vSphere Component Backup and Restore: Part 2</title>
+      <link>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-2/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-2/</guid>
+      <description>Now that we have covered the considerations to backup each component in your vSphere Environment, it&amp;rsquo;s time to think about the rollback or restore process. In the previous post we discussed how to backup each individual component, in this post we will continue the conversation and discuss considerations to restore or rollback your vSphere Environment components.
+Platform Services Controller / vCenter Server When things don&amp;rsquo;t go right with an update, upgrade or configuration change of your Platform Services Controller or vCenter Server you need to understand the proper steps it takes to rollback.</description>
+    </item>
+    
+    <item>
       <title>Back to Work, I&#39;m Going to</title>
       <link>/2020/02/12/back-to-work-im-going-to/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
