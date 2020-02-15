@@ -83,7 +83,17 @@
   </url>
   
   <url>
+    <loc>/tags/esxi/</loc>
+    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/restore/</loc>
+    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vcenter-server/</loc>
     <lastmod>2019-10-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -110,11 +120,6 @@
   <url>
     <loc>/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/</loc>
     <lastmod>2019-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/vcenter-server/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -675,11 +680,6 @@
   <url>
     <loc>/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</loc>
     <lastmod>2016-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/esxi/</loc>
-    <lastmod>2016-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
