@@ -119,6 +119,42 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="/2017/02/03/vsphere-65-updating-appliance-configured-with-vcenter-ha/">vSphere 6.5 - Updating Appliance configured with vCenter HA</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+February 3, 2017 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    Warning: A few others and myself have noticed that when updating a VCHA Cluster to 6.5U1 it resets the hostname to localhost.localdomain stopping vCenter Web Client from Loading. It seems to be isolated to Advanced Deployments and not Basic. I would recommend destroying your VCHA Cluster, updating, then redeploying in this scenario. Warning2: It also seems that if you try to redeploy VCHA Advanced after an upgrade, it still resets the hostname, I have a case opened and will update here as neccessary.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vcenter-ha">vCenter HA</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="/2017/02/01/vcenter-ha-health-degraded-due-to-password-expiration/">vSphere 6.5 - vCenter HA Health Degraded due to Password Expiration</a>
         </div>
         <div class="card-block">
@@ -443,43 +479,6 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
   
     I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
 Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2016/01/26/using-powercli-to-replicate-templates-to-multiple-clusters/">Using PowerCLI to Replicate Templates to Multiple Clusters</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 26, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    We have multiple clusters within our vCenters that are defined as a rack. Each rack has its own storage, so storage is not shared between clusters. I needed to develop a way to easily replicate templates between clusters, so a local copy existed on each cluster to take advantage of VAAI.
-I really wanted to utilize the vSphere Content Libary for these, but there is currently no publicly available documentation on how to deploy a VM from a Content Library via a Script.
   
 
 

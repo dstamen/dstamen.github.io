@@ -6,10 +6,20 @@
     <description>Recent content in vCenter HA on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Aug 2017 16:08:43 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/vcenter-ha/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Handling the Lifecycle of a vCenter HA Environment</title>
+      <link>/2019/07/30/handling-the-lifecycle-of-a-vcenter-ha-environment/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/07/30/handling-the-lifecycle-of-a-vcenter-ha-environment/</guid>
+      <description>vSphere 6.5 first introduced vCenter HA and since its inception has been deployed in many environments. When it comes to upgrading or updating your vCenter HA environment there are some specific considerations. If you have wondered what it takes to handle the lifecycle of a vCenter HA enabled vCenter Server, keep reading!
+vCenter HA Overview vCenter HA has seen wide adoption as customers wish to provide provide high availability for their vCenter Server.</description>
+    </item>
     
     <item>
       <title>vCenter 6.5U1 Update Issues with VCHA Advanced Deployment</title>

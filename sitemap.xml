@@ -138,6 +138,21 @@
   </url>
   
   <url>
+    <loc>/2019/07/30/handling-the-lifecycle-of-a-vcenter-ha-environment/</loc>
+    <lastmod>2019-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lifecycle/</loc>
+    <lastmod>2019-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vcenter-ha/</loc>
+    <lastmod>2019-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/06/18/vmworld-2019-sessions-and-events/</loc>
     <lastmod>2019-06-18T00:00:00+00:00</lastmod>
   </url>
@@ -244,11 +259,6 @@
   
   <url>
     <loc>/tags/autodeploy/</loc>
-    <lastmod>2018-10-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/lifecycle/</loc>
     <lastmod>2018-10-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -444,11 +454,6 @@
   
   <url>
     <loc>/2017/08/02/vcenter-6.5u1-update-issues-with-vcha-advanced-deployment/</loc>
-    <lastmod>2017-08-02T16:08:43-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/vcenter-ha/</loc>
     <lastmod>2017-08-02T16:08:43-04:00</lastmod>
   </url>
   
