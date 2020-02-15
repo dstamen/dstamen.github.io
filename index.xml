@@ -6,30 +6,10 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Considerations for vSphere Component Backup and Restore: Part 1</title>
-      <link>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-1/</link>
-      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-1/</guid>
-      <description>You spend time planning and implementing updates, upgrades and configuration changes to vSphere Environments. Rollback or recovery is usually the last thing on the mind. Did you know there are multiple ways to successfully backup each component in a vSphere Environment? There are also many ways to recover those same components.
-In this series we will talk about considerations to backup and restore or rollback your vSphere environment if we have a need to.</description>
-    </item>
-    
-    <item>
-      <title>Considerations for vSphere Component Backup and Restore: Part 2</title>
-      <link>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-2/</link>
-      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/02/14/considerations-for-vsphere-component-backup-and-restore-part-2/</guid>
-      <description>Now that we have covered the considerations to backup each component in your vSphere Environment, it&amp;rsquo;s time to think about the rollback or restore process. In the previous post we discussed how to backup each individual component, in this post we will continue the conversation and discuss considerations to restore or rollback your vSphere Environment components.
-Platform Services Controller / vCenter Server When things don&amp;rsquo;t go right with an update, upgrade or configuration change of your Platform Services Controller or vCenter Server you need to understand the proper steps it takes to rollback.</description>
-    </item>
     
     <item>
       <title>Back to Work, I&#39;m Going to</title>
@@ -47,6 +27,26 @@ Platform Services Controller / vCenter Server When things don&amp;rsquo;t go rig
       
       <guid>/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/</guid>
       <description>&lt;p&gt;It has now been about two months since I have began learning Kubernetes as I started to cover Project Pacific in my new role. With that said, one of my goals was to achieve the Certified Kubernetes Administrator (CKA) to prove  my current knowledge. This post will be a recap of my experience studying for the exam.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Considerations for vSphere Component Backup and Restore: Part 2</title>
+      <link>/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/</guid>
+      <description>Now that we have covered the considerations to backup each component in your vSphere Environment, it&amp;rsquo;s time to think about the rollback or restore process. In the previous post we discussed how to backup each individual component, in this post we will continue the conversation and discuss considerations to restore or rollback your vSphere Environment components.
+Platform Services Controller / vCenter Server When things don&amp;rsquo;t go right with an update, upgrade or configuration change of your Platform Services Controller or vCenter Server you need to understand the proper steps it takes to rollback.</description>
+    </item>
+    
+    <item>
+      <title>Considerations for vSphere Component Backup and Restore: Part 1</title>
+      <link>/2019/10/21/considerations-for-vsphere-component-backup-and-restore-part-1/</link>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/21/considerations-for-vsphere-component-backup-and-restore-part-1/</guid>
+      <description>You spend time planning and implementing updates, upgrades and configuration changes to vSphere Environments. Rollback or recovery is usually the last thing on the mind. Did you know there are multiple ways to successfully backup each component in a vSphere Environment? There are also many ways to recover those same components.
+In this series we will talk about considerations to backup and restore or rollback your vSphere environment if we have a need to.</description>
     </item>
     
     <item>
