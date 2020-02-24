@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.64.1" />
+	<meta name="generator" content="Hugo 0.65.2" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -108,6 +108,43 @@
 <div class="content-container">
     <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="clr-row">
+        
+          <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="/2015/07/23/horizon-view-block-linux-vdi-console-access/">Horizon View - Block Linux VDI Console Access</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+July 23, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.
+Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/horizon-view">Horizon View</a>
+        </div>
+    </div>
+</div>
         
           <div class="clr-col-12">
     <div class="card">
@@ -431,43 +468,6 @@ January 29, 2015 under <a class="" href="/categories/vmware">VMware</a>
   
     I use a customized version of &lt;a href=&#34;http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/&#34;&gt;http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/&lt;/a&gt; by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.
 Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        </div>
-    </div>
-</div>
-        
-          <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">PowerCLI - Enable CPU and Memory HotAdd</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
   
 
 
@@ -1017,6 +1017,8 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
+        
         <li><a class="nav-list" href="/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
@@ -1024,8 +1026,6 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
         <li><a class="nav-list" href="/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
         
         <li><a class="nav-list" href="/2019/10/21/considerations-for-vsphere-component-backup-and-restore-part-1/">Considerations for vSphere Component Backup and Restore: Part 1</a></li>
-        
-        <li><a class="nav-list" href="/2019/09/24/vmworld-eu-2019-vsphere-lifecycle-sessions/">VMworld EU 2019 - vSphere Lifecycle Sessions</a></li>
         
       </ul>
     </div>

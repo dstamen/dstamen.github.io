@@ -6,10 +6,20 @@
     <description>Recent content in Awards on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Mar 2018 06:41:02 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/awards/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vExpert 2020</title>
+      <link>/2020/02/24/vexpert-2020/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/24/vexpert-2020/</guid>
+      <description>I am honored to have been selected as a VMware vExpert once again for 2020!
+This is my eighth year as a vExpert (2013,2014,2015,2016,2017,2018,2019 and now 2020). It has been great to see the community grow and the amount of vExperts increase. Although I&amp;rsquo;m no longer employed at VMware I plan to still support the VMware community in any way I can. I plan to put more blogs on the personal blog this year and am excited to see folks at whichever industry events I am able to attend.</description>
+    </item>
     
     <item>
       <title>vExpert 2018</title>
