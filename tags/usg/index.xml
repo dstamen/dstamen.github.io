@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>USG on davidstamen.com</title>
-    <link>/tags/usg/</link>
+    <link>https://davidstamen.com/tags/usg/</link>
     <description>Recent content in USG on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/usg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/usg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Configuring Unifi Controller and USG for L2TP VPN</title>
-      <link>/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</link>
+      <link>https://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</guid>
+      <guid>https://davidstamen.com/2017/04/25/configuring-unifi-controller-and-usg-for-l2tp-vpn/</guid>
       <description>I have been waiting for native GUI support for L2TP vpn with local users and it is finally here! Ubiquiti Unifi Equipment now supports local radius auth using the 5.5.x code of controller! Please see below on how you can get this setup. For my example i will be using the Stable Candidate 5.5.11.
  Unifi Controller 5.5.11
 Configuration is quite simple! Just follow these few easy steps and you will be up in no time.</description>

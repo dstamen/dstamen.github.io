@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vRA on davidstamen.com</title>
-    <link>/tags/vra/</link>
+    <link>https://davidstamen.com/tags/vra/</link>
     <description>Recent content in vRA on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Aug 2017 14:00:46 -0400</lastBuildDate>
     
-	<atom:link href="/tags/vra/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/vra/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vRA 7.3 - Using Active Directory Policies</title>
-      <link>/2017/08/vra-73-using-active-directory-policies/</link>
+      <link>https://davidstamen.com/2017/08/vra-73-using-active-directory-policies/</link>
       <pubDate>Tue, 22 Aug 2017 14:00:46 -0400</pubDate>
       
-      <guid>/2017/08/vra-73-using-active-directory-policies/</guid>
+      <guid>https://davidstamen.com/2017/08/vra-73-using-active-directory-policies/</guid>
       <description>So it seems to be that time of year again with new projects coming around. This time its all about vRA. This is probably my first of many blogs to come about things I have come across.
 My question today was how do I pre-create a computer AD account, join a device to the domain and then clean it up when the machine is destroyed.
 Turns out this is super simple in vRealize Automation 7.</description>

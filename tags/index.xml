@@ -2,813 +2,813 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on davidstamen.com</title>
-    <link>/tags/</link>
+    <link>https://davidstamen.com/tags/</link>
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vExpert</title>
-      <link>/tags/vexpert/</link>
+      <link>https://davidstamen.com/tags/vexpert/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vexpert/</guid>
+      <guid>https://davidstamen.com/tags/vexpert/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Career</title>
-      <link>/tags/career/</link>
+      <link>https://davidstamen.com/tags/career/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/career/</guid>
+      <guid>https://davidstamen.com/tags/career/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pure Storage</title>
-      <link>/tags/pure-storage/</link>
+      <link>https://davidstamen.com/tags/pure-storage/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/pure-storage/</guid>
+      <guid>https://davidstamen.com/tags/pure-storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CKA</title>
-      <link>/tags/cka/</link>
+      <link>https://davidstamen.com/tags/cka/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cka/</guid>
+      <guid>https://davidstamen.com/tags/cka/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>/tags/kubernetes/</link>
+      <link>https://davidstamen.com/tags/kubernetes/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/kubernetes/</guid>
+      <guid>https://davidstamen.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project Pacific</title>
-      <link>/tags/project-pacific/</link>
+      <link>https://davidstamen.com/tags/project-pacific/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/project-pacific/</guid>
+      <guid>https://davidstamen.com/tags/project-pacific/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Backup</title>
-      <link>/tags/backup/</link>
+      <link>https://davidstamen.com/tags/backup/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/backup/</guid>
+      <guid>https://davidstamen.com/tags/backup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ESXi</title>
-      <link>/tags/esxi/</link>
+      <link>https://davidstamen.com/tags/esxi/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/esxi/</guid>
+      <guid>https://davidstamen.com/tags/esxi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Restore</title>
-      <link>/tags/restore/</link>
+      <link>https://davidstamen.com/tags/restore/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/restore/</guid>
+      <guid>https://davidstamen.com/tags/restore/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter Server</title>
-      <link>/tags/vcenter-server/</link>
+      <link>https://davidstamen.com/tags/vcenter-server/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcenter-server/</guid>
+      <guid>https://davidstamen.com/tags/vcenter-server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere</title>
-      <link>/tags/vsphere/</link>
+      <link>https://davidstamen.com/tags/vsphere/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere/</guid>
+      <guid>https://davidstamen.com/tags/vsphere/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMworld</title>
-      <link>/tags/vmworld/</link>
+      <link>https://davidstamen.com/tags/vmworld/</link>
       <pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vmworld/</guid>
+      <guid>https://davidstamen.com/tags/vmworld/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter Server 6.5</title>
-      <link>/tags/vcenter-server-6.5/</link>
+      <link>https://davidstamen.com/tags/vcenter-server-6.5/</link>
       <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcenter-server-6.5/</guid>
+      <guid>https://davidstamen.com/tags/vcenter-server-6.5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere 6.7</title>
-      <link>/tags/vsphere-6.7/</link>
+      <link>https://davidstamen.com/tags/vsphere-6.7/</link>
       <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-6.7/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-6.7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lifecycle</title>
-      <link>/tags/lifecycle/</link>
+      <link>https://davidstamen.com/tags/lifecycle/</link>
       <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/lifecycle/</guid>
+      <guid>https://davidstamen.com/tags/lifecycle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCenter HA</title>
-      <link>/tags/vcenter-ha/</link>
+      <link>https://davidstamen.com/tags/vcenter-ha/</link>
       <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcenter-ha/</guid>
+      <guid>https://davidstamen.com/tags/vcenter-ha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Certificates</title>
-      <link>/tags/certificates/</link>
+      <link>https://davidstamen.com/tags/certificates/</link>
       <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/certificates/</guid>
+      <guid>https://davidstamen.com/tags/certificates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Converge Tool</title>
-      <link>/tags/converge-tool/</link>
+      <link>https://davidstamen.com/tags/converge-tool/</link>
       <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/converge-tool/</guid>
+      <guid>https://davidstamen.com/tags/converge-tool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Angular</title>
-      <link>/tags/angular/</link>
+      <link>https://davidstamen.com/tags/angular/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/angular/</guid>
+      <guid>https://davidstamen.com/tags/angular/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Clarity</title>
-      <link>/tags/clarity/</link>
+      <link>https://davidstamen.com/tags/clarity/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/clarity/</guid>
+      <guid>https://davidstamen.com/tags/clarity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoolTool</title>
-      <link>/tags/cooltool/</link>
+      <link>https://davidstamen.com/tags/cooltool/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cooltool/</guid>
+      <guid>https://davidstamen.com/tags/cooltool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Powershell</title>
-      <link>/tags/powershell/</link>
+      <link>https://davidstamen.com/tags/powershell/</link>
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/powershell/</guid>
+      <guid>https://davidstamen.com/tags/powershell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>REST API</title>
-      <link>/tags/rest-api/</link>
+      <link>https://davidstamen.com/tags/rest-api/</link>
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rest-api/</guid>
+      <guid>https://davidstamen.com/tags/rest-api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eBook</title>
-      <link>/tags/ebook/</link>
+      <link>https://davidstamen.com/tags/ebook/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ebook/</guid>
+      <guid>https://davidstamen.com/tags/ebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere 6.5</title>
-      <link>/tags/vsphere-6.5/</link>
+      <link>https://davidstamen.com/tags/vsphere-6.5/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-6.5/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-6.5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere Upgrade</title>
-      <link>/tags/vsphere-upgrade/</link>
+      <link>https://davidstamen.com/tags/vsphere-upgrade/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-upgrade/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-upgrade/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Update Manager</title>
-      <link>/tags/update-manager/</link>
+      <link>https://davidstamen.com/tags/update-manager/</link>
       <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/update-manager/</guid>
+      <guid>https://davidstamen.com/tags/update-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AutoDeploy</title>
-      <link>/tags/autodeploy/</link>
+      <link>https://davidstamen.com/tags/autodeploy/</link>
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/autodeploy/</guid>
+      <guid>https://davidstamen.com/tags/autodeploy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Networking</title>
-      <link>/tags/networking/</link>
+      <link>https://davidstamen.com/tags/networking/</link>
       <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
       
-      <guid>/tags/networking/</guid>
+      <guid>https://davidstamen.com/tags/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VDS</title>
-      <link>/tags/vds/</link>
+      <link>https://davidstamen.com/tags/vds/</link>
       <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
       
-      <guid>/tags/vds/</guid>
+      <guid>https://davidstamen.com/tags/vds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Storage</title>
-      <link>/tags/storage/</link>
+      <link>https://davidstamen.com/tags/storage/</link>
       <pubDate>Sun, 07 Oct 2018 08:13:29 -0400</pubDate>
       
-      <guid>/tags/storage/</guid>
+      <guid>https://davidstamen.com/tags/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VM Compatibility</title>
-      <link>/tags/vm-compatibility/</link>
+      <link>https://davidstamen.com/tags/vm-compatibility/</link>
       <pubDate>Sat, 06 Oct 2018 08:25:31 -0400</pubDate>
       
-      <guid>/tags/vm-compatibility/</guid>
+      <guid>https://davidstamen.com/tags/vm-compatibility/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VM Tools</title>
-      <link>/tags/vm-tools/</link>
+      <link>https://davidstamen.com/tags/vm-tools/</link>
       <pubDate>Sat, 06 Oct 2018 08:25:31 -0400</pubDate>
       
-      <guid>/tags/vm-tools/</guid>
+      <guid>https://davidstamen.com/tags/vm-tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PSC</title>
-      <link>/tags/psc/</link>
+      <link>https://davidstamen.com/tags/psc/</link>
       <pubDate>Fri, 05 Oct 2018 09:08:15 -0400</pubDate>
       
-      <guid>/tags/psc/</guid>
+      <guid>https://davidstamen.com/tags/psc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>L1TF</title>
-      <link>/tags/l1tf/</link>
+      <link>https://davidstamen.com/tags/l1tf/</link>
       <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
       
-      <guid>/tags/l1tf/</guid>
+      <guid>https://davidstamen.com/tags/l1tf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vulnerability</title>
-      <link>/tags/vulnerability/</link>
+      <link>https://davidstamen.com/tags/vulnerability/</link>
       <pubDate>Wed, 15 Aug 2018 10:47:06 -0400</pubDate>
       
-      <guid>/tags/vulnerability/</guid>
+      <guid>https://davidstamen.com/tags/vulnerability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HA</title>
-      <link>/tags/ha/</link>
+      <link>https://davidstamen.com/tags/ha/</link>
       <pubDate>Fri, 19 Jan 2018 10:27:02 +0000</pubDate>
       
-      <guid>/tags/ha/</guid>
+      <guid>https://davidstamen.com/tags/ha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Forestry.io</title>
-      <link>/tags/forestry.io/</link>
+      <link>https://davidstamen.com/tags/forestry.io/</link>
       <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>
       
-      <guid>/tags/forestry.io/</guid>
+      <guid>https://davidstamen.com/tags/forestry.io/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>/tags/hugo/</link>
+      <link>https://davidstamen.com/tags/hugo/</link>
       <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>
       
-      <guid>/tags/hugo/</guid>
+      <guid>https://davidstamen.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCAP6.5-DCV Design</title>
-      <link>/tags/vcap6.5-dcv-design/</link>
+      <link>https://davidstamen.com/tags/vcap6.5-dcv-design/</link>
       <pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate>
       
-      <guid>/tags/vcap6.5-dcv-design/</guid>
+      <guid>https://davidstamen.com/tags/vcap6.5-dcv-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>StandDesk</title>
-      <link>/tags/standdesk/</link>
+      <link>https://davidstamen.com/tags/standdesk/</link>
       <pubDate>Thu, 24 Aug 2017 16:33:29 -0400</pubDate>
       
-      <guid>/tags/standdesk/</guid>
+      <guid>https://davidstamen.com/tags/standdesk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vRA</title>
-      <link>/tags/vra/</link>
+      <link>https://davidstamen.com/tags/vra/</link>
       <pubDate>Tue, 22 Aug 2017 14:00:46 -0400</pubDate>
       
-      <guid>/tags/vra/</guid>
+      <guid>https://davidstamen.com/tags/vra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerCLI</title>
-      <link>/tags/powercli/</link>
+      <link>https://davidstamen.com/tags/powercli/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/powercli/</guid>
+      <guid>https://davidstamen.com/tags/powercli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vROPS</title>
-      <link>/tags/vrops/</link>
+      <link>https://davidstamen.com/tags/vrops/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vrops/</guid>
+      <guid>https://davidstamen.com/tags/vrops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unifi</title>
-      <link>/tags/unifi/</link>
+      <link>https://davidstamen.com/tags/unifi/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/unifi/</guid>
+      <guid>https://davidstamen.com/tags/unifi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>USG</title>
-      <link>/tags/usg/</link>
+      <link>https://davidstamen.com/tags/usg/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/usg/</guid>
+      <guid>https://davidstamen.com/tags/usg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VPN</title>
-      <link>/tags/vpn/</link>
+      <link>https://davidstamen.com/tags/vpn/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vpn/</guid>
+      <guid>https://davidstamen.com/tags/vpn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerDNS</title>
-      <link>/tags/powerdns/</link>
+      <link>https://davidstamen.com/tags/powerdns/</link>
       <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/powerdns/</guid>
+      <guid>https://davidstamen.com/tags/powerdns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere 6.0</title>
-      <link>/tags/vsphere-6.0/</link>
+      <link>https://davidstamen.com/tags/vsphere-6.0/</link>
       <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-6.0/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-6.0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webclient</title>
-      <link>/tags/webclient/</link>
+      <link>https://davidstamen.com/tags/webclient/</link>
       <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/webclient/</guid>
+      <guid>https://davidstamen.com/tags/webclient/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Content Library</title>
-      <link>/tags/content-library/</link>
+      <link>https://davidstamen.com/tags/content-library/</link>
       <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/content-library/</guid>
+      <guid>https://davidstamen.com/tags/content-library/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMware Fling</title>
-      <link>/tags/vmware-fling/</link>
+      <link>https://davidstamen.com/tags/vmware-fling/</link>
       <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vmware-fling/</guid>
+      <guid>https://davidstamen.com/tags/vmware-fling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Availability</title>
-      <link>/tags/availability/</link>
+      <link>https://davidstamen.com/tags/availability/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/availability/</guid>
+      <guid>https://davidstamen.com/tags/availability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MyVMware</title>
-      <link>/tags/myvmware/</link>
+      <link>https://davidstamen.com/tags/myvmware/</link>
       <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/myvmware/</guid>
+      <guid>https://davidstamen.com/tags/myvmware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>/tags/windows/</link>
+      <link>https://davidstamen.com/tags/windows/</link>
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/windows/</guid>
+      <guid>https://davidstamen.com/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Study Guide</title>
-      <link>/tags/study-guide/</link>
+      <link>https://davidstamen.com/tags/study-guide/</link>
       <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/study-guide/</guid>
+      <guid>https://davidstamen.com/tags/study-guide/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCAP6-DCV Design</title>
-      <link>/tags/vcap6-dcv-design/</link>
+      <link>https://davidstamen.com/tags/vcap6-dcv-design/</link>
       <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcap6-dcv-design/</guid>
+      <guid>https://davidstamen.com/tags/vcap6-dcv-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCAP6-DCV Deploy</title>
-      <link>/tags/vcap6-dcv-deploy/</link>
+      <link>https://davidstamen.com/tags/vcap6-dcv-deploy/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcap6-dcv-deploy/</guid>
+      <guid>https://davidstamen.com/tags/vcap6-dcv-deploy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Veeam</title>
-      <link>/tags/veeam/</link>
+      <link>https://davidstamen.com/tags/veeam/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/veeam/</guid>
+      <guid>https://davidstamen.com/tags/veeam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cisco UCS</title>
-      <link>/tags/cisco-ucs/</link>
+      <link>https://davidstamen.com/tags/cisco-ucs/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cisco-ucs/</guid>
+      <guid>https://davidstamen.com/tags/cisco-ucs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syslog</title>
-      <link>/tags/syslog/</link>
+      <link>https://davidstamen.com/tags/syslog/</link>
       <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/syslog/</guid>
+      <guid>https://davidstamen.com/tags/syslog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SNMP</title>
-      <link>/tags/snmp/</link>
+      <link>https://davidstamen.com/tags/snmp/</link>
       <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/snmp/</guid>
+      <guid>https://davidstamen.com/tags/snmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ansible</title>
-      <link>/tags/ansible/</link>
+      <link>https://davidstamen.com/tags/ansible/</link>
       <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ansible/</guid>
+      <guid>https://davidstamen.com/tags/ansible/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cisco ACI</title>
-      <link>/tags/cisco-aci/</link>
+      <link>https://davidstamen.com/tags/cisco-aci/</link>
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cisco-aci/</guid>
+      <guid>https://davidstamen.com/tags/cisco-aci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cisco Champion</title>
-      <link>/tags/cisco-champion/</link>
+      <link>https://davidstamen.com/tags/cisco-champion/</link>
       <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cisco-champion/</guid>
+      <guid>https://davidstamen.com/tags/cisco-champion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ESXCLI</title>
-      <link>/tags/esxcli/</link>
+      <link>https://davidstamen.com/tags/esxcli/</link>
       <pubDate>Mon, 30 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/esxcli/</guid>
+      <guid>https://davidstamen.com/tags/esxcli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Horizon View</title>
-      <link>/tags/horizon-view/</link>
+      <link>https://davidstamen.com/tags/horizon-view/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/horizon-view/</guid>
+      <guid>https://davidstamen.com/tags/horizon-view/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCP6-DCV</title>
-      <link>/tags/vcp6-dcv/</link>
+      <link>https://davidstamen.com/tags/vcp6-dcv/</link>
       <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcp6-dcv/</guid>
+      <guid>https://davidstamen.com/tags/vcp6-dcv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>KVM</title>
-      <link>/tags/kvm/</link>
+      <link>https://davidstamen.com/tags/kvm/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/kvm/</guid>
+      <guid>https://davidstamen.com/tags/kvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>/tags/ubuntu/</link>
+      <link>https://davidstamen.com/tags/ubuntu/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ubuntu/</guid>
+      <guid>https://davidstamen.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vagrant</title>
-      <link>/tags/vagrant/</link>
+      <link>https://davidstamen.com/tags/vagrant/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vagrant/</guid>
+      <guid>https://davidstamen.com/tags/vagrant/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere 5.5</title>
-      <link>/tags/vsphere-5.5/</link>
+      <link>https://davidstamen.com/tags/vsphere-5.5/</link>
       <pubDate>Tue, 06 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-5.5/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-5.5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SSH</title>
-      <link>/tags/ssh/</link>
+      <link>https://davidstamen.com/tags/ssh/</link>
       <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ssh/</guid>
+      <guid>https://davidstamen.com/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jekyll</title>
-      <link>/tags/jekyll/</link>
+      <link>https://davidstamen.com/tags/jekyll/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/jekyll/</guid>
+      <guid>https://davidstamen.com/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>/tags/nginx/</link>
+      <link>https://davidstamen.com/tags/nginx/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nginx/</guid>
+      <guid>https://davidstamen.com/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ravello</title>
-      <link>/tags/ravello/</link>
+      <link>https://davidstamen.com/tags/ravello/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ravello/</guid>
+      <guid>https://davidstamen.com/tags/ravello/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pernix Pro</title>
-      <link>/tags/pernix-pro/</link>
+      <link>https://davidstamen.com/tags/pernix-pro/</link>
       <pubDate>Thu, 07 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/pernix-pro/</guid>
+      <guid>https://davidstamen.com/tags/pernix-pro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SRM</title>
-      <link>/tags/srm/</link>
+      <link>https://davidstamen.com/tags/srm/</link>
       <pubDate>Wed, 18 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/srm/</guid>
+      <guid>https://davidstamen.com/tags/srm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Trend Micro</title>
-      <link>/tags/trend-micro/</link>
+      <link>https://davidstamen.com/tags/trend-micro/</link>
       <pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/trend-micro/</guid>
+      <guid>https://davidstamen.com/tags/trend-micro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Exchange</title>
-      <link>/tags/exchange/</link>
+      <link>https://davidstamen.com/tags/exchange/</link>
       <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/exchange/</guid>
+      <guid>https://davidstamen.com/tags/exchange/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chrome</title>
-      <link>/tags/chrome/</link>
+      <link>https://davidstamen.com/tags/chrome/</link>
       <pubDate>Thu, 16 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/chrome/</guid>
+      <guid>https://davidstamen.com/tags/chrome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VDP</title>
-      <link>/tags/vdp/</link>
+      <link>https://davidstamen.com/tags/vdp/</link>
       <pubDate>Mon, 22 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vdp/</guid>
+      <guid>https://davidstamen.com/tags/vdp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sysprep</title>
-      <link>/tags/sysprep/</link>
+      <link>https://davidstamen.com/tags/sysprep/</link>
       <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sysprep/</guid>
+      <guid>https://davidstamen.com/tags/sysprep/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vSphere 5.1</title>
-      <link>/tags/vsphere-5.1/</link>
+      <link>https://davidstamen.com/tags/vsphere-5.1/</link>
       <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vsphere-5.1/</guid>
+      <guid>https://davidstamen.com/tags/vsphere-5.1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dump Collector</title>
-      <link>/tags/dump-collector/</link>
+      <link>https://davidstamen.com/tags/dump-collector/</link>
       <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/dump-collector/</guid>
+      <guid>https://davidstamen.com/tags/dump-collector/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vCloud Air</title>
-      <link>/tags/vcloud-air/</link>
+      <link>https://davidstamen.com/tags/vcloud-air/</link>
       <pubDate>Wed, 04 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vcloud-air/</guid>
+      <guid>https://davidstamen.com/tags/vcloud-air/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vMotion</title>
-      <link>/tags/vmotion/</link>
+      <link>https://davidstamen.com/tags/vmotion/</link>
       <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vmotion/</guid>
+      <guid>https://davidstamen.com/tags/vmotion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vMA</title>
-      <link>/tags/vma/</link>
+      <link>https://davidstamen.com/tags/vma/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/vma/</guid>
+      <guid>https://davidstamen.com/tags/vma/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HomeLab</title>
-      <link>/tags/homelab/</link>
+      <link>https://davidstamen.com/tags/homelab/</link>
       <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/homelab/</guid>
+      <guid>https://davidstamen.com/tags/homelab/</guid>
       <description></description>
     </item>
     

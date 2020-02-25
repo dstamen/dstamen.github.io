@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Update Manager on davidstamen.com</title>
-    <link>/tags/update-manager/</link>
+    <link>https://davidstamen.com/tags/update-manager/</link>
     <description>Recent content in Update Manager on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/update-manager/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/update-manager/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vSphere Update Manager 6.7 Unable to Scan Cluster</title>
-      <link>/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</link>
+      <link>https://davidstamen.com/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</link>
       <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</guid>
+      <guid>https://davidstamen.com/2018/10/25/vsphere-update-manager-6.7-unable-to-scan-cluster/</guid>
       <description>&lt;p&gt;I recently deployed a couple new vSphere 6.7 labs and was having some issues running Check Compliance within Update Manager.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Troubleshooting Cisco ENIC and FNIC Drivers with VMware Update Manager 6.x</title>
-      <link>/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</link>
+      <link>https://davidstamen.com/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</guid>
+      <guid>https://davidstamen.com/2016/04/08/troubleshooting-cisco-enic-and-fnic-drivers-with-vmware-update-manager-6x/</guid>
       <description>I have been having issues ever since I updated to vSphere 6.x getting the Cisco Drivers to properly update through VMware Update Manager(VUM). Every time I would run through a compliance check, they would always report they were up to date even when they were running an older version.
 I have recently made a breakthrough working with VMware Support and stumbling through some old blogs. Cisco Support has been terrible on this issue and after repeated attempts to get this case escalated i think the 10th time is a charm.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vSphere 6.0 on davidstamen.com</title>
-    <link>/tags/vsphere-6.0/</link>
+    <link>https://davidstamen.com/tags/vsphere-6.0/</link>
     <description>Recent content in vSphere 6.0 on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/vsphere-6.0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/vsphere-6.0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Functional Branding of vSphere Web Client Logon Page</title>
-      <link>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</link>
+      <link>https://davidstamen.com/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</link>
       <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid>
+      <guid>https://davidstamen.com/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid>
       <description>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.
 As people have noted before William Lam&amp;amp;rsquo;s - How to Customize Webclient Login UI
 I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node.</description>
@@ -24,10 +24,10 @@ I figured since I am using the embedded SSO, I could update the login page to sh
     
     <item>
       <title>Upgrading VCSA from 6.0 U1a to 6.0U1b using CLI</title>
-      <link>/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/</link>
+      <link>https://davidstamen.com/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/</link>
       <pubDate>Tue, 12 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/</guid>
+      <guid>https://davidstamen.com/2016/01/12/upgrading-vcsa-from-60-u1a-to-60u1b/</guid>
       <description>Welcome to my post about upgrading your VMware vCenter Server Appliance (VCSA) to 6.0 U1b.
 This process is very straight forward. We will begin with updating our Platform Service Controllers (PSC) and then proceed with the vCenter Appliance.
  SSH to your Primary PSC. If you are currently in the bash shell, type appliancesh to switch shells to run the update. Run software-packages install &amp;ndash;url &amp;ndash;acceptEulas to download and install the packages from the VMware Repo.</description>
@@ -35,10 +35,10 @@ This process is very straight forward. We will begin with updating our Platform 
     
     <item>
       <title>Unregistering vSphere 6 VCSA from PSC</title>
-      <link>/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</link>
+      <link>https://davidstamen.com/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</link>
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</guid>
+      <guid>https://davidstamen.com/2015/10/13/unregistering-vsphere-6-vcsa-from-psc/</guid>
       <description>So I am in the process of doing some vSphere 6 testing and needed to test a redeployment of one of my VCSA&amp;rsquo;s. The problem is when I went to redeploy it I got the following error.
 Decoding the error, I pretty much figured that the object already existed in the SSO database and I needed to delete the existing object. Here is how you do that.
  Log in as root to the appliance shell of the Platform Services Controller appliance with which the vCenter Server Appliance is registered.</description>
@@ -46,10 +46,10 @@ Decoding the error, I pretty much figured that the object already existed in the
     
     <item>
       <title>ESXi 6.0 Update 1a Released</title>
-      <link>/2015/10/06/esxi-60-update-1a-released/</link>
+      <link>https://davidstamen.com/2015/10/06/esxi-60-update-1a-released/</link>
       <pubDate>Tue, 06 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/10/06/esxi-60-update-1a-released/</guid>
+      <guid>https://davidstamen.com/2015/10/06/esxi-60-update-1a-released/</guid>
       <description>ESXi 6.0 Update 1a has been released. If you have been following KB2124669 in regards to the the NETDEV WATCHDOG issue causing an ESXi host to hang. The update is now available.
 If you are currently running ESXi 6.0/6.0U1 you can use update manager to install the update.
 If you are looking to install ESXi 6.0 U1 from scratch or update from a previous version you should make sure you update to use the latest ISO.</description>
@@ -57,30 +57,30 @@ If you are looking to install ESXi 6.0 U1 from scratch or update from a previous
     
     <item>
       <title>Unable to SSH to vSphere 6 VCSA or PSC</title>
-      <link>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</link>
+      <link>https://davidstamen.com/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</link>
       <pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</guid>
+      <guid>https://davidstamen.com/2015/09/21/unable-to-ssh-to-vsphere-6-vcsa-or-psc/</guid>
       <description>So I am in the midst of setting up a vSphere 6 POC and it has been a bit since I played with it. I came across a problem I thought i would document and share.
 While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</description>
     </item>
     
     <item>
       <title>vSphere 6.0 Update 1 Released</title>
-      <link>/2015/09/10/vsphere-60-update-1-released/</link>
+      <link>https://davidstamen.com/2015/09/10/vsphere-60-update-1-released/</link>
       <pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/09/10/vsphere-60-update-1-released/</guid>
+      <guid>https://davidstamen.com/2015/09/10/vsphere-60-update-1-released/</guid>
       <description>Today vSphere 6.0 U1 is released. This is normally the update everyone waits for before upgrading their production environments to the latest version. I think the first time in awhile, a lot of people will wait.
 You see, VMware has had a bug KB2124669 since ESXi 6.0 that can cause an ESXi host to randomly lose connection, freeze and overall act really terrible. With the release of 6.0U1 it still exists.</description>
     </item>
     
     <item>
       <title>vSphere6 - Unable to use session credentials</title>
-      <link>/2015/04/13/vsphere6-unable-to-use-session-credentials/</link>
+      <link>https://davidstamen.com/2015/04/13/vsphere6-unable-to-use-session-credentials/</link>
       <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/04/13/vsphere6-unable-to-use-session-credentials/</guid>
+      <guid>https://davidstamen.com/2015/04/13/vsphere6-unable-to-use-session-credentials/</guid>
       <description>So one thing I have come across with a few VCSA6 installs was the inability to use login with current credentials via the Web client or vSphere client.
 Working with VMware support we were finally able to get it working with a few tweaks and there is a current pending KB that has not been published yet. (KB2113038) I have been told this affects both an embedded deployment (VCSA and PSC together) and external deployment (VCSA and PSC seperate.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on davidstamen.com</title>
-    <link>/tags/chrome/</link>
+    <link>https://davidstamen.com/tags/chrome/</link>
     <description>Recent content in Chrome on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Oct 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Office 365/Exchange EAC Pop Ups not working with Chrome 37</title>
-      <link>/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</link>
+      <link>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</link>
       <pubDate>Thu, 16 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</guid>
+      <guid>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</guid>
       <description>Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.
 Download the Chrome Policy Plugin here
  Open the zip file you just downloaded and locate the .ADM file that best matches your system: Extract the .ADM file to any folder on your hard drive Go to Start &amp;gt; Run, and run gpedit.msc Right-click Local Computer Policy &amp;gt; Computer Configuration &amp;gt; Administrative Templates, and select Add/Remove Templates: Add the adm template that you saved to disk earlier:   You should now see the template underneath a Google &amp;gt; Google Chrome section within Administrative Templates  Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:    Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:   NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.</description>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VM Tools on davidstamen.com</title>
-    <link>/tags/vm-tools/</link>
+    <link>https://davidstamen.com/tags/vm-tools/</link>
     <description>Recent content in VM Tools on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Oct 2018 08:25:31 -0400</lastBuildDate>
     
-	<atom:link href="/tags/vm-tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/tags/vm-tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automating Upgrade of VMware Tools and VM Compatibility</title>
-      <link>/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</link>
+      <link>https://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</link>
       <pubDate>Sat, 06 Oct 2018 08:25:31 -0400</pubDate>
       
-      <guid>/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</guid>
+      <guid>https://davidstamen.com/2018/10/06/automating-upgrade-of-vmware-tools-and-vm-compatibility/</guid>
       <description>&lt;p&gt;Next up in our Automating your vSphere Upgrade blog series is your VMware Tools and VM Compatibility. Upgrading these both have different requirements so we will cover when and how you should upgrade your VMware Tools and VM compatibility in the below post.&lt;/p&gt;</description>
     </item>
     

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on davidstamen.com</title>
-    <link>/series/</link>
+    <link>https://davidstamen.com/series/</link>
     <description>Recent content in Series on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Oct 2018 08:02:47 -0400</lastBuildDate>
     
-	<atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidstamen.com/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automating your vSphere Upgrade</title>
-      <link>/series/automating-your-vsphere-upgrade/</link>
+      <link>https://davidstamen.com/series/automating-your-vsphere-upgrade/</link>
       <pubDate>Mon, 08 Oct 2018 08:02:47 -0400</pubDate>
       
-      <guid>/series/automating-your-vsphere-upgrade/</guid>
+      <guid>https://davidstamen.com/series/automating-your-vsphere-upgrade/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCP6-DCV Study Guide</title>
-      <link>/series/vcp6-dcv-study-guide/</link>
+      <link>https://davidstamen.com/series/vcp6-dcv-study-guide/</link>
       <pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/series/vcp6-dcv-study-guide/</guid>
+      <guid>https://davidstamen.com/series/vcp6-dcv-study-guide/</guid>
       <description></description>
     </item>
     
