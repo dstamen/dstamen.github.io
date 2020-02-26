@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 March 14, 2016 under <a class="" href="/categories/automation">Automation</a>
         &middot; Tagged <a class="" href="/tags/storage">Storage</a> and <a class="" href="/tags/syslog">Syslog</a>
-        &middot; Read in about 1 min (143 words)
+        &middot; Read in about 1 min (148 words)
       </div>
   </span>
   
@@ -182,21 +182,21 @@ March 14, 2016 under <a class="" href="/categories/automation">Automation</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-<pre><code>#Import Module
-Import-Module PureStoragePowershellSDK
-
-#Define Variables
-$cred = Get-Credential
-$arrays = &quot;pure.lab.local&quot;
-$SysLogServers = &quot;tcp://syslog.lab.local:514&quot;
-
-#Cycles through each UCS setting values
-Foreach ($array in $arrays) {
-  Write-Host &quot;Setting Syslog Information for $array&quot;
-  $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
-  Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
-}
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#Import Module
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>Import-Module PureStoragePowershellSDK
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>#Define Variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$cred = Get-Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$arrays = &#34;pure.lab.local&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$SysLogServers = &#34;tcp://syslog.lab.local:514&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>#Cycles through each UCS setting values
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>Foreach ($array in $arrays) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  Write-Host &#34;Setting Syslog Information for $array&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>}
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-PureStorageSyslog.ps1</li>
 </ul>

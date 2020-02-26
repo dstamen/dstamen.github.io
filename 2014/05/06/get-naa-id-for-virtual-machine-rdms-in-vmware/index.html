@@ -34,7 +34,7 @@
 
   <meta property="og:title" content="Get NAA.ID for Virtual Machine RDM&#39;s in VMware" />
 <meta property="og:description" content="This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+1Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
  KB2051606" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/" />
@@ -44,7 +44,7 @@ Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&q
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Get NAA.ID for Virtual Machine RDM&#39;s in VMware"/>
 <meta name="twitter:description" content="This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+1Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
  KB2051606"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
@@ -172,8 +172,8 @@ May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>This is a great script to keep handy. If you have multiple RDM&rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.</p>
-<pre><code>Get-VM VMNAME| Get-HardDisk -DiskType &quot;RawPhysical&quot;,&quot;RawVirtual&quot; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
-</code></pre><p><img src="/images/naaid.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
+</span></code></pre></div><p><img src="/images/naaid.png" alt=""></p>
 <p>If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.</p>
 <p>
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;amp;docType=kc&amp;amp;externalId=2051606" target="_blank">KB2051606</a></p>

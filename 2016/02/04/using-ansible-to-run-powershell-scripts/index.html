@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 February 4, 2016 under <a class="" href="/categories/automation">Automation</a>
         &middot; Tagged <a class="" href="/tags/ansible">Ansible</a> and <a class="" href="/tags/powershell">Powershell</a>
-        &middot; Read in about 1 min (158 words)
+        &middot; Read in about 1 min (164 words)
       </div>
   </span>
   
@@ -187,19 +187,19 @@ February 4, 2016 under <a class="" href="/categories/automation">Automation</a>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.</em></p>
 <p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.</p>
-<pre><code>ansible_ssh_user: admin
-ansible_ssh_pass: password
-ansible_ssh_port: 5985
-ansible_connection: winrm
-ansible_winrm_server_cert_validation: ignore
-</code></pre><p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">name</span>: Run Powershell Scripts
-  <span style="color:#66d9ef">hosts</span>: test
-  <span style="color:#66d9ef">tasks</span>:
-    - <span style="color:#66d9ef">name</span>: run a powershell script
-      <span style="color:#66d9ef">script</span>: scripts/hello.ps1
-      <span style="color:#66d9ef">register</span>: out
-    - <span style="color:#66d9ef">debug</span>: var=out
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ansible_ssh_user: admin
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ansible_ssh_pass: password
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>ansible_ssh_port: 5985
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>ansible_connection: winrm
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>ansible_winrm_server_cert_validation: ignore
+</code></pre></div><p>Here is the yaml code responsible for launching the script. Copy the script into the scripts directory and update the file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>- <span style="color:#66d9ef">name</span>: Run Powershell Scripts
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#66d9ef">hosts</span>: test
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#66d9ef">tasks</span>:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    - <span style="color:#66d9ef">name</span>: run a powershell script
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>      <span style="color:#66d9ef">script</span>: scripts/hello.ps1
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>      <span style="color:#66d9ef">register</span>: out
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    - <span style="color:#66d9ef">debug</span>: var=out
 </code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run ansible-playbook powershell.yml -i hosts</li>

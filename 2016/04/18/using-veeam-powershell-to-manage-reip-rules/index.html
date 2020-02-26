@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 April 18, 2016 under <a class="" href="/categories/backup">Backup</a>
         &middot; Tagged <a class="" href="/tags/veeam">Veeam</a>, <a class="" href="/tags/powershell">Powershell</a> and <a class="" href="/tags/availability">Availability</a>
-        &middot; Read in about 2 min (280 words)
+        &middot; Read in about 2 min (304 words)
       </div>
   </span>
   
@@ -185,46 +185,46 @@ April 18, 2016 under <a class="" href="/categories/backup">Backup</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just update the CSV file and then you execute the script.</p>
-<pre><code>#Define Variables
-param
-(
-    [Parameter(Mandatory=$False,
-        HelpMessage='Path to CSV to Import')]
-        [string[]]$csvlist
-)
-
-#Load Veeam Plugin
-Add-PSSnapin -Name VeeamPSSnapIn -ErrorAction SilentlyContinue
-
-#Check if CSV was specified, if not prompt.
-If($csvlist -eq $NULL){
-    $csvlist = Read-host -Prompt &quot;Csv to import&quot;
-}
-If((Test-Path $csvlist) -eq $False){Write-host &quot;Could not find CSV.&quot;;break}
-
-#Import CSV
-$iplist = Import-csv &quot;$csvlist&quot;
-
-#Cycle through each row and add in the ReIP Rule
-Foreach ($item in $iplist) {
-  $Description = $item.Description
-  $Job = $item.Job
-  $SourceIp = $item.SourceIp
-  $SourceMask = $item.SourceMask
-  $TargetIp = $item.TargetIp
-  $TargetMask = $item.TargetMask
-  $TargetGateway = $item.TargetGateway
-  $DNS1 = $item.DNS1
-  $DNS2 = $item.DNS2
-
-  $currentiprules = Get-VBRJob -Name $Job | Get-VBRViReplicaReIpRule
-  $newiprule = New-VBRViReplicaReIpRule -SourceIp $SourceIp -SourceMask $SourceMask -TargetIp $TargetIp -TargetMask $TargetMask -TargetGateway $TargetGateway -DNS $DNS1,$DNS2 -Description $Description
-  $newrules = @($currentiprules) + @($newiprule)
-  $replicajob = Get-VBRJob -Name $Job
-  Set-VBRViReplicaJob -Job $replicajob -EnableReIp -ReIpRule $newrules
-
-}
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#Define Variables
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>param
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    [Parameter(Mandatory=$False,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        HelpMessage=&#39;Path to CSV to Import&#39;)]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        [string[]]$csvlist
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>#Load Veeam Plugin
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>Add-PSSnapin -Name VeeamPSSnapIn -ErrorAction SilentlyContinue
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>#Check if CSV was specified, if not prompt.
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>If($csvlist -eq $NULL){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    $csvlist = Read-host -Prompt &#34;Csv to import&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>If((Test-Path $csvlist) -eq $False){Write-host &#34;Could not find CSV.&#34;;break}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>#Import CSV
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>$iplist = Import-csv &#34;$csvlist&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>#Cycle through each row and add in the ReIP Rule
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>Foreach ($item in $iplist) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>  $Description = $item.Description
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  $Job = $item.Job
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  $SourceIp = $item.SourceIp
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  $SourceMask = $item.SourceMask
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  $TargetIp = $item.TargetIp
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  $TargetMask = $item.TargetMask
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  $TargetGateway = $item.TargetGateway
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  $DNS1 = $item.DNS1
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>  $DNS2 = $item.DNS2
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  $currentiprules = Get-VBRJob -Name $Job | Get-VBRViReplicaReIpRule
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>  $newiprule = New-VBRViReplicaReIpRule -SourceIp $SourceIp -SourceMask $SourceMask -TargetIp $TargetIp -TargetMask $TargetMask -TargetGateway $TargetGateway -DNS $DNS1,$DNS2 -Description $Description
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>  $newrules = @($currentiprules) + @($newiprule)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>  $replicajob = Get-VBRJob -Name $Job
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  Set-VBRViReplicaJob -Job $replicajob -EnableReIp -ReIpRule $newrules
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>}
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Create-VeeamReIPRule.ps1 pathto.csv</li>
 </ul>

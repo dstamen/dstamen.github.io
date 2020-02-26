@@ -163,7 +163,7 @@ if (!doNotTrack) {
         Published on 
 September 15, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        &middot; Read in about 1 min (209 words)
+        &middot; Read in about 1 min (211 words)
       </div>
   </span>
   
@@ -180,22 +180,22 @@ September 15, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>The code and Github Link can be found below.</p>
 <p>
 <a href="https://github.com/dstamen/PowerCLI/blob/master/ExtendVMDKandGuest.ps1" target="_blank">ExtendVMDKandGuest.ps1</a></p>
-<pre><code># PowerCLI Script for adding vmdk to VM and extending disk in windows
-# @davidstamen
-# http://davidstamen.com
-
-param(
-  [string]$VM
-)
-$VM = Get-VM $VM
-Get-VM $VM|Get-HardDisk|FT Parent, Name, CapacityGB -Autosize
-$HardDisk = Read-Host &quot;Enter VMware Hard Disk (Ex. 1)&quot;
-$HardDisk = &quot;Hard Disk &quot; + $HardDisk
-$HardDiskSize = Read-Host &quot;Enter the new Hard Disk size in GB (Ex. 50)&quot;
-$VolumeLetter = Read-Host &quot;Enter the volume letter (Ex. c,d,e,f)&quot;
-Get-HardDisk -vm $VM | where {$_.Name -eq $HardDisk} | Set-HardDisk -CapacityGB $HardDiskSize -Confirm:$false
-Invoke-VMScript -vm $VM -ScriptText &quot;echo rescan &gt; c:\diskpart.txt &amp;&amp; echo select vol $VolumeLetter &gt;&gt; c:\diskpart.txt &amp;&amp; echo extend &gt;&gt; c:\diskpart.txt &amp;&amp; diskpart.exe /s c:\diskpart.txt&quot; -ScriptType BAT
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># PowerCLI Script for adding vmdk to VM and extending disk in windows
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span># @davidstamen
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span># http://davidstamen.com
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>param(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  [string]$VM
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$VM = Get-VM $VM
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>Get-VM $VM|Get-HardDisk|FT Parent, Name, CapacityGB -Autosize
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>$HardDisk = Read-Host &#34;Enter VMware Hard Disk (Ex. 1)&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>$HardDisk = &#34;Hard Disk &#34; + $HardDisk
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>$HardDiskSize = Read-Host &#34;Enter the new Hard Disk size in GB (Ex. 50)&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>$VolumeLetter = Read-Host &#34;Enter the volume letter (Ex. c,d,e,f)&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>Get-HardDisk -vm $VM | where {$_.Name -eq $HardDisk} | Set-HardDisk -CapacityGB $HardDiskSize -Confirm:$false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>Invoke-VMScript -vm $VM -ScriptText &#34;echo rescan &gt; c:\diskpart.txt &amp;&amp; echo select vol $VolumeLetter &gt;&gt; c:\diskpart.txt &amp;&amp; echo extend &gt;&gt; c:\diskpart.txt &amp;&amp; diskpart.exe /s c:\diskpart.txt&#34; -ScriptType BAT
+</code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f09%2f15%2fusing-powercli-to-extend-vmdk-and-windows-os-disk%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

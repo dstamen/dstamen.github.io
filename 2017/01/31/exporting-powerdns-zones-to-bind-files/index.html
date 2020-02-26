@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 January 31, 2017 under <a class="" href="/categories/linux">Linux</a>
         &middot; Tagged <a class="" href="/tags/powerdns">PowerDNS</a>
-        &middot; Read in about 4 min (759 words)
+        &middot; Read in about 4 min (830 words)
       </div>
   </span>
   
@@ -173,94 +173,94 @@ January 31, 2017 under <a class="" href="/categories/linux">Linux</a>
 <a href="http://jameslinden.com/code/powerdns-to-bind-zone/" target="_blank">James Linden</a> in which he created a PHP script that scrapes the entire database and then generates a bind file for each zone with the records.</p>
 <p>It is actually a pretty easy script to run, you need to fill in about 5 variables and then you are good to execute it. Here is a copy of the script in case it is no longer available. (It was created in 2013, but still works flawlessly!)</p>
 <p>All you need to do is update the 3 lines, to put in the MySQL DB IP, the username, password and database name. You will then enter in the nameservers and hostmaster to be used for the bind files.</p>
-<pre><code>#!/bin/env php
-&lt;?php
-
-/**
- * @copyright 2013 James Linden &lt;kodekrash@gmail.com&gt;
- * @author James Linden &lt;kodekrash@gmail.com&gt;
- * @url http://jameslinden.com/code/powerdns-to-bind-zone
- * @license BSD (2 clause) &lt;http://www.opensource.org/licenses/BSD-2-Clause&gt;
- */
-
-$pdns_db = [ 'host' =&gt; 'localhost', 'user' =&gt; 'root', 'pass' =&gt; 'powerdns', 'name' =&gt; 'powerdns' ];
-$zone_ns = [ 'ns1.lab.local', 'ns2.lab.local' ];
-$zone_adm = 'support.lab.local';
-
-$zones = [];
-$db = new mysqli( $pdns_db['host'], $pdns_db['user'], $pdns_db['pass'], $pdns_db['name'] );
-if( $q = $db-&gt;query( 'SELECT * FROM domains' ) ) {
-	while( $r = $q-&gt;fetch_assoc() ) {
-		$d = strtolower( $r['name'] );
-		if( $q1 = $db-&gt;query( 'SELECT * FROM records WHERE domain_id=' . $r['id'] ) ) {
-			$x = [ 'A' =&gt; [], 'CNAME' =&gt; [], 'NS' =&gt; [], 'MX' =&gt; [], 'TXT' =&gt; [] ];
-			while( $r1 = $q1-&gt;fetch_assoc() ) {
-				$r1['name'] = strtolower( $r1['name'] );
-				switch( $r1['type'] ) {
-					case 'A':
-						$x[ $r1['type'] ][] = [ $r1['name'], $r1['content'] ];
-					break;
-					case 'CNAME':
-						$x[ $r1['type'] ][] = [ trim( str_replace( $d, null, $r1['name'] ), '.' ), strtolower( $r1['content'] ) ];
-					break;
-					case 'NS':
-						$x[ $r1['type'] ][] = strtolower( $r1['content'] );
-					break;
-					case 'MX':
-						$x[ $r1['type'] ][] = [ (int)$r1['prio'], strtolower( $r1['content'] ) ];
-					break;
-					case 'TXT':
-						$x[ $r1['type'] ][] = [ trim( str_replace( $d, null, $r1['name'] ), '.' ), $r1['content'] ];
-					break;
-				}
-			}
-			$q1-&gt;free();
-		}
-		$zones[ $d ] = $x;
-	}
-	$q-&gt;free();
-}
-$db-&gt;close();
-
-if( is_array( $zones ) &amp;&amp; count( $zones ) &gt; 0 ) {
-	$p = './tmp/';
-	if( !is_dir( $p ) ) {
-		if( !mkdir( $p ) ) {
-			die( 'Unable to make tmp directory' . PHP_EOL );
-		}
-	}
-	if( count( $zones ) &gt; 0 ) {
-		foreach( $zones as $d =&gt; $r ) {
-			$x = '             ';
-			$t = [ '$TTL 43200', null, '@ IN SOA ' . $zone_ns[0] . '. ' . $zone_adm . '. (', $x . time(), $x . '7200', $x . '3600', $x . '604800', $x . '43200 )', null ];
-			foreach( $zone_ns as $x ) {
-				$t[] = '  IN NS      ' . $x . '.';
-			}
-			$t[] = null;
-			foreach( $r['MX'] as $x ) {
-				$t[] = '  IN MX ' . str_pad( $x[0], 5, ' ', STR_PAD_RIGHT ) . $x[1] . ( is_numeric( substr( $x[1], -1, 1 ) ) ? null : '.' );
-			}
-			$t[] = null;
-			foreach( $r['A'] as $x ) {
-				$t[] = str_pad( $x[0] . '.', 32, ' ', STR_PAD_RIGHT ) . '  IN A ' . $x[1];
-			}
-			$t[] = null;
-			foreach( $r['CNAME'] as $x ) {
-				$t[] = str_pad( $x[0], 32, ' ', STR_PAD_RIGHT ) . '  IN CNAME ' . $x[1] . '.';
-			}
-			$t[] = null;
-			foreach( $r['TXT'] as $x ) {
-				$t[] = str_pad( $x[0], 32, ' ', STR_PAD_RIGHT ) . '  IN TXT ' . $x[1];
-			}
-			file_put_contents( $p . $d . '.zone', implode( PHP_EOL, $t ) . PHP_EOL );
-		}
-	}
-}
-
-?&gt;
-</code></pre><p>Once you have populated the script, you can run it by going to a commandline that has MySQL tools and PHP installed and run</p>
-<pre><code>php scriptname.php
-</code></pre><p>This will create a <em>/tmp</em> folder in the same directory with an export of all your zones.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#!/bin/env php
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>&lt;?php
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>/**
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span> * @copyright 2013 James Linden &lt;kodekrash@gmail.com&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span> * @author James Linden &lt;kodekrash@gmail.com&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span> * @url http://jameslinden.com/code/powerdns-to-bind-zone
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span> * @license BSD (2 clause) &lt;http://www.opensource.org/licenses/BSD-2-Clause&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span> */
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>$pdns_db = [ &#39;host&#39; =&gt; &#39;localhost&#39;, &#39;user&#39; =&gt; &#39;root&#39;, &#39;pass&#39; =&gt; &#39;powerdns&#39;, &#39;name&#39; =&gt; &#39;powerdns&#39; ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>$zone_ns = [ &#39;ns1.lab.local&#39;, &#39;ns2.lab.local&#39; ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>$zone_adm = &#39;support.lab.local&#39;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>$zones = [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>$db = new mysqli( $pdns_db[&#39;host&#39;], $pdns_db[&#39;user&#39;], $pdns_db[&#39;pass&#39;], $pdns_db[&#39;name&#39;] );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>if( $q = $db-&gt;query( &#39;SELECT * FROM domains&#39; ) ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>	while( $r = $q-&gt;fetch_assoc() ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>		$d = strtolower( $r[&#39;name&#39;] );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>		if( $q1 = $db-&gt;query( &#39;SELECT * FROM records WHERE domain_id=&#39; . $r[&#39;id&#39;] ) ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>			$x = [ &#39;A&#39; =&gt; [], &#39;CNAME&#39; =&gt; [], &#39;NS&#39; =&gt; [], &#39;MX&#39; =&gt; [], &#39;TXT&#39; =&gt; [] ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>			while( $r1 = $q1-&gt;fetch_assoc() ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>				$r1[&#39;name&#39;] = strtolower( $r1[&#39;name&#39;] );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>				switch( $r1[&#39;type&#39;] ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>					case &#39;A&#39;:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>						$x[ $r1[&#39;type&#39;] ][] = [ $r1[&#39;name&#39;], $r1[&#39;content&#39;] ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>					break;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>					case &#39;CNAME&#39;:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>						$x[ $r1[&#39;type&#39;] ][] = [ trim( str_replace( $d, null, $r1[&#39;name&#39;] ), &#39;.&#39; ), strtolower( $r1[&#39;content&#39;] ) ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>					break;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>					case &#39;NS&#39;:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>						$x[ $r1[&#39;type&#39;] ][] = strtolower( $r1[&#39;content&#39;] );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>					break;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>					case &#39;MX&#39;:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>						$x[ $r1[&#39;type&#39;] ][] = [ (int)$r1[&#39;prio&#39;], strtolower( $r1[&#39;content&#39;] ) ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>					break;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>					case &#39;TXT&#39;:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>						$x[ $r1[&#39;type&#39;] ][] = [ trim( str_replace( $d, null, $r1[&#39;name&#39;] ), &#39;.&#39; ), $r1[&#39;content&#39;] ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>					break;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>				}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>			$q1-&gt;free();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>		}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>		$zones[ $d ] = $x;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>	}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>	$q-&gt;free();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>$db-&gt;close();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>if( is_array( $zones ) &amp;&amp; count( $zones ) &gt; 0 ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>	$p = &#39;./tmp/&#39;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>	if( !is_dir( $p ) ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>		if( !mkdir( $p ) ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>			die( &#39;Unable to make tmp directory&#39; . PHP_EOL );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>		}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>	}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>	if( count( $zones ) &gt; 0 ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>		foreach( $zones as $d =&gt; $r ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>			$x = &#39;             &#39;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>			$t = [ &#39;$TTL 43200&#39;, null, &#39;@ IN SOA &#39; . $zone_ns[0] . &#39;. &#39; . $zone_adm . &#39;. (&#39;, $x . time(), $x . &#39;7200&#39;, $x . &#39;3600&#39;, $x . &#39;604800&#39;, $x . &#39;43200 )&#39;, null ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>			foreach( $zone_ns as $x ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>				$t[] = &#39;  IN NS      &#39; . $x . &#39;.&#39;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>			$t[] = null;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>			foreach( $r[&#39;MX&#39;] as $x ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>				$t[] = &#39;  IN MX &#39; . str_pad( $x[0], 5, &#39; &#39;, STR_PAD_RIGHT ) . $x[1] . ( is_numeric( substr( $x[1], -1, 1 ) ) ? null : &#39;.&#39; );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>			$t[] = null;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>			foreach( $r[&#39;A&#39;] as $x ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>				$t[] = str_pad( $x[0] . &#39;.&#39;, 32, &#39; &#39;, STR_PAD_RIGHT ) . &#39;  IN A &#39; . $x[1];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>			$t[] = null;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span>			foreach( $r[&#39;CNAME&#39;] as $x ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>				$t[] = str_pad( $x[0], 32, &#39; &#39;, STR_PAD_RIGHT ) . &#39;  IN CNAME &#39; . $x[1] . &#39;.&#39;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>			$t[] = null;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span>			foreach( $r[&#39;TXT&#39;] as $x ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>				$t[] = str_pad( $x[0], 32, &#39; &#39;, STR_PAD_RIGHT ) . &#39;  IN TXT &#39; . $x[1];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span>			}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span>			file_put_contents( $p . $d . &#39;.zone&#39;, implode( PHP_EOL, $t ) . PHP_EOL );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81</span>		}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82</span>	}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span>?&gt;
+</code></pre></div><p>Once you have populated the script, you can run it by going to a commandline that has MySQL tools and PHP installed and run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>php scriptname.php
+</span></code></pre></div><p>This will create a <em>/tmp</em> folder in the same directory with an export of all your zones.</p>
 <p>Thats it! I just wanted to blog about this in case other people were looking for a way to accomplish this, its actually quite simple!</p>
 <p>Thanks for stopping by.</p>
 

@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 January 26, 2016 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        &middot; Read in about 2 min (287 words)
+        &middot; Read in about 2 min (309 words)
       </div>
   </span>
   
@@ -182,43 +182,43 @@ January 26, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 <p><em>This script assumes the datastore you would like to deploy to is a datastore cluster. Mine are named cluster-dsc so this script was easily scaleable.</em></p>
-<pre><code>#Import PowerCLI Module
-Add-PSSnapin VMware.VimAutomation.Core
-
-#Define Variables
-$Credential = Get-Credential
-$vCenter = &quot;vcenter.lab.local&quot;
-$clusters = &quot;Cluster01&quot;,&quot;Cluster02&quot;
-$location = &quot;Templates&quot;
-$templates = &quot;Template1&quot;,&quot;Template2&quot;
-
-#Connect to vCenter
-Connect-VIServer $vCenter -Credential $Credential
-
-foreach ($template in $templates){
-  foreach ($cluster in $clusters){
-    #Check if Template exists
-    Try{Get-Template $template-$cluster -ErrorAction Stop;$TemplateExists = $true}Catch {$TemplateExists = $false}
-    #Create VM
-    If($TemplateExists -eq $true){
-        #Remove Old Template
-        Get-Template -Name $template-$cluster |Remove-Template -DeletePermanently -Confirm:$false
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-    ElseIf($TemplateExists -eq $false){
-        #Clone the Template
-        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
-        #Convert to Template
-        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
-    }
-  }
-}
-#Disconnect from vCenter
-Disconnect-VIServer $vCenter -Force -Confirm:$false
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#Import PowerCLI Module
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>Add-PSSnapin VMware.VimAutomation.Core
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>#Define Variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$Credential = Get-Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$vCenter = &#34;vcenter.lab.local&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$clusters = &#34;Cluster01&#34;,&#34;Cluster02&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$location = &#34;Templates&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>$templates = &#34;Template1&#34;,&#34;Template2&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>#Connect to vCenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>Connect-VIServer $vCenter -Credential $Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>foreach ($template in $templates){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  foreach ($cluster in $clusters){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    #Check if Template exists
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    Try{Get-Template $template-$cluster -ErrorAction Stop;$TemplateExists = $true}Catch {$TemplateExists = $false}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    #Create VM
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    If($TemplateExists -eq $true){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        #Remove Old Template
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        Get-Template -Name $template-$cluster |Remove-Template -DeletePermanently -Confirm:$false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        #Clone the Template
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        #Convert to Template
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    ElseIf($TemplateExists -eq $false){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        #Clone the Template
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        New-VM -Name $template-$cluster -Template $template -ResourcePool $cluster -Datastore $cluster-DSC -Location $location
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>        #Convert to Template
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        Set-VM -VM $template-$cluster -ToTemplate -Confirm:$false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>#Disconnect from vCenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>Disconnect-VIServer $vCenter -Force -Confirm:$false
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\CloneTemplateToClusters.ps1</li>
 </ul>

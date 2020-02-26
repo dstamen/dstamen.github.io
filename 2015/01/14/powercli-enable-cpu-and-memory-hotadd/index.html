@@ -32,7 +32,7 @@
 
   <meta property="og:title" content="PowerCLI - Enable CPU and Memory HotAdd" />
 <meta property="og:description" content="I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware." />
+1Enable-MemHotAdd $ServerName 2Disable-MemHotAdd $ServerName 3Enable-vCPUHotAdd $ServerName 4Disable-vCPUHotAdd $ServerName Enable Memory HotAdd 1Function Enable-MemHotAdd($vm){ 2$vmview = Get-vm $vm | Get-View 3$vmConfigSpec = New-Object VMware." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/" />
 <meta property="article:published_time" content="2015-01-14T00:00:00+00:00" />
@@ -41,7 +41,7 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerCLI - Enable CPU and Memory HotAdd"/>
 <meta name="twitter:description" content="I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware."/>
+1Enable-MemHotAdd $ServerName 2Disable-MemHotAdd $ServerName 3Enable-vCPUHotAdd $ServerName 4Disable-vCPUHotAdd $ServerName Enable Memory HotAdd 1Function Enable-MemHotAdd($vm){ 2$vmview = Get-vm $vm | Get-View 3$vmConfigSpec = New-Object VMware."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        &middot; Read in about 1 min (185 words)
+        &middot; Read in about 1 min (186 words)
       </div>
   </span>
   
@@ -168,52 +168,52 @@ January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
 
       
       <p>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.</p>
-<pre><code>Enable-MemHotAdd $ServerName
-Disable-MemHotAdd $ServerName
-Enable-vCPUHotAdd $ServerName
-Disable-vCPUHotAdd $ServerName
-</code></pre><h1 id="enable-memory-hotadd">Enable Memory HotAdd</h1>
-<pre><code>Function Enable-MemHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;mem.hotadd&quot;
-$extra.Value=&quot;true&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}
-</code></pre><h1 id="disable-memory-hotadd">Disable Memory HotAdd</h1>
-<pre><code>Function Disable-MemHotAdd($vm){
-$vmview = Get-VM $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;mem.hotadd&quot;
-$extra.Value=&quot;false&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}
-</code></pre><h1 id="enable-cpu-hotadd">Enable CPU HotAdd</h1>
-<pre><code>Function Enable-vCpuHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;vcpu.hotadd&quot;
-$extra.Value=&quot;true&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}
-
-</code></pre><h1 id="disable-cpu-hotadd">Disable CPU HotAdd</h1>
-<pre><code>Function Disable-vCpuHotAdd($vm){
-$vmview = Get-vm $vm | Get-View
-$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-$extra = New-Object VMware.Vim.optionvalue
-$extra.Key=&quot;vcpu.hotadd&quot;
-$extra.Value=&quot;false&quot;
-$vmConfigSpec.extraconfig += $extra
-$vmview.ReconfigVM($vmConfigSpec)
-}
-</code></pre><h4 id="notes-enabling-cpu-hotadd-disables-vnuma-so-enable-enable-this-if-its-really-neccessary-in-your-environment">Notes: Enabling CPU Hotadd disables vNUMA. So enable enable this if its really neccessary in your environment.</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Enable-MemHotAdd $ServerName
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Disable-MemHotAdd $ServerName
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Enable-vCPUHotAdd $ServerName
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>Disable-vCPUHotAdd $ServerName
+</code></pre></div><h1 id="enable-memory-hotadd">Enable Memory HotAdd</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Function Enable-MemHotAdd($vm){
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$vmview = Get-vm $vm | Get-View
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$extra = New-Object VMware.Vim.optionvalue
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>$extra.Key=&#34;mem.hotadd&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>$extra.Value=&#34;true&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>$vmConfigSpec.extraconfig += $extra
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>$vmview.ReconfigVM($vmConfigSpec)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><h1 id="disable-memory-hotadd">Disable Memory HotAdd</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Function Disable-MemHotAdd($vm){
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$vmview = Get-VM $vm | Get-View
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$extra = New-Object VMware.Vim.optionvalue
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>$extra.Key=&#34;mem.hotadd&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>$extra.Value=&#34;false&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>$vmConfigSpec.extraconfig += $extra
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>$vmview.ReconfigVM($vmConfigSpec)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><h1 id="enable-cpu-hotadd">Enable CPU HotAdd</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Function Enable-vCpuHotAdd($vm){
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$vmview = Get-vm $vm | Get-View
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$extra = New-Object VMware.Vim.optionvalue
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$extra.Key=&#34;vcpu.hotadd&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$extra.Value=&#34;true&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$vmConfigSpec.extraconfig += $extra
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$vmview.ReconfigVM($vmConfigSpec)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+</code></pre></div><h1 id="disable-cpu-hotadd">Disable CPU HotAdd</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Function Disable-vCpuHotAdd($vm){
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$vmview = Get-vm $vm | Get-View
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$extra = New-Object VMware.Vim.optionvalue
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>$extra.Key=&#34;vcpu.hotadd&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>$extra.Value=&#34;false&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>$vmConfigSpec.extraconfig += $extra
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>$vmview.ReconfigVM($vmConfigSpec)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><h4 id="notes-enabling-cpu-hotadd-disables-vnuma-so-enable-enable-this-if-its-really-neccessary-in-your-environment">Notes: Enabling CPU Hotadd disables vNUMA. So enable enable this if its really neccessary in your environment.</h4>
 <p>
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2040375" target="_blank">KB2040375</a></p>
 

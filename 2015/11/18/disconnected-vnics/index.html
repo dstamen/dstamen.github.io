@@ -174,8 +174,8 @@ November 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
       <p>Ever wonder why a VM isn&rsquo;t on the network?</p>
 <p>I was working on deploying some test VM&rsquo;s and for some reason all the VM&rsquo;s that were cloned decided to start with the network disconnected, and the connect on power on was also not selected.</p>
 <p>I decided to throw together this quick one-liner that will make sure every VM is set to start connected on power on and is currently connected.</p>
-<pre><code>Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false
-</code></pre><p>Voila! You are done.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-VM|Get-NetworkAdapter|Set-NetworkAdapter -StartConnected $true -Connected $true -Confirm:$false
+</span></code></pre></div><p>Voila! You are done.</p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f11%2f18%2fdisconnected-vnics%2f" target="_blank" rel="noopener" aria-label="">

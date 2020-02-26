@@ -208,7 +208,7 @@ June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
+Check the ESXi Syslog Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″) 4$esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.
   
 
 

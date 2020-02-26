@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 August 9, 2016 under <a class="" href="/categories/microsoft">Microsoft</a>
         &middot; Tagged <a class="" href="/tags/windows">Windows</a> and <a class="" href="/tags/powershell">Powershell</a>
-        &middot; Read in about 1 min (180 words)
+        &middot; Read in about 1 min (189 words)
       </div>
   </span>
   
@@ -182,39 +182,39 @@ August 9, 2016 under <a class="" href="/categories/microsoft">Microsoft</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>Fill in the appropriate variables, and execute the script.</p>
-<pre><code>Import-Module NTFSSecurity
-
-#variables
-$sharename = &quot;share&quot;
-$cachingmode = &quot;none&quot;
-$continuouslyavailable = $true
-$encryptdata = $false
-$folderenumerationmode = &quot;AccessBased&quot;
-$path = &quot;D:\Shares\&quot;
-$scopename = &quot;ClusterORResourceName&quot;
-$sharepath = $path+$sharename
-$fullaccess = &quot;Everyone&quot;
-
-
-#check if path exists
-$PathCheck = Test-Path $sharepath
-if ($PathCheck -eq $true) {
-    Write-Host &quot;$sharepath exists.&quot;
-}
-else {
-    Write-Host &quot;$sharepath does not exist&quot;
-    New-Item $sharepath -type directory
-}
-
-
-#create share
-New-SmbShare -Name $sharename -CachingMode $cachingmode -ContinuouslyAvailable $continuouslyavailable -EncryptData $encryptdata -FolderEnumerationMode $folderenumerationmode -Path $sharepath -ScopeName $scopename -FullAccess $fullaccess
-
-#disable inheritance and add full access
-Disable-NTFSAccessInheritance $sharepath -RemoveInheritedAccessRules
-Add-NTFSAccess $sharepath -Account BUILTIN\Administrators -AccessRights FullControl
-Get-NTFSAccess $sharepath
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Import-Module NTFSSecurity
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>#variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$sharename = &#34;share&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$cachingmode = &#34;none&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$continuouslyavailable = $true
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$encryptdata = $false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$folderenumerationmode = &#34;AccessBased&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>$path = &#34;D:\Shares\&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>$scopename = &#34;ClusterORResourceName&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>$sharepath = $path+$sharename
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>$fullaccess = &#34;Everyone&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>#check if path exists
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>$PathCheck = Test-Path $sharepath
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>if ($PathCheck -eq $true) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    Write-Host &#34;$sharepath exists.&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>else {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    Write-Host &#34;$sharepath does not exist&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    New-Item $sharepath -type directory
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>#create share
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>New-SmbShare -Name $sharename -CachingMode $cachingmode -ContinuouslyAvailable $continuouslyavailable -EncryptData $encryptdata -FolderEnumerationMode $folderenumerationmode -Path $sharepath -ScopeName $scopename -FullAccess $fullaccess
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>#disable inheritance and add full access
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>Disable-NTFSAccessInheritance $sharepath -RemoveInheritedAccessRules
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>Add-NTFSAccess $sharepath -Account BUILTIN\Administrators -AccessRights FullControl
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>Get-NTFSAccess $sharepath
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Create-SMBShare.ps1</li>
 </ul>

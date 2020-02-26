@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        &middot; Read in about 2 min (322 words)
+        &middot; Read in about 2 min (358 words)
       </div>
   </span>
   
@@ -181,51 +181,51 @@ January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
 <p><em>This script assumes you have already launched PowerCLI and connected to the vCenter using Connect-VIServer</em></p>
-<pre><code>#Define Variables
-Write-Host &quot;Prompt For Guest Credentials&quot; -ForegroundColor Yellow
-$Cred = Get-Credential
-$VMs = &quot;VM1&quot;,&quot;VM2&quot;
-#$VMs = Get-VM VM* | Sort Name
-
-Foreach ($VMName in $VMs) {
-  $VM = Get-VM $VMName
-
-#Define file information. Include File Name, Parameters, Source and Destination
-  $File = &quot;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&quot;
-  $Param = &quot;/s /v/qn REBOOT=Reallysuppress&quot;
-  $SrcPath = &quot;c:\&quot;
-  $DstPath = &quot;c:\temp\&quot;
-  $Fullpath = $SrcPath + $File
-
-  Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
-  Copy-VMGuestFile -VM $VM -Source $Fullpath -Destination $DstPath -LocalToGuest -GuestCredential $Cred -Force
-
-  #Define Install File Command
-  $Command = $DstPath + $File + $Param
-  #Define Delete File Command
-  $Command2 = &quot;del &quot; + $DstPath + $File
-
-  Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
-  $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
-  $ExitCode = $Result.ExitCode
-  if ($ExitCode = &quot;0&quot;) {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Red
-  }
-  Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
-  $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
-  $ExitCode2 = $Result2.ExitCode
-  if ($ExitCode2 = &quot;0&quot;) {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
-  }
-  Else {
-    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Red
-  }
-}
-
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#Define Variables
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>Write-Host &#34;Prompt For Guest Credentials&#34; -ForegroundColor Yellow
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$Cred = Get-Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$VMs = &#34;VM1&#34;,&#34;VM2&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>#$VMs = Get-VM VM* | Sort Name
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>Foreach ($VMName in $VMs) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  $VM = Get-VM $VMName
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>#Define file information. Include File Name, Parameters, Source and Destination
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  $File = &#34;VMware-v4vdesktopagent-x86_64-6.2.0-3295266.exe&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  $Param = &#34;/s /v/qn REBOOT=Reallysuppress&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  $SrcPath = &#34;c:\&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  $DstPath = &#34;c:\temp\&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  $Fullpath = $SrcPath + $File
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  Write-Host Copying $Fullpath to $VMName -ForegroundColor Cyan
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  Copy-VMGuestFile -VM $VM -Source $Fullpath -Destination $DstPath -LocalToGuest -GuestCredential $Cred -Force
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  #Define Install File Command
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  $Command = $DstPath + $File + $Param
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>  #Define Delete File Command
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>  $Command2 = &#34;del &#34; + $DstPath + $File
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  Write-Host Executing $Command within guest operating system of $VMName -ForegroundColor White
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  $Result = Invoke-VMScript -VM $VM  -ScriptText $Command -GuestCredential $Cred
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  $ExitCode = $Result.ExitCode
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  if ($ExitCode = &#34;0&#34;) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Green
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>  Else {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    Write-Host $VMName returned exit code $ExitCode -ForegroundColor Red
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>  Write-Host Executing $Command2 within guest operating system of $VMName -ForegroundColor White
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>  $Result2 = Invoke-VMScript -VM $VM  -ScriptText $Command2 -GuestCredential $Cred
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>  $ExitCode2 = $Result2.ExitCode
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  if ($ExitCode2 = &#34;0&#34;) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Green
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>  Else {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    Write-Host $VMName returned exit code $ExitCode2 -ForegroundColor Red
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\InstallVMSoftware.ps1</li>
 </ul>

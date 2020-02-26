@@ -132,7 +132,7 @@ January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
+1Enable-MemHotAdd $ServerName 2Disable-MemHotAdd $ServerName 3Enable-vCPUHotAdd $ServerName 4Disable-vCPUHotAdd $ServerName Enable Memory HotAdd 1Function Enable-MemHotAdd($vm){ 2$vmview = Get-vm $vm | Get-View 3$vmConfigSpec = New-Object VMware.
   
 
 
@@ -468,7 +468,7 @@ June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
+Check the ESXi Dump Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: 1Foreach ($vmhost in (get-vmhost)) { 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) 4$esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
   
 
 

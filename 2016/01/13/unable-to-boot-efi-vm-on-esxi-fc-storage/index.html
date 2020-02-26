@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        &middot; Read in about 2 min (353 words)
+        &middot; Read in about 2 min (358 words)
       </div>
   </span>
   
@@ -183,26 +183,26 @@ January 13, 2016 under <a class="" href="/categories/vmware">VMware</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-<pre><code># PowerCLI Script for setting Disk Max IO Size
-# @davidstamen
-# http://davidstamen.com
-
-#Define Variables
-$cred = Get-Credential
-$VC = &quot;vc.lab.local&quot;
-$Cluster = &quot;Production&quot;
-
-#Connect to vCenter
-Connect-VIServer $VC -Credential $cred
-
-#Get all Hosts
-$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &quot;PoweredOn&quot; -and $_.ConnectionState -eq &quot;Connected&quot; } | Sort Name
-
-#For each host set DiskMaxIOsize to 4MB
-foreach ($esx in $esxHosts) {
-  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
-}
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># PowerCLI Script for setting Disk Max IO Size
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span># @davidstamen
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span># http://davidstamen.com
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>#Define Variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$cred = Get-Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$VC = &#34;vc.lab.local&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$Cluster = &#34;Production&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>#Connect to vCenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>Connect-VIServer $VC -Credential $cred
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>#Get all Hosts
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>$esxHosts = Get-Cluster $Cluster | Get-VMHost | Where { $_.PowerState -eq &#34;PoweredOn&#34; -and $_.ConnectionState -eq &#34;Connected&#34; } | Sort Name
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>#For each host set DiskMaxIOsize to 4MB
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>foreach ($esx in $esxHosts) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  Get-AdvancedSetting -Entity $esx -Name Disk.DiskMaxIOSize | Set-AdvancedSetting -Value 4096 -Confirm:$false
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-MaxDiskIO.ps1</li>
 </ul>

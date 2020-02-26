@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 March 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
         &middot; Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a>, <a class="" href="/tags/syslog">Syslog</a> and <a class="" href="/tags/powershell">Powershell</a>
-        &middot; Read in about 1 min (139 words)
+        &middot; Read in about 1 min (144 words)
       </div>
   </span>
   
@@ -184,26 +184,26 @@ March 14, 2016 under <a class="" href="/categories/cisco">Cisco</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-<pre><code># UCS PowerTool Script that to set Syslog
-# @davidstamen
-# http://davidstamen.com
-
-#Define Variables
-$cred = Get-Credential
-$domains = &quot;ucs01.lab.local&quot;,&quot;ucs02.lab.local&quot;
-$SyslogServer = &quot;syslog.lab.local&quot;
-$Name = &quot;primary&quot;
-$Facility = &quot;local7&quot;
-$AdminState = &quot;enabled&quot;
-$Severity = &quot;notifications&quot;
-
-#Cycles through each UCS setting values
-Foreach ($ucs in $domains) {
-  Connect-UCS $ucs -Credential $cred
-  Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
-  Disconnect-UCS
-}
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># UCS PowerTool Script that to set Syslog
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span># @davidstamen
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span># http://davidstamen.com
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>#Define Variables
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$cred = Get-Credential
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$domains = &#34;ucs01.lab.local&#34;,&#34;ucs02.lab.local&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$SyslogServer = &#34;syslog.lab.local&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>$Name = &#34;primary&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>$Facility = &#34;local7&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>$AdminState = &#34;enabled&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>$Severity = &#34;notifications&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>#Cycles through each UCS setting values
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>Foreach ($ucs in $domains) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  Connect-UCS $ucs -Credential $cred
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  Disconnect-UCS
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-UcsSyslog.ps1</li>
 </ul>

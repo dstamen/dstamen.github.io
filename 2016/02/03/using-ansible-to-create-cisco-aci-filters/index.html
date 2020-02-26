@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 February 3, 2016 under <a class="" href="/categories/automation">Automation</a>
         &middot; Tagged <a class="" href="/tags/ansible">Ansible</a> and <a class="" href="/tags/cisco-aci">Cisco ACI</a>
-        &middot; Read in about 2 min (346 words)
+        &middot; Read in about 2 min (369 words)
       </div>
   </span>
   
@@ -182,32 +182,32 @@ February 3, 2016 under <a class="" href="/categories/automation">Automation</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p><em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the Cisco ACI Cobra SDK.</em></p>
-<pre><code>---
-
-- name: playbook to create HorizonViewPorts-FIL
-  hosts: apic
-  connection: local
-  gather_facts: no
-
-  tasks:
-      # ensure filters exist
-      - aci_filter: name={{ item }} tenant=common host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-        with_items:
-        - HorizonViewPorts
-
-     # ensure filter entries exist
-      - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-      - aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
-
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>---
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>- name: playbook to create HorizonViewPorts-FIL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  hosts: apic
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  connection: local
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  gather_facts: no
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  tasks:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>      # ensure filters exist
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      - aci_filter: name={{ item }} tenant=common host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        with_items:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        - HorizonViewPorts
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>     # ensure filter entries exist
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      - aci_filter_entry: name=HighEndPorts-tcp proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      - aci_filter_entry: name=HighEndPorts-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=40000 dest_to_port=65000 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>      - aci_filter_entry: name=HTML-Access proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=22443 dest_to_port=22443 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>      - aci_filter_entry: name=http proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=http dest_to_port=http state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      - aci_filter_entry: name=https proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=https dest_to_port=https state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>      - aci_filter_entry: name=JMS proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4001 dest_to_port=4002 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>      - aci_filter_entry: name=MMR proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=9427 dest_to_port=9427 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>      - aci_filter_entry: name=PCoIP proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>      - aci_filter_entry: name=PCoIP-udp proto=udp tenant=common filter=HorizonViewPorts-FIL dest_from_port=4172 dest_to_port=4172 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>      - aci_filter_entry: name=USB proto=tcp tenant=common filter=HorizonViewPorts-FIL dest_from_port=32111 dest_to_port=32111 state=present host={{ inventory_hostname }} username={{ user }} password={{ pass }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run ansible-playbook horizonviewports.yml -i hosts</li>
 </ul>

@@ -100,7 +100,7 @@ Pre-Requsites   UCS Powertool  Link to Script   AddUCSCert.ps1  Preparing to Exe
       <description>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
 Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
-# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.</description>
+1# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template 2# @davidstamen 3# http://davidstamen.</description>
     </item>
     
     <item>

@@ -172,13 +172,13 @@ November 21, 2016 under <a class="" href="/categories/vmware">VMware</a>
       <p>So as everyone has probably seen, 
 <a href="https://blogs.vmware.com/vsphere/2016/11/vmware-announces-general-availability-vsphere-6-5.html" target="_blank">vSphere 6.5</a> is now GA. One of the features i have been waiting for the most is vCenter HA. I have spent some time trying to get this working in my lab. Unfortunately after countless tries i was stuck. Thanks to folks in the vExpert Slack for helping me try to resolve this, but unfortunately this was a case for VMware Support.</p>
 <p>Every time I would try to configure vCenter HA using the Advanced Wizard, I would get the following error.</p>
-<pre><code>The operation is not allowed in the current state.
-Failed to get management network information. Verify if management interface (NIC0) is configured correctly and is reachable.
-</code></pre><p><img src="/images/vcha1.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>The operation is not allowed in the current state.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Failed to get management network information. Verify if management interface (NIC0) is configured correctly and is reachable.
+</code></pre></div><p><img src="/images/vcha1.png" alt=""></p>
 <p>Obviously, if I am accessing the vCenter the management IP has to be configured and reachable correct?</p>
 <p>Turns out we tried to look through the logs in <strong>/var/log/vmware/vcha</strong> and they were no help. Next the technician tried to manually prepare for VCHA by running <strong>prepare-vcha</strong>. Once we ran this we were able to see a specific error outputted.</p>
-<pre><code>Unable to get hostname resolved IP address for eth0
-</code></pre><p><img src="/images/vcha2.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Unable to get hostname resolved IP address for eth0
+</span></code></pre></div><p><img src="/images/vcha2.png" alt=""></p>
 <p>This is more helpful! Turns out my vCenter somehow was missing it&rsquo;s reverse DNS entry. This is definitely bizarre as the VCSA requires a reverse DNS to deploy.</p>
 <p>Once I created the reverse DNS, the wizard finally let me through and configure vCenter HA!</p>
 <p>Big thank you to the vExpert community and VMware Support.</p>

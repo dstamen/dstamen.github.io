@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a> and <a class="" href="/tags/storage">Storage</a>
-        &middot; Read in about 4 min (741 words)
+        &middot; Read in about 4 min (743 words)
       </div>
   </span>
   
@@ -840,8 +840,8 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <a href="https://storagehub.vmware.com/export_to_pdf/vsphere-6-7-core-storage-1" target="_blank">here</a>.</p>
 <h3 id="checking-current-vmfs-version"><strong>Checking Current VMFS Version</strong></h3>
 <p>In case you are not sure what VMFS version your datastore is currently running, we can find out with a simple PowerCLI one-liner.</p>
-<pre><code>Get-Datastore | Select Name, FileSystemVersion
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-Datastore | Select Name, FileSystemVersion
+</span></code></pre></div>
 
 
   
@@ -912,14 +912,14 @@ October 7, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <li>Restores Original Storage DRS setting.</li>
 </ol>
 <p>Now that we understand how it works, lets jump into the usage.</p>
-<pre><code>Connect-VIServer ds-vcsa-03.cpbu.lab
-
-$Source = Get-Datastore &quot;DS02&quot;
-$Temp = Get-Datastore &quot;DS-TEMP&quot;
-$Server = (Get-VIServer -Server &quot;ds-vcsa-03.cpbu.lab&quot;)
-
-Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVersion &quot;6&quot; -Server $Server
-</code></pre><p>It requires very minimal input, we will put in the source datastore, the temporary datastore, vCenter Server and the Target VMFS version. </p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-VIServer ds-vcsa-03.cpbu.lab
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>$Source = Get-Datastore &#34;DS02&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$Temp = Get-Datastore &#34;DS-TEMP&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>$Server = (Get-VIServer -Server &#34;ds-vcsa-03.cpbu.lab&#34;)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>Update-VmfsDatastore -Datastore $Source -TemporaryDatastore $Temp -TargetVmfsVersion &#34;6&#34; -Server $Server
+</code></pre></div><p>It requires very minimal input, we will put in the source datastore, the temporary datastore, vCenter Server and the Target VMFS version. </p>
 
 
 

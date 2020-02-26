@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
-        &middot; Read in about 2 min (244 words)
+        &middot; Read in about 2 min (261 words)
       </div>
   </span>
   
@@ -185,45 +185,45 @@ April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.</p>
 <p><em>This script assumes you have already launched PowerCLI and modified the csv</em></p>
-<pre><code># PowerCLI Script for setting vCenter Permissions base don AD Group and Datacenter
-# @davidstamen
-# http://davidstamen.com
-
-param
-(
-    [Parameter(Mandatory=$False,
-        HelpMessage='Path to CSV to Import')]
-        [string[]]$permissionlist
-)
-
-#Import PowerCLI Module
-Get-Module -ListAvailable VMware* | Import-Module
-
-#Prompt for vCenter to Set Permissions
-$vCenter = Read-Host -Prompt &quot;Name or IP address of vcenter&quot;
-
-#Makes sure CSV was passed as parameter, if not it prompts and checks path.
-If($permissionlist -eq $NULL){
-    $permissionlist = Read-host -Prompt &quot;Csv to import&quot;
-}
-If((Test-Path $permissionlist) -eq $False){Write-host &quot;Could not find CSV.&quot;;break}
-
-#tries to connect to vcenter and breaks script if it fails.
-Try{Connect-viserver $vCenter -ErrorAction &quot;Stop&quot;|Out-Null}
-Catch {Write-Warning &quot;Unable to Logon to $vCenter. Exiting...&quot;;break}
-
-#define variables and loop through each entry setting permissions
-$permission = Import-csv &quot;$permissionlist&quot;
-foreach ($item in $permission) {
-  $datacenter=$item.datacenter
-  $role=$item.role
-  $group=$item.group
-  $domain=$item.domain
-
-  Write-host &quot;Setting $group permissions to $role on $vCenter&quot; -ForegroundColor Green
-  $Permission=New-VIPermission -Entity (Get-Datacenter $datacenter) -Principal (Get-VIAccount -Domain $domain -Group|Where-Object {$_.Name -like &quot;*$group*&quot;}) -Role (Get-VIRole $role) -Propagate:$true|Out-Null
-}
-</code></pre><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># PowerCLI Script for setting vCenter Permissions base don AD Group and Datacenter
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span># @davidstamen
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span># http://davidstamen.com
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>param
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    [Parameter(Mandatory=$False,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        HelpMessage=&#39;Path to CSV to Import&#39;)]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        [string[]]$permissionlist
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>#Import PowerCLI Module
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>Get-Module -ListAvailable VMware* | Import-Module
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>#Prompt for vCenter to Set Permissions
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>$vCenter = Read-Host -Prompt &#34;Name or IP address of vcenter&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>#Makes sure CSV was passed as parameter, if not it prompts and checks path.
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>If($permissionlist -eq $NULL){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    $permissionlist = Read-host -Prompt &#34;Csv to import&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>If((Test-Path $permissionlist) -eq $False){Write-host &#34;Could not find CSV.&#34;;break}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>#tries to connect to vcenter and breaks script if it fails.
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>Try{Connect-viserver $vCenter -ErrorAction &#34;Stop&#34;|Out-Null}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>Catch {Write-Warning &#34;Unable to Logon to $vCenter. Exiting...&#34;;break}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>#define variables and loop through each entry setting permissions
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>$permission = Import-csv &#34;$permissionlist&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>foreach ($item in $permission) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>  $datacenter=$item.datacenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>  $role=$item.role
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  $group=$item.group
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>  $domain=$item.domain
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>  Write-host &#34;Setting $group permissions to $role on $vCenter&#34; -ForegroundColor Green
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  $Permission=New-VIPermission -Entity (Get-Datacenter $datacenter) -Principal (Get-VIAccount -Domain $domain -Group|Where-Object {$_.Name -like &#34;*$group*&#34;}) -Role (Get-VIRole $role) -Propagate:$true|Out-Null
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>}
+</code></pre></div><h4 id="execute-the-script"><em><strong>Execute the Script</strong></em></h4>
 <ul>
 <li>Run .\Set-vCenterPermissions.ps1 .\permissions.csv</li>
 </ul>

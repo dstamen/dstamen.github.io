@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 September 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        &middot; Read in about 1 min (200 words)
+        &middot; Read in about 2 min (218 words)
       </div>
   </span>
   
@@ -183,36 +183,36 @@ September 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>The code and Github Link can be found below.</p>
 <p>
 <a href="https://github.com/dstamen/PowerCLI/blob/master/Detach-SCSILun.ps1" target="_blank">Detach-ScsiLun.ps1</a></p>
-<pre><code># PowerCLI Script for detaching luns from a cluster
-# @davidstamen
-# http://davidstamen.com
-
-$LunIDs = &quot;naa.6000000001&quot;,&quot;naa.600000002&quot;
-$Clustername = &quot;MyCluster&quot;
-
-function Detach-Disk {
-    param(
-        [VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]$VMHost,
-        [string]$CanonicalName    )
-
-    $storSys = Get-View $VMHost.Extensiondata.ConfigManager.StorageSystem
-    $lunUuid = (Get-ScsiLun -VmHost $VMHost | where {$_.CanonicalName -eq $CanonicalName}).ExtensionData.Uuid
-
-    $storSys.DetachScsiLun($lunUuid)
-}
-
-$ClusterHosts = Get-Cluster $Clustername | Get-VMHost
-
-Foreach($VMHost in $ClusterHosts)
-{
-    Foreach($LUNid in $LunIDs)
-    {
-        Write-Host &quot;Detaching&quot; $LUNid &quot;from&quot; $VMHost -ForegroundColor &quot;Yellow&quot;
-        Detach-Disk -VMHost $VMHost -CanonicalName $LUNid
-    }
-}
-
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># PowerCLI Script for detaching luns from a cluster
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span># @davidstamen
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span># http://davidstamen.com
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$LunIDs = &#34;naa.6000000001&#34;,&#34;naa.600000002&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$Clustername = &#34;MyCluster&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>function Detach-Disk {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    param(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        [VMware.VimAutomation.ViCore.Impl.V1.Inventory.VMHostImpl]$VMHost,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        [string]$CanonicalName    )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    $storSys = Get-View $VMHost.Extensiondata.ConfigManager.StorageSystem
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    $lunUuid = (Get-ScsiLun -VmHost $VMHost | where {$_.CanonicalName -eq $CanonicalName}).ExtensionData.Uuid
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    $storSys.DetachScsiLun($lunUuid)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>$ClusterHosts = Get-Cluster $Clustername | Get-VMHost
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>Foreach($VMHost in $ClusterHosts)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    Foreach($LUNid in $LunIDs)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        Write-Host &#34;Detaching&#34; $LUNid &#34;from&#34; $VMHost -ForegroundColor &#34;Yellow&#34;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        Detach-Disk -VMHost $VMHost -CanonicalName $LUNid
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
+</code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f09%2f14%2fusing-powercli-to-detach-luns%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
