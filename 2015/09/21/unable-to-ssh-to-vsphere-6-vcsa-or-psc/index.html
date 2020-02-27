@@ -173,8 +173,8 @@ September 21, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>While trying to setup my Platform Service Controllers for HA. I was having issues sshing into the appliance. I kept on getting errors, that the packet sizes were too big or just authentication would fail.</p>
 <p>By Default the PSC and VCSA have a default shell of /bin/appliancesh.</p>
 <p>To correct the issue we need to change the shell.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>chsh -s &#34;/bin/bash&#34; root
-</span></code></pre></div><p>Once it is changed, we can now ssh/scp to it.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">chsh -s &#34;/bin/bash&#34; root
+</code></pre></div><p>Once it is changed, we can now ssh/scp to it.</p>
 
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f09%2f21%2funable-to-ssh-to-vsphere-6-vcsa-or-psc%2f" target="_blank" rel="noopener" aria-label="">

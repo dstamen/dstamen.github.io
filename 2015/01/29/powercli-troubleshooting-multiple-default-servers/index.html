@@ -172,8 +172,8 @@ January 29, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set. You can review the 3 scope options 
 <a href="https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html" target="_blank">https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Set-PowerCLIConfiguration.html</a></p>
 <p>See below for command to run, for Session scope which is valid for the current vSphere PowerCLI session only and overrides any User and All Users settings.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:$false
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Set-PowerCLIConfiguration -DefaultVIServerMode multiple -Scope Session -Confirm:$false
+</code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f01%2f29%2fpowercli-troubleshooting-multiple-default-servers%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/esxcli">ESXCLI</a>
-        &middot; Read in about 2 min (246 words)
+        &middot; Read in about 2 min (242 words)
       </div>
   </span>
   
@@ -175,17 +175,17 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p><em><strong>As a heads up. If you are doing this on ESXi 6.0.. don&rsquo;t. It can cause an issue with the proxy DVS having different ID than the actual DVS causing my original issue, still working with VMware Support to find out more details.</strong></em></p>
 <p>After &ldquo;Restoring Network Configuration&rdquo; a few too many times, I finally realized I could just add the uplinks back via CLI until support can figure out why this is occurring, here are the details on how to manage the uplinks on a DVS via CLI.</p>
 <p>To view your current dvs configuration you can run <strong>esxcfg-vswitch -l</strong>. Here you can see the DVS Name, Uplinks and DVPort ID which is all information you need to move forward.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>dvSwitch         256         3           256               1500    vmnic0,vmnic1
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  DVPort ID           In Use      Client
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  0                   1           vmnic0
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  1                   1           vmnic1
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">DVS Name         Num Ports   Used Ports  Configured Ports  MTU     Uplinks
+dvSwitch         256         3           256               1500    vmnic0,vmnic1
+
+  DVPort ID           In Use      Client
+  0                   1           vmnic0
+  1                   1           vmnic1
 </code></pre></div><p>To <strong>REMOVE</strong> an Uplink you can use these steps. Where -Q is to remove the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch
-</span></code></pre></div><p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>esxcfg-vswitch -P vmnic1 -V 1 dvSwitch
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">esxcfg-vswitch -Q vmnic1 -V 1 dvSwitch
+</code></pre></div><p>To <strong>ADD</strong> an Uplink you can use these steps. Where -P is to add the vmnic, -V is the DVPort ID and dvSwitch is the name of the DVS.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">esxcfg-vswitch -P vmnic1 -V 1 dvSwitch
+</code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f11%2f30%2fusing-cli-to-manage-dvs-host-uplinks%2f" target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

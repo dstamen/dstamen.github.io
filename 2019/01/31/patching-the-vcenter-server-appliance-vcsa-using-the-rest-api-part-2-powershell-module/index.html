@@ -166,7 +166,7 @@ if (!doNotTrack) {
         Published on 
 January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vsphere-6.7">vSphere 6.7</a>, <a class="" href="/tags/rest-api">REST API</a>, <a class="" href="/tags/vcenter-server">vCenter Server</a> and <a class="" href="/tags/powershell">Powershell</a>
-        &middot; Read in about 5 min (942 words)
+        &middot; Read in about 5 min (937 words)
       </div>
   </span>
   
@@ -209,8 +209,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="copy-vcsaupdate">Copy-VCSAUpdate</h3>
 <p>Copy-VCSAUpdate is the command you will use when you want to manually stage the update.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Copy-VCSAUpdate -Version &#34;6.7.0.20100&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Copy-VCSAUpdate -Version &#34;6.7.0.20100&#34;
 </code></pre></div>
 
 
@@ -254,14 +254,14 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="get-vcsaupdate">Get-VCSAUpdate</h3>
 <p>Get-VCSAUpdate is the command you will use when you want to wish to check for new updates. There is an optional Parameter for Source, &ldquo;Local&rdquo; or &ldquo;Online&rdquo;, if no parameter is chosen it will default to Online.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Get-VCSAUpdate
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>Get-VCSAUpdate -Source &#34;Online&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>Get-VCSAUpdate -Source &#34;Local&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdate
+
+Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdate -Source &#34;Online&#34;
+
+Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdate -Source &#34;Local&#34;
 </code></pre></div>
 
 
@@ -305,8 +305,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="get-vcsaupdatedetail">Get-VCSAUpdateDetail</h3>
 <p>Get-VCSAUpdateDetail is the command you will use when you want to wish to get more details about a specific update. There is a mandatory parameter for Version.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Get-VCSAUpdateDetail -Version &#34;6.7.0.20100&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdateDetail -Version &#34;6.7.0.20100&#34;
 </code></pre></div>
 
 
@@ -350,8 +350,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="get-vcsaupdatepolicy">Get-VCSAUpdatePolicy</h3>
 <p>Get-VCSAUpdatePolicy is the command you will use when you want to wish to get information about the current appliance update settings.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Get-VCSAUpdatePolicy
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdatePolicy
 </code></pre></div>
 
 
@@ -395,26 +395,26 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="set-vcsaupdatepolicy">Set-VCSAUpdatePolicy</h3>
 <p>Set-VCSAUpdatePolicy is the command you will use when you want to wish to set information for the current appliance update settings.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>Set-VCSAUpdatePolicy -AutoStage $True
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>Set-VCSAUpdatePolicy -CustomURL https://myinternalURL.com
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>Set-VCSAUpdatePolicy -CustomURL Clear
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>Set-VCSAUpdatePolicy -UsernameURL admin
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>Set-VCSAUpdatePolicy -PasswordURL Password
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>Set-VCSAUpdatePolicy -CheckSchedule Daily
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklySunday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklyMonday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklyTuesday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklyWednesday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklyThursday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklyFriday
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>Set-VCSAUpdatePolicy -CheckSchedule WeeklySaturday
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Set-VCSAUpdatePolicy -AutoStage $True
+
+Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Set-VCSAUpdatePolicy -CustomURL https://myinternalURL.com
+Set-VCSAUpdatePolicy -CustomURL Clear
+
+Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Set-VCSAUpdatePolicy -UsernameURL admin
+Set-VCSAUpdatePolicy -PasswordURL Password
+
+Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Set-VCSAUpdatePolicy -CheckSchedule Daily
+Set-VCSAUpdatePolicy -CheckSchedule WeeklySunday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklyMonday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklyTuesday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklyWednesday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklyThursday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklyFriday
+Set-VCSAUpdatePolicy -CheckSchedule WeeklySaturday
 </code></pre></div>
 
 
@@ -458,8 +458,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="get-vcsaupdatestaged">Get-VCSAUpdateStaged</h3>
 <p>Get-VCSAUpdateStaged is the command you will use when you want to wish to get information about the current staged update.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Get-VCSAUpdateStaged
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdateStaged
 </code></pre></div>
 
 
@@ -503,8 +503,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="get-vcsaupdatestatus">Get-VCSAUpdateStatus</h3>
 <p>Get-VCSAUpdateStaged is the command you will use when you want to wish to get information about the current update status. This command can be used to get status of staged update, install update or any other update status.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Get-VCSAUpdateStatus
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Get-VCSAUpdateStatus
 </code></pre></div>
 
 
@@ -548,8 +548,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="remove-vcsaupdate">Remove-VCSAUpdate</h3>
 <p>Remove-VCSAUpdate is the command you will use when you wish to remove a staged update.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Remove-VCSAUpdate
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Remove-VCSAUpdate
 </code></pre></div>
 
 
@@ -593,8 +593,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="start-vcsaupdateinstall">Start-VCSAUpdateInstall</h3>
 <p>Start-VCSAUpdateInstall is the command you will use when you wish to install a currently staged update. If no update is staged you must use <code>Start-VCSAUpdateStageandInstall</code></p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Start-VCSAUpdateInstall -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Start-VCSAUpdateInstall -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
 </code></pre></div>
 
 
@@ -638,8 +638,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="start-vcsaupdateprecheck">Start-VCSAUpdatePrecheck</h3>
 <p>Start-VCSAUpdatePrecheck is the command you will use when you wish to run the built-in update Precheck.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Start-VCSAUpdatePrecheck -Version &#34;6.7.0.20100&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Start-VCSAUpdatePrecheck -Version &#34;6.7.0.20100&#34;
 </code></pre></div>
 
 
@@ -683,8 +683,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="start-vcsaupdatestageandinstall">Start-VCSAUpdateStageandInstall</h3>
 <p>Start-VCSAUpdateInstall is the command you will use when you wish to install and stage an update.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Start-VCSAUpdateStageandInstall -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Start-VCSAUpdateStageandInstall -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
 </code></pre></div>
 
 
@@ -728,8 +728,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="start-vcsaupdatevalidate">Start-VCSAUpdateValidate</h3>
 <p>Start-VCSAUpdateValidate is the command you will use when you wish validate the current update.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Start-VCSAUpdateValidate -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Start-VCSAUpdateValidate -Version &#34;6.7.0.20100&#34; -SSODomainPass &#34;VMware1!&#34;
 </code></pre></div>
 
 
@@ -773,8 +773,8 @@ January 31, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="stop-vcsaupdate">Stop-VCSAUpdate</h3>
 <p>Stop-VCSAUpdate is the command you will use when you want to cancel an update task such as staging an update or other task that has a status of cancelable.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Stop-VCSAUpdate
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-CisServer -Server 192.168.1.51 -User administrator@vsphere.local -Password VMware1!
+Stop-VCSAUpdate
 </code></pre></div>
 
 

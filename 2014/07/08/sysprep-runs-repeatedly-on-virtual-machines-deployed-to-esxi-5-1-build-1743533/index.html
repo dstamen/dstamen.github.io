@@ -178,10 +178,10 @@ July 8, 2014 under <a class="" href="/categories/vmware">VMware</a>
 <a href="http://kb.vmware.com/selfservice/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=2077640" target="_blank">KB2077640</a> as referenced in this article 
 <a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2078352" target="_blank">KB2078352</a>.</p>
 <p>However the hotfix only fixes future occurences, you still need to fix all the VMs affected. See below for the powercli script I created to connect to all my vcenters, get VM&rsquo;s that are affected and then fix them. Please note as this is not referenced in the KB that the VM will need to be POWERED OFF and then POWERED ON for the change to go into affect. A restart will not fix it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Connect-VIServer vcenter.lab.local
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$VMs = Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | Where-Object {$_.Value -ne &#34;&#34;}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>$VMs | Select Entity, Value
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$VMs | ForEach {Get-VM $_.Entity | Get-AdvancedSetting -Name tools.deployPkg.fileName | Set-AdvancedSetting -Value &#39;&#39; -Confirm:$false}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-VIServer vcenter.lab.local
+$VMs = Get-VM | Get-AdvancedSetting -Name tools.deployPkg.fileName | Where-Object {$_.Value -ne &#34;&#34;}
+$VMs | Select Entity, Value
+$VMs | ForEach {Get-VM $_.Entity | Get-AdvancedSetting -Name tools.deployPkg.fileName | Set-AdvancedSetting -Value &#39;&#39; -Confirm:$false}
 </code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2014%2f07%2f08%2fsysprep-runs-repeatedly-on-virtual-machines-deployed-to-esxi-5-1-build-1743533%2f" target="_blank" rel="noopener" aria-label="">

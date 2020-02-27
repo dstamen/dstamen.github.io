@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 February 3, 2017 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/vsphere-6.5">vSphere 6.5</a> and <a class="" href="/tags/vcenter-ha">vCenter HA</a>
-        &middot; Read in about 5 min (975 words)
+        &middot; Read in about 5 min (945 words)
       </div>
   </span>
   
@@ -225,18 +225,18 @@ February 3, 2017 under <a class="" href="/categories/vmware">VMware</a>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Command&gt; software-packages install --iso --acceptEulas
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span> [2017-02-03T07:46:10.034] : Validating software update payload
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span> [2017-02-03T07:46:10.034] : Validation successful
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span> [2017-02-03 07:46:10,986] : Copying software packages  [2017-02-03T07:46:11.034] : ISO mounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>34/34
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span> [2017-02-03T07:46:21.034] : ISO unmounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span> [2017-02-03 07:46:21,745] : Running test transaction ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span> [2017-02-03 07:46:22,757] : Running pre-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span> [2017-02-03T07:46:24.034] : All VMware services are stopped.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span> [2017-02-03 07:46:24,977] : Upgrading software packages ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span> [2017-02-03 07:47:01,087] : Running post-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span> [2017-02-03T07:47:02.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Command&gt; software-packages install --iso --acceptEulas
+ [2017-02-03T07:46:10.034] : Validating software update payload
+ [2017-02-03T07:46:10.034] : Validation successful
+ [2017-02-03 07:46:10,986] : Copying software packages  [2017-02-03T07:46:11.034] : ISO mounted successfully
+34/34
+ [2017-02-03T07:46:21.034] : ISO unmounted successfully
+ [2017-02-03 07:46:21,745] : Running test transaction ....
+ [2017-02-03 07:46:22,757] : Running pre-install script.....
+ [2017-02-03T07:46:24.034] : All VMware services are stopped.
+ [2017-02-03 07:46:24,977] : Upgrading software packages ....
+ [2017-02-03 07:47:01,087] : Running post-install script.....
+ [2017-02-03T07:47:02.034] : Packages upgraded successfully, Reboot is required to complete the installation.
 </code></pre></div><ul>
 <li>
 <p>We will now reboot the witness node.</p>
@@ -266,18 +266,18 @@ February 3, 2017 under <a class="" href="/categories/vmware">VMware</a>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Command&gt; software-packages install --iso --acceptEulas
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span> [2017-02-03T12:56:57.034] : Validating software update payload
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span> [2017-02-03T12:56:57.034] : Validation successful
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span> [2017-02-03 12:56:57,376] : Copying software packages  [2017-02-03T12:56:57.034] : ISO mounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>34/34
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span> [2017-02-03T12:57:07.034] : ISO unmounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span> [2017-02-03 12:57:07,957] : Running test transaction ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span> [2017-02-03 12:57:08,966] : Running pre-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span> [2017-02-03T12:57:10.034] : All VMware services are stopped.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span> [2017-02-03 12:57:10,684] : Upgrading software packages ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span> [2017-02-03 12:57:34,750] : Running post-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span> [2017-02-03T12:57:36.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Command&gt; software-packages install --iso --acceptEulas
+ [2017-02-03T12:56:57.034] : Validating software update payload
+ [2017-02-03T12:56:57.034] : Validation successful
+ [2017-02-03 12:56:57,376] : Copying software packages  [2017-02-03T12:56:57.034] : ISO mounted successfully
+34/34
+ [2017-02-03T12:57:07.034] : ISO unmounted successfully
+ [2017-02-03 12:57:07,957] : Running test transaction ....
+ [2017-02-03 12:57:08,966] : Running pre-install script.....
+ [2017-02-03T12:57:10.034] : All VMware services are stopped.
+ [2017-02-03 12:57:10,684] : Upgrading software packages ....
+ [2017-02-03 12:57:34,750] : Running post-install script.....
+ [2017-02-03T12:57:36.034] : Packages upgraded successfully, Reboot is required to complete the installation.
 </code></pre></div><ul>
 <li>
 <p>We will now reboot the passive node.</p>
@@ -321,18 +321,18 @@ February 3, 2017 under <a class="" href="/categories/vmware">VMware</a>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Command&gt; software-packages install --iso --acceptEulas
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span> [2017-02-03T08:10:27.034] : Validating software update payload
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span> [2017-02-03T08:10:27.034] : Validation successful
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span> [2017-02-03 08:10:27,512] : Copying software packages  [2017-02-03T08:10:27.034] : ISO mounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>34/34
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span> [2017-02-03T08:10:37.034] : ISO unmounted successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span> [2017-02-03 08:10:37,780] : Running test transaction ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span> [2017-02-03 08:10:38,790] : Running pre-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span> [2017-02-03T08:10:40.034] : All VMware services are stopped.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span> [2017-02-03 08:10:40,401] : Upgrading software packages ....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span> [2017-02-03 08:11:05,450] : Running post-install script.....
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span> [2017-02-03T08:11:06.034] : Packages upgraded successfully, Reboot is required to complete the installation.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Command&gt; software-packages install --iso --acceptEulas
+ [2017-02-03T08:10:27.034] : Validating software update payload
+ [2017-02-03T08:10:27.034] : Validation successful
+ [2017-02-03 08:10:27,512] : Copying software packages  [2017-02-03T08:10:27.034] : ISO mounted successfully
+34/34
+ [2017-02-03T08:10:37.034] : ISO unmounted successfully
+ [2017-02-03 08:10:37,780] : Running test transaction ....
+ [2017-02-03 08:10:38,790] : Running pre-install script.....
+ [2017-02-03T08:10:40.034] : All VMware services are stopped.
+ [2017-02-03 08:10:40,401] : Upgrading software packages ....
+ [2017-02-03 08:11:05,450] : Running post-install script.....
+ [2017-02-03T08:11:06.034] : Packages upgraded successfully, Reboot is required to complete the installation.
 </code></pre></div><ul>
 <li>
 <p>We will now reboot the new passive node.</p>

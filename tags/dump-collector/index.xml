@@ -18,7 +18,7 @@
       
       <guid>https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: 1Foreach ($vmhost in (get-vmhost)) { 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) 4$esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
     </item>
     
   </channel>

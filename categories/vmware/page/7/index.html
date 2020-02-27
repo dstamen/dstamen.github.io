@@ -358,7 +358,7 @@ February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
   
     I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to “Never Notify” SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-1REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account
   
 
 
@@ -469,7 +469,7 @@ January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
                     
   
     I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-1Enable-MemHotAdd $ServerName 2Disable-MemHotAdd $ServerName 3Enable-vCPUHotAdd $ServerName 4Disable-vCPUHotAdd $ServerName Enable Memory HotAdd 1Function Enable-MemHotAdd($vm){ 2$vmview = Get-vm $vm | Get-View 3$vmConfigSpec = New-Object VMware.
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
   
 
 

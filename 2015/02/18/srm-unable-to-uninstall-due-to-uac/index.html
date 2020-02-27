@@ -33,7 +33,7 @@
   <meta property="og:title" content="SRM - Unable to uninstall due to UAC" />
 <meta property="og:description" content="I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-1REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account" />
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidstamen.com/2015/02/18/srm-unable-to-uninstall-due-to-uac/" />
 <meta property="article:published_time" content="2015-02-18T00:00:00+00:00" />
@@ -43,7 +43,7 @@ To fully disable UAC run the following command from an elevated command prompt a
 <meta name="twitter:title" content="SRM - Unable to uninstall due to UAC"/>
 <meta name="twitter:description" content="I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-1REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account"/>
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account"/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -172,8 +172,8 @@ February 18, 2015 under <a class="" href="/categories/vmware">VMware</a>
       <p>I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &ldquo;Never Notify&rdquo; SRM didnt like this.</p>
 <p><img src="/images/Screen-Shot-2015-02-18-at-9.01.23-AM.png" alt=""></p>
 <p>To fully disable UAC run the following command from an elevated command prompt and then reboot the system.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f
-</span></code></pre></div><h4 id="note">Note:</h4>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f
+</code></pre></div><h4 id="note">Note:</h4>
 <p>You can also avoid this by doing the uninstall as the builtin local administrator account</p>
 
       <h6>Share this post</h6>

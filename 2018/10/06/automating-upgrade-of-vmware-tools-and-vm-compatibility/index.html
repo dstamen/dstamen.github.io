@@ -160,7 +160,7 @@ if (!doNotTrack) {
         Published on 
 October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/vm-tools">VM Tools</a> and <a class="" href="/tags/vm-compatibility">VM Compatibility</a>
-        &middot; Read in about 6 min (1273 words)
+        &middot; Read in about 6 min (1270 words)
       </div>
   </span>
   
@@ -836,8 +836,8 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>However, since we are talking about automation lets show this another way using PowerCLI.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } | select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}|Sort-Object Name
-</span></code></pre></div><p>Using this PowerCLI one-liner we are able to see more information at scale, we can see that within our folder we actually have 3 VMs that are out of compliance. To remediate these to the latest version its actually quite simple with PowerCLI as well.  </p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-Folder -name Testing | Get-VM | % { get-view $\_.id } | select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}|Sort-Object Name
+</code></pre></div><p>Using this PowerCLI one-liner we are able to see more information at scale, we can see that within our folder we actually have 3 VMs that are out of compliance. To remediate these to the latest version its actually quite simple with PowerCLI as well.  </p>
 
 
 
@@ -879,8 +879,8 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>To make the information clearer on what needs an update we will use the same search only looking for VMs where ToolStatus is guestToolsNeedUpgrade. To do that we will use the following one-liner.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Sort-Object Name
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Sort-Object Name
+</code></pre></div>
 
 
   
@@ -922,8 +922,8 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 <h3 id="upgrading-vmware-tools-via-powercli">Upgrading VMware Tools via PowerCLI</h3>
 <p>Now that we know which VMs need tools update we can actually go forth and upgrade tools. That is quite simple we can do this using the Update-Tools PowerCLI cmdlet. Using our existing one-liner from above we will just append Update-Tools to update the VMs with tools currently out of compliance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Update-Tools -NoReboot -VM {$\_.Name} -Verbose
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}| Update-Tools -NoReboot -VM {$\_.Name} -Verbose
+</code></pre></div>
 
 
   
@@ -964,9 +964,9 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>You may have noticed that all the VMs had their updates kicked off at the same time and this may not be ideal, this is one way that the Update-Tools cmdlet works, however we can get around this by storing the VMs within a variable and then using a loop process them one at a time. This is definitely preferable as it will limit the impact to the environment.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$OutofDateVMs = Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$OutofDateVMs = Get-Folder -name Testing | Get-VM | % { get-view $\_.id } |Where-Object {$\_.Guest.ToolsVersionStatus -like &#34;guestToolsNeedUpgrade&#34;} |select name, @{Name=“ToolsVersion”; Expression={$\_.config.tools.toolsversion}}, @{ Name=“ToolStatus”; Expression={$\_.Guest.ToolsVersionStatus}}
+
+ForEach ($VM in $OutOfDateVMs){Update-Tools -NoReboot -VM $VM.Name -Verbose}
 </code></pre></div>
 
 
@@ -1053,8 +1053,8 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>After all this a post on automation, so lets see if we can find a way to use PowerCLI to modify the VM&rsquo;s setting so this gets easier when we have a large environment.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-Folder Testing|Get-VM|Get-View | select name,@{N=&#39;ToolsUpgradePolicy&#39;;E={$\_.Config.Tools.ToolsUpgradePolicy } } |Sort Name
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-Folder Testing|Get-VM|Get-View | select name,@{N=&#39;ToolsUpgradePolicy&#39;;E={$\_.Config.Tools.ToolsUpgradePolicy } } |Sort Name
+</code></pre></div>
 
 
   
@@ -1095,15 +1095,15 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>Here we can see which VMs have the automatic upgrade set and which ones are configured for manual. Utilizing a filter we can look for objects that are set for manual and then configure them to be set for upgradeAtPowerCycle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ManualUpdateVMs = Get-Folder Testing|Get-VM|Get-View | Where-Object {$\_.Config.Tools.ToolsUpgradePolicy -like &#34;manual&#34;}|select name,@{N=&#39;ToolsUpgradePolicy&#39;;E={$\_.Config.Tools.ToolsUpgradePolicy } }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Foreach ($VM in ($ManualUpdateVMs)) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>$VMConfig = Get-View -VIObject $VM.Name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>$vmConfigSpec.Tools = New-Object VMware.Vim.ToolsConfigInfo
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>$vmConfigSpec.Tools.ToolsUpgradePolicy = &#34;UpgradeAtPowerCycle&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>$VMConfig.ReconfigVM($vmConfigSpec)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ManualUpdateVMs = Get-Folder Testing|Get-VM|Get-View | Where-Object {$\_.Config.Tools.ToolsUpgradePolicy -like &#34;manual&#34;}|select name,@{N=&#39;ToolsUpgradePolicy&#39;;E={$\_.Config.Tools.ToolsUpgradePolicy } }
+
+Foreach ($VM in ($ManualUpdateVMs)) {
+$VMConfig = Get-View -VIObject $VM.Name
+$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+$vmConfigSpec.Tools = New-Object VMware.Vim.ToolsConfigInfo
+$vmConfigSpec.Tools.ToolsUpgradePolicy = &#34;UpgradeAtPowerCycle&#34;
+$VMConfig.ReconfigVM($vmConfigSpec)
+}
 </code></pre></div>
 
 
@@ -1189,8 +1189,8 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <p>When it comes to upgrading your VM Compatibility this is something that should be done with caution. Upgrading VM Compatibility aka VM Hardware is like pulling out the motherboard and replacing it with a new one, so this should only be done when features and functionality in a higher level are needed. Our current recommended level is Hardware Version 11 as it handles remediation from current security threats. Prior to upgrading your VM Compatibility you should always make sure VMware Tools are up to date first as new drivers can be required for the new virtual hardware. As I mentioned previously prior to upgrading your VM Compatibility I recommend taking a snapshot or a backup of the virtual machine in case a rollback is needed.  </p>
 <h3 id="checking-vm-compatibility-version">Checking VM Compatibility Version</h3>
 <p>Its quite easy to see the current version of VM Compatibility via the vSphere Client, however when checking the current levels across our entire vCenter Server we may want to automate this Below you will find a quick and easy one-liner to identify the VMs and their current VM Compatibility version.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-folder Testing | Get-VM | Select Name, Version | Sort Name
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-folder Testing | Get-VM | Select Name, Version | Sort Name
+</code></pre></div>
 
 
   
@@ -1236,16 +1236,16 @@ October 6, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <h3 id="upgrading-vm-compatibility-version">Upgrading VM Compatibility Version</h3>
 <p>We have identified a need to upgrade VM08 also to v14 to take advantage of Per-VM EVC so we can handle the automation of the VM compatibility upgrade. We can do this again quite easily with PowerCLI. If you wish to do this via the vSphere Client my colleague Nigel Hickey covers this in his blog series 
 <a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-4-upgrading-vmware-tools-and-vm-compatibility.html" target="_blank">here</a>. However, we are talking automation here so lets jump into the quick script to accomplish this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>$HardwareUpdateVMs = Get-Folder Testing | Get-VM VM08
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>Foreach ($VM in ($HardwareUpdateVMs)) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$VMConfig = Get-View -VIObject $VM.Name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$vmConfigSpec.ScheduledHardwareUpgradeInfo = New-Object -TypeName VMware.Vim.ScheduledHardwareUpgradeInfo
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$vmConfigSpec.ScheduledHardwareUpgradeInfo.UpgradePolicy = “always”
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$vmConfigSpec.ScheduledHardwareUpgradeInfo.VersionKey = “vmx-14”
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>$VMConfig.ReconfigVM($vmConfigSpec)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$HardwareUpdateVMs = Get-Folder Testing | Get-VM VM08
+
+Foreach ($VM in ($HardwareUpdateVMs)) {
+$VMConfig = Get-View -VIObject $VM.Name
+$vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+$vmConfigSpec.ScheduledHardwareUpgradeInfo = New-Object -TypeName VMware.Vim.ScheduledHardwareUpgradeInfo
+$vmConfigSpec.ScheduledHardwareUpgradeInfo.UpgradePolicy = “always”
+$vmConfigSpec.ScheduledHardwareUpgradeInfo.VersionKey = “vmx-14”
+$VMConfig.ReconfigVM($vmConfigSpec)
+}
 </code></pre></div>
 
 

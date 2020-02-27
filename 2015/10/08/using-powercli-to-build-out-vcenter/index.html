@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 October 8, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
-        &middot; Read in about 2 min (361 words)
+        &middot; Read in about 2 min (346 words)
       </div>
   </span>
   
@@ -184,61 +184,61 @@ October 8, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>The code and Github Link can be found below.</p>
 <p>
 <a href="https://github.com/dstamen/PowerCLI/tree/master/ConfigvCenter" target="_blank">ConfigvCenter.ps1</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># Variables
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$vcenter = &#34;vc.lab.local&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$esxusername = &#34;root&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$esxpassword = &#34;password&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$DSC = &#34;DSC01&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$Datacenter = &#34;Lab&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>#Connect to vCenter
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>#Connect-VIServer -Server $vCenter
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span># Create Datacenters
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>Write-Host &#34;Creating Datacenter&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>$csv = Import-CSV .\createdatacenter.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>foreach ($datacenter in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  New-Datacenter -Location (Get-Folder -NoRecursion) -Name $datacenter.Name
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span># Create Clusters
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>Write-Host &#34;Creating Clusters&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>$csv = Import-CSV .\createcluster.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>foreach ($cluster in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>  New-Cluster -Name $cluster.Name -Location $cluster.Datacenter -DRSEnabled -DrsAutomationLevel FullyAutomated -HAEnabled
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span># Create Clusters
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>Write-Host &#34;Adding Hosts&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>$csv = Import-CSV .\createhosts.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>foreach ($vmhost in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  Add-VMHost -Name $vmhost.Name -Location $vmhost.Cluster -User $esxusername -Password $esxpassword
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  Set-VMHost -VMHost $vmhost.Name -State Maintenance
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span># Create Datastores
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>Write-Host &#34;Creating Datastores&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>$csv = Import-CSV .\createdatastores.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>foreach ($datastore in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  New-Datastore -VMHost $datastore.host -Name $datastore.Name -Path $datastore.NAAID -VMFS
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span># Create Datastore Cluster and Move Datastores In
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>Write-Host &#34;Creating Datastore Cluster and Adding Datastores&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>$csv = Import-CSV .\createdatastores.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>New-DatastoreCluster -Name $DSC -Location $Datacenter
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>foreach ($datastore in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>  Move-Datastore $datastore.Name -Destination $datastore.DatastoreCluster
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span># Apply HostProfile
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>Write-Host &#34;Applying HostProfiles&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>$csv = Import-CSV .\applyhostprofile.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>foreach ($hostprofile in $csv) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>  Apply-VMHostProfile -Entity $hostprofile.Entity -Profile $hostprofile.Profile -Confirm:$false
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>Write-Host &#34;Complete!&#34; -ForegroundColor &#34;Green&#34;
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># Variables
+$vcenter = &#34;vc.lab.local&#34;
+$esxusername = &#34;root&#34;
+$esxpassword = &#34;password&#34;
+$DSC = &#34;DSC01&#34;
+$Datacenter = &#34;Lab&#34;
+
+#Connect to vCenter
+#Connect-VIServer -Server $vCenter
+
+# Create Datacenters
+Write-Host &#34;Creating Datacenter&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\createdatacenter.csv
+foreach ($datacenter in $csv) {
+  New-Datacenter -Location (Get-Folder -NoRecursion) -Name $datacenter.Name
+}
+
+# Create Clusters
+Write-Host &#34;Creating Clusters&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\createcluster.csv
+foreach ($cluster in $csv) {
+  New-Cluster -Name $cluster.Name -Location $cluster.Datacenter -DRSEnabled -DrsAutomationLevel FullyAutomated -HAEnabled
+}
+
+# Create Clusters
+Write-Host &#34;Adding Hosts&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\createhosts.csv
+foreach ($vmhost in $csv) {
+  Add-VMHost -Name $vmhost.Name -Location $vmhost.Cluster -User $esxusername -Password $esxpassword
+  Set-VMHost -VMHost $vmhost.Name -State Maintenance
+}
+
+# Create Datastores
+Write-Host &#34;Creating Datastores&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\createdatastores.csv
+foreach ($datastore in $csv) {
+  New-Datastore -VMHost $datastore.host -Name $datastore.Name -Path $datastore.NAAID -VMFS
+}
+
+# Create Datastore Cluster and Move Datastores In
+Write-Host &#34;Creating Datastore Cluster and Adding Datastores&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\createdatastores.csv
+New-DatastoreCluster -Name $DSC -Location $Datacenter
+foreach ($datastore in $csv) {
+  Move-Datastore $datastore.Name -Destination $datastore.DatastoreCluster
+}
+
+# Apply HostProfile
+Write-Host &#34;Applying HostProfiles&#34; -ForegroundColor &#34;Green&#34;
+$csv = Import-CSV .\applyhostprofile.csv
+foreach ($hostprofile in $csv) {
+  Apply-VMHostProfile -Entity $hostprofile.Entity -Profile $hostprofile.Profile -Confirm:$false
+}
+
+Write-Host &#34;Complete!&#34; -ForegroundColor &#34;Green&#34;
 </code></pre></div>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2015%2f10%2f08%2fusing-powercli-to-build-out-vcenter%2f" target="_blank" rel="noopener" aria-label="">

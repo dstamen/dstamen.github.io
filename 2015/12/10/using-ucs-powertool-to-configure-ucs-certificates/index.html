@@ -182,27 +182,27 @@ December 10, 2015 under <a class="" href="/categories/cisco">Cisco</a>
 </ul>
 <h4 id="preparing-to-execute-the-script"><em><strong>Preparing to Execute the Script</strong></em></h4>
 <p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>#Define Variables
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$UCS = &#34;FQDNofUCS&#34; #Used to Connect to UCSM via PowerTool
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$TrustPoint = &#34;TP-Name&#34; #Name of TrustPoint, AKA Root CA
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$KeyRing = &#34;KeyRingName&#34; #name of KeyRing. Stores Certificate Information
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>$Modulus = &#34;mod2048&#34; #2048 bit key this can be 1024,2048,4096, etc
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$CertDNS = &#34;FQDNofUCS&#34; #FQDN for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>$CertLocality = &#34;City&#34; #City for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>$CertState = &#34;State&#34; #State for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>$CertCountry = &#34;US&#34; #Country for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>$CertOrgName = &#34;Org&#34; #OrgName for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>$CertEmail = &#34;me@lab.com&#34; #Email for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>$CertSubjName = &#34;FQDNofUCS&#34; #FQDN for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>$CertIP = &#34;FI-VIP-IP&#34; #FI-VIP IP for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>$CertIpA = &#34;FI-A-IP&#34; #FI-A IP for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>$CertIpB = &#34;FI-B-IP&#34; #FI-B IP for Cert Request
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>$TPChain = &#34;-----BEGIN CERTIFICATE-----
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>PASTE CERT CONTENT HERE FOR ROOTCA
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>-----END CERTIFICATE-----
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>-----BEGIN CERTIFICATE-----
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>PASTE CERT CONTENT HERE FOR SUB CA
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>-----END CERTIFICATE-----&#34; #Delete Second part if not using a Root/Sub Scenario.
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#Define Variables
+$UCS = &#34;FQDNofUCS&#34; #Used to Connect to UCSM via PowerTool
+$TrustPoint = &#34;TP-Name&#34; #Name of TrustPoint, AKA Root CA
+$KeyRing = &#34;KeyRingName&#34; #name of KeyRing. Stores Certificate Information
+$Modulus = &#34;mod2048&#34; #2048 bit key this can be 1024,2048,4096, etc
+$CertDNS = &#34;FQDNofUCS&#34; #FQDN for Cert Request
+$CertLocality = &#34;City&#34; #City for Cert Request
+$CertState = &#34;State&#34; #State for Cert Request
+$CertCountry = &#34;US&#34; #Country for Cert Request
+$CertOrgName = &#34;Org&#34; #OrgName for Cert Request
+$CertEmail = &#34;me@lab.com&#34; #Email for Cert Request
+$CertSubjName = &#34;FQDNofUCS&#34; #FQDN for Cert Request
+$CertIP = &#34;FI-VIP-IP&#34; #FI-VIP IP for Cert Request
+$CertIpA = &#34;FI-A-IP&#34; #FI-A IP for Cert Request
+$CertIpB = &#34;FI-B-IP&#34; #FI-B IP for Cert Request
+$TPChain = &#34;-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR ROOTCA
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+PASTE CERT CONTENT HERE FOR SUB CA
+-----END CERTIFICATE-----&#34; #Delete Second part if not using a Root/Sub Scenario.
 </code></pre></div><p>To gather information for the variables above you should have most the information handy. To get the TPChain(The Root/Sub Certs) you can follow these steps.</p>
 <ul>
 <li>If using a Microsoft CA navigate to http://caroot/certsrv. From here you can download the CA Certificate. Make sure to download it in the Base 64 format.</li>

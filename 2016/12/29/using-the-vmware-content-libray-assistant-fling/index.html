@@ -36,7 +36,7 @@
 <meta property="og:description" content="So VMware Flings have been on a roll recently. They have released what they call &ldquo;VMware Content Library Assistant.&rdquo; This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
 You can find the fling at the following URL&hellip; https://labs.vmware.com/flings/vsphere-content-library-assistant)
 Once you download the fling, you can just run the following command.
-1java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work." />
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://davidstamen.com/2016/12/29/using-the-vmware-content-libray-assistant-fling/" />
 <meta property="article:published_time" content="2016-12-29T00:00:00+00:00" />
@@ -47,7 +47,7 @@ Once you download the fling, you can just run the following command.
 <meta name="twitter:description" content="So VMware Flings have been on a roll recently. They have released what they call &ldquo;VMware Content Library Assistant.&rdquo; This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
 You can find the fling at the following URL&hellip; https://labs.vmware.com/flings/vsphere-content-library-assistant)
 Once you download the fling, you can just run the following command.
-1java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work."/>
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work."/>
 <meta name="twitter:site" content="@davidstamen"/>
 
   
@@ -163,7 +163,7 @@ if (!doNotTrack) {
         Published on 
 December 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/content-library">Content Library</a> and <a class="" href="/tags/vmware-fling">VMware Fling</a>
-        &middot; Read in about 2 min (398 words)
+        &middot; Read in about 2 min (373 words)
       </div>
   </span>
   
@@ -177,74 +177,74 @@ December 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
 <p>You can find the fling at the following URL&hellip;
 <a href="https://labs.vmware.com/flings/vsphere-content-library-assistant" target="_blank">https://labs.vmware.com/flings/vsphere-content-library-assistant)</a></p>
 <p>Once you download the fling, you can just run the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password
-</span></code></pre></div><p>In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -jar /pathtofolder/vsphere-content-library-assistant-1.0.jar -s servername -u username -p password
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Davids-MacBook-Pro:~ davidstamen$ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -jar /Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar -s vcsa6-01.lab.local -u administrator@vsphere.local -p Password
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>This app can assist you to on-board VC Templates to Content Library by doing the following:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>1. Scan Datastores &amp; Discover VC Templates (*.vmtx)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>2. Recommend optimal inventorying intelligently
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>3. Create Content Libraries
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>4. Import VC Templates as OVF to Content Libraries
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>Connecting to Server vcsa6-01.lab.local
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>Credentials: Username:administrator@vsphere.local
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>Connected to: VMware VirtualCenter ServerSLF4J: Class path contains multiple SLF4J bindings.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>SLF4J: Found binding in [jar:file:/Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>SLF4J: Found binding in [jar:file:/Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar!/lib/slf4j-log4j12-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>Found the following VC templates to on-board
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>┌─────────────────────────────────────────────────┬────────────────────────────────────────────────┐
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>│ Datastore                                       │ VC Templates                                   │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>├─────────────────────────────────────────────────┼────────────────────────────────────────────────┤
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>│ NFS01                                           │ [WIN2016, 2012R2, UBUNTU1604]                  │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>└─────────────────────────────────────────────────┴────────────────────────────────────────────────┘
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>Recommending import flows
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>High Import Speed
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>│ VC Template            │ Will be imported to    │ Created on this        │ Connected Hosts       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>│                        │ new ContentLibrary     │ Datastore              │                       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┤
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>│ [WIN2016, 2012R2,      │ NFS01_ContentLibrary_H │ NFS01                  │ [nuc2.lab.local,      │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>│ UBUNTU1604]            │ S                      │                        │ nuc1.lab.local]       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>└────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>High Availability
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>│ VC Template            │ Will be imported to    │ Created on this        │ Connected Hosts       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>│                        │ new ContentLibrary     │ Datastore              │                       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┤
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>│ [WIN2016, 2012R2,      │ NFS01_ContentLibrary_H │ NFS01                  │ [nuc2.lab.local,      │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>│ UBUNTU1604]            │ A                      │                        │ nuc1.lab.local]       │
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>└────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>Press 1 for High Import Speed
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>Press 2 for High Availability
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>1
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>Creating ContentLibrary &#39;NFS01_ContentLibrary_HS&#39; on &#39;NFS01&#39;                                               	Success
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>	Importing &#39;WIN2016&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                    	Success
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>	Importing &#39;2012R2&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                     	Success
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>	Importing &#39;UBUNTU1604&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                 	Success
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password
+</code></pre></div><p>In my case my java home isn&rsquo;t setup on my mac so I had to run the following command to get it to work.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -jar /pathtofolder/vsphere-content-library-assistant-1.0.jar -s servername -u username -p password
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Davids-MacBook-Pro:~ davidstamen$ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -jar /Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar -s vcsa6-01.lab.local -u administrator@vsphere.local -p Password
+
+This app can assist you to on-board VC Templates to Content Library by doing the following:
+1. Scan Datastores &amp; Discover VC Templates (*.vmtx)
+2. Recommend optimal inventorying intelligently
+3. Create Content Libraries
+4. Import VC Templates as OVF to Content Libraries
+
+Connecting to Server vcsa6-01.lab.local
+Credentials: Username:administrator@vsphere.local
+Connected to: VMware VirtualCenter ServerSLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/davidstamen/Downloads/vsphere-content-library-assistant-1.0.0/vsphere-content-library-assistant-1.0.jar!/lib/slf4j-log4j12-1.6.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+
+
+Found the following VC templates to on-board
+
+┌─────────────────────────────────────────────────┬────────────────────────────────────────────────┐
+│ Datastore                                       │ VC Templates                                   │
+├─────────────────────────────────────────────────┼────────────────────────────────────────────────┤
+│ NFS01                                           │ [WIN2016, 2012R2, UBUNTU1604]                  │
+└─────────────────────────────────────────────────┴────────────────────────────────────────────────┘
+
+
+
+Recommending import flows
+
+High Import Speed
+
+┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
+│ VC Template            │ Will be imported to    │ Created on this        │ Connected Hosts       │
+│                        │ new ContentLibrary     │ Datastore              │                       │
+├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┤
+│ [WIN2016, 2012R2,      │ NFS01_ContentLibrary_H │ NFS01                  │ [nuc2.lab.local,      │
+│ UBUNTU1604]            │ S                      │                        │ nuc1.lab.local]       │
+└────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
+
+
+
+
+
+High Availability
+
+┌────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┐
+│ VC Template            │ Will be imported to    │ Created on this        │ Connected Hosts       │
+│                        │ new ContentLibrary     │ Datastore              │                       │
+├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┤
+│ [WIN2016, 2012R2,      │ NFS01_ContentLibrary_H │ NFS01                  │ [nuc2.lab.local,      │
+│ UBUNTU1604]            │ A                      │                        │ nuc1.lab.local]       │
+└────────────────────────┴────────────────────────┴────────────────────────┴───────────────────────┘
+
+
+
+
+Press 1 for High Import Speed
+Press 2 for High Availability
+
+1
+
+Creating ContentLibrary &#39;NFS01_ContentLibrary_HS&#39; on &#39;NFS01&#39;                                               	Success
+	Importing &#39;WIN2016&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                    	Success
+	Importing &#39;2012R2&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                     	Success
+	Importing &#39;UBUNTU1604&#39; to ContentLibrary &#39;NFS01_ContentLibrary_HS&#39;                                 	Success
 </code></pre></div><p>Here is an example of what it looks like after the fling is run.</p>
 <p><img src="/images/contentlibraryassistantfling.png" alt=""></p>
 

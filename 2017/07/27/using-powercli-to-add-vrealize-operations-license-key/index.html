@@ -157,7 +157,7 @@ if (!doNotTrack) {
         Published on 
 July 27, 2017 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vrops">vROPS</a> and <a class="" href="/tags/powercli">PowerCLI</a>
-        &middot; Read in about 2 min (333 words)
+        &middot; Read in about 2 min (324 words)
       </div>
   </span>
   
@@ -177,28 +177,28 @@ July 27, 2017 under <a class="" href="/categories/vmware">VMware</a>
 <p>The script is pretty straight forward, you can either export the license keys from an old vRealize Operations Server (6.6+) or create a CSV with column (LicenseKey) to be imported.</p>
 <p>If you are choosing to export keys from an existing server, it has to be on a version that currently has API support. (I used v6.6)</p>
 <p>You can run the following script to export all keys to a csv file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$Cred = Get-Credential
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>$vrom = &#34;vromold.lab.local&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>Connect-OMServer -Server $vrom -Credential $Cred
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>$omServer = $global:DefaultOMServers[0].ExtensionData
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>$omLicense = $OmServer.GetLicenseKeysForProduct()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>$omLicense.Solutionlicense|Export-Csv C:\temp\omkeys2.csv -NoTypeInformation
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#268bd2">$Cred</span> = <span style="color:#b58900">Get-Credential</span>
+<span style="color:#268bd2">$vrom</span> = <span style="color:#2aa198">&#34;vromold.lab.local&#34;</span>
+
+<span style="color:#b58900">Connect-OMServer</span> -Server <span style="color:#268bd2">$vrom</span> -Credential <span style="color:#268bd2">$Cred</span>
+
+<span style="color:#268bd2">$omServer</span> = <span style="color:#268bd2">$global:DefaultOMServers</span>[0].ExtensionData
+<span style="color:#268bd2">$omLicense</span> = <span style="color:#268bd2">$OmServer</span>.GetLicenseKeysForProduct()
+<span style="color:#268bd2">$omLicense</span>.Solutionlicense|<span style="color:#b58900">Export-Csv</span> C:\temp\omkeys2.csv -NoTypeInformation
 </code></pre></div><p>If you exported the keys above, you should be immediately ready to import the keys to your new vRealize Operations Server, if not you can manually create the csv as listed above.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>$Cred = Get-Credential
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$vrom = &#34;vromnew.lab.local&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>Connect-OMServer -Server $vrom -Credential $Cred
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>$keys = import-csv c:\temp\omkeys.csv
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>foreach ($key in $keys) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    $solutionLicense = New-Object VMware.VimAutomation.VROps.Views.SolutionLicense
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    $solutionLicense.LicenseKey = $key.LicenseKey
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    $solutionLicenses = New-Object VMware.VimAutomation.VROps.Views.SolutionLicenses
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    $solutionLicenses.Solutionlicense = $solutionLicense
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    $omserver.AddLicenseKeyToProduct($solutionLicenses)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#268bd2">$Cred</span> = <span style="color:#b58900">Get-Credential</span>
+<span style="color:#268bd2">$vrom</span> = <span style="color:#2aa198">&#34;vromnew.lab.local&#34;</span>
+
+<span style="color:#b58900">Connect-OMServer</span> -Server <span style="color:#268bd2">$vrom</span> -Credential <span style="color:#268bd2">$Cred</span>
+
+<span style="color:#268bd2">$keys</span> = <span style="color:#b58900">import-csv</span> c:\temp\omkeys.csv
+<span style="color:#719e07">foreach</span> (<span style="color:#268bd2">$key</span> <span style="color:#719e07">in</span> <span style="color:#268bd2">$keys</span>) {
+    <span style="color:#268bd2">$solutionLicense</span> = <span style="color:#b58900">New-Object</span> VMware.VimAutomation.VROps.Views.SolutionLicense
+    <span style="color:#268bd2">$solutionLicense</span>.LicenseKey = <span style="color:#268bd2">$key</span>.LicenseKey
+    <span style="color:#268bd2">$solutionLicenses</span> = <span style="color:#b58900">New-Object</span> VMware.VimAutomation.VROps.Views.SolutionLicenses
+    <span style="color:#268bd2">$solutionLicenses</span>.Solutionlicense = <span style="color:#268bd2">$solutionLicense</span>
+    <span style="color:#268bd2">$omserver</span>.AddLicenseKeyToProduct(<span style="color:#268bd2">$solutionLicenses</span>)
+}
 </code></pre></div><p>The documentation was pretty spotty on this as it stated you only needed to pass the key to AddLicenseKeyToProduct(), but after multiple tests I realized that was not true. I eventually found out i have to create SolutionLicense objects and link them till i got the proper format. This was quite fun as i learned alot about PowerShell and API documentation in this process.</p>
 <p>You can find API documentation for vRealize Operations at https://fqdn/suite-api/docs/rest/index.html</p>
 <p><img src="/images/vrom1.png" alt=""></p>

@@ -451,7 +451,7 @@ I figured since I am using the embedded SSO, I could update the login page to sh
       <description>So VMware Flings have been on a roll recently. They have released what they call &amp;ldquo;VMware Content Library Assistant.&amp;rdquo; This is a java based CLI app, that connects to your vCenter and searchers for your templates and then automatically creates and uploads them.
 You can find the fling at the following URL&amp;hellip; https://labs.vmware.com/flings/vsphere-content-library-assistant)
 Once you download the fling, you can just run the following command.
-1java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&amp;rsquo;t setup on my mac so I had to run the following command to get it to work.</description>
+java -jar sphere-content-library-assistant-1.0.jar -s servername -u username -p password In my case my java home isn&amp;rsquo;t setup on my mac so I had to run the following command to get it to work.</description>
     </item>
     
     <item>
@@ -763,7 +763,7 @@ After &amp;ldquo;Restoring Network Configuration&amp;rdquo; a few too many times
       <description>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.
 Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.
 The script can be found here.
-1# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template 2# @davidstamen 3# http://davidstamen.</description>
+# PowerCLI Script for adding VLAN to VLAN Group and vNIC Template # @davidstamen # http://davidstamen.</description>
     </item>
     
     <item>
@@ -1112,7 +1112,7 @@ Disclaimer: This is in no way supported or recommended by Ravello Systems, runni
       
       <guid>https://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/</guid>
       <description>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-1~ $ gem install jekyll 2~ $ jekyll new myblog 3~ $ cd myblog 4~/myblog $ jekyll serve 5# =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description>
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description>
     </item>
     
     <item>
@@ -1215,7 +1215,7 @@ Working with VMware support we were finally able to get it working with a few tw
       <guid>https://davidstamen.com/2015/02/18/srm-unable-to-uninstall-due-to-uac/</guid>
       <description>I was trying to remove SRM 5.1 from our environment and kept getting an error that UAC must be disabled. Even though UAC was set to &amp;ldquo;Never Notify&amp;rdquo; SRM didnt like this.
 To fully disable UAC run the following command from an elevated command prompt and then reboot the system.
-1REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account</description>
+REG ADD “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System” /v EnableLUA /t REG_DWORD /d 0 /f Note: You can also avoid this by doing the uninstall as the builtin local administrator account</description>
     </item>
     
     <item>
@@ -1245,7 +1245,7 @@ Doing some troubleshooting we noticed their DefaultVIServerMode was set to singl
       
       <guid>https://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/</guid>
       <description>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-1Enable-MemHotAdd $ServerName 2Disable-MemHotAdd $ServerName 3Enable-vCPUHotAdd $ServerName 4Disable-vCPUHotAdd $ServerName Enable Memory HotAdd 1Function Enable-MemHotAdd($vm){ 2$vmview = Get-vm $vm | Get-View 3$vmConfigSpec = New-Object VMware.</description>
+Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.</description>
     </item>
     
     <item>
@@ -1338,7 +1338,7 @@ However the hotfix only fixes future occurences, you still need to fix all the V
       
       <guid>https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
-Check the ESXi Dump Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: 1Foreach ($vmhost in (get-vmhost)) { 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) 4$esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.</description>
     </item>
     
     <item>
@@ -1348,7 +1348,7 @@ Check the ESXi Dump Collector Configuration Example: 1Foreach ($vmhost in (get-v
       
       <guid>https://davidstamen.com/2014/06/10/configuring-esxi-5-5-syslog-collector/</guid>
       <description>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.
-Check the ESXi Syslog Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;#34;udp://IPtoSyslogServer:514″) 4$esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
+Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.get()} Setting the ESXi Syslog Collector Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.syslog.config.set($null, $null, $null, $null,&amp;#34;udp://IPtoSyslogServer:514″) $esxcli.system.syslog.reload()} Post-Installation Changes If you wish to change the default port or maxsize of the syslog rotation, these can be changed by modifying the vmconfig-syslog.</description>
     </item>
     
     <item>
@@ -1391,7 +1391,7 @@ As we can see here the URL to configure the appliace is https://192.</descriptio
       
       <guid>https://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/</guid>
       <description>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
-How do i get the CanonicalName for allocated disks? 1Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?</description>
+How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?</description>
     </item>
     
     <item>
@@ -1431,7 +1431,7 @@ To perform the steps in the c# client.  From the VMware Infrastructure Client, r
       
       <guid>https://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/</guid>
       <description>This is a great script to keep handy. If you have multiple RDM&amp;rsquo;s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-1Get-VM VMNAME| Get-HardDisk -DiskType &amp;#34;RawPhysical&amp;#34;,&amp;#34;RawVirtual&amp;#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+Get-VM VMNAME| Get-HardDisk -DiskType &amp;#34;RawPhysical&amp;#34;,&amp;#34;RawVirtual&amp;#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
  KB2051606</description>
     </item>
     

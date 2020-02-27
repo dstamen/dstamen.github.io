@@ -21,7 +21,9 @@ li.current-menu-item > a.nav-link {
         box-shadow: 0 -3px 0 #007cbb inset;
         transition: box-shadow 0.2s ease-in;
 } */
-
+.highlight pre {
+  display: inline-block;
+}
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
   display: inline-block

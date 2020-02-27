@@ -161,7 +161,7 @@ if (!doNotTrack) {
         Published on 
 December 2, 2016 under <a class="" href="/categories/ubiquiti">Ubiquiti</a>
         &middot; Tagged <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/unifi">Unifi</a>
-        &middot; Read in about 2 min (235 words)
+        &middot; Read in about 2 min (225 words)
       </div>
   </span>
   
@@ -174,19 +174,19 @@ December 2, 2016 under <a class="" href="/categories/ubiquiti">Ubiquiti</a>
       <p>I have been using Ubiquiti equipment for awhile at home and I figured i would finally write a blog post about it. Ubiquiti equipment is &ldquo;enterprise class&rdquo; equipment for the consumer.</p>
 <p>I figured I would create a post that goes over two ways of loading the controller. The first option will be installing it on Ubuntu on bare metal or a VM, the second option is a docker container.</p>
 <p>If you are installing this on a bare metal or virtual machine, i suggest a debian based image. My preference is Ubuntu.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>echo &#34;deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti&#34; &gt; \
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  /etc/apt/sources.list.d/20ubiquiti.list &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  echo &#34;deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen&#34; &gt; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  /etc/apt/sources.list.d/21mongodb.list &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50 &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>apt-get -q update &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  apt-get install -qy --force-yes --no-install-recommends unifi &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  apt-get -q clean &amp;&amp; \
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  rm -rf /var/lib/apt/lists/*
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>service unifi start
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">echo &#34;deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti&#34; &gt; \
+  /etc/apt/sources.list.d/20ubiquiti.list &amp;&amp; \
+  echo &#34;deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen&#34; &gt; \
+  /etc/apt/sources.list.d/21mongodb.list &amp;&amp; \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50 &amp;&amp; \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+
+apt-get -q update &amp;&amp; \
+  apt-get install -qy --force-yes --no-install-recommends unifi &amp;&amp; \
+  apt-get -q clean &amp;&amp; \
+  rm -rf /var/lib/apt/lists/*
+
+service unifi start
 </code></pre></div><p>Once that completes you can access the controller at https://iporfqdn:8443</p>
 <p>A second option is to use a docker container. I built an image through some testing that is hosted on dockerhub 
 <a href="https://hub.docker.com/r/dstamen/unifi/" target="_blank">dstamen/unifi</a>. It works and there are plenty of images out there. It is based on the following 

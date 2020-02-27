@@ -243,11 +243,11 @@ October 21, 2019 under <a class="" href="/categories/vmware">VMware</a>
 <p>If your environment is stateful there are a couple options for backup. Using vSphere CLI or PowerCLI you can export the configuration of your ESXi Host, whereas if using host profiles, the configuration will be stored along with an answer file on the vCenter Server.</p>
 <ul>
 <li>PowerCLI
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-VMHostFirmware -VMHost ESXi_host_IP_address -BackupConfiguration -DestinationPath output_directory
-</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-VMHostFirmware -VMHost ESXi_host_IP_address -BackupConfiguration -DestinationPath output_directory
+</code></pre></div></li>
 <li>vSphere CLI:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>vicfg-cfgbackup --server=ESXi_host_IP_address --username=root -s output_file_name
-</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">vicfg-cfgbackup --server=ESXi_host_IP_address --username=root -s output_file_name
+</code></pre></div></li>
 </ul>
 <h2 id="virtual-machines-vmware-tools--vm-compatibility">Virtual Machines: VMware Tools / VM Compatibility</h2>
 <p>In order recover a VM in the event you encounter issues with a VM Tools or VM Compatibility update—it&rsquo;s important to make sure you have a snapshot or full backup of your virtual machine. Recovery may not always require this backup, but it&rsquo;s good to have a point in time to recover.</p>

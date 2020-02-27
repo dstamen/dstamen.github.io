@@ -163,7 +163,7 @@ if (!doNotTrack) {
         Published on 
 October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/vsphere-upgrade">vSphere Upgrade</a>, <a class="" href="/tags/networking">Networking</a> and <a class="" href="/tags/vds">VDS</a>
-        &middot; Read in about 6 min (1104 words)
+        &middot; Read in about 6 min (1092 words)
       </div>
   </span>
   
@@ -837,8 +837,8 @@ October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 <p>Another consideration I like to recommend is that you keep your VDS upgraded to the same version as your ESXi hosts whenever possible. Previously in most vSphere versions it has always been said that upgrading your VDS can be done at anytime and is a non-disruptive upgrade., but we always want to use caution and do this within a maintenance window. The VDS upgrade is also something that has no rollback, once it is complete it is permanent unless you have completed a backup. With vSphere 6.7 and the introduction of VDS version 6.6 there are some known issues and considerations I want to mention prior to getting started upgrading our switch. A question I get asked quite frequently is why is vSphere 6.7&rsquo;s VDS version 6.6? The answer is quite simple, VMware on AWS (VMC) shares quite a bit of the same code as vSphere On-Perm and since there were no major changes to the VDS features or functionality the version stayed the same. Prior to upgrading our VDS version to 6.6 we definitely want to make sure we review 
 <a href="https://kb.vmware.com/s/article/52621" target="_blank">KB52621</a>. This KB covers considerations around known issues upgrading to version 6.6. Some of these considerations are making sure to put DRS into partially automated mode since if a vMotion occurs during the upgrade the VDS upgrade will fail. To take these considerations into account, we will make sure to include this in our Upgrading your Virtual Distributed Switch automation. Prior to upgrading we also need to verify that all hosts have been upgraded to vSphere 6.7 so we do not have any errors. If there is a incompatible host attached the upgrade will not be allowed to proceed. To validate our ESXi host version for all hosts attached to our VDS we can do so as follows.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Get-VDSwitch &#34;VDS&#34;|Get-VMHost|Select Name, Version|Sort Name
-</span></code></pre></div>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Get-VDSwitch &#34;VDS&#34;|Get-VMHost|Select Name, Version|Sort Name
+</code></pre></div>
 
 
   
@@ -922,26 +922,26 @@ October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
 <h2 id="upgrading-your-virtual-distributed-switch">Upgrading your Virtual Distributed Switch</h2>
 <p>Now that we are ready to move forward with upgrading our VDS, we will take some of the above considerations into place. Since we know if a vMotion is occurring during upgrade it will fail. We will make sure that if DRS is enabled we will put it into <strong>Partially Automated</strong> mode. Also, since we know we cannot rollback from a version upgrade we will make sure to take a backup prior to our upgrade. Unlike our previous blogs where we used simple one-liners, we will utilize a bit more logic in this upgrade that will be required as a script. As an introduction to the below script we will outline what it does. At the top we define variables for the VDS Name, Version we wish to upgrade to and the cluster(s) in which the VDS is attached. We will then check if DRS is enabled on the vSphere Cluster. If DRS is enabled we will store the current DRS Automation level and set it to Partially Automated, Backup the VDS, Upgrade the VDS and then we will restore the DRS Level back to the original state. If DRS is disabled, we perform a Backup of the VDS and then Upgrade the VDS. You can see the  code below and grab the script from 
 <a href="https://github.com/dstamen/PowerCLI/blob/master/UpgradeVDS.ps1" target="_blank">GitHub</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Connect-VIServer &#34;ds-vcsa-03.cpbu.lab&#34; | Out-Null
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$VDSwitch = &#34;VDS&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$VDVersion = &#34;6.6.0&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$Cluster = Get-Cluster &#34;Cluster&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>If ($Cluster.DrsEnabled -like &#34;True&#34;) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    Write-Host &#34;DRS is Enabled, it will be temporarily disabled during upgrade.&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    $ClusterDRSLevel = $Cluster.DrsAutomationLevel
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    Write-Host &#34;DRS Cluster is currently set to $ClusterDRSLevel. Will change back when complete.&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel &#34;PartiallyAutomated&#34; -Confirm:$false
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &#34;My Backup&#34; -Destination &#34;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    Write-Host &#34;Upgrade is complete. Setting Cluster to $ClusterDRSLevel.&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel $ClusterDRSLevel -Confirm:$false
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>ElseIf ($Cluster.DrsEnabled -like &#34;False&#34;) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    Write-Host &#34;DRS is Disabled, No additional action needed.&#34; -ForegroundColor &#34;Green&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &#34;My Backup&#34; -Destination &#34;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Connect-VIServer &#34;ds-vcsa-03.cpbu.lab&#34; | Out-Null
+$VDSwitch = &#34;VDS&#34;
+$VDVersion = &#34;6.6.0&#34;
+$Cluster = Get-Cluster &#34;Cluster&#34;
+
+If ($Cluster.DrsEnabled -like &#34;True&#34;) {
+    Write-Host &#34;DRS is Enabled, it will be temporarily disabled during upgrade.&#34; -ForegroundColor &#34;Green&#34;
+    $ClusterDRSLevel = $Cluster.DrsAutomationLevel
+    Write-Host &#34;DRS Cluster is currently set to $ClusterDRSLevel. Will change back when complete.&#34; -ForegroundColor &#34;Green&#34;
+    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel &#34;PartiallyAutomated&#34; -Confirm:$false
+    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &#34;My Backup&#34; -Destination &#34;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&#34;
+    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
+    Write-Host &#34;Upgrade is complete. Setting Cluster to $ClusterDRSLevel.&#34; -ForegroundColor &#34;Green&#34;
+    Get-Cluster $Cluster | Set-Cluster -DrsAutomationLevel $ClusterDRSLevel -Confirm:$false
+}
+ElseIf ($Cluster.DrsEnabled -like &#34;False&#34;) {
+    Write-Host &#34;DRS is Disabled, No additional action needed.&#34; -ForegroundColor &#34;Green&#34;
+    Get-VDSwitch -Name $VDSwitch | Export-VDSwitch -Description &#34;My Backup&#34; -Destination &#34;/PathToBackup/VDSBackup-$VDswitch-$((Get-Date).ToString(‘yyyy-MM-dd-hh-mm’)).zip&#34;
+    Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion
+}
 </code></pre></div>
 
 
@@ -983,8 +983,8 @@ October 8, 2018 under <a class="" href="/categories/vmware">VMware</a>
 
 
 <p>As we can see the upgrade is now complete. Even though the upgrade is itself a simple one-liner:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>(Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion)
-</span></code></pre></div><p>We can automate the pre-requisites, backups and considerations to make this a more seamless upgrade.  If you are interested in understanding how you can upgrade your VDS through the UI please see my colleague Nigel Hickeys blog 
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">(Get-VDSwitch -Name $VDSwitch | Set-VDSwitch -Version $VDVersion)
+</code></pre></div><p>We can automate the pre-requisites, backups and considerations to make this a more seamless upgrade.  If you are interested in understanding how you can upgrade your VDS through the UI please see my colleague Nigel Hickeys blog 
 <a href="https://blogs.vmware.com/vsphere/2018/09/vsphere-upgrade-series-part-6-upgrading-vsphere-networking.html" target="_blank">here</a>.</p>
 <p>You can find more information on Backing Up and Restoring your VDS 
 <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-140C6A52-F4C1-4B13-B2A3-9FFCF6000991.html" target="_blank">here</a> and more information on Upgrading your Virtual Distributed Switch 

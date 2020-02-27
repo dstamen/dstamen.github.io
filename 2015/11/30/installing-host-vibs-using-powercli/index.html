@@ -159,7 +159,7 @@ if (!doNotTrack) {
         Published on 
 November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
         &middot; Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/esxi">ESXi</a>
-        &middot; Read in about 2 min (256 words)
+        &middot; Read in about 2 min (241 words)
       </div>
   </span>
   
@@ -174,28 +174,28 @@ November 30, 2015 under <a class="" href="/categories/vmware">VMware</a>
 <p>I had to run these updates on over 50 hosts and I really didn&rsquo;t want to have to ssh and install it manually. Lucky I remember 
 <a href="http://www.vtagion.com/automate-install-embedded-host-client-esxi-fling-hosts-cluster/" target="_blank">Brian Graf&amp;rsquo;s Host Client Install Fling</a> and borrowed some of the code to come up with the below script.</p>
 <p>All you need to do is input your cluster and specify what VIB&rsquo;s you want to install. You can see the VIBPath and the Actions and just add or delete them as needed for the VIB&rsquo;s you want to install.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span># Define Variables
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>$Cluster = &#34;Cluster&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>$VIBPATH1 = &#34;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>$VIBPATH2 = &#34;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&#34;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span># Get each host in specified cluster that meets criteria
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>Get-VMhost -Location $Cluster | where { $_.PowerState -eq &#34;PoweredOn&#34; -and $_.ConnectionState -eq &#34;Connected&#34; } | foreach {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    Write-host &#34;Preparing $($_.Name) for ESXCLI&#34; -ForegroundColor Yellow
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    $ESXCLI = Get-EsxCli -VMHost $_
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    # Install VIBs
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    Write-host &#34;Installing VIB on $($_.Name)&#34; -ForegroundColor Yellow
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    # Verify VIB installed successfully
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    if ($action.Message -eq &#34;Operation finished successfully.&#34;){Write-host &#34;Action Completed successfully on $($_.Name)&#34; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    if ($action2.Message -eq &#34;Operation finished successfully.&#34;){Write-host &#34;Action Completed successfully on $($_.Name)&#34; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>}
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># Define Variables
+$Cluster = &#34;Cluster&#34;
+$VIBPATH1 = &#34;/vmfs/volumes/NFS01/VIB/cisco/net-enic-2.1.2.71-1OEM.550.0.0.1331820.x86_64.vib&#34;
+$VIBPATH2 = &#34;/vmfs/volumes/NFS01/VIB/cisco/scsi-fnic-1.6.0.17a-1OEM.550.0.0.1331820.x86_64.vib&#34;
+
+
+# Get each host in specified cluster that meets criteria
+Get-VMhost -Location $Cluster | where { $_.PowerState -eq &#34;PoweredOn&#34; -and $_.ConnectionState -eq &#34;Connected&#34; } | foreach {
+
+    Write-host &#34;Preparing $($_.Name) for ESXCLI&#34; -ForegroundColor Yellow
+
+    $ESXCLI = Get-EsxCli -VMHost $_
+
+    # Install VIBs
+    Write-host &#34;Installing VIB on $($_.Name)&#34; -ForegroundColor Yellow
+    $action = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH1)
+    $action2 = $ESXCLI.software.vib.install($null,$null,$null,$null,$null,$true,$null,$null,$VIBPATH2)
+
+    # Verify VIB installed successfully
+    if ($action.Message -eq &#34;Operation finished successfully.&#34;){Write-host &#34;Action Completed successfully on $($_.Name)&#34; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+    if ($action2.Message -eq &#34;Operation finished successfully.&#34;){Write-host &#34;Action Completed successfully on $($_.Name)&#34; -ForegroundColor Green} else {Write-host $action.Message -ForegroundColor Red}
+}
 </code></pre></div><p>Hope this helps anyone else out wanting to automate vib installation using PowerCLI.</p>
 
       <h6>Share this post</h6>
