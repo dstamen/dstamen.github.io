@@ -6,10 +6,64 @@
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidstamen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>https://davidstamen.com/tags/powercli/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/powercli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://davidstamen.com/tags/powershell/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vCenter Server</title>
+      <link>https://davidstamen.com/tags/vcenter-server/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vcenter-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://davidstamen.com/tags/vmware/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSphere</title>
+      <link>https://davidstamen.com/tags/vsphere/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSphere Plugin</title>
+      <link>https://davidstamen.com/tags/vsphere-plugin/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vsphere-plugin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>vExpert</title>
@@ -89,24 +143,6 @@
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://davidstamen.com/tags/restore/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vCenter Server</title>
-      <link>https://davidstamen.com/tags/vcenter-server/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vcenter-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vSphere</title>
-      <link>https://davidstamen.com/tags/vsphere/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vsphere/</guid>
       <description></description>
     </item>
     
@@ -197,15 +233,6 @@
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://davidstamen.com/tags/cooltool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Powershell</title>
-      <link>https://davidstamen.com/tags/powershell/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/powershell/</guid>
       <description></description>
     </item>
     
@@ -386,15 +413,6 @@
       <pubDate>Tue, 22 Aug 2017 14:00:46 -0400</pubDate>
       
       <guid>https://davidstamen.com/tags/vra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PowerCLI</title>
-      <link>https://davidstamen.com/tags/powercli/</link>
-      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/powercli/</guid>
       <description></description>
     </item>
     

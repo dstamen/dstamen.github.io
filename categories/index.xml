@@ -6,10 +6,19 @@
     <description>Recent content in Categories on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidstamen.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pure Storage</title>
+      <link>https://davidstamen.com/categories/pure-storage/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/categories/pure-storage/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Awards</title>

@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta name="generator" content="Hugo 0.65.2" />
+	<meta name="generator" content="Hugo 0.65.3" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>davidstamen.com </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -108,6 +108,43 @@
 <div class="content-container">
     <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="clr-row">
+        
+          <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/">Configuring ESXi 5.5 Dump Collector</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+June 10, 2014 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
+Check the ESXi Dump Collector Configuration Example: Foreach ($vmhost in (get-vmhost)){ $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: Foreach ($vmhost in (get-vmhost)) { $esxcli = Get-EsxCli -vmhost $vmhost $esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) $esxcli.system.coredump.network.set($true)} Test Host by Causing PSOD Run the following command via SSH or Direct Shell.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/dump-collector">Dump Collector</a>
+        </div>
+    </div>
+</div>
         
           <div class="clr-col-12">
     <div class="card">
@@ -442,43 +479,6 @@ KB2051606
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        </div>
-    </div>
-</div>
-        
-          <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/">Blocking Attachments With Executable Content</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-May 1, 2014 under <a class="" href="/categories/microsoft">Microsoft</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    I don’t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).
-Login to Exchange Admin Center using administrative credentials On the left pane select “Mail flow” On the top pane select &#34; Rules” Click on the “&#43;” sign and select create a new rule Give a name to the rule and select “more options” at the bottom of the page.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/exchange">Exchange</a>
         </div>
     </div>
 </div>
@@ -1064,6 +1064,8 @@ Login to Exchange Admin Center using administrative credentials On the left pane
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
@@ -1071,8 +1073,6 @@ Login to Exchange Admin Center using administrative credentials On the left pane
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/21/considerations-for-vsphere-component-backup-and-restore-part-1/">Considerations for vSphere Component Backup and Restore: Part 1</a></li>
         
       </ul>
     </div>

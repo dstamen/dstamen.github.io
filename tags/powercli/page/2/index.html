@@ -114,6 +114,44 @@
       <div class="clr-col-12">
     <div class="card">
         <div class="card-header">
+            <a href="https://davidstamen.com/2015/10/08/using-powercli-to-build-out-vcenter/">Using PowerCLI to Build Out vCenter</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+October 8, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I wanted to share this handy script i created when you have a need to build out a new vCenter.
+This script can be extremely handy as it will take care of creating the datacenter, cluster, adding hosts, creating datastores and then applying the appropriate host profile. It is all done via CSV files so it is extremely customizable.
+Files to modify to customize your configuration  createdatacenter.csv - Contains the name of the datacenter to create.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
             <a href="https://davidstamen.com/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/">Using PowerCLI to Extend VMDK and Windows OS Disk</a>
         </div>
         <div class="card-block">
@@ -447,44 +485,6 @@ How do i get the CanonicalName for allocated disks? Get-SCSILun -VMhost 192.168.
     </div>
 </div>
     
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/">Get NAA.ID for Virtual Machine RDM&#39;s in VMware</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
-Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
-KB2051606
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
-        </div>
-    </div>
-</div>
-    
     </div>
     
 <nav>
@@ -569,11 +569,44 @@ KB2051606
       
 
     
+    
+      
+
+      
+      
+      
+
+        
+
+      
+
+      
+      
+        <li class="pagination__item">
+          <a href="/tags/powercli/page/3/" class="btn btn-sm  btn btn-outline">
+            3
+          </a>
+        </li>
+      
+
+    
 
     
     
+    <li class="pagination__item pagination__item--next">
+      <a href="/tags/powercli/page/3/" class="btn btn-sm btn-outline">
+        ...
+      </a>
+    </li>
+    
 
     
+    
+    <li class="pagination__item pagination__item--last">
+      <a class="btn btn-sm btn btn-outline" href="/tags/powercli/page/3/">
+        3
+      </a>
+    </li>
     
 
   </ul>
@@ -651,6 +684,8 @@ KB2051606
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
@@ -658,8 +693,6 @@ KB2051606
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/21/considerations-for-vsphere-component-backup-and-restore-part-1/">Considerations for vSphere Component Backup and Restore: Part 1</a></li>
         
       </ul>
     </div>

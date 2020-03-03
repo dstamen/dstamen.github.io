@@ -3,27 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://davidstamen.com/categories/awards/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://davidstamen.com/categories/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://davidstamen.com/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://davidstamen.com/post/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/powercli/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/powershell/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/categories/pure-storage/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://davidstamen.com/tags/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/vcenter-server/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/vmware/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/vsphere/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/tags/vsphere-plugin/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidstamen.com/categories/awards/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,17 +143,7 @@
   </url>
   
   <url>
-    <loc>https://davidstamen.com/tags/vcenter-server/</loc>
-    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://davidstamen.com/categories/vmware/</loc>
-    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidstamen.com/tags/vsphere/</loc>
     <lastmod>2019-10-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -209,11 +239,6 @@
   
   <url>
     <loc>https://davidstamen.com/2019/01/31/patching-the-vcenter-server-appliance-vcsa-using-the-rest-api-part-2-powershell-module/</loc>
-    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidstamen.com/tags/powershell/</loc>
     <lastmod>2019-01-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -460,11 +485,6 @@
   <url>
     <loc>https://davidstamen.com/2017/07/31/another-new-blog-platform/</loc>
     <lastmod>2017-07-31T16:51:28-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidstamen.com/tags/powercli/</loc>
-    <lastmod>2017-07-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
