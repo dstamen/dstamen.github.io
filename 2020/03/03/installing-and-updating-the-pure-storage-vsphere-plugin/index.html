@@ -166,7 +166,7 @@ if (!doNotTrack) {
         Published on 
 March 3, 2020 under <a class="" href="/categories/pure-storage">Pure Storage</a>
         &middot; Tagged <a class="" href="/tags/vmware">VMware</a>, <a class="" href="/tags/vsphere-plugin">vSphere Plugin</a>, <a class="" href="/tags/vcenter-server">vCenter Server</a>, <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/powershell">Powershell</a>
-        &middot; Read in about 3 min (492 words)
+        &middot; Read in about 3 min (520 words)
       </div>
   </span>
   
@@ -177,7 +177,7 @@ March 3, 2020 under <a class="" href="/categories/pure-storage">Pure Storage</a>
 
       
       <p>Welcome to the first of many Pure Storage blogs. As I get ramped up with the latest information I plan to do a series of getting started with Pure Storage features. These blogs will cover things such as the vSphere Client (HTML5) Plugin, FlashArray, FlashBlade and integrations with other VMware products. First up is learning to install and update the Pure Storage vSphere Client Plugin.</p>
-<p>In this post we will cover how to install and update the vSphere Plugin using Powershell and PowerCLI. You could install the plugin using the Pure Storage UI, however there are two reasons why the Powershell method is recommended.</p>
+<p>In this post we will cover how to install and update the vSphere Plugin using Powershell and PowerCLI. You could install the plugin using the Pure Storage UI, however why not use some automation?.</p>
 
 
 
@@ -218,7 +218,7 @@ March 3, 2020 under <a class="" href="/categories/pure-storage">Pure Storage</a>
   
 
 
-<p>At the time of writing, the latest vSphere Plugin is version 4.2.0. However, because the array is running older code only 4.0.0 is available. This means that I am unable to use the latest version of the plugin even though it is compatible. The second reason is that in order to update the plugin using the UI, you must first un-register and then re-register the new version. This is not ideal and the Powershell module will handle updates seamlessly!</p>
+<p>At the time of writing, the latest vSphere Plugin is version 4.2.0. However, because the array is running older code only 4.0.0 is available. If you want to get a newer version of the plugin you can contact Pure Storage Support and they can push the newer version to your array. This means that I am unable to use the latest version of the plugin even though it is compatible if I do not get it updated.</p>
 <h1 id="installing-the-pure-storage-powershell-module">Installing the Pure Storage Powershell Module</h1>
 <p>The Pure Storage Powershell Module for VMware is located in the 
 <a href="https://www.powershellgallery.com/packages/PureStorage.FlashArray.VMware" target="_blank">Powershell Gallery</a> and can be installed by running the following command</p>
@@ -400,7 +400,11 @@ March 3, 2020 under <a class="" href="/categories/pure-storage">Pure Storage</a>
   
 
 
-<h1 id="conclusion">Conclusion</h1>
+<h1 id="uninstalling-the-pure-storage-vsphere-plugin">Uninstalling the Pure Storage vSphere Plugin</h1>
+<p>Just in case you want to uninstall the Plugin, you can use the vCenter Server MOB or use the below Powershell cmdlet.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-posh" data-lang="posh"><span style="color:#b58900">Connect-VIServer</span> vcsa03.newstack.local -User administrator<span style="color:#268bd2">@vsphere</span>.local -Password VMware1!
+<span style="color:#b58900">Uninstall-PfavSpherePlugin</span>
+</code></pre></div><h1 id="conclusion">Conclusion</h1>
 <p>Installing and updating the Pure Storage plugin is quite simple! Why should I use the plugin? Join me in my next blog post where I cover reasons you want to use the vSphere Plugin instead of the Pure Storage UI!</p>
       <h6>Share this post</h6>
 <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2020%2f03%2f03%2finstalling-and-updating-the-pure-storage-vsphere-plugin%2f" target="_blank" rel="noopener" aria-label="">
