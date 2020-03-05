@@ -6,10 +6,19 @@
     <description>Recent content on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidstamen.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using the Pure Storage vSphere Plugin</title>
+      <link>https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/</guid>
+      <description>&lt;p&gt;Welcome back! If you followed my previous post on Installing and Updating the Pure Storage vSphere Plugin, you may be wondering well What&amp;rsquo;s Next? Now its time to use it, which will empower your VMware Administrators to be awesome Pure Storage Administrators without ever needing to login to the Pure Storage UI!&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Installing and Updating the Pure Storage vSphere Plugin</title>

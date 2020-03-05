@@ -72,6 +72,16 @@
           Home
         </a>
     
+        <a class="nav-link  nav-text" href="https://davidstamen.com/categories/pure-storage/" title="Pure Storage">
+          
+          Pure Storage
+        </a>
+    
+        <a class="nav-link  nav-text" href="https://davidstamen.com/categories/vmware/" title="VMware">
+          
+          VMware
+        </a>
+    
         <a class="nav-link  nav-text" href="https://davidstamen.com/tags/" title="Tags">
           
           Tags
@@ -107,6 +117,44 @@
 <div class="content-container">
     <div class="content-area col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="clr-row">
+        
+          <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2014/05/06/get-naa-id-for-virtual-machine-rdms-in-vmware/">Get NAA.ID for Virtual Machine RDM&#39;s in VMware</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+May 6, 2014 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    This is a great script to keep handy. If you have multiple RDM’s on a VM and need to get the NAA_ID for them the below PowerCLI command will get you that information.
+Get-VM VMNAME| Get-HardDisk -DiskType &#34;RawPhysical&#34;,&#34;RawVirtual&#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.
+KB2051606
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
+        </div>
+    </div>
+</div>
         
           <div class="clr-col-12">
     <div class="card">
@@ -824,6 +872,8 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/">Using the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
@@ -831,8 +881,6 @@ April 29, 2014 under <a class="" href="/categories/vmware">VMware</a>
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
         
       </ul>
     </div>

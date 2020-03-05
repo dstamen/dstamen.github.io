@@ -71,6 +71,16 @@
           Home
         </a>
     
+        <a class="nav-link  nav-text" href="https://davidstamen.com/categories/pure-storage/" title="Pure Storage">
+          
+          Pure Storage
+        </a>
+    
+        <a class="nav-link active nav-text" href="https://davidstamen.com/categories/vmware/" title="VMware">
+          
+          VMware
+        </a>
+    
         <a class="nav-link  nav-text" href="https://davidstamen.com/tags/" title="Tags">
           
           Tags
@@ -109,6 +119,79 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/">Using PowerCLI to Add vRealize Operations License Key</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+July 27, 2017 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/vrops">vROPS</a> and <a class="" href="/tags/powercli">PowerCLI</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2017/04/17/using-powercli-to-set-vcenter-permissions-on-datacenter/">Using PowerCLI to Set vCenter Permissions on Datacenter</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+April 17, 2017 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I have been working on doing a vCenter Consolidation Project. This has meant recreating multiple permissions groups. I couldnt find an easy way to apply permissions at a datacenter so I updated this script to be used.
+Pre-Requsites   VMware PowerCLI  Link to Script   Set-vCenterPermissions.ps1  permissions.csv  Preparing to Execute the Script The script is pretty straight forward, just need to update columns in the CSV such as Datacenter, Group and Role.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -408,80 +491,6 @@ I have recently made a breakthrough working with VMware Support and stumbling th
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/cisco-ucs">Cisco UCS</a> and <a class="" href="/tags/update-manager">Update Manager</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2016/03/03/using-powercli-to-install-host-vibs/">Using PowerCLI to Install Host VIBs</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
-Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/esxi">ESXi</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/">Using PowerCLI to Install Software in a Guest VM</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
-Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
         </div>
     </div>
 </div>
@@ -878,6 +887,8 @@ Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/">Using the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
@@ -885,8 +896,6 @@ Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
         
       </ul>
     </div>

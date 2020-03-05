@@ -6,10 +6,37 @@
     <description>Recent content in Tags on davidstamen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidstamen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vCenter Server</title>
+      <link>https://davidstamen.com/tags/vcenter-server/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vcenter-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSphere</title>
+      <link>https://davidstamen.com/tags/vsphere/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vSphere Plugin</title>
+      <link>https://davidstamen.com/tags/vsphere-plugin/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidstamen.com/tags/vsphere-plugin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PowerCLI</title>
@@ -26,42 +53,6 @@
       <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://davidstamen.com/tags/powershell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vCenter Server</title>
-      <link>https://davidstamen.com/tags/vcenter-server/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vcenter-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VMware</title>
-      <link>https://davidstamen.com/tags/vmware/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vmware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vSphere</title>
-      <link>https://davidstamen.com/tags/vsphere/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vsphere/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vSphere Plugin</title>
-      <link>https://davidstamen.com/tags/vsphere-plugin/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/tags/vsphere-plugin/</guid>
       <description></description>
     </item>
     

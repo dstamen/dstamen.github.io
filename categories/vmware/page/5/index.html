@@ -71,6 +71,16 @@
           Home
         </a>
     
+        <a class="nav-link  nav-text" href="https://davidstamen.com/categories/pure-storage/" title="Pure Storage">
+          
+          Pure Storage
+        </a>
+    
+        <a class="nav-link active nav-text" href="https://davidstamen.com/categories/vmware/" title="VMware">
+          
+          VMware
+        </a>
+    
         <a class="nav-link  nav-text" href="https://davidstamen.com/tags/" title="Tags">
           
           Tags
@@ -109,6 +119,80 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2016/03/03/using-powercli-to-install-host-vibs/">Using PowerCLI to Install Host VIBs</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+March 3, 2016 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    So currently Cisco has an issue with installing their ENIC and FNIC VIBs through Update Manager for ESXi 6.x. Until that is resolved I need to manually push out patches to these hosts. Obviously I do not want to do this manually, so I will be utilizing PowerCLI to accomplish this task.
+Pre-Requsites   VMware PowerCLI  Link to Script   Install-HostVIB.ps1  Preparing to Execute the Script The script is pretty straight forward, just need to define a few variables seen below and then you execute the script.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/esxi">ESXi</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2016/01/29/using-powercli-to-install-software-in-a-guest-vm/">Using PowerCLI to Install Software in a Guest VM</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+January 29, 2016 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I have been constantly trying to figure out the best way to deploy updated agents to some of our virtual desktops. It isnt a large environment so I have no need for SCCM or other deployment tools, but its big enough having to RDP to each VM was a pain. I finally decided to bang out a script, and surprised how well it works.
+Pre-Requsites   VMware PowerCLI  Link to Script   InstallVMSoftware.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -408,82 +492,6 @@ Log in as root to the appliance shell of the Platform Services Controller applia
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/vsphere-6.0">vSphere 6.0</a> and <a class="" href="/tags/psc">PSC</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2015/10/08/using-powercli-to-build-out-vcenter/">Using PowerCLI to Build Out vCenter</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-October 8, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    I wanted to share this handy script i created when you have a need to build out a new vCenter.
-This script can be extremely handy as it will take care of creating the datacenter, cluster, adding hosts, creating datastores and then applying the appropriate host profile. It is all done via CSV files so it is extremely customizable.
-Files to modify to customize your configuration  createdatacenter.csv - Contains the name of the datacenter to create.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/vcenter-server">vCenter Server</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2015/10/06/esxi-55-update-3a-released/">ESXi 5.5 Update 3a Released</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-October 6, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                    
-                    
-  
-    ESXi 5.5 Update 3a and its associated patch have been released. If you have been following KB2133118 in regards to the the Snapshot Consolidation causing Virtual Machines to crash a fix is now available.
-If you are currently running ESXi 5.5 U3 you can use update manager to install the patch.
-If you are looking to install ESXi 5.5 U3 from scratch or update from a previous version you should make sure you update to 5.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/vsphere-5.5">vSphere 5.5</a>
         </div>
     </div>
 </div>
@@ -880,6 +888,8 @@ If you are looking to install ESXi 5.5 U3 from scratch or update from a previous
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/">Using the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
@@ -887,8 +897,6 @@ If you are looking to install ESXi 5.5 U3 from scratch or update from a previous
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
         
       </ul>
     </div>

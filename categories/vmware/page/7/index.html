@@ -71,6 +71,16 @@
           Home
         </a>
     
+        <a class="nav-link  nav-text" href="https://davidstamen.com/categories/pure-storage/" title="Pure Storage">
+          
+          Pure Storage
+        </a>
+    
+        <a class="nav-link active nav-text" href="https://davidstamen.com/categories/vmware/" title="VMware">
+          
+          VMware
+        </a>
+    
         <a class="nav-link  nav-text" href="https://davidstamen.com/tags/" title="Tags">
           
           Tags
@@ -109,6 +119,84 @@
 </h1>
 
     <div class="clr-row">
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/">Upgrading Horizon View 6.1 to 6.2</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+September 16, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                    
+                    
+  
+    I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!
+First download the bits from here.
+The upgrade documentation can also be found here.
+Warning: In my environment I do not have a composer server, if you had one this would be upgraded first The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/horizon-view">Horizon View</a>
+        </div>
+    </div>
+</div>
+    
+      <div class="clr-col-12">
+    <div class="card">
+        <div class="card-header">
+            <a href="https://davidstamen.com/2015/09/15/using-powercli-to-extend-vmdk-and-windows-os-disk/">Using PowerCLI to Extend VMDK and Windows OS Disk</a>
+        </div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <div class="card-media-desciption clr-card-authors">
+                    <span class="card-media-title clr-card-authors">
+                        <div class="clr-card-authors">
+                        Published on 
+September 15, 2015 under <a class="" href="/categories/vmware">VMware</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
+                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
+                    
+  
+    I wanted to share this handy script i created when you have a need to extend a disk.
+This script can be extremely handy as it will take care of extending the VMDK and then going to the OS and then performing the expansion there as well. This has been helpful when needing to extend a large batch of servers (60&#43;).
+Syntax: .\ExtendVMDKandGuest VMNAME
+You will then be prompted to enter in the Hard Disk #, the size you want to be extended, and then which drive letter that volume belongs to.
+  
+
+
+
+            </div>
+        </div>
+        <div class="card-footer">
+            
+            Tagged <a class="" href="/tags/powercli">PowerCLI</a> and <a class="" href="/tags/storage">Storage</a>
+        </div>
+    </div>
+</div>
     
       <div class="clr-col-12">
     <div class="card">
@@ -404,80 +492,6 @@ I knew it wasn’t a password issue as I was able to logon to SQL Manager with n
         <div class="card-footer">
             
             Tagged <a class="" href="/tags/horizon-view">Horizon View</a> and <a class="" href="/tags/vrops">vROPS</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2015/01/29/powercli-troubleshooting-multiple-default-servers/">PowerCLI - Troubleshooting Multiple Default Servers</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 29, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    I use a customized version of &lt;a href=&#34;http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/&#34;&gt;http://www.virtu-al.net/vcheck-pluginsheaders/vcheck/&lt;/a&gt; by Alan Renouf to connect to multiple servers. However a coworker of mine was trying to run it, and the script would only return data from the 2nd vCenter we were connecting to.
-Doing some troubleshooting we noticed their DefaultVIServerMode was set to single. This means that only a single servers connection will occur at once. Changing this setting is very easy, there are 3 scopes, but only one really needs to be set.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
-        </div>
-    </div>
-</div>
-    
-      <div class="clr-col-12">
-    <div class="card">
-        <div class="card-header">
-            <a href="https://davidstamen.com/2015/01/14/powercli-enable-cpu-and-memory-hotadd/">PowerCLI - Enable CPU and Memory HotAdd</a>
-        </div>
-        <div class="card-block">
-            <div class="card-media-block">
-                <div class="card-media-desciption clr-card-authors">
-                    <span class="card-media-title clr-card-authors">
-                        <div class="clr-card-authors">
-                        Published on 
-January 14, 2015 under <a class="" href="/categories/vmware">VMware</a>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="card-block">
-            <div class="card-text" style="max-height: 100px; min-height: 100px; overflow: hidden;">
-                     <img src="/featured/powercli.png" class="clr-card-featured-image"> 
-                    
-  
-    I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.
-Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $ServerName Disable-vCPUHotAdd $ServerName Enable Memory HotAdd Function Enable-MemHotAdd($vm){ $vmview = Get-vm $vm | Get-View $vmConfigSpec = New-Object VMware.
-  
-
-
-
-            </div>
-        </div>
-        <div class="card-footer">
-            
-            Tagged <a class="" href="/tags/powercli">PowerCLI</a>
         </div>
     </div>
 </div>
@@ -901,6 +915,8 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
     <div class="card-text">
       <ul class="list" style="list-style-type:square;list-style-position:inherit">
         
+        <li><a class="nav-list" href="https://davidstamen.com/2020/03/05/using-the-pure-storage-vsphere-plugin/">Using the Pure Storage vSphere Plugin</a></li>
+        
         <li><a class="nav-list" href="https://davidstamen.com/2020/03/03/installing-and-updating-the-pure-storage-vsphere-plugin/">Installing and Updating the Pure Storage vSphere Plugin</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/24/vexpert-2020/">vExpert 2020</a></li>
@@ -908,8 +924,6 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
         <li><a class="nav-list" href="https://davidstamen.com/2020/02/12/back-to-work-im-going-to/">Back to Work, I&#39;m Going to</a></li>
         
         <li><a class="nav-list" href="https://davidstamen.com/2020/01/13/my-certified-kubernetes-administrator-cka-exam-experience/">My Certified Kubernetes Administrator (CKA) Exam Experience</a></li>
-        
-        <li><a class="nav-list" href="https://davidstamen.com/2019/10/23/considerations-for-vsphere-component-backup-and-restore-part-2/">Considerations for vSphere Component Backup and Restore: Part 2</a></li>
         
       </ul>
     </div>
