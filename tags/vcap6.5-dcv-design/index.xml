@@ -1,25 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VCAP6.5-DCV Design on davidstamen.com</title>
-    <link>https://davidstamen.com/tags/vcap6.5-dcv-design/</link>
-    <description>Recent content in VCAP6.5-DCV Design on davidstamen.com</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2017 10:29:15 -0500</lastBuildDate>
-    
-	<atom:link href="https://davidstamen.com/tags/vcap6.5-dcv-design/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>VCAP6.5-DCV Design Experience</title>
-      <link>https://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</link>
-      <pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate>
-      
-      <guid>https://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</guid>
-      <description>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
-I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCAP6.5-DCV Design on davidstamen.com</title><link>https://davidstamen.com/tags/vcap6.5-dcv-design/</link><description>Recent content in VCAP6.5-DCV Design on davidstamen.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 21 Dec 2017 10:29:15 -0500</lastBuildDate><atom:link href="https://davidstamen.com/tags/vcap6.5-dcv-design/index.xml" rel="self" type="application/rss+xml"/><item><title>VCAP6.5-DCV Design Experience</title><link>https://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</link><pubDate>Thu, 21 Dec 2017 10:29:15 -0500</pubDate><guid>https://davidstamen.com/2017/12/21/vcap6.5-dcv-design-experience/</guid><description>So today I successfully passed the VMware Certified Advanced Professional 6.5 – Data Center Virtualization Design Exam 3V0-624!
+I had set a personal goal at the beginning of the year, that I would pass the VCAP6-DCV Design and unfortunately after months of studying I took it and failed in March. I was ready to give up based on the cost of the exam and the time i spent studying. However, I found out recently that a new version based on 6.</description></item></channel></rss>

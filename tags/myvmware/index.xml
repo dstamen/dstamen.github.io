@@ -1,28 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>MyVMware on davidstamen.com</title>
-    <link>https://davidstamen.com/tags/myvmware/</link>
-    <description>Recent content in MyVMware on davidstamen.com</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 16 Nov 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://davidstamen.com/tags/myvmware/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>vSphere 6.5 - New License Import from My VMware</title>
-      <link>https://davidstamen.com/2016/11/16/vsphere-65-new-license-import-from-myvmware/</link>
-      <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/2016/11/16/vsphere-65-new-license-import-from-myvmware/</guid>
-      <description>So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MyVMware on davidstamen.com</title><link>https://davidstamen.com/tags/myvmware/</link><description>Recent content in MyVMware on davidstamen.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 16 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/myvmware/index.xml" rel="self" type="application/rss+xml"/><item><title>vSphere 6.5 - New License Import from My VMware</title><link>https://davidstamen.com/2016/11/16/vsphere-65-new-license-import-from-myvmware/</link><pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/11/16/vsphere-65-new-license-import-from-myvmware/</guid><description>So as everyone has probably seen, vSphere 6.5 is now GA. As usual right away I have upgraded the homelab and have already found a neat new feature.
 When you are adding in your VMware licenses, you now have an option to Import License Keys Data&amp;hellip;
 To start you need to generate a report from my.vmware.com.
-  Log in and Navigate to Download Reports
-  Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description>
-    </item>
-    
-  </channel>
-</rss>
+Log in and Navigate to Download Reports
+Click on the Available Reports dropdown, and select the Product Licenses, Details and History.</description></item></channel></rss>

@@ -1,66 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blog on davidstamen.com</title>
-    <link>https://davidstamen.com/categories/blog/</link>
-    <description>Recent content in Blog on davidstamen.com</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2018 08:26:54 -0500</lastBuildDate>
-    
-	<atom:link href="https://davidstamen.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Using Forestry.io to Manage Your Hugo Blog</title>
-      <link>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link>
-      <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>
-      
-      <guid>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</guid>
-      <description>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&amp;hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
-It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories.</description>
-    </item>
-    
-    <item>
-      <title>Another New Blog Platform</title>
-      <link>https://davidstamen.com/2017/07/31/another-new-blog-platform/</link>
-      <pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate>
-      
-      <guid>https://davidstamen.com/2017/07/31/another-new-blog-platform/</guid>
-      <description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
-All links should be functional and moved nicely, if they dont work, please leave a comment!</description>
-    </item>
-    
-    <item>
-      <title>Deploying and Hosting Jekyll on Ravello Systems</title>
-      <link>https://davidstamen.com/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</link>
-      <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</guid>
-      <description>Did you know you could get host your own blog on Ravello Systems?
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on davidstamen.com</title><link>https://davidstamen.com/categories/blog/</link><description>Recent content in Blog on davidstamen.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 02 Jan 2018 08:26:54 -0500</lastBuildDate><atom:link href="https://davidstamen.com/categories/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Forestry.io to Manage Your Hugo Blog</title><link>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link><pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate><guid>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</guid><description>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&amp;hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
+It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories.</description></item><item><title>Another New Blog Platform</title><link>https://davidstamen.com/2017/07/31/another-new-blog-platform/</link><pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate><guid>https://davidstamen.com/2017/07/31/another-new-blog-platform/</guid><description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
+All links should be functional and moved nicely, if they dont work, please leave a comment!</description></item><item><title>Deploying and Hosting Jekyll on Ravello Systems</title><link>https://davidstamen.com/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</link><pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/08/deploying-and-hosting-jekyll-on-ravello-systems/</guid><description>Did you know you could get host your own blog on Ravello Systems?
 Its actually quite easy and even easier with Jekyll. Jekyll is a great static content platform perfect for hosting your blog. It is all based on html/css/markdown and requires absolutely no database.
 Please use my previous [blog]({% post_url 2015-09-08-how-to-deploy-a-jekyll-blog %}) on how to get it deployed.
-Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.</description>
-    </item>
-    
-    <item>
-      <title>How To Deploy a Jekyll Blog</title>
-      <link>https://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/</link>
-      <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/</guid>
-      <description>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
-~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Jekyll!</title>
-      <link>https://davidstamen.com/2015/09/04/updated-platform/</link>
-      <pubDate>Fri, 04 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidstamen.com/2015/09/04/updated-platform/</guid>
-      <description>New Blog Platform! I have had a bit of issues with performance on my blog recently and looking on how to not overpay for hosting services. A good friend of mine suggested using Jekyll and GitHub Pages, so I took the challenge. Within a day I was able to get my blog posts exported from Wordpress and published on a new platform and it was quite simple! Be on the lookout for some upcoming posts.</description>
-    </item>
-    
-  </channel>
-</rss>
+Disclaimer: This is in no way supported or recommended by Ravello Systems, running this 24x7 even with 1CPU will consume most of your free trial/vExpert hours.</description></item><item><title>How To Deploy a Jekyll Blog</title><link>https://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/</link><pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/08/how-to-deploy-a-jekyll-blog/</guid><description>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.
+~ $ gem install jekyll ~ $ jekyll new myblog ~ $ cd myblog ~/myblog $ jekyll serve # =&amp;gt; Now browse to http://localhost:4000 and you will see the blog running! Easy Enough? Now how do you create a blog post?</description></item><item><title>Welcome to Jekyll!</title><link>https://davidstamen.com/2015/09/04/updated-platform/</link><pubDate>Fri, 04 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/04/updated-platform/</guid><description>New Blog Platform! I have had a bit of issues with performance on my blog recently and looking on how to not overpay for hosting services. A good friend of mine suggested using Jekyll and GitHub Pages, so I took the challenge. Within a day I was able to get my blog posts exported from Wordpress and published on a new platform and it was quite simple! Be on the lookout for some upcoming posts.</description></item></channel></rss>

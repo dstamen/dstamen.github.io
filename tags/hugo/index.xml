@@ -1,35 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on davidstamen.com</title>
-    <link>https://davidstamen.com/tags/hugo/</link>
-    <description>Recent content in Hugo on davidstamen.com</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2018 08:26:54 -0500</lastBuildDate>
-    
-	<atom:link href="https://davidstamen.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Using Forestry.io to Manage Your Hugo Blog</title>
-      <link>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link>
-      <pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate>
-      
-      <guid>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</guid>
-      <description>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&amp;hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
-It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories.</description>
-    </item>
-    
-    <item>
-      <title>Another New Blog Platform</title>
-      <link>https://davidstamen.com/2017/07/31/another-new-blog-platform/</link>
-      <pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate>
-      
-      <guid>https://davidstamen.com/2017/07/31/another-new-blog-platform/</guid>
-      <description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
-All links should be functional and moved nicely, if they dont work, please leave a comment!</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on davidstamen.com</title><link>https://davidstamen.com/tags/hugo/</link><description>Recent content in Hugo on davidstamen.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 02 Jan 2018 08:26:54 -0500</lastBuildDate><atom:link href="https://davidstamen.com/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Forestry.io to Manage Your Hugo Blog</title><link>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</link><pubDate>Tue, 02 Jan 2018 08:26:54 -0500</pubDate><guid>https://davidstamen.com/2018/01/02/using-forestry.io-to-manage-your-hugo-blog/</guid><description>Happy New Year! So towards the end of the year I kind of slacked on writing some blog posts, when I finally did I realized I had no clue how to create a post. I know&amp;hellip;I know this is terrible, however its still much better than wordpress. I stumbled across an awesome tool that would help you manage your hugo/jekyll website Forestry.io
+It is quite simple, you login with your Github, Bitbucket, etc account and it can detect your existing repositories.</description></item><item><title>Another New Blog Platform</title><link>https://davidstamen.com/2017/07/31/another-new-blog-platform/</link><pubDate>Mon, 31 Jul 2017 16:51:28 -0400</pubDate><guid>https://davidstamen.com/2017/07/31/another-new-blog-platform/</guid><description>Another New Blog Platform! So it seems there is a bit of battle between the Jekll/Hugo/Ghost platforms. I have been trying to be a little more flexible with Jekyll and it was giving me issues, so I decided to switch to Hugo. After doing the redesign I have been getting feedback that it is much cleaner, so I hope you enjoy it too!
+All links should be functional and moved nicely, if they dont work, please leave a comment!</description></item></channel></rss>
