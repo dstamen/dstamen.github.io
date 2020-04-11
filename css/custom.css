@@ -372,3 +372,13 @@ ul.pagination {
 li.pagination__item {
   display: inline-block;
 }
+.highlight {
+  overflow: auto;
+  display: block;
+  position: relative;
+}
+.alert {
+  overflow: auto;
+  display: block;
+  position: relative;
+}

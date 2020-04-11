@@ -11,23 +11,23 @@
 <input type=hidden name=as_sitesearch value=davidstamen.com></label></form></div></header><div class=content-container><div class=content-area><h1>How To Deploy a Jekyll Blog</h1><div class=metas><span class=clr-card-authors><div class=clr-card-authors>Published on
 September 8, 2015 under <a href=/categories/blog>Blog</a>
 &#183; Tagged <a href=/tags/jekyll>Jekyll</a>
-&#183; Read in about 2 min (281 words)</div></span></div><hr><p>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>~ $ gem install jekyll
+&#183; Read in about 2 min (281 words)</div></span></div><hr><p>So after getting my blog up and running I figured I would do a quick how-to, on how to get a blog up and running. Its actually something you can do in less than 15 minutes.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>~ $ gem install jekyll
 ~ $ jekyll new myblog
 ~ $ cd myblog
 ~/myblog $ jekyll serve
 # =&gt; Now browse to http://localhost:4000 and you will see the blog running!
-</code></pre></div><p>Easy Enough? Now how do you create a blog post?</p><p>Create a file with the following name in the _posts directory.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Create a file with the following syntax
+</code></pre></div><p>Easy Enough? Now how do you create a blog post?</p><p>Create a file with the following name in the _posts directory.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Create a file with the following syntax
 YEAR-MONTH-DAY-title.md
 # Example: 2015-09-08-hi-to-my-new-blog.md
 </code></pre></div><p>Edit the above file and add this content. The format is done in markdown which is a very easy to write code. You can find some quick information
-<a href=https://help.github.com/articles/markdown-basics/ target=_blank>here</a></p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>---
+<a href=https://help.github.com/articles/markdown-basics/ target=_blank>here</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>---
 layout: post
 title: &#34;How To Deploy a Jekyll Blog&#34;
 tags:
 - Category
 ---
 Type your blogpost here.
-</code></pre></div><p>Once you save your file, you can refresh your browser pointing to http://127.0.0.1:4000 and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p><p>Your own host.</p><p>Run the following command and then upload the content in the _site directory.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>jekyll build
+</code></pre></div><p>Once you save your file, you can refresh your browser pointing to http://127.0.0.1:4000 and see your change. Once you are happy with your content you have two ways to publish this to the internet.</p><p>Your own host.</p><p>Run the following command and then upload the content in the _site directory.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>jekyll build
 </code></pre></div><p>GitHub Pages
 You can also load the site into GitHub pages and have a fully functioning site at username.github.io
 You can use the following link for details.

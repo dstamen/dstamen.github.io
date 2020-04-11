@@ -16,7 +16,7 @@ The code can be found here."><meta name=twitter:site content="@davidstamen"><scr
 October 12, 2015 under <a href=/categories/automation>Automation</a>
 &#183; Tagged <a href=/tags/vagrant>Vagrant</a>, <a href=/tags/ubuntu>Ubuntu</a> and <a href=/tags/kvm>KVM</a>
 &#183; Read in about 1 min (102 words)</div></span></div><hr><p>With all this talk about VMware vs KVM I figured that I would attempt to load a base install of KVM to see what it was all about.</p><p>Here is a quick vagrant runbook that will quickly get a 3 linux servers deployed and installed with KVM to play with.</p><p>There are 3 nodes..MGMT01,KVM01 and KVM02. I use MGMT01 VMM to manage KVM01 and KVM02.</p><p>The code can be found
-<a href=https://github.com/dstamen/Vagrant/tree/master/ubuntukvm target=_blank>here.</a></p><p>The bootstrap_installkvm.sh file runs the following commands to install KVM.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo apt-get install --no-install-recommends lubuntu-desktop -y
+<a href=https://github.com/dstamen/Vagrant/tree/master/ubuntukvm target=_blank>here.</a></p><p>The bootstrap_installkvm.sh file runs the following commands to install KVM.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo apt-get install --no-install-recommends lubuntu-desktop -y
 sudo apt-get install qemu-kvm qemu-system libvirt-bin bridge-utils virt-manager -y
 sudo adduser vagrant libvirtd
 sudo reboot

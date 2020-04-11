@@ -11,10 +11,10 @@ Check the ESXi Syslog Collector Configuration Example: Foreach ($vmhost in (get-
 <input type=hidden name=as_sitesearch value=davidstamen.com></label></form></div></header><div class=content-container><div class=content-area><h1>Configuring ESXi 5.5 Syslog Collector</h1><div class=metas><span class=clr-card-authors><div class=clr-card-authors>Published on
 June 10, 2014 under <a href=/categories/vmware>VMware</a>
 &#183; Tagged <a href=/tags/powercli>PowerCLI</a> and <a href=/tags/syslog>Syslog</a>
-&#183; Read in about 1 min (116 words)</div></span></div><hr><p>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.</p><h1 id=check-the-esxi-syslog-collector-configuration-example>Check the ESXi Syslog Collector Configuration Example:</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Foreach ($vmhost in (get-vmhost)){
+&#183; Read in about 1 min (116 words)</div></span></div><hr><p>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the Syslog collector.</p><h1 id=check-the-esxi-syslog-collector-configuration-example>Check the ESXi Syslog Collector Configuration Example:</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Foreach ($vmhost in (get-vmhost)){
 $esxcli = Get-EsxCli -vmhost $vmhost
 $esxcli.system.syslog.config.get()}
-</code></pre></div><p><img src=/images/screenshot.371.jpg alt></p><h1 id=setting-the-esxi-syslog-collector-example>Setting the ESXi Syslog Collector Example:</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Foreach ($vmhost in (get-vmhost)){
+</code></pre></div><p><img src=/images/screenshot.371.jpg alt></p><h1 id=setting-the-esxi-syslog-collector-example>Setting the ESXi Syslog Collector Example:</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Foreach ($vmhost in (get-vmhost)){
 $esxcli = Get-EsxCli -vmhost $vmhost
 $esxcli.system.syslog.config.set($null, $null, $null, $null,&#34;udp://IPtoSyslogServer:514″)
 $esxcli.system.syslog.reload()}

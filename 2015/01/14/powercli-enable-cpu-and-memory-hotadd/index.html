@@ -11,11 +11,11 @@ Enable-MemHotAdd $ServerName Disable-MemHotAdd $ServerName Enable-vCPUHotAdd $Se
 <input type=hidden name=as_sitesearch value=davidstamen.com></label></form></div></header><div class=content-container><div class=content-area><h1>PowerCLI - Enable CPU and Memory HotAdd</h1><div class=metas><span class=clr-card-authors><div class=clr-card-authors>Published on
 January 14, 2015 under <a href=/categories/vmware>VMware</a>
 &#183; Tagged <a href=/tags/powercli>PowerCLI</a>
-&#183; Read in about 1 min (185 words)</div></span></div><hr><p>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Enable-MemHotAdd $ServerName
+&#183; Read in about 1 min (185 words)</div></span></div><hr><p>I had a need to enable CPU and Memory hotadd to many virtual machines prior to a template being updated, doing some research there is no easy way, however there are some functions out there to do it. You can copy and paste each function into a powershell window and then run the associated command.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Enable-MemHotAdd $ServerName
 Disable-MemHotAdd $ServerName
 Enable-vCPUHotAdd $ServerName
 Disable-vCPUHotAdd $ServerName
-</code></pre></div><h1 id=enable-memory-hotadd>Enable Memory HotAdd</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Enable-MemHotAdd($vm){
+</code></pre></div><h1 id=enable-memory-hotadd>Enable Memory HotAdd</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Enable-MemHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
 $vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
 $extra = New-Object VMware.Vim.optionvalue
@@ -24,7 +24,7 @@ $extra.Value=&#34;true&#34;
 $vmConfigSpec.extraconfig += $extra
 $vmview.ReconfigVM($vmConfigSpec)
 }
-</code></pre></div><h1 id=disable-memory-hotadd>Disable Memory HotAdd</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Disable-MemHotAdd($vm){
+</code></pre></div><h1 id=disable-memory-hotadd>Disable Memory HotAdd</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Disable-MemHotAdd($vm){
 $vmview = Get-VM $vm | Get-View
 $vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
 $extra = New-Object VMware.Vim.optionvalue
@@ -33,7 +33,7 @@ $extra.Value=&#34;false&#34;
 $vmConfigSpec.extraconfig += $extra
 $vmview.ReconfigVM($vmConfigSpec)
 }
-</code></pre></div><h1 id=enable-cpu-hotadd>Enable CPU HotAdd</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Enable-vCpuHotAdd($vm){
+</code></pre></div><h1 id=enable-cpu-hotadd>Enable CPU HotAdd</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Enable-vCpuHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
 $vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
 $extra = New-Object VMware.Vim.optionvalue
@@ -43,7 +43,7 @@ $vmConfigSpec.extraconfig += $extra
 $vmview.ReconfigVM($vmConfigSpec)
 }
 
-</code></pre></div><h1 id=disable-cpu-hotadd>Disable CPU HotAdd</h1><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Disable-vCpuHotAdd($vm){
+</code></pre></div><h1 id=disable-cpu-hotadd>Disable CPU HotAdd</h1><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Function Disable-vCpuHotAdd($vm){
 $vmview = Get-vm $vm | Get-View
 $vmConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
 $extra = New-Object VMware.Vim.optionvalue
