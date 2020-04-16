@@ -20,8 +20,8 @@ April 16, 2020 under <a href=/categories/automation>Automation</a> and <a href=/
 <span style=color:#8be9fd;font-style:italic>$vmnetwork</span> = <span style=color:#f1fa8c>&#34;MyNetwork&#34;</span>
 <span style=color:#8be9fd;font-style:italic>$datastore</span> = <span style=color:#f1fa8c>&#34;MyDatastore&#34;</span>
 <span style=color:#8be9fd;font-style:italic>$vmfolder</span> = <span style=color:#f1fa8c>&#34;MyFolder&#34;</span>
-<span style=color:#8be9fd;font-style:italic>$vm1name</span> = <span style=color:#f1fa8c>&#34;srm1.lab&#34;</span>
-<span style=color:#8be9fd;font-style:italic>$vm2name</span> = <span style=color:#f1fa8c>&#34;srm2.lab&#34;</span>
+<span style=color:#8be9fd;font-style:italic>$vm1name</span> = <span style=color:#f1fa8c>&#34;srm1.my.lab&#34;</span>
+<span style=color:#8be9fd;font-style:italic>$vm2name</span> = <span style=color:#f1fa8c>&#34;srm2.my.lab&#34;</span>
 <span style=color:#8be9fd;font-style:italic>$vm1ip</span> = <span style=color:#f1fa8c>&#34;10.21.230.58&#34;</span>
 <span style=color:#8be9fd;font-style:italic>$vm2ip</span> = <span style=color:#f1fa8c>&#34;10.21.230.59&#34;</span>
 <span style=color:#8be9fd;font-style:italic>$addrfamily</span> = <span style=color:#f1fa8c>&#34;ipv4&#34;</span>
@@ -56,16 +56,16 @@ April 16, 2020 under <a href=/categories/automation>Automation</a> and <a href=/
 <span style=color:#8be9fd;font-style:italic>$ovfconfig</span>.common.dbpassword.value = <span style=color:#8be9fd;font-style:italic>$password</span>
 <span style=color:#8be9fd;font-style:italic>$ovfconfig</span>.common.enable_sshd.value = <span style=color:#8be9fd;font-style:italic>$enablessh</span>
 
-<span style=color:#6272a4>#deploy vm1</span>
+<span style=color:#6272a4>#Deploy SRM1</span>
 <span style=color:#8be9fd;font-style:italic>$ovfconfig</span>.network.VMware_Site_Recovery_Manager_Appliance.ip0.value = <span style=color:#8be9fd;font-style:italic>$vm1ip</span>
 <span style=color:#8be9fd;font-style:italic>$ovfconfig</span>.common.vami.hostname.value = <span style=color:#8be9fd;font-style:italic>$vm1ip</span>
-<span style=color:#8be9fd;font-style:italic>Import-VApp</span> -Source <span style=color:#8be9fd;font-style:italic>$ovffile</span> -OvfConfiguration <span style=color:#8be9fd;font-style:italic>$ovfconfig</span> -Name <span style=color:#8be9fd;font-style:italic>$vm1ip</span> -InventoryLocation <span style=color:#8be9fd;font-style:italic>$VMFolder</span> -Location <span style=color:#8be9fd;font-style:italic>$cluster_ref</span> -VMHost <span style=color:#8be9fd;font-style:italic>$vmhost_ref</span> -Datastore <span style=color:#8be9fd;font-style:italic>$datastore_ref</span>
+<span style=color:#8be9fd;font-style:italic>Import-VApp</span> -Source <span style=color:#8be9fd;font-style:italic>$ovffile</span> -OvfConfiguration <span style=color:#8be9fd;font-style:italic>$ovfconfig</span> -Name <span style=color:#8be9fd;font-style:italic>$vm1name</span> -InventoryLocation <span style=color:#8be9fd;font-style:italic>$VMFolder</span> -Location <span style=color:#8be9fd;font-style:italic>$cluster_ref</span> -VMHost <span style=color:#8be9fd;font-style:italic>$vmhost_ref</span> -Datastore <span style=color:#8be9fd;font-style:italic>$datastore_ref</span>
 
-<span style=color:#6272a4>#deploy vm2</span>
+<span style=color:#6272a4>#Deploy SRM2</span>
 <span style=color:#8be9fd;font-style:italic>$ovfconfig</span>.network.VMware_Site_Recovery_Manager_Appliance.ip0.value = <span style=color:#8be9fd;font-style:italic>$vm2ip</span>
-<span style=color:#8be9fd;font-style:italic>Import-VApp</span> -Source <span style=color:#8be9fd;font-style:italic>$ovffile</span> -OvfConfiguration <span style=color:#8be9fd;font-style:italic>$ovfconfig</span> -Name <span style=color:#8be9fd;font-style:italic>$vm2ip</span> -InventoryLocation <span style=color:#8be9fd;font-style:italic>$VMFolder</span> -Location <span style=color:#8be9fd;font-style:italic>$cluster_ref</span> -VMHost <span style=color:#8be9fd;font-style:italic>$vmhost_ref</span> -Datastore <span style=color:#8be9fd;font-style:italic>$datastore_ref</span>
+<span style=color:#8be9fd;font-style:italic>Import-VApp</span> -Source <span style=color:#8be9fd;font-style:italic>$ovffile</span> -OvfConfiguration <span style=color:#8be9fd;font-style:italic>$ovfconfig</span> -Name <span style=color:#8be9fd;font-style:italic>$vm2name</span> -InventoryLocation <span style=color:#8be9fd;font-style:italic>$VMFolder</span> -Location <span style=color:#8be9fd;font-style:italic>$cluster_ref</span> -VMHost <span style=color:#8be9fd;font-style:italic>$vmhost_ref</span> -Datastore <span style=color:#8be9fd;font-style:italic>$datastore_ref</span>
 
-<span style=color:#8be9fd;font-style:italic>$vms</span> = <span style=color:#8be9fd;font-style:italic>get-vm</span> <span style=color:#8be9fd;font-style:italic>$vm1ip</span>,<span style=color:#8be9fd;font-style:italic>$vm2ip</span>
+<span style=color:#8be9fd;font-style:italic>$vms</span> = <span style=color:#8be9fd;font-style:italic>get-vm</span> <span style=color:#8be9fd;font-style:italic>$vm1name</span>,<span style=color:#8be9fd;font-style:italic>$vm2name</span>
 <span style=color:#8be9fd;font-style:italic>$vm</span> | <span style=color:#8be9fd;font-style:italic>Start-Vm</span> -RunAsync | <span style=color:#8be9fd;font-style:italic>Out-Null</span>
 
 <span style=color:#8be9fd;font-style:italic>Disconnect-VIServer</span> <span style=color:#8be9fd;font-style:italic>$vcenter</span> -Confirm:<span style=color:#8be9fd;font-style:italic>$false</span>
