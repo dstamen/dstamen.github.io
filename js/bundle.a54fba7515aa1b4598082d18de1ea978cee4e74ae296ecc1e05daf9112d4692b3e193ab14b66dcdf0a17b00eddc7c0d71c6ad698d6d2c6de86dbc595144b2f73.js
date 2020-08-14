@@ -690,11 +690,18 @@ function fileClosure(){
   
   function populateAlt(images) {
     let imagePosition = 0;
+    
     images.forEach((image) => {
       let alt = image.alt;
       image.loading = "lazy";
       const modifiers = [':left', ':right'];
-      
+      const altArr = alt.split('::').map(x => x.trim())
+
+      altArr[1]?.split(' ').filter(Boolean).forEach(cls =>{
+        pushClass(image, cls);
+        alt = altArr[0]
+      })
+
       modifiers.forEach(function(modifier){
         const canModify = alt.includes(modifier);
         if(canModify) {
@@ -703,7 +710,7 @@ function fileClosure(){
           alt = alt.replace(modifier, "");
         }
       });
-      
+
       const isInline = alt.includes(inline);
       alt = alt.replace(inline, "");
       
@@ -716,7 +723,7 @@ function fileClosure(){
           
           let desc = document.createElement('p');
           desc.classList.add('img_alt');
-          let imageAlt = image.alt;
+          let imageAlt = alt;
           
           const thisImgPos = image.dataset.pos;
           // modify image caption is necessary
@@ -840,13 +847,20 @@ function fileClosure(){
     doc.addEventListener('click', function(event){
       const target = event.target;
       const open = 'jsopen';
-      if(target.matches('.nav_close')) {
+      const navCloseIconClass = '.nav_close';
+      const navClose = elem(navCloseIconClass);
+      const isNavToggle = target.matches(navCloseIconClass) || target.closest(navCloseIconClass);
+      const harmburgerIcon = navClose.firstElementChild;
+      if(isNavToggle) {
         event.preventDefault();
         modifyClass(doc, open);
+        modifyClass(harmburgerIcon, 'isopen');
       }
       
       if(!target.closest('.nav') && elem(`.${open}`)) {
         modifyClass(doc, open);
+        let navIsOpen = containsClass(doc, open);
+        !navIsOpen  ? modifyClass(harmburgerIcon, 'isopen') : false;
       }
       
       const navItem = 'nav_item';
