@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "/Users/dstamen/Documents/GitHub/davidstamen.com",
+	"sourceRoot": "/Users/dstamen/Github/davidstamen.com",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",
