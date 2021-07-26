@@ -11,6 +11,7 @@
 <meta property="og:url" content="https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/"><meta property="og:image" content="https://davidstamen.com/images/cbsazurejumpstart1.png"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-07-21T12:00:00+00:00">
 <meta property="article:modified_time" content="2021-07-21T12:00:00+00:00">
+<meta property="og:see_also" content="https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://davidstamen.com/images/cbsazurejumpstart1.png">
 <meta name=twitter:title content="Pure Cloud Block Store on Azure - Jump Start">
@@ -23,9 +24,9 @@
 <meta name=msapplication-TileColor content="#002538">
 <meta name=theme-color content="#002538">
 <link rel=canonical href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/>
-<link rel=preload href=https://davidstamen.com/css/styles.b3ff89fafd6c40a122819c95c8ee5dd5e6db9eb6eda3d2ce0a5836104435c070981e0e03295352fad7bf359ba262ddf9e8ff4d6cd2263f579043f486ee465027.css as=style>
+<link rel=preload href=https://davidstamen.com/css/styles.c7fe1193a5b05cf61378757ca15e06448401714e6b9e46dded084cc45ce0ae67a00b60b966657a462dc64d674ddb7c2cedca0351b4d76e28c70eb6c80ca1fa22.css as=style>
 <link rel=preload href=https://davidstamen.com/js/bundle.min.6fe9c8093ef8b200d94106bdb07fd0d116c4b3d52fce7b0359b495df12d2b16523b2916a4c3308bff4b7d392b2164eca1a91774ee35346e8d7bcfe4e7cb825dc.js as=script>
-<link rel=stylesheet href=https://davidstamen.com/css/styles.b3ff89fafd6c40a122819c95c8ee5dd5e6db9eb6eda3d2ce0a5836104435c070981e0e03295352fad7bf359ba262ddf9e8ff4d6cd2263f579043f486ee465027.css>
+<link rel=stylesheet href=https://davidstamen.com/css/styles.c7fe1193a5b05cf61378757ca15e06448401714e6b9e46dded084cc45ce0ae67a00b60b966657a462dc64d674ddb7c2cedca0351b4d76e28c70eb6c80ca1fa22.css>
 </head>
 <body data-code=7 data-lines=false id=documentTop>
 <header class=nav_header>
@@ -85,6 +86,9 @@
 <strong></strong>This post is part of the <a href=https://davidstamen.com/series/pure-cloud-block-store-jump-start>Pure Cloud Block Store - Jump Start</a> series.</strong>
 <ul>
 Pure Cloud Block Store on Azure - Jump Start
+</ul>
+<ul>
+<li><a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/>Pure Cloud Block Store on AWS - Jump Start</a></li>
 </ul>
 </div>
 <h1 class=post_title>Pure Cloud Block Store on Azure - Jump Start</h1><div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
@@ -167,43 +171,43 @@ Share on:
 </thead>
 <tbody>
 <tr>
-<td>azure_resourcegroup = &ldquo;DS-CBS-&rdquo;</td>
+<td>azure_resourcegroup</td>
 <td>Prefix to be used for all resources</td>
 </tr>
 <tr>
-<td>azure_location = &ldquo;USEAST&rdquo;</td>
+<td>azure_location</td>
 <td>Azure Region to Deploy to</td>
 </tr>
 <tr>
-<td>azure_client_id = ""</td>
+<td>azure_client_id</td>
 <td>Required for Authentication if not using <strong>az login</strong></td>
 </tr>
 <tr>
-<td>azure_client_secret = ""</td>
+<td>azure_client_secret</td>
 <td>Required for Authentication if not using <strong>az login</strong></td>
 </tr>
 <tr>
-<td>azure_subscription_id = ""</td>
+<td>azure_subscription_id</td>
 <td>Required for Authentication if not using <strong>az login</strong></td>
 </tr>
 <tr>
-<td>azure_tenant_id = ""</td>
+<td>azure_tenant_id</td>
 <td>Required for Authentication if not using <strong>az login</strong></td>
 </tr>
 <tr>
-<td>azure_network_interface_ip_allocation = &ldquo;Dynamic&rdquo;</td>
+<td>azure_network_interface_ip_allocation</td>
 <td>Dynamic or Static</td>
 </tr>
 <tr>
-<td>azure_vm_size = &ldquo;Standard_B1s&rdquo;</td>
+<td>azure_vm_size</td>
 <td>Instance Size for Test VM</td>
 </tr>
 <tr>
-<td>azure_vm_username = ""</td>
+<td>azure_vm_username</td>
 <td>Username for Test VM</td>
 </tr>
 <tr>
-<td>azure_vm_password = ""</td>
+<td>azure_vm_password</td>
 <td>Password for Test VM</td>
 </tr>
 </tbody>
@@ -218,27 +222,27 @@ Share on:
 </thead>
 <tbody>
 <tr>
-<td>license_key = ""</td>
+<td>license_key</td>
 <td>Pure Cloud Block Store License Key</td>
 </tr>
 <tr>
-<td>log_sender_domain = &ldquo;domain.com&rdquo;</td>
+<td>log_sender_domain</td>
 <td>Domain to be used for CBS</td>
 </tr>
 <tr>
-<td>alert_recipients = [&ldquo;you@domain.com&rdquo;]</td>
+<td>alert_recipients</td>
 <td>Email Address to be used for CBS Alerts</td>
 </tr>
 <tr>
-<td>array_model = &ldquo;V10MUR1&rdquo;</td>
+<td>array_model</td>
 <td>CBS Model (V10MUR1 or V20MUR1)</td>
 </tr>
 <tr>
-<td>zone = 1</td>
+<td>zone</td>
 <td>Zone in Region to deploy (1,2 or 3)</td>
 </tr>
 <tr>
-<td>groups = [&ldquo;AADGROUPJIT&rdquo;]</td>
+<td>groups</td>
 <td>Azure AD Group for JIT Approval</td>
 </tr>
 </tbody>
@@ -291,6 +295,9 @@ Share on:
 <h4 class=mt-4>Recent Posts</h4>
 <ul class=flex-column>
 <li>
+<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class=nav-link>Pure Cloud Block Store on AWS - Jump Start</a>
+</li>
+<li>
 <a href=https://davidstamen.com/2021/05/20/automating-deployment-of-vsphere-infrastructure-on-equinix-metal/ class=nav-link>Automating Deployment of vSphere Infrastructure on Equinix Metal</a>
 </li>
 <li>
@@ -307,9 +314,6 @@ Share on:
 </li>
 <li>
 <a href=https://davidstamen.com/2021/03/10/deploy-and-configure-the-nsx-advanced-load-balancer-for-vsphere-with-tanzu/ class=nav-link>Deploy and Configure the NSX Advanced Load Balancer for vSphere with Tanzu</a>
-</li>
-<li>
-<a href=https://davidstamen.com/2021/03/09/using-the-pure-storage-cloud-block-store-terraform-provider-for-azure/ class=nav-link>Using the Pure Storage Cloud Block Store Terraform Provider for Azure</a>
 </li>
 </ul>
 </section>
