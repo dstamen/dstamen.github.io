@@ -54,7 +54,7 @@
 <a href=https://davidstamen.com/series/ class=nav_item>Series </a>
 </div>
 <div class=nav_parent>
-<a href=https://www.youracclaim.com/users/davidstamen class=nav_item>Acclaim </a>
+<a href="https://www.credly.com/users/davidstamen/badges?sort=-state_updated_at&page=1" class=nav_item>Certifications </a>
 </div>
 <div class=nav_parent>
 <a href=https://davidstamen.com/about/ class=nav_item>About </a>
@@ -76,6 +76,43 @@
 <main>
 <div class="grid-inverse wrap content">
 <ul class=posts id=posts>
+<li class=post_item>
+<div class=excerpt>
+<div class=excerpt_header>
+<h3 class=post_link>
+<a href=https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/>Configuring ESXi 5.5 Dump Collector</a>
+</h3>
+<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
+<span class=post_date>
+Jun 10, 2014</span>
+<a href=https://davidstamen.com/tags/powercli class="post_tag button button_translucent">PowerCLI
+</a>
+<a href=https://davidstamen.com/tags/dump-collector class="post_tag button button_translucent">Dump Collector
+</a>
+</div>
+<div class=post_share>
+Share on:
+<a href="https://twitter.com/intent/tweet?text=Configuring%20ESXi%205.5%20Dump%20Collector&url=https%3a%2f%2fdavidstamen.com%2f2014%2f06%2f10%2fconfiguring-esxi-5-5-dump-collector%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+</a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2014%2f06%2f10%2fconfiguring-esxi-5-5-dump-collector%2f&t=Configuring%20ESXi%205.5%20Dump%20Collector" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+</a>
+<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
+<a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
+</a>
+<a href=https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
+</a>
+</div>
+</div>
+<div class="excerpt_footer partition">
+<div>
+<p class=pale>Thank you to everyone who listened to me on the EMEA vBrownbag. Here are copies of documentation and scripts on how to configure ESXi to use the remote dump collector.
+Check the ESXi Dump Collector Configuration Example: 1Foreach ($vmhost in (get-vmhost)){ 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.get()} Setting the ESXi Dump Collector Example: 1Foreach ($vmhost in (get-vmhost)) { 2$esxcli = Get-EsxCli -vmhost $vmhost 3$esxcli.system.coredump.network.set($null, “vmk0″, “IPtoDumpCollector″, “6500″) 4$esxcli.system.coredump.network.set($true)} Test Host by Causing …</p>
+<a href=https://davidstamen.com/2014/06/10/configuring-esxi-5-5-dump-collector/ class="excerpt_more button">Read More</a>
+</div>
+<div class=excerpt_footer>
+</div>
+</div>
+</li>
 <li class=post_item>
 <div class=excerpt>
 <div class=excerpt_header>
@@ -407,41 +444,6 @@ KB2051606</p>
 </div>
 </div>
 </li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/>Enable SSH on vSphere Management Assistant 5.0</a>
-</h3>
-<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
-<span class=post_date>
-May 1, 2014</span>
-<a href=https://davidstamen.com/tags/vsphere-management-assistant class="post_tag button button_translucent">vSphere Management Assistant
-</a>
-</div>
-<div class=post_share>
-Share on:
-<a href="https://twitter.com/intent/tweet?text=Enable%20SSH%20on%20vSphere%20Management%20Assistant%205.0&url=https%3a%2f%2fdavidstamen.com%2f2014%2f05%2f01%2fenable-ssh-on-vma-5-0%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2014%2f05%2f01%2fenable-ssh-on-vma-5-0%2f&t=Enable%20SSH%20on%20vSphere%20Management%20Assistant%205.0" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
-</a>
-</div>
-</div>
-<div class="excerpt_footer partition">
-<div>
-<p class=pale>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.
-Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Scroll to the very bottom and type i to insert content into the file.</p>
-<a href=https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/ class="excerpt_more button">Read More</a>
-</div>
-<div class=excerpt_footer>
-</div>
-</div>
-</li>
 <li>
 <ul class="pagination pagination-default">
 <li class=page-item>
@@ -483,6 +485,9 @@ Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Sc
 <h4 class=mt-4>Recent Posts</h4>
 <ul class=flex-column>
 <li>
+<a href=https://davidstamen.com/2021/07/28/whats-new-in-the-5.0.0-pure-storage-plugin-for-the-vsphere-client/ class=nav-link>What's New in the 5.0.0 Pure Storage Plugin for the vSphere Client</a>
+</li>
+<li>
 <a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class=nav-link>Pure Cloud Block Store on AWS - Jump Start</a>
 </li>
 <li>
@@ -502,9 +507,6 @@ Logon to vMA via a Console Session Run &lsquo;sudo vi /etc/hosts.allow&rsquo; Sc
 </li>
 <li>
 <a href=https://davidstamen.com/2021/03/11/deploy-vsphere-with-tanzu-using-vsphere-networking-with-the-nsx-advanced-load-balancer/ class=nav-link>Deploy vSphere with Tanzu using vSphere Networking with the NSX Advanced Load Balancer</a>
-</li>
-<li>
-<a href=https://davidstamen.com/2021/03/10/deploy-and-configure-the-nsx-advanced-load-balancer-for-vsphere-with-tanzu/ class=nav-link>Deploy and Configure the NSX Advanced Load Balancer for vSphere with Tanzu</a>
 </li>
 </ul>
 </section>
