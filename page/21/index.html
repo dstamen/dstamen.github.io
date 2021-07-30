@@ -80,6 +80,43 @@
 <div class=excerpt>
 <div class=excerpt_header>
 <h3 class=post_link>
+<a href=https://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/>Create VMFS Datastore Using PowerCLI</a>
+</h3>
+<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
+<span class=post_date>
+May 22, 2014</span>
+<a href=https://davidstamen.com/tags/powercli class="post_tag button button_translucent">PowerCLI
+</a>
+<a href=https://davidstamen.com/tags/storage class="post_tag button button_translucent">Storage
+</a>
+</div>
+<div class=post_share>
+Share on:
+<a href="https://twitter.com/intent/tweet?text=Create%20VMFS%20Datastore%20Using%20PowerCLI&url=https%3a%2f%2fdavidstamen.com%2f2014%2f05%2f22%2fcreate-vmfs-datastore-using-powercli%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+</a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2014%2f05%2f22%2fcreate-vmfs-datastore-using-powercli%2f&t=Create%20VMFS%20Datastore%20Using%20PowerCLI" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+</a>
+<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
+<a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
+</a>
+<a href=https://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
+</a>
+</div>
+</div>
+<div class="excerpt_footer partition">
+<div>
+<p class=pale>For upcoming testing there was a need to create 140 datastores on a cluster for testing. Who wants to do that much clicking and typing? Not me! You can use the below PowerCLI commands to get the SCSI ID&rsquo;s, Create the Datastore and then Rescan all hosts in the cluster.
+How do i get the CanonicalName for allocated disks? 1Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity How do I create a VMFS datastore for the CanonicalName I identified above?</p>
+<a href=https://davidstamen.com/2014/05/22/create-vmfs-datastore-using-powercli/ class="excerpt_more button">Read More</a>
+</div>
+<div class=excerpt_footer>
+</div>
+</div>
+</li>
+<li class=post_item>
+<div class=excerpt>
+<div class=excerpt_header>
+<h3 class=post_link>
 <a href=https://davidstamen.com/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/>vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.</a>
 </h3>
 <div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
@@ -407,6 +444,9 @@ Share on:
 <h4 class=mt-4>Recent Posts</h4>
 <ul class=flex-column>
 <li>
+<a href=https://davidstamen.com/2021/07/30/using-terraform-to-deploy-the-pure-storage-vmware-appliance/ class=nav-link>Using Terraform to Deploy the Pure Storage VMware Appliance</a>
+</li>
+<li>
 <a href=https://davidstamen.com/2021/07/29/using-powercli-to-deploy-the-pure-storage-vmware-appliance/ class=nav-link>Using PowerCLI to Deploy the Pure Storage VMware Appliance</a>
 </li>
 <li>
@@ -426,9 +466,6 @@ Share on:
 </li>
 <li>
 <a href=https://davidstamen.com/2021/04/13/using-an-in-house-provider-with-terraform-v0.14/ class=nav-link>Using an In-house Provider with Terraform v0.14</a>
-</li>
-<li>
-<a href=https://davidstamen.com/2021/03/12/modify-resources-of-the-nsx-advanced-load-balancer-service-engine-for-vsphere-with-tanzu/ class=nav-link>Modify Resources of the NSX Advanced Load Balancer Service Engine for vSphere with Tanzu</a>
 </li>
 </ul>
 </section>
