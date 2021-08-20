@@ -1,17 +1,21 @@
-<!doctype html><html lang=en data-figures>
-<head> <title>Jump Start | davidstamen</title>
+<!doctype html><html lang=en data-figures class=page>
+<head> <title>Pure Cloud Block Store on Azure - Quick Launch | davidstamen</title>
 <meta charset=utf-8>
-<meta name=generator content="Hugo 0.86.0">
+<meta name=generator content="Hugo 0.87.0">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <script type=application/javascript>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-67336507-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script>
-<meta property="og:title" content="Jump Start">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://davidstamen.com/tags/jump-start/">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Jump Start">
-<meta name=twitter:description content>
+<meta property="og:title" content="Pure Cloud Block Store on Azure - Quick Launch">
+<meta property="og:description" content="In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch the pre-requisites and get your Pure Cloud Block Store deployed in Azure.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/"><meta property="og:image" content="https://davidstamen.com/images/cbsazurejumpstart1.png"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-07-21T12:00:00+00:00">
+<meta property="article:modified_time" content="2021-07-21T12:00:00+00:00">
+<meta property="og:see_also" content="https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://davidstamen.com/images/cbsazurejumpstart1.png">
+<meta name=twitter:title content="Pure Cloud Block Store on Azure - Quick Launch">
+<meta name=twitter:description content="In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch the pre-requisites and get your Pure Cloud Block Store deployed in Azure.">
 <link rel=apple-touch-icon sizes=180x180 href=https://davidstamen.com/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://davidstamen.com/icons/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://davidstamen.com/icons/favicon-16x16.png>
@@ -19,7 +23,7 @@
 <link rel=mask-icon href=https://davidstamen.com/icons/safari-pinned-tab.svg color=#002538>
 <meta name=msapplication-TileColor content="#002538">
 <meta name=theme-color content="#002538">
-<link rel=canonical href=https://davidstamen.com/tags/jump-start/>
+<link rel=canonical href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/>
 <link rel=preload href=https://davidstamen.com/css/styles.694af68ddc8afb3e8682ad7c9a496e48798ada27cb84dca6bbd8e0f362dbd64adbf5ee90f009046868f126c8eeb350a48f72fb9143c0c707e25038d94d51330f.css as=style>
 <link rel=preload href=https://davidstamen.com/js/bundle.min.e83476a3aea87ffec0f108a940919307af90cfe0152d37a402b40ee0d57ae3ba74c30e7685e5f9df95a05821da34e460059126815d260f1c401c86ad5a42afaf.js as=script>
 <link rel=stylesheet href=https://davidstamen.com/css/styles.694af68ddc8afb3e8682ad7c9a496e48798ada27cb84dca6bbd8e0f362dbd64adbf5ee90f009046868f126c8eeb350a48f72fb9143c0c707e25038d94d51330f.css>
@@ -75,56 +79,16 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/>Pure Cloud Block Store on AWS - Jump Start</a>
-</h3>
-<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
-<span class=post_date>
-Jul 26, 2021</span>
-<a href=https://davidstamen.com/tags/terraform class="post_tag button button_translucent">Terraform
-</a>
-<a href=https://davidstamen.com/tags/amazon-web-services class="post_tag button button_translucent">Amazon Web Services
-</a>
-<a href=https://davidstamen.com/tags/cloud-block-store class="post_tag button button_translucent">Cloud Block Store
-</a>
-<a href=https://davidstamen.com/tags/jump-start class="post_tag button button_translucent">Jump Start
-</a>
+<article class=post_content><div class=post_series>
+<strong></strong>This post is part of the <a href=https://davidstamen.com/series/pure-cloud-block-store-quick-launch>Pure Cloud Block Store - Quick Launch</a> series.</strong>
+<ul>
+Pure Cloud Block Store on Azure - Quick Launch
+</ul>
+<ul>
+<li><a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/>Pure Cloud Block Store on AWS - Quick Launch</a></li>
+</ul>
 </div>
-<div class=post_share>
-Share on:
-<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Jump%20Start&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-jump-start%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-jump-start%2f&t=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Jump%20Start" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
-</a>
-</div>
-</div>
-<div class="excerpt_footer partition">
-<div>
-<p class=pale><p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to easily get a &ldquo;Jump Start&rdquo; with the pre-requisites and get your Pure Cloud Block Store deployed in AWS.</p></p>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class="excerpt_more button">Read More</a>
-</div>
-<div class=excerpt_thumbnail>
-<img src=https://davidstamen.com/featured/purestorage.png>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/>Pure Cloud Block Store on Azure - Jump Start</a>
-</h3>
-<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
+<h1 class=post_title>Pure Cloud Block Store on Azure - Quick Launch</h1><div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
 <span class=post_date>
 Jul 21, 2021</span>
 <a href=https://davidstamen.com/tags/terraform class="post_tag button button_translucent">Terraform
@@ -133,36 +97,217 @@ Jul 21, 2021</span>
 </a>
 <a href=https://davidstamen.com/tags/cloud-block-store class="post_tag button button_translucent">Cloud Block Store
 </a>
-<a href=https://davidstamen.com/tags/jump-start class="post_tag button button_translucent">Jump Start
+<a href=https://davidstamen.com/tags/quick-launch class="post_tag button button_translucent">Quick Launch
 </a>
 </div>
 <div class=post_share>
 Share on:
-<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Jump%20Start&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-jump-start%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Quick%20Launch&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-quick-launch%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
 </a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-jump-start%2f&t=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Jump%20Start" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-quick-launch%2f&t=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Quick%20Launch" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
 </a>
-<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
+<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
 <a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
 </a>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
+<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
 </a>
 </div>
-</div>
-<div class="excerpt_footer partition">
-<div>
-<p class=pale><p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to easily get a &ldquo;Jump Start&rdquo; with the pre-requisites and get your Pure Cloud Block Store deployed in Azure.</p></p>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ class="excerpt_more button">Read More</a>
-</div>
-<div class=excerpt_thumbnail>
-<img src=https://davidstamen.com/featured/purestorage.png>
-</div>
-</div>
-</div>
-</li>
-<li>
-</li>
+<p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch the pre-requisites and get your Pure Cloud Block Store deployed in Azure.</p>
+<div class=toc>
+<strong>Table of Contents</strong>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#video-demonstration>Video Demonstration</a></li>
+<li><a href=#what-is-the-pure-cloud-block-store-on-azure-quick-launch>What is the Pure Cloud Block Store on Azure Quick Launch?</a></li>
+<li><a href=#get-the-pure-cloud-block-store-on-azure-quick-launch>Get the Pure Cloud Block Store on Azure Quick Launch</a></li>
+<li><a href=#deploy-the-pure-cloud-block-store-on-azure-quick-launch>Deploy the Pure Cloud Block Store on Azure Quick Launch</a>
+<ul>
+<li><a href=#azure-variables>Azure Variables</a></li>
+<li><a href=#cbs-variables>CBS Variables</a></li>
 </ul>
+</li>
+<li><a href=#destroy-the-pure-cloud-block-store-on-azure-quick-launch>Destroy the Pure Cloud Block Store on Azure Quick Launch</a></li>
+<li><a href=#whats-next>What&rsquo;s Next?</a></li>
+<li><a href=#conclusion>Conclusion</a></li>
+</ul>
+</nav>
+</div>
+<h2 id=introduction>Introduction</h2>
+<p>If you are not familiar with the <strong>Pure Cloud Block Store</strong>, it is a purpose built block storage system that currently sits in Azure and AWS. There are many benefits and use cases you can find out <a href=https://www.purestorage.com/products/cloud-block-storage/cbs.html>here</a>. While we do have an Azure ARM Template that deploys all the components of Pure Cloud Block Store, the underlying pre-requisites still have to be deployed prior.</p>
+<h2 id=video-demonstration>Video Demonstration</h2>
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube-nocookie.com/embed/3ZwWQ13BH9U style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+<h2 id=what-is-the-pure-cloud-block-store-on-azure-quick-launch>What is the Pure Cloud Block Store on Azure Quick Launch?</h2>
+<p>The Azure Quick Launch is a <a href=https://www.terraform.io/>HashiCorp Terraform</a> Manifest I created that deploys a base configuration of resources within Microsoft Azure that need to exist before we can deploy Pure Cloud Block Store. To understand the pre-requisites we should review the <a href=https://support.purestorage.com/Pure_Cloud_Block_Store/Cloud_Block_Store_Deployment_and_Configuration_Guide_for_Azure>Cloud Block Store Deployment and Configuration Guide for Azure.
+</a> This guide covers all the prequisites needed. Many customers either have existing Virtual Networks, Security Groups or Subnets defined. However, many customers who POC or Deploy CBS want to setup new resources for this. The Quick Launch will automatically setup the required resources using Terraform and deploy CBS into the subscription.</p>
+<p>The required resources that the Azure Quick Launch will create are the following:</p>
+<ul>
+<li><strong>New</strong> Azure Key Vault</li>
+<li><strong>New</strong> VNET Peering Between TF and CBS Subnet</li>
+<li>Azure Resource Group</li>
+<li>Azure Virtual Network</li>
+<li>Azure Subnets for System, Management, Replication and iSCSI</li>
+<li>Azure Network Security Groups with required Inbound and Outbound ports</li>
+<li>Azure NAT Gateway and Public IP</li>
+<li>Azure Linux VM that can be used for troubleshooting or testing connecitivty to CBS</li>
+<li>Deploy CBS using the above created resources</li>
+</ul>
+<h2 id=get-the-pure-cloud-block-store-on-azure-quick-launch>Get the Pure Cloud Block Store on Azure Quick Launch</h2>
+<blockquote>
+<p>As of version <strong>0.6.0</strong> the <strong>cbs_array_azure</strong> resource has additional components and requirements. The updated requirements are that now when deploying with terraform, the machine running apply must have access to the <strong>management</strong> subnet of Cloud Block Store. The Quick Launch will now setup <strong>VNET Peering</strong> so this connectivity is in place as long as your TF machine is also in Azure. <strong>Azure Key Vault</strong> is also used now to securely store credentials for pureuser so that automatic decommision and future credential management can be handled. Additional information on these changes is available in the <a href=https://registry.terraform.io/providers/PureStorage-OpenConnect/cbs/latest/docs/resources/array_azure>documentation.</a></p>
+</blockquote>
+<p>All the required <strong>Terraform</strong> files are located on <a href=https://github.com/PureStorage-OpenConnect/cbs-quicklaunch/tree/main/cbs-azure-quicklaunch>GitHub.</a></p>
+<p>To deploy you will also need a Pure Cloud Block Store <strong>license.</strong> This can be purchased directly through the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/purestoragemarketplaceadmin.cbs_subscription?tab=Overview">Azure Marketplace</a> or through Pure Storage as a PaaS subscription. A license can also be generated by your Pure Storage account team for a free trial or POC.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=ln>1</span>git clone https://github.com/PureStorage-OpenConnect/cbs-quicklaunch.git
+</code></pre></div><h2 id=deploy-the-pure-cloud-block-store-on-azure-quick-launch>Deploy the Pure Cloud Block Store on Azure Quick Launch</h2>
+<p>The Azure Quick Launch has been easily variablized and made dynamic so only minor information is needed for a full end to end deployment.</p>
+<h3 id=azure-variables>Azure Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>azure_resourcegroup</td>
+<td>Prefix to be used for all resources</td>
+</tr>
+<tr>
+<td>azure_location</td>
+<td>Azure Region to Deploy to</td>
+</tr>
+<tr>
+<td>azure_client_id</td>
+<td>Required for Authentication if not using <strong>az login</strong></td>
+</tr>
+<tr>
+<td>azure_client_secret</td>
+<td>Required for Authentication if not using <strong>az login</strong></td>
+</tr>
+<tr>
+<td>azure_subscription_id</td>
+<td>Required for Authentication if not using <strong>az login</strong></td>
+</tr>
+<tr>
+<td>azure_tenant_id</td>
+<td>Required for Authentication if not using <strong>az login</strong></td>
+</tr>
+<tr>
+<td>azure_network_interface_ip_allocation</td>
+<td>Dynamic or Static</td>
+</tr>
+<tr>
+<td>azure_vm_size</td>
+<td>Instance Size for Test VM</td>
+</tr>
+<tr>
+<td>azure_vm_username</td>
+<td>Username for Test VM</td>
+</tr>
+<tr>
+<td>azure_vm_password</td>
+<td>Password for Test VM</td>
+</tr>
+<tr>
+<td><strong>New</strong> azure_virtualnetwork_peer_name</td>
+<td>VNET Name to Peer CBS VNET with</td>
+</tr>
+<tr>
+<td><strong>New</strong> azure_virtualnetwork_peer_rg</td>
+<td>Resource Group the VNET Peer VNET is in</td>
+</tr>
+</tbody>
+</table>
+<h3 id=cbs-variables>CBS Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>license_key</td>
+<td>Pure Cloud Block Store License Key</td>
+</tr>
+<tr>
+<td>log_sender_domain</td>
+<td>Domain to be used for CBS</td>
+</tr>
+<tr>
+<td>alert_recipients</td>
+<td>Email Address to be used for CBS Alerts</td>
+</tr>
+<tr>
+<td>array_model</td>
+<td>CBS Model (V10MUR1 or V20MUR1)</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>Zone in Region to deploy (1,2 or 3)</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Azure AD Group for JIT Approval</td>
+</tr>
+<tr>
+<td>plan_name</td>
+<td>The CBS Marketplace Plan Name</td>
+</tr>
+<tr>
+<td><strong>New</strong> plan_product</td>
+<td>The CBS Marketplace Plan Product</td>
+</tr>
+<tr>
+<td><strong>New</strong> plan_publisher</td>
+<td>The CBS Marketplace Plan Publisher</td>
+</tr>
+<tr>
+<td><strong>New</strong> plan_version</td>
+<td>The CBS Marketplace Plan Version</td>
+</tr>
+<tr>
+<td><strong>New</strong> key_file_path</td>
+<td>Private Key File Path for pureuser</td>
+</tr>
+</tbody>
+</table>
+<p>Once you do your <strong>terraform init</strong>, <strong>terraform plan</strong> and <strong>terraform apply</strong> in ~15 minutes all your resources including CBS will be fully deployed!</p>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css>
+<script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<div style=max-width:80%;width:fit-content;margin:auto;padding:1.5em>
+<a data-fancybox=gallery href=/images/cbsazurejumpstart1.png data-caption=caption><img width=100% src=/images/cbsazurejumpstart1.png></a>
+</div>
+<h2 id=destroy-the-pure-cloud-block-store-on-azure-quick-launch>Destroy the Pure Cloud Block Store on Azure Quick Launch</h2>
+<blockquote>
+<p>Updated Destroy Steps for CBS on Azure as of Terraform Provider Version 0.6.0!</p>
+</blockquote>
+<p>The CBS provider 0.6.0 now includes updates that allow for automatic decommission of CBS when the destroy operation is issued. This means if deploying and destroying with Terraform no manual/additional steps are needed.</p>
+<p>You can review the latest <a href=https://registry.terraform.io/providers/PureStorage-OpenConnect/cbs/latest/docs/resources/array_azure>Terraform Provider</a> documentation which covers the updated requirements.</p>
+<h2 id=whats-next>What&rsquo;s Next?</h2>
+<p>This blog covered how to automate the deployment of CBS in Azure. Now take a look and see what else you can do with <a href=https://davidstamen.com/tags/cloud-block-store/>Pure Cloud Block Store.</a> Will you run Production? Will you do Test/Dev? Will you do DR? It&rsquo;s up to you. I have already discussed how you can cover some of these use cases so try them out and let us know what you think!</p>
+<h2 id=conclusion>Conclusion</h2>
+<p>I love the idea of bringing enterprise storage features to the public cloud. This ease of deployment makes it even easier to consume Pure Cloud Block Store in Azure.</p>
+<p>If you have any additional questions or comments, please leave them below!</p>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//davidstamen.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+<h3>See Also</h3>
+<ul>
+<li><a href=/2021/03/09/using-the-pure-storage-cloud-block-store-terraform-provider-for-azure/>Using the Pure Storage Cloud Block Store Terraform Provider for Azure</a></li>
+<li><a href=/azure-cbs-terraform-usecases/>Cloud Block Store Use Cases for Microsoft Azure - Terraform Edition</a></li>
+<li><a href=/deploy-avm-using-terraform/>Deploying a Windows Azure VM with Hashicorp Terraform to Microsoft Azure</a></li>
+<li><a href=/2021/02/10/using-the-pure-storage-cloud-block-store-terraform-provider-for-aws/>Using the Pure Storage Cloud Block Store Terraform Provider for AWS</a></li>
+<li><a href=/deploy-linux-ec2-using-terraform-vault/>Deploying a Linux EC2 Instance with Hashicorp Terraform and Vault to AWS and Connect to Pure Cloud Block Store</a></li>
+</ul>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <center><img src=/images/me2-300.png align=center></center>
@@ -181,10 +326,7 @@ Share on:
 <a href=https://davidstamen.com/2021/07/28/whats-new-in-the-5.0.0-pure-storage-plugin-for-the-vsphere-client/ class=nav-link>What's New in the 5.0.0 Pure Storage Plugin for the vSphere Client</a>
 </li>
 <li>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class=nav-link>Pure Cloud Block Store on AWS - Jump Start</a>
-</li>
-<li>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ class=nav-link>Pure Cloud Block Store on Azure - Jump Start</a>
+<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/ class=nav-link>Pure Cloud Block Store on AWS - Quick Launch</a>
 </li>
 <li>
 <a href=https://davidstamen.com/2021/05/20/automating-deployment-of-vsphere-infrastructure-on-equinix-metal/ class=nav-link>Automating Deployment of vSphere Infrastructure on Equinix Metal</a>

@@ -1,17 +1,21 @@
-<!doctype html><html lang=en data-figures>
-<head> <title>Pure Cloud Block Store - Jump Start | davidstamen</title>
+<!doctype html><html lang=en data-figures class=page>
+<head> <title>Pure Cloud Block Store on AWS - Quick Launch | davidstamen</title>
 <meta charset=utf-8>
-<meta name=generator content="Hugo 0.86.0">
+<meta name=generator content="Hugo 0.87.0">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <script type=application/javascript>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-67336507-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script>
-<meta property="og:title" content="Pure Cloud Block Store - Jump Start">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://davidstamen.com/series/pure-cloud-block-store-jump-start/">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Pure Cloud Block Store - Jump Start">
-<meta name=twitter:description content>
+<meta property="og:title" content="Pure Cloud Block Store on AWS - Quick Launch">
+<meta property="og:description" content="In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch CBS with the pre-requisites in AWS.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/"><meta property="og:image" content="https://davidstamen.com/images/cbsawsjumpstart1.png"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-07-26T12:00:00+00:00">
+<meta property="article:modified_time" content="2021-07-26T12:00:00+00:00">
+<meta property="og:see_also" content="https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://davidstamen.com/images/cbsawsjumpstart1.png">
+<meta name=twitter:title content="Pure Cloud Block Store on AWS - Quick Launch">
+<meta name=twitter:description content="In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch CBS with the pre-requisites in AWS.">
 <link rel=apple-touch-icon sizes=180x180 href=https://davidstamen.com/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://davidstamen.com/icons/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://davidstamen.com/icons/favicon-16x16.png>
@@ -19,7 +23,7 @@
 <link rel=mask-icon href=https://davidstamen.com/icons/safari-pinned-tab.svg color=#002538>
 <meta name=msapplication-TileColor content="#002538">
 <meta name=theme-color content="#002538">
-<link rel=canonical href=https://davidstamen.com/series/pure-cloud-block-store-jump-start/>
+<link rel=canonical href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/>
 <link rel=preload href=https://davidstamen.com/css/styles.694af68ddc8afb3e8682ad7c9a496e48798ada27cb84dca6bbd8e0f362dbd64adbf5ee90f009046868f126c8eeb350a48f72fb9143c0c707e25038d94d51330f.css as=style>
 <link rel=preload href=https://davidstamen.com/js/bundle.min.e83476a3aea87ffec0f108a940919307af90cfe0152d37a402b40ee0d57ae3ba74c30e7685e5f9df95a05821da34e460059126815d260f1c401c86ad5a42afaf.js as=script>
 <link rel=stylesheet href=https://davidstamen.com/css/styles.694af68ddc8afb3e8682ad7c9a496e48798ada27cb84dca6bbd8e0f362dbd64adbf5ee90f009046868f126c8eeb350a48f72fb9143c0c707e25038d94d51330f.css>
@@ -75,14 +79,16 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/>Pure Cloud Block Store on AWS - Jump Start</a>
-</h3>
-<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
+<article class=post_content><div class=post_series>
+<strong></strong>This post is part of the <a href=https://davidstamen.com/series/pure-cloud-block-store-quick-launch>Pure Cloud Block Store - Quick Launch</a> series.</strong>
+<ul>
+<li><a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/>Pure Cloud Block Store on Azure - Quick Launch</a></li>
+</ul>
+<ul>
+Pure Cloud Block Store on AWS - Quick Launch
+</ul>
+</div>
+<h1 class=post_title>Pure Cloud Block Store on AWS - Quick Launch</h1><div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
 <span class=post_date>
 Jul 26, 2021</span>
 <a href=https://davidstamen.com/tags/terraform class="post_tag button button_translucent">Terraform
@@ -91,78 +97,200 @@ Jul 26, 2021</span>
 </a>
 <a href=https://davidstamen.com/tags/cloud-block-store class="post_tag button button_translucent">Cloud Block Store
 </a>
-<a href=https://davidstamen.com/tags/jump-start class="post_tag button button_translucent">Jump Start
+<a href=https://davidstamen.com/tags/quick-launch class="post_tag button button_translucent">Quick Launch
 </a>
 </div>
 <div class=post_share>
 Share on:
-<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Jump%20Start&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-jump-start%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Quick%20Launch&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-quick-launch%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
 </a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-jump-start%2f&t=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Jump%20Start" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f26%2fpure-cloud-block-store-on-aws-quick-launch%2f&t=Pure%20Cloud%20Block%20Store%20on%20AWS%20-%20Quick%20Launch" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
 </a>
-<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
+<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
 <a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
 </a>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
+<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-quick-launch/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
 </a>
 </div>
-</div>
-<div class="excerpt_footer partition">
-<div>
-<p class=pale><p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to easily get a &ldquo;Jump Start&rdquo; with the pre-requisites and get your Pure Cloud Block Store deployed in AWS.</p></p>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class="excerpt_more button">Read More</a>
-</div>
-<div class=excerpt_thumbnail>
-<img src=https://davidstamen.com/featured/purestorage.png>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/>Pure Cloud Block Store on Azure - Jump Start</a>
-</h3>
-<div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
-<span class=post_date>
-Jul 21, 2021</span>
-<a href=https://davidstamen.com/tags/terraform class="post_tag button button_translucent">Terraform
-</a>
-<a href=https://davidstamen.com/tags/azure class="post_tag button button_translucent">Azure
-</a>
-<a href=https://davidstamen.com/tags/cloud-block-store class="post_tag button button_translucent">Cloud Block Store
-</a>
-<a href=https://davidstamen.com/tags/jump-start class="post_tag button button_translucent">Jump Start
-</a>
-</div>
-<div class=post_share>
-Share on:
-<a href="https://twitter.com/intent/tweet?text=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Jump%20Start&url=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-jump-start%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdavidstamen.com%2f2021%2f07%2f21%2fpure-cloud-block-store-on-azure-jump-start%2f&t=Pure%20Cloud%20Block%20Store%20on%20Azure%20-%20Jump%20Start" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<script>function shareViaLinkedin(){window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/"),'','left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0')}</script>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow onclick=shareViaLinkedin()><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#yank"/></svg>
-</a>
-</div>
-</div>
-<div class="excerpt_footer partition">
-<div>
-<p class=pale><p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to easily get a &ldquo;Jump Start&rdquo; with the pre-requisites and get your Pure Cloud Block Store deployed in Azure.</p></p>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ class="excerpt_more button">Read More</a>
-</div>
-<div class=excerpt_thumbnail>
-<img src=https://davidstamen.com/featured/purestorage.png>
-</div>
-</div>
-</div>
-</li>
-<li>
-</li>
+<p>In previous posts I have covered use cases on how to utilize Pure Cloud Block Store (CBS), but if we look back I haven&rsquo;t explained how it can be deployed. This blog will cover how to quickly launch CBS with the pre-requisites in AWS.</p>
+<div class=toc>
+<strong>Table of Contents</strong>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#what-is-the-pure-cloud-block-store-on-aws-quick-launch>What is the Pure Cloud Block Store on AWS Quick Launch?</a></li>
+<li><a href=#get-the-pure-cloud-block-store-on-aws-quick-launch>Get the Pure Cloud Block Store on AWS Quick Launch</a></li>
+<li><a href=#deploy-the-pure-cloud-block-store-on-aws-quick-launch>Deploy the Pure Cloud Block Store on AWS Quick Launch</a>
+<ul>
+<li><a href=#aws-variables>AWS Variables</a></li>
+<li><a href=#cbs-variables>CBS Variables</a></li>
 </ul>
+</li>
+<li><a href=#destroy-the-pure-cloud-block-store-on-aws-quick-launch>Destroy the Pure Cloud Block Store on AWS Quick Launch</a>
+<ul>
+<li><a href=#decommission-pure-cloud-block-store>Decommission Pure Cloud Block Store</a></li>
+<li><a href=#destroy-the-aws-resources>Destroy the AWS Resources</a></li>
+</ul>
+</li>
+<li><a href=#whats-next>What&rsquo;s Next?</a></li>
+<li><a href=#conclusion>Conclusion</a></li>
+</ul>
+</nav>
+</div>
+<h2 id=introduction>Introduction</h2>
+<p>If you are not familiar with the <strong>Pure Cloud Block Store</strong>, it is a purpose built block storage system that currently sits in Azure and AWS. There are many benefits and use cases you can find out <a href=https://www.purestorage.com/products/cloud-block-storage/cbs.html>here</a>. While we do have an Cloud Formation Template (CFT) that deploys all the components of Pure Cloud Block Store, the underlying pre-requisites still have to be deployed prior.</p>
+<h2 id=what-is-the-pure-cloud-block-store-on-aws-quick-launch>What is the Pure Cloud Block Store on AWS Quick Launch?</h2>
+<p>The AWS Quick Launch is a <a href=https://www.terraform.io/>HashiCorp Terraform</a> Manifest I created that deploys a base configuration of resources within Amazon Web Services that need to exist before we can deploy Pure Cloud Block Store. To understand the pre-requisites we should review the <a href=https://support.purestorage.com/Pure_Cloud_Block_Store/Cloud_Block_Store_Deployment_and_Configuration_Guide_for_AWS>Cloud Block Store Deployment and Configuration Guide for AWS.
+</a> This guide covers all the prequisites needed. Many customers either have existing VPCs, Security Groups or Subnets defined. However, many customers who POC or deploy CBS may want to setup new resources for this. The Quick Launch will automatically setup the required resources using Terraform and deploy CBS into the account.</p>
+<p>The required resources that the AWS Quick Launch will create are the following:</p>
+<ul>
+<li>AWS VPC</li>
+<li>AWS VPC Endpoints</li>
+<li>AWS Subnets</li>
+<li>AWS Internet Gateway</li>
+<li>AWS NAT Gateway</li>
+<li>AWS Route Tables</li>
+<li>AWS Elastic IP</li>
+<li>AWS Security Groups</li>
+<li>AWS IAM Role and IAM Policy for Deployment</li>
+<li>AWS EC2 VM</li>
+<li>Deploy CBS using the above created resources</li>
+</ul>
+<h2 id=get-the-pure-cloud-block-store-on-aws-quick-launch>Get the Pure Cloud Block Store on AWS Quick Launch</h2>
+<p>All the required <strong>Terraform</strong> files are located on <a href=https://github.com/PureStorage-OpenConnect/cbs-quicklaunch/tree/main/cbs-aws-quicklaunch>GitHub.</a></p>
+<p>To deploy you will also need a Pure Cloud Block Store <strong>license.</strong> This can be purchased directly through the <a href=https://aws.amazon.com/marketplace/pp/prodview-j2mtejfozqlto>AWS Marketplace</a> or through Pure Storage as a PaaS subscription. A license can also be generated by your Pure Storage account team for a free trial or POC.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=ln>1</span>git clone https://github.com/PureStorage-OpenConnect/cbs-quicklaunch.git
+</code></pre></div><h2 id=deploy-the-pure-cloud-block-store-on-aws-quick-launch>Deploy the Pure Cloud Block Store on AWS Quick Launch</h2>
+<p>The AWS Quick Launch has been easily variablized and made dynamic so only minor information is needed for a full end to end deployment.</p>
+<h3 id=aws-variables>AWS Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aws_prefix</td>
+<td>Prefix for any objects created in AWS</td>
+</tr>
+<tr>
+<td>aws_access_key</td>
+<td>Used for Authentication</td>
+</tr>
+<tr>
+<td>aws_secret_key</td>
+<td>Used for Authentication</td>
+</tr>
+<tr>
+<td>aws_region</td>
+<td>AWS Region to use</td>
+</tr>
+<tr>
+<td>aws_zone</td>
+<td>AWS Zone within AWS to use</td>
+</tr>
+<tr>
+<td>aws_ami_owner</td>
+<td>AMI Owner</td>
+</tr>
+<tr>
+<td>aws_ami_name</td>
+<td>AMI Image Name</td>
+</tr>
+<tr>
+<td>aws_ami_architecture</td>
+<td>AMI Image Architecture</td>
+</tr>
+<tr>
+<td>aws_instance_type</td>
+<td>EC2 Instance Size</td>
+</tr>
+<tr>
+<td>aws_key_name</td>
+<td>Name of AWS Key to use for ssh login</td>
+</tr>
+<tr>
+<td>aws_user_data</td>
+<td>Any Script/Commands you wish the VM to run on Startup</td>
+</tr>
+</tbody>
+</table>
+<h3 id=cbs-variables>CBS Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template_url</td>
+<td>URL of the Cloud Formation Template to Use (Purity Version)</td>
+</tr>
+<tr>
+<td>license_key</td>
+<td>Pure Cloud Block Store License Key</td>
+</tr>
+<tr>
+<td>log_sender_domain</td>
+<td>Domain to be used for CBS (Optional but Preferred)</td>
+</tr>
+<tr>
+<td>alert_recipients</td>
+<td>Email Address to be used for CBS Alerts</td>
+</tr>
+<tr>
+<td>array_model</td>
+<td>CBS Model (V10AR1 or V20AR1)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>To retrieve the <strong>template_url</strong> you can either look at the latest terraform example on <a href=https://github.com/PureStorage-OpenConnect/terraform-provider-cbs/tree/main/examples/aws_array>Github</a> or it can be retrieved by going through the UI deployment through the Marketplace and getting the template URL for the latest release.</p>
+<p>As of <strong>7/26/21</strong> the template_url for Purity 6.1.7 is <a href=https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/4ea2905b-7939-4ee0-a521-d5c2fcb41214.6b728728-d8fa-4eb7-b92d-22d9aee3684c.template>here.</a></p>
+</blockquote>
+<p>Once you do your <strong>terraform init</strong>, <strong>terraform plan</strong> and <strong>terraform apply</strong> in ~15 minutes all your resources including CBS will be fully deployed!</p>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css>
+<script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<div style=max-width:80%;width:fit-content;margin:auto;padding:1.5em>
+<a data-fancybox=gallery href=/images/cbsawsjumpstart1.png data-caption=caption><img width=100% src=/images/cbsawsjumpstart1.png></a>
+</div>
+<h2 id=destroy-the-pure-cloud-block-store-on-aws-quick-launch>Destroy the Pure Cloud Block Store on AWS Quick Launch</h2>
+<p>To clean up the environment there are manual steps that need to be taken as the current version (0.5.0) of the <a href=https://registry.terraform.io/providers/PureStorage-OpenConnect/cbs/latest/docs>Terraform Provider</a> does not handle the decommision of the Pure Cloud Block Store. This needs to be done manually before we can run <strong>terraform destroy.</strong> In a <strong>future</strong> release of the Terraform Provider we will be able to handle the automatic decommision of the Pure Cloud Block Store.</p>
+<p>See below for the 3 steps we will need to clean up the AWS Quick Launch.</p>
+<h3 id=decommission-pure-cloud-block-store>Decommission Pure Cloud Block Store</h3>
+<p>The Instructions to <a href=https://support.purestorage.com/Pure_Cloud_Block_Store/Cloud_Block_Store_Deployment_and_Configuration_Guide_for_Azure#Removing_Cloud_Block_Store>Remove Cloud Block Store</a> cover the steps.</p>
+<p>To begin you will ssh into your test VM that was created, create a factory reset token, and then do a factory reset of the array. This will handle the cleanup and remove the array object from Pure1.</p>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css>
+<script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<div style=max-width:80%;width:fit-content;margin:auto;padding:1.5em>
+<a data-fancybox=gallery href=/images/cbsawsjumpstart2.png data-caption=caption><img width=100% src=/images/cbsawsjumpstart2.png></a>
+</div>
+<h3 id=destroy-the-aws-resources>Destroy the AWS Resources</h3>
+<p>Once the factory erase has been completed the CloudFormation Stack will be automatically removed cleaning up all the CBS AWS Resources. Once the stack has been removed you can run <strong>terraform destroy</strong> to clean up the remaining AWS resources created for the Quick Launch.</p>
+<h2 id=whats-next>What&rsquo;s Next?</h2>
+<p>This blog covered how to automate the deployment of CBS in AWS. Now take a look and see what else you can do with <a href=https://davidstamen.com/tags/cloud-block-store/>Pure Cloud Block Store.</a> Will you run Production? Will you do Test/Dev? Will you do DR? It&rsquo;s up to you. I have already discussed how you can cover some of these use cases so try them out and let us know what you think!</p>
+<h2 id=conclusion>Conclusion</h2>
+<p>I love the idea of bringing enterprise storage features to the public cloud. This ease of deployment makes it even easier to consume Pure Cloud Block Store in AWS.</p>
+<p>If you have any additional questions or comments, please leave them below!</p>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//davidstamen.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+<h3>See Also</h3>
+<ul>
+<li><a href=/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/>Pure Cloud Block Store on Azure - Quick Launch</a></li>
+<li><a href=/2021/02/10/using-the-pure-storage-cloud-block-store-terraform-provider-for-aws/>Using the Pure Storage Cloud Block Store Terraform Provider for AWS</a></li>
+<li><a href=/deploy-linux-ec2-using-terraform-vault/>Deploying a Linux EC2 Instance with Hashicorp Terraform and Vault to AWS and Connect to Pure Cloud Block Store</a></li>
+<li><a href=/deploy-ec2-using-terraform-vault/>Deploying a Windows EC2 Instance with Hashicorp Terraform and Vault to AWS</a></li>
+<li><a href=/2021/03/09/using-the-pure-storage-cloud-block-store-terraform-provider-for-azure/>Using the Pure Storage Cloud Block Store Terraform Provider for Azure</a></li>
+</ul>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <center><img src=/images/me2-300.png align=center></center>
@@ -181,10 +309,7 @@ Share on:
 <a href=https://davidstamen.com/2021/07/28/whats-new-in-the-5.0.0-pure-storage-plugin-for-the-vsphere-client/ class=nav-link>What's New in the 5.0.0 Pure Storage Plugin for the vSphere Client</a>
 </li>
 <li>
-<a href=https://davidstamen.com/2021/07/26/pure-cloud-block-store-on-aws-jump-start/ class=nav-link>Pure Cloud Block Store on AWS - Jump Start</a>
-</li>
-<li>
-<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-jump-start/ class=nav-link>Pure Cloud Block Store on Azure - Jump Start</a>
+<a href=https://davidstamen.com/2021/07/21/pure-cloud-block-store-on-azure-quick-launch/ class=nav-link>Pure Cloud Block Store on Azure - Quick Launch</a>
 </li>
 <li>
 <a href=https://davidstamen.com/2021/05/20/automating-deployment-of-vsphere-infrastructure-on-equinix-metal/ class=nav-link>Automating Deployment of vSphere Infrastructure on Equinix Metal</a>
