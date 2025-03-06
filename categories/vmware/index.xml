@@ -789,7 +789,7 @@ The upgrade order is as follows. Composer Server, Connection Servers and then Se
 &lt;p>Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.&lt;/p></description></item><item><title>HTML Based Published Apps with Horizon View 6.1.1</title><link>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</guid><description>&lt;p>So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.&lt;/p>
 &lt;p>I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.&lt;/p>
 &lt;ol>
-&lt;li>Install/Update Agents on virtual desktops to 6.1.1 &lt;!-- raw HTML omitted -->(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li>
+&lt;li>Install/Update Agents on virtual desktops to 6.1.1 &lt;strong>(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li>
 &lt;li>Install/Update Agents on RDS servers to 6.1.1&lt;/li>
 &lt;li>Install the HTML Access 3.4 to all your connection servers within the appropriate enviroment if load balanced&lt;/li>
 &lt;li>Now you can logon to your HTML Client and look for your published apps&amp;hellip;.however you will see that they are missing&amp;hellip;.looking into the actual guide for the html access there is an additional step.&lt;/li>
@@ -909,7 +909,7 @@ You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s,  Create
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">Get-SCSILun -VMhost 192.168.1.103 -LunType Disk | Select CanonicalName,Capacity
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-do-i-create-a-vmfs-datastore-for-the-canonicalname-i-identified-above">How do I create a VMFS datastore for the CanonicalName I identified above?&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">New-Datastore -VMHost Host -Name Datastore -Path CanonicalName -VMFS
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastore">How do i rescan all the hosts in the cluster to see the new datastore?&lt;!-- raw HTML omitted -->&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-do-i-rescan-all-the-hosts-in-the-cluster-to-see-the-new-datastore">How do i rescan all the hosts in the cluster to see the new datastore?&lt;br />&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">Get-Cluster -name Cluster | Get-VMhost | Get-VMHostStorage -RescanAllHBA
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>vSphere 5.x Storage vMotion Does Not Rename Virtual Machine Files.</title><link>https://davidstamen.com/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/</link><pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/21/vsphere-5-x-storage-vmotion-does-not-rename-virtual-machine-files/</guid><description>&lt;p>After upgrading vCenter this functionality is no longer enabled by default. Please perform the following steps to enable rename of files upon successful Storage vMotion.&lt;/p>
 &lt;ol>
@@ -952,9 +952,9 @@ You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s,  Create
 &lt;h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.&lt;/h2>
 &lt;ol>
 &lt;li>From the vSphere Web Client, right click on the cluster.&lt;/li>
-&lt;li>Click on the &lt;!-- raw HTML omitted -->Manage&lt;!-- raw HTML omitted --> tab for the cluster, then under Settings click &lt;!-- raw HTML omitted -->vSphere HA&lt;!-- raw HTML omitted -->.&lt;/li>
-&lt;li>Click on the &lt;!-- raw HTML omitted -->Edit&lt;!-- raw HTML omitted --> button in the top right corner.&lt;/li>
-&lt;li>Expand the &lt;!-- raw HTML omitted -->Advanced Options&lt;!-- raw HTML omitted --> section, and click &lt;!-- raw HTML omitted -->Add&lt;!-- raw HTML omitted -->.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Manage&lt;/b> tab for the cluster, then under Settings click &lt;b style="font-style: inherit;">vSphere HA&lt;/b>.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Edit&lt;/b> button in the top right corner.&lt;/li>
+&lt;li>Expand the &lt;b style="font-style: inherit;">Advanced Options&lt;/b> section, and click &lt;b style="font-style: inherit;">Add&lt;/b>.&lt;/li>
 &lt;li>In the Options column, type &lt;strong>das.ignoreRedundantNetWarning.&lt;/strong>&lt;/li>
 &lt;li>In the Value column, type &lt;strong>true&lt;/strong>.&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong>&lt;/li>

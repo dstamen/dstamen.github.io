@@ -44,7 +44,7 @@ The upgrade order is as follows. Composer Server, Connection Servers and then Se
 &lt;p>Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.&lt;/p></description></item><item><title>HTML Based Published Apps with Horizon View 6.1.1</title><link>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</guid><description>&lt;p>So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.&lt;/p>
 &lt;p>I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.&lt;/p>
 &lt;ol>
-&lt;li>Install/Update Agents on virtual desktops to 6.1.1 &lt;!-- raw HTML omitted -->(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li>
+&lt;li>Install/Update Agents on virtual desktops to 6.1.1 &lt;strong>(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li>
 &lt;li>Install/Update Agents on RDS servers to 6.1.1&lt;/li>
 &lt;li>Install the HTML Access 3.4 to all your connection servers within the appropriate enviroment if load balanced&lt;/li>
 &lt;li>Now you can logon to your HTML Client and look for your published apps&amp;hellip;.however you will see that they are missing&amp;hellip;.looking into the actual guide for the html access there is an additional step.&lt;/li>

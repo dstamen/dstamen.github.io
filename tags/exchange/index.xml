@@ -38,7 +38,7 @@
 &lt;li>On the top pane select &amp;quot; Rules&amp;quot;&lt;/li>
 &lt;li>Click on the &amp;ldquo;+&amp;rdquo; sign and select create a new rule&lt;/li>
 &lt;li>Give a name to the rule and select &amp;ldquo;more options&amp;rdquo; at the bottom of the page.&lt;/li>
-&lt;li>Under &lt;!-- raw HTML omitted -->&amp;ldquo;Apply the rule if&amp;rdquo;&lt;!-- raw HTML omitted --> Select &lt;!-- raw HTML omitted -->&amp;ldquo;Any attachment has executable content&amp;rdquo;&lt;!-- raw HTML omitted -->&lt;/li>
-&lt;li>Under &lt;!-- raw HTML omitted -->&amp;ldquo;Do the following&amp;rdquo;&lt;!-- raw HTML omitted --> Select &amp;ldquo;Reject the message with explanation&amp;rdquo; and input your text.&lt;/li>
+&lt;li>Under &lt;strong>&amp;ldquo;Apply the rule if&amp;rdquo;&lt;/strong> Select &lt;strong>&amp;ldquo;Any attachment has executable content&amp;rdquo;&lt;/strong>&lt;/li>
+&lt;li>Under &lt;strong>&amp;ldquo;Do the following&amp;rdquo;&lt;/strong> Select &amp;ldquo;Reject the message with explanation&amp;rdquo; and input your text.&lt;/li>
 &lt;li>Save the rule.&lt;/li>
 &lt;/ol></description></item></channel></rss>

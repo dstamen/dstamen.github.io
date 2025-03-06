@@ -66,9 +66,9 @@
 &lt;h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.&lt;/h2>
 &lt;ol>
 &lt;li>From the vSphere Web Client, right click on the cluster.&lt;/li>
-&lt;li>Click on the &lt;!-- raw HTML omitted -->Manage&lt;!-- raw HTML omitted --> tab for the cluster, then under Settings click &lt;!-- raw HTML omitted -->vSphere HA&lt;!-- raw HTML omitted -->.&lt;/li>
-&lt;li>Click on the &lt;!-- raw HTML omitted -->Edit&lt;!-- raw HTML omitted --> button in the top right corner.&lt;/li>
-&lt;li>Expand the &lt;!-- raw HTML omitted -->Advanced Options&lt;!-- raw HTML omitted --> section, and click &lt;!-- raw HTML omitted -->Add&lt;!-- raw HTML omitted -->.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Manage&lt;/b> tab for the cluster, then under Settings click &lt;b style="font-style: inherit;">vSphere HA&lt;/b>.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Edit&lt;/b> button in the top right corner.&lt;/li>
+&lt;li>Expand the &lt;b style="font-style: inherit;">Advanced Options&lt;/b> section, and click &lt;b style="font-style: inherit;">Add&lt;/b>.&lt;/li>
 &lt;li>In the Options column, type &lt;strong>das.ignoreRedundantNetWarning.&lt;/strong>&lt;/li>
 &lt;li>In the Value column, type &lt;strong>true&lt;/strong>.&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong>&lt;/li>
