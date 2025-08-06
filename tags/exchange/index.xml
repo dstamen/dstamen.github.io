@@ -31,14 +31,4 @@
 &lt;li>To verify that this policy has taken effect, navigate to the following URL in Chrome: chrome://policy&lt;/li>
 &lt;li>If everything is set up correctly, you should see a screen like the following&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://davidstamen.com/images/chromemodal.jpg" alt="">&lt;/p></description></item><item><title>Blocking Attachments With Executable Content</title><link>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</guid><description>&lt;p>I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).&lt;/p>
-&lt;ol>
-&lt;li>Login to Exchange Admin Center using administrative credentials&lt;/li>
-&lt;li>On the left pane select &amp;ldquo;Mail flow&amp;rdquo;&lt;/li>
-&lt;li>On the top pane select &amp;quot; Rules&amp;quot;&lt;/li>
-&lt;li>Click on the &amp;ldquo;+&amp;rdquo; sign and select create a new rule&lt;/li>
-&lt;li>Give a name to the rule and select &amp;ldquo;more options&amp;rdquo; at the bottom of the page.&lt;/li>
-&lt;li>Under &lt;strong>&amp;ldquo;Apply the rule if&amp;rdquo;&lt;/strong> Select &lt;strong>&amp;ldquo;Any attachment has executable content&amp;rdquo;&lt;/strong>&lt;/li>
-&lt;li>Under &lt;strong>&amp;ldquo;Do the following&amp;rdquo;&lt;/strong> Select &amp;ldquo;Reject the message with explanation&amp;rdquo; and input your text.&lt;/li>
-&lt;li>Save the rule.&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;p>&lt;img src="https://davidstamen.com/images/chromemodal.jpg" alt="">&lt;/p></description></item><item><title>Blocking Attachments With Executable Content</title><link>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</guid><description>&lt;p>I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).&lt;/p></description></item></channel></rss>

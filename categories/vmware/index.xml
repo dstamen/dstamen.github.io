@@ -963,19 +963,4 @@ You can use the below PowerCLI commands to get the SCSI ID&amp;rsquo;s,  Create
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">Get-VM VMNAME| Get-HardDisk -DiskType &amp;#34;RawPhysical&amp;#34;,&amp;#34;RawVirtual&amp;#34; | Select Parent,Name,DiskType,ScsiCanonicalName,DeviceName,CapacityGB | fl
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://davidstamen.com/images/naaid.png" alt="">&lt;/p>
 &lt;p>If you then need to match the SCSI virtual disk to the Guest OS this is a great article on how to do so.&lt;/p>
-&lt;p>&lt;a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;amp;docType=kc&amp;amp;externalId=2051606">KB2051606&lt;/a>&lt;/p></description></item><item><title>Enable SSH on vSphere Management Assistant 5.0</title><link>https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/</guid><description>&lt;p>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.&lt;/p>
-&lt;ol>
-&lt;li>Logon to vMA via a Console Session&lt;/li>
-&lt;li>Run&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>&amp;lsquo;sudo vi /etc/hosts.allow&amp;rsquo;&lt;/li>
-&lt;/ul>
-&lt;ol start="3">
-&lt;li>Scroll to the very bottom and type &lt;em>&lt;strong>i&lt;/strong>&lt;/em> to insert content into the file.&lt;/li>
-&lt;li>On the last line add &lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>&amp;lsquo;sshd: ALL: ALLOW&amp;rsquo;&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://davidstamen.com/images/vmaa1.jpg" alt="">&lt;/p></description></item><item><title>Nested ESXi and NFS</title><link>https://davidstamen.com/2014/04/29/nested-esxi-and-nfs/</link><pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/04/29/nested-esxi-and-nfs/</guid><description>&lt;p>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&amp;rsquo;s couldn&amp;rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;amp;docType=kc&amp;amp;externalId=2051606">KB2051606&lt;/a>&lt;/p></description></item><item><title>Enable SSH on vSphere Management Assistant 5.0</title><link>https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/enable-ssh-on-vma-5-0/</guid><description>&lt;p>While continuing to build out my lab for VCAP-DCA today I had to deploy the vMA (vSphere Management Assistant). Upon deployment i tried to SSH to it and unfortunately was not able to. By default SSH is turned off, perform the steps below to enable it.&lt;/p></description></item><item><title>Nested ESXi and NFS</title><link>https://davidstamen.com/2014/04/29/nested-esxi-and-nfs/</link><pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/04/29/nested-esxi-and-nfs/</guid><description>&lt;p>I was working today on configuring NFS/Openfiler in my lab and came across an issue that my nested ESXi host&amp;rsquo;s couldn&amp;rsquo;t talk over the VSS (Standard Switch) I created. Upon further research when using nested ESXi you need to enable &amp;ldquo;Promiscuous Mode&amp;rdquo; on the VSS to allow the traffic to pass.&lt;/p></description></item></channel></rss>
