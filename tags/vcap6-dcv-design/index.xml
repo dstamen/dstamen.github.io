@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCAP6-DCV Design on davidstamen</title><link>https://davidstamen.com/tags/vcap6-dcv-design/</link><description>Recent content in VCAP6-DCV Design on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Mon, 25 Jul 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/vcap6-dcv-design/index.xml" rel="self" type="application/rss+xml"/><item><title>VMware Certified Advanced Professional 6 – Data Center Virtualization Design Guide (3V0 622)</title><link>https://davidstamen.com/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</link><pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/07/25/vmware-certified-advanced-professional-6--data-center-virtualization-design-guide-3v0-622/</guid><description>&lt;p>I am about to start down my path of studying for my VCAP6-DCV Design Exam. I figured I would throw up the blueprint and fill in each section as applicable. Either way here is the blueprint laid out for anyone who may benefit. This is it as of 7/25/16.&lt;/p>
+&lt;h2 id="section-1--create-a-vsphere-conceptual-design">Section 1 – Create a vSphere Conceptual Design&lt;/h2>
+&lt;h4 id="objective-11--gather-and-analyze-business-requirements">Objective 1.1 – Gather and analyze business requirements&lt;/h4>
+&lt;p>Skills and Abilities&lt;/p>
+&lt;p>&lt;strong>Existing Content from VCAP5-DCD&lt;/strong>&lt;/p></description></item><item><title>VCAP6-Design Beta Study Guide</title><link>https://davidstamen.com/2015/12/17/vcap6-design-beta-study-guide/</link><pubDate>Thu, 17 Dec 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/12/17/vcap6-design-beta-study-guide/</guid><description>&lt;p>It is now VCAP6-Design study time! Here is my blueprint laid out, and hopefully will be populated with some content.&lt;/p>
+&lt;h3 id="section-1--create-a-vsphere-conceptual-design">Section 1 – Create a vSphere Conceptual Design&lt;/h3>
+&lt;h4 id="objective-11--gather-and-analyze-business-requirements">Objective 1.1 – Gather and analyze business requirements&lt;/h4>
+&lt;p>&lt;em>&lt;strong>Skills and Abilities&lt;/strong>&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Associate a stakeholder with the information that needs to be collected.&lt;/li>
+&lt;li>Utilize inventory and assessment data from a current environment to define a baseline state.&lt;/li>
+&lt;li>Analyze customer interview data to explicitly define customer #### Objectives for a conceptual design.&lt;/li>
+&lt;li>Determine customer priorities for defined #### Objectives.&lt;/li>
+&lt;li>Ensure that Availability, Manageability, Performance, Recoverability and Security (AMPRS) considerations are applied during the requirements gathering process.&lt;/li>
+&lt;li>Given results of the requirements gathering process, identify requirements for a conceptual design.&lt;/li>
+&lt;li>Categorize requirements by infrastructure qualities to prepare for logical design requirements.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>&lt;strong>Tools&lt;/strong>&lt;/em>&lt;/p></description></item></channel></rss>

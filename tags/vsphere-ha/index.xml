@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VSphere HA on davidstamen</title><link>https://davidstamen.com/tags/vsphere-ha/</link><description>Recent content in VSphere HA on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 19 Jan 2018 10:27:02 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/vsphere-ha/index.xml" rel="self" type="application/rss+xml"/><item><title>Reconfigure HA - The object 'vim.Datastore:datastore-XXXX' has already been deleted or has not been completely created</title><link>https://davidstamen.com/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</link><pubDate>Fri, 19 Jan 2018 10:27:02 +0000</pubDate><guid>https://davidstamen.com/2018/01/19/reconfigure-ha-the-object-vim.datastoredatastore-xxxx-has-already-been-deleted-or-has-not-been-completely-created/</guid><description>&lt;p>Another lovely Friday starting off with strange issues, when taking a host out of standard maintenance we noticed that HA would not reconfigure, and kept saying &lt;em>The object &amp;lsquo;vim.Datastore:datastore-1131&amp;rsquo; has already been deleted or has not been completely created.&lt;/em> This was strange because no other hosts had this issue.
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ &lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js">&lt;/script>
+ &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+ &lt;script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js">&lt;/script>
+
+ &lt;div style="max-width: 80%;width: fit-content;margin: auto;padding: 1.5em;">
+ &lt;a data-fancybox="gallery" href="https://davidstamen.com/images/screenshot-2018-01-19%2010-23-44.png" data-caption="caption">&lt;img width=100% src="https://davidstamen.com/images/screenshot-2018-01-19%2010-23-44.png">&lt;/a>
+ 
+ &lt;/div>
+ 
+
+&lt;/p>
+&lt;p>I proceeded to follow standard troubleshooting steps, reconfigure HA&amp;hellip;same issue&amp;hellip;.disable HA for entire cluster and re-enable&amp;hellip;..same issue&amp;hellip;whoops thats not good!&lt;/p></description></item><item><title>HA Error: Datastore Heartbeat is less than 2</title><link>https://davidstamen.com/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/</link><pubDate>Thu, 08 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/08/ha-error-datastore-heartbeat-is-less-than-2/</guid><description>&lt;p>If you are configuring a cluster with less than 2 datastores, you will receive an HA warning &amp;ldquo;The number of heartbeat datastores for host is 1, which is less than required: 2&amp;rdquo; You can add an option to the HA Advanced Options to supress this warning.&lt;/p>
+&lt;ol>
+&lt;li>Log in to vCenter Server&lt;/li>
+&lt;li>Right-click the cluster and click &lt;strong>Edit Settings&lt;/strong>&lt;/li>
+&lt;li>Click vSphere &lt;strong>HA &amp;gt; Advanced Options&lt;/strong>&lt;/li>
+&lt;li>Under Option, add an entry for &lt;strong>das.ignoreInsufficientHbDatastore&lt;/strong>&lt;/li>
+&lt;li>Under Value, type &lt;strong>true&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>Cluster Features&lt;/strong>&lt;/li>
+&lt;li>De-select &lt;strong>Turn on vSphere HA&lt;/strong> and click &lt;strong>OK&lt;/strong>&lt;/li>
+&lt;li>Wait for all the hosts in the cluster to re-configure HA, then right-click the cluster and click &lt;strong>Edit Settings&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>Cluster Features&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>Turn on vSphere HA&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>OK&lt;/strong>&lt;/li>
+&lt;/ol></description></item><item><title>HA Error: Network Redundancy</title><link>https://davidstamen.com/2014/05/08/ha-error-network-redundancy/</link><pubDate>Thu, 08 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/08/ha-error-network-redundancy/</guid><description>&lt;p>When setting up a cluster for testing you may not have 2 nics to use for management. to bypass the warning you can configure HA to not alert you for this issue.&lt;/p>
+&lt;h2 id="to-perform-the-steps-in-the-c-client">To perform the steps in the c# client.&lt;/h2>
+&lt;ol>
+&lt;li>From the VMware Infrastructure Client, right-click on the cluster and click &lt;strong>Edit Settings&lt;/strong>.&lt;/li>
+&lt;li>Select &lt;strong>vSphere HA&lt;/strong> and click &lt;strong>Advanced Options&lt;/strong>.&lt;/li>
+&lt;li>In the Options column, enter &lt;strong>das.ignoreRedundantNetWarning&lt;/strong>&lt;/li>
+&lt;li>In the Value column, type &lt;strong>true&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>OK&lt;/strong>.&lt;/li>
+&lt;li>Right-click the host and click &lt;strong>Reconfigure for vSphere HA&lt;/strong>. This reconfigures HA.&lt;/li>
+&lt;/ol>
+&lt;h2 id="to-perform-the-steps-in-the-webclient">To perform the steps in the webclient.&lt;/h2>
+&lt;ol>
+&lt;li>From the vSphere Web Client, right click on the cluster.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Manage&lt;/b> tab for the cluster, then under Settings click &lt;b style="font-style: inherit;">vSphere HA&lt;/b>.&lt;/li>
+&lt;li>Click on the &lt;b style="font-style: inherit;">Edit&lt;/b> button in the top right corner.&lt;/li>
+&lt;li>Expand the &lt;b style="font-style: inherit;">Advanced Options&lt;/b> section, and click &lt;b style="font-style: inherit;">Add&lt;/b>.&lt;/li>
+&lt;li>In the Options column, type &lt;strong>das.ignoreRedundantNetWarning.&lt;/strong>&lt;/li>
+&lt;li>In the Value column, type &lt;strong>true&lt;/strong>.&lt;/li>
+&lt;li>Click &lt;strong>OK&lt;/strong>&lt;/li>
+&lt;li>Right-click the host and click &lt;strong>Reconfigure for vSphere HA&lt;/strong>.&lt;/li>
+&lt;/ol></description></item></channel></rss>

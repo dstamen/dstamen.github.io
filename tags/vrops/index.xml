@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VROPS on davidstamen</title><link>https://davidstamen.com/tags/vrops/</link><description>Recent content in VROPS on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/vrops/index.xml" rel="self" type="application/rss+xml"/><item><title>Using PowerCLI to Add vRealize Operations License Key</title><link>https://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2017/07/27/using-powercli-to-add-vrealize-operations-license-key/</guid><description>&lt;p>I have been working on doing a vCenter Consolidation Project. This included migrating our systems to a new vRealize Operations Server. This particular one included 73 different vSOM keys, and as you may know there is currently no way to enter in multiple keys at a time. I reached out to Kyle Ruddy and he informed me there is an API to do this, and that started my adventure to get this working.&lt;/p></description></item><item><title>Upgrading vRealize Operations Horizon Adapter to 6.1</title><link>https://davidstamen.com/2015/09/22/upgrading-vrealize-operations-horizon-adapter-to-61/</link><pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/22/upgrading-vrealize-operations-horizon-adapter-to-61/</guid><description>&lt;p>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process. This guide will show how to upgrade the Horizon Adapter for vROPS.&lt;/p>
+&lt;p>To upgrade from vRealize Operations Horizon Adapter to the most recent version, follow these steps.&lt;/p>
+&lt;p>&lt;a href="https://my.vmware.com/web/vmware/info?slug=desktop_end_user_computing/vmware_vrealize_operations_for_horizon_and_published_applications/6_0">Download&lt;/a> the neccessary file(s) needed. In my case I needed the vRealize Operations for Horizon Broker Agent and the vRealize Operations for Horizon Adapter.&lt;/p></description></item><item><title>Upgrading vRealize Operations to 6.1</title><link>https://davidstamen.com/2015/09/22/upgrading-vrealize-operations-to-61/</link><pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/22/upgrading-vrealize-operations-to-61/</guid><description>&lt;p>vRealize Operations 6.1 is now available, I thought I would put a quick guide together as I go through the upgrade process.&lt;/p>
+&lt;p>To upgrade from vRealize Operations Manager to the most recent version, follow these steps.&lt;/p>
+&lt;p>&lt;a href="https://my.vmware.com/group/vmware/details?productId=538&amp;amp;downloadGroup=VROPS-610">Download&lt;/a> the PAK file(s) needed based on the type of cluster.&lt;/p>
+&lt;ul>
+&lt;li>vApp clusters
+&lt;ul>
+&lt;li>The vApp cluster requires the deployment of the OS upgrade and the product upgrade .pak files.
+&lt;ul>
+&lt;li>For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.pak&lt;/li>
+&lt;li>For the product upgrade of vApp clusters, the file is: vRealize_Operations_Manager-VA-xxx.pak&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>vApp heterogeneous clusters
+&lt;ul>
+&lt;li>The vApp heterogeneous cluster requires the deployment of the OS upgrade and the product upgrade .pak files.
+&lt;ul>
+&lt;li>For an OS upgrade, the file is: vRealize_Operations_Manager-VA-OS-xxx.pak&lt;/li>
+&lt;li>For the product upgrade of a heterogeneous cluster that has VA nodes with Windows Remote Collectors, the file is: vRealize_Operations_Manager-VA-WIN-xxx.pak&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>RHEL standalone clusters
+&lt;ul>
+&lt;li>The RHEL standalone cluster requires the deployment of only the product upgrade .pak file.&lt;/li>
+&lt;li>For the product upgrade of RHEL clusters, the file is: vRealize_Operations_Manager-RHEL-xxx.pak&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>RHEL heterogeneous clusters
+&lt;ul>
+&lt;li>The RHEL heterogeneous cluster requires the deployment of only the product upgrade .pak file.&lt;/li>
+&lt;li>For the product upgrade of a heterogeneous cluster that has RHEL nodes with Windows Remote Collectors, the file is: vRealize_Operations_Manager-RHEL-WIN-xxx.pak&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Windows clusters
+&lt;ul>
+&lt;li>The Windows cluster requires the deployment of only the product upgrade .pak file.&lt;/li>
+&lt;li>For the product upgrade of Windows clusters, the file is: vRealize_Operations_Manager-WIN-xxx.pak&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>The rest of the upgrade process is pretty straightforward.&lt;/p></description></item><item><title>Unable to Configure Event Database in vRealize Operations View Broker Agent</title><link>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</link><pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</guid><description>&lt;p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&amp;rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. &lt;strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://davidstamen.com/images/vROeventdb.png" alt="">&lt;/p>
+&lt;p>I knew it wasn&amp;rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&amp;rsquo;t like certain characters in passwords.&lt;/p></description></item></channel></rss>

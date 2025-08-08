@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cisco on davidstamen</title><link>https://davidstamen.com/categories/cisco/</link><description>Recent content in Cisco on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Mon, 14 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/categories/cisco/index.xml" rel="self" type="application/rss+xml"/><item><title>Using UCS PowerTool to Configure Syslog Servers</title><link>https://davidstamen.com/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</link><pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/03/14/using-ucs-powertool-to-configure-syslog-servers/</guid><description>&lt;p>Time for more UCS Scripting! This time to configure Syslog. The script is pretty straightforward, but nice to have to easily set up Syslog across multiple UCS domains.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSSyslog.ps1">Set-UcsSyslog.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl"># UCS PowerTool Script that to set Syslog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"># @davidstamen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"># http://davidstamen.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">#Define Variables
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">$cred = Get-Credential
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$domains = &amp;#34;ucs01.lab.local&amp;#34;,&amp;#34;ucs02.lab.local&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">$SyslogServer = &amp;#34;syslog.lab.local&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">$Name = &amp;#34;primary&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">$Facility = &amp;#34;local7&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">$AdminState = &amp;#34;enabled&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">$Severity = &amp;#34;notifications&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">#Cycles through each UCS setting values
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">Foreach ($ucs in $domains) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> Connect-UCS $ucs -Credential $cred
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> Get-UcsSyslogClient -Name $Name | Set-UcsSyslogClient -AdminState $AdminState -ForwardingFacility $Facility -Hostname $SyslogServer -Severity $Severity -Force
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl"> Disconnect-UCS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="execute-the-script">&lt;em>&lt;strong>Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>Run .\Set-UcsSyslog.ps1&lt;/li>
+&lt;/ul></description></item><item><title>Using UCS PowerTool To Set SNMP Configuration</title><link>https://davidstamen.com/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/</link><pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/03/01/using-ucs-powertool-to-set-snmp-configuration/</guid><description>&lt;p>Time for more UCS Scripting! This time to enable SNMP. The script is pretty straightforward, but nice to have to easily set up SNMP across multiple UCS domains.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UcsSnmpConfiguration.ps1">Set-UcsSnmpConfiguration.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl">#Define Variables
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl">$cred = Get-Credential
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl">$domains = &amp;#34;ucs01.lab.local&amp;#34;,&amp;#34;ucs02.lab.local&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">$Descr = &amp;#34;SNMP config for UCS&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">$AdminState = &amp;#34;enabled&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">$SysContact = &amp;#34;admin@lab.local&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$SysLocation = &amp;#34;US&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">$Community = &amp;#34;public&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">#Cycles through each UCS setting values
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">Foreach ($ucs in $domains) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl"> Connect-UCS $ucs -Credential $cred
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl"> $servers = Get-UCSRackUnit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl"> Foreach ($server in $servers) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl"> Set-UcsSnmp -Descr $Descr -AdminState $AdminState -SysContact $SysContact -SysLocation $SysLocation -Community $Community -force
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl"> Disconnect-UCS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="execute-the-script">&lt;em>&lt;strong>Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>Run .\Set-UcsSnmpConfiguration.ps1&lt;/li>
+&lt;/ul></description></item><item><title>Using Ansible to Create Cisco ACI Filters</title><link>https://davidstamen.com/2016/02/03/using-ansible-to-create-cisco-aci-filters/</link><pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/02/03/using-ansible-to-create-cisco-aci-filters/</guid><description>&lt;p>In the midst of rolling out Cisco ACI, we have a need to automation creation of filters to apply to contracts. I tried to use the ACI-PowerTool for this task, however it doesnt seem to work with the newer code we are on. So I went back and attempted to use the ansible modules and it worked flawlessly, below is a sample playbook that will create a filter and add the associated filter entries. The below example are the required ports for Horizon View.&lt;/p></description></item><item><title>Using UCS PowerTool To Set Equipment Labels</title><link>https://davidstamen.com/2016/01/15/using-ucs-powertool-to-set-equipment-labels/</link><pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/01/15/using-ucs-powertool-to-set-equipment-labels/</guid><description>&lt;p>For conformity, we like to set the UCS Equipment labels to match the Service Profile Name. This allows us to match it quickly without having to dig down into the assigned profile. This script will set the UsrLbl and Name fields on the equipment tab to match the name of the Service Profile.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSEquipmentLabel.ps1">Set-UCSEquipmentLabel.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p></description></item><item><title>Using UCS PowerTool To Generate Tech Supports</title><link>https://davidstamen.com/2016/01/14/using-ucs-powertool-to-generate-tech-supports/</link><pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/01/14/using-ucs-powertool-to-generate-tech-supports/</guid><description>&lt;p>Automation, Automation, Automation! I had to download some support bundles for every chassis in our multiple zones. Instead of manually going through the GUI, I figured why not script it! This script will connect to each UCS domain and automatically generate a support bundle and download it for each chassis.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Create-UCSTechSupport.ps1">Create-UCSTechSupport.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p></description></item><item><title>Using UCS PowerTool To Upload UCS Firmware</title><link>https://davidstamen.com/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/</link><pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/01/11/using-ucs-powertool-to-upload-ucs-firmware/</guid><description>&lt;p>It&amp;rsquo;s patch time! That means time to upload the firmware bundles to all my UCS domains. Instead of doing it manually I figured i would create a quick script to do that for me.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/UploadUCSFirmware.ps1">UploadUCSFirmware.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p></description></item><item><title>Using UCS PowerTool To Configure UCS Policy Backup and Export</title><link>https://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/</link><pubDate>Fri, 11 Dec 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/12/11/using-ucs-powertool-to-configure-ucs-policy-backup-and-export/</guid><description>&lt;p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was configuring the Policy Backup and Export. See below on how to automate this process!&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/Set-UCSPolicyBackupandExport.ps1">Set-UCSPolicyBackupandExport.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p></description></item><item><title>Using UCS PowerTool To Configure UCS Certificates</title><link>https://davidstamen.com/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/</link><pubDate>Thu, 10 Dec 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/12/10/using-ucs-powertool-to-configure-ucs-certificates/</guid><description>&lt;p>Im finally getting to dive back in to working with UCS. My latest task with my project of configuring 9 UCS Domains, was swapping out certificates. The first few I did via the GUI, and I thought can this be scripted? Well the answer is yes! See below for information on executing the script.&lt;/p>
+&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://communities.cisco.com/docs/DOC-53838">UCS Powertool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/AddUCSCert.ps1">AddUCSCert.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
+&lt;p>The script is pretty straight forward, just need to define a few variables seen below and then you execute the script. I will walk you through the process.&lt;/p></description></item><item><title>Configuring Multiple UCS VLAN's</title><link>https://davidstamen.com/2015/11/23/configuring-multiple-ucs-vlans/</link><pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/11/23/configuring-multiple-ucs-vlans/</guid><description>&lt;p>We are currently working on some Cisco ACI Integration and wanted to add a large VLAN Pool to a UCS Configuration.&lt;/p>
+&lt;p>Since currently Cisco UCS does not allow selecting multiple VLAN&amp;rsquo;s easily when adding to a VLAN Group or vNIC Template, we now have a pretty decent script that will do it for you.&lt;/p>
+&lt;p>The script can be found &lt;a href="https://github.com/dstamen/UCS-PowerTool/blob/master/ConfigureVLANGroupAndvNICTemplate.ps1">here.&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln"> 1&lt;/span>&lt;span class="cl"># PowerCLI Script for adding VLAN to VLAN Group and vNIC Template
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 2&lt;/span>&lt;span class="cl"># @davidstamen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 3&lt;/span>&lt;span class="cl"># http://davidstamen.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 5&lt;/span>&lt;span class="cl">#Define Variables
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 6&lt;/span>&lt;span class="cl">$cred = Get-Credential
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 7&lt;/span>&lt;span class="cl">$ucs = &amp;#34;ucs01&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 8&lt;/span>&lt;span class="cl">$startvlan = &amp;#34;100&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln"> 9&lt;/span>&lt;span class="cl">$endvlan = &amp;#34;150&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">10&lt;/span>&lt;span class="cl">$vnictemplate = &amp;#34;vnic-template&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">11&lt;/span>&lt;span class="cl">$vlangroup = &amp;#34;vlan-group&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">12&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">13&lt;/span>&lt;span class="cl">#Connect to UCS
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">14&lt;/span>&lt;span class="cl">Connect-UCS $ucs -credential $cred
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">15&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">16&lt;/span>&lt;span class="cl">#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vlan group
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">17&lt;/span>&lt;span class="cl">for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsFabricNetGroup -Name $vlangroup |Add-UcsFabricPooledVlan -Name &amp;#34;$i&amp;#34;}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">18&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">19&lt;/span>&lt;span class="cl">#Assumes VLAN Name is the VLANID. Adds VLAN from start to end to vnic template
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">20&lt;/span>&lt;span class="cl">for($i=$startvlan;$i -le $endvlan;$i++){Get-UcsVnicTemplate -Name $vnictemplate | Add-UcsVnicInterface -ModifyPresent -DefaultNet false -Name &amp;#34;$i&amp;#34;}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">21&lt;/span>&lt;span class="cl">Disconnect-UCS
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You now are done! In my case I had to add 500 VLAN&amp;rsquo;s, so this script saved me quite a bit of time.&lt;/p></description></item><item><title>Cisco UCS and Native VLAN Tagging</title><link>https://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/</link><pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/04/29/cisco-ucs-and-native-vlan-tagging/</guid><description>&lt;p>Building out some new servers today I came across an issue where the servers would have no network connectivity even though the vNICs were properly tagged and assign a VLAN ID. Upon further research, I noticed that &amp;ldquo;Native VLAN&amp;rdquo; was not selected. This is a must for any operating system that does not do VLAN Tagging such as ESXi.&lt;/p>
+&lt;p>So remember to set the VLAN to Native if using an operating system that does not support VLAN tagging!&lt;/p></description></item></channel></rss>

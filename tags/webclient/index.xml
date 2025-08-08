@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Webclient on davidstamen</title><link>https://davidstamen.com/tags/webclient/</link><description>Recent content in Webclient on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 19 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/webclient/index.xml" rel="self" type="application/rss+xml"/><item><title>Functional Branding of vSphere Web Client Logon Page</title><link>https://davidstamen.com/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</link><pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2017/01/19/functional-branding-of-vsphere-web-client-logon-page/</guid><description>&lt;p>I had a use case I wanted to investigate in regards to the new VCHA that is part of VMware vCenter Server 6.5. One thing I noticed, is when you have VCHA configured, there is no way to know which node of the HA cluster you are connecting to without being logged on.&lt;/p>
+&lt;p>As people have noted before &lt;a href="http://www.virtuallyghetto.com/2015/02/how-to-customize-the-new-vsphere-6-0-web-client-login-ui.html">William Lam&amp;rsquo;s - How to Customize Webclient Login UI&lt;/a>&lt;/p>
+&lt;p>I figured since I am using the embedded SSO, I could update the login page to show any information for that particular node. In my case I updated the text to show which node you are connected to. You can see this without even logging in!&lt;/p></description></item><item><title>Unable to join PSC to Domain via Webclient</title><link>https://davidstamen.com/2015/09/21/unable-to-join-psc-to-domain-via-webclient/</link><pubDate>Mon, 21 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/21/unable-to-join-psc-to-domain-via-webclient/</guid><description>&lt;p>I am actually pretty surprised this bug still exists. I came across this issue with my first deployment of vSphere 6. Now I am circling back around to do a POC and it still exists.&lt;/p>
+&lt;p>When trying to join a Platform Services Controller to the domain via the vSphere Webclient I get the following error: &lt;strong>&amp;ldquo;java.lang.reflect.invocationTargetException&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://davidstamen.com/images/pscdomainerror.png" alt="">&lt;/p>
+&lt;p>There are currently two workarounds now with 6.0U1 I am aware of.&lt;/p>
+&lt;ul>
+&lt;li>The first method is to join to the domain using the CLI.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">/opt/likewise/bin/domainjoin-cli join domain username
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>The second method is to use the new PSC interface to join to the domain.
+&lt;ul>
+&lt;li>Navigate to &lt;strong>https://fqdnofpsc/psc&lt;/strong>&lt;/li>
+&lt;li>Select &lt;strong>Appliance Settings&lt;/strong>&lt;/li>
+&lt;li>Click on &lt;strong>Manage&lt;/strong>&lt;/li>
+&lt;li>Under &lt;strong>Active Directory&lt;/strong> Select Join and enter in your details&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://davidstamen.com/images/pscdomainerror2.png" alt="">&lt;/p></description></item></channel></rss>

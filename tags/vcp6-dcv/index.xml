@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VCP6-DCV on davidstamen</title><link>https://davidstamen.com/tags/vcp6-dcv/</link><description>Recent content in VCP6-DCV on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 16 Oct 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/vcp6-dcv/index.xml" rel="self" type="application/rss+xml"/><item><title>Section 1: Configure and Administer vSphere 6.x Security</title><link>https://davidstamen.com/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-1-configure-and-administer-vsphere-6x-security/</guid><description>&lt;p>Section 1 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-11-configure-and-administer-role-based-access-control">Objective 1.1: Configure and Administer Role-based Access Control&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Compare and contrast propagated and explicit permission assignments&lt;/p>
+&lt;ul>
+&lt;li>An example of a propagated permission:
+&lt;ul>
+&lt;li>Most inventory objects inherit permissions from a single parent object in the hierarchy. For example, a datastore inherits permissions from either its parent datastore folder or parent data center. Virtual machines inherit permissions from both the parent virtual machine folder and the parent host, cluster, or resource pool simultaneously.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>An example of an explicit permission:
+&lt;ul>
+&lt;li>User1 is assigned Permission to only see and modify VM1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>View/Sort/Export user and group lists&lt;/p></description></item><item><title>Section 10: Administer and Manage vSphere Virtual Machines</title><link>https://davidstamen.com/2015/10/16/section-10-administer-and-manage-vsphere-virtual-machines/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-10-administer-and-manage-vsphere-virtual-machines/</guid><description>&lt;p>Section 10 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-101-configure-advanced-vsphere-virtual-machine-settings">Objective 10.1: Configure Advanced vSphere Virtual Machine Settings&lt;/h4>
+&lt;ul>
+&lt;li>Determine how using a shared USB device impacts the environment&lt;/li>
+&lt;li>Configure virtual machines for vGPUs, DirectPath I/O and SR-IOV&lt;/li>
+&lt;li>Configure virtual machines for multicore vCPUs&lt;/li>
+&lt;li>Differentiate virtual machine configuration settings&lt;/li>
+&lt;li>Interpret virtual machine configuration files (.vmx) settings&lt;/li>
+&lt;li>Enable/disable advanced virtual machine settings&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-102-create-and-manage-a-multi-site-content-library">Objective 10.2: Create and Manage a Multi-site Content Library&lt;/h4>
+&lt;ul>
+&lt;li>Publish a content catalog&lt;/li>
+&lt;li>Subscribe to a published catalog&lt;/li>
+&lt;li>Determine which privileges are required to globally manage a content catalog&lt;/li>
+&lt;li>Compare the functionality of Automatic sync and On-Demand sync&lt;/li>
+&lt;li>Configure Content Library to work across sites&lt;/li>
+&lt;li>Configure Content Library authentication&lt;/li>
+&lt;li>Set/configure Content Library roles&lt;/li>
+&lt;li>Add/remove Content Libraries&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-103-configure-and-maintain-a-vcloud-air-connection">Objective 10.3: Configure and Maintain a vCloud Air Connection&lt;/h4>
+&lt;ul>
+&lt;li>Create a VPN connection between vCloud Air and an on-premise site&lt;/li>
+&lt;li>Deploy a virtual machine using vCloud Air&lt;/li>
+&lt;li>Migrate a virtual machine to vCloud Air&lt;/li>
+&lt;li>Verify VPN connection configuration to vCloud Air&lt;/li>
+&lt;li>Configure vCenter Server connection to vCloud Air&lt;/li>
+&lt;li>Configure replicated objects in vCloud Air Disaster Recovery service&lt;/li>
+&lt;li>Given a scenario, determine the required settings for virtual machines deployed in vCloud Air&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 2: Configure and Administer Advanced vSphere 6.x Networking</title><link>https://davidstamen.com/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-2-configure-and-administer-advanced-vsphere-6x-networking/</guid><description>&lt;p>Section 2 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-21-configure-advanced-policiesfeatures-and-verify-network-virtualization-implementation">Objective 2.1: Configure Advanced Policies/Features and Verify Network Virtualization Implementation&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Create/Delete a vSphere Distributed Switch&lt;/p>
+&lt;ul>
+&lt;li>In the vSphere Web Client, navigate to a data center.&lt;/li>
+&lt;li>In the navigator, right-click the data center and select Distributed Switch &amp;gt; New Distributed Switch.&lt;/li>
+&lt;li>In Name and Location, type a name for the new distributed switch, or accept the generated name, and click Next.&lt;/li>
+&lt;li>In Select version, select a distributed switch version and click Next.&lt;/li>
+&lt;li>In Edit Settings configure the distributed switch settings.
+&lt;ul>
+&lt;li>Use the arrow buttons to select the Number of uplinks.&lt;/li>
+&lt;li>Use the drop-down menu to enable or disable Network I/O Control.&lt;/li>
+&lt;li>Select the Create a default port group check box to create a new distributed port group with default settings for this switch.&lt;/li>
+&lt;li>(Optional) To create a default distributed port group, type the port group name in the Port group name, or accept the generated name.&lt;/li>
+&lt;li>Click Next.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>In Ready to complete, review the settings you selected and click Finish.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Add/Remove ESXi Hosts from a vSphere Distributed Switch&lt;/p></description></item><item><title>Section 3: Configure and Administer Advanced vSphere 6.x Storage</title><link>https://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-3-configure-and-administer-advanced-vsphere-6x-storage/</guid><description>&lt;p>Section 3 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-31-manage-vsphere-storage-virtualization">Objective 3.1: Manage vSphere Storage Virtualization&lt;/h4>
+&lt;ul>
+&lt;li>Discover new storage LUNs&lt;/li>
+&lt;li>Configure FC/iSCSI/FCoE LUNs as ESXi boot devices&lt;/li>
+&lt;li>Create an NFS share for use with vSphere&lt;/li>
+&lt;li>Enable/Configure/Disable vCenter Server storage filters&lt;/li>
+&lt;li>Configure/Edit hardware/dependent hardware initiators&lt;/li>
+&lt;li>Enable/Disable software iSCSI initiator&lt;/li>
+&lt;li>Configure/Edit software iSCSI initiator settings&lt;/li>
+&lt;li>Configure iSCSI port binding&lt;/li>
+&lt;li>Enable/Configure/Disable iSCSI CHAP&lt;/li>
+&lt;li>Determine use cases for fiber channel zoning&lt;/li>
+&lt;li>Compare and contrast array thin provisioning and virtual disk thin provisioning&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-32-configure-software-defined-storage">Objective 3.2: Configure Software-defined Storage&lt;/h4>
+&lt;ul>
+&lt;li>Discover new storage LUNs&lt;/li>
+&lt;li>Configure FC/iSCSI/FCoE LUNs as ESXi boot devices&lt;/li>
+&lt;li>Create an NFS share for use with vSphere&lt;/li>
+&lt;li>Enable/Configure/Disable vCenter Server storage filters&lt;/li>
+&lt;li>Configure/Edit hardware/dependent hardware initiators&lt;/li>
+&lt;li>Enable/Disable software iSCSI initiator&lt;/li>
+&lt;li>Configure/Edit software iSCSI initiator settings&lt;/li>
+&lt;li>Configure iSCSI port binding&lt;/li>
+&lt;li>Enable/Configure/Disable iSCSI CHAP&lt;/li>
+&lt;li>Determine use cases for fiber channel zoning&lt;/li>
+&lt;li>Compare and contrast array thin provisioning and virtual disk thin provisioning&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-33-configure-vsphere-storage-multi-pathing-and-failover">Objective 3.3: Configure vSphere Storage Multi-pathing and Failover&lt;/h4>
+&lt;ul>
+&lt;li>Explain common multi-pathing components&lt;/li>
+&lt;li>Differentiate APD and PDL states&lt;/li>
+&lt;li>Given a scenario, compare and contrast Active Optimized vs. Active non-Optimized port group states&lt;/li>
+&lt;li>Explain features of Pluggable Storage Architecture (PSA)&lt;/li>
+&lt;li>Understand the effects of a given claim rule on multipathing and failover
+vExplain the function of claim rule elements:
+&lt;ul>
+&lt;li>Vendor&lt;/li>
+&lt;li>Model&lt;/li>
+&lt;li>Device ID&lt;/li>
+&lt;li>SATP&lt;/li>
+&lt;li>PSP&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Change the Path Selection Policy using the UI&lt;/li>
+&lt;li>Determine required claim rule elements to change the default PSP&lt;/li>
+&lt;li>Determine the effect of changing PSP on Multipathing and failover&lt;/li>
+&lt;li>Determine the effects of changing SATP on relevant device behavior&lt;/li>
+&lt;li>Configure/Manage Storage Load Balancing&lt;/li>
+&lt;li>Differentiate available Storage Load Balancing options&lt;/li>
+&lt;li>Differentiate available Storage Multi-pathing Policies&lt;/li>
+&lt;li>Configure Storage Policies&lt;/li>
+&lt;li>Locate failover events in the UI&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-34-perform-advanced-vmfs-and-nfs-configurations-and-upgrades">Objective 3.4: Perform Advanced VMFS and NFS Configurations and Upgrades&lt;/h4>
+&lt;ul>
+&lt;li>Describe VAAI primitives for block devices and NAS&lt;/li>
+&lt;li>Differentiate VMware file system technologies&lt;/li>
+&lt;li>Upgrade VMFS3 to VMFS5&lt;/li>
+&lt;li>Compare functionality of newly created vs. upgraded VMFS5 datastores&lt;/li>
+&lt;li>Differentiate Physical Mode RDMs and Virtual Mode RDMs&lt;/li>
+&lt;li>Create a Virtual/Physical Mode RDM&lt;/li>
+&lt;li>Differentiate NFS 3.x and 4.1 capabilities&lt;/li>
+&lt;li>Compare and contrast VMFS and NFS datastore properties&lt;/li>
+&lt;li>Configure Bus Sharing&lt;/li>
+&lt;li>Configure Multi-writer locking&lt;/li>
+&lt;li>Connect an NFS 4.1 datastore using Kerberos&lt;/li>
+&lt;li>Create/Rename/Delete/Unmount VMFS datastores&lt;/li>
+&lt;li>Mount/Unmount an NFS datastore&lt;/li>
+&lt;li>Extend/Expand VMFS datastores&lt;/li>
+&lt;li>Place a VMFS datastore in Maintenance Mode&lt;/li>
+&lt;li>Select the Preferred Path/Disable a Path to a VMFS datastore&lt;/li>
+&lt;li>Enable/Disable vStorage API for Array Integration (VAAI)&lt;/li>
+&lt;li>Given a scenario, determine a proper use case for multiple VMFS/NFS datastores&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-35-setup-and-configure-storage-io-control">Objective 3.5: Setup and Configure Storage I/O Control&lt;/h4>
+&lt;ul>
+&lt;li>Describe the benefits of SIOC&lt;/li>
+&lt;li>Enable and configure SIOC&lt;/li>
+&lt;li>Configure/Manage SIOC&lt;/li>
+&lt;li>Monitor SIOC&lt;/li>
+&lt;li>Differentiate between SIOC and Dynamic Queue Depth - Throttling features&lt;/li>
+&lt;li>Given a scenario, determine a proper use case for SIOC&lt;/li>
+&lt;li>Compare and contrast the effects of I/O contention in environments with and without SIOC&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 4: Upgrade a vSphere Deployment to 6.x</title><link>https://davidstamen.com/2015/10/16/section-4-upgrade-a-vsphere-deployment-to-6x/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-4-upgrade-a-vsphere-deployment-to-6x/</guid><description>&lt;p>Section 4 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-41-perform-esxi-host-and-virtual-machine-upgrades">Objective 4.1: Perform ESXi Host and Virtual Machine Upgrades&lt;/h4>
+&lt;ul>
+&lt;li>Configure download source(s)&lt;/li>
+&lt;li>Setup UMDS to setup download repository&lt;/li>
+&lt;li>Import ESXi images&lt;/li>
+&lt;li>Create Baselines and/or Baseline groups&lt;/li>
+&lt;li>Attach Baselines to vSphere objects&lt;/li>
+&lt;li>Scan vSphere objects&lt;/li>
+&lt;li>Stage patches &amp;amp; Extensions&lt;/li>
+&lt;li>Remediate an object&lt;/li>
+&lt;li>Upgrade a vSphere Distributed Switch&lt;/li>
+&lt;li>Upgrade VMware Tools&lt;/li>
+&lt;li>Upgrade Virtual Machine hardware&lt;/li>
+&lt;li>Upgrade an ESXi Host using vCenter Update Manager&lt;/li>
+&lt;li>Stage multiple ESXi Host upgrades&lt;/li>
+&lt;li>Align appropriate baselines with target inventory objects.&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-42-perform-vcenter-server-upgrades">Objective 4.2: Perform vCenter Server Upgrades&lt;/h4>
+&lt;ul>
+&lt;li>Compare the methods of upgrading vCenter Server&lt;/li>
+&lt;li>Backup vCenter Server database, configuration and certificate datastore&lt;/li>
+&lt;li>Perform update as prescribed for Appliance or Installable&lt;/li>
+&lt;li>Upgrade vCenter Server Appliance (vCSA)&lt;/li>
+&lt;li>Given a scenario, determine the upgrade compatibility of an environment&lt;/li>
+&lt;li>Determine correct order of steps to upgrade a vSphere implementation&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 5: Administer and Manage vSphere 6.x Resources</title><link>https://davidstamen.com/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-5-administer-and-manage-vsphere-6x-resources/</guid><description>&lt;p>Section 5 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-51-configure-advancedmultilevel-resource-pools">Objective 5.1: Configure Advanced/Multilevel Resource Pools&lt;/h4>
+&lt;ul>
+&lt;li>Understand/Apply&lt;/li>
+&lt;li>Determine the effect of the Expandable Reservation parameter on resource allocation&lt;/li>
+&lt;li>Create a resource pool hierarchical structure&lt;/li>
+&lt;li>Configure custom resource pool attributes&lt;/li>
+&lt;li>Determine how resource pools apply to vApps&lt;/li>
+&lt;li>Describe vFlash architecture&lt;/li>
+&lt;li>Create/Remove a Resource Pool&lt;/li>
+&lt;li>Add/Remove virtual machines from a Resource Pool&lt;/li>
+&lt;li>Create/Delete vFlash Resource Pool&lt;/li>
+&lt;li>Assign vFlash resources to VMDKs&lt;/li>
+&lt;li>Given a scenario, determine appropriate shares, reservations and limits for hierarchical Resource Pools&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 6: Backup and Recover a vSphere Deployment</title><link>https://davidstamen.com/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-6-backup-and-recover-a-vsphere-deployment/</guid><description>&lt;p>Section 6 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-61-configure-and-administer-a-vsphere-backupsrestorereplication-solution">Objective 6.1: Configure and Administer a vSphere Backups/Restore/Replication Solution&lt;/h4>
+&lt;ul>
+&lt;li>Compare and contrast vSphere Replication compression methods&lt;/li>
+&lt;li>Differentiate VMware Data Protection capabilities&lt;/li>
+&lt;li>Configure recovery point objective (RPO) for a protected virtual machine&lt;/li>
+&lt;li>Explain VMware Data Protection sizing guidelines&lt;/li>
+&lt;li>Create/Delete/Consolidate virtual machine snapshots&lt;/li>
+&lt;li>Install and Configure VMware Data Protection&lt;/li>
+&lt;li>Create a backup job with VMware Data Protection&lt;/li>
+&lt;li>Backup/Restore a virtual machine with VMware Data Protection&lt;/li>
+&lt;li>Install/Configure/Upgrade vSphere Replication&lt;/li>
+&lt;li>Configure VMware Certificate Authority (VMCA) integration with vSphere Replication&lt;/li>
+&lt;li>Configure vSphere Replication for Single/Multiple VMs&lt;/li>
+&lt;li>Recover a VM using vSphere Replication&lt;/li>
+&lt;li>Perform a failback operation using vSphere Replication&lt;/li>
+&lt;li>Deploy a pair of vSphere Replication virtual appliances&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 7: Troubleshoot a vSphere Deployment</title><link>https://davidstamen.com/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-7-troubleshoot-a-vsphere-deployment/</guid><description>&lt;p>Section 7 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-71-troubleshoot-vcenter-server-esxi-hosts-and-virtual-machines">Objective 7.1: Troubleshoot vCenter Server, ESXi Hosts, and Virtual Machines&lt;/h4>
+&lt;ul>
+&lt;li>Monitor status of the vCenter Server service&lt;/li>
+&lt;li>Perform basic maintenance of a vCenter Server database&lt;/li>
+&lt;li>Monitor status of ESXi management agents&lt;/li>
+&lt;li>Determine ESXi Host stability issues and gather diagnostics information&lt;/li>
+&lt;li>Monitor ESXi system health&lt;/li>
+&lt;li>Locate and analyze vCenter Server and ESXi logs&lt;/li>
+&lt;li>Determine the appropriate Command Line Interface (CLI) command for a given troubleshooting task&lt;/li>
+&lt;li>Troubleshoot common issues, including:
+&lt;ul>
+&lt;li>vCenter Server service&lt;/li>
+&lt;li>SSO&lt;/li>
+&lt;li>vCenter Server connectivity&lt;/li>
+&lt;li>Virtual machine resource contention, configuration and operation&lt;/li>
+&lt;li>Platform Services Controller (PSC)&lt;/li>
+&lt;li>Problems with installation&lt;/li>
+&lt;li>VMware Tools installation&lt;/li>
+&lt;li>Fault Tolerant network latency&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-72-troubleshoot-vsphere-storage-and-network-issues">Objective 7.2: Troubleshoot vSphere Storage and Network Issues&lt;/h4>
+&lt;ul>
+&lt;li>Identify and isolate network and storage resource contention and latency issues&lt;/li>
+&lt;li>Monitor networking and storage resources using vROps alerts and all badges&lt;/li>
+&lt;li>Verify network and storage configuration&lt;/li>
+&lt;li>Verify a given virtual machine is configured with the correct network resources&lt;/li>
+&lt;li>Monitor/Troubleshoot Storage Distributed Resource Scheduler (SDRS) issues&lt;/li>
+&lt;li>Recognize the impact of network and storage I/O control configurations&lt;/li>
+&lt;li>Recognize a connectivity issue caused by a VLAN/PVLAN&lt;/li>
+&lt;li>Troubleshoot common issues with:
+&lt;ul>
+&lt;li>Storage and network&lt;/li>
+&lt;li>Virtual switch and port group configuration&lt;/li>
+&lt;li>Physical network adapter configuration&lt;/li>
+&lt;li>VMFS metadata consistency&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-73-troubleshoot-vsphere-upgrades">Objective 7.3: Troubleshoot vSphere Upgrades&lt;/h4>
+&lt;ul>
+&lt;li>Collect upgrade diagnostic information&lt;/li>
+&lt;li>Recognize common upgrade issues with vCenter Server and vCenter Server Appliance&lt;/li>
+&lt;li>Create/Locate/Analyze VMware log bundles&lt;/li>
+&lt;li>Determine alternative methods to upgrade ESXi Hosts in event of failure&lt;/li>
+&lt;li>Configure vCenter Server logging options&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-74-troubleshoot-and-monitor-vsphere-performance">Objective 7.4: Troubleshoot and Monitor vSphere Performance&lt;/h4>
+&lt;ul>
+&lt;li>Monitor CPU and memory usage (including vRealize OM badges and alerts)&lt;/li>
+&lt;li>Identify and isolate CPU and memory contention issues&lt;/li>
+&lt;li>Recognize impact of using CPU/memory limits, reservations and shares&lt;/li>
+&lt;li>Describe and differentiate critical performance metrics&lt;/li>
+&lt;li>Describe and differentiate common metrics, including:
+&lt;ul>
+&lt;li>Memory&lt;/li>
+&lt;li>CPU&lt;/li>
+&lt;li>Network&lt;/li>
+&lt;li>Storage&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Monitor performance through esxtop&lt;/li>
+&lt;li>Troubleshoot Enhanced vMotion Compatibility (EVC) issues&lt;/li>
+&lt;li>Troubleshoot virtual machine performance with vRealize Operations&lt;/li>
+&lt;li>Compare and contrast Overview and Advanced Charts&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-75-troubleshoot-ha-and-drs-configurations-and-fault-tolerance">Objective 7.5: Troubleshoot HA and DRS Configurations and Fault Tolerance&lt;/h4>
+&lt;ul>
+&lt;li>Troubleshoot issues with:
+&lt;ul>
+&lt;li>DRS workload balancing&lt;/li>
+&lt;li>HA failover/redundancy, capacity and network configuration&lt;/li>
+&lt;li>HA/DRS cluster configuration&lt;/li>
+&lt;li>vMotion/Storage vMotion configuration and/or migration&lt;/li>
+&lt;li>Fault Tolerance configuration and failover issues&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Explain the DRS Resource Distribution Graph and Target/Current Host Load Deviation&lt;/li>
+&lt;li>Explain vMotion Resource Maps&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 8: Deploy and Consolidate vSphere Data Center</title><link>https://davidstamen.com/2015/10/16/section-8-deploy-and-consolidate-vsphere-data-center/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-8-deploy-and-consolidate-vsphere-data-center/</guid><description>&lt;p>Section 8 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-81-deploy-esxi-hosts-using-autodeploy">Objective 8.1: Deploy ESXi Hosts Using Autodeploy&lt;/h4>
+&lt;ul>
+&lt;li>Describe the components and architecture of an Auto Deploy environment&lt;/li>
+&lt;li>Use Auto Deploy Image Builder and PowerCLI scripts&lt;/li>
+&lt;li>Implement Host Profiles with an Auto Deploy of an ESXi Host&lt;/li>
+&lt;li>Install and configure Auto Deploy&lt;/li>
+&lt;li>Understand PowerCLI cmdlets for Auto Deploy&lt;/li>
+&lt;li>Deploy multiple ESXi Hosts using Auto Deploy&lt;/li>
+&lt;li>Given a scenario, explain the Auto Deploy deployment model needed to meet a business requirement&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-82-customize-host-profile-settings">Objective 8.2: Customize Host Profile Settings&lt;/h4>
+&lt;ul>
+&lt;li>Edit answer file to customize ESXi Host settings&lt;/li>
+&lt;li>Modify and apply a storage path selection plugin (PSP) to a device using host profiles&lt;/li>
+&lt;li>Modify and apply switch configurations across multiple hosts using a Host Profile&lt;/li>
+&lt;li>Create/Edit/Remove a Host Profile from an ESXi Host&lt;/li>
+&lt;li>Import/Export a Host Profile&lt;/li>
+&lt;li>Attach and apply a Host Profile to ESXi Hosts in a cluster&lt;/li>
+&lt;li>Perform compliance scanning and remediation of an ESXi Hosts and clusters using Host Profiles&lt;/li>
+&lt;li>Enable or disable Host Profile components&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-83-consolidate-physical-workloads-using-vmware-converter">Objective 8.3: Consolidate Physical Workloads using VMware Converter&lt;/h4>
+&lt;ul>
+&lt;li>Install vCenter Converter standalone instance&lt;/li>
+&lt;li>Convert physical workloads using vCenter Converter&lt;/li>
+&lt;li>Modify server resources during conversion&lt;/li>
+&lt;li>Interpret and correct errors during conversion&lt;/li>
+&lt;li>Deploy a physical host as a virtual machine using vCenter Converter&lt;/li>
+&lt;li>Collect diagnostic information during conversion operation&lt;/li>
+&lt;li>Resize partitions during the conversion process&lt;/li>
+&lt;li>Given a scenario, determine which virtual disk format to use&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Section 9: Configure and Administer vSphere Availability Solutions</title><link>https://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/</link><pubDate>Fri, 16 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/16/section-9-configure-and-administer-vsphere-availability-solutions/</guid><description>&lt;p>Section 9 of the VCP6-DCV blueprint&lt;/p>
+&lt;h4 id="objective-91-configure-advanced-vsphere-ha-features">Objective 9.1: Configure Advanced vSphere HA Features&lt;/h4>
+&lt;ul>
+&lt;li>Modify vSphere HA advanced cluster settings&lt;/li>
+&lt;li>Configure a network for use with HA heartbeats&lt;/li>
+&lt;li>Apply an admission control policy for HA&lt;/li>
+&lt;li>Enable/disable advanced vSphere HA settings&lt;/li>
+&lt;li>Configure different heartbeat datastores for an HA cluster&lt;/li>
+&lt;li>Apply virtual machine monitoring for a cluster&lt;/li>
+&lt;li>Configure Virtual Machine Component Protection (VMCP) settings&lt;/li>
+&lt;li>Implement vSphere HA on a Virtual SAN cluster&lt;/li>
+&lt;li>Explain how vSphere HA communicates with Distributed Resource Scheduler and Distributed Power Management&lt;/li>
+&lt;/ul>
+&lt;h4 id="objective-92-configure-advanced-vsphere-drs-features">Objective 9.2: Configure Advanced vSphere DRS Features&lt;/h4>
+&lt;ul>
+&lt;li>Configure VM-Host affinity/anti-affinity rules&lt;/li>
+&lt;li>Configure VM-VM affinity/anti-affinity rules&lt;/li>
+&lt;li>Add/remove Host DRS Group&lt;/li>
+&lt;li>Add/remove virtual machine DRS Group&lt;/li>
+&lt;li>Enable/disable Distributed Resource Scheduler (DRS) affinity rules&lt;/li>
+&lt;li>Configure the proper Distributed Resource Scheduler (DRS) automation level based on a set of business requirements&lt;/li>
+&lt;li>Explain how DRS affinity rules effect virtual machine placement&lt;/li>
+&lt;/ul>
+&lt;h2 id="check-out-another-blueprint-section">Check out another blueprint section&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>VCP6-DCV Study Guide</title><link>https://davidstamen.com/2015/10/14/vcp6-dcv-study-guide/</link><pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/14/vcp6-dcv-study-guide/</guid><description>&lt;p>About to start to study for the VCP6 once again. So I figured I would start over with the guide as much of the blueprint has changed.&lt;/p>
+&lt;p>As I progress through the sections this page will be updated with new content.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-1-configure-and-administer-vsphere-6x-security/">Section 1: Configure and Administer vSphere 6.x Security&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-2-configure-and-administer-advanced-vsphere-6x-networking/">Section 2: Configure and Administer Advanced vSphere 6.x Networking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-3-configure-and-administer-advanced-vsphere-6x-storage/">Section 3: Configure and Administer Advanced vSphere 6.x Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-4-upgrade-a-vsphere-deployment-to-6x/">Section 4: Upgrade a vSphere Deployment to 6.x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-5-administer-and-manage-vsphere-6x-resources/">Section 5: Administer and Manage vSphere 6.x Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-6-backup-and-recover-a-vsphere-deployment/">Section 6: Backup and Recover a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-7-troubleshoot-a-vsphere-deployment/">Section 7: Troubleshoot a vSphere Deployment&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-8-deploy-and-consolidate-vsphere-data-center/">Section 8: Deploy and Consolidate vSphere Data Center&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-9-configure-and-administer-vsphere-availability-solutions/">Section 9: Configure and Administer vSphere Availability Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://davidstamen.com/certification/section-10-administer-and-manage-vsphere-virtual-machines/">Section 10: Administer and Manage vSphere Virtual Machines&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>VCP6-DCV Delta Exam (Beta) Thoughts</title><link>https://davidstamen.com/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</link><pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/04/27/vcp6-dcv-delta-exam-beta-thoughts/</guid><description>&lt;p>Here is a bit of my experience with the VCP6-DCV Delta beta exam.&lt;/p>
+&lt;h1 id="initial-thoughts">Initial Thoughts&lt;/h1>
+&lt;p>Today I sat and took the VCP6-DCV Delta Exam beta. I have never taken a VMware beta exam so I wasn&amp;rsquo;t quite sure what to expect, from what I have been told, I expected lots of questions with bad grammar and horrible spelling. However today I got something a bit different. Ill explain it best without violating any NDA.&lt;/p></description></item><item><title>VCP6-DCV Beta Exam</title><link>https://davidstamen.com/2015/04/01/vcp6-dcv-beta-exam/</link><pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/04/01/vcp6-dcv-beta-exam/</guid><description>&lt;p>VMware has announced &lt;a href="https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;ui=www_cert">https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64178&amp;amp;ui=www_cert&lt;/a> the availability of the VCP6-DCV beta exams. The beta exam includes 3 seperate exams. If you are currently an active VCP you can either take the VCP6-DCV or VCP6-DCV Delta exam, and if you are currently not certified you are required to take the vSphere 6 Foundations and VCP6-DCV to obtain the certification.&lt;/p>
+&lt;p>&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-04-01-at-7.56.14-PM.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-04-01-at-7.56.28-PM.png" alt="">&lt;/p>
+&lt;p>&lt;a href="https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64179&amp;amp;ui=www_cert">vSphere 6 Foundations&lt;/a> : Exam code: 2V0-620&lt;/p>
+&lt;p>&lt;a href="https://mylearn.vmware.com/mgrReg/plan.cfm?plan=64180&amp;amp;ui=www_cert">VCP6-DCV&lt;/a> : Exam Code: 2V0-621&lt;/p></description></item></channel></rss>
