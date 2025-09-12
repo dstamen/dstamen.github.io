@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trend Micro on davidstamen</title><link>https://davidstamen.com/categories/trend-micro/</link><description>Recent content in Trend Micro on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 19 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/categories/trend-micro/index.xml" rel="self" type="application/rss+xml"/><item><title>Updating Trend Micro Deep Security Manager Certificate</title><link>https://davidstamen.com/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</link><pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</guid><description>&lt;p>So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.&lt;/p>
-&lt;ol>
-&lt;li>Stop the “Trend Micro Deep Security Manager” service&lt;/li>
-&lt;li>If not already created, create a folder on the root of C:\ called “certs”&lt;/li>
-&lt;li>Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore”&lt;/li>
-&lt;li>Copy .keystore and configuration.properties to Backupkeystore folder&lt;/li>
-&lt;li>Open administrative command line &amp;amp; change directory to “C:\Program Files \Trend Mirco\Deep Security Manager\jre\bin\”&lt;/li>
-&lt;li>Run this command “keytool -genkey -alias tomcat -keyalg RSA -dname cn=(FQDN of Server)”.
-This will create a “.keystore” file under the C:\Users\ directory&lt;/li>
-&lt;li>When prompted for password enter a password for the keystore.&lt;/li>
-&lt;li>Run this command “keytool -certreq -keyalg RSA -alias tomcat -file certrequest.txt”&lt;/li>
-&lt;li>When prompted for password use same password as entered in step 6.&lt;/li>
-&lt;li>Open the certrequest.txt located in C:\Program Files \Trend Micro\Deep Security Manager\jre\bin\ and copy the contents of the file.&lt;/li>
-&lt;li>Access the CA server site &lt;a href="https://certsrv">https://certsrv&lt;/a> and click “Request a certificate”.&lt;/li>
-&lt;li>Select “advanced certificate request”&lt;/li>
-&lt;li>Select “Submit a certificate request by using a base-64-encoded CMC or PKCS #10 file, or submit a renewal request by using a base-64-encoded PKCS #7 file”&lt;/li>
-&lt;li>Paste copied text from certrequest.txt in “Base-64-encoded certificate request” field, select “Web Server” under Certificate Template and enter Subject Alternative Names under Additional Attributes using the following format: “san:dns=&amp;amp;dns=” and click “Submit.”&lt;/li>
-&lt;li>Click “Download certificate chain” and save as “trend.p7b” in the certs folder on the C: drive&lt;/li>
-&lt;li>From administrative command prompt run this command “keytool -import -trustcacerts -alias tomcat -file C:\certs\trend.p7b -keystore C:\Users\.keystore”&lt;/li>
-&lt;li>When prompted for password use same password as entered in step 6.&lt;/li>
-&lt;li>When prompted to “Install reply anyway”, type “yes”&lt;/li>
-&lt;li>Copy .keystore from C:\Users%username%\ and paste it into C:\Program Files \Trend Micro\Deep Security Manager&lt;/li>
-&lt;li>From administrative command prompt change directories to C:\Program Files \Trend Micro\Deep Security Manager and run this command “.\configuration.properties”. This will open the configuration.properties in notepad.&lt;/li>
-&lt;li>Look for the line keystorePass= and delete the entry after the = symbol, enter the password used in step 6 after the = and save and close the file.&lt;/li>
-&lt;li>Restart the “Trend Micro Deep Security Manager” service&lt;/li>
-&lt;/ol></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trend Micro on davidstamen</title><link>https://davidstamen.com/categories/trend-micro/</link><description>Recent content in Trend Micro on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 19 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/categories/trend-micro/index.xml" rel="self" type="application/rss+xml"/><item><title>Updating Trend Micro Deep Security Manager Certificate</title><link>https://davidstamen.com/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</link><pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/12/19/updating-trend-micro-deep-security-manager-certificate/</guid><description>&lt;p&gt;So going though v7, v8 and v9 of the certificate guides I continued to have some issues getting the certificate to work and the steps never included ways to add subject alternative names. Upon further research I have identified a good step by step to replace the trend micro DSM certificate and include subject alternative names using a Microsoft certificate authority.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the “Trend Micro Deep Security Manager” service&lt;/li&gt;
+&lt;li&gt;If not already created, create a folder on the root of C:\ called “certs”&lt;/li&gt;
+&lt;li&gt;Go to C:\Program Files\Trend Micro\Deep Security Manager and create a new folder called “Backupkeystore”&lt;/li&gt;
+&lt;li&gt;Copy .keystore and configuration.properties to Backupkeystore folder&lt;/li&gt;
+&lt;li&gt;Open administrative command line &amp;amp; change directory to “C:\Program Files \Trend Mirco\Deep Security Manager\jre\bin\”&lt;/li&gt;
+&lt;li&gt;Run this command “keytool -genkey -alias tomcat -keyalg RSA -dname cn=(FQDN of Server)”.
+This will create a “.keystore” file under the C:\Users\ directory&lt;/li&gt;
+&lt;li&gt;When prompted for password enter a password for the keystore.&lt;/li&gt;
+&lt;li&gt;Run this command “keytool -certreq -keyalg RSA -alias tomcat -file certrequest.txt”&lt;/li&gt;
+&lt;li&gt;When prompted for password use same password as entered in step 6.&lt;/li&gt;
+&lt;li&gt;Open the certrequest.txt located in C:\Program Files \Trend Micro\Deep Security Manager\jre\bin\ and copy the contents of the file.&lt;/li&gt;
+&lt;li&gt;Access the CA server site &lt;a href="https://certsrv"&gt;https://certsrv&lt;/a&gt; and click “Request a certificate”.&lt;/li&gt;
+&lt;li&gt;Select “advanced certificate request”&lt;/li&gt;
+&lt;li&gt;Select “Submit a certificate request by using a base-64-encoded CMC or PKCS #10 file, or submit a renewal request by using a base-64-encoded PKCS #7 file”&lt;/li&gt;
+&lt;li&gt;Paste copied text from certrequest.txt in “Base-64-encoded certificate request” field, select “Web Server” under Certificate Template and enter Subject Alternative Names under Additional Attributes using the following format: “san:dns=&amp;amp;dns=” and click “Submit.”&lt;/li&gt;
+&lt;li&gt;Click “Download certificate chain” and save as “trend.p7b” in the certs folder on the C: drive&lt;/li&gt;
+&lt;li&gt;From administrative command prompt run this command “keytool -import -trustcacerts -alias tomcat -file C:\certs\trend.p7b -keystore C:\Users\.keystore”&lt;/li&gt;
+&lt;li&gt;When prompted for password use same password as entered in step 6.&lt;/li&gt;
+&lt;li&gt;When prompted to “Install reply anyway”, type “yes”&lt;/li&gt;
+&lt;li&gt;Copy .keystore from C:\Users%username%\ and paste it into C:\Program Files \Trend Micro\Deep Security Manager&lt;/li&gt;
+&lt;li&gt;From administrative command prompt change directories to C:\Program Files \Trend Micro\Deep Security Manager and run this command “.\configuration.properties”. This will open the configuration.properties in notepad.&lt;/li&gt;
+&lt;li&gt;Look for the line keystorePass= and delete the entry after the = symbol, enter the password used in step 6 after the = and save and close the file.&lt;/li&gt;
+&lt;li&gt;Restart the “Trend Micro Deep Security Manager” service&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

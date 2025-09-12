@@ -1,64 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Horizon View on davidstamen</title><link>https://davidstamen.com/tags/horizon-view/</link><description>Recent content in Horizon View on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 11 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/horizon-view/index.xml" rel="self" type="application/rss+xml"/><item><title>Reusing Horizon View Desktop Names</title><link>https://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/</guid><description>&lt;p>Have you ever worked with a Horizon View pool with 10 VM&amp;rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.&lt;/p>
-&lt;p>First you will need to connect to the ADAM database on one of your servers. Use &lt;a href="http://kb.vmware.com/kb/2012377">KB2012377&lt;/a> for instructions.&lt;/p>
-&lt;p>To connect to the View ADAM database:&lt;/p>
-&lt;ul>
-&lt;li>Log in to one of the View Connection Servers as Domain Administrator.&lt;/li>
-&lt;li>Click Start &amp;gt; Administrative Tools &amp;gt; ADSI Edit.&lt;/li>
-&lt;li>In the console window, right-click ADSI Edit and click Connect to.&lt;/li>
-&lt;li>In the Name field type:
-&lt;ul>
-&lt;li>View ADAM Database&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Select Select or type a Distinguished Name or Naming Context.&lt;/li>
-&lt;li>In the field below Select or type a Distinguished Name or Naming Context, type:
-&lt;ul>
-&lt;li>dc=vdi,dc=vmware,dc=int&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Select Select or type a domain or server.&lt;/li>
-&lt;li>In the field below Select or type a domain or server, type:
-&lt;ul>
-&lt;li>localhost:389&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Click OK.&lt;/li>
-&lt;li>Click View ADAM Database [localhost:389] to expand.&lt;/li>
-&lt;li>Click DC=vdi,dc=vmware,dc=int to expand.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://davidstamen.com/images/viewadamconnectionsettings.png" alt="">&lt;/p></description></item><item><title>Indexing your Horizon View Database</title><link>https://davidstamen.com/2015/09/30/indexing-your-horizon-view-database/</link><pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/30/indexing-your-horizon-view-database/</guid><description>&lt;p>I am currently troubleshooting some issues with the Horizon event database having some performance issues. Working with support they pointed me to &lt;a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2094580">KB2094580.&lt;/a>&lt;/p>
-&lt;p>By Default the view event database is not indexed. I was curious as to way I always had issues pulling up events in the Horizon View Administrative interface, but as soon as I followed the steps, it was almost immediate now, where i use to have to wait an extremely long time.&lt;/p></description></item><item><title>Upgrading Horizon View Linux Desktop</title><link>https://davidstamen.com/2015/09/24/upgrading-horizon-view-linux-desktop/</link><pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/24/upgrading-horizon-view-linux-desktop/</guid><description>&lt;p>Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.&lt;/p>
-&lt;p>Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.&lt;/p>
-&lt;p>If you followed my [previous]({{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/) post to disable Console access. Go ahead and shutdown the desktop and change it back to &lt;strong>1&lt;/strong> to enable console, or you can do this all via &lt;strong>SSH&lt;/strong> as well.&lt;/p></description></item><item><title>Enabling Biometrics in Horizon View 6.2</title><link>https://davidstamen.com/2015/09/16/enabling-biometrics-in-horizon-view-62/</link><pubDate>Wed, 16 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/16/enabling-biometrics-in-horizon-view-62/</guid><description>&lt;p>Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.&lt;/p>
-&lt;p>This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.&lt;/p>
-&lt;p>&lt;a href="https://pubs.vmware.com/horizon-62-view/index.jsp#com.vmware.horizon-view.administration.doc/GUID-02404EBB-0578-4046-93A6-D57CABA1A8F9.html?resultof=%2522%2562%2569%256f%256d%2565%2574%2572%2569%2563%2522%2520%2522%2562%2569%256f%256d%2565%2574%2572%2522%2520">Here&lt;/a> is a link to the current VMware documentation.&lt;/p>
-&lt;p>&lt;strong>NOTE:&lt;/strong> This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.&lt;/p></description></item><item><title>Upgrading Horizon View 6.1 to 6.2</title><link>https://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/</link><pubDate>Wed, 16 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/</guid><description>&lt;p>I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!&lt;/p>
-&lt;p>First download the bits from &lt;a href="https://my.vmware.com/group/vmware/info/slug/desktop_end_user_computing/vmware_horizon_6/6_2">here.&lt;/a>&lt;/p>
-&lt;p>The upgrade documentation can also be found &lt;a href="https://pubs.vmware.com/horizon-62-view/topic/com.vmware.ICbase/PDF/view-62-upgrades.pdf">here.&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Warning:&lt;/strong> In my environment I do not have a composer server, if you had one this would be upgraded first
-The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.&lt;/p>
-&lt;ul>
-&lt;li>Log on to your connection server and launch the executable.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://davidstamen.com/images/viewcs1.png" alt="">&lt;/p></description></item><item><title>Horizon View - Block Linux VDI Console Access</title><link>https://davidstamen.com/2015/07/23/horizon-view-block-linux-vdi-console-access/</link><pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/07/23/horizon-view-block-linux-vdi-console-access/</guid><description>&lt;p>So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.&lt;/p>
-&lt;p>Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.&lt;/p></description></item><item><title>HTML Based Published Apps with Horizon View 6.1.1</title><link>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</guid><description>&lt;p>So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.&lt;/p>
-&lt;p>I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.&lt;/p>
-&lt;ol>
-&lt;li>Install/Update Agents on virtual desktops to 6.1.1 &lt;strong>(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li>
-&lt;li>Install/Update Agents on RDS servers to 6.1.1&lt;/li>
-&lt;li>Install the HTML Access 3.4 to all your connection servers within the appropriate enviroment if load balanced&lt;/li>
-&lt;li>Now you can logon to your HTML Client and look for your published apps&amp;hellip;.however you will see that they are missing&amp;hellip;.looking into the actual guide for the html access there is an additional step.&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>&lt;a href="https://www.vmware.com/pdf/horizon-view/horizon-html-access-3x-document.pdf">HTML Access Guide&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;ol start="5">
-&lt;li>Log on to a connection server running 6.1.1 (If you are in a mixed enviroment this change cannot be made on a previous version.&lt;/li>
-&lt;li>Navigate to Farms and then edit each RDS farm to enable HTML Access.
-&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-06-10-at-10.53.53-AM.png#center" alt="">&lt;/li>
-&lt;li>Voila you now have access to all your applications via the HTML client with a fancy new interface!
-&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-06-10-at-10.43.23-AM-1024x362.png#center" alt="">&lt;/li>
-&lt;/ol></description></item><item><title>Unable to Configure Event Database in vRealize Operations View Broker Agent</title><link>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</link><pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</guid><description>&lt;p>I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&amp;rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. &lt;strong>FAILED (Format of the initialization string does not conform to specification starting at index 88.)&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://davidstamen.com/images/vROeventdb.png" alt="">&lt;/p>
-&lt;p>I knew it wasn&amp;rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&amp;rsquo;t like certain characters in passwords.&lt;/p></description></item><item><title>Horizon View 6 - Single Sign On with Published Applications</title><link>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</link><pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</guid><description>&lt;p>So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.&lt;/p>
-&lt;p>Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Horizon View on davidstamen</title><link>https://davidstamen.com/tags/horizon-view/</link><description>Recent content in Horizon View on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 11 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/tags/horizon-view/index.xml" rel="self" type="application/rss+xml"/><item><title>Reusing Horizon View Desktop Names</title><link>https://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/11/11/reusing-horizon-view-desktop-names/</guid><description>&lt;p&gt;Have you ever worked with a Horizon View pool with 10 VM&amp;rsquo;s and deleted 3 and it recreated as 11? May want to pay attention to learn how you can reuse view desktop names.&lt;/p&gt;
+&lt;p&gt;First you will need to connect to the ADAM database on one of your servers. Use &lt;a href="http://kb.vmware.com/kb/2012377"&gt;KB2012377&lt;/a&gt; for instructions.&lt;/p&gt;
+&lt;p&gt;To connect to the View ADAM database:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Log in to one of the View Connection Servers as Domain Administrator.&lt;/li&gt;
+&lt;li&gt;Click Start &amp;gt; Administrative Tools &amp;gt; ADSI Edit.&lt;/li&gt;
+&lt;li&gt;In the console window, right-click ADSI Edit and click Connect to.&lt;/li&gt;
+&lt;li&gt;In the Name field type:
+&lt;ul&gt;
+&lt;li&gt;View ADAM Database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Select Select or type a Distinguished Name or Naming Context.&lt;/li&gt;
+&lt;li&gt;In the field below Select or type a Distinguished Name or Naming Context, type:
+&lt;ul&gt;
+&lt;li&gt;dc=vdi,dc=vmware,dc=int&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Select Select or type a domain or server.&lt;/li&gt;
+&lt;li&gt;In the field below Select or type a domain or server, type:
+&lt;ul&gt;
+&lt;li&gt;localhost:389&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Click OK.&lt;/li&gt;
+&lt;li&gt;Click View ADAM Database [localhost:389] to expand.&lt;/li&gt;
+&lt;li&gt;Click DC=vdi,dc=vmware,dc=int to expand.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://davidstamen.com/images/viewadamconnectionsettings.png" alt=""&gt;&lt;/p&gt;</description></item><item><title>Indexing your Horizon View Database</title><link>https://davidstamen.com/2015/09/30/indexing-your-horizon-view-database/</link><pubDate>Wed, 30 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/30/indexing-your-horizon-view-database/</guid><description>&lt;p&gt;I am currently troubleshooting some issues with the Horizon event database having some performance issues. Working with support they pointed me to &lt;a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2094580"&gt;KB2094580.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By Default the view event database is not indexed. I was curious as to way I always had issues pulling up events in the Horizon View Administrative interface, but as soon as I followed the steps, it was almost immediate now, where i use to have to wait an extremely long time.&lt;/p&gt;</description></item><item><title>Upgrading Horizon View Linux Desktop</title><link>https://davidstamen.com/2015/09/24/upgrading-horizon-view-linux-desktop/</link><pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/24/upgrading-horizon-view-linux-desktop/</guid><description>&lt;p&gt;Horizon 6.2 is now available and Linux support has improved. Previously it was only supported on a limited set of older operating systems.&lt;/p&gt;
+&lt;p&gt;Originally when we deployed we had deployed Ubuntu 12.04, however now the newer kernel 14.04 is supported so I will show you how to upgrade your desktop to the latest version and now use the new agent as well.&lt;/p&gt;
+&lt;p&gt;If you followed my [previous]({{ site.url }}/horizon%20view/horizon-view-block-linux-vdi-console-access/) post to disable Console access. Go ahead and shutdown the desktop and change it back to &lt;strong&gt;1&lt;/strong&gt; to enable console, or you can do this all via &lt;strong&gt;SSH&lt;/strong&gt; as well.&lt;/p&gt;</description></item><item><title>Enabling Biometrics in Horizon View 6.2</title><link>https://davidstamen.com/2015/09/16/enabling-biometrics-in-horizon-view-62/</link><pubDate>Wed, 16 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/16/enabling-biometrics-in-horizon-view-62/</guid><description>&lt;p&gt;Horizon 6.2 Introduced Biometric Authentication, with initial support for TouchID on IOS devices.&lt;/p&gt;
+&lt;p&gt;This post will explain how to enable it, as its not really something greatly documented right now. I think they are aware and hopefully in a future update this will be easier.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pubs.vmware.com/horizon-62-view/index.jsp#com.vmware.horizon-view.administration.doc/GUID-02404EBB-0578-4046-93A6-D57CABA1A8F9.html?resultof=%2522%2562%2569%256f%256d%2565%2574%2572%2569%2563%2522%2520%2522%2562%2569%256f%256d%2565%2574%2572%2522%2520"&gt;Here&lt;/a&gt; is a link to the current VMware documentation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This feature does require a 3rd party trusted signed certificate to work. From my current testing and speaking with others self-signed certificates will not function.&lt;/p&gt;</description></item><item><title>Upgrading Horizon View 6.1 to 6.2</title><link>https://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/</link><pubDate>Wed, 16 Sep 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/09/16/upgrading-horizon-view-61-to-62/</guid><description>&lt;p&gt;I had the opportunity to upgrade my Horizon View environment from 6.1 to 6.2. As always VMware has made this very easy!&lt;/p&gt;
+&lt;p&gt;First download the bits from &lt;a href="https://my.vmware.com/group/vmware/info/slug/desktop_end_user_computing/vmware_horizon_6/6_2"&gt;here.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The upgrade documentation can also be found &lt;a href="https://pubs.vmware.com/horizon-62-view/topic/com.vmware.ICbase/PDF/view-62-upgrades.pdf"&gt;here.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; In my environment I do not have a composer server, if you had one this would be upgraded first
+The upgrade order is as follows. Composer Server, Connection Servers and then Security Servers.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Log on to your connection server and launch the executable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://davidstamen.com/images/viewcs1.png" alt=""&gt;&lt;/p&gt;</description></item><item><title>Horizon View - Block Linux VDI Console Access</title><link>https://davidstamen.com/2015/07/23/horizon-view-block-linux-vdi-console-access/</link><pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/07/23/horizon-view-block-linux-vdi-console-access/</guid><description>&lt;p&gt;So I have had some time to play around with the new Linux Horizon View Agent and using Ubuntu as a VDI guest and it works pretty well. However as most of us have seen, when a user is logged onto the guest the screen is shown in the console. In some organizations this may pose a privacy or security risk.&lt;/p&gt;
+&lt;p&gt;Right now there is no true workaround as that is how the view session is handled, however there is a workaround to disable console access.&lt;/p&gt;</description></item><item><title>HTML Based Published Apps with Horizon View 6.1.1</title><link>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/06/10/html-based-published-apps-with-horizon-view-6-1-1/</guid><description>&lt;p&gt;So Horizon View 6.1.1 was released recently with added support for published applications to finally be accessible via the HTML client. The process is pretty straightforward, however I came across one hiccup I wanted to share.&lt;/p&gt;
+&lt;p&gt;I am assuming you have already upgraded your View Composer, Connection and Security Servers and are now focused on getting the agents up to date.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install/Update Agents on virtual desktops to 6.1.1 &lt;strong&gt;(The HTML Access 3.4 client will not work with previous agent versions)&lt;/li&gt;
+&lt;li&gt;Install/Update Agents on RDS servers to 6.1.1&lt;/li&gt;
+&lt;li&gt;Install the HTML Access 3.4 to all your connection servers within the appropriate enviroment if load balanced&lt;/li&gt;
+&lt;li&gt;Now you can logon to your HTML Client and look for your published apps&amp;hellip;.however you will see that they are missing&amp;hellip;.looking into the actual guide for the html access there is an additional step.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.vmware.com/pdf/horizon-view/horizon-html-access-3x-document.pdf"&gt;HTML Access Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;Log on to a connection server running 6.1.1 (If you are in a mixed enviroment this change cannot be made on a previous version.&lt;/li&gt;
+&lt;li&gt;Navigate to Farms and then edit each RDS farm to enable HTML Access.
+&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-06-10-at-10.53.53-AM.png#center" alt=""&gt;&lt;/li&gt;
+&lt;li&gt;Voila you now have access to all your applications via the HTML client with a fancy new interface!
+&lt;img src="https://davidstamen.com/images/Screen-Shot-2015-06-10-at-10.43.23-AM-1024x362.png#center" alt=""&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Unable to Configure Event Database in vRealize Operations View Broker Agent</title><link>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</link><pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/02/06/unable-to-configure-event-database-in-vrealize-operations-view-broker-agent/</guid><description>&lt;p&gt;I was in the process of getting vRealize for Horizon configured, and as I was going through the broker agent configuration for the life of me I couldn&amp;rsquo;t get the eventdb portion to work. Everytime i entered in the user name and password, I would receive the following error. &lt;strong&gt;FAILED (Format of the initialization string does not conform to specification starting at index 88.)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://davidstamen.com/images/vROeventdb.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;I knew it wasn&amp;rsquo;t a password issue as I was able to logon to SQL Manager with no issue, and the Horizon View EventsDB was working fine, so I went on a google search to try to hunt through logs. SQL Server was reporting i was entering the wrong password which made me think. In past issues some applications haven&amp;rsquo;t like certain characters in passwords.&lt;/p&gt;</description></item><item><title>Horizon View 6 - Single Sign On with Published Applications</title><link>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</link><pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</guid><description>&lt;p&gt;So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.&lt;/p&gt;
+&lt;p&gt;Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.&lt;/p&gt;</description></item></channel></rss>

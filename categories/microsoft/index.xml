@@ -1,66 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Microsoft on davidstamen</title><link>https://davidstamen.com/categories/microsoft/</link><description>Recent content in Microsoft on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 01 Sep 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/categories/microsoft/index.xml" rel="self" type="application/rss+xml"/><item><title>Build and Publish a Powershell Module to the Powershell Gallery</title><link>https://davidstamen.com/2022/09/01/build-and-publish-a-powershell-module-to-the-powershell-gallery/</link><pubDate>Thu, 01 Sep 2022 12:00:00 +0000</pubDate><guid>https://davidstamen.com/2022/09/01/build-and-publish-a-powershell-module-to-the-powershell-gallery/</guid><description>&lt;p>In this blog we will dive into what is a Powershell Module, how its changed and then what can we do to build and publish the module to the Powershell Gallery. I recently did this presentation again at VMworld Explore 2022 and it was a hit, so I figured its finally time to get it here on the blog so it can be referenced and viewed year round.&lt;/p></description></item><item><title>Using Powershell to Create Windows SMB Shares</title><link>https://davidstamen.com/2016/08/09/using-powershell-to-create-windows-smb-shares/</link><pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/08/09/using-powershell-to-create-windows-smb-shares/</guid><description>&lt;p>I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.&lt;/p>
-&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
-&lt;ul>
-&lt;li>&lt;a href="https://gallery.technet.microsoft.com/scriptcenter/1abd77a5-9c0b-4a2b-acef-90dbb2b84e85">NTFS Security Module&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h4 id="link-to-script">&lt;em>&lt;strong>Link to Script&lt;/strong>&lt;/em>&lt;/h4>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/dstamen/Powershell/blob/master/Create-SMBShare.ps1">Create-SMBShare.ps1&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
-&lt;p>Fill in the appropriate variables, and execute the script.&lt;/p></description></item><item><title>Using Ansible to Run Powershell Scripts</title><link>https://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</link><pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</guid><description>&lt;p>In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.&lt;/p>
-&lt;h4 id="pre-requsites">&lt;em>&lt;strong>Pre-Requsites&lt;/strong>&lt;/em>&lt;/h4>
-&lt;ul>
-&lt;li>&lt;a href="http://docs.ansible.com/ansible/intro_installation.html">ansible&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm">ansible-winrm&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h4 id="link-to-git-project">&lt;em>&lt;strong>Link to Git Project&lt;/strong>&lt;/em>&lt;/h4>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/dstamen/Ansible/tree/master/ansible_powershell">ansible_powershell&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h4 id="preparing-to-execute-the-script">&lt;em>&lt;strong>Preparing to Execute the Script&lt;/strong>&lt;/em>&lt;/h4>
-&lt;p>&lt;em>This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.&lt;/em>&lt;/p>
-&lt;p>Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p></description></item><item><title>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</title><link>https://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</link><pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid><description>&lt;p>So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.&lt;/p>
-&lt;p>I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.&lt;/p>
-&lt;p>&lt;a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp">Here&lt;/a> is a link to the &lt;strong>GitHub&lt;/strong> repository containing all the code.&lt;/p>
-&lt;p>The code is also fairly simple, it pulls in data from a few .CSV files and deploy&amp;rsquo;s the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.&lt;/p></description></item><item><title>Identify DirSync Distribution Groups in Office365</title><link>https://davidstamen.com/2014/11/19/identity-dirsync-distribution-groups-in-office365/</link><pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/11/19/identity-dirsync-distribution-groups-in-office365/</guid><description>&lt;p>So after recently implementing directory sync i wanted to make sure any new groups were properly set up in active directory.&lt;/p>
-&lt;p>Unfortunately i was unable to find any commands so thanks to MS Support I was able to find a way to identify these. You would think it would be under Get-DistributionGroup but it is actually under Get-MSolGroup. After connecting via remote powershell you can run the below command to see all that are not synced.&lt;/p></description></item><item><title>Horizon View 6 - Single Sign On with Published Applications</title><link>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</link><pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</guid><description>&lt;p>So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.&lt;/p>
-&lt;p>Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.&lt;/p></description></item><item><title>Office 365/Exchange EAC Pop Ups not working with Chrome 37</title><link>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</link><pubDate>Thu, 16 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</guid><description>&lt;p>Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.&lt;/p>
-&lt;p>Download the Chrome Policy Plugin &lt;a href="http://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">here&lt;/a>&lt;/p>
-&lt;ol>
-&lt;li>Open the zip file you just downloaded and locate the .ADM file that best matches your system:&lt;/li>
-&lt;li>Extract the .ADM file to any folder on your hard drive&lt;/li>
-&lt;li>Go to Start &amp;gt; Run, and run gpedit.msc&lt;/li>
-&lt;li>Right-click Local Computer Policy &amp;gt; Computer Configuration &amp;gt; Administrative Templates, and select Add/Remove Templates:&lt;/li>
-&lt;li>Add the adm template that you saved to disk earlier:&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>You should now see the template underneath a Google &amp;gt; Google Chrome section within Administrative Templates&lt;/li>
-&lt;li>
-&lt;ol start="2">
-&lt;li>Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;/ul>
-&lt;ol start="6">
-&lt;li>Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.&lt;/li>
-&lt;/ul>
-&lt;ol start="7">
-&lt;li>In the new screen that appears, click the Enabled radio button:&lt;/li>
-&lt;li>In the Options section of the same screen, click the Show… button&lt;/li>
-&lt;li>On the new screen that appears, type ShowModalDialog_EffectiveUntil20150430 into the first cell of the table that’s displayed and hit ENTER:
--IMPORTANT NOTE: Make sure there are no spaces either before or after the ShowModalDialog_EffectiveUntil20150430 Otherwise, Chrome will reject the setting (see the Troubleshooting section for more information).&lt;/li>
-&lt;li>Click OK&lt;/li>
-&lt;li>To verify that this policy has taken effect, navigate to the following URL in Chrome: chrome://policy&lt;/li>
-&lt;li>If everything is set up correctly, you should see a screen like the following&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://davidstamen.com/images/chromemodal.jpg" alt="">&lt;/p></description></item><item><title>Unable to Install .NET 3.5 on Server 2012R2</title><link>https://davidstamen.com/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</guid><description>&lt;p>So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&amp;rsquo;s and copied the files locally.&lt;/p>
-&lt;p>&lt;img src="https://davidstamen.com/images/dotneterror.jpg" alt="">&lt;/p>
-&lt;p>Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. &lt;a href="http://support.microsoft.com/kb/2734782%22%3Ehttp://support.microsoft.com/kb/2734782">KB2734782&lt;/a>&lt;/p>
-&lt;h3 id="here-are-the-full-steps-i-followed-to-get-net-installed">Here are the full steps I followed to get .NET installed.&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>Open &lt;strong>gpedit.msc&lt;/strong> to modify your local group policy.&lt;/p></description></item><item><title>Blocking Attachments With Executable Content</title><link>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</guid><description>&lt;p>I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Microsoft on davidstamen</title><link>https://davidstamen.com/categories/microsoft/</link><description>Recent content in Microsoft on davidstamen</description><generator>Hugo</generator><language>en</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 01 Sep 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://davidstamen.com/categories/microsoft/index.xml" rel="self" type="application/rss+xml"/><item><title>Build and Publish a Powershell Module to the Powershell Gallery</title><link>https://davidstamen.com/2022/09/01/build-and-publish-a-powershell-module-to-the-powershell-gallery/</link><pubDate>Thu, 01 Sep 2022 12:00:00 +0000</pubDate><guid>https://davidstamen.com/2022/09/01/build-and-publish-a-powershell-module-to-the-powershell-gallery/</guid><description>&lt;p&gt;In this blog we will dive into what is a Powershell Module, how its changed and then what can we do to build and publish the module to the Powershell Gallery. I recently did this presentation again at VMworld Explore 2022 and it was a hit, so I figured its finally time to get it here on the blog so it can be referenced and viewed year round.&lt;/p&gt;</description></item><item><title>Using Powershell to Create Windows SMB Shares</title><link>https://davidstamen.com/2016/08/09/using-powershell-to-create-windows-smb-shares/</link><pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/08/09/using-powershell-to-create-windows-smb-shares/</guid><description>&lt;p&gt;I have been knee deep in migrations, so after clicking through a few times to create clustered file shares, I finally decided to script them. Here is that script I thought I would share. Thanksfully there was the NTFSSecurity module published by microsoft that makes permissions a breeze. You can get more details by viewing the module page.&lt;/p&gt;
+&lt;h4 id="pre-requsites"&gt;&lt;em&gt;&lt;strong&gt;Pre-Requsites&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gallery.technet.microsoft.com/scriptcenter/1abd77a5-9c0b-4a2b-acef-90dbb2b84e85"&gt;NTFS Security Module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="link-to-script"&gt;&lt;em&gt;&lt;strong&gt;Link to Script&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/dstamen/Powershell/blob/master/Create-SMBShare.ps1"&gt;Create-SMBShare.ps1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="preparing-to-execute-the-script"&gt;&lt;em&gt;&lt;strong&gt;Preparing to Execute the Script&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Fill in the appropriate variables, and execute the script.&lt;/p&gt;</description></item><item><title>Using Ansible to Run Powershell Scripts</title><link>https://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</link><pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2016/02/04/using-ansible-to-run-powershell-scripts/</guid><description>&lt;p&gt;In the midst of playing with Ansible and figured my most common use case would be executing powershell scripts on remote servers, so scavenged around and put this together.&lt;/p&gt;
+&lt;h4 id="pre-requsites"&gt;&lt;em&gt;&lt;strong&gt;Pre-Requsites&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.ansible.com/ansible/intro_installation.html"&gt;ansible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm"&gt;ansible-winrm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="link-to-git-project"&gt;&lt;em&gt;&lt;strong&gt;Link to Git Project&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/dstamen/Ansible/tree/master/ansible_powershell"&gt;ansible_powershell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="preparing-to-execute-the-script"&gt;&lt;em&gt;&lt;strong&gt;Preparing to Execute the Script&lt;/strong&gt;&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;This script assumes you have already installed and configured Ansible, downloaded the Git Repo and installed the WinRM python module.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Define your group variables. Create a hostgroup.yml file in this folder. This is where you specify the username, password and WinRM port to use. This file should mimit the host group defined in your hosts file.&lt;/p&gt;</description></item><item><title>Using Vagrant to Deploy a 2012R2 DHCP Failover Cluster</title><link>https://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</link><pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2015/10/01/using-vagrant-to-deploy-a-2012r2-dhcp-failover-cluster/</guid><description>&lt;p&gt;So I am in the process of rolling out a new 2012R2 DHCP Server Cluster, and I thought i would share my scripts with the community.&lt;/p&gt;
+&lt;p&gt;I have also rolled it into a Vagrant package so you can easily test it on your own, and execute the scripts by themselves against your environment to deploy.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/dstamen/Vagrant/tree/master/windows-failoverdhcp"&gt;Here&lt;/a&gt; is a link to the &lt;strong&gt;GitHub&lt;/strong&gt; repository containing all the code.&lt;/p&gt;
+&lt;p&gt;The code is also fairly simple, it pulls in data from a few .CSV files and deploy&amp;rsquo;s the servers, installs the roles, creates the scopes, creates MAC Address allow policies and then creates a couple reservations.&lt;/p&gt;</description></item><item><title>Identify DirSync Distribution Groups in Office365</title><link>https://davidstamen.com/2014/11/19/identity-dirsync-distribution-groups-in-office365/</link><pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/11/19/identity-dirsync-distribution-groups-in-office365/</guid><description>&lt;p&gt;So after recently implementing directory sync i wanted to make sure any new groups were properly set up in active directory.&lt;/p&gt;
+&lt;p&gt;Unfortunately i was unable to find any commands so thanks to MS Support I was able to find a way to identify these. You would think it would be under Get-DistributionGroup but it is actually under Get-MSolGroup. After connecting via remote powershell you can run the below command to see all that are not synced.&lt;/p&gt;</description></item><item><title>Horizon View 6 - Single Sign On with Published Applications</title><link>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</link><pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/29/horizon-view-6-single-sign-on-with-published-applications/</guid><description>&lt;p&gt;So I have been working in a few situations where i have wanted to use Horizon 6 published (RDS) applications but having to either launch the Horizon View client within a VDI or have users be forced to logon again has been a deal breaker.&lt;/p&gt;
+&lt;p&gt;Upon further research i finally found the right combination of settings to allow users to launch the RDS Hosted Applications via a Shortcut and automatically login to the view client making this process seamless.&lt;/p&gt;</description></item><item><title>Office 365/Exchange EAC Pop Ups not working with Chrome 37</title><link>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</link><pubDate>Thu, 16 Oct 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/10/16/office-365exchange-eac-pop-ups-not-working-with-chrome-37/</guid><description>&lt;p&gt;Chrome depreciated one of the features that allowed these popups to work, here is a temporary workaround to get it working.&lt;/p&gt;
+&lt;p&gt;Download the Chrome Policy Plugin &lt;a href="http://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the zip file you just downloaded and locate the .ADM file that best matches your system:&lt;/li&gt;
+&lt;li&gt;Extract the .ADM file to any folder on your hard drive&lt;/li&gt;
+&lt;li&gt;Go to Start &amp;gt; Run, and run gpedit.msc&lt;/li&gt;
+&lt;li&gt;Right-click Local Computer Policy &amp;gt; Computer Configuration &amp;gt; Administrative Templates, and select Add/Remove Templates:&lt;/li&gt;
+&lt;li&gt;Add the adm template that you saved to disk earlier:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;You should now see the template underneath a Google &amp;gt; Google Chrome section within Administrative Templates&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Depending on which operating system you have, it might be under a Classic Administrative Templates (ADM) folder:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;Click on Google Chrome in the left-hand pane and then double-click on the item called Enable deprecated web platform features in the list within the right-hand pane:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;NOTE: It helps to sort the table in the right-hand pane by the Setting column in order to find the Enable deprecated web platform features item more easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="7"&gt;
+&lt;li&gt;In the new screen that appears, click the Enabled radio button:&lt;/li&gt;
+&lt;li&gt;In the Options section of the same screen, click the Show… button&lt;/li&gt;
+&lt;li&gt;On the new screen that appears, type ShowModalDialog_EffectiveUntil20150430 into the first cell of the table that’s displayed and hit ENTER:
+-IMPORTANT NOTE: Make sure there are no spaces either before or after the ShowModalDialog_EffectiveUntil20150430 Otherwise, Chrome will reject the setting (see the Troubleshooting section for more information).&lt;/li&gt;
+&lt;li&gt;Click OK&lt;/li&gt;
+&lt;li&gt;To verify that this policy has taken effect, navigate to the following URL in Chrome: chrome://policy&lt;/li&gt;
+&lt;li&gt;If everything is set up correctly, you should see a screen like the following&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://davidstamen.com/images/chromemodal.jpg" alt=""&gt;&lt;/p&gt;</description></item><item><title>Unable to Install .NET 3.5 on Server 2012R2</title><link>https://davidstamen.com/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/09/11/unable-to-install-net-3-5-on-server-2012r2/</guid><description>&lt;p&gt;So upon trying to install .Net 3.5 on a new server today it would not allow me to, it kept telling me the source files were unavailable even after pointing to source directly to multiple ISO&amp;rsquo;s and copied the files locally.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://davidstamen.com/images/dotneterror.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Upon further research I stumbled across this microsoft KB article and used it to ultimately find my fix. &lt;a href="http://support.microsoft.com/kb/2734782%22%3Ehttp://support.microsoft.com/kb/2734782"&gt;KB2734782&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="here-are-the-full-steps-i-followed-to-get-net-installed"&gt;Here are the full steps I followed to get .NET installed.&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Open &lt;strong&gt;gpedit.msc&lt;/strong&gt; to modify your local group policy.&lt;/p&gt;</description></item><item><title>Blocking Attachments With Executable Content</title><link>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</link><pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate><guid>https://davidstamen.com/2014/05/01/blocking-attachments-with-executable-content/</guid><description>&lt;p&gt;I don&amp;rsquo;t know whats going on in the past few weeks but the sheer amount of zeroday exploits via email have risen. To protect yourselves against this I would recommend setting up a transport rule to drop or reject any email with executable content. This can be done for Exchange 2013 or Office365 (Exchange Online).&lt;/p&gt;</description></item></channel></rss>
