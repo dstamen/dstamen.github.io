@@ -1,0 +1,10 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+resource_group  = "rg-observability"
+location        = "eastus"
+workspace_name  = "amw-prometheus"
+grafana_name    = "grafana-prod"
+
+tags = {
+  environment = "prod"
+  managed_by  = "terraform"
+}
