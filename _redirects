@@ -1,0 +1,13 @@
+# Pure Storage -> Everpure rename. The taxonomy terms no longer exist, so these
+# are plain 301s; no force flag needed.
+/categories/pure-storage      /categories/everpure   301
+/categories/pure-storage/     /categories/everpure/  301
+/categories/pure-storage/*    /categories/everpure/  301
+/tags/pure-storage            /tags/everpure         301
+/tags/pure-storage/           /tags/everpure/        301
+/tags/pure-storage/*          /tags/everpure/        301
+
+# The old Clarity theme shipped its icons at /icons/*. That directory no longer
+# exists, so point anything still asking for it at the real set.
+/icons/site.webmanifest   /favicon/site.webmanifest   301
+/icons/*                  /favicon/:splat             301
