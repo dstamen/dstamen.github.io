@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 330" width="990" height="330" role="img" aria-labelledby="t d">
+  <title id="t">Everpure Cloud Azure Native to Datadog data flow</title>
+  <desc id="d">The platform console OpenMetrics endpoints feed the purefa check and Azure ARM feeds the everpure_arm check, both on a Datadog Agent VM, which send purefa and everpure metrics to Datadog and a Terraform-managed dashboard.</desc>
+  <defs>
+    <style>
+      .bg { fill: #FFF5E3; }
+      .card { fill: #FFFFFF; stroke: #D0C8BA; stroke-width: 1.5; }
+      .agent { fill: #F7EEDC; stroke: #D0C8BA; stroke-width: 1.5; }
+      .check { fill: #FFFFFF; stroke: #8FA596; stroke-width: 1.5; }
+      .dd { fill: #FFFFFF; stroke: #FF7023; stroke-width: 2.5; }
+      .h { font: 600 17px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #2D2A27; }
+      .b { font: 400 13px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #5A6359; }
+      .m { font: 400 12px 'Space Mono',ui-monospace,'Courier New',monospace; fill: #2D2A27; }
+      .tag { font: 700 13px 'Space Mono',ui-monospace,'Courier New',monospace; fill: #2D2A27; }
+      .cap { font: 600 11px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #5A6359; letter-spacing: .06em; }
+      .ln { stroke: #2D2A27; stroke-width: 1.6; fill: none; }
+      .lno { stroke: #FF7023; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2D2A27"/>
+    </marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF7023"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="990" height="330" rx="14"/>
+
+  <!-- sources -->
+  <text class="cap" x="28" y="34">SOURCES</text>
+  <rect class="card" x="24" y="46" width="330" height="110" rx="10"/>
+  <text class="h" x="42" y="76">Platform console</text>
+  <text class="b" x="42" y="98">Purity OpenMetrics on the mgmt IP</text>
+  <text class="m" x="42" y="122">https://&lt;mgmt-ip&gt;/metrics/</text>
+  <text class="m" x="42" y="140">{array,volumes,hosts,pods,directories}</text>
+
+  <rect class="card" x="24" y="186" width="330" height="110" rx="10"/>
+  <text class="h" x="42" y="216">Azure ARM</text>
+  <text class="b" x="42" y="238">Health and billing actions</text>
+  <text class="m" x="42" y="262">storagePools/getHealthStatus</text>
+  <text class="m" x="42" y="280">reservations/getBillingStatus</text>
+
+  <!-- agent -->
+  <text class="cap" x="414" y="34">DATADOG AGENT VM (IN THE VNET)</text>
+  <rect class="agent" x="410" y="46" width="270" height="250" rx="12"/>
+  <rect class="check" x="428" y="70" width="234" height="72" rx="8"/>
+  <text class="h" x="444" y="99">purefa check</text>
+  <text class="b" x="444" y="122">bearer token, read-only user</text>
+  <rect class="check" x="428" y="210" width="234" height="72" rx="8"/>
+  <text class="h" x="444" y="239">everpure_arm check</text>
+  <text class="b" x="444" y="262">VM managed identity</text>
+
+  <!-- datadog -->
+  <text class="cap" x="742" y="34">DESTINATION</text>
+  <rect class="dd" x="738" y="96" width="228" height="150" rx="12"/>
+  <text class="h" x="756" y="128">Datadog</text>
+  <text class="tag" x="756" y="156">purefa.*</text>
+  <text class="tag" x="756" y="178">everpure.*</text>
+  <text class="b" x="756" y="210">Dashboard and TV view,</text>
+  <text class="b" x="756" y="228">managed with Terraform</text>
+
+  <!-- arrows: sources to checks -->
+  <path class="ln" d="M354,106 L426,106" marker-end="url(#a)"/>
+  <path class="ln" d="M354,246 L426,246" marker-end="url(#a)"/>
+  <!-- checks to datadog -->
+  <path class="lno" d="M662,106 C702,106 702,146 736,146" marker-end="url(#ao)"/>
+  <path class="lno" d="M662,246 C702,246 702,196 736,196" marker-end="url(#ao)"/>
+</svg>
