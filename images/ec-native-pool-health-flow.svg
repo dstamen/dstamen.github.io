@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 340" width="990" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Everpure Cloud Azure Native pool health to Application Insights data flow</title>
+  <desc id="d">A timer triggers an Azure Function every minute. The Function uses its managed identity to call getHealthStatus on the storage pool through Azure ARM, sends the results to Application Insights as custom metrics, and a Workbook or Grafana dashboard reads them.</desc>
+  <defs>
+    <style>
+      .bg { fill: #FFF5E3; }
+      .card { fill: #FFFFFF; stroke: #D0C8BA; stroke-width: 1.5; }
+      .fn { fill: #FFFFFF; stroke: #8FA596; stroke-width: 1.5; }
+      .dash { fill: #FFFFFF; stroke: #FF7023; stroke-width: 2.5; }
+      .h { font: 600 17px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #2D2A27; }
+      .b { font: 400 13px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #5A6359; }
+      .m { font: 400 12px 'Space Mono',ui-monospace,'Courier New',monospace; fill: #2D2A27; }
+      .lab { font: 400 12px 'Space Mono',ui-monospace,'Courier New',monospace; fill: #5A6359; }
+      .cap { font: 600 11px 'Pure Sans','Familjen Grotesk',Arial,Helvetica,sans-serif; fill: #5A6359; letter-spacing: .06em; }
+      .ln { stroke: #2D2A27; stroke-width: 1.6; fill: none; }
+      .lno { stroke: #FF7023; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2D2A27"/>
+    </marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF7023"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="990" height="340" rx="14"/>
+
+  <text class="cap" x="28" y="34">SCHEDULE</text>
+  <text class="cap" x="256" y="34">COLLECT</text>
+  <text class="cap" x="534" y="34">STORE</text>
+  <text class="cap" x="802" y="34">VISUALIZE</text>
+
+  <!-- timer -->
+  <rect class="card" x="24" y="46" width="180" height="112" rx="10"/>
+  <text class="h" x="42" y="76">Timer trigger</text>
+  <text class="b" x="42" y="98">every minute</text>
+  <text class="m" x="42" y="130">0 * * * * *</text>
+
+  <!-- function -->
+  <rect class="fn" x="252" y="46" width="230" height="112" rx="10"/>
+  <text class="h" x="270" y="76">Azure Function</text>
+  <text class="b" x="270" y="98">Python, Consumption plan</text>
+  <text class="b" x="270" y="118">managed identity</text>
+  <text class="b" x="270" y="138">bytes to MiB and GiB</text>
+
+  <!-- app insights -->
+  <rect class="card" x="530" y="46" width="220" height="112" rx="10"/>
+  <text class="h" x="548" y="76">Application Insights</text>
+  <text class="b" x="548" y="98">custom metrics, pool</text>
+  <text class="b" x="548" y="118">and per volume</text>
+  <text class="b" x="548" y="138">workspace-based</text>
+
+  <!-- dashboards -->
+  <rect class="dash" x="798" y="46" width="168" height="112" rx="10"/>
+  <text class="h" x="816" y="76">Workbook</text>
+  <text class="h" x="816" y="98">or Grafana</text>
+  <text class="b" x="816" y="120">capacity and</text>
+  <text class="b" x="816" y="138">performance cards</text>
+
+  <!-- ARM -->
+  <rect class="card" x="252" y="214" width="230" height="102" rx="10"/>
+  <text class="h" x="270" y="244">Azure ARM</text>
+  <text class="m" x="270" y="268">POST storagePools/</text>
+  <text class="m" x="270" y="286">{pool}/getHealthStatus</text>
+  <text class="b" x="270" y="306">custom role: read + this action</text>
+
+  <!-- arrows -->
+  <path class="ln" d="M204,102 L250,102" marker-end="url(#a)"/>
+  <path class="ln" d="M482,102 L528,102" marker-end="url(#a)"/>
+  <path class="lno" d="M750,102 L796,102" marker-end="url(#ao)"/>
+  <!-- function <-> ARM -->
+  <path class="ln" d="M330,160 L330,212" marker-end="url(#a)"/>
+  <path class="ln" d="M404,212 L404,160" marker-end="url(#a)"/>
+  <text class="lab" x="340" y="192">call</text>
+  <text class="lab" x="414" y="192">health JSON</text>
+</svg>
