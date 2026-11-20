@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-labelledby="t d" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title id="t">Start, Get and Stay Resilient</title>
+  <desc id="d">The three Infrastructure Resiliency journeys and the portal menu items that belong to each.</desc>
+  <rect width="900" height="400" fill="#f7f7f6"/>
+
+  <!-- column 1 -->
+  <rect x="30" y="30" width="260" height="290" rx="10" fill="#FFFFFF" stroke="#1a1a19" stroke-opacity="0.2"/>
+  <rect x="30" y="30" width="260" height="56" rx="10" fill="#1a1a19"/>
+  <rect x="30" y="66" width="260" height="20" fill="#1a1a19"/>
+  <text x="50" y="66" font-size="22" font-weight="700" fill="#f7f7f6">Start Resilient</text>
+  <text x="50" y="118" font-size="14" fill="#1a1a19">Design it right before you deploy</text>
+  <text x="50" y="160" font-size="15" font-weight="700" fill="#e2521d">Resiliency Agent (preview)</text>
+  <text x="50" y="186" font-size="14" fill="#1a1a19">Describe the app or upload a</text>
+  <text x="50" y="206" font-size="14" fill="#1a1a19">diagram or existing IaC</text>
+  <text x="50" y="244" font-size="14" fill="#1a1a19">Get resilient Bicep, ARM or</text>
+  <text x="50" y="264" font-size="14" fill="#1a1a19">Terraform templates back</text>
+  <text x="50" y="300" font-size="12" fill="#1a1a19" fill-opacity="0.7">Azure Copilot, GitHub Copilot</text>
+
+  <!-- column 2 -->
+  <rect x="320" y="30" width="260" height="290" rx="10" fill="#FFFFFF" stroke="#1a1a19" stroke-opacity="0.2"/>
+  <rect x="320" y="30" width="260" height="56" rx="10" fill="#1a1a19"/>
+  <rect x="320" y="66" width="260" height="20" fill="#1a1a19"/>
+  <text x="340" y="66" font-size="22" font-weight="700" fill="#f7f7f6">Get Resilient</text>
+  <text x="340" y="118" font-size="14" fill="#1a1a19">Find and fix gaps in what you run</text>
+  <text x="340" y="160" font-size="15" font-weight="700" fill="#e2521d">Resources</text>
+  <text x="340" y="180" font-size="14" fill="#1a1a19">Zone resilient or not, per resource</text>
+  <text x="340" y="220" font-size="15" font-weight="700" fill="#e2521d">Service Groups</text>
+  <text x="340" y="240" font-size="14" fill="#1a1a19">Define the app, assign goals</text>
+  <text x="340" y="280" font-size="15" font-weight="700" fill="#e2521d">Recommendations</text>
+  <text x="340" y="300" font-size="14" fill="#1a1a19">Prioritized fixes with cost</text>
+
+  <!-- column 3 -->
+  <rect x="610" y="30" width="260" height="290" rx="10" fill="#FFFFFF" stroke="#1a1a19" stroke-opacity="0.2"/>
+  <rect x="610" y="30" width="260" height="56" rx="10" fill="#1a1a19"/>
+  <rect x="610" y="66" width="260" height="20" fill="#1a1a19"/>
+  <text x="630" y="66" font-size="22" font-weight="700" fill="#f7f7f6">Stay Resilient</text>
+  <text x="630" y="118" font-size="14" fill="#1a1a19">Prove it still works as things change</text>
+  <text x="630" y="160" font-size="15" font-weight="700" fill="#e2521d">Recovery Plans</text>
+  <text x="630" y="180" font-size="14" fill="#1a1a19">Ordered zone failover, checked daily</text>
+  <text x="630" y="220" font-size="15" font-weight="700" fill="#e2521d">Drills</text>
+  <text x="630" y="240" font-size="14" fill="#1a1a19">Simulate a zone outage, then recover</text>
+  <text x="630" y="280" font-size="15" font-weight="700" fill="#e2521d">Usage Plans</text>
+  <text x="630" y="300" font-size="14" fill="#1a1a19">Bills drills and recovery plans</text>
+
+  <!-- arrows -->
+  <path d="M294 175 L316 175 M308 167 L316 175 L308 183" fill="none" stroke="#e2521d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M584 175 L606 175 M598 167 L606 175 L598 183" fill="none" stroke="#e2521d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="30" y="360" font-size="14" fill="#1a1a19">Posture, goals and recommendations are free. Drills and recovery plans need a usage plan.</text>
+  <text x="30" y="382" font-size="12" fill="#1a1a19" fill-opacity="0.7">Based on the Microsoft Infrastructure Resiliency Manager overview. Zone resilience only.</text>
+</svg>
